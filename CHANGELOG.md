@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1] - 2026-04-02
+
+### Documentation
+- Harden marketing skill templates for consistency and reliability
+- Normalize marketing and creative module references across documentation
+- Reorganize modules and standardize documentation quality
+- Add documentation quality improvement plan
+
 ## [1.1.0] - 2026-04-02
 
 ### Features
