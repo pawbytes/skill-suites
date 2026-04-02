@@ -176,7 +176,7 @@ So today, we're going to fix that. Together.
 - Map every touchpoint — "Where does data enter? Where does it go?"
 - Identify the gaps — "This is where automation breaks down"
 
-**Story/example:** Tell the Acme Corp story — they found 12 manual steps in a "automated" process
+**Story/example:** Tell the Acme Corp story — they found 12 manual steps in an "automated" process
 
 **Data reference:** Mention the 73% stat again — tie back to hook
 

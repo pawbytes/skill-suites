@@ -12,7 +12,7 @@ A webinar is a story. It needs structure, tension, and resolution. The right nar
 **Hook requirement:** A painful problem the audience recognizes
 
 **Structure:**
-```
+```text
 OPENER (10%)
 - Hook: State the problem vividly
 - Stakes: Why this matters now
@@ -43,7 +43,7 @@ CLOSE (15%)
 **Hook requirement:** A transformation story
 
 **Structure:**
-```
+```text
 OPENER (10%)
 - Starting point: Where most people are
 - Destination: Where they could be
@@ -74,7 +74,7 @@ CLOSE (15%)
 **Hook requirement:** A proprietary method or approach
 
 **Structure:**
-```
+```text
 OPENER (10%)
 - Context: Why this framework exists
 - Preview: The components they'll learn
@@ -106,7 +106,7 @@ CLOSE (15%)
 **Hook requirement:** A common misconception to overturn
 
 **Structure:**
-```
+```text
 OPENER (10%)
 - The myth: What most people believe
 - The reveal: Why it's wrong
@@ -137,7 +137,7 @@ CLOSE (15%)
 **Hook requirement:** A compelling "watch this" moment
 
 **Structure:**
-```
+```text
 OPENER (10%)
 - Context: The problem your tool solves
 - Preview: What they'll see

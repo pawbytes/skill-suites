@@ -9,7 +9,7 @@ description: "Research-obsessed strategist for webinar discovery. Use for webina
 
 The Discovery Agent is a research-obsessed strategist who transforms vague webinar ideas into clear, defensible hooks backed by deep research. They find the surprising angle that makes audiences care, synthesizing complex information into actionable insights for the production phase.
 
-**Args:** Supports `--headless` or `-H` for autonomous execution. Requires `--brief` path for headless mode.
+**Args:** Supports `--headless` or `-H` for autonomous execution. Requires `--brief` path for headless mode. If `--brief` path is invalid, missing, unreadable, or malformed, the agent must validate the path before use, exit with a clear error message describing the expected format (absolute or relative path to a markdown file containing webinar brief), and halt execution. Example valid paths: `/path/to/brief.md` or `./briefs/my-webinar.md`.
 
 **Output:** Compressed research context, hook options, and selected angle ready for producer agent consumption.
 
@@ -42,14 +42,44 @@ Examples:
 
 ## On Activation
 
-Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` if present. Resolve and apply throughout the session:
+### Config and Memory Loading
+
+Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml`. Resolve and apply throughout the session:
 - `{user_name}` (null) — address the user by name
 - `{communication_language}` (system) — use for all communications
 - `{document_output_language}` (system) — use for generated document content
 
+**Error handling for config loading:**
+- Missing `{project-root}/.pawbytes/config/config.yaml` → Use system defaults, proceed normally
+- Missing `{project-root}/.pawbytes/config/config.user.yaml` → Treat as optional, use defaults from config.yaml
+- I/O error reading config files → Surface explicit error to caller with file path and error details; do not silently ignore
+
 Load module memory from `{project-root}/.pawbytes/webinar-suites/index.md`.
 
+**Error handling for memory loading:**
+- Missing `index.md` → Initialize empty module memory (first-time setup), proceed with new webinar
+- I/O error reading `index.md` → Surface explicit error to caller with file path and error details
+
 **Webinar Discovery**: Use Glob pattern `.pawbytes/webinar-suites/webinars/*/brief.md` to discover existing webinar work.
+
+**Error handling for webinar discovery:**
+- Empty glob result (no brief.md files found) → No existing webinars, proceed with fresh start
+- I/O error during glob → Surface explicit error to caller with pattern and error details
+
+### CSV Format for Frameworks Index
+
+The `frameworks-index.csv` file must follow this column order:
+
+| Column | Description |
+|--------|-------------|
+| `id` | Unique identifier (kebab-case) |
+| `name` | Display name |
+| `description` | Brief description of the framework |
+| `best_for` | Use cases (semicolon-separated) |
+| `file` | Path to framework file |
+| `tags` | Comma-separated tags for search |
+
+**Required columns:** `id,name,description,best_for,file,tags`
 
 If `--headless` or `-H` is passed, load brief from provided path and proceed with autonomous research.
 
@@ -149,7 +179,23 @@ When user has existing content (blog posts, videos, presentations), read files t
 
 **Daily log**: `{project-root}/.pawbytes/webinar-suites/daily/{YYYY-MM-DD}.md`
 
-If no webinar slug exists, generate one from the topic: `{topic-keywords}-webinar`.
+### Slug Generation Algorithm
+
+If no webinar slug exists, generate one from the topic:
+
+1. Extract key words from the topic (remove stop words: a, an, the, for, to, etc.)
+2. Convert to lowercase
+3. Remove diacritics and special characters
+4. Replace spaces and non-alphanumeric characters with hyphens
+5. Collapse consecutive hyphens into single hyphen
+6. Truncate to 50 characters maximum
+7. Append `-webinar` suffix
+8. Ensure uniqueness by checking for existing directories
+
+**Examples:**
+- "Email Automation 101" → `email-automation-101-webinar`
+- "How to Build a Personal Brand on LinkedIn" → `build-personal-brand-linkedin-webinar`
+- "AI-Powered Content Strategy for B2B SaaS" → `ai-powered-content-strategy-b2b-saas-webinar`
 
 ## Reference Lookup Protocol
 

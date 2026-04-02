@@ -150,7 +150,7 @@ Every production run includes:
 
 **Slide deck outline excerpt:**
 
-```
+```text
 ## Slide 8: The Hidden Cost
 
 **Title:** "What 73% of Teams Don't Realize"
@@ -169,7 +169,7 @@ Every production run includes:
 
 **Script excerpt:**
 
-```
+```text
 ## Section 3.1: The Hidden Cost (Full Script)
 
 [Timing: 2 minutes]
