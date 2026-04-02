@@ -78,12 +78,24 @@ Capture:
 
 ### 7. Generate Webinar Slug
 
-Create a URL-friendly identifier:
+Create a filesystem-safe identifier from the topic:
 
-- Take the topic keywords
-- Convert to lowercase, replace spaces with hyphens
-- Append `-webinar`
-- Example: "Email Automation 101" → `email-automation-101-webinar`
+1. Extract key words from the topic (remove stop words: a, an, the, for, to, etc.)
+2. Normalize unicode (NFKD decomposition)
+3. Convert to lowercase
+4. Remove diacritics and special characters
+5. Replace whitespace and non-alphanumeric characters with hyphens
+6. Collapse consecutive hyphens into single hyphen
+7. Trim leading and trailing hyphens
+8. Truncate base to 41 characters maximum (leaving room for `-webinar` suffix)
+9. Append `-webinar` suffix
+10. If result is empty, use `untitled-webinar`
+11. Ensure uniqueness by checking for existing directories (append `-2`, `-3`, etc. if needed)
+
+**Examples:**
+- "Email Automation 101" → `email-automation-101-webinar`
+- "AI/ML for Business: What's Next?" → `ai-ml-for-business-whats-next-webinar`
+- "How to Build a Personal Brand on LinkedIn" → `build-personal-brand-on-linkedin-webinar`
 
 ### 8. Create Brief File
 
@@ -128,7 +140,7 @@ Write `brief.md` to `{webinar-slug}/brief.md`:
 
 Initialize the webinar workspace:
 
-```
+```text
 .pawbytes/webinar-suites/webinars/{webinar-slug}/
 ├── brief.md          # Just created
 ```

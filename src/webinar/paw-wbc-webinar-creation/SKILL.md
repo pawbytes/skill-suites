@@ -16,7 +16,7 @@ The Webinar Creation Pipeline is a guided workflow that takes solo creators from
 ## Principles
 
 - **One continuous conversation** — User never needs to decide "which agent do I need"
-- **Clear progress indication** — Always show "Phase X of 2" status
+- **Clear progress indication** — Always show "Stage X of 4" status
 - **Gates between phases** — User confirms readiness before proceeding
 - **Resumable** — If user pauses, workflow can resume from last checkpoint
 - **Transparent handoffs** — When calling agents, briefly explain what's happening
@@ -152,4 +152,4 @@ If user returns mid-pipeline:
    - `brief.md` only → Resume at Stage 2
    - `brief.md` + `research-context.md` + `hook-selected.md` → Resume at Stage 3
    - All outputs present → Offer to start new webinar or review existing
-3. Acknowledge resumption: "Welcome back! You're in the [Phase Name] of your webinar on [topic]. Let's continue."
+3. Acknowledge resumption: "Welcome back! You're in the [Stage Name] of your webinar on [topic]. Let's continue."

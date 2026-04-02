@@ -42,14 +42,25 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{communication_language}` (English) — use for all communications
 - `{document_output_language}` (English) — use for generated document content
 
+**Error handling for config loading:**
+- Missing `{project-root}/.pawbytes/config/config.yaml` → Use system defaults, proceed normally
+- Missing `{project-root}/.pawbytes/config/config.user.yaml` → Treat as optional, use defaults from config.yaml
+- I/O error reading config files → Surface explicit error to caller with file path and error details; do not silently ignore
+
 Load module memory from `{project-root}/.pawbytes/webinar-suites/index.md` to understand active webinars.
+
+**Error handling for memory loading:**
+- Missing `index.md` → Initialize empty module memory, proceed normally
+- I/O error reading `index.md` → Surface explicit error to caller with file path and error details
 
 **Discovery context check:**
 1. Check for `{webinar-slug}/brief.md` — the initial brief and audience context
 2. Check for `{webinar-slug}/research-context.md` — compressed research findings
 3. Check for `{webinar-slug}/hook-selected.md` — chosen hook and reasoning
 
-If all discovery outputs exist, confirm readiness for production. If missing, prompt user: "I need research context to produce your webinar. Would you like to run discovery first, or do you have research you can share?"
+If all discovery outputs exist, confirm readiness for production. If missing:
+- **Interactive mode:** Prompt user: "I need research context to produce your webinar. Would you like to run discovery first, or do you have research you can share?"
+- **Headless mode (`--headless` or `-H`):** Emit error message listing missing files and exit with non-zero status. Do not prompt.
 
 If `--headless` or `-H` is passed with complete discovery outputs, proceed directly to production without interaction.
 

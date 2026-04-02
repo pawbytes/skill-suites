@@ -13,7 +13,9 @@ greeting: |
   **What you'll get:** A detailed slide deck outline (LLM-ready) and a script you can present from.
 
 # Configuration Variables
-# This module uses core Pawbytes settings only — no custom variables required.
+# This module declares two module-level variables:
+# - output_folder: Base directory for all webinar outputs
+# - communication_language: Language for agent responses and generated content
 
 output_folder:
   default: "{project-root}/.pawbytes/webinar-suites"

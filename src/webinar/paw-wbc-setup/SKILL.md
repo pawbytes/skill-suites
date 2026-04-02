@@ -42,7 +42,7 @@ This module has no custom configuration variables beyond core Pawbytes settings.
 - `communication_language` (default: English)
 - `document_output_language` (default: English — same as communication_language)
 
-These values are written to `{project-root}/.pawbytes/config/config.user.yaml`.
+These values are written to `{project-root}/.pawbytes/config/config.user.yaml` (user_name, communication_language, and document_output_language).
 
 Ask using prompts with defaults in brackets. Present all values together so the user can respond once with only the values they want to change.
 
@@ -95,7 +95,7 @@ daily/
 If core config was collected, write to:
 
 - `{project-root}/.pawbytes/config/config.yaml` — if core section doesn't exist
-- `{project-root}/.pawbytes/config/config.user.yaml` — for user_name and communication_language
+- `{project-root}/.pawbytes/config/config.user.yaml` — for user_name, communication_language, and document_output_language
 
 Register module in `{project-root}/.pawbytes/config/module-help.csv` if it exists.
 

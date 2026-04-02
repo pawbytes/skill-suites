@@ -184,17 +184,22 @@ When user has existing content (blog posts, videos, presentations), read files t
 If no webinar slug exists, generate one from the topic:
 
 1. Extract key words from the topic (remove stop words: a, an, the, for, to, etc.)
-2. Convert to lowercase
-3. Remove diacritics and special characters
-4. Replace spaces and non-alphanumeric characters with hyphens
-5. Collapse consecutive hyphens into single hyphen
-6. Truncate to 50 characters maximum
-7. Append `-webinar` suffix
-8. Ensure uniqueness by checking for existing directories
+2. Normalize unicode (NFKD decomposition)
+3. Convert to lowercase
+4. Remove diacritics and special characters
+5. Replace spaces and non-alphanumeric characters with hyphens
+6. Collapse consecutive hyphens into single hyphen
+7. Trim leading and trailing hyphens
+8. Truncate base to 41 characters maximum (leaving room for `-webinar` suffix)
+9. Append `-webinar` suffix
+10. If result is empty, use `untitled-webinar`
+11. Ensure uniqueness by checking for existing directories (append `-2`, `-3`, etc. if needed)
+
+**Final slug must be ≤50 characters total.**
 
 **Examples:**
 - "Email Automation 101" → `email-automation-101-webinar`
-- "How to Build a Personal Brand on LinkedIn" → `build-personal-brand-linkedin-webinar`
+- "How to Build a Personal Brand on LinkedIn" → `build-personal-brand-on-linkedin-webinar`
 - "AI-Powered Content Strategy for B2B SaaS" → `ai-powered-content-strategy-b2b-saas-webinar`
 
 ## Reference Lookup Protocol

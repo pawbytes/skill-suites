@@ -130,7 +130,7 @@ Move to Stage 4 when:
 
 When calling the Producer agent, pass context:
 
-```
+```text
 /paw-wbc-agent-producer
 
 Context: User is in the Webinar Creation pipeline, Stage 3 (Production).

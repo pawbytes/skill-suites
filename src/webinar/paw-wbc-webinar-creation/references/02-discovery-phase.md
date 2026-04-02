@@ -142,12 +142,10 @@ Move to Stage 3 when:
 
 When calling the Discovery agent, pass context:
 
-```
-/paw-wbc-agent-discovery
+```text
+/paw-wbc-agent-discovery --headless --brief "{project-root}/.pawbytes/webinar-suites/webinars/{webinar-slug}/brief.md"
 
 Context: User is in the Webinar Creation pipeline, Stage 2 (Discovery).
-Brief file: {webinar-slug}/brief.md
-The user has shared their initial topic and audience context.
 Proceed with brief expansion, research, and hook generation.
 ```
 
