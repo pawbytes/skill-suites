@@ -69,7 +69,7 @@ I don't want a full strategy right now. I just need a conversion-focused landing
 ## What usually happens next
 
 If the quick task works and you want to scale:
-- create or refresh `product-marketing-context.md` (via `/paw-mkt-product-context`)
+- create or refresh `paw-mkt-product-context.md` (via `/paw-mkt-product-context`)
 - run `/paw-mkt-sostac`
 - move into broader implementation
 

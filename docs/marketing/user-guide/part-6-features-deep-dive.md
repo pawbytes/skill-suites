@@ -413,10 +413,7 @@ agent-browser --version
 
 If not installed:
 ```bash
-# Recommended: Install via skills
-npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser
-
-# Alternative: Install CLI directly
+# Install the CLI directly
 npm install -g agent-browser && npx playwright install chromium
 ```
 

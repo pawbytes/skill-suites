@@ -26,7 +26,7 @@ Before Phase 1, it also runs **Auto-Discovery** research.
 ## Output files
 
 ```text
-brands/{brand-slug}/sostac/
+.pawbytes/marketing-suites/brands/{brand-slug}/sostac/
 ├── README.md
 ├── 00-auto-discovery.md
 ├── 01-situation.md

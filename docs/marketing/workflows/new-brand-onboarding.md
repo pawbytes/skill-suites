@@ -1,6 +1,6 @@
 # Workflow: New Brand Onboarding
 
-Use this workflow when you are starting work for a brand that does not yet have a workspace under `brands/`.
+Use this workflow when you are starting work for a brand that does not yet have a workspace under `.pawbytes/marketing-suites/brands/`.
 
 ## Goal
 
@@ -20,7 +20,7 @@ Create the brand workspace, capture the minimum brand context, and route into pl
    - what the brand sells
    - target audience
    - current stage
-3. It creates the workspace under `brands/{brand-slug}/`
+3. It creates the workspace under `.pawbytes/marketing-suites/brands/{brand-slug}/`
 4. It writes `brand-context.md`
 5. It creates `sostac/README.md`
 6. It usually routes next into `/paw-mkt-sostac`
@@ -28,7 +28,7 @@ Create the brand workspace, capture the minimum brand context, and route into pl
 ## Files created early in the workflow
 
 ```text
-brands/{brand-slug}/
+.pawbytes/marketing-suites/brands/{brand-slug}/
 ├── brand-context.md
 └── sostac/
     └── README.md
