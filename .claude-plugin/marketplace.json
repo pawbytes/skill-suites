@@ -1,13 +1,13 @@
 {
-  "name": "pawbytes-skill-suites",
+  "name": "skill-suites",
   "owner": {
     "name": "PawBytes",
-    "url": "https://github.com/pawbytes/pawbytes-skill-suites"
+    "url": "https://github.com/pawbytes/skill-suites"
   },
   "metadata": {
     "description": "41 AI agent skills for Claude Code — agentic marketing automation, AI creative agency workflows, and developer productivity tools. Build full marketing strategies, generate brand assets, produce social and video content, and automate software releases — all from your terminal.",
     "version": "1.0.0",
-    "repository": "https://github.com/pawbytes/pawbytes-skill-suites"
+    "repository": "https://github.com/pawbytes/skill-suites"
   },
   "plugins": [
     {

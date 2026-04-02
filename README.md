@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-npx skills add pawbytes/pawbytes-skill-suites
+npx skills add pawbytes/skill-suites
 ```
 
 The interactive installer lets you pick individual modules or install everything at once.
@@ -90,7 +90,7 @@ A full AI creative agency with persistent agent personas and deterministic produ
 ## Repository Structure
 
 ```javascript
-pawbytes-skill-suites/
+skill-suites/
 ├── src/
 │   ├── marketing/          # paw-mkt-* skills (23)
 │   ├── creative/           # paw-cra-* skills (15)
