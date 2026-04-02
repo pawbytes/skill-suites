@@ -107,7 +107,7 @@ Load `./references/04-output-delivery.md`
 
 **Daily log:** `{project-root}/.pawbytes/webinar-suites/daily/{YYYY-MM-DD}.md`
 
-If no webinar slug exists, generate one from the topic: `{topic-keywords}-webinar`.
+If no webinar slug exists, generate one using the slug generation algorithm.
 
 > **See:** `paw-wbc-agent-discovery` SKILL.md "Slug Generation Algorithm" section for full specification including unicode normalization (NFKD), keyword extraction, punctuation removal, truncation (41-char base for 50-char final), and uniqueness checks.
 
