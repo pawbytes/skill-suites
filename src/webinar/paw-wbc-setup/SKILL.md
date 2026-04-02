@@ -33,6 +33,14 @@ Creates the output directory structure and orientation files:
 
 If the user provides arguments (e.g. `accept all defaults`, `--headless`), skip interactive prompting and use defaults.
 
+**Inline value mapping:** Users can also provide specific values inline using natural language (following Pawbytes convention). Parse key-value pairs from the invocation and apply them directly:
+
+- "my name is Alice" → `user_name: Alice`
+- "use Indonesian" → `communication_language: Indonesian`
+- "user name is Alice, language is Indonesian" → Apply both values
+
+This allows non-interactive setup with custom values without requiring full flag syntax.
+
 ## Collect Configuration
 
 This module has no custom configuration variables beyond core Pawbytes settings. Only collect core config if not already present:

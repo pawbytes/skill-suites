@@ -108,6 +108,8 @@ Load `./references/04-output-delivery.md`
 
 If no webinar slug exists, generate one from the topic: `{topic-keywords}-webinar`.
 
+> **See:** `paw-wbc-agent-discovery` SKILL.md "Slug Generation Algorithm" section for full specification including unicode normalization (NFKD), keyword extraction, punctuation removal, truncation (41-char base for 50-char final), and uniqueness checks.
+
 ## Reference Lookup Protocol
 
 Each stage loads its detailed guidance from `./references/` on demand:
@@ -152,4 +154,4 @@ If user returns mid-pipeline:
    - `brief.md` only → Resume at Stage 2
    - `brief.md` + `research-context.md` + `hook-selected.md` → Resume at Stage 3
    - All outputs present → Offer to start new webinar or review existing
-3. Acknowledge resumption: "Welcome back! You're in the [Stage Name] of your webinar on [topic]. Let's continue."
+3. Acknowledge resumption: "Welcome back! You're in Stage X of 4 (Stage Name) of your webinar on [topic]. Let's continue."
