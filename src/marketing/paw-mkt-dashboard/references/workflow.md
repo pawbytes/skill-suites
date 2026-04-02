@@ -11,7 +11,7 @@ Workflow for generating and managing SvelteKit dashboards with LLM-built UI.
 
 ## Stage 1: Discovery (On Activation)
 
-**Purpose:** Find all brand workspaces, check for existing dashboards, and present contextual options.
+**Purpose:** Find all brand workspaces, check for existing dashboards, detect feature gaps, and present contextual options.
 
 **When:** This runs automatically when the skill is invoked, before user interaction.
 
@@ -26,6 +26,9 @@ Workflow for generating and managing SvelteKit dashboards with LLM-built UI.
    - `channels/` — Channel-specific content
    - `content/` — Content calendar, email sequences, SEO research
    - `operations/` — Operational data (analytics, cro, retention, etc.)
+   - `experiments/` — Growth experiments data
+   - `revenue/` — Revenue and pricing data
+   - `lifecycle/` — Customer lifecycle data
 3. **Collect all markdown documents** — Recursively find all `.md` files across the brand workspace. For each file, record:
    - Relative path from brand root (used as slug)
    - Parent folder name (used as category: sostac, campaigns, content, channels, operations, root)
@@ -33,8 +36,20 @@ Workflow for generating and managing SvelteKit dashboards with LLM-built UI.
    - Full raw markdown content
    These get stored in a `documents` table during schema creation (Stage 2) and rendered read-only in the `/documents` route.
 4. **Check for existing dashboards** — For each brand, check if `{brand-path}/dashboard/package.json` exists. If so, scan what routes exist (look for `src/routes/*/+page.svelte`).
-5. Build discovery summary: brands found, data available, documents found, dashboard status
-6. Present contextual options to user (see SKILL.md On Activation)
+5. **Detect feature gaps** — Compare existing routes against the Feature Registry:
+   - `campaigns` → check `src/routes/campaigns/+page.svelte`
+   - `content` → check `src/routes/content/+page.svelte`
+   - `strategy` → check `src/routes/strategy/+page.svelte`
+   - `metrics` → check `src/routes/metrics/+page.svelte`
+   - `channels` → check `src/routes/channels/+page.svelte`
+   - `documents` → check `src/routes/documents/+page.svelte`
+   - `experiments` → check `src/routes/experiments/+page.svelte`
+   - `revenue` → check `src/routes/revenue/+page.svelte`
+   - `lifecycle` → check `src/routes/lifecycle/+page.svelte`
+   - `operations` → check `src/routes/operations/+page.svelte`
+   - `export-api` → check `src/routes/api/export/+server.ts`
+6. Build discovery summary: brands found, data available, documents found, dashboard status, feature gaps
+7. Present contextual options to user (see SKILL.md On Activation)
 
 **Routing after user selects intent:**
 
@@ -42,7 +57,7 @@ Workflow for generating and managing SvelteKit dashboards with LLM-built UI.
 |-------------|----------|
 | Run existing dashboard | **Stage 1a: Run** |
 | Update/regenerate dashboard | **Stage 2** (export first, then regenerate) |
-| Add features to existing | **Stage 4** (skip scaffolding, add routes/components) |
+| Add missing/specific features | **Stage 4b: Feature Addition** |
 | Generate new dashboard | **Stage 2** (full flow) |
 | Full rebuild from scratch | **Stage 2** (delete existing first) |
 
@@ -217,6 +232,91 @@ build/
 ```
 
 **Progression:** Proceed to Stage 5 when all routes and components are generated.
+
+---
+
+## Stage 4b: Feature Addition
+
+**Purpose:** Add one or more features to an existing dashboard without full regeneration.
+
+**When:** User selects "Add missing features" or "Add specific features" from the options.
+
+**Prerequisites:** Existing dashboard with `package.json` and `src/lib/server/db.ts`.
+
+**Actions:**
+
+### 4b-1. Analyze Request
+
+1. Parse the list of features to add (from Feature Registry)
+2. For each feature, verify it doesn't already exist (check route presence)
+3. Skip any that already exist, inform user
+
+### 4b-2. Check Data Availability
+
+For each feature, check if corresponding data exists in the brand workspace:
+
+| Feature | Data Location | If Missing |
+|---------|---------------|------------|
+| `experiments` | `experiments/` folder | Offer to create template structure |
+| `revenue` | `revenue/` folder | Offer to create template structure |
+| `lifecycle` | `lifecycle/` folder | Offer to create template structure |
+| `operations` | `operations/` folder | Use existing if any |
+| `metrics` | `operations/analytics/` | Use existing if any |
+
+If user declines template creation, skip that feature.
+
+### 4b-3. Update Schema
+
+1. Read existing `src/lib/server/db.ts`
+2. Add new tables for selected features:
+   - `experiments` → `experiments` table (id, name, hypothesis, ice_score, status, results)
+   - `revenue` → `revenue` table (id, metric_type, value, date, notes)
+   - `lifecycle` → `lifecycle_metrics` table (id, cohort, churn_rate, retention_rate, ltv)
+   - `operations` → `operations` table (id, item_type, status, assignee, due_date)
+3. Add seed data from discovered files or create placeholder records
+4. Ensure backward compatibility — don't modify existing tables
+
+### 4b-4. Generate Routes
+
+For each feature, generate:
+- `src/routes/{feature}/+page.server.ts` — Load + form actions
+- `src/routes/{feature}/+page.svelte` — List view with table/filters
+
+Follow the same patterns as Stage 4c.
+
+### 4b-5. Update Navigation
+
+1. Read `src/routes/+layout.svelte`
+2. Add new nav items to sidebar for each new feature
+3. Maintain existing nav order, append new items
+
+### 4b-6. Run Migration (if needed)
+
+If schema was updated:
+1. Export existing data via the export endpoint
+2. Restart the dev server to pick up schema changes
+3. Data persists in `dashboard.db` — no re-seed needed for existing tables
+
+### 4b-7. Present Summary
+
+```
+## Features Added
+
+**Brand:** {brand}
+
+Added:
+  • experiments — Growth experiments with ICE scores
+  • revenue — MRR, ARPU, pricing tracker
+
+Schema updated: 2 new tables
+Routes added: /experiments, /revenue
+
+To verify:
+  npm run dev
+  Open http://localhost:5173
+```
+
+**Progression:** Session continues. User may run dashboard, add more features, or export data.
 
 ---
 

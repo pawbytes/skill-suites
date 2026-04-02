@@ -33,6 +33,26 @@ Direct and outcome-focused. Shows what was discovered, what schema was designed,
 - **Git-friendly** — Export to JSON for version control
 - **Distinctive design** — Modern minimalist aesthetic, never generic AI dashboard look
 
+## Feature Registry
+
+The skill maintains a registry of all features it can generate. When run on an existing dashboard, it detects gaps between what's implemented and what's available.
+
+| Feature ID | Name | Routes | Description |
+|------------|------|--------|-------------|
+| `campaigns` | Campaign Tracker | `/campaigns` | Campaign status, milestones, deliverables |
+| `content` | Content Pipeline | `/content` | Editorial calendar, content status |
+| `strategy` | Strategy Overview | `/strategy` | SOSTAC phases, brand positioning |
+| `metrics` | Analytics Metrics | `/metrics` | KPIs, conversion rates, funnel data |
+| `channels` | Channel Performance | `/channels` | Per-channel metrics (email, social, paid) |
+| `documents` | Document Library | `/documents`, `/documents/[slug]` | Read-only markdown rendering |
+| `experiments` | Growth Experiments | `/experiments` | Experiments with ICE scores |
+| `revenue` | Revenue Tracker | `/revenue` | MRR, ARPU, pricing tiers |
+| `lifecycle` | Customer Lifecycle | `/lifecycle` | Churn, retention, LTV, cohorts |
+| `operations` | Operations Hub | `/operations` | Team capacity, agency coordination |
+| `export-api` | Export/Import API | `/api/export`, `/api/import` | JSON export/import for git |
+
+**Feature Detection:** Each feature is detected by checking if its primary route exists (e.g., `src/routes/campaigns/+page.svelte` for `campaigns` feature).
+
 ## On Activation
 
 1. Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` if present. Resolve and apply throughout the session.
@@ -41,15 +61,18 @@ Direct and outcome-focused. Shows what was discovered, what schema was designed,
 
 3. **Check for existing dashboards** — For each brand, check if `{brand-path}/dashboard/package.json` exists.
 
-4. **Present a contextual summary** with:
+4. **Detect feature gaps** — For existing dashboards, scan `src/routes/` to identify which features from the Feature Registry are implemented. Compare against the full registry to identify gaps.
+
+5. **Present a contextual summary** with:
    - Brand name and slug
    - SOSTAC completion status (e.g., "Approved — Ready for Execution" or "1/6 complete")
    - Active campaigns (names + brief context)
    - Content items count
    - Available channels
    - **Dashboard status** — whether one exists already, what routes it has
+   - **Feature gaps** — available features not yet implemented (if any)
 
-5. **Offer contextual actions** based on what exists:
+6. **Offer contextual actions** based on what exists:
 
 ### If dashboard already exists for a brand:
 
@@ -57,11 +80,31 @@ Direct and outcome-focused. Shows what was discovered, what schema was designed,
 Existing Dashboard: .pawbytes/marketing-suites/brands/{brand}/dashboard/
 Routes: campaigns, content, strategy, metrics, channels
 
+Feature Gaps Detected:
+  • experiments — Growth experiments with ICE scores
+  • revenue — MRR, ARPU, pricing tiers
+  • lifecycle — Churn, retention, LTV cohorts
+
 What would you like to do?
 1. Run the dashboard (npm run dev)
 2. Update/regenerate with latest brand data
-3. Add new features to existing dashboard
-4. Full rebuild from scratch
+3. Add missing features (experiments, revenue, lifecycle)
+4. Add specific features (choose from registry)
+5. Full rebuild from scratch
+```
+
+### If dashboard exists with no gaps:
+
+```
+Existing Dashboard: .pawbytes/marketing-suites/brands/{brand}/dashboard/
+Routes: campaigns, content, strategy, metrics, channels, documents
+
+All available features are implemented.
+
+What would you like to do?
+1. Run the dashboard (npm run dev)
+2. Update/regenerate with latest brand data
+3. Full rebuild from scratch
 ```
 
 ### If no dashboard exists:
@@ -114,11 +157,17 @@ After user selects intent (from On Activation):
 4. **Regenerate** — Update routes and components, import data back
 5. **Present summary** — What changed, how to run
 
-### If user wants to add features:
+### If user wants to add missing features or specific features:
 
-1. **Read existing code** — Understand current routes and components
-2. **Generate new routes/components** — Following patterns in `./references/code-patterns.md`
-3. **Present summary** — What was added
+1. **Load references** — Read `./references/code-patterns.md` and `./references/design-guide.md`
+2. **For each selected feature:**
+   - Check if brand data exists for this feature (e.g., `experiments/` folder for experiments feature)
+   - If no data, offer to create placeholder structure or skip
+   - Generate the route(s) and component(s) following code patterns
+   - Update the schema in `db.ts` if new tables needed
+   - Update sidebar navigation in `+layout.svelte`
+3. **Run migration if needed** — If schema changed, export data, update schema, re-seed
+4. **Present summary** — What was added, how to verify
 
 ### If user wants full generation (new dashboard):
 
