@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2] - 2026-04-02
+
+### Bug Fixes
+- **paw-mkt-agency:** Use Glob pattern for brand discovery instead of directory scan to reliably find brands across platforms
+
 ## [1.1.1] - 2026-04-02
 
 ### Documentation
