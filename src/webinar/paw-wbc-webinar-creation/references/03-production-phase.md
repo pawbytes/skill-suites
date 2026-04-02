@@ -14,7 +14,7 @@ Transform research and chosen hook into production-ready deliverables: a detaile
 
 Mark the transition clearly:
 
-> "**Phase 3 of 3: Production**
+> "**Stage 3 of 4: Production**
 > 
 > Now I'll transform your research into deliverables. This includes:
 > - Structuring your webinar narrative

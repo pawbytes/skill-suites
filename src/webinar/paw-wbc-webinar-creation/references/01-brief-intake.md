@@ -14,7 +14,7 @@ Capture the user's initial idea, audience context, and goals. Create the foundat
 
 Open with a warm, guided introduction:
 
-> "Let's create your webinar together. We'll work through this in phases: first I'll understand your idea, then we'll research and find the right angle, and finally we'll produce your slide deck outline and script. You're in Phase 1 of 3."
+> "Let's create your webinar together. We'll work through this in stages: first I'll understand your idea, then we'll research and find the right angle, and finally we'll produce your slide deck outline and script. You're in Stage 1 of 4."
 
 ### 2. Topic Capture
 

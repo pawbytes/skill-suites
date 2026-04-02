@@ -14,7 +14,7 @@ Transform the user's vague idea into a clear, defensible hook backed by deep res
 
 Mark the transition clearly:
 
-> "**Phase 2 of 3: Discovery**
+> "**Stage 2 of 4: Discovery**
 > 
 > Now I'll research your topic to find the right angle. This includes:
 > - Understanding what's already been said on this topic
@@ -105,7 +105,7 @@ Before transitioning to production, confirm readiness:
 
 #### User Confirms Readiness
 
-> "Great! Moving to **Phase 3: Production**. I'll call in our Producer to transform this research into your deliverables."
+> "Great! Moving to **Stage 3: Production**. I'll call in our Producer to transform this research into your deliverables."
 
 Proceed to Stage 3.
 

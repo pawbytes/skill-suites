@@ -18,6 +18,13 @@ Creates the output directory structure and orientation files:
 
 `{project-root}` is a **literal token** in config values — never substitute it with an actual path. It signals to the consuming LLM that the value is relative to the project root.
 
+## Principles
+
+- **Idempotent setup**: Running setup multiple times should not destroy existing work
+- **Minimal configuration**: Only collect essential config; inherit from core Pawbytes settings where possible
+- **Clear confirmation**: Always show what was created before completing
+- **Respect existing config**: Never overwrite user preferences without explicit consent
+
 ## On Activation
 
 1. Read `./assets/module.yaml` for module metadata
@@ -99,3 +106,16 @@ Display what was created — directories, orientation file, fresh install vs upd
 ## Outcome
 
 Once the user's `user_name` and `communication_language` are known (from collected input, arguments, or existing config), use them consistently for the remainder of the session: address the user by their configured name and communicate in their configured language.
+
+## Output Contract
+
+Once setup completes, the following are guaranteed:
+
+- **Action type**: Module installation/configuration
+- **Files created**:
+  - `{project-root}/.pawbytes/webinar-suites/` directory
+  - `{project-root}/.pawbytes/webinar-suites/index.md` orientation file
+  - `{project-root}/.pawbytes/webinar-suites/webinars/` directory
+  - `{project-root}/.pawbytes/webinar-suites/daily/` directory
+  - `{project-root}/.pawbytes/config/config.user.yaml` (if core config collected)
+- **Recommendations**: Suggest running `paw-wbc-webinar-creation` to start first webinar
