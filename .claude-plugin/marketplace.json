@@ -74,6 +74,18 @@
         "./src/tools/paw-tools-presentation",
         "./src/tools/paw-tools-release"
       ]
+    },
+    {
+      "name": "webinar-creator-suite",
+      "description": "AI webinar creation pipeline for Claude Code — takes solo creators from vague idea to production-ready slide deck outline and script. One guided workflow orchestrates research, hook generation, angle selection, slide structuring, and script writing. Perfect for thought leadership, lead generation, demos, and training webinars.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./src/webinar/paw-wbc-setup",
+        "./src/webinar/paw-wbc-agent-discovery",
+        "./src/webinar/paw-wbc-agent-producer",
+        "./src/webinar/paw-wbc-webinar-creation"
+      ]
     }
   ]
 }
