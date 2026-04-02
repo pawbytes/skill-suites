@@ -11,7 +11,7 @@
   },
   "plugins": [
     {
-      "name": "paw-agentic-marketing",
+      "name": "marketing-suites",
       "description": "AI marketing agent for Claude Code with 23 specialist skills — automated SOSTAC strategy, SEO optimization, content marketing, email sequences, social media, paid ads, video scripts, PR, influencer outreach, CRO, referral programs, retention, pricing strategy, product launch, sales enablement, community growth, marketing analytics, guerrilla marketing, behavioral psychology, and product positioning. One master agency agent routes every request to the right specialist automatically.",
       "source": "./",
       "strict": false,
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "name": "paw-creative-agency",
+      "name": "creative-agency-suites",
       "description": "AI creative agency for Claude Code with 15 skills — 4 persistent AI agents (Creative Director, Designer, Strategist, Video Producer) plus 10 production workflows for social posts, carousels, brand identity, logo design, batch asset generation, TikTok/Reels short-form video, YouTube long-form video, clip repurposing, multi-platform export, content research, campaign orchestration, and quality control. Brief Aria the Creative Director and the full team executes.",
       "source": "./",
       "strict": false,
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "name": "paw-tools",
+      "name": "utility-tools",
       "description": "Developer productivity tools for Claude Code — generate McKinsey-style HTML slide decks from marketing strategies, automate software releases with version bumping, changelog generation, git tagging, and GitHub release publishing. 3 skills for teams shipping fast.",
       "source": "./",
       "strict": false,
