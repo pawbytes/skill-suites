@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-04-02
+
+### Features
+- **paw-mkt-dashboard:** Add feature gap detection for existing dashboards — identifies missing visualization capabilities and recommends enhancements
+
+### Chores
+- Ignore `_bmad` directory in .gitignore
+- Remove bmad mention from changelog
+
 ## [1.0.0] - 2026-04-02
 
 ### Added

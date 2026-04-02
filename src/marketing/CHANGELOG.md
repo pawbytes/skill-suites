@@ -2,6 +2,11 @@
 
 All notable changes to the Agentic Marketing Suite will be documented in this file.
 
+## [0.6.0] - 2026-04-02
+
+### Features
+- **paw-mkt-dashboard:** Add feature gap detection for existing dashboards — identifies missing visualization capabilities and recommends enhancements during discovery phase
+
 ## [0.5.0] - 2026-04-02
 
 ### Features

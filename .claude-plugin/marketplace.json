@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "41 AI agent skills for Claude Code — agentic marketing automation, AI creative agency workflows, and developer productivity tools. Build full marketing strategies, generate brand assets, produce social and video content, and automate software releases — all from your terminal.",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "repository": "https://github.com/pawbytes/skill-suites"
   },
   "plugins": [
