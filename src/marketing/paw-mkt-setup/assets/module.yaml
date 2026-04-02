@@ -1,0 +1,43 @@
+code: mkt
+name: Agentic Marketing Suite
+description: 21 specialized AI marketing agents covering strategy, content, SEO, paid ads, social, email, CRO, PR, pricing, retention, and more — orchestrated through SOSTAC-based planning.
+module_version: 0.3.7
+default_selected: false
+module_greeting: |
+  🎯 **Agentic Marketing Suite activated.** You now have 21 specialized marketing agents at your disposal.
+
+  **Quick Start:**
+  - `paw-mkt-agency` — Multi-channel coordination & routing
+  - `paw-mkt-sostac` — Build comprehensive marketing plans
+  - `paw-mkt-product-context` — Define positioning & personas
+
+  **Specialists:** paw-mkt-seo, paw-mkt-content, paw-mkt-paid-ads, paw-mkt-email, paw-mkt-cro, and 16 more.
+
+# Configuration Variables
+brands_folder:
+  prompt: "Where should brand contexts be stored?"
+  default: "{project-root}/.pawbytes/marketing-suites/brands"
+  result: "{value}"
+  directories: true
+
+reports_folder:
+  prompt: "Where should reports be saved?"
+  default: "{project-root}/.pawbytes/marketing-suites/reports"
+  result: "{value}"
+  directories: true
+
+default_brand:
+  prompt: "Default brand slug to use (leave empty to always specify)?"
+  default: ""
+  user_setting: true
+
+communication_language:
+  prompt: "Language for agent responses?"
+  default: "English"
+  user_setting: true
+
+# Legacy migration paths (used by setup skill for auto-migration)
+legacy_paths:
+  config: "{project-root}/.pawbytes/marketing-suites/config"
+  brands: "{project-root}/brands"
+  reports: "{project-root}/reports"

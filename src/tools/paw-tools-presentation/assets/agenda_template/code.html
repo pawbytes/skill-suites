@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agenda Slide</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Public+Sans:wght@300;400;600&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#381300",
+                        "on-background": "#191c1d",
+                        "tertiary-container": "#592300",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-bright": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#341100",
+                        "surface-tint": "#3a5f94",
+                        "background": "#f8f9fa",
+                        "on-primary-fixed": "#001b3c",
+                        "on-primary-container": "#799dd6",
+                        "secondary-fixed-dim": "#c2c7cf",
+                        "secondary-container": "#dbe0e8",
+                        "on-surface-variant": "#43474f",
+                        "surface": "#f8f9fa",
+                        "primary-container": "#003366",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary": "#001e40",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "secondary": "#5a5f66",
+                        "inverse-primary": "#a7c8ff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-fixed": "#171c22",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "on-secondary-container": "#5e636a",
+                        "tertiary-fixed": "#ffdbca",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c3c6d1",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "on-secondary-fixed-variant": "#42474e",
+                        "secondary-fixed": "#dee3eb",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#723610",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "primary-fixed": "#d5e3ff",
+                        "on-surface": "#191c1d",
+                        "tertiary-fixed-dim": "#ffb690",
+                        "outline": "#737780",
+                        "on-tertiary-container": "#d8885c",
+                        "surface-dim": "#d9dadb",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2e3132",
+                        "error": "#ba1a1a"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Public Sans"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #191c1d;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .slide-container {
+            aspect-ratio: 16 / 9;
+            width: 100vw;
+            max-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="font-body">
+<main class="slide-container bg-surface-bright">
+<!-- Background Architectural Element -->
+<div class="absolute inset-0 z-0 flex">
+<div class="w-1/3 bg-primary h-full"></div>
+<div class="w-2/3 bg-surface-bright h-full"></div>
+</div>
+<!-- Layout Content -->
+<div class="relative z-10 flex h-full">
+<!-- Left Side: Title Anchor -->
+<section class="w-1/3 p-12 lg:p-24 flex flex-col justify-between">
+<div>
+<h1 class="font-headline font-extrabold text-[80px] leading-none text-on-primary tracking-tighter mb-4">
+                        Agenda
+                    </h1>
+<div class="h-1 w-12 bg-on-primary mt-8"></div>
+</div>
+<div class="space-y-4">
+<p class="font-label text-on-primary-container text-xs tracking-[0.2em] uppercase">
+                        Q4 Executive Strategic Review
+                    </p>
+<p class="text-white/40 font-light text-sm max-w-xs">
+                        Confidential and proprietary briefing for internal board alignment and operational scaling initiatives.
+                    </p>
+</div>
+</section>
+<!-- Right Side: The Agenda List -->
+<section class="w-2/3 py-12 lg:py-24 pr-24 pl-12 flex flex-col justify-center">
+<div class="space-y-0">
+<!-- Agenda Item 01 -->
+<div class="group flex items-start gap-12 py-10 transition-colors duration-300">
+<span class="font-headline font-thin text-primary/30 text-5xl tabular-nums leading-none">01</span>
+<div class="flex-1 border-t border-primary/10 pt-2">
+<h2 class="font-headline font-bold text-2xl text-primary tracking-tight mb-2">
+                                [Section Title Placeholder]
+                            </h2>
+<p class="font-body text-secondary text-lg leading-relaxed max-w-2xl">
+                                [Brief Description Placeholder for strategic overview and departmental alignment objectives for the upcoming fiscal quarter.]
+                            </p>
+</div>
+</div>
+<!-- Agenda Item 02 -->
+<div class="group flex items-start gap-12 py-10 transition-colors duration-300">
+<span class="font-headline font-thin text-primary/30 text-5xl tabular-nums leading-none">02</span>
+<div class="flex-1 border-t border-primary/10 pt-2">
+<h2 class="font-headline font-bold text-2xl text-primary tracking-tight mb-2">
+                                [Section Title Placeholder]
+                            </h2>
+<p class="font-body text-secondary text-lg leading-relaxed max-w-2xl">
+                                [Brief Description Placeholder focusing on data-driven performance metrics and cross-functional operational efficiencies.]
+                            </p>
+</div>
+</div>
+<!-- Agenda Item 03 -->
+<div class="group flex items-start gap-12 py-10 transition-colors duration-300">
+<span class="font-headline font-thin text-primary/30 text-5xl tabular-nums leading-none">03</span>
+<div class="flex-1 border-t border-primary/10 pt-2">
+<h2 class="font-headline font-bold text-2xl text-primary tracking-tight mb-2">
+                                [Section Title Placeholder]
+                            </h2>
+<p class="font-body text-secondary text-lg leading-relaxed max-w-2xl">
+                                [Brief Description Placeholder outlining the risk mitigation framework and global expansion roadmap for late-stage initiatives.]
+                            </p>
+</div>
+</div>
+<!-- Agenda Item 04 -->
+<div class="group flex items-start gap-12 py-10 transition-colors duration-300">
+<span class="font-headline font-thin text-primary/30 text-5xl tabular-nums leading-none">04</span>
+<div class="flex-1 border-t border-primary/10 pt-2">
+<h2 class="font-headline font-bold text-2xl text-primary tracking-tight mb-2">
+                                [Section Title Placeholder]
+                            </h2>
+<p class="font-body text-secondary text-lg leading-relaxed max-w-2xl">
+                                [Brief Description Placeholder for the summary and interactive executive Q&amp;A session regarding next steps.]
+                            </p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Overlay Component -->
+<footer class="fixed bottom-0 w-full z-50 flex justify-between items-end px-12 pb-8 bg-transparent">
+<div class="flex flex-col">
+<span class="font-['Manrope'] text-[10px] tracking-tight uppercase text-slate-900 dark:text-slate-100 opacity-50">
+                    [CONFIDENTIALITY MARKER] | [COMPANY/DEPARTMENT NAME]
+                </span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-['Manrope'] text-[10px] tracking-tight uppercase text-slate-900 dark:text-slate-100">
+                    SLIDE [SLIDE NUMBER]
+                </span>
+</div>
+</footer>
+</main>
+</body></html>

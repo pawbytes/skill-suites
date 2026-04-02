@@ -1,0 +1,101 @@
+# Pawbytes Creative Suites Module Definition
+
+name: Pawbytes Creative Suites
+code: cra
+version: 0.3.7
+description: AI creative agency for visual, video, and content production — orchestrated multi-specialist workflows for social posts, brand assets, short-form video, and campaign execution.
+greeting: Pawbytes Creative Suites is ready. Run `paw-cra-agent-creative-director` to meet Aria, your creative director.
+
+# Config file paths (Pawbytes ecosystem)
+config_path: .pawbytes/config/config.yaml
+user_config_path: .pawbytes/config/config.user.yaml
+
+# Memory/output root for this module
+memory_path: .pawbytes/creative-suites
+
+questions:
+  # API Keys (stored in user config, not committed)
+  - key: fal_key
+    prompt: "fal.ai API key (required for image/video generation)"
+    default: ""
+    user_setting: true
+    required: true
+
+  - key: elevenlabs_api_key
+    prompt: "ElevenLabs API key (optional, for AI voiceover)"
+    default: ""
+    user_setting: true
+    required: false
+
+  - key: pexels_api_key
+    prompt: "Pexels API key (optional, for stock media research)"
+    default: ""
+    user_setting: true
+    required: false
+
+  # General Settings
+  - key: user_name
+    prompt: "Your name (for personalized greetings)"
+    default: ""
+    user_setting: true
+    required: false
+
+  - key: communication_language
+    prompt: "Communication language"
+    default: "English"
+    user_setting: true
+    required: false
+
+  - key: document_output_language
+    prompt: "Language for generated documents and content"
+    default: "English"
+    user_setting: false
+    required: false
+
+  - key: output_directory
+    prompt: "Output directory for creative assets"
+    default: ".pawbytes/creative-suites"
+    user_setting: false
+    required: false
+    result_template: "{project-root}/{value}"
+
+  - key: default_brand
+    prompt: "Default brand name (optional, set later via Aria)"
+    default: ""
+    user_setting: false
+    required: false
+
+# Directories to create during setup
+directories:
+  - "{output_directory}"
+  - "{output_directory}/brands"
+  - "{output_directory}/knowledge"
+  - "{output_directory}/daily"
+
+# Post-install notes
+post_install_notes: |
+  Pawbytes Creative Suites installed successfully!
+
+  **Next steps:**
+  1. Run `paw-cra-agent-creative-director` to meet Aria, your creative director
+  2. Aria will guide you through brand onboarding and tool discovery
+  3. Check `.pawbytes/config/config.user.yaml` to update API keys anytime
+
+  **Available specialists:**
+  - **Designer** (`paw-cra-agent-designer`) — Social posts, carousels, flyers, brand assets
+  - **Video Producer** (`paw-cra-agent-video-producer`) — Short-form, long-form, clips, voiceover
+  - **Strategist** (`paw-cra-agent-strategist`) — Research, scripts, copy, content strategy
+
+  **Production workflows:**
+  - `paw-cra-design-social` — Social post and carousel pipeline
+  - `paw-cra-design-brand` — Logo, icon, flyer production
+  - `paw-cra-design-batch` — Batch campaign asset production
+  - `paw-cra-video-shortform` — TikTok/Reels/Shorts pipeline
+  - `paw-cra-video-longform` — YouTube/web video pipeline
+  - `paw-cra-video-clips` — Clip extraction and repurposing
+  - `paw-cra-multi-platform-export` — Platform-variant exports
+  - `paw-cra-quality-control` — Campaign-level QC
+
+  **Orchestration:**
+  - `paw-cra-campaign-orchestration` — Multi-deliverable campaign execution
+  - `paw-cra-content-research` — On-demand research bundles

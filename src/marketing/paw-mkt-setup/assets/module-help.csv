@@ -1,0 +1,24 @@
+module,skill,display-name,menu-code,description,action,args,phase,after,before,required,output-location,outputs
+mkt,paw-mkt-setup,Module Setup,SU,Install and configure Agentic Marketing Suite,configure,[-H],anytime,,,,configured module
+mkt,paw-mkt-agency,Marketing Agency,MA,Multi-channel coordination & routing - orchestrates specialists,orchestrate,[request],anytime,,,,routed request or spawned team
+mkt,paw-mkt-sostac,SOSTAC Planning,SO,6-phase marketing planning framework (Situation,Objectives,Strategy,Tactics,Action,Control),plan,,anytime,,,,SOSTAC plan documents
+mkt,paw-mkt-product-context,Product Context,PC,Positioning, personas, messaging, ICP, differentiation,define,,anytime,,,,paw-mkt-product-context.md
+mkt,paw-mkt-paid-ads,Paid Ads,PA,PPC, Google/Meta/LinkedIn/TikTok Ads strategy,plan,,anytime,,,,ad strategy documents
+mkt,paw-mkt-seo,SEO,SE,Technical SEO, keywords, local SEO, GEO optimization,optimize,,anytime,,,,SEO audit & recommendations
+mkt,paw-mkt-social,Social Media,SM,Organic social strategy, content calendars, UGC,strategize,,anytime,,,,social strategy & calendar
+mkt,paw-mkt-influencer,Influencer,IN,Creator partnerships, UGC programs, affiliate,manage,,anytime,,,,influencer strategy & shortlist
+mkt,paw-mkt-pr,Public Relations,PR,Media relations, press releases, crisis comms,manage,,anytime,,,,PR strategy & materials
+mkt,paw-mkt-content,Content,CN,Blog, articles, whitepapers, case studies, editorial,create,,anytime,,,,content drafts & calendar
+mkt,paw-mkt-cro,CRO,CR,Landing pages, signup flows, forms, popups, paywalls,optimize,,anytime,,,,CRO recommendations
+mkt,paw-mkt-launch,Launch,LA,Product launches, GTM, Product Hunt,plan,,anytime,,,,launch plan & checklist
+mkt,paw-mkt-pricing,Pricing,PI,Pricing models, tier packaging, willingness-to-pay,design,,anytime,,,,pricing strategy
+mkt,paw-mkt-retention,Retention,RE,Churn prevention, cancel flows, dunning, win-back,optimize,,anytime,,,,retention strategy
+mkt,paw-mkt-email,Email,EM,Email sequences, newsletters, automation, deliverability,design,,anytime,,,,email sequences & strategy
+mkt,paw-mkt-community,Community,CM,Discord/Slack communities, community-led growth,build,,anytime,,,,community strategy
+mkt,paw-mkt-referral,Referral,RF,Referral programs, affiliate, partnerships,design,,anytime,,,,referral program design
+mkt,paw-mkt-sales,Sales Enablement,SL,Sales decks, one-pagers, objection handling,create,,anytime,,,,sales collateral
+mkt,paw-mkt-analytics,Analytics,AN,GA4, GTM, dashboards, attribution, measurement,setup,,anytime,,,,analytics setup & reports
+mkt,paw-mkt-video,Video,VI,YouTube, TikTok, Reels, video strategy & scripting,create,,anytime,,,,video scripts & strategy
+mkt,paw-mkt-psychology,Psychology,PS,Behavioral science, persuasion frameworks,apply,,anytime,,,,psychology recommendations
+mkt,paw-mkt-guerrilla,Guerrilla,GU,Growth hacks, viral campaigns, unconventional tactics,design,,anytime,,,,guerrilla campaign ideas
+mkt,paw-mkt-dashboard,Marketing Dashboard,DB,Interactive HTML dashboards for campaign tracking, analytics, and SOSTAC progress,build,[-H] [brand-slug],anytime,paw-mkt-setup:configure,,,brands_folder,HTML dashboards + JSON data files

@@ -1,0 +1,2 @@
+display-name,menu-code,description,skill,action,args,phase,after,before,required,output-location,outputs
+Generate Presentation,GP,Transform marketing content into McKinsey-style HTML presentations with SCR structure,paw-tools-presentation,generate,"[-H|--headless] [--from-skill <name>] [path|text]",anytime,,false,presentation_output_folder,HTML presentation file

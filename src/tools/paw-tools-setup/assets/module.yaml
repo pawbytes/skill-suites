@@ -1,0 +1,50 @@
+name: Pawbytes Tools
+code: paw
+version: 0.1.0
+description: Productivity utility tools supporting the Pawbytes skills ecosystem — presentation generation, release automation, content transformation, and workflow accelerators for marketing and creative suites.
+greeting: "Pawbytes Tools is ready! Run `/paw-tools-presentation` to create McKinsey-style presentations, or `/paw-tools-release` to automate software releases."
+
+config_path: .pawbytes/config
+
+config:
+  # Presentation settings
+  - key: presentation_output_folder
+    prompt: "Where should presentations be saved?"
+    default: "{project-root}/.pawbytes/tools-output/presentations"
+
+  # Release settings
+  - key: release_default_branch
+    prompt: "Default branch for releases"
+    default: "main"
+
+  - key: release_output_folder
+    prompt: "Where should release reports be saved?"
+    default: "{project-root}/.pawbytes/tools-output/releases"
+
+  # General settings
+  - key: communication_language
+    prompt: "Language for skill interaction"
+    default: "English"
+
+  - key: document_output_language
+    prompt: "Language for generated documents"
+    default: "English"
+
+  # API keys (user settings)
+  - key: pexels_api_key
+    prompt: "Pexels API key for stock images (optional, press Enter to skip)"
+    default: ""
+    required: false
+    user_setting: true
+
+  - key: fal_api_key
+    prompt: "fal.ai API key for AI-generated images (optional, press Enter to skip)"
+    default: ""
+    required: false
+    user_setting: true
+
+  - key: github_token
+    prompt: "GitHub token for releases (optional, uses gh CLI auth by default)"
+    default: ""
+    required: false
+    user_setting: true

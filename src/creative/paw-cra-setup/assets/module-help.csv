@@ -1,0 +1,17 @@
+display-name,menu-code,description,action,args,phase,after,before,required,output-location,outputs
+Setup,cra-su,Configure Pawbytes Creative Suites module,setup,,anytime,,,,,config registered
+Tool Discovery,cra-td,Check available tools and API keys,discover,,anytime,,,,tool-status.md,tool availability report
+Creative Director,cra-aria,Meet Aria and start creative work,run,,anytime,,,,,creative direction
+Designer,cra-des,Visual production specialist,design,,anytime,,,,,visual assets
+Video Producer,cra-vid,Video production specialist,video,,anytime,,,,,video assets
+Strategist,cra-str,Research and content strategy,strategy,,anytime,,,,,research copy scripts
+Design Social,cra-ds,Social post and carousel production,social,[-H],anytime,,,,design-manifest.json,social assets
+Design Brand,cra-db,Logo icon flyer brand asset production,brand,[-H],anytime,,,,design-manifest.json,brand assets
+Design Batch,cra-dba,Batch campaign visual production,batch,[-H],anytime,,,,batch-manifest.json,campaign assets
+Video Shortform,cra-vs,Shortform vertical video pipeline,shortform,[-H],anytime,,,,video-manifest.json,shortform video
+Video Longform,cra-vl,Longform YouTube web video pipeline,longform,[-H],anytime,,,,video-manifest.json,longform video
+Video Clips,cra-vc,Clip extraction and repurposing,clips,[-H],anytime,,,,clip-manifest.json,video clips
+Multi-Platform Export,cra-me,Platform-variant asset exports,export,[-H],anytime,,,,export-manifest.json,platform variants
+Quality Control,cra-qc,Campaign-level quality check,qc,[-H],anytime,,,,qa-report.md,QA report
+Campaign Orchestration,cra-co,Multi-deliverable campaign execution,campaign,[-H],anytime,,,,status.md,campaign deliverables
+Content Research,cra-cr,On-demand research bundles,research,[-H] [--scope],anytime,,,,research-report.md,research findings

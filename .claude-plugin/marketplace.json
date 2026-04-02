@@ -1,0 +1,79 @@
+{
+  "name": "pawbytes-skill-suites",
+  "owner": {
+    "name": "PawBytes",
+    "url": "https://github.com/pawbytes/pawbytes-skill-suites"
+  },
+  "metadata": {
+    "description": "41 AI agent skills for Claude Code — agentic marketing automation, AI creative agency workflows, and developer productivity tools. Build full marketing strategies, generate brand assets, produce social and video content, and automate software releases — all from your terminal.",
+    "version": "1.0.0",
+    "repository": "https://github.com/pawbytes/pawbytes-skill-suites"
+  },
+  "plugins": [
+    {
+      "name": "paw-agentic-marketing",
+      "description": "AI marketing agent for Claude Code with 23 specialist skills — automated SOSTAC strategy, SEO optimization, content marketing, email sequences, social media, paid ads, video scripts, PR, influencer outreach, CRO, referral programs, retention, pricing strategy, product launch, sales enablement, community growth, marketing analytics, guerrilla marketing, behavioral psychology, and product positioning. One master agency agent routes every request to the right specialist automatically.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./src/marketing/paw-mkt-setup",
+        "./src/marketing/paw-mkt-agency",
+        "./src/marketing/paw-mkt-sostac",
+        "./src/marketing/paw-mkt-product-context",
+        "./src/marketing/paw-mkt-content",
+        "./src/marketing/paw-mkt-seo",
+        "./src/marketing/paw-mkt-email",
+        "./src/marketing/paw-mkt-social",
+        "./src/marketing/paw-mkt-paid-ads",
+        "./src/marketing/paw-mkt-video",
+        "./src/marketing/paw-mkt-pr",
+        "./src/marketing/paw-mkt-influencer",
+        "./src/marketing/paw-mkt-cro",
+        "./src/marketing/paw-mkt-referral",
+        "./src/marketing/paw-mkt-retention",
+        "./src/marketing/paw-mkt-pricing",
+        "./src/marketing/paw-mkt-launch",
+        "./src/marketing/paw-mkt-sales",
+        "./src/marketing/paw-mkt-community",
+        "./src/marketing/paw-mkt-analytics",
+        "./src/marketing/paw-mkt-guerrilla",
+        "./src/marketing/paw-mkt-psychology",
+        "./src/marketing/paw-mkt-dashboard"
+      ]
+    },
+    {
+      "name": "paw-creative-agency",
+      "description": "AI creative agency for Claude Code with 15 skills — 4 persistent AI agents (Creative Director, Designer, Strategist, Video Producer) plus 10 production workflows for social posts, carousels, brand identity, logo design, batch asset generation, TikTok/Reels short-form video, YouTube long-form video, clip repurposing, multi-platform export, content research, campaign orchestration, and quality control. Brief Aria the Creative Director and the full team executes.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./src/creative/paw-cra-setup",
+        "./src/creative/paw-cra-agent-creative-director",
+        "./src/creative/paw-cra-agent-designer",
+        "./src/creative/paw-cra-agent-strategist",
+        "./src/creative/paw-cra-agent-video-producer",
+        "./src/creative/paw-cra-campaign-orchestration",
+        "./src/creative/paw-cra-content-research",
+        "./src/creative/paw-cra-design-batch",
+        "./src/creative/paw-cra-design-brand",
+        "./src/creative/paw-cra-design-social",
+        "./src/creative/paw-cra-multi-platform-export",
+        "./src/creative/paw-cra-quality-control",
+        "./src/creative/paw-cra-video-clips",
+        "./src/creative/paw-cra-video-longform",
+        "./src/creative/paw-cra-video-shortform"
+      ]
+    },
+    {
+      "name": "paw-tools",
+      "description": "Developer productivity tools for Claude Code — generate McKinsey-style HTML slide decks from marketing strategies, automate software releases with version bumping, changelog generation, git tagging, and GitHub release publishing. 3 skills for teams shipping fast.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./src/tools/paw-tools-setup",
+        "./src/tools/paw-tools-presentation",
+        "./src/tools/paw-tools-release"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "skill_name": "marketing-sostac",
+  "evals": [
+    {
+      "id": 1,
+      "name": "start-sostac-new-brand",
+      "prompt": "I want to create a SOSTAC marketing plan for my SaaS startup. We're called FlowSync (flowsync.io) - we help remote teams manage async work. We've been live for 8 months, have about 200 customers, and are doing around $15k MRR. I've heard SOSTAC is a good framework - can you walk me through it?",
+      "expected_output": "Leads with research findings about FlowSync's market, competitors, and opportunities. Presents concrete recommendations and insights. Asks only 2-4 targeted validation questions.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "leads_with_research",
+          "description": "Response leads with research findings or insights, not interview questions",
+          "type": "llm_judge",
+          "criteria": "The first substantive section presents findings, analysis, or insights rather than asking interview questions"
+        },
+        {
+          "name": "provides_recommendations",
+          "description": "Contains concrete recommendations with evidence",
+          "type": "pattern_match",
+          "expected": "(I recommend|I suggest|Based on|my recommendation|here's what I found|key insight)"
+        },
+        {
+          "name": "includes_benchmarks",
+          "description": "Provides specific industry benchmarks with numbers",
+          "type": "pattern_match",
+          "expected": "([0-9]+%|\\$[0-9]+|industry average|SaaS (average|median|benchmark))"
+        },
+        {
+          "name": "minimal_questions",
+          "description": "Asks 5 or fewer questions total",
+          "type": "llm_judge",
+          "criteria": "Count direct questions asked to the user. Should be 5 or fewer."
+        },
+        {
+          "name": "questions_are_validation",
+          "description": "Questions are framed as validation rather than extraction",
+          "type": "llm_judge",
+          "criteria": "Questions should be validation-style ('does this match?') not extraction-style ('what is your X?')"
+        },
+        {
+          "name": "presents_insights",
+          "description": "Contains interpreted insights about the brand/market",
+          "type": "llm_judge",
+          "criteria": "Includes specific interpreted insights about FlowSync, not just SOSTAC framework descriptions"
+        },
+        {
+          "name": "uses_frameworks",
+          "description": "References SOSTAC frameworks",
+          "type": "pattern_match",
+          "expected": "(SWOT|PESTLE|OKR|TOWS|Porter|TAM|SAM|SOM|JTBD|5S|RACE|AARRR)"
+        },
+        {
+          "name": "specific_not_generic",
+          "description": "Recommendations are specific to FlowSync's situation",
+          "type": "llm_judge",
+          "criteria": "References FlowSync's specific situation (async work, remote teams, 200 customers, $15k MRR)"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "situation-analysis-frameworks",
+      "prompt": "I'm a marketing consultant and I need to do a situation analysis for a client in the meal kit delivery space. They're a mid-sized player competing against HelloFresh and Blue Apron. I want to use the full SOSTAC Situation framework - SWOT, PESTLE, Porter's Five Forces, the works. Can you guide me through the interview process?",
+      "expected_output": "Provides a drafted Situation Analysis with filled-in SWOT, PESTLE, Porter's for the meal kit industry. Includes competitive insights on HelloFresh/Blue Apron. Asks only validation questions.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "leads_with_research",
+          "description": "Leads with meal kit market analysis, not interview questions",
+          "type": "llm_judge",
+          "criteria": "First substantive section presents findings about the meal kit market rather than asking interview questions"
+        },
+        {
+          "name": "drafts_swot",
+          "description": "Provides filled-in SWOT, not just empty framework",
+          "type": "llm_judge",
+          "criteria": "Includes actual SWOT with specific content for the meal kit company"
+        },
+        {
+          "name": "competitor_insights",
+          "description": "Specific insights about HelloFresh and Blue Apron",
+          "type": "llm_judge",
+          "criteria": "Includes specific competitive intelligence about HelloFresh and/or Blue Apron"
+        },
+        {
+          "name": "minimal_questions",
+          "description": "Asks 5 or fewer validation questions",
+          "type": "llm_judge",
+          "criteria": "Count direct questions to user. Should be 5 or fewer."
+        },
+        {
+          "name": "applies_porters",
+          "description": "Porter's Five Forces applied with meal kit content",
+          "type": "llm_judge",
+          "criteria": "Porter's Five Forces applied with specific ratings for meal kit industry"
+        },
+        {
+          "name": "uses_frameworks",
+          "description": "References multiple frameworks",
+          "type": "pattern_match",
+          "expected": "(SWOT|PESTLE|Porter|Five Forces|TAM|SAM|SOM|JTBD|TOWS)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "objectives-okr-benchmarking",
+      "prompt": "I'm the CMO of a B2B software company and I need to set proper marketing objectives. Our CEO gave us a goal to double revenue in 12 months. Current state: $2M ARR, 500 customers, 3% monthly churn, $200 CAC, $4,000 LTV. Help me turn this into proper OKRs with realistic benchmarks.",
+      "expected_output": "Analyzes the provided metrics, drafts specific OKRs with numeric targets, validates doubling feasibility with math, provides industry benchmarks. Asks only 2-3 validation questions.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "leads_with_analysis",
+          "description": "Leads with analysis of provided metrics, not questions",
+          "type": "llm_judge",
+          "criteria": "Starts by analyzing $2M ARR, 500 customers, 3% churn, $200 CAC, $4k LTV rather than asking more questions"
+        },
+        {
+          "name": "drafts_okrs",
+          "description": "Provides drafted OKRs with specific numeric Key Results",
+          "type": "llm_judge",
+          "criteria": "Includes actual OKRs with specific numeric targets, not just OKR format explanation"
+        },
+        {
+          "name": "includes_benchmarks",
+          "description": "Industry benchmarks to validate targets",
+          "type": "pattern_match",
+          "expected": "([0-9]+%|\\$[0-9]+|industry (average|benchmark|median)|B2B (average|SaaS|benchmark))"
+        },
+        {
+          "name": "validates_doubling_feasibility",
+          "description": "Analyzes whether doubling revenue is realistic",
+          "type": "llm_judge",
+          "criteria": "Explicitly discusses whether $2M to $4M ARR in 12 months is realistic"
+        },
+        {
+          "name": "provides_growth_math",
+          "description": "Shows the math for reaching $4M ARR",
+          "type": "llm_judge",
+          "criteria": "Includes calculations for growth rate, customer acquisition, or expansion revenue needed"
+        },
+        {
+          "name": "maps_to_race",
+          "description": "Maps to RACE framework",
+          "type": "pattern_match",
+          "expected": "(RACE|Reach|Act|Convert|Engage)"
+        },
+        {
+          "name": "minimal_questions",
+          "description": "Asks 5 or fewer targeted questions",
+          "type": "llm_judge",
+          "criteria": "Count direct questions to user. Should be 5 or fewer."
+        }
+      ]
+    }
+  ]
+}

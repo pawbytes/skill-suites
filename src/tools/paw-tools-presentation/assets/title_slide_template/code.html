@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Public+Sans:wght@300;400&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#e7e8e9",
+                        "primary-container": "#003366",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#171c22",
+                        "surface-container": "#edeeef",
+                        "on-secondary-fixed-variant": "#42474e",
+                        "background": "#f8f9fa",
+                        "outline-variant": "#c3c6d1",
+                        "tertiary-container": "#592300",
+                        "outline": "#737780",
+                        "surface": "#f8f9fa",
+                        "secondary-container": "#dbe0e8",
+                        "on-primary-container": "#799dd6",
+                        "on-surface": "#191c1d",
+                        "tertiary": "#381300",
+                        "on-secondary-container": "#5e636a",
+                        "on-primary-fixed": "#001b3c",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "error-container": "#ffdad6",
+                        "primary": "#001e40",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb690",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#d8885c",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#723610",
+                        "secondary-fixed": "#dee3eb",
+                        "on-surface-variant": "#43474f",
+                        "surface-dim": "#d9dadb",
+                        "on-background": "#191c1d",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-tint": "#3a5f94",
+                        "secondary-fixed-dim": "#c2c7cf",
+                        "inverse-primary": "#a7c8ff",
+                        "tertiary-fixed": "#ffdbca",
+                        "on-tertiary-fixed": "#341100",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d5e3ff",
+                        "secondary": "#5a5f66",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-bright": "#f8f9fa",
+                        "inverse-surface": "#2e3132"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Public Sans"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Lock aspect ratio to 16:9 for presentation feel */
+        .slide-canvas {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            max-width: 100vw;
+            height: auto;
+        }
+        @media (min-aspect-ratio: 16/9) {
+            .slide-canvas {
+                height: 100vh;
+                width: auto;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-200 flex items-center justify-center min-h-screen overflow-hidden">
+<!-- Slide Container -->
+<main class="slide-canvas bg-primary relative overflow-hidden flex flex-col justify-center px-24">
+<!-- Background Aesthetic Element (Asymmetric Detail) -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary-container opacity-20 pointer-events-none"></div>
+<!-- Content Area -->
+<div class="z-10 flex flex-col space-y-12">
+<!-- Headline Logic: High-Scale Contrast -->
+<div class="max-w-4xl">
+<!-- Top Accent Line -->
+<div class="w-16 h-1 bg-on-primary-container mb-8"></div>
+<h1 class="font-headline font-extrabold text-7xl md:text-8xl text-on-primary tracking-tight leading-[1.05]">
+                    [Title Placeholder]
+                </h1>
+<p class="font-body font-light text-2xl md:text-3xl text-on-primary-container mt-8 max-w-2xl leading-relaxed">
+                    [Subtitle Placeholder]
+                </p>
+</div>
+<!-- Presenter Meta Data -->
+<div class="flex flex-col space-y-2 pt-12">
+<div class="font-label font-bold text-on-primary text-sm uppercase tracking-[0.2em]">
+                    [Organization Name]
+                </div>
+<div class="font-label text-on-primary-container text-xs uppercase tracking-widest">
+                    Presented by [Presenter Name]
+                </div>
+<div class="font-label text-on-primary-container text-xs uppercase tracking-widest opacity-60">
+                    [Date]
+                </div>
+</div>
+</div>
+<!-- Presentation Footer Elements -->
+<footer class="absolute bottom-0 left-0 w-full flex justify-between items-center px-12 pb-8 pointer-events-none opacity-60">
+<div class="font-label text-[10px] uppercase tracking-widest text-on-primary-container">
+                [Confidentiality Marker]
+            </div>
+<div class="font-label text-[10px] uppercase tracking-widest text-on-primary-container">
+                SLIDE [Slide Number]
+            </div>
+</footer>
+<!-- High-end Graphic Pattern Overlay -->
+<div class="absolute bottom-0 right-0 p-12 opacity-10 pointer-events-none">
+<div class="grid grid-cols-4 gap-2">
+<div class="w-2 h-2 bg-on-primary"></div>
+<div class="w-2 h-2 bg-on-primary"></div>
+<div class="w-2 h-2 bg-on-primary"></div>
+<div class="w-2 h-2 bg-on-primary"></div>
+<div class="w-2 h-2 bg-on-primary"></div>
+<div class="w-2 h-2 bg-on-primary opacity-0"></div>
+<div class="w-2 h-2 bg-on-primary opacity-0"></div>
+<div class="w-2 h-2 bg-on-primary"></div>
+</div>
+</div>
+</main>
+</body></html>
