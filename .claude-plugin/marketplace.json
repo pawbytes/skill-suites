@@ -86,6 +86,28 @@
         "./src/webinar/paw-wbc-agent-producer",
         "./src/webinar/paw-wbc-webinar-creation"
       ]
+    },
+    {
+      "name": "prodig-suites",
+      "description": "AI product creation system for Claude Code — transforms vague ideas into production-ready products. Supports 4 product families: Knowledge (courses, ebooks, memberships), Templates (prompt packs, digital kits), Software (SaaS, apps, AI tools), and Services (productized consulting). Orchestrated research, strategy, and execution with persistent memory across sessions.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./src/prodig/paw-ps-setup",
+        "./src/prodig/paw-ps-orchestrator",
+        "./src/prodig/paw-ps-discovery",
+        "./src/prodig/paw-ps-audience",
+        "./src/prodig/paw-ps-research",
+        "./src/prodig/paw-ps-strategist",
+        "./src/prodig/paw-ps-knowledge-executor",
+        "./src/prodig/paw-ps-template-executor",
+        "./src/prodig/paw-ps-software-executor",
+        "./src/prodig/paw-ps-service-executor",
+        "./src/prodig/paw-ps-concept-to-product-plan",
+        "./src/prodig/paw-ps-research-to-brief",
+        "./src/prodig/paw-ps-product-package-assembler",
+        "./src/prodig/paw-ps-publish-ready-check"
+      ]
     }
   ]
 }
