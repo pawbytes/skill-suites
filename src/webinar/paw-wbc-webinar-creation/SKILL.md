@@ -95,6 +95,7 @@ Load `./references/04-output-delivery.md`
 **Webinar workspace:** `{project-root}/.pawbytes/webinar-suites/webinars/{webinar-slug}/`
 
 **Output files:**
+
 | File | Purpose | Created By |
 |------|---------|------------|
 | `brief.md` | Initial brief + audience context | Stage 1 |
