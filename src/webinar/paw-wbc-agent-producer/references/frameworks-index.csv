@@ -1,0 +1,4 @@
+id,name,description,best_for,file,tags
+webinar-structure,Narrative Arc Patterns,Story structures for webinars,Choosing how to organize content,frameworks/webinar-structure.md,"structure,narrative,arc,flow"
+slide-deck-format,Slide Deck Format,LLM-ready slide template,Creating detailed slide outlines,frameworks/slide-deck-format.md,"slides,deck,visual,outline"
+script-format,Script Format Guide,Full script vs talking points,Writing webinar scripts,frameworks/script-format.md,"script,talking-points,timing"

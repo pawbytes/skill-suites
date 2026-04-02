@@ -1,0 +1,26 @@
+code: wbc
+name: Webinar Creator Suite
+description: Solo creator webinar creation from topic discovery to production-ready slide deck outline and script. A guided pipeline with research, hook generation, slide structuring, and script writing.
+module_version: 1.0.0
+greeting: |
+  **Webinar Creator Suite activated.** Your guided pipeline from vague idea to production-ready deliverables.
+
+  **Quick Start:**
+  - `paw-wbc-webinar-creation` — The main workflow — guides you through discovery to production
+  - `paw-wbc-agent-discovery` — Research, hook generation, angle selection (Phase 1)
+  - `paw-wbc-agent-producer` — Slide deck outline, script writing (Phase 2)
+
+  **What you'll get:** A detailed slide deck outline (LLM-ready) and a script you can present from.
+
+# Configuration Variables
+# This module uses core Pawbytes settings only — no custom variables required.
+
+output_folder:
+  default: "{project-root}/.pawbytes/webinar-suites"
+  result: "{value}"
+  directories: true
+
+communication_language:
+  prompt: "Language for agent responses and generated content?"
+  default: "English"
+  user_setting: true
