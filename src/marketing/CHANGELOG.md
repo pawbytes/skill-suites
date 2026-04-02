@@ -2,6 +2,11 @@
 
 All notable changes to the Agentic Marketing Suite will be documented in this file.
 
+## [0.6.1] - 2026-04-02
+
+### Fixed
+- **paw-mkt-agency:** Use Glob pattern for brand discovery instead of directory scan to reliably find brands across platforms
+
 ## [0.6.0] - 2026-04-02
 
 ### Features
