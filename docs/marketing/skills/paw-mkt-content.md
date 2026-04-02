@@ -1,4 +1,4 @@
-# `marketing-content`
+# paw-mkt-content
 
 ## Overview
 
@@ -53,7 +53,7 @@ Use `/paw-mkt-content` when you need:
 ## Output locations
 
 ```text
-brands/{brand-slug}/content/
+.pawbytes/marketing-suites/brands/{brand-slug}/content/
 ```
 
 Common outputs include:
@@ -64,10 +64,10 @@ Common outputs include:
 
 ## Related skills
 
-- `marketing-seo`
-- `marketing-email`
-- `marketing-social`
-- `marketing-video`
+- `paw-mkt-seo`
+- `paw-mkt-email`
+- `paw-mkt-social`
+- `paw-mkt-video`
 
 ## Sample prompts
 

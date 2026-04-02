@@ -1,4 +1,4 @@
-# `marketing-pr`
+# paw-mkt-pr
 
 ## Overview
 
@@ -53,7 +53,7 @@ Use `/paw-mkt-pr` when you need:
 ## Output locations
 
 ```text
-brands/{brand-slug}/campaigns/pr/
+.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/pr/
 ```
 
 Often using subfolders such as:
@@ -63,10 +63,10 @@ Often using subfolders such as:
 
 ## Related skills
 
-- `marketing-launch`
-- `marketing-influencer`
-- `marketing-social`
-- `marketing-seo`
+- `paw-mkt-launch`
+- `paw-mkt-influencer`
+- `paw-mkt-social`
+- `paw-mkt-seo`
 
 ## Sample prompts
 

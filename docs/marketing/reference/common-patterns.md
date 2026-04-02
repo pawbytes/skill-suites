@@ -10,7 +10,7 @@ Most skills expect you to select or confirm a brand before they do any real work
 
 Common input order:
 1. `brand-context.md`
-2. `product-marketing-context.md` if it exists
+2. `paw-mkt-product-context.md` if it exists
 3. relevant SOSTAC files
 4. existing channel outputs in `campaigns/`, `content/`, or `analytics/`
 
@@ -24,7 +24,7 @@ The suite prefers saving deliverables to files, so work can continue across sess
 
 ## 5. Product marketing context as a multiplier
 
-`product-marketing-context.md` is one of the highest-leverage files in the system because it improves downstream copy, messaging, objections handling, and persona targeting.
+`paw-mkt-product-context.md` is one of the highest-leverage files in the system because it improves downstream copy, messaging, objections handling, and persona targeting.
 
 ## 6. Handoffs are intentional
 

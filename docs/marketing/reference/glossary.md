@@ -1,13 +1,13 @@
 # Glossary
 
 ## Brand workspace
-A local folder under `brands/{brand-slug}/` that stores strategy, campaign work, content, and analytics for one brand.
+A local folder under `.pawbytes/marketing-suites/brands/{brand-slug}/` that stores strategy, campaign work, content, and analytics for one brand.
 
 ## Brand context
 The lightweight onboarding document saved as `brand-context.md`.
 
 ## Product marketing context
-A deeper positioning document saved as `product-marketing-context.md`, focused on personas, differentiation, objections, customer language, and proof.
+A deeper positioning document saved as `paw-mkt-product-context.md`, focused on personas, differentiation, objections, customer language, and proof.
 
 ## SOSTAC
 A six-phase marketing planning model:

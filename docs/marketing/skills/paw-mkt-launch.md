@@ -1,4 +1,4 @@
-# `marketing-launch`
+# paw-mkt-launch
 
 ## Overview
 
@@ -47,16 +47,16 @@ Use `/paw-mkt-launch` when you need:
 ## Output locations
 
 ```text
-brands/{brand-slug}/campaigns/launch/
+.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/launch/
 ```
 
 ## Related skills
 
-- `marketing-pr` — press release and journalist pitch
-- `marketing-email` — launch email sequences
-- `marketing-social` — social announcement content
-- `marketing-paid-ads` — paid amplification of launch
-- `marketing-sales` — launch enablement for sales team
+- `paw-mkt-pr` — press release and journalist pitch
+- `paw-mkt-email` — launch email sequences
+- `paw-mkt-social` — social announcement content
+- `paw-mkt-paid-ads` — paid amplification of launch
+- `paw-mkt-sales` — launch enablement for sales team
 
 ## Sample prompts
 

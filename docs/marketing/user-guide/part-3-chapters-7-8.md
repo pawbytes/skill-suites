@@ -8,7 +8,7 @@ Growth and conversion skills focus on optimizing the customer journey after acqu
 
 ### 7.1 CRO Specialist
 
-**Skill ID:** `bmad-agent-marketing-cro`
+**Skill ID:** `paw-mkt-cro`
 
 #### What It Does
 
@@ -120,7 +120,7 @@ Every CRO recommendation is delivered in this format:
 
 ### 7.2 Retention & Churn Prevention Specialist
 
-**Skill ID:** `bmad-agent-marketing-retention`
+**Skill ID:** `paw-mkt-retention`
 
 #### What It Does
 
@@ -223,7 +223,7 @@ Cancel button --> [Pause Gate] --> [Exit Survey (4-6 reasons)] --> [Dynamic Offe
 
 ### 7.3 Referral & Partnership Specialist
 
-**Skill ID:** `bmad-agent-marketing-referral`
+**Skill ID:** `paw-mkt-referral`
 
 #### What It Does
 
@@ -333,7 +333,7 @@ Launch and promotion skills orchestrate how products and features enter the mark
 
 ### 8.1 Product Launch Specialist
 
-**Skill ID:** `bmad-agent-marketing-launch`
+**Skill ID:** `paw-mkt-launch`
 
 #### What It Does
 
@@ -535,7 +535,7 @@ Every launch operates across three channel types:
 
 ### 8.2 PR & Media Relations Specialist
 
-**Skill ID:** `bmad-agent-marketing-pr`
+**Skill ID:** `paw-mkt-pr`
 
 #### What It Does
 
@@ -695,7 +695,7 @@ SAN FRANCISCO, CA — [Date] — [Company], the project management platform buil
 
 ### 8.3 Paid Advertising Specialist
 
-**Skill ID:** `bmad-agent-marketing-paid-ads`
+**Skill ID:** `paw-mkt-paid-ads`
 
 #### What It Does
 
@@ -852,7 +852,7 @@ Descriptions (4 required, 4-5 recommended):
 
 ### 8.4 Influencer Marketing Specialist
 
-**Skill ID:** `bmad-agent-marketing-influencer`
+**Skill ID:** `paw-mkt-influencer`
 
 #### What It Does
 

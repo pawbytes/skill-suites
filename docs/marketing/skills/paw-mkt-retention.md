@@ -1,4 +1,4 @@
-# `marketing-retention`
+# paw-mkt-retention
 
 ## Overview
 
@@ -15,7 +15,7 @@ Use `/paw-mkt-retention` when you need:
 - lifecycle recovery ideas
 - save offers and discount strategy
 
-This skill owns cancel flows and dunning — not general email sequences or newsletters (use `marketing-email` for those).
+This skill owns cancel flows and dunning — not general email sequences or newsletters (use `paw-mkt-email` for those).
 
 ## Inputs to prepare
 
@@ -52,15 +52,15 @@ This skill owns cancel flows and dunning — not general email sequences or news
 ## Output locations
 
 ```text
-brands/{brand-slug}/campaigns/retention/
+.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/retention/
 ```
 
 ## Related skills
 
-- `marketing-email` — general email sequences and newsletters
-- `marketing-analytics` — churn analysis, cohort tracking
-- `marketing-referral` — win-back through referral incentives
-- `product-marketing-context` — customer language for retention copy
+- `paw-mkt-email` — general email sequences and newsletters
+- `paw-mkt-analytics` — churn analysis, cohort tracking
+- `paw-mkt-referral` — win-back through referral incentives
+- `paw-mkt-product-context` — customer language for retention copy
 
 ## Sample prompts
 

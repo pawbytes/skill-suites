@@ -1,4 +1,4 @@
-# `marketing-analytics`
+# paw-mkt-analytics
 
 ## Overview
 
@@ -53,18 +53,18 @@ Use `/paw-mkt-analytics` when you need:
 ## Output locations
 
 ```text
-brands/{brand-slug}/analytics/
+.pawbytes/marketing-suites/brands/{brand-slug}/analytics/
 ```
 
 Often including tracking, reports, and audit subfolders.
 
 ## Related skills
 
-- `marketing-sostac`
-- `marketing-cro`
-- `marketing-paid-ads`
-- `marketing-retention`
-- `marketing-seo`
+- `paw-mkt-sostac`
+- `paw-mkt-cro`
+- `paw-mkt-paid-ads`
+- `paw-mkt-retention`
+- `paw-mkt-seo`
 
 ## Sample prompts
 

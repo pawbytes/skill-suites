@@ -42,7 +42,7 @@ Think of it as hiring a senior marketing strategist who shows up prepared, havin
 Each phase produces a structured document saved to your brand workspace:
 
 ```
-brands/{your-brand}/sostac/
+.pawbytes/marketing-suites/brands/{your-brand}/sostac/
 ├── README.md                # Phase completion tracker
 ├── 00-auto-discovery.md     # Research findings
 ├── 01-situation.md          # Current state analysis
@@ -128,7 +128,7 @@ Think of it as building the "brain" that all other marketing skills reference—
 
 #### What You Get
 
-A comprehensive `product-marketing-context.md` file that serves as the strategic intelligence layer for all downstream marketing execution.
+A comprehensive `paw-mkt-product-context.md` file that serves as the strategic intelligence layer for all downstream marketing execution.
 
 #### How It Connects to Other Skills
 

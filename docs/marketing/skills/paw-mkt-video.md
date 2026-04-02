@@ -1,4 +1,4 @@
-# `marketing-video`
+# paw-mkt-video
 
 ## Overview
 
@@ -50,7 +50,7 @@ Use `/paw-mkt-video` when you need:
 ## Output locations
 
 ```text
-brands/{brand-slug}/content/video/
+.pawbytes/marketing-suites/brands/{brand-slug}/content/video/
 ```
 
 Common subfolders:
@@ -62,11 +62,11 @@ Common subfolders:
 
 ## Related skills
 
-- `marketing-social`
-- `marketing-content`
-- `marketing-paid-ads`
-- `marketing-influencer`
-- `marketing-seo`
+- `paw-mkt-social`
+- `paw-mkt-content`
+- `paw-mkt-paid-ads`
+- `paw-mkt-influencer`
+- `paw-mkt-seo`
 
 ## Sample prompts
 

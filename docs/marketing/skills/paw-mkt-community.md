@@ -1,4 +1,4 @@
-# `marketing-community`
+# paw-mkt-community
 
 ## Overview
 
@@ -16,7 +16,7 @@ Use `/paw-mkt-community` when you need:
 - scaling or platform migration guidance
 - crisis management playbooks
 
-This skill focuses on owned community platforms (Discord, Slack, Circle, Skool, etc.) — not general social media management (use `marketing-social`).
+This skill focuses on owned community platforms (Discord, Slack, Circle, Skool, etc.) — not general social media management (use `paw-mkt-social`).
 
 ## Inputs to prepare
 
@@ -58,14 +58,14 @@ This skill focuses on owned community platforms (Discord, Slack, Circle, Skool, 
 ## Output locations
 
 ```text
-brands/{brand-slug}/campaigns/community/
+.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/community/
 ```
 
 ## Related skills
 
-- `marketing-social`
-- `marketing-referral`
-- `marketing-retention`
+- `paw-mkt-social`
+- `paw-mkt-referral`
+- `paw-mkt-retention`
 
 ## Sample prompts
 

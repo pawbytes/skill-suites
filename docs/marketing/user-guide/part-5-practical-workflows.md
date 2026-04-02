@@ -8,12 +8,12 @@ This part provides detailed, practical workflows you can follow step-by-step. Ea
 
 ### 13.1 What Happens When You Start Fresh
 
-When you begin marketing work for a brand that does not yet have a workspace in the system, the marketing-agency skill orchestrates the setup:
+When you begin marketing work for a brand that does not yet have a workspace in the system, the paw-mkt-agency skill orchestrates the setup:
 
-1. **Workspace creation**: A new directory is created under `brands/{brand-slug}/`
+1. **Workspace creation**: A new directory is created under `.pawbytes/marketing-suites/brands/{brand-slug}/`
 2. **Context capture**: The `brand-context.md` file captures essential identity information
 3. **Planning scaffold**: The `sostac/README.md` creates a phase tracker for strategy work
-4. **Routing**: After setup, you typically route into `/marketing-sostac` for planning
+4. **Routing**: After setup, you typically route into `/paw-mkt-sostac` for planning
 
 The system never asks you to manually create directories or files. All setup happens through skill orchestration.
 
@@ -23,17 +23,17 @@ Follow this sequence for new brands:
 
 #### Step 1: Brand Context Creation
 
-Start with the marketing-agency skill:
+Start with the paw-mkt-agency skill:
 
 ```
-/marketing-agency
+/paw-mkt-agency
 I want to set up marketing for a new brand called [Brand Name]. We [brief description of what you sell]. Our target audience is [who you're marketing to]. We're at [pre-launch | early-stage | established | scaling] stage.
 ```
 
 **What gets created:**
 
 ```
-brands/{brand-slug}/
+.pawbytes/marketing-suites/brands/{brand-slug}/
 ├── brand-context.md
 └── sostac/
     └── README.md
@@ -75,14 +75,14 @@ Founder has strong network in operations community. Budget: $5K/month initial.
 After brand setup, continue to SOSTAC:
 
 ```
-/marketing-sostac
+/paw-mkt-sostac
 Let's build a complete marketing plan for Flowstack.
 ```
 
 **What gets created (over multiple sessions):**
 
 ```
-brands/flowstack/sostac/
+.pawbytes/marketing-suites/brands/flowstack/sostac/
 ├── README.md                (phase tracker, updated as you progress)
 ├── 00-auto-discovery.md     (competitive research, audience insights)
 ├── 01-situation.md          (5S audit, TOWS analysis)
@@ -114,7 +114,7 @@ Now that we have our strategy, let's build detailed positioning with customer la
 **What gets created:**
 
 ```
-brands/flowstack/product-marketing-context.md
+.pawbytes/marketing-suites/brands/flowstack/paw-mkt-product-context.md
 ```
 
 This file contains:
@@ -129,21 +129,21 @@ This file contains:
 With strategy and positioning complete, activate channels:
 
 ```
-/marketing-content
+/paw-mkt-content
 Based on our SOSTAC tactics, build a content plan for the first quarter.
 ```
 
 Or:
 
 ```
-/marketing-email
+/paw-mkt-email
 Create a welcome sequence and nurture framework aligned to our SOSTAC objectives.
 ```
 
 Or:
 
 ```
-/marketing-seo
+/paw-mkt-seo
 Run a technical SEO audit and content keyword strategy for flowstack.com.
 ```
 
@@ -151,11 +151,11 @@ Run a technical SEO audit and content keyword strategy for flowstack.com.
 
 | Channel | Path |
 |---------|------|
-| Content | `brands/flowstack/content/` |
-| SEO | `brands/flowstack/channels/seo/` |
-| Email | `brands/flowstack/channels/email/` |
-| Social | `brands/flowstack/channels/social/` |
-| Analytics | `brands/flowstack/channels/analytics/` |
+| Content | `.pawbytes/marketing-suites/brands/flowstack/content/` |
+| SEO | `.pawbytes/marketing-suites/brands/flowstack/channels/seo/` |
+| Email | `.pawbytes/marketing-suites/brands/flowstack/channels/email/` |
+| Social | `.pawbytes/marketing-suites/brands/flowstack/channels/social/` |
+| Analytics | `.pawbytes/marketing-suites/brands/flowstack/channels/analytics/` |
 
 ### 13.3 Complete Example: New SaaS Brand
 
@@ -164,7 +164,7 @@ Run a technical SEO audit and content keyword strategy for flowstack.com.
 **Day 1: Setup**
 
 ```
-/marketing-agency
+/paw-mkt-agency
 Set up a brand workspace for Flowstack. We're a workflow automation platform for operations teams at mid-market companies (50-500 employees). Our buyers are operations managers who struggle with cross-tool coordination (Salesforce, Jira, Slack, spreadsheets). We're at early-stage: we have 15 beta customers and are preparing for our first serious marketing investment. Budget is $5K/month. Website is flowstack.com.
 ```
 
@@ -180,15 +180,15 @@ Set up a brand workspace for Flowstack. We're a workflow automation platform for
 > - Audience: Ops managers at 50-500 person companies
 >
 > Files created:
-> - `brands/flowstack/brand-context.md`
-> - `brands/flowstack/sostac/README.md`
+> - `.pawbytes/marketing-suites/brands/flowstack/brand-context.md`
+> - `.pawbytes/marketing-suites/brands/flowstack/sostac/README.md`
 >
 > Should I proceed into SOSTAC planning to build your full marketing strategy?
 
 **Day 1-3: SOSTAC Auto-Discovery and Situation**
 
 ```
-/marketing-sostac
+/paw-mkt-sostac
 Let's build the full plan. Start with auto-discovery and situation analysis.
 ```
 
@@ -268,7 +268,7 @@ After your confirmation, the skill saves `02-objectives.md` and moves to Strateg
 
 ### 14.1 Pre-Launch Phase (T-8 weeks)
 
-The marketing-launch skill coordinates a five-phase timeline for Tier 1 launches. Here is the breakdown:
+The paw-mkt-launch skill coordinates a five-phase timeline for Tier 1 launches. Here is the breakdown:
 
 #### Phase 1: Internal Launch (T-8 to T-6 weeks)
 
@@ -286,14 +286,14 @@ The marketing-launch skill coordinates a five-phase timeline for Tier 1 launches
 **Command:**
 
 ```
-/marketing-launch
+/paw-mkt-launch
 We're launching Flowstack in 8 weeks. We're at internal testing stage. Help me plan Phase 1.
 ```
 
 **Output file:**
 
 ```
-brands/flowstack/campaigns/launch-flowstack-q2/launch/phase-1-internal.md
+.pawbytes/marketing-suites/brands/flowstack/campaigns/launch-flowstack-q2/launch/phase-1-internal.md
 ```
 
 **Gate to advance**: Core experience stable. Messaging locked. Launch date confirmed.
@@ -314,7 +314,7 @@ brands/flowstack/campaigns/launch-flowstack-q2/launch/phase-1-internal.md
 **Command:**
 
 ```
-/marketing-launch
+/paw-mkt-launch
 Continue Phase 2 alpha launch. We have 80 waitlist signups. Help me structure the invitation and feedback process.
 ```
 
@@ -337,14 +337,14 @@ Continue Phase 2 alpha launch. We have 80 waitlist signups. Help me structure th
 **Command:**
 
 ```
-/marketing-launch
+/paw-mkt-launch
 We're at T-4 weeks. Help me build the beta teaser campaign and Product Hunt preparation.
 ```
 
 **Output files:**
 
 ```
-brands/flowstack/campaigns/launch-flowstack-q2/launch/
+.pawbytes/marketing-suites/brands/flowstack/campaigns/launch-flowstack-q2/launch/
 ├── phase-3-beta.md
 ├── ph-gallery-prep.md
 ├── launch-content-drafts/
@@ -389,7 +389,7 @@ brands/flowstack/campaigns/launch-flowstack-q2/launch/
 **Command:**
 
 ```
-/marketing-launch
+/paw-mkt-launch
 It's launch day. Walk me through the minute-by-minute execution plan and help me respond to Product Hunt comments.
 ```
 
@@ -405,14 +405,14 @@ After launch day, the skill helps with:
 **Command:**
 
 ```
-/marketing-launch
+/paw-mkt-launch
 Launch day is done. Help me build the post-launch follow-up plan and analyze results.
 ```
 
 **Output files:**
 
 ```
-brands/flowstack/campaigns/launch-flowstack-q2/launch/
+.pawbytes/marketing-suites/brands/flowstack/campaigns/launch-flowstack-q2/launch/
 ├── post-launch-plan.md
 ├── launch-results-analysis.md
 └── announcement-cadence.md
@@ -423,11 +423,11 @@ brands/flowstack/campaigns/launch-flowstack-q2/launch/
 | Phase | Skills That May Activate |
 |-------|--------------------------|
 | Phase 1 (Internal) | None (internal focus) |
-| Phase 2 (Alpha) | marketing-email (alpha invitation sequences) |
-| Phase 3 (Beta) | marketing-social (teaser content), marketing-email (beta sequences), marketing-pr (embargo pitches) |
-| Phase 4 (Early Access) | marketing-content (landing page), marketing-email (waitlist emails) |
-| Phase 5 (Launch Day) | marketing-social (live posting), marketing-pr (press release), marketing-analytics (real-time tracking) |
-| Post-launch | marketing-email (thank you sequences), marketing-retention (activation focus), marketing-analytics (results analysis) |
+| Phase 2 (Alpha) | paw-mkt-email (alpha invitation sequences) |
+| Phase 3 (Beta) | paw-mkt-social (teaser content), paw-mkt-email (beta sequences), paw-mkt-pr (embargo pitches) |
+| Phase 4 (Early Access) | marketing-content (landing page), paw-mkt-email (waitlist emails) |
+| Phase 5 (Launch Day) | paw-mkt-social (live posting), paw-mkt-pr (press release), paw-mkt-analytics (real-time tracking) |
+| Post-launch | paw-mkt-email (thank you sequences), marketing-retention (activation focus), paw-mkt-analytics (results analysis) |
 
 ### 14.5 Complete Example: Product Launch Timeline
 
@@ -483,14 +483,14 @@ The marketing-cro skill follows a structured diagnostic before producing recomme
 #### Step 1: Request the Audit
 
 ```
-/marketing-cro
+/paw-mkt-cro
 Audit our signup landing page at flowstack.com/signup. Current conversion rate is 3.2%. Traffic is primarily from paid LinkedIn ads (cold traffic). We're using HubSpot for the landing page.
 ```
 
 **Output file:**
 
 ```
-brands/flowstack/operations/cro/audit-signup-landing-2026-03-31.md
+.pawbytes/marketing-suites/brands/flowstack/operations/cro/audit-signup-landing-2026-03-31.md
 ```
 
 #### Step 2: Review the Priority Framework Assessment
@@ -584,21 +584,21 @@ Phone field is optional but creates perceived friction.
 Quick wins require no developer. Implement immediately:
 
 ```
-/marketing-cro
+/paw-mkt-cro
 Help me write the specific copy for the Quick Wins so I can update the HubSpot page now.
 ```
 
 #### Step 4: Plan High-Impact Changes
 
 ```
-/marketing-cro
+/paw-mkt-cro
 Create implementation briefs for the High-Impact Changes. I have a designer available next week.
 ```
 
 **Output file:**
 
 ```
-brands/flowstack/operations/cro/implementation-briefs-2026-03-31.md
+.pawbytes/marketing-suites/brands/flowstack/operations/cro/implementation-briefs-2026-03-31.md
 ```
 
 ### 15.3 Testing and Measurement
@@ -634,14 +634,14 @@ brands/flowstack/operations/cro/implementation-briefs-2026-03-31.md
 #### Creating a Test Brief
 
 ```
-/marketing-cro
+/paw-mkt-cro
 Create an A/B test brief for the headline change. We have 8K visitors/month and current CVR is 3.2%.
 ```
 
 **Output file:**
 
 ```
-brands/flowstack/operations/cro/test-brief-headline-2026-03-31.md
+.pawbytes/marketing-suites/brands/flowstack/operations/cro/test-brief-headline-2026-03-31.md
 ```
 
 **Sample test brief:**
@@ -686,7 +686,7 @@ Variant A wins if signup rate improves >= 15% relative lift with 95% confidence.
 **Week 1: Audit**
 
 ```
-/marketing-cro
+/paw-mkt-cro
 Audit flowstack.com/signup. Current CVR 3.2%. Traffic from LinkedIn ads (cold). Platform is HubSpot.
 ```
 
@@ -736,12 +736,12 @@ Goal of 5% nearly achieved. Additional iteration on form fields pushes to 5.3%.
 
 ### 16.1 Strategy First Approach
 
-Before writing any email, the marketing-email skill requires strategy alignment.
+Before writing any email, the paw-mkt-email skill requires strategy alignment.
 
 **Start by defining email's role:**
 
 ```
-/marketing-email
+/paw-mkt-email
 Based on our SOSTAC objectives (acquisition focus), define email's role in our marketing mix and recommend which sequences to prioritize.
 ```
 
@@ -773,7 +773,7 @@ Email priority: Welcome + Nurture sequences for lead capture
 #### Step 1: Define Sequence Type
 
 ```
-/marketing-email
+/paw-mkt-email
 I want to create a welcome sequence for Flowstack. We're offering a "Workflow Audit Template" as lead magnet. Our goal is trial signup.
 ```
 
@@ -794,14 +794,14 @@ The skill loads from `./references/frameworks-index.csv` and reads the matched w
 #### Step 3: Write Emails
 
 ```
-/marketing-email
-Write the 5-email welcome sequence for Flowstack. Use the positioning from product-marketing-context.md.
+/paw-mkt-email
+Write the 5-email welcome sequence for Flowstack. Use the positioning from paw-mkt-product-context.md.
 ```
 
 **Output file:**
 
 ```
-brands/flowstack/channels/email/content/welcome-sequence.md
+.pawbytes/marketing-suites/brands/flowstack/channels/email/content/welcome-sequence.md
 ```
 
 ### 16.3 Integration with Content
@@ -815,14 +815,14 @@ Email sequences integrate with content strategy:
 **Command:**
 
 ```
-/marketing-email
+/paw-mkt-email
 Create a nurture sequence that repurposes our Q1 blog content. We have 4 published posts: "The Ops Manager's Guide to Workflow Automation", "5 Signs Your Team Needs Process Visibility", "How to Build Cross-Tool Alert Systems", "Spreadsheet vs Automation: Cost Comparison".
 ```
 
 **Output:**
 
 ```
-brands/flowstack/channels/email/content/nurture-sequence-q1.md
+.pawbytes/marketing-suites/brands/flowstack/channels/email/content/nurture-sequence-q1.md
 ```
 
 ### 16.4 Complete Example: Welcome + Nurture Series
@@ -972,7 +972,7 @@ After Friday, setup calls go back to paid customers only.
 **File saved to:**
 
 ```
-brands/flowstack/channels/email/content/welcome-sequence-5-email.md
+.pawbytes/marketing-suites/brands/flowstack/channels/email/content/welcome-sequence-5-email.md
 ```
 
 ---
@@ -986,14 +986,14 @@ The marketing-seo skill always starts with technical SEO. Content optimization w
 **Start the audit:**
 
 ```
-/marketing-seo
+/paw-mkt-seo
 Run a technical SEO audit on flowstack.com. We're a new site with 15 pages. Priority is establishing crawlability and indexation foundation.
 ```
 
 **Output file:**
 
 ```
-brands/flowstack/channels/seo/audit-technical-2026-03-31.md
+.pawbytes/marketing-suites/brands/flowstack/channels/seo/audit-technical-2026-03-31.md
 ```
 
 **Sample technical audit output:**
@@ -1076,14 +1076,14 @@ After technical foundation, move to content SEO:
 #### Step 1: Keyword Research
 
 ```
-/marketing-seo
+/paw-mkt-seo
 Based on our SOSTAC positioning (workflow automation for ops teams), research target keywords. Focus on terms ops managers would search.
 ```
 
 **Output file:**
 
 ```
-brands/flowstack/channels/seo/keyword-strategy-2026-03-31.md
+.pawbytes/marketing-suites/brands/flowstack/channels/seo/keyword-strategy-2026-03-31.md
 ```
 
 **Sample keyword output:**
@@ -1123,14 +1123,14 @@ brands/flowstack/channels/seo/keyword-strategy-2026-03-31.md
 #### Step 2: Content Optimization
 
 ```
-/marketing-seo
+/paw-mkt-seo
 Optimize our existing blog post "The Ops Manager's Guide to Workflow Automation" for target keyword "operations automation".
 ```
 
 **Output file:**
 
 ```
-brands/flowstack/channels/seo/content/ops-guide-optimization.md
+.pawbytes/marketing-suites/brands/flowstack/channels/seo/content/ops-guide-optimization.md
 ```
 
 **Sample optimization recommendations:**
@@ -1198,14 +1198,14 @@ Add Article schema with headline, author, datePublished.
 #### Monthly SEO Report
 
 ```
-/marketing-seo
+/paw-mkt-seo
 Generate an SEO progress report for March. Compare to February baseline.
 ```
 
 **Output file:**
 
 ```
-brands/flowstack/channels/seo/monthly-report-2026-03.md
+.pawbytes/marketing-suites/brands/flowstack/channels/seo/monthly-report-2026-03.md
 ```
 
 ### 17.4 Complete Example: Technical + Content SEO Project
@@ -1213,7 +1213,7 @@ brands/flowstack/channels/seo/monthly-report-2026-03.md
 **Week 1: Technical Foundation**
 
 ```
-/marketing-seo
+/paw-mkt-seo
 Run technical audit on flowstack.com. Prioritize crawlability and indexation.
 ```
 
@@ -1227,7 +1227,7 @@ Audit reveals P1 issues: missing sitemap, robots.txt blocking assets, no canonic
 **Week 2: Technical P2 + Keyword Research**
 
 ```
-/marketing-seo
+/paw-mkt-seo
 Fix P2 technical issues (LCP, meta descriptions, schema). Then research keywords for ops automation positioning.
 ```
 
@@ -1244,7 +1244,7 @@ Fix P2 technical issues (LCP, meta descriptions, schema). Then research keywords
 **Week 3-4: Content Optimization**
 
 ```
-/marketing-seo
+/paw-mkt-seo
 Optimize existing blog content for target keywords. Create one new pillar page for "operations automation".
 ```
 
@@ -1277,12 +1277,12 @@ After 8 weeks:
 
 | Workflow | Starting Command | Key Output Path |
 |----------|------------------|-----------------|
-| New Brand | `/marketing-agency` | `brands/{slug}/brand-context.md` |
-| SOSTAC Planning | `/marketing-sostac` | `brands/{slug}/sostac/*.md` |
-| Product Launch | `/marketing-launch` | `brands/{slug}/campaigns/launch-{name}/` |
-| CRO Audit | `/marketing-cro` | `brands/{slug}/operations/cro/audit-*.md` |
-| Email Sequence | `/marketing-email` | `brands/{slug}/channels/email/content/` |
-| SEO Audit | `/marketing-seo` | `brands/{slug}/channels/seo/audit-*.md` |
+| New Brand | `/paw-mkt-agency` | `brands/{slug}/brand-context.md` |
+| SOSTAC Planning | `/paw-mkt-sostac` | `brands/{slug}/sostac/*.md` |
+| Product Launch | `/paw-mkt-launch` | `brands/{slug}/campaigns/launch-{name}/` |
+| CRO Audit | `/paw-mkt-cro` | `brands/{slug}/operations/cro/audit-*.md` |
+| Email Sequence | `/paw-mkt-email` | `brands/{slug}/channels/email/content/` |
+| SEO Audit | `/paw-mkt-seo` | `brands/{slug}/channels/seo/audit-*.md` |
 
 All workflows follow the same pattern:
 1. Read brand and SOSTAC context first (Pre-Flight)

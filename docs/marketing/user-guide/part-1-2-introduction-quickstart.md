@@ -10,7 +10,7 @@
 
 Imagine having a full-service marketing agency at your fingertips—one that understands your brand, remembers your strategy, and can execute across every marketing channel without you needing to manage a team of specialists or learn complex marketing tools.
 
-That is what Agentic Marketing delivers.
+That is what the Pawbytes Marketing Suite delivers.
 
 This system transforms AI assistants into a coordinated marketing team. Instead of generic, one-off responses, you get strategic planning, brand-aligned execution, and specialist expertise that builds on previous work. It is like hiring a marketing department that never forgets, works 24/7, and scales infinitely.
 
@@ -125,14 +125,14 @@ Before diving into how the system works, understand these core concepts.
 A **skill** is a specialized capability the AI can activate. Think of skills as team members with specific expertise.
 
 **Example skills:**
-- `marketing-agency` — The coordinator who manages the whole team
-- `marketing-sostac` — The strategist who builds your marketing plan
-- `marketing-seo` — The SEO specialist
-- `marketing-email` — The email marketing specialist
-- `marketing-content` — The content strategist
-- `marketing-paid-ads` — The paid media manager
+- `paw-mkt-agency` — The coordinator who manages the whole team
+- `paw-mkt-sostac` — The strategist who builds your marketing plan
+- `paw-mkt-seo` — The SEO specialist
+- `paw-mkt-email` — The email marketing specialist
+- `paw-mkt-content` — The content strategist
+- `paw-mkt-paid-ads` — The paid media manager
 
-There are 20 specialist skills total, each covering a specific marketing discipline.
+The suite includes a broad set of marketing specialists, each covering a specific marketing discipline.
 
 When you make a request, the coordinator skill decides which specialist(s) to activate. You do not need to know skill names—the system routes automatically.
 
@@ -149,7 +149,7 @@ When you make a request, the coordinator skill decides which specialist(s) to ac
 - Key competitors
 - Current marketing status
 
-This file lives in `./brands/{your-brand-slug}/brand-context.md`.
+This file lives in `./.pawbytes/marketing-suites/brands/{your-brand-slug}/brand-context.md`.
 
 **Why it matters:** Every specialist reads this file before producing deliverables. This ensures everything they create aligns with your brand. You set it once, and it grounds all future work.
 
@@ -228,31 +228,31 @@ Think of this system as a virtual marketing agency with you as the client.
 
 **The team structure:**
 
-- **Agency Coordinator** (`marketing-agency`) — The account director who manages everything. They greet you, understand your needs, route requests to specialists, and coordinate execution.
+- **Agency Coordinator** (`paw-mkt-agency`) — The account director who manages everything. They greet you, understand your needs, route requests to specialists, and coordinate execution.
 
-- **Strategist** (`marketing-sostac`) — The senior strategist who builds your marketing plan through the SOSTAC framework.
+- **Strategist** (`paw-mkt-sostac`) — The senior strategist who builds your marketing plan through the SOSTAC framework.
 
 - **Channel Specialists** — Experts in specific channels:
-  - SEO Specialist (`marketing-seo`)
-  - Email Marketing Specialist (`marketing-email`)
-  - Social Media Manager (`marketing-social`)
-  - Content Strategist (`marketing-content`)
-  - Paid Media Manager (`marketing-paid-ads`)
-  - Video Strategist (`marketing-video`)
-  - PR Specialist (`marketing-pr`)
-  - Influencer Manager (`marketing-influencer`)
-  - Community Manager (`marketing-community`)
+  - SEO Specialist (`paw-mkt-seo`)
+  - Email Marketing Specialist (`paw-mkt-email`)
+  - Social Media Manager (`paw-mkt-social`)
+  - Content Strategist (`paw-mkt-content`)
+  - Paid Media Manager (`paw-mkt-paid-ads`)
+  - Video Strategist (`paw-mkt-video`)
+  - PR Specialist (`paw-mkt-pr`)
+  - Influencer Manager (`paw-mkt-influencer`)
+  - Community Manager (`paw-mkt-community`)
 
 - **Operational Specialists** — Experts in marketing disciplines:
-  - CRO Specialist (`marketing-cro`) — Conversion rate optimization
-  - Retention Specialist (`marketing-retention`) — Churn prevention
-  - Launch Strategist (`marketing-launch`) — Product launches
-  - Pricing Strategist (`marketing-pricing`) — Pricing strategy
-  - Growth Hacker (`marketing-guerrilla`) — Unconventional tactics
-  - Referral Manager (`marketing-referral`) — Referral programs
-  - Sales Enablement Specialist (`marketing-sales`) — Sales collateral
-  - Psychology Strategist (`marketing-psychology`) — Behavioral science
-  - Analytics Analyst (`marketing-analytics`) — Tracking and reporting
+  - CRO Specialist (`paw-mkt-cro`) — Conversion rate optimization
+  - Retention Specialist (`paw-mkt-retention`) — Churn prevention
+  - Launch Strategist (`paw-mkt-launch`) — Product launches
+  - Pricing Strategist (`paw-mkt-pricing`) — Pricing strategy
+  - Growth Hacker (`paw-mkt-guerrilla`) — Unconventional tactics
+  - Referral Manager (`paw-mkt-referral`) — Referral programs
+  - Sales Enablement Specialist (`paw-mkt-sales`) — Sales collateral
+  - Psychology Strategist (`paw-mkt-psychology`) — Behavioral science
+  - Analytics Analyst (`paw-mkt-analytics`) — Tracking and reporting
 
 **How the team works together:**
 
@@ -348,9 +348,9 @@ Based on context assessment, the Coordinator routes to the appropriate workflow:
 
 The Coordinator invokes specialist skills as needed:
 
-- For planning: invokes `marketing-sostac`
-- For SEO work: invokes `marketing-seo`
-- For email work: invokes `marketing-email`
+- For planning: invokes `paw-mkt-sostac`
+- For SEO work: invokes `paw-mkt-seo`
+- For email work: invokes `paw-mkt-email`
 - And so on for each discipline
 
 ### Step 4: Progress Tracking

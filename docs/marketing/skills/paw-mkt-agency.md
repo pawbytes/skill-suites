@@ -1,4 +1,4 @@
-# `marketing-agency`
+# paw-mkt-agency
 
 ## Overview
 
@@ -32,7 +32,7 @@ The skill can start from three contexts:
 
 After context is established:
 1. Checks SOSTAC plan status
-2. Routes to planning (marketing-sostac) or execution
+2. Routes to planning (`paw-mkt-sostac`) or execution
 3. If strategy is complete, can spawn a specialist implementation team
 
 ## Deliverables
@@ -45,9 +45,9 @@ After context is established:
 ## Output locations
 
 This skill mainly routes work into:
-- `brands/{brand-slug}/campaigns/`
-- `brands/{brand-slug}/content/`
-- `brands/{brand-slug}/analytics/`
+- `.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/`
+- `.pawbytes/marketing-suites/brands/{brand-slug}/content/`
+- `.pawbytes/marketing-suites/brands/{brand-slug}/analytics/`
 
 ## Reference files
 
@@ -61,8 +61,8 @@ The agency skill uses extracted reference files to stay lean:
 
 ## Related skills
 
-- `marketing-sostac`
-- `product-marketing-context`
+- `paw-mkt-sostac`
+- `paw-mkt-product-context`
 - All specialist skills
 
 ## Sample prompts

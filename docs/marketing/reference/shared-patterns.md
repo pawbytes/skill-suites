@@ -19,10 +19,10 @@ Use when the user provides a public URL for review. Audit the live experience fi
 
 Before any specialist work, read these files in order when available:
 
-1. `./brands/{brand-slug}/brand-context.md` — brand identity, audience, USP
-2. `./brands/{brand-slug}/product-marketing-context.md` — deep positioning, customer language, objections
-3. `./brands/{brand-slug}/sostac/03-strategy.md` — target segments, positioning
-4. `./brands/{brand-slug}/sostac/04-tactics.md` — channel plan, priorities
+1. `./.pawbytes/marketing-suites/brands/{brand-slug}/brand-context.md` — brand identity, audience, USP
+2. `./.pawbytes/marketing-suites/brands/{brand-slug}/paw-mkt-product-context.md` — deep positioning, customer language, objections
+3. `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/03-strategy.md` — target segments, positioning
+4. `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/04-tactics.md` — channel plan, priorities
 
 If brand files are missing but a codebase or live URL is available, continue with that as the working source of truth rather than blocking progress.
 

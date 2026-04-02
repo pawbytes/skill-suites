@@ -1,4 +1,4 @@
-# Agentic Marketing Skills - Complete User Guide
+# Pawbytes Marketing Suite - Complete User Guide
 
 > **A comprehensive guide for non-technical marketers, founders, and business owners**
 
@@ -6,7 +6,7 @@
 
 ## About This Guide
 
-This guide provides everything you need to understand and use the Agentic Marketing Skills system—an AI-powered marketing team that helps you plan, create, and execute marketing across all channels.
+This guide provides everything you need to understand and use the Pawbytes Marketing Suite—an AI-powered marketing team that helps you plan, create, and execute marketing across all channels.
 
 **Who this is for**: Non-technical users who want professional marketing without hiring a full team.
 
@@ -19,7 +19,7 @@ This guide provides everything you need to understand and use the Agentic Market
 | Part | Title | File | What's Inside |
 |------|-------|------|---------------|
 | **1-2** | Introduction & Quick Start | [part-1-2-introduction-quickstart.md](./part-1-2-introduction-quickstart.md) | What it is, how it works, your first request |
-| **3** | Skills Directory | | Complete reference for all 21 skills |
+| **3** | Skills Directory | | Complete reference for the marketing skill set |
 | | └ Chapters 5-6 | [part-3-chapters-5-6.md](./part-3-chapters-5-6.md) | Planning, Content, Email, Social, Video, SEO |
 | | └ Chapters 7-8 | [part-3-chapters-7-8.md](./part-3-chapters-7-8.md) | CRO, Retention, Referral, Launch, PR, Paid Ads, Influencer |
 | | └ Chapter 9 | [part-3-chapter-9.md](./part-3-chapter-9.md) | Analytics, Pricing, Psychology, Community, Guerrilla, Sales |
@@ -88,7 +88,7 @@ This guide provides everything you need to understand and use the Agentic Market
 
 ## Skills Overview
 
-### 21 Specialist Skills
+### Marketing Skill Coverage
 
 | Category | Skills |
 |----------|--------|
@@ -124,9 +124,9 @@ The strategic backbone of the system:
 
 Every brand gets a dedicated workspace where all plans, content, and deliverables are saved:
 ```
-brands/{your-brand}/
+.pawbytes/marketing-suites/brands/{your-brand}/
 ├── brand-context.md
-├── product-marketing-context.md
+├── paw-mkt-product-context.md
 ├── sostac/
 ├── campaigns/
 ├── channels/

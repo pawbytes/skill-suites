@@ -1,4 +1,4 @@
-# `marketing-paid-ads`
+# paw-mkt-paid-ads
 
 ## Overview
 
@@ -32,16 +32,16 @@ Use `/paw-mkt-paid-ads` when you need:
 ## Output locations
 
 ```text
-brands/{brand-slug}/campaigns/paid-ads/
+.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/paid-ads/
 ```
 
 ## Related skills
 
-- `marketing-cro`
-- `marketing-analytics`
-- `marketing-launch`
-- `marketing-video`
-- `marketing-psychology`
+- `paw-mkt-cro`
+- `paw-mkt-analytics`
+- `paw-mkt-launch`
+- `paw-mkt-video`
+- `paw-mkt-psychology`
 
 ## Sample prompts
 

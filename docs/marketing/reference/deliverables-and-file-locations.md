@@ -5,15 +5,15 @@ This page shows where the major outputs go.
 ## Strategic files
 
 ```text
-brands/{brand-slug}/brand-context.md
-brands/{brand-slug}/product-marketing-context.md
-brands/{brand-slug}/sostac/
+.pawbytes/marketing-suites/brands/{brand-slug}/brand-context.md
+.pawbytes/marketing-suites/brands/{brand-slug}/paw-mkt-product-context.md
+.pawbytes/marketing-suites/brands/{brand-slug}/sostac/
 ```
 
 ## SOSTAC outputs
 
 ```text
-brands/{brand-slug}/sostac/
+.pawbytes/marketing-suites/brands/{brand-slug}/sostac/
 ├── 00-auto-discovery.md
 ├── 01-situation.md
 ├── 02-objectives.md
@@ -30,34 +30,34 @@ For evergreen or independent work, outputs go to the `channels/` subtree:
 
 ### SEO
 ```text
-brands/{brand-slug}/channels/seo/
+.pawbytes/marketing-suites/brands/{brand-slug}/channels/seo/
 ```
 
 ### Social
 ```text
-brands/{brand-slug}/channels/social/
+.pawbytes/marketing-suites/brands/{brand-slug}/channels/social/
 ```
 
 ### Video
 ```text
-brands/{brand-slug}/channels/video/
+.pawbytes/marketing-suites/brands/{brand-slug}/channels/video/
 ```
 
 ### Analytics
 ```text
-brands/{brand-slug}/channels/analytics/
+.pawbytes/marketing-suites/brands/{brand-slug}/channels/analytics/
 ```
 
 ## Content-oriented skills
 
 ### Content
 ```text
-brands/{brand-slug}/content/
+.pawbytes/marketing-suites/brands/{brand-slug}/content/
 ```
 
 ### Email
 ```text
-brands/{brand-slug}/content/email/
+.pawbytes/marketing-suites/brands/{brand-slug}/content/email/
 ```
 
 ## Campaign-oriented skills
@@ -65,7 +65,7 @@ brands/{brand-slug}/content/email/
 For work tied to a specific campaign, outputs go under:
 
 ```text
-brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/{channel}/
+.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/{channel}/
 ```
 
 Or for simple campaigns without slug namespacing:
@@ -137,5 +137,5 @@ Some skills support a legacy fallback when old directory structures are detected
 
 ## Important exceptions
 
-- `product-marketing-context.md` lives at the brand root, not under `campaigns/` or `content/`, because it is shared by every specialist.
-- SOSTAC files live under `brands/{brand-slug}/sostac/` regardless of campaign structure.
+- `paw-mkt-product-context.md` lives at the brand root, not under `campaigns/` or `content/`, because it is shared by every specialist.
+- SOSTAC files live under `.pawbytes/marketing-suites/brands/{brand-slug}/sostac/` regardless of campaign structure.

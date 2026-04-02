@@ -1,4 +1,4 @@
-# `marketing-cro`
+# paw-mkt-cro
 
 ## Overview
 
@@ -30,16 +30,16 @@ Use `/paw-mkt-cro` when you need:
 ## Output locations
 
 ```text
-brands/{brand-slug}/campaigns/cro/
+.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/cro/
 ```
 
 ## Related skills
 
-- `marketing-analytics`
-- `marketing-paid-ads`
-- `marketing-seo`
-- `marketing-sales`
-- `marketing-psychology`
+- `paw-mkt-analytics`
+- `paw-mkt-paid-ads`
+- `paw-mkt-seo`
+- `paw-mkt-sales`
+- `paw-mkt-psychology`
 
 ## Sample prompts
 

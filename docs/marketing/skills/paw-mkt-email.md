@@ -1,8 +1,8 @@
-# `marketing-email`
+# paw-mkt-email
 
 ## Overview
 
-Creates email strategy and assets across lifecycle, nurture, outbound, launch, and retention. Does not own cancel flows or dunning sequences — those belong to `marketing-retention`.
+Creates email strategy and assets across lifecycle, nurture, outbound, launch, and retention. Does not own cancel flows or dunning sequences — those belong to `paw-mkt-retention`.
 
 ## When to use it
 
@@ -16,7 +16,7 @@ Use `/paw-mkt-email` when you need:
 - email automation workflows
 - general re-engagement emails
 
-For cancel flows and dunning sequences, use `marketing-retention` instead.
+For cancel flows and dunning sequences, use `paw-mkt-retention` instead.
 
 ## Inputs to prepare
 
@@ -52,15 +52,15 @@ For cancel flows and dunning sequences, use `marketing-retention` instead.
 ## Output locations
 
 ```text
-brands/{brand-slug}/content/email/
+.pawbytes/marketing-suites/brands/{brand-slug}/content/email/
 ```
 
 ## Related skills
 
-- `marketing-content` — long-form content that feeds email
-- `marketing-retention` — cancel flows, dunning, and lifecycle recovery
-- `marketing-sales` — sales outreach email templates
-- `marketing-launch` — launch email sequencing
+- `paw-mkt-content` — long-form content that feeds email
+- `paw-mkt-retention` — cancel flows, dunning, and lifecycle recovery
+- `paw-mkt-sales` — sales outreach email templates
+- `paw-mkt-launch` — launch email sequencing
 
 ## Sample prompts
 

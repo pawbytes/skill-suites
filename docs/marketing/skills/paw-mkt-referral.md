@@ -1,4 +1,4 @@
-# `marketing-referral`
+# paw-mkt-referral
 
 ## Overview
 
@@ -54,14 +54,14 @@ Use `/paw-mkt-referral` when you need:
 ## Output locations
 
 ```text
-brands/{brand-slug}/campaigns/referral/
+.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/referral/
 ```
 
 ## Related skills
 
-- `marketing-community`
-- `marketing-retention`
-- `marketing-analytics`
+- `paw-mkt-community`
+- `paw-mkt-retention`
+- `paw-mkt-analytics`
 
 ## Sample prompts
 

@@ -1,4 +1,4 @@
-# `marketing-seo`
+# paw-mkt-seo
 
 ## Overview
 
@@ -30,9 +30,9 @@ The skill routes output based on whether work is part of a campaign or standalon
 
 | Mode | When to use | Output path |
 |---|---|---|
-| Campaign | Work tied to a specific launch or push | `brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/seo/` |
-| Standalone | Evergreen or independent work | `brands/{brand-slug}/channels/seo/` |
-| Legacy fallback | Old workspace structure detected | `brands/{brand-slug}/content/seo/` |
+| Campaign | Work tied to a specific launch or push | `.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/seo/` |
+| Standalone | Evergreen or independent work | `.pawbytes/marketing-suites/brands/{brand-slug}/channels/seo/` |
+| Legacy fallback | Old workspace structure detected | `.pawbytes/marketing-suites/brands/{brand-slug}/content/seo/` |
 
 If unsure which mode applies, the skill will ask.
 
@@ -60,10 +60,10 @@ If unsure which mode applies, the skill will ask.
 
 ## Related skills
 
-- `marketing-content` — content creation from SEO briefs
-- `marketing-analytics` — search performance tracking
-- `marketing-cro` — landing page optimization for search traffic
-- `marketing-pr` — digital PR for link building
+- `paw-mkt-content` — content creation from SEO briefs
+- `paw-mkt-analytics` — search performance tracking
+- `paw-mkt-cro` — landing page optimization for search traffic
+- `paw-mkt-pr` — digital PR for link building
 
 ## Sample prompts
 

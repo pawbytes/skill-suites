@@ -22,7 +22,7 @@ flowchart TD
     C --> D["/paw-mkt-product-context"]
     B -- Yes --> D
     D --> E[Specialist skills]
-    E --> F["Files written to brands/{brand-slug}/"]
+    E --> F["Files written to .pawbytes/marketing-suites/brands/{brand-slug}/"]
     F --> G["/paw-mkt-analytics + SOSTAC Control review"]
 ```
 
@@ -155,7 +155,7 @@ Allow a direct specialist path when all of these are true:
 
 ### Executor fallback rule
 
-If `brand-context.md`, `product-marketing-context.md`, or the relevant SOSTAC files are missing, executor skills should not silently jump to output.
+If `brand-context.md`, `paw-mkt-product-context.md`, or the relevant SOSTAC files are missing, executor skills should not silently jump to output.
 
 They should do one of two things:
 

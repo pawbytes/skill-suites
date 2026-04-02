@@ -1,4 +1,4 @@
-# `marketing-pricing`
+# paw-mkt-pricing
 
 ## Overview
 
@@ -31,14 +31,14 @@ Use `/paw-mkt-pricing` when you need:
 ## Output locations
 
 ```text
-brands/{brand-slug}/campaigns/pricing/
+.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/pricing/
 ```
 
 ## Related skills
 
-- `marketing-sales`
-- `marketing-cro`
-- `marketing-sostac`
+- `paw-mkt-sales`
+- `paw-mkt-cro`
+- `paw-mkt-sostac`
 
 ## Sample prompts
 

@@ -354,7 +354,7 @@ Before any SOSTAC planning begins, the system can run comprehensive auto-discove
 
 All findings are saved to:
 ```
-./brands/{brand-slug}/sostac/00-auto-discovery.md
+./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/00-auto-discovery.md
 ```
 
 This document becomes the foundation for the SOSTAC interview, reducing the burden on the user to explain what's already discoverable.
@@ -450,7 +450,7 @@ The system uses two primary modes for organizing deliverables:
 
 When work is part of a named campaign:
 ```
-./brands/{brand-slug}/campaigns/{type}-{campaign-slug}/
+./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/
   strategy.md                    # Campaign strategy
   channels/
     email/content/               # Email deliverables
@@ -471,7 +471,7 @@ When work is part of a named campaign:
 
 For evergreen or independent work:
 ```
-./brands/{brand-slug}/channels/
+./.pawbytes/marketing-suites/brands/{brand-slug}/channels/
   email/content/
   social/content/
   blog/content/
@@ -479,7 +479,7 @@ For evergreen or independent work:
   video/content/
   paid-ads/content/
 
-./brands/{brand-slug}/operations/
+./.pawbytes/marketing-suites/brands/{brand-slug}/operations/
   cro/
   retention/
   sales/
@@ -541,13 +541,13 @@ The file-based system integrates naturally with git:
 
 ```
 # View history of a deliverable
-git log --oneline brands/acme/sostac/03-strategy.md
+git log --oneline .pawbytes/marketing-suites/brands/acme/sostac/03-strategy.md
 
 # Compare versions
-git diff HEAD~1 brands/acme/channels/video/content/scripts/
+git diff HEAD~1 .pawbytes/marketing-suites/brands/acme/channels/video/content/scripts/
 
 # Track campaign evolution
-git log --oneline brands/acme/campaigns/launch-spring-2024/
+git log --oneline .pawbytes/marketing-suites/brands/acme/campaigns/launch-spring-2024/
 ```
 
 **Best practices:**
@@ -632,7 +632,7 @@ The following diagram shows all skills and their escalation routes:
 
 ```
                                     ┌─────────────────────┐
-                                    │  marketing-agency   │
+                                    │  paw-mkt-agency   │
                                     │    (Coordinator)    │
                                     └─────────┬───────────┘
                                               │

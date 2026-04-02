@@ -22,7 +22,7 @@ The Agentic Marketing Skills system uses an **orchestrator pattern** where a cen
           |
           v
 +---------+---------+
-| marketing-agency  |  <-- THE ORCHESTRATOR
+| paw-mkt-agency  |  <-- THE ORCHESTRATOR
 |   (Coordinator)   |
 +---------+---------+
           |
@@ -96,7 +96,7 @@ flowchart TD
     A[Start Specialist Work] --> B{brand-context.md exists?}
     B -- Yes --> C[Load brand identity, audience, USP]
     B -- No --> D{Codebase or URL available?}
-    C --> E{product-marketing-context.md exists?}
+    C --> E{paw-mkt-product-context.md exists?}
     E -- Yes --> F[Load positioning, objections, language]
     E -- No --> G[Continue with available context]
     F --> H{03-strategy.md exists?}
@@ -117,24 +117,24 @@ Finally, the system routes to the appropriate specialist based on your request:
 
 | Request Keywords | Routes To |
 |------------------|-----------|
-| SEO, keywords, rankings, schema, pSEO, GEO | `marketing-seo` |
-| Blog, article, whitepaper, case study, editorial | `marketing-content` |
-| Email, newsletter, sequence, automation, deliverability | `marketing-email` |
-| Social, Instagram, LinkedIn, TikTok, organic | `marketing-social` |
-| PPC, ads, paid social, retargeting, display | `marketing-paid-ads` |
-| CRO, conversion, landing page, A/B test, signup | `marketing-cro` |
-| Churn, retention, cancel flow, dunning, win-back | `marketing-retention` |
-| Launch, GTM, Product Hunt, announcement | `marketing-launch` |
-| PR, press release, journalist, media, crisis | `marketing-pr` |
-| Influencer, creator, UGC, partnership | `marketing-influencer` |
-| Pricing, tiers, packaging, value metric | `marketing-pricing` |
-| Video, YouTube, TikTok production, webinar | `marketing-video` |
-| Community, Discord, forum, user group | `marketing-community` |
-| Referral, affiliate, partnership program | `marketing-referral` |
-| Analytics, GA4, GTM, dashboard, tracking | `marketing-analytics` |
-| Sales deck, one-pager, objection handling | `marketing-sales` |
-| Psychology, persuasion, behavioral science | `marketing-psychology` |
-| Guerrilla, growth hack, unconventional | `marketing-guerrilla` |
+| SEO, keywords, rankings, schema, pSEO, GEO | `paw-mkt-seo` |
+| Blog, article, whitepaper, case study, editorial | `paw-mkt-content` |
+| Email, newsletter, sequence, automation, deliverability | `paw-mkt-email` |
+| Social, Instagram, LinkedIn, TikTok, organic | `paw-mkt-social` |
+| PPC, ads, paid social, retargeting, display | `paw-mkt-paid-ads` |
+| CRO, conversion, landing page, A/B test, signup | `paw-mkt-cro` |
+| Churn, retention, cancel flow, dunning, win-back | `paw-mkt-retention` |
+| Launch, GTM, Product Hunt, announcement | `paw-mkt-launch` |
+| PR, press release, journalist, media, crisis | `paw-mkt-pr` |
+| Influencer, creator, UGC, partnership | `paw-mkt-influencer` |
+| Pricing, tiers, packaging, value metric | `paw-mkt-pricing` |
+| Video, YouTube, TikTok production, webinar | `paw-mkt-video` |
+| Community, Discord, forum, user group | `paw-mkt-community` |
+| Referral, affiliate, partnership program | `paw-mkt-referral` |
+| Analytics, GA4, GTM, dashboard, tracking | `paw-mkt-analytics` |
+| Sales deck, one-pager, objection handling | `paw-mkt-sales` |
+| Psychology, persuasion, behavioral science | `paw-mkt-psychology` |
+| Guerrilla, growth hack, unconventional | `paw-mkt-guerrilla` |
 
 ---
 
@@ -224,7 +224,7 @@ Example handoff message:
 I've completed your email sequence. However, I noticed your lead magnet
 landing page has a 12% conversion rate (industry benchmark: 25-30%).
 
-**Recommendation**: Route to `marketing-cro` for landing page optimization
+**Recommendation**: Route to `paw-mkt-cro` for landing page optimization
 before sending traffic to this sequence.
 
 **Context to share**: The email sequence assumes the lead magnet page
@@ -274,9 +274,9 @@ The system uses the **file system as its source of truth**. This means:
 Every brand workspace contains files that serve as shared memory:
 
 ```
-brands/{brand-slug}/
+.pawbytes/marketing-suites/brands/{brand-slug}/
     brand-context.md              # Core identity, voice, audience, USP
-    product-marketing-context.md  # Deep positioning, objections, language
+    paw-mkt-product-context.md  # Deep positioning, objections, language
     sostac/                       # Strategic plan (6 phases)
     campaigns/                    # Named campaign work
     channels/                     # Standalone channel work
@@ -298,7 +298,7 @@ flowchart TD
 
     subgraph Shared_Memory["Shared Memory (Files)"]
         BC[brand-context.md]
-        PMC[product-marketing-context.md]
+        PMC[paw-mkt-product-context.md]
         S3F[03-strategy.md]
         S4F[04-tactics.md]
     end
@@ -319,7 +319,7 @@ flowchart TD
 Every specialist reads these files before starting work:
 
 1. **brand-context.md** — Who we are, who we serve, how we're different
-2. **product-marketing-context.md** — Deep positioning, customer language, objection handling
+2. **paw-mkt-product-context.md** — Deep positioning, customer language, objection handling
 3. **sostac/03-strategy.md** — Target segments and positioning decisions
 4. **sostac/04-tactics.md** — Channel priorities and tactical direction
 
@@ -593,36 +593,36 @@ flowchart TB
     end
 
     subgraph Planning["Planning Skills"]
-        MSOSTAC[marketing-sostac]
-        MAGENCY[marketing-agency]
+        MSOSTAC[paw-mkt-sostac]
+        MAGENCY[paw-mkt-agency]
         PMC[product-marketing-context]
     end
 
     subgraph Channel["Channel Skills"]
-        MSEO[marketing-seo]
-        MCONTENT[marketing-content]
-        MEMAIL[marketing-email]
-        MSOCIAL[marketing-social]
-        MPAID[marketing-paid-ads]
-        MPR[marketing-pr]
-        MVIDEO[marketing-video]
-        MINFL[marketing-influencer]
+        MSEO[paw-mkt-seo]
+        MCONTENT[paw-mkt-content]
+        MEMAIL[paw-mkt-email]
+        MSOCIAL[paw-mkt-social]
+        MPAID[paw-mkt-paid-ads]
+        MPR[paw-mkt-pr]
+        MVIDEO[paw-mkt-video]
+        MINFL[paw-mkt-influencer]
     end
 
     subgraph Revenue["Revenue Skills"]
-        MCRO[marketing-cro]
-        MRET[marketing-retention]
-        MPRICE[marketing-pricing]
-        MLAUNCH[marketing-launch]
-        MSALES[marketing-sales]
+        MCRO[paw-mkt-cro]
+        MRET[paw-mkt-retention]
+        MPRICE[paw-mkt-pricing]
+        MLAUNCH[paw-mkt-launch]
+        MSALES[paw-mkt-sales]
     end
 
     subgraph Support["Support Skills"]
-        MANA[marketing-analytics]
-        MPSYCH[marketing-psychology]
-        MCOMM[marketing-community]
-        MREF[marketing-referral]
-        MGUER[marketing-guerrilla]
+        MANA[paw-mkt-analytics]
+        MPSYCH[paw-mkt-psychology]
+        MCOMM[paw-mkt-community]
+        MREF[paw-mkt-referral]
+        MGUER[paw-mkt-guerrilla]
     end
 
     MSOSTAC --> S
@@ -663,21 +663,21 @@ flowchart TB
 
 | Skill | Primary Phase(s) | How It Connects |
 |-------|------------------|-----------------|
-| `marketing-sostac` | All 6 | Builds the complete plan |
-| `marketing-agency` | All 6 | Coordinates execution of plan |
-| `marketing-seo` | Tactics, Control | Implements SEO tactics, measures performance |
-| `marketing-content` | Tactics, Control | Creates content aligned to strategy |
-| `marketing-email` | Tactics, Control | Builds sequences, measures engagement |
-| `marketing-social` | Tactics, Control | Manages organic social, measures growth |
-| `marketing-paid-ads` | Tactics, Control | Runs paid campaigns, measures ROI |
-| `marketing-pr` | Tactics, Control | Media relations, measures coverage |
-| `marketing-cro` | Tactics, Control | Optimizes conversion, runs tests |
-| `marketing-retention` | Tactics, Objectives | Reduces churn, affects objectives |
-| `marketing-pricing` | Strategy | Defines pricing and positioning |
-| `marketing-launch` | Tactics, Action | Executes launches per timeline |
-| `marketing-sales` | Tactics | Creates enablement materials |
-| `marketing-analytics` | Control | Implements measurement infrastructure |
-| `marketing-psychology` | Strategy, Tactics | Informs positioning and persuasion |
+| `paw-mkt-sostac` | All 6 | Builds the complete plan |
+| `paw-mkt-agency` | All 6 | Coordinates execution of plan |
+| `paw-mkt-seo` | Tactics, Control | Implements SEO tactics, measures performance |
+| `paw-mkt-content` | Tactics, Control | Creates content aligned to strategy |
+| `paw-mkt-email` | Tactics, Control | Builds sequences, measures engagement |
+| `paw-mkt-social` | Tactics, Control | Manages organic social, measures growth |
+| `paw-mkt-paid-ads` | Tactics, Control | Runs paid campaigns, measures ROI |
+| `paw-mkt-pr` | Tactics, Control | Media relations, measures coverage |
+| `paw-mkt-cro` | Tactics, Control | Optimizes conversion, runs tests |
+| `paw-mkt-retention` | Tactics, Objectives | Reduces churn, affects objectives |
+| `paw-mkt-pricing` | Strategy | Defines pricing and positioning |
+| `paw-mkt-launch` | Tactics, Action | Executes launches per timeline |
+| `paw-mkt-sales` | Tactics | Creates enablement materials |
+| `paw-mkt-analytics` | Control | Implements measurement infrastructure |
+| `paw-mkt-psychology` | Strategy, Tactics | Informs positioning and persuasion |
 
 ---
 
@@ -799,10 +799,10 @@ The system never relies on conversation memory for critical information. Strateg
 The complete brand workspace structure:
 
 ```
-./brands/{brand-slug}/
+./.pawbytes/marketing-suites/brands/{brand-slug}/
 │
 ├── brand-context.md                    # Core brand identity and context
-├── product-marketing-context.md        # Deep positioning reference
+├── paw-mkt-product-context.md        # Deep positioning reference
 │
 ├── sostac/                             # SOSTAC strategic planning
 │   ├── README.md                       # Phase completion tracker
@@ -890,12 +890,12 @@ Used when work is part of a **named, time-bound campaign** with a specific objec
 
 ```
 Campaign Mode Path:
-./brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/{channel}/content/
+./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/{channel}/content/
 ```
 
 **Example:** Blog posts for the "Spring Product Release" launch campaign:
 ```
-./brands/acme-co/campaigns/launch-spring-release/channels/blog/content/
+./.pawbytes/marketing-suites/brands/acme-co/campaigns/launch-spring-release/channels/blog/content/
 ```
 
 #### Standalone Mode
@@ -904,12 +904,12 @@ Used for **evergreen or ongoing work** that isn't tied to a specific campaign.
 
 ```
 Standalone Mode Path:
-./brands/{brand-slug}/channels/{channel}/content/
+./.pawbytes/marketing-suites/brands/{brand-slug}/channels/{channel}/content/
 ```
 
 **Example:** Ongoing SEO optimization:
 ```
-./brands/acme-co/channels/seo/content/
+./.pawbytes/marketing-suites/brands/acme-co/channels/seo/content/
 ```
 
 #### How the System Decides
@@ -1050,32 +1050,32 @@ If legacy_structure_detected:
 
 ```
 # Brand Context Files
-./brands/{slug}/brand-context.md
-./brands/{slug}/product-marketing-context.md
+./.pawbytes/marketing-suites/brands/{slug}/brand-context.md
+./.pawbytes/marketing-suites/brands/{slug}/paw-mkt-product-context.md
 
 # SOSTAC Files
-./brands/{slug}/sostac/README.md
-./brands/{slug}/sostac/01-situation.md
-./brands/{slug}/sostac/02-objectives.md
-./brands/{slug}/sostac/03-strategy.md
-./brands/{slug}/sostac/04-tactics.md
-./brands/{slug}/sostac/05-action.md
-./brands/{slug}/sostac/06-control.md
+./.pawbytes/marketing-suites/brands/{slug}/sostac/README.md
+./.pawbytes/marketing-suites/brands/{slug}/sostac/01-situation.md
+./.pawbytes/marketing-suites/brands/{slug}/sostac/02-objectives.md
+./.pawbytes/marketing-suites/brands/{slug}/sostac/03-strategy.md
+./.pawbytes/marketing-suites/brands/{slug}/sostac/04-tactics.md
+./.pawbytes/marketing-suites/brands/{slug}/sostac/05-action.md
+./.pawbytes/marketing-suites/brands/{slug}/sostac/06-control.md
 
 # Campaign Files
-./brands/{slug}/campaigns/{type}-{campaign-slug}/strategy.md
-./brands/{slug}/campaigns/{type}-{campaign-slug}/channels/{channel}/content/
-./brands/{slug}/campaigns/{type}-{campaign-slug}/{discipline}/
-./brands/{slug}/campaigns/{type}-{campaign-slug}/performance/
+./.pawbytes/marketing-suites/brands/{slug}/campaigns/{type}-{campaign-slug}/strategy.md
+./.pawbytes/marketing-suites/brands/{slug}/campaigns/{type}-{campaign-slug}/channels/{channel}/content/
+./.pawbytes/marketing-suites/brands/{slug}/campaigns/{type}-{campaign-slug}/{discipline}/
+./.pawbytes/marketing-suites/brands/{slug}/campaigns/{type}-{campaign-slug}/performance/
 
 # Standalone Channel Files
-./brands/{slug}/channels/{channel}/content/
+./.pawbytes/marketing-suites/brands/{slug}/channels/{channel}/content/
 
 # Standalone Operations Files
-./brands/{slug}/operations/{discipline}/
+./.pawbytes/marketing-suites/brands/{slug}/operations/{discipline}/
 
 # Analytics Files
-./brands/{slug}/analytics/
+./.pawbytes/marketing-suites/brands/{slug}/analytics/
 ```
 
 #### Campaign Type Prefixes
@@ -1105,7 +1105,7 @@ When creating campaigns, use these prefixes:
 
 The Agentic Marketing Skills system is built on three architectural pillars:
 
-1. **Orchestration** — The `marketing-agency` coordinator routes requests, maintains state, and assembles specialist teams
+1. **Orchestration** — The `paw-mkt-agency` coordinator routes requests, maintains state, and assembles specialist teams
 
 2. **SOSTAC Integration** — Every specialist connects to the strategic plan, ensuring consistency and purpose
 
