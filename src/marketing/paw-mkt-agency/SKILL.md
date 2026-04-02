@@ -33,6 +33,8 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{communication_language}` (user or system intent) — use for all communications
 - `{document_output_language}` (user or system intent) — use for generated document content
 
+**Brand Discovery**: Use Glob pattern `.pawbytes/marketing-suites/brands/*/brand-context.md` to discover existing brands. Each match represents one brand workspace.
+
 Greet the user and offer to show available capabilities.
 
 ## Capabilities

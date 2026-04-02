@@ -26,12 +26,12 @@ If user gives website, landing page, store, or social/profile URL:
 1. Check if user started with repo, local implementation request, live URL, profile, or existing brand in conversation
 2. If repo/implementation request → inspect repo first, use as immediate working context
 3. If live URL/profile → audit first, use as immediate working context
-4. If no repo/URL → scan `./.pawbytes/marketing-suites/brands/` for existing brand directories
+4. If no repo/URL → discover brands using Glob pattern `.pawbytes/marketing-suites/brands/*/brand-context.md`
 5. Based on findings:
 
 | Situation | Action |
 |---|---|
-| `./.pawbytes/marketing-suites/brands/` does not exist or empty | Ask: "No brands found. Would you like to start marketing for a new brand?" → Brand Onboarding |
+| No brand-context.md files found | Ask: "No brands found. Would you like to start marketing for a new brand?" → Brand Onboarding |
 | Exactly one brand exists | Auto-select, confirm with user → Step 2 |
 | Multiple brands exist | Present numbered list (Brand Selection) → Step 2 |
 | User explicitly names brand | Match existing or offer to create |
