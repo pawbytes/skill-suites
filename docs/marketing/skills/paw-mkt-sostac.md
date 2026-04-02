@@ -1,91 +1,80 @@
-# `marketing-sostac`
+# paw-mkt-sostac
 
 ## Overview
 
-Builds a full SOSTAC marketing plan by researching first and delivering strategic recommendations — not running an interview. The skill does the analysis work, then validates findings with the user rather than extracting information through questions.
+Builds a full SOSTAC marketing plan by researching first and delivering strategic recommendations, not by running a long interview. The skill does the analysis work, then validates findings with the user before saving each phase.
 
-## Philosophy: Research → Recommend → Validate
+## When to Use It
 
-Each phase follows this three-step sequence:
+- You need a full marketing plan
+- Current tactics feel disconnected
+- You want strategy saved to files for future sessions
+- A coordinator routed you here before execution
 
-1. **Research** — automated web research, competitor analysis, benchmarks
-2. **Recommend** — presents findings and strategic options with trade-offs
-3. **Validate** — 2–4 targeted questions to fill genuine gaps ("Based on X, I recommend Y — does that align?")
+## What You Need to Provide
 
-The user should feel like they hired a strategist who shows up prepared, not one who shows up with a clipboard.
-
-## When to use it
-
-Use `/paw-mkt-sostac` when:
-- you need a full marketing plan
-- your current tactics feel disconnected
-- you want strategy saved to files for future sessions
-- a coordinator routed you here
-
-## Inputs to prepare
-
-Nothing is required upfront. The skill starts with auto-discovery research. If you have the following, it helps speed up validation:
-
+Nothing is strictly required upfront because the skill starts with auto-discovery research. Helpful inputs include:
 - brand website or URL
 - product overview or description
 - known competitors
 - goals or KPIs
 - budget and team constraints
 
-## What the interaction looks like
+## What It Does
 
-The skill runs 7 phases in sequence, resuming from the first incomplete phase:
-
-| Phase | What happens | Output |
-|-------|-------------|--------|
+| Phase | What Happens | Output |
+|-------|--------------|--------|
 | 0 — Auto-Discovery | Automated web research before first user interaction | `00-auto-discovery.md` |
 | 1 — Situation | Competitive analysis, SWOT, market sizing | `01-situation.md` |
-| 2 — Objectives | Benchmarked OKR/KPI recommendations | `02-objectives.md` |
-| 3 — Strategy | Positioning, segments, channel strategy | `03-strategy.md` |
+| 2 — Objectives | Benchmarked OKR and KPI recommendations | `02-objectives.md` |
+| 3 — Strategy | Positioning, segments, and channel strategy | `03-strategy.md` |
 | 4 — Tactics | Channel-level execution plan with ICE scoring | `04-tactics.md` |
-| 5 — Action | Roled roadmap, ownership, timeline | `05-action.md` |
+| 5 — Action | Roadmap, ownership, and timeline | `05-action.md` |
 | 6 — Control | KPI dashboards and review cadences | `06-control.md` |
 
-After all 6 phases: `plan-summary.md` (executive summary).
+After the six phases, the skill writes `plan-summary.md`.
 
-### Auto-Discovery (Phase 0)
-
-Runs automatically before the user is asked anything. Covers:
-- Brand web presence
-- Competitor analysis
-- Market sizing and category trends
-- Customer language (reviews, forums, G2, Reddit)
-- SEO and paid ad landscape
-
-### Resumption logic
-
-Before starting, the skill reads `sostac/README.md`, checks which phase files exist, re-reads all completed phases, then picks up at the first incomplete phase. Completed phases are never re-researched.
-
-## Deliverables
+## What You Get
 
 - `00-auto-discovery.md` — pre-research synthesis
-- Six phase files (`01-situation.md` through `06-control.md`)
+- six phase files (`01-situation.md` through `06-control.md`)
 - `plan-summary.md` — executive summary
+- a durable strategic foundation for downstream specialists
 
-## Output locations
+## Output Location
 
 ```text
-brands/{brand-slug}/sostac/
+.pawbytes/marketing-suites/brands/{brand-slug}/sostac/
 ```
 
-## Frameworks used
+## Workflow Overview
 
-38 individual framework files, indexed in `frameworks-index.csv`. Selected automatically per phase:
+```mermaid
+flowchart TD
+    A[Auto-discovery research] --> B[Situation]
+    B --> C[Objectives]
+    C --> D[Strategy]
+    D --> E[Tactics]
+    E --> F[Action]
+    F --> G[Control]
+    G --> H[plan-summary.md]
+```
 
-SWOT+TOWS, PESTLE, Porter's Five Forces, TAM/SAM/SOM, JTBD, OKR, RACE, STP, Ansoff, positioning statement, AARRR, ICE scoring, 7P, RACI, PDCA, Balanced Scorecard, Blue Ocean, Kotter change model, North Star Metric, OKR review cadence, PIE framework, objective cascade, leading/lagging indicators, and more.
+## Behavior Notes
 
-## Related skills
+> [!IMPORTANT]
+> The core interaction model is Research → Recommend → Validate. The user should feel like they hired a strategist who shows up prepared, not one who shows up with a clipboard.
 
-- `marketing-agency` — routes to SOSTAC when no plan exists
-- `product-marketing-context` — run after SOSTAC to build deep positioning doc
-- All execution specialists — feed from SOSTAC output
+> [!NOTE]
+> The skill resumes from the first incomplete phase by reading `sostac/README.md` and existing phase files before continuing.
 
-## Sample prompts
+## Related Skills
+
+- `paw-mkt-agency` — routes to SOSTAC when no plan exists
+- `paw-mkt-product-context` — run after SOSTAC to build the deeper positioning document
+- all execution specialists — feed from SOSTAC output
+
+## Example Prompts
 
 ```text
 /paw-mkt-sostac

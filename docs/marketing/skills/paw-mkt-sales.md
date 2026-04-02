@@ -1,74 +1,73 @@
-# `marketing-sales`
+# paw-mkt-sales
 
 ## Overview
 
-Creates sales enablement assets and messaging systems for the revenue team. Covers collateral from first contact through close.
+Creates sales enablement assets and messaging systems for the revenue team. This skill covers collateral from first contact through close so sales conversations stay aligned with brand positioning and proof.
 
-## When to use it
+## When to Use It
 
-Use `/paw-mkt-sales` when you need:
-- sales decks or pitch decks
-- one-pagers
-- objection handling docs
-- demo scripts and talk tracks
-- ROI calculators
-- champion kits
-- battle cards
-- competitive positioning for sales conversations
+- You need sales decks or pitch decks
+- You want one-pagers or battle cards
+- You need objection handling docs, demo scripts, or talk tracks
+- You want ROI calculators or champion kits
+- You need competitive positioning for sales conversations
 
-## Inputs to prepare
+## What You Need to Provide
 
 - ICP and segment details
 - common objections
 - sales stage context
 - competitor or pricing pressure
 - product proof and outcomes
-- existing collateral library (if any)
+- existing collateral library if available
 
-## Deliverables
+## What It Does
 
-- sales decks and slide outlines
-- one-pagers
-- battle cards (concise and detailed formats)
-- objection-handling frameworks and talk tracks
-- demo scripts
-- ROI calculator templates
-- champion kits
-- email templates for sales outreach
-- sales library index for managing collateral
+| Capability | Description |
+|------------|-------------|
+| Decks and one-pagers | Creates structured sales collateral |
+| Battle cards | Produces concise and detailed competitive enablement |
+| Objection handling | Builds talk tracks and rebuttal frameworks |
+| Demo scripts | Creates structured product presentation flows |
+| ROI tools | Frames value in business terms for buyers |
+| Sales library management | Organizes collateral and reuse patterns |
 
-## Framework files
+## What You Get
 
-15 individual framework files, indexed in `frameworks-index.csv`:
+| Deliverable | Description |
+|-------------|-------------|
+| Sales decks | Slide-ready structure and key messaging |
+| One-pagers | Compact product or offer explanation |
+| Battle cards | Competitive and objection-handling support |
+| Demo scripts | Guided walkthroughs for product conversations |
+| ROI calculator templates | Value framing and savings logic |
+| Champion kits | Internal-selling support for buyer champions |
 
-- Sales deck slides
-- One-pager templates
-- Battle card (template and detailed)
-- Objection handling (talk tracks and detailed)
-- Demo script templates and talk tracks
-- ROI calculator (template and detailed)
-- Champion kit templates
-- Email templates
-- Sales library index
-
-Additional references:
-- `references/benchmarks.md` — industry benchmarks for conversion rates, deal velocity, and close rates
-- `references/best-practices.md` — execution best practices for sales enablement
-
-## Output locations
+## Output Location
 
 ```text
-brands/{brand-slug}/campaigns/sales/
+.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/sales/
 ```
 
-## Related skills
+## Workflow Overview
 
-- `marketing-email` — sales outreach sequences
-- `marketing-pricing` — pricing strategy for ROI messaging
-- `marketing-cro` — landing page alignment with sales messaging
-- `product-marketing-context` — positioning and customer language that feeds all sales copy
+```mermaid
+flowchart TD
+    A[Load brand, positioning, and proof] --> B[Assess sales context and pressure points]
+    B --> C[Choose asset type]
+    C --> D[Build messaging and collateral]
+    D --> E[Package into sales-ready outputs]
+    E --> F[Save enablement assets]
+```
 
-## Sample prompts
+## Related Skills
+
+- `paw-mkt-email` — sales outreach sequences
+- `paw-mkt-pricing` — pricing strategy for ROI messaging
+- `paw-mkt-cro` — landing page alignment with sales messaging
+- `paw-mkt-product-context` — positioning and customer language that feed all sales copy
+
+## Example Prompts
 
 ```text
 /paw-mkt-sales
@@ -83,9 +82,4 @@ For Acorn Legal, build objection-handling and demo messaging for small law firm 
 ```text
 /paw-mkt-sales
 Use our positioning, proof points, and pricing strategy to draft a sales deck outline.
-```
-
-```text
-/paw-mkt-sales
-Build a battle card for our main competitor.
 ```

@@ -1,18 +1,17 @@
-# `marketing-psychology`
+# paw-mkt-psychology
 
 ## Overview
 
-Applies behavioral science and persuasion patterns to messaging, offers, and UX.
+Applies behavioral science and persuasion patterns to messaging, offers, and UX. This skill helps improve framing, objection handling, and trust-building by grounding recommendations in audience psychology.
 
-## When to use it
+## When to Use It
 
-Use `/paw-mkt-psychology` when you need:
-- stronger persuasion in copy
-- framing help for offers or pages
-- objection-handling ideas
-- bias-aware review of messaging and UX
+- You need stronger persuasion in copy
+- You want framing help for offers or pages
+- You need objection-handling ideas
+- You want a bias-aware review of messaging or UX
 
-## Inputs to prepare
+## What You Need to Provide
 
 - target audience
 - current copy or flow
@@ -20,41 +19,48 @@ Use `/paw-mkt-psychology` when you need:
 - known objections
 - brand voice constraints
 
-## Deliverables
+## What It Does
+
+| Capability | Description |
+|------------|-------------|
+| Persuasion recommendations | Applies principles like Cialdini and bias-aware framing |
+| Messaging review | Annotates copy and offers with psychological guidance |
+| Offer framing | Improves value communication and call-to-action logic |
+| Before/after rewrites | Shows practical copy improvements with rationale |
+| Strategic models | Applies mental models such as Jobs-to-be-Done where useful |
+
+## What You Get
 
 - persuasion recommendations
 - annotated messaging guidance
 - framing and offer suggestions
 - rewritten copy examples with before/after
-- full Cialdini principles application
-- cognitive bias audit of copy or UX
-- strategic mental model recommendations (Jobs-to-be-Done, etc.)
-- psychology-by-context checklists (landing page, checkout, email, pricing, etc.)
+- psychology-by-context checklists
+- strategic mental model recommendations
 
-## Framework files
-
-6 individual framework files, indexed in `frameworks-index.csv`:
-
-- Cialdini's six principles (with application examples)
-- Expanded cognitive biases reference
-- Copy rewrite examples (before/after)
-- Psychology by context (by marketing surface)
-- Quick reference table
-- Strategic mental models
-
-## Output locations
+## Output Location
 
 This skill is often advisory and may write into the active deliverable rather than a single dedicated folder.
 
-## Related skills
+## Workflow Overview
 
-- `marketing-cro`
-- `marketing-email`
-- `marketing-paid-ads`
-- `marketing-sales`
-- `marketing-content`
+```mermaid
+flowchart TD
+    A[Load brand, audience, and objections] --> B[Assess current messaging or UX]
+    B --> C[Choose relevant persuasion principles]
+    C --> D[Rewrite or annotate]
+    D --> E[Recommend tests or follow-up changes]
+```
 
-## Sample prompts
+## Related Skills
+
+- `paw-mkt-cro`
+- `paw-mkt-email`
+- `paw-mkt-paid-ads`
+- `paw-mkt-sales`
+- `paw-mkt-content`
+
+## Example Prompts
 
 ```text
 /paw-mkt-psychology

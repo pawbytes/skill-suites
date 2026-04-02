@@ -1,23 +1,18 @@
-# `marketing-guerrilla`
+# paw-mkt-guerrilla
 
 ## Overview
 
-Designs unconventional, high-leverage campaigns for attention and growth. Covers growth hacking, viral experiments, competitive disruption, and product-led growth. Does not own paid campaigns (use `marketing-paid-ads`) or standard community moderation (use `marketing-community`).
+Designs unconventional, high-leverage campaigns for attention and growth. Covers growth hacking, viral experiments, competitive disruption, and product-led growth opportunities that do not fit the standard channel playbook.
 
-## When to use it
+## When to Use It
 
-Use `/paw-mkt-guerrilla` when you need:
-- low-budget attention plays
-- viral campaign design
-- growth experiment planning and tracking
-- competitive disruption tactics
-- community infiltration strategies (ethical, disclosure-based)
-- newsjacking and trend-riding plays
-- Product Hunt launch campaigns
-- zero-budget launch concepts
-- cold outreach hacks and partnership growth
+- You need low-budget attention plays
+- You want viral campaign design ideas
+- You need growth experiment planning and tracking
+- You want competitive disruption tactics or launch stunts
+- You need Product Hunt or zero-budget launch concepts
 
-## Inputs to prepare
+## What You Need to Provide
 
 - target audience context
 - constraints and budget
@@ -25,51 +20,50 @@ Use `/paw-mkt-guerrilla` when you need:
 - campaign objective
 - any brand or legal limits
 
-## Deliverables
+## What It Does
+
+| Capability | Description |
+|------------|-------------|
+| Guerrilla concepts | Generates unconventional campaign ideas |
+| Growth experiments | Builds testable experiment plans and dashboards |
+| Launch stunts | Creates bold awareness concepts with safer backup options |
+| Trend-based plays | Uses newsjacking and timing-sensitive hooks |
+| Retrospectives | Helps analyze failed or mixed experiment outcomes |
+
+## What You Get
 
 - concept ideas with ICE scores
-- growth experiment plans (using the growth experiment template)
+- growth experiment plans
 - experiment dashboards
 - execution outlines with do's and don'ts
 - failed experiment analysis frameworks
 - post-experiment retrospectives
 
-## Framework files
-
-18 individual framework files, indexed in `frameworks-index.csv`:
-
-- Growth experiment template (full)
-- ICE scoring worksheet
-- Experiment dashboard
-- 50 growth experiment ideas
-- Experiment do's and don'ts
-- Failed experiment analysis
-- AB test duration calculator
-- Cold outreach hacks
-- Community infiltration (ethical)
-- Competitive takedown
-- Newsjacking
-- Partnership hacks
-- Product Hunt launch
-- Viral LinkedIn post
-- Zero-budget launch
-- General playbook principles
-- Experiment idea prompts
-
-## Output locations
+## Output Location
 
 ```text
-brands/{brand-slug}/campaigns/guerrilla/
+.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/guerrilla/
 ```
 
-## Related skills
+## Workflow Overview
 
-- `marketing-pr` — earned media and journalist outreach
-- `marketing-social` — organic social amplification
-- `marketing-launch` — structured launch planning
-- `marketing-community` — community building (not infiltration)
+```mermaid
+flowchart TD
+    A[Load audience, budget, and constraints] --> B[Assess objective and risk tolerance]
+    B --> C[Generate unconventional plays]
+    C --> D[Score ideas with ICE]
+    D --> E[Select launch or experiment path]
+    E --> F[Write execution plan and tracking approach]
+```
 
-## Sample prompts
+## Related Skills
+
+- `paw-mkt-pr` — earned media and journalist outreach
+- `paw-mkt-social` — organic social amplification
+- `paw-mkt-launch` — structured launch planning
+- `paw-mkt-community` — community building, not infiltration
+
+## Example Prompts
 
 ```text
 /paw-mkt-guerrilla
@@ -84,9 +78,4 @@ For Acorn Legal, design an unconventional awareness campaign that reaches small 
 ```text
 /paw-mkt-guerrilla
 Use our positioning and budget constraints to create one bold launch stunt plus a safer backup version.
-```
-
-```text
-/paw-mkt-guerrilla
-Build us a growth experiment dashboard for 10 experiments we want to run this quarter.
 ```

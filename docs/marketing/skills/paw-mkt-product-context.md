@@ -1,31 +1,33 @@
-# `product-marketing-context`
+# paw-mkt-product-context
 
 ## Overview
 
-Creates or updates the deep positioning file every specialist should read before producing marketing work.
+Creates or updates the deep positioning file every specialist should read before producing marketing work. This document distills customer language, objections, proof, personas, and differentiation into a reusable strategic reference.
 
-## When to use it
+## When to Use It
 
-Use `/paw-mkt-product-context` when:
-- output feels generic or off-brand
-- you want better personas, objections, and proof points captured
-- SOSTAC is complete and you want a distilled reference
-- you need stronger customer language for copywriting
+- Output feels generic or off-brand
+- You want better personas, objections, and proof points captured
+- SOSTAC is complete and you want a distilled positioning reference
+- You need stronger customer language for copywriting and execution
 
-## Inputs to prepare
+## What You Need to Provide
 
 - active brand
 - `brand-context.md`
 - SOSTAC files if they exist
 - customer quotes, objections, reviews, proof points, and personas if available
 
-## What the interaction looks like
+## What It Does
 
-The skill either:
-- extracts what it can from SOSTAC, then asks only for missing gaps, or
-- runs a focused interview if no SOSTAC plan exists
+| Capability | Description |
+|------------|-------------|
+| Strategic extraction | Pulls positioning from existing SOSTAC and brand files |
+| Gap interview | Asks only for missing details when needed |
+| Positioning synthesis | Builds a structured, reusable positioning document |
+| Messaging support | Captures customer language and proof for downstream specialists |
 
-## Deliverables
+## What You Get
 
 A 12-section positioning document covering:
 - product overview
@@ -39,27 +41,39 @@ A 12-section positioning document covering:
 - proof points
 - marketing goals
 
-## Output location
+## Output Location
 
 ```text
-brands/{brand-slug}/paw-mkt-product-context.md
+.pawbytes/marketing-suites/brands/{brand-slug}/paw-mkt-product-context.md
 ```
 
-## Related skills
+## Workflow Overview
+
+```mermaid
+flowchart TD
+    A[Load brand and SOSTAC context] --> B[Extract what already exists]
+    B --> C{Enough signal?}
+    C -- No --> D[Ask focused gap questions]
+    C -- Yes --> E[Draft positioning document]
+    D --> E
+    E --> F[Save context file for downstream specialists]
+```
+
+## Related Skills
 
 All specialists benefit from this file, especially:
-- `marketing-content`
-- `marketing-email`
-- `marketing-seo`
-- `marketing-social`
-- `marketing-paid-ads`
-- `marketing-sales`
+- `paw-mkt-content`
+- `paw-mkt-email`
+- `paw-mkt-seo`
+- `paw-mkt-social`
+- `paw-mkt-paid-ads`
+- `paw-mkt-sales`
 
-## Sample prompts
+## Example Prompts
 
 ```text
 /paw-mkt-product-context
-Create the product marketing context for our brand.
+Create the product context for our brand.
 ```
 
 ```text
