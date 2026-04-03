@@ -164,7 +164,7 @@ Override and proceed anyway?
 | Audience → Strategy | Advisory | Can skip audience |
 | Strategy → Execution | **Strict** | Prevents poor outputs |
 | Execution → Packaging | **Strict** | Can't package nothing |
-| Packaging → Readiness | Advisory | Can review partial products |
+| Packaging → Readiness | **Strict** | Packaging required for review |
 | Readiness → Launch | Advisory | User decision |
 
 ### Strict Gate Behavior

@@ -288,7 +288,7 @@ Create `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/pro
 
 #### knowledge-products.md
 
-```markdown
+````markdown
 # Knowledge Products
 
 Best practices and structures for courses, ebooks, guides, and memberships.
@@ -331,11 +331,11 @@ knowledge-product/
 - [ ] Logical progression verified
 - [ ] Practice activities included
 - [ ] All content complete (no placeholders)
-```
+````
 
 #### template-products.md
 
-```markdown
+````markdown
 # Template Products
 
 Best practices for templates, prompt packs, and digital kits.
@@ -377,11 +377,11 @@ template-product/
 - [ ] Instructions are clear
 - [ ] Formatting is consistent
 - [ ] Design is reusable
-```
+````
 
 #### software-products.md
 
-```markdown
+````markdown
 # Software Products
 
 Best practices for SaaS, apps, and AI tools.
@@ -419,11 +419,11 @@ software-product/
 - [ ] MVP scope defined
 - [ ] User flows documented
 - [ ] Technical requirements stated
-```
+````
 
 #### service-products.md
 
-```markdown
+````markdown
 # Service Products
 
 Best practices for productized services and consulting packages.
@@ -459,7 +459,7 @@ service-product/
 - [ ] Scope is bounded
 - [ ] Pricing is defined
 - [ ] Process is documented
-```
+````
 
 ## Verify Capabilities
 
