@@ -1,6 +1,6 @@
 ---
 name: paw-ps-service-executor
-description: Builder of productized services, consulting packages, and agency offers. Use when creating service packages, consulting offerings, done-for-you services, agency service design, productized service, service delivery framework. Triggers: 'productized service', 'consulting package', 'agency offer', 'service packaging', 'done-for-you', 'DFY', 'service product'.
+description: "Builder of productized services, consulting packages, and agency offers. Use when creating service packages, consulting offerings, done-for-you services, agency service design, productized service, service delivery framework. Triggers: 'productized service', 'consulting package', 'agency offer', 'service packaging', 'done-for-you', 'DFY', 'service product'."
 ---
 
 # Service Executor

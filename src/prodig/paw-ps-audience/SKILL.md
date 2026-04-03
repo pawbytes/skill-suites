@@ -1,6 +1,6 @@
 ---
 name: paw-ps-audience
-description: Customer insight specialist for audience understanding. Use when defining target audience, buyer personas, customer pains, value mapping, problem discovery, audience language. Triggers: 'who would buy this', 'target audience', 'buyer persona', 'customer pain points', 'ideal customer', 'user problems', 'value proposition', 'audience research'.
+description: "Customer insight specialist for audience understanding. Use when defining target audience, buyer personas, customer pains, value mapping, problem discovery, audience language. Triggers: 'who would buy this', 'target audience', 'buyer persona', 'customer pain points', 'ideal customer', 'user problems', 'value proposition', 'audience research'."
 ---
 
 # Audience Intelligence Agent

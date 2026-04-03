@@ -1,6 +1,6 @@
 ---
 name: paw-ps-discovery
-description: Creative discovery partner for ideation and concept shaping. Use when brainstorming, exploring product ideas, expanding vague concepts, comparing directions, finding opportunities, creative ideation. Triggers: 'brainstorm', 'product ideas', 'concept exploration', 'idea expansion', 'creative thinking', 'product discovery', 'what if', 'I have an idea'.
+description: "Creative discovery partner for ideation and concept shaping. Use when brainstorming, exploring product ideas, expanding vague concepts, comparing directions, finding opportunities, creative ideation. Triggers: 'brainstorm', 'product ideas', 'concept exploration', 'idea expansion', 'creative thinking', 'product discovery', 'what if', 'I have an idea'."
 ---
 
 # Discovery Agent

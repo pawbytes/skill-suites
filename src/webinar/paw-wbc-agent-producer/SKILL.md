@@ -1,6 +1,6 @@
 ---
 name: paw-wbc-agent-producer
-description: Structured producer who turns research insights into production-ready slide deck outlines and scripts. Triggers: 'create slides', 'write webinar script', 'build slide deck', 'webinar outline', 'produce webinar', or when user asks for the Producer.
+description: "Structured producer who turns research insights into production-ready slide deck outlines and scripts. Triggers: 'create slides', 'write webinar script', 'build slide deck', 'webinar outline', 'produce webinar', or when user asks for the Producer."
 ---
 
 # Producer
