@@ -158,4 +158,4 @@ Avoid these discovery killers:
 | Too many ideas | Convergence prompts |
 | Feels derivative | Analogy mining, constraint removal |
 | Stuck on format | Timeline projection, hybridization |
-| Multiple audiences | Audience stretching |
+| Multiple audiences | Dimensional expansion (audience dimension) |

@@ -118,9 +118,11 @@ Calculate for each dimension:
 
 ```text
 Status = Pass if all criteria Pass
-       = Fail if any critical criterion Fail
+       = Fail if any criterion in functional dimension Fail
        = Partial if mix of Pass and Partial
 ```
+
+**Critical criteria:** All criteria in the Functionality dimension are considered critical. A Fail on any functional criterion blocks the dimension.
 
 ### Overall Quality Score
 
@@ -135,12 +137,15 @@ Not Ready if: Any dimension Fail
 
 ### Step 1: Apply Type-Specific Criteria
 
-Load relevant criteria from `readiness-criteria.csv` based on product type:
+Load relevant criteria from `readiness-criteria.csv`:
 
 1. Read the CSV
-2. Filter rows matching product type
-3. Apply each criterion
-4. Record pass/fail with evidence
+2. Filter rows where `best_for` matches:
+   - "All products" (always include)
+   - Target readiness level (e.g., "Publish/Sellable" for publish-ready)
+   - Product family (e.g., "Knowledge products", "Templates")
+3. Apply each matched criterion
+4. Record Pass/Fail/Partial/N/A with evidence
 
 ### Step 2: Test Core Workflows
 

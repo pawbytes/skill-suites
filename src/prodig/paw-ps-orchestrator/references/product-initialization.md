@@ -19,8 +19,17 @@ Ask targeted questions to capture the product concept:
 
 **Minimum viable questions:**
 1. What's the product idea? (1-2 sentences)
-2. What type of product? (course, ebook, template pack, SaaS, service, etc.)
+2. What type of product? (knowledge: course/ebook/guide/membership, template: templates/prompt packs/digital kits, software: SaaS/app/AI tool, service: consulting/done-for-you)
 3. Who is it for? (target audience, optional at this stage)
+
+**Product family mapping:** Map specific types to canonical families for routing:
+
+| User Response | Canonical Family |
+|---------------|------------------|
+| course, ebook, guide, membership | knowledge |
+| template, prompt pack, digital kit | template |
+| SaaS, app, AI tool, plugin | software |
+| consulting, done-for-you, coaching | service |
 
 **Example interaction:**
 ```
@@ -118,15 +127,15 @@ Create the initial product context file:
 
 ### 5. Update Sidecar Index
 
-Add the new product to the shared sidecar index:
+Add a new row to the Active Products table in the shared sidecar index:
+
+**Append to existing table** — do not replace the entire section:
 
 ```markdown
-## Active Products
-
-| Product | Type | Stage | Last Active |
-|---------|------|-------|-------------|
-| {product-name} | {type} | discovery | {date} |
+| {product-name} | {family} | discovery | {date} |
 ```
+
+If the `## Active Products` section doesn't exist yet, create it with the table header and first row.
 
 ### 6. Log to Daily File
 
@@ -167,8 +176,8 @@ Which would you like to continue, or start something new?
 
 When user selects a product:
 
-1. Read `{product-slug}/product-context.md`
-2. Check for related curated files (market-intelligence.md, etc.)
+1. Read `.pawbytes/prodig-suites/products/{product-slug}/product-context.md`
+2. Check for related curated files in `.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/` (market-intelligence.md, etc.)
 3. Summarize current state
 4. Offer context-appropriate next steps
 

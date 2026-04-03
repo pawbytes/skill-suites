@@ -319,11 +319,11 @@ Add .gitkeep if needed for version control.
 After initialization, verify:
 
 - [ ] `.pawbytes/prodig-suites/` exists
-- [ ] `memory/paw-ps-sidecar/index.md` exists and has content
-- [ ] `memory/paw-ps-sidecar/curated/` directory exists
-- [ ] `memory/paw-ps-sidecar/daily/` directory exists
-- [ ] `products/` directory exists
-- [ ] `artifacts/` directory exists
+- [ ] `.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md` exists and has content
+- [ ] `.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/` directory exists
+- [ ] `.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/` directory exists
+- [ ] `.pawbytes/prodig-suites/products/` directory exists
+- [ ] `.pawbytes/prodig-suites/artifacts/` directory exists
 - [ ] All product-type starter files created
 
 ## Post-Initialization

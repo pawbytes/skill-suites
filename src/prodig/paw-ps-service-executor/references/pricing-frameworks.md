@@ -201,7 +201,7 @@ Target price: $X × (10-25%)
 
 Example:
 Client will make $100K from this project
-They'd happily pay $10-25K for it
+They'd happily pay $10K–$25K for it
 Price accordingly
 ```
 
@@ -305,26 +305,26 @@ Options:
 
 | Tier | Price Range | Characteristics |
 |------|-------------|-----------------|
-| Hourly | $150-500/hr | Ad-hoc, no commitment |
-| Project | $2K-50K | Defined scope, deliverable |
-| Retainer | $2K-25K/mo | Ongoing access, recurring |
+| Hourly | $150–$500/hr | Ad-hoc, no commitment |
+| Project | $2K–$50K | Defined scope, deliverable |
+| Retainer | $2K–$25K/mo | Ongoing access, recurring |
 | Equity | Varies | Skin in the game, long-term |
 
 ### Done-For-You Services
 
 | Tier | Price Range | Characteristics |
 |------|-------------|-----------------|
-| Template/DIY | $500-2K | Productized asset |
-| Done-With-You | $2K-10K | Coaching + guidance |
-| Done-For-You | $5K-100K+ | Full execution |
+| Template/DIY | $500–$2K | Productized asset |
+| Done-With-You | $2K–$10K | Coaching + guidance |
+| Done-For-You | $5K–$100K+ | Full execution |
 
 ### Retainer Services
 
 | Tier | Price Range | Typical Scope |
 |------|-------------|---------------|
-| Lite | $1K-3K/mo | Limited hours, async mostly |
-| Standard | $3K-10K/mo | Full scope, regular calls |
-| Premium | $10K-50K+/mo | Full team, priority, custom |
+| Lite | $1K–$3K/mo | Limited hours, async mostly |
+| Standard | $3K–$10K/mo | Full scope, regular calls |
+| Premium | $10K–$50K+/mo | Full team, priority, custom |
 
 ## Pricing Mistakes
 
