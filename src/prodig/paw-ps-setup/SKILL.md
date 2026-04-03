@@ -315,7 +315,7 @@ Best practices and structures for courses, ebooks, guides, and memberships.
 
 ## Output Structure
 
-```
+```text
 knowledge-product/
 ├── curriculum.md        # Course outline or chapter structure
 ├── modules/
@@ -362,7 +362,7 @@ Best practices for templates, prompt packs, and digital kits.
 
 ## Output Structure
 
-```
+```text
 template-product/
 ├── templates/
 │   └── template-1.{ext}
@@ -402,7 +402,7 @@ Best practices for SaaS, apps, and AI tools.
 
 ## Output Structure
 
-```
+```text
 software-product/
 ├── prd-lite.md         # Product requirements
 ├── features/
@@ -444,7 +444,7 @@ Best practices for productized services and consulting packages.
 
 ## Output Structure
 
-```
+```text
 service-product/
 ├── offer.md            # Offer structure and pricing
 ├── deliverables/
@@ -489,7 +489,7 @@ Write configuration to the Pawbytes ecosystem config:
 
 Display a comprehensive summary:
 
-```
+```markdown
 ## Setup Complete
 
 ### Configuration
