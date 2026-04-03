@@ -159,7 +159,7 @@ Override and proceed anyway?
 
 | Gate | Type | Reason |
 |------|------|--------|
-| Discovery → Research | Advisory | User may explore freely |
+| Discovery → Research | **Strict** | Minimum context required |
 | Research → Audience | Advisory | Can skip research |
 | Audience → Strategy | Advisory | Can skip audience |
 | Strategy → Execution | **Strict** | Prevents poor outputs |

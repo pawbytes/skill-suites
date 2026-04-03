@@ -27,10 +27,10 @@ Apply quality standards systematically across all dimensions. Score each dimensi
 
 | Criterion | Score | Evidence |
 |-----------|-------|----------|
-| All promised features present | Pass / Fail / N/A | |
-| All referenced files included | Pass / Fail / N/A | |
-| No placeholder content | Pass / Fail / N/A | |
-| Scope fully covered | Pass / Fail / N/A | |
+| All promised features present | Pass / Partial / Fail / N/A | |
+| All referenced files included | Pass / Partial / Fail / N/A | |
+| No placeholder content | Pass / Partial / Fail / N/A | |
+| Scope fully covered | Pass / Partial / Fail / N/A | |
 
 **Verification method:** Cross-reference with product brief, verify manifest matches contents.
 
@@ -40,10 +40,10 @@ Apply quality standards systematically across all dimensions. Score each dimensi
 
 | Criterion | Score | Evidence |
 |-----------|-------|----------|
-| Clear naming throughout | Pass / Fail / N/A | |
-| No unexplained jargon | Pass / Fail / N/A | |
-| Logical organization | Pass / Fail / N/A | |
-| Purpose obvious in 30s | Pass / Fail / N/A | |
+| Clear naming throughout | Pass / Partial / Fail / N/A | |
+| No unexplained jargon | Pass / Partial / Fail / N/A | |
+| Logical organization | Pass / Partial / Fail / N/A | |
+| Purpose obvious in 30s | Pass / Partial / Fail / N/A | |
 
 **Verification method:** Fresh-user test — can someone unfamiliar understand it quickly?
 
@@ -53,10 +53,10 @@ Apply quality standards systematically across all dimensions. Score each dimensi
 
 | Criterion | Score | Evidence |
 |-----------|-------|----------|
-| Works on first attempt | Pass / Fail / N/A | |
-| Error messages helpful | Pass / Fail / N/A | |
-| Recovery path exists | Pass / Fail / N/A | |
-| Standard tools supported | Pass / Fail / N/A | |
+| Works on first attempt | Pass / Partial / Fail / N/A | |
+| Error messages helpful | Pass / Partial / Fail / N/A | |
+| Recovery path exists | Pass / Partial / Fail / N/A | |
+| Standard tools supported | Pass / Partial / Fail / N/A | |
 
 **Verification method:** Follow quick start from scratch, attempt common mistakes.
 
@@ -66,10 +66,10 @@ Apply quality standards systematically across all dimensions. Score each dimensi
 
 | Criterion | Score | Evidence |
 |-----------|-------|----------|
-| Quick start exists | Pass / Fail / N/A | |
-| Full guide available | Pass / Fail / N/A | |
-| Examples included | Pass / Fail / N/A | |
-| Troubleshooting covers common issues | Pass / Fail / N/A | |
+| Quick start exists | Pass / Partial / Fail / N/A | |
+| Full guide available | Pass / Partial / Fail / N/A | |
+| Examples included | Pass / Partial / Fail / N/A | |
+| Troubleshooting covers common issues | Pass / Partial / Fail / N/A | |
 
 **Verification method:** Try to complete main task using only provided documentation.
 
@@ -79,10 +79,10 @@ Apply quality standards systematically across all dimensions. Score each dimensi
 
 | Criterion | Score | Evidence |
 |-----------|-------|----------|
-| Visual design polished | Pass / Fail / N/A | |
-| Formatting consistent | Pass / Fail / N/A | |
-| Professional appearance | Pass / Fail / N/A | |
-| Platform requirements met | Pass / Fail / N/A | |
+| Visual design polished | Pass / Partial / Fail / N/A | |
+| Formatting consistent | Pass / Partial / Fail / N/A | |
+| Professional appearance | Pass / Partial / Fail / N/A | |
+| Platform requirements met | Pass / Partial / Fail / N/A | |
 
 **Verification method:** Visual review, platform specification checklist.
 
@@ -92,10 +92,10 @@ Apply quality standards systematically across all dimensions. Score each dimensi
 
 | Criterion | Score | Evidence |
 |-----------|-------|----------|
-| Marketing copy complete | Pass / Fail / N/A | |
-| Preview/images included | Pass / Fail / N/A | |
-| Pricing defined | Pass / Fail / N/A | |
-| Support materials ready | Pass / Fail / N/A | |
+| Marketing copy complete | Pass / Partial / Fail / N/A | |
+| Preview/images included | Pass / Partial / Fail / N/A | |
+| Pricing defined | Pass / Partial / Fail / N/A | |
+| Support materials ready | Pass / Partial / Fail / N/A | |
 
 **Verification method:** Listing requirements checklist.
 

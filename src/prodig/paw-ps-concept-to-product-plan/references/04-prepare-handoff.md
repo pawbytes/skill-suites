@@ -88,12 +88,15 @@ If still unclear, escalate to coordinator.
 
 Generate the command for launching the executor:
 
-```markdown
 ## Launch Command
 
+```bash
 /paw-ps-[executor-type]-executor --product [product-slug]
+```
 
 Or with full path:
+
+```bash
 /paw-ps-[executor-type]-executor --plan .pawbytes/prodig-suites/plans/[product-slug]/plan.md
 ```
 

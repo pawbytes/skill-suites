@@ -75,7 +75,7 @@ Make final determination: production-ready, publish-ready, sellable-ready, or no
 | Source | File Path | Purpose |
 |--------|-----------|---------|
 | Product Bundle | `.pawbytes/prodig-suites/products/{product-slug}/bundle/` | Packaged product files |
-| Output Standards | `.pawbytes/prodig-suites/standards/output-standards.md` | Quality criteria |
+| Output Standards | `.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/output-standards.md` | Quality criteria |
 | Product Context | `.pawbytes/prodig-suites/products/{product-slug}/product-context.md` | Product type and requirements |
 | Product Brief | `.pawbytes/prodig-suites/products/{product-slug}/product-brief.md` | Scope and promises |
 | Product Decisions | `.pawbytes/prodig-suites/products/{product-slug}/product-decisions.md` | Prior decisions |
@@ -86,7 +86,7 @@ Make final determination: production-ready, publish-ready, sellable-ready, or no
 
 ## Output Structure
 
-```
+```text
 .pawbytes/prodig-suites/products/{product-slug}/
 ├── readiness-report.html         # Structured assessment (HTML)
 ├── readiness-report.md           # Plain text version
@@ -96,7 +96,8 @@ Make final determination: production-ready, publish-ready, sellable-ready, or no
 ```
 
 Daily log entry at:
-```
+
+```text
 .pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md
 ```
 

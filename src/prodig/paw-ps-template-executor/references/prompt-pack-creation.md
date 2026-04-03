@@ -148,7 +148,8 @@ Run through the quality checklist. Test prompts with different inputs.
 
 ### Step 9: Package
 Organize files with clear structure:
-```
+
+```text
 {product-slug}/
 ├── prompts/
 │   ├── 01-category-name/
@@ -177,7 +178,8 @@ Higher prices require demonstrated value through examples, case studies, and cle
 ## Prompt Optimization Guidelines
 
 ### Structure for Consistency
-```
+
+```text
 [Role/Context Setting]
 You are [specific role] with expertise in [domain].
 
