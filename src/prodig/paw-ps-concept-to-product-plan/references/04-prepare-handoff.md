@@ -165,7 +165,7 @@ For complex products, create execution checklist:
 **Product context updated:** Yes
 
 ### Next Step
-Execute: `/paw-ps-[executor-type]-builder --product {product-slug}`
+Execute: `/paw-ps-[executor-type]-executor --product {product-slug}`
 
 ### Summary
 - Product: [name]
