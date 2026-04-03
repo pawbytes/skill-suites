@@ -39,6 +39,7 @@ Proceed with the appropriate build process:
 - **Template** → `./template-creation.md` build process
 - **Prompt Pack** → `./prompt-pack-creation.md` build process
 - **Digital Kit** → `./digital-kit-assembly.md` build process
+- **Swipe File** → `./swipe-file-creation.md` build process
 
 ### 5. Quality Verification
 Run quality checks against `./asset-quality-standards.md`.

@@ -21,10 +21,10 @@ From the brief, extract and validate the product family:
 
 | Product Family | Executor | Responsibility |
 |----------------|----------|----------------|
-| Knowledge | `paw-ps-knowledge-builder` | Content structure, research, formatting |
-| Template | `paw-ps-template-builder` | Component design, customization, documentation |
-| Software | `paw-ps-software-builder` | Technical implementation, testing, deployment |
-| Service | `paw-ps-service-builder` | Service design, process, delivery framework |
+| Knowledge | `paw-ps-knowledge-executor` | Content structure, research, formatting |
+| Template | `paw-ps-template-executor` | Component design, customization, documentation |
+| Software | `paw-ps-software-executor` | Technical implementation, testing, deployment |
+| Service | `paw-ps-service-executor` | Service design, process, delivery framework |
 
 ### Step 3: Validate Executor Fit
 

@@ -25,7 +25,7 @@ Transforms an accepted product brief into a detailed, executor-ready product pla
 |--------|----------|
 | Product plan | `.pawbytes/prodig-suites/plans/{product-slug}/plan.md` |
 | Executor handoff | `.pawbytes/prodig-suites/plans/{product-slug}/handoff.md` |
-| Product context update | `.pawbytes/prodig-suites/brands/{brand-slug}/products/{product-slug}/product-context.md` |
+| Product context update | `.pawbytes/prodig-suites/products/{product-slug}/product-context.md` |
 
 ## Pipeline
 
@@ -64,15 +64,14 @@ Load `./references/04-prepare-handoff.md`
 ## On Activation
 
 1. Load shared context from `{project-root}/.pawbytes/prodig-suites/index.md`
-2. Check for active brand: `.pawbytes/prodig-suites/brands/{brand-slug}/brand-context.md`
-3. Load product context: `.pawbytes/prodig-suites/brands/{brand-slug}/products/{product-slug}/product-context.md`
-4. If no product slug provided, list available products for selection
+2. Load product context: `.pawbytes/prodig-suites/products/{product-slug}/product-context.md`
+3. If no product slug provided, list available products for selection
 
 ## Path Resolution
 
 **Plans root:** `{project-root}/.pawbytes/prodig-suites/plans/{product-slug}/`
 
-**Product context:** `{project-root}/.pawbytes/prodig-suites/brands/{brand-slug}/products/{product-slug}/product-context.md`
+**Product context:** `{project-root}/.pawbytes/prodig-suites/products/{product-slug}/product-context.md`
 
 **Handoff bundle:** `{project-root}/.pawbytes/prodig-suites/plans/{product-slug}/handoff.md`
 

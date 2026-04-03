@@ -91,14 +91,10 @@ Generate the command for launching the executor:
 ```markdown
 ## Launch Command
 
-```
-/paw-ps-[executor-type]-builder --product [product-slug]
-```
+/paw-ps-[executor-type]-executor --product [product-slug]
 
 Or with full path:
-```
-/paw-ps-[executor-type]-builder --plan .pawbytes/prodig-suites/plans/[product-slug]/plan.md
-```
+/paw-ps-[executor-type]-executor --plan .pawbytes/prodig-suites/plans/[product-slug]/plan.md
 ```
 
 ### Step 3: Update Product Context

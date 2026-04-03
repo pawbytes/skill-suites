@@ -1,6 +1,6 @@
 ---
 name: paw-ps-publish-ready-check
-description: "Evaluate whether a product is production-ready, publishable-ready, or sellable-ready. Triggers: 'publish ready', 'ready check', 'readiness review', 'quality check', 'production ready', 'sellable ready', 'can I publish', 'release check', 'final review'."
+description: "Evaluate whether a product is production-ready, publish-ready, or sellable-ready. Triggers: 'publish ready', 'ready check', 'readiness review', 'quality check', 'production ready', 'sellable ready', 'can I publish', 'release check', 'final review'."
 ---
 
 # Publish Ready Check

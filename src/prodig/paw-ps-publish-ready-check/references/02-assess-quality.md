@@ -14,10 +14,10 @@ Apply quality standards systematically across all dimensions. Score each dimensi
 
 | Criterion | Score | Evidence |
 |-----------|-------|----------|
-| Core features functional | Pass / Fail / N/A | |
-| No critical bugs | Pass / Fail / N/A | |
-| Edge cases handled | Pass / Fail / N/A | |
-| Performance acceptable | Pass / Fail / N/A | |
+| Core features functional | Pass / Fail / Partial / N/A | |
+| No critical bugs | Pass / Fail / Partial / N/A | |
+| Edge cases handled | Pass / Fail / Partial / N/A | |
+| Performance acceptable | Pass / Fail / Partial / N/A | |
 
 **Verification method:** Test main workflows, check error handling, verify performance claims.
 

@@ -11,9 +11,9 @@ Load and validate the product brief to ensure all necessary information is avail
 Check for product brief in this order:
 
 1. **Explicit path** - If provided as argument, use that path
-2. **Product decisions file** - `.pawbytes/prodig-suites/brands/{brand-slug}/products/{product-slug}/product-decisions.md`
-3. **Brief file** - `.pawbytes/prodig-suites/brands/{brand-slug}/products/{product-slug}/brief.md`
-4. **Product context** - `.pawbytes/prodig-suites/brands/{brand-slug}/products/{product-slug}/product-context.md`
+2. **Product decisions file** - `.pawbytes/prodig-suites/products/{product-slug}/product-decisions.md`
+3. **Brief file** - `.pawbytes/prodig-suites/products/{product-slug}/brief.md`
+4. **Product context** - `.pawbytes/prodig-suites/products/{product-slug}/product-context.md`
 
 ### Step 2: Verify Brief Completeness
 

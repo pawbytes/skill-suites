@@ -101,7 +101,7 @@ Create the organized package directory. Update `packaging-status.md`:
 ## Bundle Organization
 
 ### Package Structure Created
-```
+
 package/
 ├── artifacts/
 │   ├── primary/
@@ -112,7 +112,6 @@ package/
 │       └── {count} files
 └── source-manifests/
     └── {count} files
-```
 
 ### Files Organized
 | Source | Destination | Type |

@@ -35,9 +35,7 @@ The primary prompts organized by category or workflow stage.
 **Use when:** [Specific situation this prompt addresses]
 
 **Prompt:**
-```
 [The actual prompt with {{variable}} placeholders]
-```
 
 **Inputs:**
 - `{{variable_1}}` — Description of what goes here

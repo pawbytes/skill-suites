@@ -233,7 +233,7 @@ missing_items: []
 
 ## Completion Actions
 
-1. **Write daily log entry** to `.pawbytes/prodig-suites/daily/{date}.md`:
+1. **Write daily log entry** to `.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/{date}.md`:
 
 ```markdown
 ## [Packaging] {product-slug}

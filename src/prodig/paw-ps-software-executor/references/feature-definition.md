@@ -128,7 +128,7 @@ This informs build order and MVP scoping.
 4. Priority matrix (MoSCoW)
 5. Dependency map
 
-**Location:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/artifacts/{product-slug}/feature-spec.md`
+**Location:** `{project-root}/.pawbytes/prodig-suites/artifacts/{product-slug}/feature-spec.md`
 
 **Naming:** `feature-spec.md`
 

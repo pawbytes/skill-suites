@@ -56,6 +56,8 @@ Load `./references/config-variables.md` for detailed descriptions of each config
 
 After collecting configuration, create the complete workspace structure:
 
+> **Note:** `{project-root}` is a literal token that resolves to the project root directory at runtime. Do not substitute it with an actual path.
+
 ```bash
 # Main module directories
 mkdir -p "{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types"
