@@ -1,0 +1,5 @@
+id,name,family,best_for,file
+knowledge,knowledge-products,Knowledge,"courses, ebooks, guides, memberships, educational content",curated/product-types/knowledge-products.md
+template,template-products,Template,"templates, prompt packs, digital kits, swipe files, reusable assets",curated/product-types/template-products.md
+software,software-products,Software,"SaaS, apps, AI tools, internal software, web applications",curated/product-types/software-products.md
+service,service-products,Service,"productized services, consulting packages, agency offers, done-for-you",curated/product-types/service-products.md
