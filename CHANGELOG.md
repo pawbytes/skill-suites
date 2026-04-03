@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2026-04-03
+
+### Features
+- **prodig:** Add Prodig Suites module for digital product creation — includes 11 skills for audience discovery, research, strategy, and product execution (#2)
+- **webinar:** Add Webinar Creator Suite module — includes 4 skills for webinar discovery, production, and creation workflows (#1)
+
 ## [1.1.2] - 2026-04-02
 
 ### Bug Fixes
