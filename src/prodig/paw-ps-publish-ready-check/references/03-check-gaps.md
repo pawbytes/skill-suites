@@ -106,7 +106,7 @@ Cross-reference with product brief:
 
 ### Gap Record Format
 
-```
+```text
 GAP: {short title}
 SEVERITY: Critical / Important / Minor
 CATEGORY: Functional / Content / Documentation / Presentation / Compliance / Selling
@@ -127,7 +127,7 @@ DEPENDENCIES: {other gaps or requirements}
 
 ### Example Gap Records
 
-```
+```text
 GAP: Missing installation instructions
 SEVERITY: Important
 CATEGORY: Documentation
@@ -151,7 +151,7 @@ EFFORT: 2 hours
 DEPENDENCIES: None
 ```
 
-```
+```text
 GAP: Broken import on Windows
 SEVERITY: Critical
 CATEGORY: Functional

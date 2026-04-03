@@ -116,7 +116,7 @@ Apply quality standards systematically across all dimensions. Score each dimensi
 
 Calculate for each dimension:
 
-```
+```text
 Status = Pass if all criteria Pass
        = Fail if any critical criterion Fail
        = Partial if mix of Pass and Partial
@@ -124,7 +124,7 @@ Status = Pass if all criteria Pass
 
 ### Overall Quality Score
 
-```
+```text
 Ready if: All dimensions Pass or Partial
 Not Ready if: Any dimension Fail
 ```
@@ -169,7 +169,7 @@ For each dimension:
 
 ## Assessment Record Template
 
-```
+```text
 QUALITY ASSESSMENT
 
 Product: {name}

@@ -134,8 +134,8 @@ Condense each persona into a memorable summary:
 
 ### Files Created
 
-1. **Primary Persona:** `{product-slug}/audience/personas/primary-persona.md`
-2. **Secondary Personas:** `{product-slug}/audience/personas/secondary-personas.md` (if applicable)
+1. **Primary Persona:** `.pawbytes/prodig-suites/products/{product-slug}/audience/personas/primary-persona.md`
+2. **Secondary Personas:** `.pawbytes/prodig-suites/products/{product-slug}/audience/personas/secondary-personas.md` (if applicable)
 
 ### Memory Update
 

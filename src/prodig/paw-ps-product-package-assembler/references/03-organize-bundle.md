@@ -10,7 +10,7 @@ Transform the raw artifact collection into a well-organized bundle that feels li
 
 Create the standard package directory structure:
 
-```
+```text
 {product-slug}/package/
 ├── manifest.json           # Package manifest (Stage 4)
 ├── completeness-report.md  # Completeness report (Stage 2)

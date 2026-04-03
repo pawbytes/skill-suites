@@ -141,7 +141,7 @@ Before triggering:
 
 ### Full Product Synthesis Sequence
 
-```
+```text
 Research + Audience
         │
         ▼
@@ -189,12 +189,12 @@ Research + Audience
 For `--headless` execution, workflows can be chained:
 
 **Full synthesis chain:**
-```
+```bash
 --headless --chain research-to-brief,concept-to-plan
 ```
 
 **Packaging chain:**
-```
+```bash
 --headless --chain package-assembler,publish-ready-check
 ```
 
@@ -227,7 +227,7 @@ For headless invocation:
 4. Update memory and continue
 
 **Example invocation:**
-```
+```bash
 /paw-ps-research-to-brief --headless
 ```
 

@@ -68,6 +68,7 @@ Apply competitive analysis frameworks:
 - Plot each competitor and identify clusters
 
 **Feature Comparison Table:**
+
 | Feature | Us | Comp A | Comp B | Comp C |
 |---------|-----|--------|--------|--------|
 | Feature 1 | ? | Yes | Yes | No |

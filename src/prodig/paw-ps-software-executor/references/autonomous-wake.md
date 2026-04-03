@@ -10,7 +10,7 @@ When headless mode is triggered:
 
 ### 1. Load Context
 
-```
+```text
 Read in order:
 1. {project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md
 2. {project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md

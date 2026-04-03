@@ -30,7 +30,7 @@ Transform vague service ideas into structured, sellable offers with clear scope,
 **The transformation statement**
 What does the client walk away with? Be specific.
 
-```
+```text
 Service: [Name]
 
 Promise: You will achieve [specific outcome] within [timeframe]
@@ -48,7 +48,7 @@ By the end of this service, you will have:
 **Who is this for?**
 Define the ideal client clearly. This helps selling AND delivery.
 
-```
+```text
 This service is designed for:
 - [Role/identity]: e.g., "SaaS founders with 10-50 employees"
 - [Pain point]: e.g., "Struggling to convert trial users to paid"
@@ -66,7 +66,7 @@ This service is NOT for:
 
 List every element the client receives:
 
-```
+```text
 INCLUDED:
 1. [Phase 1 deliverables]
    - [Specific item]
@@ -83,7 +83,7 @@ INCLUDED:
 
 This is as important as inclusions. It prevents scope creep and sets expectations.
 
-```
+```text
 NOT INCLUDED:
 - [Adjacent service that's separate]
 - [Ongoing work beyond project scope]
@@ -115,7 +115,7 @@ Every service has core components that define its structure:
 
 Services work best when broken into phases:
 
-```
+```text
 PHASE 1: [Name] (Week 1-2)
 Purpose: [What this phase accomplishes]
 Activities:
@@ -141,7 +141,7 @@ Client Checkpoint: [Review/approval needed]
 
 **Set realistic expectations**
 
-```
+```text
 Total Duration: [X weeks/months]
 
 Key Milestones:

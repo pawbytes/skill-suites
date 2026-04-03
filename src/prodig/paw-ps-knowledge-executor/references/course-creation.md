@@ -27,7 +27,7 @@ Every course must answer: What transformation does the learner achieve?
 
 **Transformation Statement Template:**
 
-```
+```text
 By the end of this course, {target learner} will be able to {specific outcome},
 even if they currently {current state/objection}.
 ```
@@ -54,7 +54,7 @@ Select based on transformation type and audience needs:
 
 Each module follows a consistent structure:
 
-```
+```text
 Module {N}: {Module Title}
 
 Module Outcome: {What learners will be able to do after this module}

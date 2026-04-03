@@ -148,7 +148,7 @@ For complex products, create execution checklist:
 
 ## Output Structure
 
-```
+```text
 .pawbytes/prodig-suites/plans/{product-slug}/
 ├── plan.md           # Full execution plan
 ├── handoff.md        # Executor-ready instructions

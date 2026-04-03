@@ -50,7 +50,7 @@ Gather from conversation or product context:
 | TikTok | Trending topics, engagement |
 
 **Research commands:**
-```
+```text
 Exa search: "site:reddit.com {problem}" OR "{product category}"
 Exa search: "{product category}" complaints problems issues
 ```
@@ -106,7 +106,7 @@ Exa search: "{product category}" complaints problems issues
 ### Step 1: Define Search Terms
 
 Generate search variations:
-```
+```text
 Core terms: "{product category}", "{problem}", "{solution type}"
 Modifier terms: "best", "how to", "alternative", "vs", "review", "comparison"
 Audience terms: "{audience} {product}", "{job title} {problem}"

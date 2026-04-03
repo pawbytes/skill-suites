@@ -10,7 +10,7 @@ Match pricing models to service types and market position. Design pricing that c
 
 **Best for:** Defined scope, clear deliverables, predictable timeline
 
-```
+```text
 Structure:
 - Single price for entire project
 - Payment terms (e.g., 50% upfront, 50% on completion)
@@ -28,7 +28,7 @@ Risks:
 ```
 
 **Example:**
-```
+```text
 Website Redesign Package: $8,500
 Payment: 50% ($4,250) to start, 50% ($4,250) on launch
 Timeline: 8 weeks
@@ -38,7 +38,7 @@ Timeline: 8 weeks
 
 **Best for:** Serving multiple client segments with one service concept
 
-```
+```text
 Structure:
 - 3 tiers: Good, Better, Best (or DIY, DWY, DFY)
 - Each tier offers clear value progression
@@ -51,7 +51,7 @@ Psychology:
 ```
 
 **Example:**
-```
+```text
 Content Strategy Package
 
 Starter ($1,500)
@@ -77,7 +77,7 @@ Premium ($9,500)
 
 **Best for:** Ongoing services, predictable revenue, long-term relationships
 
-```
+```text
 Structure:
 - Monthly fee for defined scope
 - Rolling contract (month-to-month) or term (3-6-12 months)
@@ -95,7 +95,7 @@ Risks:
 ```
 
 **Example:**
-```
+```text
 Marketing Partner Retainer: $5,000/month
 
 Monthly Scope:
@@ -114,7 +114,7 @@ Terms:
 
 **Best for:** High-impact services where outcome value far exceeds delivery cost
 
-```
+```text
 Structure:
 - Price based on value created for client
 - Often percentage of revenue or savings
@@ -132,7 +132,7 @@ Risks:
 ```
 
 **Example:**
-```
+```text
 Conversion Rate Optimization
 
 Pricing: 20% of first-year revenue lift
@@ -149,7 +149,7 @@ Fee: $60,000 (paid over 6 months)
 
 **Best for:** Services with measurable, attributable outcomes
 
-```
+```text
 Structure:
 - Base fee + performance bonus
 - Tied to specific metrics
@@ -167,7 +167,7 @@ Risks:
 ```
 
 **Example:**
-```
+```text
 Google Ads Management
 
 Base: $2,000/month
@@ -179,7 +179,7 @@ Guaranteed: If CPA doesn't improve by 20% in 3 months, full refund
 
 ### Cost-Plus (Baseline)
 
-```
+```text
 Hourly rate: $X
 Hours to deliver: Y
 ─────────────────────────
@@ -193,7 +193,7 @@ Add margin for:
 
 ### Value-Anchored (Target)
 
-```
+```text
 Client outcome value: $X
 Willingness to pay: 10-25% of outcome value
 ─────────────────────────
@@ -207,7 +207,7 @@ Price accordingly
 
 ### Market-Referenced (Validation)
 
-```
+```text
 Competitor pricing: Research what others charge
 Differentiation: Where you command premium or need to discount
 Positioning: Budget / Mid-market / Premium
@@ -219,7 +219,7 @@ Decision: Price at, above, or below market based on positioning
 
 ### Anchoring
 
-```
+```text
 Show highest tier first
 Makes middle tier feel reasonable
 
@@ -231,7 +231,7 @@ Basic: $3,000
 
 ### Good-Better-Best
 
-```
+```text
 Three options optimal
 Most choose middle
 Position your target tier as middle
@@ -243,7 +243,7 @@ Best: Premium with extras
 
 ### Charm Pricing
 
-```
+```text
 $4,997 instead of $5,000
 Psychological perception of significantly less
 Use for consumer-facing or lower-priced services
@@ -254,7 +254,7 @@ $15,000 not $14,997
 
 ### Payment Options
 
-```
+```text
 Single payment: Simplest, often discounted
 Payment plan: Higher total, lower barrier
 (e.g., 3 payments of $1,750 vs. $4,997 single)

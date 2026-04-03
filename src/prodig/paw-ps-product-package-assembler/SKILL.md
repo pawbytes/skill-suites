@@ -106,7 +106,7 @@ Different product types have different required artifacts:
 **Reads:**
 - `{project-root}/.pawbytes/prodig-suites/index.md` — module state
 - `{project-root}/.pawbytes/prodig-suites/output-standards.md` — output standards
-- `{project-root}/.pawbytes/prodig-suites/products/{product-slug}/context.md` — product context
+- `{project-root}/.pawbytes/prodig-suites/products/{product-slug}/product-context.md` — product context
 - Executor manifests from execution phase
 
 **Writes:**

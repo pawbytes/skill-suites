@@ -99,7 +99,7 @@ Run through the quality checklist. Fix any issues before packaging.
 
 ### Step 7: Package
 Organize files with clear structure:
-```
+```text
 {product-slug}/
 ├── template-files/
 │   └── [core template files]

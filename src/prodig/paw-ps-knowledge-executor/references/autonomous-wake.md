@@ -14,7 +14,7 @@ When operating in headless mode, follow this sequence:
 
 Read configuration files in order:
 
-```
+```text
 1. {project-root}/.pawbytes/config/config.yaml
 2. {project-root}/.pawbytes/config/config.user.yaml
 ```
@@ -28,7 +28,7 @@ Extract and apply:
 
 Read the sidecar memory index:
 
-```
+```text
 {project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md
 ```
 

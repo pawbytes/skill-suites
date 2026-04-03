@@ -36,7 +36,7 @@ Explore what's one step away:
 
 Map the adjacency:
 
-```
+```text
         [Pre-problem]
              |
 [Related problem] --- [Core problem] --- [Next problem]

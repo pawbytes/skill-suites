@@ -42,9 +42,9 @@ Create a URL-safe identifier:
 | SaaS Metrics Dashboard | saas-metrics-dashboard |
 
 **Rules:**
-- Lowercase
-- Hyphens instead of spaces
-- Alphanumeric only
+- Lowercase only
+- Use hyphens instead of spaces
+- Alphanumeric characters and hyphens only
 - Max 50 characters
 
 ### 3. Create Directory Structure

@@ -27,7 +27,7 @@ Every membership must answer: Why should someone join and stay?
 
 **Promise Statement Template:**
 
-```
+```text
 {Membership Name} helps {target member} achieve {ongoing outcome}
 through {core mechanism}, so they never have to {pain point} again.
 ```

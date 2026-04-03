@@ -110,7 +110,7 @@ Generate a validation summary:
 
 **Block and route when:**
 - Status is BLOCKED
-- Recommend running research skills: `paw-ps-discovery`, `paw-ps-market-research`, or `paw-ps-audience-research`
+- Recommend running research skills: `paw-ps-discovery`, `paw-ps-research`, or `paw-ps-audience`
 
 ---
 

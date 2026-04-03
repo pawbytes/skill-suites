@@ -46,7 +46,7 @@ Apply expansion techniques:
 
 Cluster variations into thematic groups:
 
-```
+```text
 Theme: "Speed & Efficiency"
 - Idea A: Quick-win templates
 - Idea B: Automation-focused approach

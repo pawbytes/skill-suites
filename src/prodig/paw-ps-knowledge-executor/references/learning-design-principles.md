@@ -101,7 +101,7 @@ These principles ensure every knowledge product achieves its core purpose: trans
 
 Every learning experience follows a predictable arc:
 
-```
+```text
 1. HOOK → 2. CONTEXT → 3. CONTENT → 4. PRACTICE → 5. INTEGRATION
 ```
 
@@ -128,7 +128,7 @@ Progress skills through four levels:
 
 Structure products around the transformation journey:
 
-```
+```text
 BEFORE → BRIDGE → AFTER
 ```
 
