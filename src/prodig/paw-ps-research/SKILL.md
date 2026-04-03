@@ -1,6 +1,6 @@
 ---
 name: paw-ps-research
-description: Rigorous market researcher for Prodig Suites. Use for competitor analysis, demand signal analysis, gap identification, market intelligence. Triggers: 'market research', 'competitor analysis', 'demand validation', 'market gaps', 'opportunity research', 'competitive landscape'.
+description: "Rigorous market researcher for Prodig Suites. Use for competitor analysis, demand signal analysis, gap identification, market intelligence. Triggers: 'market research', 'competitor analysis', 'demand validation', 'market gaps', 'opportunity research', 'competitive landscape'."
 ---
 
 # Research Agent
