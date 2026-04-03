@@ -1,0 +1,15 @@
+module,skill,display-name,menu-code,description,action,args,phase,after,before,required,output-location,outputs
+ps,paw-ps-setup,Module Setup,SU,Install and configure Prodig Suites module,configure,[-H],anytime,,,,configured module
+ps,paw-ps-orchestrator,Orchestrator,OR,Strategic product commander - main interface for product creation lifecycle,orchestrate,[-H] [request],anytime,,,,routed request or product coordination
+ps,paw-ps-discovery,Discovery,DI,Creative ideation partner for brainstorming and concept shaping,discover,,discovery,,,product-context.md,idea sets and opportunity statements
+ps,paw-ps-research,Research,RE,Rigorous market researcher for competitor analysis and demand signals,research,[-H] [task],research,,,market-intelligence.md,market intelligence brief
+ps,paw-ps-audience,Audience,AU,Customer insight specialist for personas and problem discovery,analyze,[-H] [task],research,,,audience-intelligence.md,personas and value signals
+ps,paw-ps-strategist,Strategist,ST,Product strategist for shaping, scoping, and packaging decisions,strategize,[-H] [task],strategy,,paw-ps-research,paw-ps-audience,product-decisions.md,product brief and scope
+ps,paw-ps-knowledge-executor,Knowledge Executor,KN,Build courses, ebooks, guides, and memberships,build,[-H] [type],execution,paw-ps-strategist,,product-context,knowledge-product artifacts
+ps,paw-ps-template-executor,Template Executor,TE,Build templates, prompt packs, and digital kits,build,[-H],execution,paw-ps-strategist,,product-context,template product artifacts
+ps,paw-ps-software-executor,Software Executor,SW,Build SaaS specs, app definitions, and MVP plans,build,[-H] [task],execution,paw-ps-strategist,,product-context,software product artifacts
+ps,paw-ps-service-executor,Service Executor,SV,Build productized services and consulting packages,build,[-H] [task],execution,paw-ps-strategist,,product-context,service package artifacts
+ps,paw-ps-research-to-brief,Research to Brief,RB,Synthesize research into structured product brief,synthesize,[-H],synthesis,paw-ps-research,paw-ps-strategist,research inputs,products/{slug}/,product brief
+ps,paw-ps-concept-to-product-plan,Concept to Plan,CP,Transform product brief into executor-ready plan,plan,[-H],synthesis,paw-ps-strategist,,product-brief,plans/{slug}/,product plan and handoff
+ps,paw-ps-product-package-assembler,Package Assembler,PA,Bundle product artifacts into production-ready package,assemble,[-H],packaging,paw-ps-knowledge-executor,paw-ps-publish-ready-check,executor outputs,products/{slug}/package/,packaged product bundle
+ps,paw-ps-publish-ready-check,Publish Ready Check,PR,Evaluate production, publish, or sellable readiness,check,[-H],readiness,paw-ps-product-package-assembler,,product bundle,products/{slug}/,readiness report
