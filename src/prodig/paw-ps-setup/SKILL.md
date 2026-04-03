@@ -120,13 +120,21 @@ Prodig Suites supports four product families:
 
 ## Quick Reference
 
-| Agent | Purpose |
+| Skill | Purpose |
 |-------|---------|
 | paw-ps-orchestrator | Main coordinator — start here |
 | paw-ps-discovery | Idea exploration and validation |
-| paw-ps-audience | Customer research and personas |
 | paw-ps-research | Market and competitor research |
+| paw-ps-audience | Customer research and personas |
+| paw-ps-research-to-brief | Convert research into product brief |
 | paw-ps-strategist | Product packaging and positioning |
+| paw-ps-concept-to-product-plan | Transform brief into executor-ready plan |
+| paw-ps-knowledge-executor | Build courses, ebooks, guides |
+| paw-ps-template-executor | Build templates, prompt packs, kits |
+| paw-ps-software-executor | Build SaaS, apps, AI tools |
+| paw-ps-service-executor | Build productized services |
+| paw-ps-product-package-assembler | Bundle into deliverable package |
+| paw-ps-publish-ready-check | Evaluate production readiness |
 
 ## Getting Started
 
@@ -477,15 +485,30 @@ Check for optional capabilities that enhance Prodig Suites:
 
 Note any missing capabilities in the confirmation message. These are optional but enhance the suite's power.
 
-## Write Config
+## Write Files
 
-Write configuration to the Pawbytes ecosystem config:
+Write a temp JSON file with the collected answers structured as `{"core": {...}, "module": {...}}` (omit `core` if it already exists). Then run both scripts:
 
-1. **Core config** (if not present) → `{project-root}/.pawbytes/config/config.yaml`
-2. **User settings** → `{project-root}/.pawbytes/config/config.user.yaml`
-3. **Module help** → `{project-root}/.pawbytes/config/module-help.csv` (append if exists, create if not)
+```bash
+python3 ./scripts/merge-config.py \
+  --config-path "{project-root}/.pawbytes/config/config.yaml" \
+  --user-config-path "{project-root}/.pawbytes/config/config.user.yaml" \
+  --module-yaml ./assets/module.yaml \
+  --answers {temp-file}
+
+python3 ./scripts/merge-help-csv.py \
+  --target "{project-root}/.pawbytes/config/module-help.csv" \
+  --source ./assets/module-help.csv \
+  --module-code ps
+```
+
+Both scripts output JSON to stdout with results. If either exits non-zero, surface the error and stop.
+
+Run `./scripts/merge-config.py --help` or `./scripts/merge-help-csv.py --help` for full usage.
 
 ## Confirm
+
+Use the script JSON output to display what was written — config values set, user settings written to `config.user.yaml` (`user_keys` in result), help entries added, fresh install vs update. Then display the `module_greeting` from `./assets/module.yaml` to the user.
 
 Display a comprehensive summary:
 
