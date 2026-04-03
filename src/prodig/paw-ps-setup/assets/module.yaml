@@ -11,6 +11,21 @@ module_greeting: |
   - `paw-ps-discovery` — Explore and validate product ideas
   - `paw-ps-strategist` — Package and position your product
 
+  **Full Skill Registry:**
+  - `paw-ps-orchestrator` — Main coordinator
+  - `paw-ps-discovery` — Idea exploration and validation
+  - `paw-ps-research` — Market and competitor research
+  - `paw-ps-audience` — Customer research and personas
+  - `paw-ps-research-to-brief` — Convert research into product brief
+  - `paw-ps-strategist` — Product packaging and positioning
+  - `paw-ps-concept-to-product-plan` — Transform brief into executor-ready plan
+  - `paw-ps-knowledge-executor` — Build courses, ebooks, guides
+  - `paw-ps-template-executor` — Build templates, prompt packs, kits
+  - `paw-ps-software-executor` — Build SaaS, apps, AI tools
+  - `paw-ps-service-executor` — Build productized services
+  - `paw-ps-product-package-assembler` — Bundle into deliverable package
+  - `paw-ps-publish-ready-check` — Evaluate production readiness
+
   **Product Types Supported:**
   - Knowledge: Courses, ebooks, guides, memberships
   - Templates: Templates, prompt packs, digital kits
