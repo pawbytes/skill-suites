@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": {
+    "paw-tools-presentation": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "e9e1ba66cb898048cd486363fe4ef00dadff6149f3b1a0321ae4743742e8470f"
+    },
+    "paw-tools-release": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "89ebcc6b520200f0af3853777650b1aeb62d3360cc1a9d33d8328d6bb3fbcea0"
+    },
+    "paw-tools-setup": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "44a43d038356f22b2e049222a71d0994a5c32a27cca7b78ddecc680ee32885b0"
+    },
+    "taste-design": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "computedHash": "3772ea408777070865890e10d693118baa1e1de14ee5bacdf6ab46fdea7359bb"
+    }
+  }
+}

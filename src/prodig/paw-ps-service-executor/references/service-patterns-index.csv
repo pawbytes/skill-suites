@@ -1,0 +1,11 @@
+id,pattern,description,best_for,file
+dfy,done-for-you,Full execution by provider,"we build, we create, we manage, full service",offer-packaging.md
+dwy,done-with-you,Collaborative execution,"coaching, with-you, we guide you execute",offer-packaging.md
+consulting,consulting,Advisory without execution,"advisory, strategy only, expert guidance",offer-packaging.md
+project,project-based,Fixed scope and timeline,"fixed scope, one-time, project",delivery-design.md
+retainer,retainer-based,Ongoing recurring work,"monthly, ongoing, recurring, retainer",delivery-design.md
+sprint,sprint-based,Intensive short duration,"intensive, sprint, 2-day, weekend",delivery-design.md
+milestone,milestone-based,Phased with checkpoints,"milestones, phases, checkpoints",delivery-design.md
+tiered,tiered-pricing,Multiple service levels,"tiers, good better best, levels",tier-structuring.md
+value,value-based,Price on outcome value,"value pricing, outcome-based, roi",pricing-frameworks.md
+fixed,fixed-pricing,Single project price,"fixed price, flat fee, project rate",pricing-frameworks.md

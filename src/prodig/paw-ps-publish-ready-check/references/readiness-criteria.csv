@@ -1,0 +1,44 @@
+id,name,description,best_for,file,tags
+func-core,"Core Functionality","Main features work as intended",All products,"functional","functionality,core,features"
+func-bugs,"Bug-Free","No critical bugs or errors",All products,"functional","bugs,errors,stability"
+func-edges,"Edge Cases","Handles edge cases gracefully",All products,"functional","edge-cases,robustness"
+func-perf,"Performance","Acceptable speed and resource use",All products,"functional","performance,speed"
+
+comp-features,"Feature Completeness","All promised features present",All products,"completeness","features,scope"
+comp-files,"File Completeness","All referenced files included",All products,"completeness","files,bundle"
+comp-placeholders,"No Placeholders","No placeholder content remains",All products,"completeness","placeholders,content"
+comp-scope,"Scope Coverage","Brief scope fully delivered",All products,"completeness","scope,delivery"
+
+clear-names,"Clear Naming","Descriptive names throughout",All products,"clarity","naming,organization"
+clear-jargon,"No Jargon","No unexplained technical terms",All products,"clarity","jargon,terminology"
+clear-structure,"Logical Structure","Intuitive organization",All products,"clarity","structure,organization"
+clear-purpose,"Obvious Purpose","Understandable in 30 seconds",All products,"clarity","purpose,clarity"
+
+use-first,"First Use Success","Works on first attempt",All products,"usability","first-use,success"
+use-errors,"Helpful Errors","Error messages guide users",All products,"usability","errors,recovery"
+use-recovery,"Recovery Path","Users can recover from mistakes",All products,"usability","recovery,mistakes"
+use-tools,"Standard Tools","Works with common tools",All products,"usability","tools,compatibility"
+
+doc-quickstart,"Quick Start","Getting started guide exists",All products,"documentation","quick-start,getting-started"
+doc-full,"Full Documentation","Complete usage guide",All products,"documentation","documentation,guide"
+doc-examples,"Examples Included","Working examples provided",All products,"documentation","examples,samples"
+doc-trouble,"Troubleshooting","Common issues addressed",All products,"documentation","troubleshooting,support"
+
+pres-design,"Professional Design","Visual design is polished",Publish/Sellable,"presentation","design,visual"
+pres-format,"Consistent Formatting","Uniform style throughout",Publish/Sellable,"presentation","formatting,style"
+pres-polish,"Professional Polish","Ready for public view",Publish/Sellable,"presentation","polish,professional"
+pres-platform,"Platform Requirements","Meets platform specifications",Publish/Sellable,"presentation","platform,requirements"
+
+sell-copy,"Marketing Copy","Product description written",Sellable,"selling","marketing,copy,description"
+sell-previews,"Preview Assets","Images or previews included",Sellable,"selling","previews,images,screenshots"
+sell-pricing,"Pricing Defined","Price and tiers established",Sellable,"selling","pricing,price"
+sell-support,"Support Plan","Support process documented",Sellable,"selling","support,help"
+sell-refund,"Refund Policy","Refund terms clarified",Sellable,"selling","refund,policy"
+
+type-knowledge,"Knowledge Product Criteria","Ebook/course specific checks",Knowledge products,"type-specific","knowledge,ebook,course"
+type-template,"Template Criteria","Template specific checks",Templates,"type-specific","template,notion,spreadsheet"
+type-prompt,"Prompt Pack Criteria","Prompt collection checks",Prompt packs,"type-specific","prompt,ai,pack"
+type-kit,"Digital Kit Criteria","Kit bundle checks",Digital kits,"type-specific","kit,bundle,package"
+type-software,"Software Criteria","App/tool specific checks",Software,"type-specific","software,app,tool"
+type-service,"Service Criteria","Service offering checks",Services,"type-specific","service,consulting"
+type-membership,"Membership Criteria","Subscription checks",Memberships,"type-specific","membership,subscription"

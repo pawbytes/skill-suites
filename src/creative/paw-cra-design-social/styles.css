@@ -1,0 +1,189 @@
+/**
+ * Design System: paw-cra-design-social
+ *
+ * Enforcing Taste Design constraints:
+ * - No pure black (#000000)
+ * - No Inter or generic serifs
+ * - Asymmetrical grid structure
+ * - No overlapping elements
+ * - Clean spatial separation
+ */
+
+ :root {
+  /* 1. Color Palette & Roles */
+  --color-canvas-white: #F9FAFB;
+  --color-pure-surface: #FFFFFF;
+  --color-charcoal-ink: #18181B; /* Primary Text, no pure black */
+  --color-muted-steel: #71717A; /* Secondary Text */
+  --color-whisper-border: rgba(226, 232, 240, 0.5); /* Structural lines */
+  --color-accent-rust: #9A3412; /* Single desaturated accent (Saturation < 80%) */
+
+  /* 2. Typography Rules */
+  --font-display: 'Outfit', sans-serif; /* Distinctive modern sans */
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e2e8f0; /* Outer background to see the post bounds */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--color-charcoal-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The Social Media Post Canvas */
+.social-container {
+  width: 1080px;
+  height: 1350px; /* IG Portrait ratio */
+  background-color: var(--color-canvas-white);
+  position: relative;
+  overflow: hidden;
+  /* Premium drop shadow for presentation */
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+}
+
+.canvas-surface {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  width: 100%;
+  height: 100%;
+}
+
+/* 5. Layout Principles: Asymmetric Split, Grid-first */
+.content-zone {
+  padding: 120px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-pure-surface);
+  border-right: 1px solid var(--color-whisper-border);
+}
+
+/* Header & Typography */
+.typography-architecture {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.metadata {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  color: var(--color-muted-steel);
+}
+
+.uppercase-mono {
+  text-transform: uppercase;
+}
+
+.display-headline {
+  font-family: var(--font-display);
+  font-size: 96px;
+  line-height: 0.95;
+  font-weight: 600;
+  letter-spacing: -0.04em; /* Track-tight */
+  color: var(--color-charcoal-ink);
+}
+
+/* Hero Inline Image Typography (taste-design requirement) */
+.inline-photo {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 100px;
+  object-fit: cover;
+  margin: 0 12px;
+  /* Not overlapping, clean spatial zone */
+}
+
+/* Body Text */
+.body-zone {
+  margin-top: 64px;
+}
+
+.body-text {
+  font-size: 28px;
+  line-height: 1.5; /* Relaxed leading */
+  max-width: 65ch; /* max 65 chars per line */
+  color: var(--color-muted-steel);
+  font-weight: 300;
+}
+
+/* Footer Zone */
+.footer-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: auto;
+}
+
+.accent-mark {
+  width: 48px;
+  height: 4px;
+  background-color: var(--color-accent-rust);
+}
+
+.author-credits {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.avatar-svg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.credits-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.author-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-charcoal-ink);
+}
+
+.author-role {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--color-muted-steel);
+}
+
+/* Visual Zone */
+.visual-zone {
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-canvas-white);
+}
+
+.image-mask {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-pure-surface);
+  border-radius: 40px; /* Generously rounded corners */
+  overflow: hidden;
+  box-shadow: 0 12px 24px var(--color-whisper-border); /* Diffused whisper shadow */
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

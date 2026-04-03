@@ -1,0 +1,89 @@
+code: ps
+name: Prodig Suites
+description: Product creation system from vague idea to production-ready product. Supports knowledge products (courses, ebooks), templates, software (SaaS, apps), and services (productized consulting) through orchestrated research, strategy, and execution.
+module_version: 1.0.0
+default_selected: false
+module_greeting: |
+  **Prodig Suites activated.** Your product creation system is ready.
+
+  **Quick Start:**
+  - `paw-ps-orchestrator` — Main coordinator — start here
+  - `paw-ps-discovery` — Explore and validate product ideas
+  - `paw-ps-strategist` — Package and position your product
+
+  **Product Types Supported:**
+  - Knowledge: Courses, ebooks, guides, memberships
+  - Templates: Templates, prompt packs, digital kits
+  - Software: SaaS, apps, AI tools
+  - Services: Productized services, consulting packages
+
+  **What you'll get:** A complete product from idea through production-ready deliverables.
+
+# Configuration Variables
+
+product_default_mode:
+  prompt: "What product family should Prodig Suites assume by default when the user is vague?"
+  default: "knowledge"
+  options:
+    - knowledge
+    - template
+    - software
+    - service
+  description: "Routes to the appropriate executor when product type isn't specified"
+
+product_quality_bar:
+  prompt: "What quality bar should the suite optimize for by default?"
+  default: "production-ready"
+  options:
+    - draft
+    - production-ready
+    - publish-ready
+    - sellable-ready
+  description: "Sets the default quality standard for generated outputs"
+
+product_output_style:
+  prompt: "What output style should generated product artifacts default to?"
+  default: "structured-practical"
+  options:
+    - structured-practical
+    - narrative-engaging
+    - technical-detailed
+  description: "Controls voice and structure of generated content"
+
+research_depth:
+  prompt: "How deep should research runs be by default?"
+  default: "standard"
+  options:
+    - quick
+    - standard
+    - deep
+  description: "Controls thoroughness of research operations"
+
+# Path Configuration
+
+output_folder:
+  default: "{project-root}/.pawbytes/prodig-suites"
+  result: "{value}"
+  directories: true
+
+sidecar_folder:
+  default: "{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar"
+  result: "{value}"
+  directories: true
+
+products_folder:
+  default: "{project-root}/.pawbytes/prodig-suites/products"
+  result: "{value}"
+  directories: true
+
+artifacts_folder:
+  default: "{project-root}/.pawbytes/prodig-suites/artifacts"
+  result: "{value}"
+  directories: true
+
+# Core Settings (inherited from Pawbytes ecosystem)
+
+communication_language:
+  prompt: "Language for agent responses and generated content?"
+  default: "English"
+  user_setting: true
