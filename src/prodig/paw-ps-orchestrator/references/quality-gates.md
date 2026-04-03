@@ -31,7 +31,7 @@ Each gate has:
 - [ ] Product type identified (or exploration scope defined)
 - [ ] Initial goals or outcomes mentioned
 
-**Bypass:** Never bypass — minimum context required
+**Bypass:** Not allowed — minimum context required for any product work
 
 **Failure action:** Route to discovery agent for concept refinement
 
@@ -135,7 +135,7 @@ Override and proceed anyway?
 - [ ] Product bundle exists
 - [ ] All artifacts organized in bundle structure
 
-**Bypass:** Not applicable — packaging is required for readiness check
+**Bypass:** Not recommended — readiness review requires organized bundle
 
 **Failure action:** Route to package assembler workflow
 

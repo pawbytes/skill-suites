@@ -91,13 +91,16 @@ Generate the command for launching the executor:
 ## Launch Command
 
 ```bash
-/paw-ps-[executor-type]-executor --product [product-slug]
+/paw-ps-[executor-type]-executor --headless
 ```
 
-Or with full path:
+Or with a specific task:
 
 ```bash
-/paw-ps-[executor-type]-executor --plan .pawbytes/prodig-suites/plans/[product-slug]/plan.md
+/paw-ps-knowledge-executor --headless:course
+/paw-ps-template-executor --headless:templates
+/paw-ps-software-executor --headless:mvp
+/paw-ps-service-executor --headless:delivery
 ```
 
 ### Step 3: Update Product Context
@@ -165,7 +168,7 @@ For complex products, create execution checklist:
 **Product context updated:** Yes
 
 ### Next Step
-Execute: `/paw-ps-[executor-type]-executor --product {product-slug}`
+Execute: `/paw-ps-[executor-type]-executor --headless`
 
 ### Summary
 - Product: [name]
