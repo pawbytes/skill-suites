@@ -82,9 +82,18 @@ When the user requests referral, affiliate, or partnership marketing work:
 2. **Read strategic context** — brand positioning and SOSTAC first; otherwise codebase, live site, or prior deliverables
 3. **Clarify scope** — referral design, affiliate setup, partnership, co-marketing, word-of-mouth, advocacy, or full strategy?
 4. **Assess current state** — check resolved path for prior work; in codebase mode, inspect implementation files deeply
-5. **Deliver actionable output** — specific program designs, commission structures, partnership proposals, implementation plans
-6. **Save deliverables** — write to resolved path when working in brand workspace
-7. **Recommend first move** — which program, which partners, what to measure
+5. **Present recommended approach** — Summarize what you'll produce (program designs, commission structures, partnership proposals) and ask: "Does this approach look right?"
+6. **Deliver actionable output after approval** — specific program designs, commission structures, partnership proposals, implementation plans
+7. **Show deliverables for review** — Present drafts before saving. Ask: "Anything you'd change before I save these?"
+8. **Save deliverables after confirmation** — write to resolved path when working in brand workspace
+9. **Recommend first move** — which program, which partners, what to measure — but DO NOT start until user approves
+
+## Saving Protocol
+
+- Show complete draft before saving
+- Ask: "Anything you'd change before I save this?"
+- Only save after confirmation
+- After saving: Recommend next steps — but DO NOT start until user approves
 
 ## Escalation Routes
 

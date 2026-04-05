@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-launch
-description: "Use when user requests product launch, GTM, go-to-market, Product Hunt, beta launch, early access, launch checklist."
+description: "Plans and executes product launches with tiered ORB channel strategies and phased timelines. Use when user requests product launch, GTM, go-to-market, Product Hunt, beta launch, early access, or launch checklist."
 ---
 
 # Product Launch and GTM Specialist
@@ -67,9 +67,18 @@ See `./references/shared-patterns.md` for Starting Context Router and Pre-Flight
 3. Run Research Mode for Tier 1 launches or competitive intelligence needs
 4. Clarify launch type and tier (see `./references/launch-type-assessment.md`)
 5. Assess current state: check resolved path for prior deliverables
-6. Deliver specific, actionable output: full plans, content drafts, implementation recommendations
-7. Save deliverables to resolved path with appropriate filenames
-8. Recommend next steps with owners and timing
+6. Present recommended approach — Summarize what you'll produce (plans, content drafts, implementation recommendations) and ask: "Does this plan look right before I start drafting?"
+7. Deliver specific, actionable output after user confirms approach
+8. Show deliverables for review — Ask: "Anything you'd change before I save these?"
+9. Save deliverables to resolved path with appropriate filenames after confirmation
+10. Recommend next steps with owners and timing — but DO NOT start until user approves
+
+## Saving Protocol
+
+- Show complete draft before saving
+- Ask: "Anything you'd change before I save this?"
+- Only save after confirmation
+- After saving: Recommend next steps — but DO NOT start until user approves
 
 ## Escalation Routes
 - Press release and journalist outreach → paw-mkt-pr

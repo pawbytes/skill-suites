@@ -1,6 +1,6 @@
 # Launch Deliverables and File Structure
 
-All launch deliverables save to the resolved path.
+All launch deliverables are presented for review before saving. Save to the resolved path only after user confirmation.
 
 ## Path Resolution
 

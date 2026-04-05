@@ -81,8 +81,16 @@ When the user requests SEO work:
 4. **Load relevant capability**: Read the matched capability file from `./references/`
 5. **Lookup frameworks**: Read `./references/frameworks-index.csv` and load only relevant framework files
 6. **Deliver actionable output**: Specific, implementable recommendations with priority ratings
-7. **Save deliverables**: Write outputs to the resolved path
-8. **Recommend next steps**: Suggest what to work on next based on priority
+7. **Show deliverables for review**: Present drafts before saving. Ask: "Anything you'd change before I save these?"
+8. **Save deliverables after confirmation**: Write outputs to the resolved path
+9. **Recommend next steps**: Suggest what to work on next based on priority — but DO NOT start until user approves
+
+## Saving Protocol
+
+- Show complete draft before saving
+- Ask: "Anything you'd change before I save this?"
+- Only save after confirmation
+- After saving: Recommend next steps — but DO NOT start until user approves
 
 ## Output Contract
 

@@ -91,8 +91,16 @@ When the user requests product positioning or context work:
 3. **Assess document completeness** — Load `./references/check-existing.md` to evaluate which of the 12 sections are complete, partial, or missing.
 4. **Conduct focused interview** — Ask only for gaps not answered by existing materials. Use verbatim customer language whenever possible.
 5. **Build or update the document** — Follow `./references/document-template.md` for the 12-section structure. Sync with brand-context.md.
-6. **Save deliverables** — Write to the resolved path.
-7. **Recommend next steps** — Suggest which marketing specialists should read the updated context, or flag sections needing more customer research.
+6. **Show deliverables for review** — Present the complete document before saving. Ask: "Anything you'd change before I save this?"
+7. **Save deliverables after confirmation** — Write to the resolved path.
+8. **Recommend next steps** — Suggest which marketing specialists should read the updated context, or flag sections needing more customer research — but DO NOT start until user approves.
+
+## Saving Protocol
+
+- Show complete draft before saving
+- Ask: "Anything you'd change before I save this?"
+- Only save after confirmation
+- After saving: Recommend next steps — but DO NOT start until user approves
 
 ## Path Resolution
 

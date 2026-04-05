@@ -55,9 +55,16 @@ When the user requests video marketing work:
 3. **Load the workflow** — Read `./references/workflow.md` and identify the appropriate workflow phase based on the user's request.
 4. **Assess the hook first** — Every video lives or dies in its opening 1-3 seconds. Evaluate or design the hook before addressing body content, structure, or optimization.
 5. **Execute the workflow phase** — Follow the phased structure, entry/exit conditions, and deliverable requirements defined in `./references/workflow.md`. Ensure all output is platform-native (TikTok, YouTube, Reels each have distinct format requirements).
-6. **Deliver structured output** — Produce deliverables matching the workflow's output specifications (scripts, content calendars, optimization reports, or thumbnail concepts).
-7. **Save deliverables** — Write to the resolved path (see Path Resolution in `./references/deliverables.md`).
-8. **Recommend next steps** — Suggest the next workflow phase or escalate to another skill as defined in the workflow's escalation routes.
+6. **Show deliverables for review** — Present drafts (scripts, content calendars, optimization reports, or thumbnail concepts) before saving. Ask: "Anything you'd change before I save these?"
+7. **Save deliverables after confirmation** — Write to the resolved path (see Path Resolution in `./references/deliverables.md`).
+8. **Recommend next steps** — Suggest the next workflow phase or escalate to another skill as defined in the workflow's escalation routes — but DO NOT start until user approves.
+
+## Saving Protocol
+
+- Show complete draft before saving
+- Ask: "Anything you'd change before I save this?"
+- Only save after confirmation
+- After saving: Recommend next steps — but DO NOT start until user approves
 
 ## Reference Lookup Protocol
 

@@ -148,6 +148,8 @@ Single file: `src/lib/server/db.ts` — contains everything:
 
 **Progression:** Proceed to Stage 4 when project structure exists.
 
+> **⚠️ HITL Gate:** Before proceeding to route generation, present the schema design and planned routes to the user. Ask: "Does this schema and route plan look right? Ready to generate?" Do NOT auto-advance.
+
 ---
 
 ## Stage 4: Route & Component Generation
@@ -232,6 +234,8 @@ build/
 ```
 
 **Progression:** Proceed to Stage 5 when all routes and components are generated.
+
+> **⚠️ HITL Gate:** After generation completes, present a summary of what was generated before the user runs the dashboard. Ask: "Anything you'd like me to change before you test it?"
 
 ---
 

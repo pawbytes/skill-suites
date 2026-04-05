@@ -11,7 +11,7 @@ Generates self-contained SvelteKit + sql.js dashboards for marketing teams. The 
 
 Uses sql.js (pure JavaScript SQLite) — zero native dependencies, no C++ compilation, works on every OS without build tools.
 
-**Args:** Accepts `--headless` / `-H` for non-interactive generation, or a specific brand slug to generate only that brand's dashboard. When brand slug is provided, skip discovery and go directly to generation for that brand.
+**Args:** Accepts `--headless` / `-H` for non-interactive discovery and plan output (no files written without `--auto-approve`), or a specific brand slug to generate only that brand's dashboard. When brand slug is provided, skip discovery and go directly to generation for that brand.
 
 ## Identity
 
@@ -57,7 +57,7 @@ The skill maintains a registry of all features it can generate. When run on an e
 
 1. Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` if present. Resolve and apply throughout the session.
 
-2. **Auto-discover brands** — Immediately scan `{project-root}/.pawbytes/marketing-suites/brands/` for available brand workspaces.
+2. **Ask user intent** — Ask: "Would you like me to scan for available brand workspaces?" Only proceed with discovery after confirmation.
 
 3. **Check for existing dashboards** — For each brand, check if `{brand-path}/dashboard/package.json` exists.
 
@@ -114,8 +114,9 @@ No dashboard found for {brand}.
 
 What would you like to do?
 1. Generate a new dashboard for {brand}
-2. Generate dashboards for all brands
 ```
+
+> **Note:** Dashboard generation is always one brand at a time. Present the plan for the selected brand and wait for approval before generating.
 
 ### If brand slug provided as argument:
 
@@ -154,8 +155,9 @@ After user selects intent (from On Activation):
 1. **Load references** — Read `./references/workflow.md`, `./references/code-patterns.md`, and `./references/design-guide.md`
 2. **Export existing data first** — If dashboard.db exists, export to JSON before touching anything
 3. **Analyze data structure** — Rescan brand folders for new/changed data
-4. **Regenerate** — Update routes and components, import data back
-5. **Present summary** — What changed, how to run
+4. **Present change plan** — Show what will be updated (new routes, changed components, data re-imports) and ask: "Ready to proceed with regeneration?"
+5. **Regenerate after approval** — Update routes and components, import data back
+6. **Present summary** — What changed, how to run
 
 ### If user wants to add missing features or specific features:
 
@@ -172,9 +174,17 @@ After user selects intent (from On Activation):
 ### If user wants full generation (new dashboard):
 
 1. **Load references** — Read `./references/workflow.md`, `./references/code-patterns.md`, and `./references/design-guide.md`
-2. **Execute from Stage 2** — Schema design → scaffolding → route generation → summary
+2. **Present generation plan** — Summarize which features, routes, and data sources will be included. Ask: "Does this plan look right before I generate?"
+3. **Execute from Stage 2 after approval** — Schema design → scaffolding → route generation → summary
 
 **Discovery already happened on activation.** Skip Stage 1 of workflow.
+
+## Saving Protocol
+
+- Show complete draft or generation plan before writing files
+- Ask: "Anything you'd change before I save this?"
+- Only save after confirmation
+- After saving: Recommend next steps — but DO NOT start until user approves
 
 ## Tech Stack
 
@@ -256,10 +266,14 @@ After user selects intent (from On Activation):
 
 When `--headless` or `-H` is passed:
 
-1. Skip all interactive prompts
+1. Skip conversational discovery prompts
 2. Discover all brands automatically
-3. Generate/regenerate all dashboards
-4. Output summary to stdout as JSON
+3. Present a generation plan (brands found, features to generate, output paths) — but **do not write any files**
+4. Output the plan to stdout as JSON and wait for confirmation
+
+**Files are never written in headless mode without explicit opt-in.** To allow automatic writes, pass `--auto-approve` alongside `--headless`. Without `--auto-approve`, headless mode exits after outputting the plan and requires the user to re-run with `--auto-approve` or proceed interactively.
+
+> **Consistency with Saving Protocol:** The Saving Protocol applies in all modes. `--auto-approve` is the explicit grant of write permission; absent that flag, confirmation is always required before any file is created or modified.
 
 ## Path Resolution
 

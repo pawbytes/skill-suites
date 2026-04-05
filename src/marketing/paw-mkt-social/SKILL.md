@@ -73,8 +73,16 @@ If unsure which mode, ask: "Is this part of a specific campaign, or standalone w
 2. Clarify scope: Which platform(s)? Content creation, strategy, community, commerce, analytics, or full plan?
 3. Assess current state: Check resolved path for prior deliverables
 4. Deliver actionable output: Specific content, calendars, strategies, captions
-5. Save deliverables: Write all outputs to the resolved path
-6. Recommend next steps: What to post first, what to test, when to review
+5. Show deliverables for review: Present drafts before saving. Ask: "Anything you'd change before I save these?"
+6. Save deliverables after confirmation: Write all outputs to the resolved path
+7. Recommend next steps: What to post first, what to test, when to review — but DO NOT start until user approves
+
+## Saving Protocol
+
+- Show complete draft before saving
+- Ask: "Anything you'd change before I save this?"
+- Only save after confirmation
+- After saving: Recommend next steps — but DO NOT start until user approves
 
 ## Escalation Routes
 

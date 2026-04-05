@@ -88,10 +88,18 @@ When the user requests PR or crisis communication work:
 2. **Read strategic context** — Pre-Flight: brand and SOSTAC first when available; otherwise use existing media coverage or press page as working source of truth.
 3. **Load the workflow** — Read `./references/workflow.md` and identify the appropriate workflow phase based on the user's request and track (proactive vs crisis).
 4. **Gather diagnostic information** — Ask the diagnostic questions from the workflow. For proactive PR: news angle, target outlets, timing. For crisis: severity, stakeholders affected, current exposure.
-5. **Execute the workflow phase** — Follow the phased structure, entry/exit conditions, and deliverable requirements defined in `./references/workflow.md`. For crisis track, prioritize speed — holding statements within 1-2 hours.
-6. **Deliver structured output** — Produce deliverables matching the workflow's output specifications (pitches, press releases, media lists, or crisis response plans). **Never send unedited AI draft to a journalist** — flag all outputs as requiring human review.
-7. **Save deliverables** — Write to the resolved path (see Path Resolution).
-8. **Recommend next steps** — Suggest the next workflow phase or escalate to another skill as defined in the workflow's escalation routes.
+5. **Present recommended approach** — Summarize what you'll produce (pitches, press releases, media lists, or crisis response plans) and ask: "Does this approach look right before I draft?"
+6. **Execute the workflow phase after approval** — Follow the phased structure, entry/exit conditions, and deliverable requirements defined in `./references/workflow.md`. For crisis track, prioritize speed — holding statements within 1-2 hours.
+7. **Show deliverables for review** — Present drafts before saving. **Never send unedited AI draft to a journalist** — flag all outputs as requiring human review. Ask: "Anything you'd change before I save these?"
+8. **Save deliverables after confirmation** — Write to the resolved path (see Path Resolution).
+9. **Recommend next steps** — Suggest the next workflow phase or escalate to another skill as defined in the workflow's escalation routes — but DO NOT start until user approves.
+
+## Saving Protocol
+
+- Show complete draft before saving
+- Ask: "Anything you'd change before I save this?"
+- Only save after confirmation
+- After saving: Recommend next steps — but DO NOT start until user approves
 
 ## Escalation Routes
 

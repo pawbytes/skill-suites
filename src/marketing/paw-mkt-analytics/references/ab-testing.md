@@ -102,7 +102,7 @@ After reaching sample:
 4. Segment the results — does the winner hold across device types, traffic sources, new vs returning?
 5. Document in the testing roadmap: hypothesis, variants, sample, duration, winner, confidence level, actual lift, segments checked, next action
 
-Ship winners immediately. Archive losers — a failed test is still a learning (document why it failed).
+Ship winners after stakeholder approval — present results with statistical and practical significance before deployment. Archive losers — a failed test is still a learning (document why it failed).
 
 ---
 

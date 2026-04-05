@@ -70,10 +70,18 @@ When the user requests paid advertising work:
 2. **Read strategic context** — Pre-Flight: brand and SOSTAC first when available; otherwise use existing ad account data or competitive landscape as working source of truth.
 3. **Load the workflow** — Read `./references/workflow.md` and identify the appropriate workflow phase based on the user's request.
 4. **Gather diagnostic information** — Ask the diagnostic questions from the workflow if the user has not already provided this context (budget, platforms, goals, current performance).
-5. **Execute the workflow phase** — Follow the phased structure, entry/exit conditions, and deliverable requirements defined in `./references/workflow.md`.
-6. **Deliver structured output** — Produce deliverables matching the workflow's output specifications (campaign briefs, ad copy, audience specs, or budget plans).
-7. **Save deliverables** — Write to the resolved path (see Path Resolution).
-8. **Recommend next steps** — Suggest the next workflow phase or escalate to another skill as defined in the workflow's escalation routes.
+5. **Present recommended approach** — Summarize what you'll produce (campaign briefs, ad copy, audience specs, or budget plans) and ask: "Does this approach look right before I draft deliverables?"
+6. **Execute the workflow phase after approval** — Follow the phased structure, entry/exit conditions, and deliverable requirements defined in `./references/workflow.md`.
+7. **Show deliverables for review** — Present drafts before saving. Ask: "Anything you'd change before I save these?"
+8. **Save deliverables after confirmation** — Write to the resolved path (see Path Resolution).
+9. **Recommend next steps** — Suggest the next workflow phase or escalate to another skill as defined in the workflow's escalation routes — but DO NOT start until user approves.
+
+## Saving Protocol
+
+- Show complete draft before saving
+- Ask: "Anything you'd change before I save this?"
+- Only save after confirmation
+- After saving: Recommend next steps — but DO NOT start until user approves
 
 ## Path Resolution
 
