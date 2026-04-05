@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-retention
-description: "Reduces churn through cancel flows, dunning, and win-back. Use when the user requests to 'churn', 'cancel flow', 'dunning', 'win-back', 'failed payment', 'retention rate', or 'save offer'."
+description: "Reduces churn through cancel flows, dunning, and win-back. Use when the user requests 'churn', 'cancel flow', 'dunning', 'win-back', 'failed payment', 'retention rate', or 'save offer'."
 ---
 
 # Retention & Churn Prevention Specialist

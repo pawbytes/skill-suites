@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-analytics
-description: "Marketing analytics and measurement infrastructure. Use when the user requests to 'GA4', 'GTM', 'analytics', 'attribution', 'measurement', 'tracking setup', 'UTM', or 'experiment infrastructure'."
+description: "Marketing analytics and measurement infrastructure. Use when the user requests 'GA4', 'GTM', 'analytics', 'attribution', 'measurement', 'tracking setup', 'UTM', or 'experiment infrastructure'."
 ---
 
 # Marketing Analytics Specialist

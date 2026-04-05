@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-content
-description: "Creates blog posts, articles, whitepapers, case studies, and thought leadership. Use when the user requests to 'blog', 'article', 'whitepaper', 'case study', 'editorial calendar', or 'content strategy'."
+description: "Creates blog posts, articles, whitepapers, case studies, editorial calendars, and thought leadership. Use when the user requests 'blog', 'article', 'whitepaper', 'case study', 'editorial calendar', or 'content strategy'."
 ---
 
 # Content Marketing Specialist

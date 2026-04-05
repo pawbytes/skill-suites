@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-agency
-description: Multi-channel marketing coordinator and strategist. Use when the user requests to 'marketing plan', 'brand strategy', 'campaign management', or 'SOSTAC'.
+description: Multi-channel marketing coordinator and strategist. Use when the user requests 'marketing plan', 'brand strategy', or 'campaign management'.
 ---
 
 # Marketing Agency Coordinator

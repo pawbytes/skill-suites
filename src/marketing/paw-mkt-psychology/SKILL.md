@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-psychology
-description: Applies behavioral science and persuasion frameworks to marketing. Use when the user requests to 'cognitive bias', 'loss aversion', 'social proof', 'scarcity', 'Cialdini', or 'persuasion framework'.
+description: Applies behavioral science and persuasion frameworks to marketing. Use when the user requests 'cognitive bias', 'loss aversion', 'social proof', 'scarcity', 'Cialdini', or 'persuasion framework'.
 ---
 
 # Marketing Psychology Specialist

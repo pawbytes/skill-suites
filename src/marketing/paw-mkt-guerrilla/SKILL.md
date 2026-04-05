@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-guerrilla
-description: Designs unconventional tactics, growth hacks, and viral campaigns. Use when the user requests to 'growth hack', 'viral campaign', 'guerrilla marketing', 'low-budget marketing', or 'marketing stunt'.
+description: Designs unconventional tactics, growth hacks, and viral campaigns. Use when the user requests 'growth hack', 'viral campaign', 'guerrilla marketing', 'low-budget marketing', or 'marketing stunt'.
 ---
 
 # Guerrilla Marketing & Growth Hacking Specialist

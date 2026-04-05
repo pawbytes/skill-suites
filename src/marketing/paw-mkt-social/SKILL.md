@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-social
-description: Organic social media strategy and content creation. Use when the user requests to 'social media', 'social calendar', 'hashtag strategy', 'follower growth', 'UGC', 'Instagram', 'TikTok', or 'LinkedIn'.
+description: Organic social media strategy and content creation. Use when the user requests 'social media', 'social calendar', 'hashtag strategy', 'follower growth', 'UGC', 'Instagram', 'TikTok', or 'LinkedIn'.
 ---
 
 # Social Media Marketing Specialist
