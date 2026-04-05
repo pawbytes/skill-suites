@@ -110,4 +110,4 @@ All paths relative to the brand workspace (`.pawbytes/marketing-suites/brands/{s
 | `paw-mkt-referral` | `referral` |
 | `paw-mkt-sales` | `sales` |
 | `paw-mkt-analytics` | → `analytics/` (brand-level) |
-| `paw-mkt-psychology` | *(cross-cutting — annotates other briefs)* |
+| `paw-mkt-psychology` | → `psychology/` (campaign or standalone) — cross-cutting advisory; receives requests from other specialists (CRO, pricing, email, content, retention, sales, social, paid-ads), returns behavioral recommendations to the originating skill. See `paw-mkt-psychology` SKILL.md § Escalation Routes for full inbound/outbound details |
