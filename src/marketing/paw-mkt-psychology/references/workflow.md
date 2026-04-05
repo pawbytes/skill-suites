@@ -107,7 +107,7 @@ If the user cannot describe the current behavior and desired action (questions 2
 - Primary barrier and hypotheses defined
 
 ### Key Activities
-1. **Select frameworks**: Use `./references/frameworks-index.csv` to match the barrier to relevant frameworks. Prioritize the top 3 — not an exhaustive list. Common matches:
+1. **Select frameworks**: Use `./frameworks-index.csv` to match the barrier to relevant frameworks. Prioritize the top 3 — not an exhaustive list. Common matches:
    - Status quo bias → loss framing, default effect, endowment effect
    - Choice paralysis → recommendation architecture, decoy effect, satisficing design
    - Trust deficit → social proof, authority signals, risk reversal (guarantees, trials)
@@ -231,7 +231,7 @@ All psychology work saves to the resolved path (see Path Resolution in SKILL.md)
 
 ## Framework Quick Reference
 
-Use `./references/frameworks-index.csv` for full framework lookup. Below is a barrier-to-framework quick map for common situations:
+Use `./frameworks-index.csv` for full framework lookup. Below is a barrier-to-framework quick map for common situations:
 
 | Barrier Type | Primary Frameworks | Common Touchpoints |
 |---|---|---|
