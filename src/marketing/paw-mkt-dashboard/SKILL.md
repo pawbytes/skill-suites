@@ -11,7 +11,7 @@ Generates self-contained SvelteKit + sql.js dashboards for marketing teams. The 
 
 Uses sql.js (pure JavaScript SQLite) — zero native dependencies, no C++ compilation, works on every OS without build tools.
 
-**Args:** Accepts `--headless` / `-H` for non-interactive generation, or a specific brand slug to generate only that brand's dashboard. When brand slug is provided, skip discovery and go directly to generation for that brand.
+**Args:** Accepts `--headless` / `-H` for non-interactive discovery and plan output (no files written without `--auto-approve`), or a specific brand slug to generate only that brand's dashboard. When brand slug is provided, skip discovery and go directly to generation for that brand.
 
 ## Identity
 
@@ -266,10 +266,14 @@ After user selects intent (from On Activation):
 
 When `--headless` or `-H` is passed:
 
-1. Skip all interactive prompts
+1. Skip conversational discovery prompts
 2. Discover all brands automatically
-3. Generate/regenerate all dashboards
-4. Output summary to stdout as JSON
+3. Present a generation plan (brands found, features to generate, output paths) — but **do not write any files**
+4. Output the plan to stdout as JSON and wait for confirmation
+
+**Files are never written in headless mode without explicit opt-in.** To allow automatic writes, pass `--auto-approve` alongside `--headless`. Without `--auto-approve`, headless mode exits after outputting the plan and requires the user to re-run with `--auto-approve` or proceed interactively.
+
+> **Consistency with Saving Protocol:** The Saving Protocol applies in all modes. `--auto-approve` is the explicit grant of write permission; absent that flag, confirmation is always required before any file is created or modified.
 
 ## Path Resolution
 
