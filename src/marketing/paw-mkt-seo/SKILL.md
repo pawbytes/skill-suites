@@ -68,7 +68,7 @@ If unsure which mode, ask: "Is this part of a specific campaign, or standalone w
 | AI Search Optimization (GEO) | Load `./references/capability-geo.md` |
 | Deliverables & Action Plans | Load `./references/capability-deliverables.md` |
 | Best Practices | Load `./references/capability-best-practices.md` |
-| Workflow Integration | Load `./references/capability-workflow.md` |
+| Workflow Integration | Load `./references/workflow.md` |
 | Research Mode (Live Intelligence) | Load `./references/capability-research.md` |
 
 ## Response Protocol
