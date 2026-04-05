@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-influencer
-description: Influencer and creator partnerships. Triggers for 'influencer', 'brand ambassador', 'creator partnership', 'UGC program', 'sponsored content', 'affiliate program'.
+description: Influencer and creator partnerships. Use when the user requests 'influencer', 'brand ambassador', 'creator partnership', 'UGC program', 'sponsored content', or 'affiliate program'.
 ---
 
 # Influencer Marketing Specialist

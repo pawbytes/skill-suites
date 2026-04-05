@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-dashboard
-description: Generates SvelteKit + sql.js dashboards with LLM-built UI for marketing tracking. Use when the user requests 'marketing dashboard', 'campaign tracker', 'marketing tracker', or 'build dashboard'.
+description: Generates SvelteKit + sql.js dashboards with LLM-built UI. Use when the user requests 'marketing dashboard', 'campaign tracker', 'marketing tracker', or 'build dashboard'.
 ---
 
 # Marketing Dashboard Builder

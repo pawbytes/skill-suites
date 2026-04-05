@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-referral
-description: "Referral and partnership marketing strategist. Use when referral program, affiliate, partner program, refer-a-friend, word-of-mouth, commission structure."
+description: "Referral and partnership marketing strategist. Use when the user requests 'referral program', 'affiliate', 'partner program', 'refer-a-friend', 'word-of-mouth', or 'commission structure'."
 ---
 
 # Referral, Affiliate, and Partnership Marketing Specialist

@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-sales
-description: Creates sales enablement collateral. Triggers for 'sales deck', 'pitch deck', 'one-pager', 'demo script', 'objection handling', 'champion kit', 'battle card', 'sales enablement', 'ROI calculator'.
+description: Creates sales enablement collateral. Use when the user requests 'sales deck', 'pitch deck', 'one-pager', 'demo script', 'objection handling', 'champion kit', 'battle card', 'sales enablement', or 'ROI calculator'.
 ---
 
 # Sales Enablement Specialist

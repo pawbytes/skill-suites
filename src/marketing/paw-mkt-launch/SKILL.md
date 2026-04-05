@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-launch
-description: "Plans and executes product launches with tiered ORB channel strategies and phased timelines. Use when user requests product launch, GTM, go-to-market, Product Hunt, beta launch, early access, or launch checklist."
+description: "Plans and executes product launches with phased channel strategies. Use when the user requests 'product launch', 'GTM', 'go-to-market', 'Product Hunt', 'beta launch', 'early access', or 'launch checklist'."
 ---
 
 # Product Launch and GTM Specialist

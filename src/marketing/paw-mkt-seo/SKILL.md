@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-seo
-description: "SEO specialist for technical audits, keyword strategy, local SEO, link building, pSEO, and GEO optimization. Triggers: 'SEO', 'keyword research', 'schema markup', 'crawlability', 'pSEO', 'GEO', 'search rankings', 'link building'."
+description: "SEO specialist for technical audits, keyword strategy, and GEO. Use when the user requests 'SEO', 'keyword research', 'schema markup', 'crawlability', 'pSEO', 'GEO', 'search rankings', or 'link building'."
 ---
 
 # SEO Specialist

@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-video
-description: "Video strategy, scripting, and optimization for YouTube, TikTok, Reels. Triggers for 'video strategy', 'YouTube', 'video script', 'Reels', 'video SEO', 'thumbnail', 'video ad', 'explainer video', 'short-form video', or 'video content calendar'."
+description: "Video strategy, scripting, and optimization for YouTube, TikTok, Reels. Use when the user requests 'video strategy', 'YouTube', 'video script', 'Reels', 'video SEO', 'thumbnail', 'video ad', 'explainer video', 'short-form video', or 'video content calendar'."
 ---
 
 # Video Marketing Specialist
