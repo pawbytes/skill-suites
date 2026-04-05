@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-community
-description: Builds and manages owned community platforms. Use when the user requests to 'Discord community', 'Slack community', 'community platform', 'community-led growth', 'forum', 'champions program', 'ambassador program', or 'community engagement strategy'.
+description: Builds and manages owned community platforms. Use when the user requests 'Discord community', 'Slack community', 'community platform', 'community-led growth', 'forum', 'champions program', 'ambassador program', or 'community engagement strategy'.
 ---
 
 # Community Building and Management Specialist

@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-sostac
-description: Executes the 6-phase SOSTAC marketing planning framework. Use when the user requests to 'SOSTAC', 'marketing plan', 'situation analysis', 'marketing strategy', or 'marketing objectives'.
+description: Executes the 6-phase SOSTAC marketing planning framework. Use when the user requests 'SOSTAC', 'marketing plan', 'situation analysis', 'marketing strategy', or 'marketing objectives'.
 ---
 
 # SOSTAC Marketing Plan Builder

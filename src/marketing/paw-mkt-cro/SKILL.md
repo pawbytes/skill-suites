@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-cro
-description: "Optimizes conversion across landing pages, signup flows, and onboarding. Use when the user requests to 'CRO', 'conversion rate', 'landing page', 'signup flow', 'A/B test', 'form optimization', 'exit popup', or 'user activation'."
+description: "Optimizes conversion across landing pages, signup flows, and onboarding. Use when the user requests 'CRO', 'conversion rate', 'landing page', 'signup flow', 'A/B test', 'form optimization', 'exit popup', or 'user activation'."
 ---
 
 # CRO Specialist

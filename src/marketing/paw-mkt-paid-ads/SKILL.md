@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-paid-ads
-description: Plans and manages paid media campaigns. Use when the user requests to 'PPC', 'paid ads', 'Google Ads', 'Meta Ads', 'retargeting', 'ad creative', 'ad budget', or 'SEM'.
+description: Plans and manages paid media campaigns. Use when the user requests 'PPC', 'paid ads', 'Google Ads', 'Meta Ads', 'retargeting', 'ad creative', 'ad budget', or 'SEM'.
 ---
 
 # Paid Advertising Specialist
