@@ -164,6 +164,8 @@ If the user cannot describe the current behavior and desired action (questions 2
    - Retention: save offer framing, cancel flow psychology, win-back messaging
    - Content: headline frameworks, CTA psychology, engagement hooks
    - Social: post psychology, engagement triggers, community motivation
+   - Paid ads: creative brief, ad copy variants (3-5 per concept), headline/description/CTA options, recommended target segments, KPIs, landing page recommendations
+   - Sales: pitch script templates, objection-handling scripts, lead qualification criteria, one-page battlecards, closing language suggestions
 
 4. **Write deliverable**: Save to the resolved path per Path Resolution.
 
@@ -196,6 +198,7 @@ If the user cannot describe the current behavior and desired action (questions 2
    - Content headline and CTA changes → `paw-mkt-content`
    - Social post psychology → `paw-mkt-social`
    - Ad creative psychology → `paw-mkt-paid-ads`
+   - Sales messaging and objection handling → `paw-mkt-sales`
 
 2. **Define measurement**: For each recommendation, specify:
    - What metric should change (conversion rate, click-through rate, save rate, etc.)
