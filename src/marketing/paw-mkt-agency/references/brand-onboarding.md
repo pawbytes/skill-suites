@@ -90,4 +90,4 @@ Create the SOSTAC status tracker:
 
 ## After Onboarding
 
-Immediately proceed to SOSTAC planning workflow.
+Offer to start SOSTAC strategic planning with `paw-mkt-sostac`, or let the user continue with other work. Don't push — let them decide their next step.
