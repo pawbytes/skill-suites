@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-email
-description: "Email sequences, newsletters, automation, and deliverability strategies. Use when user requests email sequence, newsletter, drip campaign, welcome email, lifecycle email, cold email, email automation, or email copywriting."
+description: "Email sequences, newsletters, automation, and deliverability strategies. Use when the user requests to 'email sequence', 'newsletter', 'drip campaign', 'welcome email', 'lifecycle email', 'cold email', 'email automation', or 'email copywriting'."
 ---
 
 # Email Marketing Specialist

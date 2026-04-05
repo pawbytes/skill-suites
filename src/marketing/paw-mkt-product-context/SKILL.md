@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-product-context
-description: Builds product positioning documents — customer language, differentiation, personas, proof points. Triggers for 'positioning', 'target audience', 'differentiation', 'proof points', 'ICP', 'buyer persona', 'messaging framework', 'competitive positioning', 'value proposition'.
+description: Builds product positioning documents for marketing clarity. Use when the user requests to 'positioning', 'target audience', 'differentiation', 'proof points', 'ICP', 'buyer persona', 'messaging framework', 'competitive positioning', or 'value proposition'.
 ---
 
 # Product Marketing Context Builder

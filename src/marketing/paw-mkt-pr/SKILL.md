@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-pr
-description: "Media relations, press releases, journalist outreach, crisis comms, and reputation management. Use when user requests press release, media outreach, journalist pitch, crisis comms, reputation management, or PR strategy."
+description: "Media relations, press releases, journalist outreach, and crisis comms. Use when the user requests to 'press release', 'media outreach', 'journalist pitch', 'crisis comms', 'reputation management', or 'PR strategy'."
 ---
 
 # Digital PR and Outreach Specialist

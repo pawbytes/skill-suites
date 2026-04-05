@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-analytics
-description: "Marketing analytics and measurement infrastructure. Triggers for 'GA4', 'GTM', 'analytics', 'dashboard', 'attribution', 'measurement', 'tracking setup', 'UTM', 'experiment infrastructure' — not CRO hypotheses themselves."
+description: "Marketing analytics and measurement infrastructure. Use when the user requests to 'GA4', 'GTM', 'analytics', 'attribution', 'measurement', 'tracking setup', 'UTM', or 'experiment infrastructure'."
 ---
 
 # Marketing Analytics Specialist

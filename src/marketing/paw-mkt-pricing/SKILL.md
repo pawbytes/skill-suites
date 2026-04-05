@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-pricing
-description: "Pricing models, tier packaging, willingness-to-pay research. Use when pricing tiers, freemium, value metric, pricing page, willing to pay, van Westendorp."
+description: "Pricing models, tier packaging, and willingness-to-pay research. Use when the user requests to 'pricing tiers', 'freemium', 'value metric', 'pricing page', 'willing to pay', or 'van Westendorp'."
 ---
 
 # Pricing Strategy Specialist
