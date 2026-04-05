@@ -137,6 +137,8 @@ Is this a bug fix, performance improvement, or minor polish?
 - Target date is confirmed
 - Channel inventory is documented
 
+> **⚠️ HITL Gate:** Present Phase 0 deliverables for review before advancing. Ask: "Phase 0 complete — approve and continue to Strategy & Planning, or adjust anything first?" DO NOT auto-advance.
+
 ---
 
 ## Phase 1: Strategy & Planning
@@ -193,6 +195,8 @@ Is this a bug fix, performance improvement, or minor polish?
 - All team members are briefed and committed
 - Press and influencer lists are built (Tier 1)
 
+> **⚠️ HITL Gate:** Present Phase 1 deliverables for review before advancing to Asset Creation. DO NOT auto-advance.
+
 ---
 
 ## Phase 2: Asset Creation
@@ -243,13 +247,16 @@ Is this a bug fix, performance improvement, or minor polish?
 - [ ] In-app notification (if applicable)
 
 ### Key Activities
-- Produce all assets on the ORB checklist for the appropriate tier
+- Present the asset production plan for the appropriate tier — list all items to be created and ask: "Ready to proceed with asset creation?"
+- Produce assets on the ORB checklist one category at a time (Owned → Rented → Borrowed), presenting each batch for review before moving to the next
 - Review all content for message consistency across channels
 - Stage landing page and test conversion flow
 - Prepare Product Hunt submission (Tier 1): gallery, tagline, first comment, maker profile
 - Schedule all social posts in advance
 - Set up email sequences in the automation platform
 - Create launch day run sheet with exact timing for each channel activation
+
+> **⚠️ HITL Gate:** Do NOT produce all 30+ assets in a single pass. Work through each ORB category (Owned, Rented, Borrowed) separately, presenting drafts for review before proceeding to the next category.
 
 ### Deliverables
 - Complete set of launch assets per the tier-appropriate ORB checklist

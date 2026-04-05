@@ -51,10 +51,18 @@ When the user requests pricing strategy work:
 2. **Read strategic context** — Pre-Flight: brand and SOSTAC first when available; otherwise use existing pricing data or competitor pricing as working source of truth.
 3. **Load the workflow** — Read `./references/workflow.md` and identify the appropriate workflow phase based on the user's request.
 4. **Diagnose before prescribing** — Always classify the pricing problem first (value metric misalignment, tier structure, price point, packaging, or communication issue). Different symptoms require different fixes.
-5. **Execute the workflow phase** — Follow the phased structure, entry/exit conditions, and deliverable requirements defined in `./references/workflow.md`. Ground every price point in competitive anchors, willingness-to-pay data, or value quantification.
-6. **Deliver structured output** — Produce deliverables matching the workflow's output specifications (pricing models, tier structures, research designs, or pricing page recommendations).
-7. **Save deliverables** — Write to the resolved path (see Path Resolution).
-8. **Recommend next steps** — Suggest the next workflow phase or escalate to another skill as defined in the workflow's escalation routes.
+5. **Present recommended approach** — Summarize your diagnosis and what you'll produce (pricing models, tier structures, research designs, or pricing page recommendations). Ask: "Does this approach look right before I draft deliverables?"
+6. **Execute the workflow phase after approval** — Follow the phased structure, entry/exit conditions, and deliverable requirements defined in `./references/workflow.md`. Ground every price point in competitive anchors, willingness-to-pay data, or value quantification.
+7. **Show deliverables for review** — Present drafts before saving. Ask: "Anything you'd change before I save these?"
+8. **Save deliverables after confirmation** — Write to the resolved path (see Path Resolution).
+9. **Recommend next steps** — Suggest the next workflow phase or escalate to another skill as defined in the workflow's escalation routes — but DO NOT start until user approves.
+
+## Saving Protocol
+
+- Show complete draft before saving
+- Ask: "Anything you'd change before I save this?"
+- Only save after confirmation
+- After saving: Recommend next steps — but DO NOT start until user approves
 
 ## Reference Lookup Protocol
 

@@ -57,7 +57,7 @@ The skill maintains a registry of all features it can generate. When run on an e
 
 1. Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` if present. Resolve and apply throughout the session.
 
-2. **Auto-discover brands** — Immediately scan `{project-root}/.pawbytes/marketing-suites/brands/` for available brand workspaces.
+2. **Ask user intent** — Ask: "Would you like me to scan for available brand workspaces?" Only proceed with discovery after confirmation.
 
 3. **Check for existing dashboards** — For each brand, check if `{brand-path}/dashboard/package.json` exists.
 
@@ -114,8 +114,9 @@ No dashboard found for {brand}.
 
 What would you like to do?
 1. Generate a new dashboard for {brand}
-2. Generate dashboards for all brands
 ```
+
+> **Note:** Dashboard generation is always one brand at a time. Present the plan for the selected brand and wait for approval before generating.
 
 ### If brand slug provided as argument:
 
@@ -154,8 +155,9 @@ After user selects intent (from On Activation):
 1. **Load references** — Read `./references/workflow.md`, `./references/code-patterns.md`, and `./references/design-guide.md`
 2. **Export existing data first** — If dashboard.db exists, export to JSON before touching anything
 3. **Analyze data structure** — Rescan brand folders for new/changed data
-4. **Regenerate** — Update routes and components, import data back
-5. **Present summary** — What changed, how to run
+4. **Present change plan** — Show what will be updated (new routes, changed components, data re-imports) and ask: "Ready to proceed with regeneration?"
+5. **Regenerate after approval** — Update routes and components, import data back
+6. **Present summary** — What changed, how to run
 
 ### If user wants to add missing features or specific features:
 
@@ -172,9 +174,17 @@ After user selects intent (from On Activation):
 ### If user wants full generation (new dashboard):
 
 1. **Load references** — Read `./references/workflow.md`, `./references/code-patterns.md`, and `./references/design-guide.md`
-2. **Execute from Stage 2** — Schema design → scaffolding → route generation → summary
+2. **Present generation plan** — Summarize which features, routes, and data sources will be included. Ask: "Does this plan look right before I generate?"
+3. **Execute from Stage 2 after approval** — Schema design → scaffolding → route generation → summary
 
 **Discovery already happened on activation.** Skip Stage 1 of workflow.
+
+## Saving Protocol
+
+- Show complete draft or generation plan before writing files
+- Ask: "Anything you'd change before I save this?"
+- Only save after confirmation
+- After saving: Recommend next steps — but DO NOT start until user approves
 
 ## Tech Stack
 
