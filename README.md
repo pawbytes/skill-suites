@@ -1,6 +1,6 @@
 # Pawbytes Skill Suites
 
-> 41 AI agent skills for Claude Code — agentic marketing automation, AI creative agency workflows, and developer productivity tools.
+> 59 AI agent skills for Claude Code — agentic marketing automation, AI creative agency workflows, product development, webinar creation, and developer productivity tools.
 
 ## Install
 
@@ -77,6 +77,42 @@ A full AI creative agency with persistent agent personas and deterministic produ
 
 ***
 
+### `Prodig Suites` — 14 skills
+
+End-to-end product development orchestrator. Transform concepts into production-ready deliverables with research, strategy, and execution phases.
+
+| Skill                            | What it does                                                         |
+| -------------------------------- | -------------------------------------------------------------------- |
+| `paw-ps-orchestrator`            | Master coordinator — routes requests to appropriate agents/workflows |
+| `paw-ps-strategist`              | Product strategist — roadmap, positioning, competitive analysis      |
+| `paw-ps-discovery`               | Creative discovery — ideation, market gaps, opportunity mapping      |
+| `paw-ps-research`                | Rigorous market research — surveys, interviews, data analysis        |
+| `paw-ps-audience`                | Customer insight specialist — personas, segmentation, JTBD           |
+| `paw-ps-research-to-brief`       | Convert discovery and research into actionable briefs                |
+| `paw-ps-concept-to-product-plan` | Transform accepted concepts into product plans                       |
+| `paw-ps-knowledge-executor`      | Build knowledge base content and documentation                       |
+| `paw-ps-service-executor`        | Execute service-based product deliverables                           |
+| `paw-ps-software-executor`       | Product execution for software and technical deliverables            |
+| `paw-ps-template-executor`       | Build template-based assets and frameworks                           |
+| `paw-ps-product-package-assembler` | Bundle product artifacts into deliverable packages                  |
+| `paw-ps-publish-ready-check`     | Evaluate whether products meet publish-ready criteria                |
+| `paw-ps-setup`                   | One-time module setup and configuration                              |
+
+***
+
+### `Webinar Creator Suites` — 4 skills
+
+AI-powered webinar production from research to final deliverable.
+
+| Skill                      | What it does                                                    |
+| -------------------------- | --------------------------------------------------------------- |
+| `paw-wbc-agent-discovery`  | Research-obsessed strategist — topic research, audience analysis|
+| `paw-wbc-agent-producer`   | Structured producer — slides, scripts, recording coordination   |
+| `paw-wbc-webinar-creation` | Guided end-to-end webinar creation workflow                     |
+| `paw-wbc-setup`            | One-time module setup and configuration                         |
+
+***
+
 ### `Utility` — 3 skills
 
 | Skill                    | What it does                                                         |
@@ -89,12 +125,121 @@ A full AI creative agency with persistent agent personas and deterministic produ
 
 ## Repository Structure
 
-```javascript
+```
 skill-suites/
 ├── src/
-│   ├── marketing/          # paw-mkt-* skills (23)
-│   ├── creative/           # paw-cra-* skills (15)
-│   └── tools/              # paw-tools-* skills (3)
+│   ├── marketing/           # paw-mkt-* skills (23)
+│   │   ├── paw-mkt-agency/
+│   │   ├── paw-mkt-content/
+│   │   ├── paw-mkt-seo/
+│   │   └── ... (20 more)
+│   │
+│   ├── creative/            # paw-cra-* skills (15)
+│   │   ├── paw-cra-agent-creative-director/
+│   │   ├── paw-cra-agent-designer/
+│   │   └── ... (13 more)
+│   │
+│   ├── prodig/              # paw-ps-* skills (14)
+│   │   ├── paw-ps-orchestrator/
+│   │   ├── paw-ps-strategist/
+│   │   └── ... (12 more)
+│   │
+│   ├── webinar/             # paw-wbc-* skills (4)
+│   │   ├── paw-wbc-agent-discovery/
+│   │   ├── paw-wbc-agent-producer/
+│   │   └── ... (2 more)
+│   │
+│   └── tools/               # paw-tools-* skills (3)
+│       ├── paw-tools-presentation/
+│       ├── paw-tools-release/
+│       └── paw-tools-setup/
+│
 └── .claude-plugin/
-    └── marketplace.json    # unified installer manifest
+    └── marketplace.json     # unified installer manifest
 ```
+
+Each skill folder contains:
+```
+paw-{suite}-{skill-name}/
+├── SKILL.md      # Main skill definition and prompts
+├── assets/       # Supporting assets (templates, examples)
+└── scripts/      # Optional automation scripts
+```
+
+***
+
+## Manual Installation Guide
+
+If you're cloning this repository directly (e.g., for use with Claude Code, OpenClaw, or other AI environments), follow these steps:
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/pawbytes/skill-suites.git
+cd skill-suites
+```
+
+### Step 2: Copy Skills to Your AI's Skills Folder
+
+Each suite is located under `src/{suite-name}/`. Copy the skill folders to your AI's skills directory:
+
+**For Claude Code:**
+```bash
+# Copy individual skills (example: marketing setup)
+cp -r src/marketing/paw-mkt-setup ~/.claude/skills/
+
+# Copy all skills from a suite
+cp -r src/marketing/paw-mkt-* ~/.claude/skills/
+
+# Copy all skills from all suites
+cp -r src/marketing/paw-mkt-* ~/.claude/skills/
+cp -r src/creative/paw-cra-* ~/.claude/skills/
+cp -r src/prodig/paw-ps-* ~/.claude/skills/
+cp -r src/webinar/paw-wbc-* ~/.claude/skills/
+cp -r src/tools/paw-tools-* ~/.claude/skills/
+```
+
+**For OpenClaw or similar environments:**
+```bash
+# Adjust the destination path to your environment's skills folder
+cp -r src/marketing/paw-mkt-* /path/to/your/skills/folder/
+```
+
+### Step 3: Run the Setup Skill
+
+After copying skills, run the appropriate setup skill to initialize each suite:
+
+| Suite      | Setup Skill            | What it does                                    |
+| ---------- | ---------------------- | ----------------------------------------------- |
+| Marketing  | `/paw-mkt-setup`       | Initialize marketing workflows and configuration |
+| Creative   | `/paw-cra-setup`       | Set up creative agency agents and workflows      |
+| Prodig     | `/paw-ps-setup`        | Initialize product development environment       |
+| Webinar    | `/paw-wbc-setup`       | Set up webinar creation workflows                |
+| Tools      | `/paw-tools-setup`     | Initialize utility tools                         |
+
+**Example:**
+```
+/paw-mkt-setup
+```
+
+This will:
+1. Create necessary configuration files
+2. Set up agent personas and memory (for Creative suite)
+3. Initialize workflow templates
+4. Configure any required integrations
+
+### Quick Reference: Suite Prefixes
+
+| Prefix       | Suite              | Skills Count |
+| ------------ | ------------------ | ------------ |
+| `paw-mkt-`   | Marketing          | 23           |
+| `paw-cra-`   | Creative Agency    | 15           |
+| `paw-ps-`    | Prodig             | 14           |
+| `paw-wbc-`   | Webinar Creator    | 4            |
+| `paw-tools-` | Utility Tools      | 3            |
+
+***
+
+## License
+
+MIT License — use freely for personal and commercial projects.
