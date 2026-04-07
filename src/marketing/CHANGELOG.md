@@ -2,6 +2,13 @@
 
 All notable changes to the Agentic Marketing Suite will be documented in this file.
 
+## [0.6.2] - 2026-04-07
+
+### Fixed
+- **paw-mkt-agency:** Rebuild as coordinator-only skill with HITL gates — simplified to routing-only, removed sidecar execution (#11)
+- **marketing:** Enforce HITL gates across 10 non-compliant skills — added human review checkpoints before production (#12)
+- **marketing:** Resolve broken sidecar references — fixed skill discovery for marketing skills (#13)
+
 ## [0.6.1] - 2026-04-02
 
 ### Fixed
@@ -124,6 +131,7 @@ All notable changes to the Agentic Marketing Suite will be documented in this fi
 
 | Version | Date | Skills Count | Key Changes |
 |---------|------|--------------|-------------|
+| 0.6.2 | 2026-04-07 | 23 | HITL gates, agency coordinator rebuild |
 | 0.5.0 | 2026-04-02 | 22 | Dashboard documents route with markdown rendering |
 | 0.4.0 | 2026-04-02 | 22 | Dashboard skill, escalation routes |
 | 0.3.6 | 2026-04-01 | 21 | SOSTAC editing, HITL gates, tool discovery |
