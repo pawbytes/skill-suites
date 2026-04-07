@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.1] - 2026-04-07
+
+### Bug Fixes
+- **paw-mkt-agency:** Rebuild as coordinator-only skill with HITL gates (#11)
+- **marketing:** Enforce HITL gates across 10 non-compliant skills (#12)
+- **marketing:** Resolve broken sidecar references in marketing skills (#13)
+- **prodig:** Add module-help.csv for capability registration (#3)
+- **prodig:** Add missing scripts folder for module registration (#4)
+- Quote YAML descriptions to fix skill discovery (#5)
+
+### Documentation
+- Update README with Prodig and Webinar suites, add manual installation guide
+
 ## [1.2.0] - 2026-04-03
 
 ### Features

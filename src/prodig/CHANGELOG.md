@@ -2,6 +2,12 @@
 
 All notable changes to the Prodig Suites module will be documented in this file.
 
+## [0.1.1] - 2026-04-07
+
+### Fixed
+- Add module-help.csv for capability registration (#3)
+- Add missing scripts folder for module registration (#4)
+
 ## [0.1.0] - 2026-04-03
 
 ### Added
@@ -26,4 +32,5 @@ All notable changes to the Prodig Suites module will be documented in this file.
 
 | Version | Date | Skills Count | Key Changes |
 |---------|------|--------------|-------------|
+| 0.1.1 | 2026-04-07 | 14 | Module registration fixes |
 | 0.1.0 | 2026-04-03 | 14 | Initial release with full product creation suite |
