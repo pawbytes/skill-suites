@@ -6,8 +6,8 @@ Welcome to Pawbytes Skill Suites. This guide helps you install the right module 
 
 | I need to... | Use this module | Start with |
 |--------------|-----------------|------------|
-| Plan marketing strategy | Marketing | `/paw-mkt-agency` |
-| Create content, SEO, ads, email | Marketing | `/paw-mkt-agency` or specialist skill |
+| Plan marketing strategy | Marketing | `/paw-mkt-agent-agency` |
+| Create content, SEO, ads, email | Marketing | `/paw-mkt-agent-agency` or specialist skill |
 | Design social posts, carousels, logos | Creative | `/paw-cra-agent-creative-director` |
 | Produce videos (Reels, TikTok, YouTube) | Creative | `/paw-cra-agent-video-producer` |
 | Build a presentation from strategy | Tools | `/paw-tools-presentation` |
@@ -33,7 +33,7 @@ npx skills add pawbytes/skill-suites --global
 
 ```bash
 # Marketing skills
-npx skills add pawbytes/skill-suites --skill paw-mkt-agency
+npx skills add pawbytes/skill-suites --skill paw-mkt-agent-agency
 npx skills add pawbytes/skill-suites --skill paw-mkt-sostac
 npx skills add pawbytes/skill-suites --skill paw-mkt-seo
 
@@ -53,7 +53,7 @@ npx skills add pawbytes/skill-suites --skill paw-tools-release
 ### First Commands
 
 ```text
-/paw-mkt-agency          # Central coordinator, routes to specialists
+/paw-mkt-agent-agency          # Central coordinator, routes to specialists
 /paw-mkt-sostac          # SOSTAC marketing planning
 /paw-mkt-product-context # Product marketing context
 /paw-mkt-content         # Content strategy
@@ -66,14 +66,14 @@ npx skills add pawbytes/skill-suites --skill paw-tools-release
 ### Starting Paths
 
 **Path 1: New brand, no strategy yet**
-1. Start with `/paw-mkt-agency`
+1. Start with `/paw-mkt-agent-agency`
 2. Let it create or select a brand workspace
 3. Run `/paw-mkt-sostac`
 4. Create `/paw-mkt-product-context`
 5. Move into specialist execution
 
 **Path 2: You already know the task**
-1. Start with `/paw-mkt-agency` or invoke the specialist directly
+1. Start with `/paw-mkt-agent-agency` or invoke the specialist directly
 2. Load the right brand
 3. If no SOSTAC plan exists, the suite may recommend planning first
 4. Continue with the direct deliverable you need now

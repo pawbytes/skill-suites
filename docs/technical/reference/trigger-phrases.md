@@ -179,7 +179,7 @@ description: Release automation. Triggers: 'create a release', 'cut a release', 
 
 | Skill | Trigger Phrases |
 |-------|-----------------|
-| `paw-mkt-agency` | `marketing plan`, `brand strategy`, `campaign management`, `SOSTAC`, `ambiguous marketing requests` |
+| `paw-mkt-agent-agency` | `marketing plan`, `brand strategy`, `campaign management`, `SOSTAC`, `ambiguous marketing requests` |
 | `paw-mkt-seo` | `SEO`, `keyword research`, `schema markup`, `crawlability`, `pSEO`, `GEO`, `search rankings`, `link building` |
 | `paw-mkt-content` | `content strategy`, `editorial calendar`, `blog post`, `content plan` |
 | `paw-mkt-email` | `email campaign`, `newsletter`, `email sequence`, `drip campaign` |
@@ -218,7 +218,7 @@ Coordinator skills (agency, creative-director) have broader triggers that captur
 
 ```yaml
 ---
-name: paw-mkt-agency
+name: paw-mkt-agent-agency
 description: "Multi-channel marketing coordination. Use when marketing plan, brand strategy, campaign management, SOSTAC, ambiguous marketing requests."
 ---
 ```

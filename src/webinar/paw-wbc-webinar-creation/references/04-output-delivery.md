@@ -97,7 +97,7 @@ Guide the user on what to do next:
 > 
 > **Optional:**
 > - Use `paw-cra-agent-designer` to create visual slide designs
-> - Use `paw-mkt-agency` to plan webinar promotion strategy"
+> - Use `paw-mkt-agent-agency` to plan webinar promotion strategy"
 
 ### 6. Daily Log Entry
 
@@ -151,7 +151,7 @@ Offer these at the end:
 | User Need | Route To |
 |-----------|----------|
 | Visual slide design | `paw-cra-agent-designer` |
-| Webinar promotion strategy | `paw-mkt-agency` |
+| Webinar promotion strategy | `paw-mkt-agent-agency` |
 | Create another webinar | Start new pipeline |
 | Revise this webinar | Return to appropriate stage |
 
@@ -179,7 +179,7 @@ If user wants to create another:
 
 If user asks about promotion:
 
-1. Route to `paw-mkt-agency` for marketing strategy
+1. Route to `paw-mkt-agent-agency` for marketing strategy
 2. Note the webinar context they can use
 3. Offer to share the brief and hook for promotional copy
 

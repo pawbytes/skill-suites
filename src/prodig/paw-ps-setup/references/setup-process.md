@@ -171,6 +171,6 @@ Check for tools that enhance output:
 
 After successful setup, suggest:
 
-1. **Immediate next step**: "Run `paw-ps-orchestrator` to create your first product"
+1. **Immediate next step**: "Run `paw-ps-agent-product-builder` to create your first product"
 2. **Explore capabilities**: "Try `paw-ps-discovery` to explore product ideas"
 3. **Review standards**: "Check `output-standards.md` to understand quality expectations"

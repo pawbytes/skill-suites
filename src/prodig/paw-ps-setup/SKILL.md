@@ -122,7 +122,7 @@ Prodig Suites supports four product families:
 
 | Skill | Purpose |
 |-------|---------|
-| paw-ps-orchestrator | Main coordinator — start here |
+| paw-ps-agent-product-builder | Main coordinator — start here |
 | paw-ps-discovery | Idea exploration and validation |
 | paw-ps-research | Market and competitor research |
 | paw-ps-audience | Customer research and personas |
@@ -539,7 +539,7 @@ Display a comprehensive summary:
 {List available/missing optional capabilities}
 
 ### What's Next
-Start with `paw-ps-orchestrator` to create your first product.
+Start with `paw-ps-agent-product-builder` to create your first product.
 ```
 
 Then display the `module_greeting` from `./assets/module.yaml`.
@@ -559,5 +559,5 @@ Once setup completes, the following are guaranteed:
   - `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/*.md`
   - `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types/*.md`
   - `{project-root}/.pawbytes/config/config.user.yaml` (if core config collected)
-- **Recommendations**: Suggest running `paw-ps-orchestrator` to start first product
+- **Recommendations**: Suggest running `paw-ps-agent-product-builder` to start first product
 - **File saved to**: `{project-root}/.pawbytes/prodig-suites/`

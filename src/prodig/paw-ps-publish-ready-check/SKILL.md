@@ -171,6 +171,6 @@ This workflow must apply **clear quality bars**, not superficial approval:
 
 | Signal | Routes To | Why |
 |--------|-----------|-----|
-| Quality issues found | paw-ps-orchestrator | Coordinate fixes with specialists |
+| Quality issues found | paw-ps-agent-product-builder | Coordinate fixes with specialists |
 | Standards unclear | paw-ps-strategist | Clarify quality requirements |
-| Multiple products to check | paw-ps-orchestrator | Batch coordination |
+| Multiple products to check | paw-ps-agent-product-builder | Batch coordination |

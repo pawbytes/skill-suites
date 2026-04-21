@@ -114,7 +114,7 @@ Outputs from `paw-mkt-*` skills:
 
 | Subdirectory | Purpose | Created By |
 |--------------|---------|------------|
-| `brands/` | Brand workspaces | `paw-mkt-agency`, `paw-mkt-sostac` |
+| `brands/` | Brand workspaces | `paw-mkt-agent-agency`, `paw-mkt-sostac` |
 | `reports/` | Analysis reports | `paw-mkt-seo`, `paw-mkt-analytics` |
 
 ### creative-suites/

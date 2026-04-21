@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "skills": {
+    "paw-mkt-agent-agency": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "0956f9d82b38ece085ae432c0446e12a578708e946207f465ef93acf3e6e1dbe"
+    },
+    "paw-mkt-analytics": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "35b004dec65a84a1009d5bdc1577c187ab21bcffe0bf7b869dbc6ee467176952"
+    },
+    "paw-mkt-community": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "9cfa45cf593b51f9263b64e1b2a4eb712661b99da44f738c6fc3e4a696c229b9"
+    },
+    "paw-mkt-content": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "7ac93fef9dca176cb31292714b89cb124ae0f7652ed2e4cb1d4cc2568ad880e2"
+    },
+    "paw-mkt-cro": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "69803ff5171619dae21bae48f4c20de6be1e6b9613916a860be49197512b0395"
+    },
+    "paw-mkt-dashboard": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "42ec107acec984436aac8874cd6bbb659fa8d1aca9678a41fe0ff7d1d4654acd"
+    },
+    "paw-mkt-email": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "7a14e80921278dd013f9435c9da6dcc0d29b6f3637e0c1c54cfc107b83cc9a92"
+    },
+    "paw-mkt-guerrilla": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "9f06871f34976e9e33c00236fe8c83ef8d0677a6585e1b1fef5c5de2962ff70d"
+    },
+    "paw-mkt-influencer": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "d0b057bbe22ee8f73e5afdef56add8a66b16385f203f831384c2f0299b80496d"
+    },
+    "paw-mkt-launch": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "21d4aa51d71f5ebb4fa9a7dee4935af330e37fcd67329da7dc58ebfd9c58bbfd"
+    },
+    "paw-mkt-paid-ads": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "45c174107ab44f2618cf4f664bd81e6ac27d09ccd625dbc459fc56febe8d4c97"
+    },
+    "paw-mkt-pr": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "d04b5610af9638426154a9ce7057a900cbdb9415125b8454c302ede0a1f211f4"
+    },
+    "paw-mkt-pricing": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "2c2ec0a5d7093e6829d8048876db1066577554729c394b353c8802b731f3bb94"
+    },
+    "paw-mkt-product-context": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "d44322c4810ea7ebf96bee0f8c912de5a440136920bc74139fb7f15bf5033b62"
+    },
+    "paw-mkt-psychology": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "fcdad1e2ae9b6bb5f77b3f49072b276dc4977e07dc4ad5c4c301ff9ef8a51b20"
+    },
+    "paw-mkt-referral": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "b7a447254f9c34458ad60c628f6bd5497691503ddf06b9cbb12c317450b50c51"
+    },
+    "paw-mkt-retention": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "2dbf9d20357a69df487d26ac70f7171eddbc2156ae516444f936af3c41d000b8"
+    },
+    "paw-mkt-sales": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "9e05297b7880e694bf6d96ea1fc0c8fd47f1a81aa5aa2002d56033d095e668f2"
+    },
+    "paw-mkt-seo": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "eeeed19fa3dc3a88a96197a7010f1147af43c809b7819b6ec7424dd449eac3dd"
+    },
+    "paw-mkt-setup": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "414150df2e843b40805060687400a3ae00598ad8bc784615c32c89b1ab53b71e"
+    },
+    "paw-mkt-social": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "50da3869bd04ce30bfbc5616f96af76645875aa6d926a1bd881e22c9700c86e1"
+    },
+    "paw-mkt-sostac": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "317064b5881eade80ea0da764be75fcffd168ee496e43527f4d24fc203838f83"
+    },
+    "paw-mkt-video": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "4e3e63e0378ca0be87f895a38f51216c7f45fc1e4d5fd65e7799d08826e1cfaa"
+    },
+    "paw-ps-audience": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "3260b675e402c8e68ec223695b7e417a7a10f4aceb3d3546dd9951648c591693"
+    },
+    "paw-ps-concept-to-product-plan": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "249d16ab156869433cfe6c90641b7d398b36df37906232ff1a695d7e5c79dad2"
+    },
+    "paw-ps-discovery": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "1bcc4b60565ff566244441c9b792f5814fa6e56ae1a25b6b56051dc6a07daa67"
+    },
+    "paw-ps-knowledge-executor": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "b10d0f3b81cd0bb394c6e456e6edae5a8beefdd3377d48f100c03217fd9c94ab"
+    },
+    "paw-ps-agent-product-builder": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "987e0d912b858ff05ab527f9ce1da2b8dd35636ba6876b4e8ef36e5e1154648b"
+    },
+    "paw-ps-product-package-assembler": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "00e43c82ea700b79c9a82c4d0440966b99b72a37a1c6cfedc1d401c74925438f"
+    },
+    "paw-ps-publish-ready-check": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "8a527b291f6ff0d0624afbd7716b2207c1920f325ea9c96270cf3b7459ac6a52"
+    },
+    "paw-ps-research": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "8e55f6c1c48669f2d61340dec41e4201b9f410dda51bcac814913e9768778972"
+    },
+    "paw-ps-research-to-brief": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "a5a2472302f0dd7d15f36c0d3695996184aa85f528d5be93c9b0d0dd88ca0604"
+    },
+    "paw-ps-service-executor": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "30bb2ed8583c01d47ed53eb59a3e0159798d7999dacf67707a7d89e0f65180fc"
+    },
+    "paw-ps-setup": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "b8e65db3be2bf753c83f88bc53f639d7a8064e4f60d23b22f31c8327cee8f8dc"
+    },
+    "paw-ps-software-executor": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "e9a172220d389f9825611ea8e774a421703faf967f8d66797346fa58a1d7d4fd"
+    },
+    "paw-ps-strategist": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "96e6f022f0acdb9a9c8ecaa7bf46ba07f3da02d97790488344a928743e325308"
+    },
+    "paw-ps-template-executor": {
+      "source": "pawbytes/skill-suites",
+      "sourceType": "github",
+      "computedHash": "6411292a33ad2f0d8cd1979a2bf46eef09e581748cba122c181e0312d3b30ca2"
+    }
+  }
+}

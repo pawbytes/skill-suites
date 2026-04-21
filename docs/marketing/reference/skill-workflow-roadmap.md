@@ -17,7 +17,7 @@ The suite already implies a strong default path:
 
 ```mermaid
 flowchart TD
-    A["/paw-mkt-agency"] --> B{Brand and strategy ready?}
+    A["/paw-mkt-agent-agency"] --> B{Brand and strategy ready?}
     B -- No --> C["/paw-mkt-sostac"]
     C --> D["/paw-mkt-product-context"]
     B -- Yes --> D
@@ -28,7 +28,7 @@ flowchart TD
 
 In practice, the suite already has four layers:
 
-1. **Orchestrator** — `paw-mkt-agency`
+1. **Orchestrator** — `paw-mkt-agent-agency`
 2. **Strategic planner** — `paw-mkt-sostac`
 3. **Context bridge / strategic intelligence** — `paw-mkt-product-context`
 4. **Specialist executors** — the remaining channel, conversion, revenue, and measurement skills
@@ -47,7 +47,7 @@ That makes quick work possible, but it also means discovery, validation, and seq
 
 | Tier | Skills | Primary job |
 | --- | --- | --- |
-| Orchestrator | `paw-mkt-agency` | Select brand, assess context, route work, coordinate teams, track progress |
+| Orchestrator | `paw-mkt-agent-agency` | Select brand, assess context, route work, coordinate teams, track progress |
 | Strategic planner | `paw-mkt-sostac` | Run research-first SOSTAC planning with explicit phase and review gates |
 | Context bridge | `paw-mkt-product-context` | Extract and refine positioning, customer language, objections, proof, and differentiation |
 | Infrastructure | `paw-mkt-setup` | Install and configure the suite |
@@ -60,7 +60,7 @@ The suite should not force every skill into the same shape. Different layers nee
 
 ### 1. Orchestrator contract
 
-Use for `paw-mkt-agency`.
+Use for `paw-mkt-agent-agency`.
 
 Default flow:
 
@@ -134,7 +134,7 @@ The suite currently documents both strategy-first execution and direct specialis
 
 ### Require strategy-first routing
 
-Route to `paw-mkt-agency`, `paw-mkt-sostac`, or `paw-mkt-product-context` first when any of these are true:
+Route to `paw-mkt-agent-agency`, `paw-mkt-sostac`, or `paw-mkt-product-context` first when any of these are true:
 
 - the brand is new
 - the task affects multiple channels
@@ -160,7 +160,7 @@ If `brand-context.md`, `paw-mkt-product-context.md`, or the relevant SOSTAC file
 They should do one of two things:
 
 1. enter a **light discovery mode**, or
-2. route back upstream to `paw-mkt-agency`, `paw-mkt-sostac`, or `paw-mkt-product-context`
+2. route back upstream to `paw-mkt-agent-agency`, `paw-mkt-sostac`, or `paw-mkt-product-context`
 
 ## Per-skill workflow matrix
 
@@ -175,7 +175,7 @@ Priority meanings:
 
 | Skill | Current role | Recommended model | Suggested workflow shape | Priority |
 | --- | --- | --- | --- | --- |
-| `paw-mkt-agency` | Orchestrator and router | Keep hybrid, harden strategy gates | `brand load -> strategy gate -> choose path -> handoff -> progress review` | P0 |
+| `paw-mkt-agent-agency` | Orchestrator and router | Keep hybrid, harden strategy gates | `brand load -> strategy gate -> choose path -> handoff -> progress review` | P0 |
 | `paw-mkt-sostac` | Strategic planner | Keep workflow, expand modern frameworks | `auto-discovery -> situation -> objectives -> strategy -> tactics -> action -> control -> final review` | P0 |
 | `paw-mkt-product-context` | Context bridge | Keep hybrid, strengthen freshness and gap-fill flow | `check existing -> extract -> gap interview -> validate -> write -> refresh loop` | P0 |
 | `paw-mkt-analytics` | Measurement specialist | Add explicit workflow wrapper | `baseline audit -> KPI map -> tracking/events -> dashboards/reporting -> experimentation/attribution -> review loop` | P1 |
@@ -218,7 +218,7 @@ These are the biggest consistency opportunity across the suite.
 
 Implement first:
 
-- `paw-mkt-agency`
+- `paw-mkt-agent-agency`
 - `paw-mkt-sostac`
 - `paw-mkt-product-context`
 - `paw-mkt-analytics`
@@ -366,5 +366,5 @@ All 15 executor and planner skills now have formal `references/workflow.md` file
 
 ### Remaining next steps
 
-1. Formalize the strategy gate in `paw-mkt-agency`
+1. Formalize the strategy gate in `paw-mkt-agent-agency`
 2. Harden the contract between `paw-mkt-sostac` and `paw-mkt-product-context`

@@ -105,7 +105,7 @@ When the user requests a knowledge product:
 | Missing audience intelligence | paw-ps-audience | Audience research needed |
 | Product decision conflicts | paw-ps-strategist | Resolve strategic ambiguity |
 | Packaging and pricing | paw-ps-strategist | Commercial decisions |
-| Multi-product coordination | paw-ps-orchestrator | Coordinate execution |
+| Multi-product coordination | paw-ps-agent-product-builder | Coordinate execution |
 
 ## Output Contract
 

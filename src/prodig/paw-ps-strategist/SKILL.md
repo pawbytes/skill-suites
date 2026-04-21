@@ -95,7 +95,7 @@ When the user requests product strategy:
 | Missing market intelligence | paw-ps-discovery | Market research needed |
 | Missing audience insights | paw-ps-audience | Audience research needed |
 | Research coordination | paw-ps-research | Coordinate multiple research streams |
-| Execution ready | paw-ps-orchestrator | Hand off to execution coordination |
+| Execution ready | paw-ps-agent-product-builder | Hand off to execution coordination |
 | Scope implementation | Executor agents | Technical implementation |
 
 ## Output Contract

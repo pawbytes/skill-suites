@@ -143,7 +143,7 @@ Otherwise, greet the user and summarize the loaded context. Confirm the webinar 
 | Missing discovery outputs | paw-wbc-agent-discovery |
 | User wants to explore different angles | paw-wbc-agent-discovery |
 | User requests visual slide design | paw-cra-agent-designer |
-| User wants webinar promotion strategy | paw-mkt-agency |
+| User wants webinar promotion strategy | paw-mkt-agent-agency |
 
 ## Output Contract
 

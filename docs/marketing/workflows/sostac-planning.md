@@ -8,7 +8,7 @@ Use this workflow when you want a full strategy before running channel execution
 /paw-mkt-sostac
 ```
 
-You can also start with `/paw-mkt-agency`, which will route you here when planning is missing.
+You can also start with `/paw-mkt-agent-agency`, which will route you here when planning is missing.
 
 ## What SOSTAC creates
 

@@ -379,7 +379,7 @@ Analytics work frequently surfaces problems that require other skills to resolve
 | Social engagement dropping | **paw-mkt-social** | Platform, content type performance, audience growth/decline |
 | Content performance declining | **paw-mkt-content** | Top/bottom performers, traffic trends, engagement metrics |
 | Churn rate increasing | **paw-mkt-retention** | Cohort data, churn reasons if available, segment breakdown |
-| Attribution shows channel mix shift | **paw-mkt-agency** | Full attribution report, budget allocation recommendations |
+| Attribution shows channel mix shift | **paw-mkt-agent-agency** | Full attribution report, budget allocation recommendations |
 | Pricing page drop-off increasing | **paw-mkt-pricing** | Funnel data, pricing page analytics, competitor pricing context |
 
 **Escalation protocol**: When escalating, always provide: (1) the specific metric and its movement, (2) the time range, (3) any diagnosis you have performed, (4) the data supporting the observation. Do not escalate raw numbers without context.

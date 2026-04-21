@@ -106,8 +106,8 @@ As the discovery agent, I route to other specialists when ideas solidify:
 | Concept needs validation | paw-ps-research | Competitor and market analysis |
 | Concept needs audience clarity | paw-ps-audience | Customer discovery |
 | Concept ready for definition | paw-ps-strategist | Product strategy and scope |
-| Multiple strong directions | paw-ps-orchestrator | Help prioritize and decide |
-| User wants to build now | paw-ps-orchestrator | Stage-appropriate routing |
+| Multiple strong directions | paw-ps-agent-product-builder | Help prioritize and decide |
+| User wants to build now | paw-ps-agent-product-builder | Stage-appropriate routing |
 
 ## Output Contract
 

@@ -188,7 +188,7 @@ What would you like to do?
 Log significant progress changes:
 
 ```markdown
-### 14:32 - paw-ps-orchestrator
+### 14:32 - paw-ps-agent-product-builder
 
 **Milestone:** Research complete for {product}
 

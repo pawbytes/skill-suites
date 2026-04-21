@@ -46,7 +46,7 @@ flowchart TD
 
 ### Basic
 ```text
-/paw-mkt-agency
+/paw-mkt-agent-agency
 Our SOSTAC plan is complete. Help me start implementation.
 ```
 

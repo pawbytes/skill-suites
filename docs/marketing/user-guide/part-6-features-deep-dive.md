@@ -632,7 +632,7 @@ The following diagram shows all skills and their escalation routes:
 
 ```
                                     ┌─────────────────────┐
-                                    │  paw-mkt-agency   │
+                                    │  paw-mkt-agent-agency   │
                                     │    (Coordinator)    │
                                     └─────────┬───────────┘
                                               │

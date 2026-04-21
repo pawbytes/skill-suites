@@ -5,14 +5,14 @@ All notable changes to the Agentic Marketing Suite will be documented in this fi
 ## [0.6.2] - 2026-04-07
 
 ### Fixed
-- **paw-mkt-agency:** Rebuild as coordinator-only skill with HITL gates — simplified to routing-only, removed sidecar execution (#11)
+- **paw-mkt-agent-agency:** Rebuild as coordinator-only skill with HITL gates — simplified to routing-only, removed sidecar execution (#11)
 - **marketing:** Enforce HITL gates across 10 non-compliant skills — added human review checkpoints before production (#12)
 - **marketing:** Resolve broken sidecar references — fixed skill discovery for marketing skills (#13)
 
 ## [0.6.1] - 2026-04-02
 
 ### Fixed
-- **paw-mkt-agency:** Use Glob pattern for brand discovery instead of directory scan to reliably find brands across platforms
+- **paw-mkt-agent-agency:** Use Glob pattern for brand discovery instead of directory scan to reliably find brands across platforms
 
 ## [0.6.0] - 2026-04-02
 

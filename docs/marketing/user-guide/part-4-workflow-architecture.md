@@ -22,7 +22,7 @@ The Agentic Marketing Skills system uses an **orchestrator pattern** where a cen
           |
           v
 +---------+---------+
-| paw-mkt-agency  |  <-- THE ORCHESTRATOR
+| paw-mkt-agent-agency  |  <-- THE ORCHESTRATOR
 |   (Coordinator)   |
 +---------+---------+
           |
@@ -594,7 +594,7 @@ flowchart TB
 
     subgraph Planning["Planning Skills"]
         MSOSTAC[paw-mkt-sostac]
-        MAGENCY[paw-mkt-agency]
+        MAGENCY[paw-mkt-agent-agency]
         PMC[product-marketing-context]
     end
 
@@ -664,7 +664,7 @@ flowchart TB
 | Skill | Primary Phase(s) | How It Connects |
 |-------|------------------|-----------------|
 | `paw-mkt-sostac` | All 6 | Builds the complete plan |
-| `paw-mkt-agency` | All 6 | Coordinates execution of plan |
+| `paw-mkt-agent-agency` | All 6 | Coordinates execution of plan |
 | `paw-mkt-seo` | Tactics, Control | Implements SEO tactics, measures performance |
 | `paw-mkt-content` | Tactics, Control | Creates content aligned to strategy |
 | `paw-mkt-email` | Tactics, Control | Builds sequences, measures engagement |
@@ -1105,7 +1105,7 @@ When creating campaigns, use these prefixes:
 
 The Agentic Marketing Skills system is built on three architectural pillars:
 
-1. **Orchestration** — The `paw-mkt-agency` coordinator routes requests, maintains state, and assembles specialist teams
+1. **Orchestration** — The `paw-mkt-agent-agency` coordinator routes requests, maintains state, and assembles specialist teams
 
 2. **SOSTAC Integration** — Every specialist connects to the strategic plan, ensuring consistency and purpose
 

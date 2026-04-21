@@ -318,7 +318,7 @@ Route to the specific framework template based on asset type:
 | Long-form content creation (case studies, whitepapers) | paw-mkt-content | Editorial quality, SEO optimization, and content strategy |
 | Sales performance analytics and win/loss tracking | paw-mkt-analytics | Dashboard setup, attribution, and measurement infrastructure |
 | Email sequences for sales nurture | paw-mkt-email | Drip campaigns, automation workflows, and deliverability |
-| Competitive intelligence requires live research | paw-mkt-agency | Multi-channel coordination and research orchestration |
+| Competitive intelligence requires live research | paw-mkt-agent-agency | Multi-channel coordination and research orchestration |
 | Landing page optimization for sales-driven traffic | paw-mkt-cro | Conversion rate optimization for demo request or trial pages |
 | Video demos or walkthrough production | paw-mkt-video | Video scripting, production, and optimization |
 

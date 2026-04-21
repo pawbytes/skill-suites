@@ -124,7 +124,7 @@ Each stage loads its detailed guidance from `./references/` on demand:
 | Signal | Routes To |
 |--------|-----------|
 | User wants visual slide design | paw-cra-agent-designer |
-| User wants webinar promotion strategy | paw-mkt-agency |
+| User wants webinar promotion strategy | paw-mkt-agent-agency |
 | User wants to run discovery only | paw-wbc-agent-discovery |
 | User wants to run production only (has research) | paw-wbc-agent-producer |
 

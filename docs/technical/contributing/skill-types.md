@@ -81,7 +81,7 @@ I am [persona description].
 
 | Skill | Module | Role |
 |-------|--------|------|
-| `paw-mkt-agency` | Marketing | Master coordinator routing to 22 specialists |
+| `paw-mkt-agent-agency` | Marketing | Master coordinator routing to 22 specialists |
 | `paw-cra-agent-creative-director` | Creative | Aria — orchestrates Designer, Video Producer, Strategist |
 | `paw-cra-agent-designer` | Creative | Visual production specialist |
 | `paw-cra-agent-video-producer` | Creative | Video production specialist |

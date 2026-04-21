@@ -52,7 +52,7 @@ module_greeting: |
   Marketing Suite activated.
 
   Quick Start:
-  - `paw-mkt-agency` — Multi-channel coordination
+  - `paw-mkt-agent-agency` — Multi-channel coordination
   - `paw-mkt-sostac` — Build marketing plans
 
 # Configuration Paths
@@ -84,7 +84,7 @@ directories:
 
 # Post-install message
 post_install_notes: |
-  Setup complete! Run `paw-mkt-agency` to get started.
+  Setup complete! Run `paw-mkt-agent-agency` to get started.
 ```
 
 ---
@@ -184,7 +184,7 @@ module_greeting: |
   Agentic Marketing Suite activated. You now have 21 specialized marketing agents.
 
   Quick Start:
-  - `paw-mkt-agency` — Multi-channel coordination
+  - `paw-mkt-agent-agency` — Multi-channel coordination
 
 # Configuration Variables
 brands_folder:

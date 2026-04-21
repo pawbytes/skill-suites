@@ -249,4 +249,4 @@ After all 6 phases complete:
 |--------|-----------|
 | Control phase complete, metrics defined | paw-mkt-dashboard |
 | Analytics and tracking setup needed | paw-mkt-analytics |
-| Tactical implementation begins | paw-mkt-agency (for team coordination) |
+| Tactical implementation begins | paw-mkt-agent-agency (for team coordination) |

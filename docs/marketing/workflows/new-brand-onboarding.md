@@ -9,7 +9,7 @@ Create the brand workspace, capture the minimum brand context, and route into pl
 ## Best starting command
 
 ```text
-/paw-mkt-agency
+/paw-mkt-agent-agency
 ```
 
 ## What happens
@@ -42,7 +42,7 @@ If the brand does not already have a strategy, continue with `/paw-mkt-sostac`.
 
 ```mermaid
 flowchart TD
-    A["#sol;paw-mkt-agency"] --> B{Brand exists?}
+    A["#sol;paw-mkt-agent-agency"] --> B{Brand exists?}
     B -- No --> C[Collect brand basics]
     C --> D["Create brands/brand-slug/"]
     D --> E["Write brand-context.md"]
@@ -55,19 +55,19 @@ flowchart TD
 
 ### Basic
 ```text
-/paw-mkt-agency
+/paw-mkt-agent-agency
 I want to start marketing a new SaaS brand.
 ```
 
 ### Context-rich
 ```text
-/paw-mkt-agency
+/paw-mkt-agent-agency
 Set up a new brand workspace for Northstar AI. We sell AI call summaries for recruiting teams. Our buyers are heads of talent at 50-500 person companies. We're early-stage and preparing for our first serious outbound push.
 ```
 
 ### Fast setup then planning
 ```text
-/paw-mkt-agency
+/paw-mkt-agent-agency
 Create a brand for Acorn Legal. We help small law firms automate intake. Once the workspace is ready, take me into SOSTAC planning.
 ```
 

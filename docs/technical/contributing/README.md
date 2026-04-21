@@ -27,7 +27,7 @@ This guide helps contributors understand how to build, structure, and name skill
 
 Skills fall into three categories:
 
-- **Agent Skills** — Persistent personas with memory (e.g., `paw-mkt-agency`, `paw-cra-agent-creative-director`)
+- **Agent Skills** — Persistent personas with memory (e.g., `paw-mkt-agent-agency`, `paw-cra-agent-creative-director`)
 - **Workflow Skills** — Deterministic pipelines with defined steps (e.g., `paw-mkt-sostac`, `paw-cra-design-social`)
 - **Utility Skills** — Single-purpose tools with minimal interaction (e.g., `paw-tools-release`, `paw-tools-presentation`)
 
@@ -112,7 +112,7 @@ User Request
      │
      ▼
 ┌─────────────────┐
-│   Coordinator   │  paw-mkt-agency, paw-cra-agent-creative-director
+│   Coordinator   │  paw-mkt-agent-agency, paw-cra-agent-creative-director
 └────────┬────────┘
          │
          ├── Load brand context

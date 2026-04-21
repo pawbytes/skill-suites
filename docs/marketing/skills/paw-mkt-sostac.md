@@ -70,7 +70,7 @@ flowchart TD
 
 ## Related Skills
 
-- `paw-mkt-agency` — routes to SOSTAC when no plan exists
+- `paw-mkt-agent-agency` — routes to SOSTAC when no plan exists
 - `paw-mkt-product-context` — run after SOSTAC to build the deeper positioning document
 - all execution specialists — feed from SOSTAC output
 

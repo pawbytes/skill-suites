@@ -34,12 +34,12 @@ paw-{module}-agent-{name}
 
 | Correct | Incorrect |
 |---------|-----------|
-| `paw-mkt-agency` | `paw-mkt-coordinator` |
+| `paw-mkt-agent-agency` | `paw-mkt-coordinator` |
 | `paw-cra-agent-creative-director` | `paw-cra-creative-director` |
 | `paw-cra-agent-designer` | `paw-cra-designer-agent` |
 | `paw-cra-agent-video-producer` | `paw-cra-video-producer` |
 
-**Note:** `paw-mkt-agency` is a special case — the marketing coordinator uses `agency` instead of `agent-coordinator` for clarity.
+**Note:** `paw-mkt-agent-agency` is a special case — the marketing coordinator uses `agency` instead of `agent-coordinator` for clarity.
 
 #### Workflow Skills
 

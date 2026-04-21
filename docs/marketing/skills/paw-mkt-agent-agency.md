@@ -1,4 +1,4 @@
-# paw-mkt-agency
+# paw-mkt-agent-agency
 
 ## Overview
 
@@ -6,7 +6,7 @@ The coordinator skill. Start here when you want help choosing the right workflow
 
 ## When to use it
 
-Use `/paw-mkt-agency` when:
+Use `/paw-mkt-agent-agency` when:
 - you are starting marketing work for a brand
 - you are not sure which specialist to use
 - you want the suite to check brand context and SOSTAC status first
@@ -68,21 +68,21 @@ The agency skill uses extracted reference files to stay lean:
 ## Sample prompts
 
 ```text
-/paw-mkt-agency
+/paw-mkt-agent-agency
 Help me figure out what marketing work we should do next.
 ```
 
 ```text
-/paw-mkt-agency
+/paw-mkt-agent-agency
 Work on Northstar AI. We have some brand context already, but I need to know whether to do SOSTAC planning first or go straight into execution.
 ```
 
 ```text
-/paw-mkt-agency
+/paw-mkt-agent-agency
 Our SOSTAC plan is complete. Assemble the right specialist workflow for implementation.
 ```
 
 ```text
-/paw-mkt-agency
+/paw-mkt-agent-agency
 Here's our product URL: example.com — audit it and tell me where our marketing is weakest.
 ```
