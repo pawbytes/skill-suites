@@ -8,7 +8,7 @@ This part provides detailed, practical workflows you can follow step-by-step. Ea
 
 ### 13.1 What Happens When You Start Fresh
 
-When you begin marketing work for a brand that does not yet have a workspace in the system, the paw-mkt-agency skill orchestrates the setup:
+When you begin marketing work for a brand that does not yet have a workspace in the system, the paw-mkt-agent-agency skill orchestrates the setup:
 
 1. **Workspace creation**: A new directory is created under `.pawbytes/marketing-suites/brands/{brand-slug}/`
 2. **Context capture**: The `brand-context.md` file captures essential identity information
@@ -23,10 +23,10 @@ Follow this sequence for new brands:
 
 #### Step 1: Brand Context Creation
 
-Start with the paw-mkt-agency skill:
+Start with the paw-mkt-agent-agency skill:
 
 ```
-/paw-mkt-agency
+/paw-mkt-agent-agency
 I want to set up marketing for a new brand called [Brand Name]. We [brief description of what you sell]. Our target audience is [who you're marketing to]. We're at [pre-launch | early-stage | established | scaling] stage.
 ```
 
@@ -164,7 +164,7 @@ Run a technical SEO audit and content keyword strategy for flowstack.com.
 **Day 1: Setup**
 
 ```
-/paw-mkt-agency
+/paw-mkt-agent-agency
 Set up a brand workspace for Flowstack. We're a workflow automation platform for operations teams at mid-market companies (50-500 employees). Our buyers are operations managers who struggle with cross-tool coordination (Salesforce, Jira, Slack, spreadsheets). We're at early-stage: we have 15 beta customers and are preparing for our first serious marketing investment. Budget is $5K/month. Website is flowstack.com.
 ```
 
@@ -1277,7 +1277,7 @@ After 8 weeks:
 
 | Workflow | Starting Command | Key Output Path |
 |----------|------------------|-----------------|
-| New Brand | `/paw-mkt-agency` | `brands/{slug}/brand-context.md` |
+| New Brand | `/paw-mkt-agent-agency` | `brands/{slug}/brand-context.md` |
 | SOSTAC Planning | `/paw-mkt-sostac` | `brands/{slug}/sostac/*.md` |
 | Product Launch | `/paw-mkt-launch` | `brands/{slug}/campaigns/launch-{name}/` |
 | CRO Audit | `/paw-mkt-cro` | `brands/{slug}/operations/cro/audit-*.md` |

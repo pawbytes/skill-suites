@@ -138,7 +138,7 @@ The Software Executor outputs feed into:
 
 | Artifact | Used By | Purpose |
 |----------|---------|---------|
-| feature-spec.md | paw-ps-orchestrator | Progress tracking |
+| feature-spec.md | paw-ps-agent-product-builder | Progress tracking |
 | mvp-definition.md | paw-ps-strategist | Pricing/packaging |
 | prd-lite.md | Development team | Build handoff |
 | technical-context.md | paw-ps-architect | Architecture refinement |

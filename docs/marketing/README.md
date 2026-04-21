@@ -16,7 +16,7 @@ The Marketing Suite provides 23 skills covering the full marketing stack -- from
 ## Skill Categories
 
 ### Coordinator & Planning
-- [paw-mkt-agency](./skills/paw-mkt-agency.md) -- Central coordinator, routes to specialists
+- [paw-mkt-agent-agency](./skills/paw-mkt-agent-agency.md) -- Central coordinator, routes to specialists
 - [paw-mkt-sostac](./skills/paw-mkt-sostac.md) -- SOSTAC marketing planning
 - [paw-mkt-product-context](./skills/paw-mkt-product-context.md) -- Product marketing context
 
@@ -65,7 +65,7 @@ The Marketing Suite provides 23 skills covering the full marketing stack -- from
 
 ```mermaid
 flowchart TD
-    A[paw-mkt-agency] --> B{Strategy exists?}
+    A[paw-mkt-agent-agency] --> B{Strategy exists?}
     B -- No --> C[paw-mkt-sostac]
     C --> D[paw-mkt-product-context]
     B -- Yes --> D

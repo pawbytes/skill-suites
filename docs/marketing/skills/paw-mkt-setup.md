@@ -9,7 +9,7 @@ Sets up and configures the Marketing Suite module in a project. It installs shar
 - First-time installation of the Marketing Suite
 - Reconfiguring module settings
 - Migrating older marketing workspace layouts into the current `.pawbytes/` structure
-- Preparing a project before using `paw-mkt-agency` or other marketing skills
+- Preparing a project before using `paw-mkt-agent-agency` or other marketing skills
 
 ## What You Need to Provide
 
@@ -91,7 +91,7 @@ flowchart TD
 
 ## Related Skills
 
-- [paw-mkt-agency](./paw-mkt-agency.md) — Central coordinator after setup
+- [paw-mkt-agent-agency](./paw-mkt-agent-agency.md) — Central coordinator after setup
 - [paw-mkt-sostac](./paw-mkt-sostac.md) — Strategy planning after onboarding
 - [New Brand Onboarding](../workflows/new-brand-onboarding.md) — First brand workspace flow after setup
 

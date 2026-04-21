@@ -20,7 +20,7 @@ A full AI marketing team inside Claude Code. One agency agent routes every reque
 
 | Skill                     | What it does                                                               |
 | ------------------------- | -------------------------------------------------------------------------- |
-| `paw-mkt-agency`          | Master router — coordinates all 22 specialists from a single prompt        |
+| `paw-mkt-agent-agency`          | Master router — coordinates all 22 specialists from a single prompt        |
 | `paw-mkt-sostac`          | Full 6-phase SOSTAC marketing strategy with research-first analysis        |
 | `paw-mkt-product-context` | Product positioning, ICP, messaging framework, competitive differentiation |
 | `paw-mkt-content`         | Blog posts, whitepapers, case studies, editorial calendars                 |
@@ -83,7 +83,7 @@ End-to-end product development orchestrator. Transform concepts into production-
 
 | Skill                            | What it does                                                         |
 | -------------------------------- | -------------------------------------------------------------------- |
-| `paw-ps-orchestrator`            | Master coordinator — routes requests to appropriate agents/workflows |
+| `paw-ps-agent-product-builder`            | Master coordinator — routes requests to appropriate agents/workflows |
 | `paw-ps-strategist`              | Product strategist — roadmap, positioning, competitive analysis      |
 | `paw-ps-discovery`               | Creative discovery — ideation, market gaps, opportunity mapping      |
 | `paw-ps-research`                | Rigorous market research — surveys, interviews, data analysis        |
@@ -129,7 +129,7 @@ AI-powered webinar production from research to final deliverable.
 skill-suites/
 ├── src/
 │   ├── marketing/           # paw-mkt-* skills (23)
-│   │   ├── paw-mkt-agency/
+│   │   ├── paw-mkt-agent-agency/
 │   │   ├── paw-mkt-content/
 │   │   ├── paw-mkt-seo/
 │   │   └── ... (20 more)
@@ -140,7 +140,7 @@ skill-suites/
 │   │   └── ... (13 more)
 │   │
 │   ├── prodig/              # paw-ps-* skills (14)
-│   │   ├── paw-ps-orchestrator/
+│   │   ├── paw-ps-agent-product-builder/
 │   │   ├── paw-ps-strategist/
 │   │   └── ... (12 more)
 │   │

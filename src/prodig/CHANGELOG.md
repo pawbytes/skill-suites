@@ -12,7 +12,7 @@ All notable changes to the Prodig Suites module will be documented in this file.
 
 ### Added
 - **paw-ps-setup**: Setup skill for Prodig module configuration
-- **paw-ps-orchestrator**: Coordinator skill for product creation workflows
+- **paw-ps-agent-product-builder**: Coordinator skill for product creation workflows
 - **paw-ps-audience**: Audience discovery and persona construction
 - **paw-ps-discovery**: Concept comparison and opportunity framing
 - **paw-ps-research**: Demand signals, competitor analysis, and gap identification

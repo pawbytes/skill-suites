@@ -144,7 +144,7 @@ Record the initialization:
 ```markdown
 ## {YYYY-MM-DD}
 
-### {timestamp} - paw-ps-orchestrator
+### {timestamp} - paw-ps-agent-product-builder
 
 **Action:** Product initialized
 

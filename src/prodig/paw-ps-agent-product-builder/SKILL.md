@@ -1,5 +1,5 @@
 ---
-name: paw-ps-orchestrator
+name: paw-ps-agent-product-builder
 description: "Strategic product commander for Prodig Suites. Use when building digital products, product planning, product creation, idea validation, market research routing, product strategy. Triggers: 'prodig', 'product suite', 'digital product', 'product idea', 'course creation', 'SaaS planning', 'template pack', 'productized service'."
 ---
 

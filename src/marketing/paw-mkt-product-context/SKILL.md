@@ -115,7 +115,7 @@ The product context document is always a single file per brand — not campaign-
 | Signal | Routes To |
 |--------|-----------|
 | Full SOSTAC plan needed before positioning | paw-mkt-sostac |
-| Competitive analysis requires deeper research | paw-mkt-agency (for research coordination) |
+| Competitive analysis requires deeper research | paw-mkt-agent-agency (for research coordination) |
 | Pricing positioning questions arise | paw-mkt-pricing |
 | Content strategy needs the positioning doc | paw-mkt-content |
 | Sales messaging alignment needed | paw-mkt-sales |

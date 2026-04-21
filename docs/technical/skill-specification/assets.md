@@ -75,7 +75,7 @@ post_install_notes: |
   Module installed successfully!
   
   **Next steps:**
-  1. Run `paw-mkt-agency` to start
+  1. Run `paw-mkt-agent-agency` to start
   2. Configure API keys in config.user.yaml
 ```
 
@@ -107,7 +107,7 @@ CLI help entries for the module.
 
 ```csv
 command,description,usage
-paw-mkt-agency,Multi-channel marketing coordination,paw-mkt-agency [--headless]
+paw-mkt-agent-agency,Multi-channel marketing coordination,paw-mkt-agent-agency [--headless]
 paw-mkt-seo,SEO specialist for audits and optimization,paw-mkt-seo [url]
 paw-mkt-content,Content strategy and editorial planning,paw-mkt-content
 ```

@@ -116,7 +116,7 @@ flowchart TD
 ## Related Skills
 
 - [paw-mkt-setup](./paw-mkt-setup.md) — Configure the module and create the base workspace first
-- [paw-mkt-agency](./paw-mkt-agency.md) — Coordinator that builds the brand workspace context
+- [paw-mkt-agent-agency](./paw-mkt-agent-agency.md) — Coordinator that builds the brand workspace context
 - [paw-mkt-sostac](./paw-mkt-sostac.md) — Strategy inputs often displayed in the dashboard
 - [paw-mkt-analytics](./paw-mkt-analytics.md) — Analytics structure and measurement inputs
 

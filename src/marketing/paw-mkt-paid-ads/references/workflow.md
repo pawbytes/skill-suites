@@ -473,7 +473,7 @@ Paid ads work frequently surfaces needs that require other skills:
 | Organic keywords cannibalizing paid keywords | **paw-mkt-seo** | Keyword overlap data, organic rankings, paid keyword performance |
 | Pricing objection surfacing in ad performance | **paw-mkt-pricing** | Ad performance by pricing mention, competitor pricing context |
 | Retargeting audience too small | **paw-mkt-content** or **paw-mkt-seo** | Current traffic volume, content gaps, organic growth opportunities |
-| Campaign strategy needs full marketing alignment | **paw-mkt-agency** | Campaign performance, channel mix, budget allocation, strategic objectives |
+| Campaign strategy needs full marketing alignment | **paw-mkt-agent-agency** | Campaign performance, channel mix, budget allocation, strategic objectives |
 
 **Escalation protocol**: When escalating, always provide: (1) the specific metric and its current value, (2) the platform and campaign context, (3) the business impact, (4) any diagnosis already performed. Do not escalate raw platform data without interpretation.
 

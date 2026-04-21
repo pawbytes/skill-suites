@@ -12,7 +12,7 @@ This document provides a high-level view of the Pawbytes Skill Suites architectu
                                  ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                      Coordinator Skill                           │
-│              (paw-mkt-agency, paw-cra-agent-creative-director)   │
+│              (paw-mkt-agent-agency, paw-cra-agent-creative-director)   │
 │                                                                  │
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
 │  │ Load Config │──│ Read Memory │──│ Route to    │             │
@@ -67,7 +67,7 @@ Skills are single-purpose capabilities defined in `SKILL.md`:
 
 | Type | Characteristics | Examples |
 |------|-----------------|----------|
-| **Agent** | Persistent persona, memory, coordinates others | paw-mkt-agency, paw-cra-agent-creative-director |
+| **Agent** | Persistent persona, memory, coordinates others | paw-mkt-agent-agency, paw-cra-agent-creative-director |
 | **Workflow** | Deterministic pipeline, defined steps | paw-cra-video-shortform, paw-mkt-sostac |
 | **Utility** | Single-purpose, minimal interaction | paw-tools-release, paw-tools-presentation |
 
@@ -150,7 +150,7 @@ Present options, explain reasoning, let user decide:
 23 skills covering the full marketing stack:
 
 ```
-paw-mkt-agency          → Coordinator (routes all requests)
+paw-mkt-agent-agency          → Coordinator (routes all requests)
 paw-mkt-sostac          → SOSTAC planning framework
 paw-mkt-seo             → Technical and content SEO
 paw-mkt-content         → Content marketing

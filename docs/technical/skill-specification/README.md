@@ -12,7 +12,7 @@ A skill is a single-purpose capability defined in a `SKILL.md` file with support
 
 | Type | Description | Example |
 |------|-------------|---------|
-| **Agent** | Persistent persona with memory and identity | `paw-mkt-agency`, `paw-cra-agent-designer` |
+| **Agent** | Persistent persona with memory and identity | `paw-mkt-agent-agency`, `paw-cra-agent-designer` |
 | **Workflow** | Deterministic pipeline with defined steps | `paw-cra-video-shortform`, `paw-mkt-sostac` |
 | **Utility** | Single-purpose tool with minimal interaction | `paw-tools-release`, `paw-tools-presentation` |
 

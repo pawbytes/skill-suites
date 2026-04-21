@@ -48,10 +48,10 @@ User Request
 
 ## Marketing Module Routing
 
-### Coordinator: paw-mkt-agency
+### Coordinator: paw-mkt-agent-agency
 
 ```
-paw-mkt-agency (Coordinator)
+paw-mkt-agent-agency (Coordinator)
     │
     ├── paw-mkt-sostac         (SOSTAC planning)
     ├── paw-mkt-product-context (Positioning, personas)
@@ -279,7 +279,7 @@ paw-cra-campaign-orchestration
 ```
 User: "Help me with marketing"
 
-Coordinator (paw-mkt-agency):
+Coordinator (paw-mkt-agent-agency):
 1. Load brand context
 2. Check SOSTAC progress
 3. Ask clarifying questions

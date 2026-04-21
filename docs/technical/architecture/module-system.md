@@ -68,7 +68,7 @@ Modules are registered in `.claude-plugin/marketplace.json`:
       "source": "./",
       "skills": [
         "./src/marketing/paw-mkt-setup",
-        "./src/marketing/paw-mkt-agency",
+        "./src/marketing/paw-mkt-agent-agency",
         "./src/marketing/paw-mkt-sostac",
         "./src/marketing/paw-mkt-seo",
         // ... more skills
@@ -237,7 +237,7 @@ src/marketing/
 │   └── assets/
 │       └── module.yaml
 │
-├── paw-mkt-agency/              # Coordinator
+├── paw-mkt-agent-agency/              # Coordinator
 │   ├── SKILL.md
 │   └── references/
 │       ├── context-router.md

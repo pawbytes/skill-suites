@@ -5,7 +5,7 @@ Use this workflow when you need one deliverable now and do not want to stop for 
 ## Best starting commands
 
 ```text
-/paw-mkt-agency
+/paw-mkt-agent-agency
 ```
 
 or a direct specialist such as:
@@ -62,7 +62,7 @@ For Northstar AI, write a 4-email nurture sequence for talent leaders who downlo
 
 ### Coordinator route
 ```text
-/paw-mkt-agency
+/paw-mkt-agent-agency
 I don't want a full strategy right now. I just need a conversion-focused landing page outline for our webinar signup.
 ```
 

@@ -112,7 +112,7 @@ When the user requests software product execution:
 | Missing market intelligence | paw-ps-research | Competitive analysis needed |
 | Product decision conflicts | paw-ps-strategist | Resolve strategic ambiguity |
 | Pricing and packaging | paw-ps-strategist | Commercial decisions |
-| Multi-product coordination | paw-ps-orchestrator | Coordinate execution |
+| Multi-product coordination | paw-ps-agent-product-builder | Coordinate execution |
 | Technical architecture | paw-ps-architect | Technical design (if available) |
 
 ## Output Contract

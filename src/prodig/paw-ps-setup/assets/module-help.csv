@@ -1,6 +1,6 @@
 module,skill,display-name,menu-code,description,action,args,phase,after,before,required,output-location,outputs
 ps,paw-ps-setup,Module Setup,SU,Install and configure Prodig Suites module,configure,[-H],anytime,,,,configured module
-ps,paw-ps-orchestrator,Orchestrator,OR,Strategic product commander - main interface for product creation lifecycle,orchestrate,[-H] [request],anytime,,,,routed request or product coordination
+ps,paw-ps-agent-product-builder,Orchestrator,OR,Strategic product commander - main interface for product creation lifecycle,orchestrate,[-H] [request],anytime,,,,routed request or product coordination
 ps,paw-ps-discovery,Discovery,DI,Creative ideation partner for brainstorming and concept shaping,discover,,discovery,,,product-context.md,idea sets and opportunity statements
 ps,paw-ps-research,Research,RE,Rigorous market researcher for competitor analysis and demand signals,research,[-H] [task],research,,,market-intelligence.md,market intelligence brief
 ps,paw-ps-audience,Audience,AU,Customer insight specialist for personas and problem discovery,analyze,[-H] [task],research,,,audience-intelligence.md,personas and value signals

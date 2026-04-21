@@ -17,7 +17,7 @@
       "strict": false,
       "skills": [
         "./src/marketing/paw-mkt-setup",
-        "./src/marketing/paw-mkt-agency",
+        "./src/marketing/paw-mkt-agent-agency",
         "./src/marketing/paw-mkt-sostac",
         "./src/marketing/paw-mkt-product-context",
         "./src/marketing/paw-mkt-content",
@@ -94,7 +94,7 @@
       "strict": false,
       "skills": [
         "./src/prodig/paw-ps-setup",
-        "./src/prodig/paw-ps-orchestrator",
+        "./src/prodig/paw-ps-agent-product-builder",
         "./src/prodig/paw-ps-discovery",
         "./src/prodig/paw-ps-audience",
         "./src/prodig/paw-ps-research",

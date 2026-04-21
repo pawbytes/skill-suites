@@ -118,7 +118,7 @@ Different product types have different required artifacts:
 
 | Signal | Routes To |
 |--------|-----------|
-| Missing executor outputs | paw-ps-orchestrator (to rerun execution) |
+| Missing executor outputs | paw-ps-agent-product-builder (to rerun execution) |
 | Incomplete artifacts | Appropriate executor agent |
 | Quality issues | paw-ps-quality-reviewer |
 | Export needs | paw-ps-export-handler |

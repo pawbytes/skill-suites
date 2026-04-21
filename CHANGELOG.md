@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [1.2.1] - 2026-04-07
 
 ### Bug Fixes
-- **paw-mkt-agency:** Rebuild as coordinator-only skill with HITL gates (#11)
+- **paw-mkt-agent-agency:** Rebuild as coordinator-only skill with HITL gates (#11)
 - **marketing:** Enforce HITL gates across 10 non-compliant skills (#12)
 - **marketing:** Resolve broken sidecar references in marketing skills (#13)
 - **prodig:** Add module-help.csv for capability registration (#3)
@@ -24,7 +24,7 @@ All notable changes to this project will be documented in this file.
 ## [1.1.2] - 2026-04-02
 
 ### Bug Fixes
-- **paw-mkt-agency:** Use Glob pattern for brand discovery instead of directory scan to reliably find brands across platforms
+- **paw-mkt-agent-agency:** Use Glob pattern for brand discovery instead of directory scan to reliably find brands across platforms
 
 ## [1.1.1] - 2026-04-02
 

@@ -24,7 +24,7 @@ Ensure the sidecar directory structure exists:
 └── curated/
 ```
 
-If missing, run the full sidecar initialization first (see `paw-ps-orchestrator/references/init-sidecar.md`).
+If missing, run the full sidecar initialization first (see `paw-ps-agent-product-builder/references/init-sidecar.md`).
 
 ### 2. Create market-intelligence.md
 

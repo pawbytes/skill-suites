@@ -125,7 +125,7 @@ Before diving into how the system works, understand these core concepts.
 A **skill** is a specialized capability the AI can activate. Think of skills as team members with specific expertise.
 
 **Example skills:**
-- `paw-mkt-agency` — The coordinator who manages the whole team
+- `paw-mkt-agent-agency` — The coordinator who manages the whole team
 - `paw-mkt-sostac` — The strategist who builds your marketing plan
 - `paw-mkt-seo` — The SEO specialist
 - `paw-mkt-email` — The email marketing specialist
@@ -228,7 +228,7 @@ Think of this system as a virtual marketing agency with you as the client.
 
 **The team structure:**
 
-- **Agency Coordinator** (`paw-mkt-agency`) — The account director who manages everything. They greet you, understand your needs, route requests to specialists, and coordinate execution.
+- **Agency Coordinator** (`paw-mkt-agent-agency`) — The account director who manages everything. They greet you, understand your needs, route requests to specialists, and coordinate execution.
 
 - **Strategist** (`paw-mkt-sostac`) — The senior strategist who builds your marketing plan through the SOSTAC framework.
 

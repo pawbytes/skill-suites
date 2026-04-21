@@ -7,12 +7,12 @@ module_greeting: |
   **Prodig Suites activated.** Your product creation system is ready.
 
   **Quick Start:**
-  - `paw-ps-orchestrator` — Main coordinator — start here
+  - `paw-ps-agent-product-builder` — Main coordinator — start here
   - `paw-ps-discovery` — Explore and validate product ideas
   - `paw-ps-strategist` — Package and position your product
 
   **Full Skill Registry:**
-  - `paw-ps-orchestrator` — Main coordinator
+  - `paw-ps-agent-product-builder` — Main coordinator
   - `paw-ps-discovery` — Idea exploration and validation
   - `paw-ps-research` — Market and competitor research
   - `paw-ps-audience` — Customer research and personas

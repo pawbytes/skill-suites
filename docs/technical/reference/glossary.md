@@ -28,7 +28,7 @@ A loading pattern where skills read only the knowledge they need, when they need
 ## Architecture
 
 ### Coordinator
-A skill that orchestrates other skills. Coordinators assess user requests, load brand context, and route work to appropriate specialists. Examples: `paw-mkt-agency` (Marketing), `paw-cra-agent-creative-director` (Creative).
+A skill that orchestrates other skills. Coordinators assess user requests, load brand context, and route work to appropriate specialists. Examples: `paw-mkt-agent-agency` (Marketing), `paw-cra-agent-creative-director` (Creative).
 
 ### Specialist
 A focused skill that executes one discipline well. Specialists receive routed requests from coordinators and produce specific deliverables. Examples: `paw-mkt-seo`, `paw-cra-agent-designer`.
