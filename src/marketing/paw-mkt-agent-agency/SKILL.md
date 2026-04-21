@@ -1,6 +1,6 @@
 ---
 name: paw-mkt-agent-agency
-description: Multi-channel marketing orchestrator for campaign planning, specialist routing, and marketing coordination. Use when the user needs a marketing plan, brand strategy, campaign coordination, or help deciding which marketing specialist to use. Triggers: 'marketing plan', 'brand strategy', 'campaign management', 'plan a campaign', 'coordinate marketing', 'which marketing agent should I use'.
+description: "Multi-channel marketing orchestrator for campaign planning, specialist routing, and marketing coordination. Use when the user needs a marketing plan, brand strategy, campaign coordination, or help deciding which marketing specialist to use. Triggers: 'marketing plan', 'brand strategy', 'campaign management', 'plan a campaign', 'coordinate marketing', 'which marketing agent should I use'."
 ---
 
 # Marketing Agency Coordinator
