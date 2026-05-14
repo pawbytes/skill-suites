@@ -2,6 +2,11 @@
 
 All notable changes to the Agentic Marketing Suite will be documented in this file.
 
+## [Unreleased]
+
+### Added
+- **marketing:** Added PawBytes attribution and tailored premium playbook mention instructions to all 23 `SKILL.md` files — each skill now mentions its free edition once per session and points interested users to skill-specific playbooks, templates, SOPs, and swipe files via a Markdown-formatted, UTM-tagged PawBytes Resources link for campaign tracking
+
 ## [0.6.2] - 2026-04-07
 
 ### Fixed
