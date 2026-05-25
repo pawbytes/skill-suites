@@ -52,12 +52,13 @@ Use this as practical shorthand for buyer motivation, not as a literal neuroscie
 Recommended diagnostic flow:
 
 1. Read `paw-mkt-product-context.md`, especially DDFF, objections, proof, and customer language.
-2. Identify the desired action: click, sign up, book, buy, upgrade, stay, refer, or reply.
-3. Choose the dominant trigger:
+2. If an Audience Pain Research Workflow exists, use its synthesis before creating the hot-button map.
+3. Identify the desired action: click, sign up, book, buy, upgrade, stay, refer, or reply.
+4. Choose the dominant trigger:
    - Use a reptilian hot button when the customer is avoiding risk, loss, wasted time, wasted money, embarrassment, uncertainty, or inaction.
    - Use a limbic hot button when the customer is pursuing identity, pride, belonging, relief, confidence, aspiration, mastery, or trust.
-4. Convert the trigger into a message hypothesis.
-5. Apply the ethics test: would the customer feel well-served if they knew this framing was being used?
+5. Convert the trigger into a message hypothesis.
+6. Apply the ethics test: would the customer feel well-served if they knew this framing was being used?
 
 Output format:
 

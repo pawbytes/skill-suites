@@ -55,6 +55,38 @@ DDFF captures the customer motivation layer that downstream specialists use for 
 | Fears        | The risks, losses, embarrassment, or regret they want to avoid | Objections, churn reasons, sales hesitations, review complaints          |
 | Frustrations | The repeated irritations and blockers in their current reality | Support tickets, Reddit/G2 complaints, workflow pain, manual workarounds |
 
+## Audience Pain Research Workflow
+
+Use this workflow before finalizing DDFF when the audience is under-researched or the product context needs deeper pain, motivation, and customer-language inputs. Adapt the example prompts to the target segment, geography, and category.
+
+| Step | Research Focus | Example Prompt | Feeds Into |
+| ---- | -------------- | -------------- | ---------- |
+| 1 | Physical pain points | Research the top physical and daily routine struggles the target audience faces. Focus on sleep deprivation, feeding difficulties, physical exhaustion, or equivalent daily frictions for the category. | Frustrations, Fears |
+| 2 | Emotional and mental pain points | Research the emotional and psychological burdens the target audience carries. Include guilt, identity loss, anxiety, relationship strain, or equivalent emotional pressures. | Fears, Frustrations, limbic inputs |
+| 3 | Financial pain points | Research financial pressures specific to the target audience and market. Include recurring costs, healthcare or operational costs, and opportunity costs. | Fears, Frustrations, reptilian inputs |
+| 4 | Social and community pain points | Research social isolation, support-system gaps, belonging needs, and community pressures for the target audience. | Fears, Desires, limbic inputs |
+| 5 | Information overload pain points | Research how the target audience is overwhelmed by conflicting advice, experts, social media, family, AI tools, or category authorities. | Frustrations, Fears |
+| 6 | Aspirations and hidden desires | Research what the target audience secretly wishes for: not just problems, but dreams, identity, and who they want to become. | Desires, Dreams |
+| 7 | Synthesis | Merge all research above into a comprehensive target audience profile. Identify the top 3 deepest pain points, their emotional triggers, and the exact language customers use to describe their struggles. | Persona, DDFF map, customer language, hot-button map |
+
+Example specialized workflow for parents of toddlers in urban Indonesia:
+
+```text
+Step 1: Research the top physical and daily routine struggles parents face when raising toddlers aged 1-3. Focus on sleep deprivation, feeding difficulties, and physical exhaustion.
+
+Step 2: Research the emotional and psychological burdens of parenting toddlers. Include mom guilt, identity loss, anxiety, and relationship strain with partner.
+
+Step 3: Research financial pressures specific to parents with toddlers in Indonesia. Include daycare costs, formula, healthcare, and opportunity cost of career breaks.
+
+Step 4: Research the social isolation and support system gaps experienced by young parents with toddlers, especially in urban Indonesia.
+
+Step 5: Research how parents with toddlers are overwhelmed by conflicting parenting advice from doctors, social media, family, and AI tools.
+
+Step 6: Research what parents with toddlers secretly wish for -- not just problems, but dreams, identity, and what they want to become.
+
+Final synthesis: Merge all research above into a comprehensive target audience profile. Identify the top 3 deepest pain points, their emotional triggers, and the exact language they use to describe their struggles.
+```
+
 Recommended format inside `paw-mkt-product-context.md`:
 
 ```markdown
