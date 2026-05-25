@@ -7,6 +7,7 @@ Improves conversion across landing pages, flows, onboarding, paywalls, and forms
 ## When to use it
 
 Use `/paw-mkt-cro` when you need:
+
 - landing page improvements
 - signup or checkout optimization
 - onboarding activation analysis
@@ -18,7 +19,13 @@ Use `/paw-mkt-cro` when you need:
 - conversion goals
 - funnel metrics
 - user objections or friction points
+- DDFF motivation map from product context, if available
+- reptilian/limbic hot-button framing from psychology, if available
 - screenshots or page links if available
+
+## Consumes Psychology Inputs
+
+Use DDFF and hot-button framing to shape headline tests, CTA logic, objection handling, friction reduction, and conversion hypotheses. Treat these as inputs to be tested against funnel evidence, not as guaranteed conversion fixes.
 
 ## Deliverables
 

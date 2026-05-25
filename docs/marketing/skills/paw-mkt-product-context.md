@@ -20,19 +20,22 @@ Creates or updates the deep positioning file every specialist should read before
 
 ## What It Does
 
-| Capability | Description |
-|------------|-------------|
-| Strategic extraction | Pulls positioning from existing SOSTAC and brand files |
-| Gap interview | Asks only for missing details when needed |
-| Positioning synthesis | Builds a structured, reusable positioning document |
-| Messaging support | Captures customer language and proof for downstream specialists |
+| Capability            | Description                                                                              |
+| --------------------- | ---------------------------------------------------------------------------------------- |
+| Strategic extraction  | Pulls positioning from existing SOSTAC and brand files                                   |
+| Gap interview         | Asks only for missing details when needed                                                |
+| Positioning synthesis | Builds a structured, reusable positioning document                                       |
+| Messaging support     | Captures customer language and proof for downstream specialists                          |
+| DDFF mapping          | Captures customer desires, dreams, fears, and frustrations as reusable motivation inputs |
 
 ## What You Get
 
 A 12-section positioning document covering:
+
 - product overview
 - audience and personas
 - pain points
+- DDFF customer motivation map
 - competition
 - differentiation
 - objections
@@ -40,6 +43,51 @@ A 12-section positioning document covering:
 - brand voice
 - proof points
 - marketing goals
+
+## DDFF Customer Motivation Structure
+
+DDFF captures the customer motivation layer that downstream specialists use for copy, offers, campaigns, and sales messaging. Treat it as evidence-informed positioning input, not invented persona fiction.
+
+| Field        | What to Capture                                                | Useful Evidence                                                          |
+| ------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Desires      | The concrete outcomes, wins, or states they actively want      | Feature requests, purchase triggers, success metrics, jobs-to-be-done    |
+| Dreams       | The bigger future the customer hopes to reach                  | Aspirational interview quotes, transformation language, long-term goals  |
+| Fears        | The risks, losses, embarrassment, or regret they want to avoid | Objections, churn reasons, sales hesitations, review complaints          |
+| Frustrations | The repeated irritations and blockers in their current reality | Support tickets, Reddit/G2 complaints, workflow pain, manual workarounds |
+
+Recommended format inside `paw-mkt-product-context.md`:
+
+```markdown
+## Customer Motivation Map: DDFF
+
+### Desires
+
+- [Concrete outcome they are pursuing]
+
+### Dreams
+
+- [Future state they want, with quote or evidence]
+
+### Fears
+
+- [Risk, loss, embarrassment, or regret they want to avoid]
+
+### Frustrations
+
+- [Current pain, blocker, or recurring irritation]
+
+### Highest-Leverage Motivation
+
+**Primary emotional driver:** [desire/dream/fear/frustration]
+**Evidence:** [quote, source, pattern, or confidence level]
+**Messaging implication:** [how specialists should use this]
+```
+
+Use confidence labels when the evidence is uneven:
+
+- **High**: repeated across multiple sources or segments
+- **Medium**: appears in some evidence but needs more validation
+- **Low**: plausible hypothesis that should be tested before heavy use
 
 ## Output Location
 
@@ -62,6 +110,7 @@ flowchart TD
 ## Related Skills
 
 All specialists benefit from this file, especially:
+
 - `paw-mkt-content`
 - `paw-mkt-email`
 - `paw-mkt-seo`
