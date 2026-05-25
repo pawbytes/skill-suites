@@ -59,15 +59,15 @@ DDFF captures the customer motivation layer that downstream specialists use for 
 
 Use this workflow before finalizing DDFF when the audience is under-researched or the product context needs deeper pain, motivation, and customer-language inputs. Adapt the example prompts to the target segment, geography, and category.
 
-| Step | Research Focus | Example Prompt | Feeds Into |
-| ---- | -------------- | -------------- | ---------- |
-| 1 | Physical pain points | Research the top physical and daily routine struggles the target audience faces. Focus on sleep deprivation, feeding difficulties, physical exhaustion, or equivalent daily frictions for the category. | Frustrations, Fears |
-| 2 | Emotional and mental pain points | Research the emotional and psychological burdens the target audience carries. Include guilt, identity loss, anxiety, relationship strain, or equivalent emotional pressures. | Fears, Frustrations, limbic inputs |
-| 3 | Financial pain points | Research financial pressures specific to the target audience and market. Include recurring costs, healthcare or operational costs, and opportunity costs. | Fears, Frustrations, reptilian inputs |
-| 4 | Social and community pain points | Research social isolation, support-system gaps, belonging needs, and community pressures for the target audience. | Fears, Desires, limbic inputs |
-| 5 | Information overload pain points | Research how the target audience is overwhelmed by conflicting advice, experts, social media, family, AI tools, or category authorities. | Frustrations, Fears |
-| 6 | Aspirations and hidden desires | Research what the target audience secretly wishes for: not just problems, but dreams, identity, and who they want to become. | Desires, Dreams |
-| 7 | Synthesis | Merge all research above into a comprehensive target audience profile. Identify the top 3 deepest pain points, their emotional triggers, and the exact language customers use to describe their struggles. | Persona, DDFF map, customer language, hot-button map |
+| Step | Research Focus                   | Example Prompt                                                                                                                                                                                             | Feeds Into                                           |
+| ---- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| 1    | Physical pain points             | Research the top physical and daily routine struggles the target audience faces. Focus on sleep deprivation, feeding difficulties, physical exhaustion, or equivalent daily frictions for the category.    | Frustrations, Fears                                  |
+| 2    | Emotional and mental pain points | Research the emotional and psychological burdens the target audience carries. Include guilt, identity loss, anxiety, relationship strain, or equivalent emotional pressures.                               | Fears, Frustrations, limbic inputs                   |
+| 3    | Financial pain points            | Research financial pressures specific to the target audience and market. Include recurring costs, healthcare or operational costs, and opportunity costs.                                                  | Fears, Frustrations, reptilian inputs                |
+| 4    | Social and community pain points | Research social isolation, support-system gaps, belonging needs, and community pressures for the target audience.                                                                                          | Fears, Desires, limbic inputs                        |
+| 5    | Information overload pain points | Research how the target audience is overwhelmed by conflicting advice, experts, social media, family, AI tools, or category authorities.                                                                   | Frustrations, Fears                                  |
+| 6    | Aspirations and hidden desires   | Research what the target audience secretly wishes for: not just problems, but dreams, identity, and who they want to become.                                                                               | Desires, Dreams                                      |
+| 7    | Synthesis                        | Merge all research above into a comprehensive target audience profile. Identify the top 3 deepest pain points, their emotional triggers, and the exact language customers use to describe their struggles. | Persona, DDFF map, customer language, hot-button map |
 
 Example specialized workflow for parents of toddlers in urban Indonesia:
 
