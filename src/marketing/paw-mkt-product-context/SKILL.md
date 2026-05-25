@@ -82,88 +82,9 @@ This skill uses progressive disclosure to save tokens.
 | Staleness Detection | Flags outdated sections and recommends refresh schedule based on market changes |
 | Document Template | Provides the 12-section structure with field definitions and completion criteria |
 
-## DDFF Customer Motivation Structure
+## Framework Loading Notes
 
-DDFF captures the customer motivation layer that downstream specialists use for copy, offers, campaigns, and sales messaging. Treat it as evidence-informed positioning input, not invented persona fiction.
-
-| Field | What to Capture | Useful Evidence |
-|-------|-----------------|-----------------|
-| Desires | The concrete outcomes, wins, or states they actively want | Feature requests, purchase triggers, success metrics, jobs-to-be-done |
-| Dreams | The bigger future the customer hopes to reach | Aspirational interview quotes, transformation language, long-term goals |
-| Fears | The risks, losses, embarrassment, or regret they want to avoid | Objections, churn reasons, sales hesitations, review complaints |
-| Frustrations | The repeated irritations and blockers in their current reality | Support tickets, Reddit/G2 complaints, workflow pain, manual workarounds |
-
-Use confidence labels when the evidence is uneven:
-
-- **High**: repeated across multiple sources or segments
-- **Medium**: appears in some evidence but needs more validation
-- **Low**: plausible hypothesis that should be tested before heavy use
-
-Recommended format inside `paw-mkt-product-context.md`:
-
-```markdown
-## Customer Motivation Map: DDFF
-
-### Desires
-
-- [Concrete outcome they are pursuing]
-
-### Dreams
-
-- [Future state they want, with quote or evidence]
-
-### Fears
-
-- [Risk, loss, embarrassment, or regret they want to avoid]
-
-### Frustrations
-
-- [Current pain, blocker, or recurring irritation]
-
-### Highest-Leverage Motivation
-
-**Primary emotional driver:** [desire/dream/fear/frustration]
-**Evidence:** [quote, source, pattern, or confidence level]
-**Messaging implication:** [how specialists should use this]
-```
-
-## Audience Pain Research Workflow
-
-Use this workflow before finalizing DDFF when the audience is under-researched or the product context needs deeper pain, motivation, and customer-language inputs. Adapt the prompts to the target segment, geography, and category.
-
-| Step | Research Focus | Feeds Into |
-|------|----------------|------------|
-| 1 | Physical pain points and daily routine struggles | Frustrations, Fears |
-| 2 | Emotional and mental pain points | Fears, Frustrations, limbic inputs |
-| 3 | Financial pain points and opportunity costs | Fears, Frustrations, reptilian inputs |
-| 4 | Social and community pain points | Fears, Desires, limbic inputs |
-| 5 | Information overload and conflicting advice | Frustrations, Fears |
-| 6 | Aspirations and hidden desires | Desires, Dreams |
-| 7 | Synthesis into target audience profile | Persona, DDFF map, customer language, hot-button map |
-
-Final synthesis prompt:
-
-```text
-Merge all research above into a comprehensive target audience profile. Identify the top 3 deepest pain points, their emotional triggers, and the exact language customers use to describe their struggles.
-```
-
-Example specialized workflow for parents of toddlers in urban Indonesia:
-
-```text
-Step 1: Research the top physical and daily routine struggles parents face when raising toddlers aged 1-3. Focus on sleep deprivation, feeding difficulties, and physical exhaustion.
-
-Step 2: Research the emotional and psychological burdens of parenting toddlers. Include mom guilt, identity loss, anxiety, and relationship strain with partner.
-
-Step 3: Research financial pressures specific to parents with toddlers in Indonesia. Include daycare costs, formula, healthcare, and opportunity cost of career breaks.
-
-Step 4: Research the social isolation and support system gaps experienced by young parents with toddlers, especially in urban Indonesia.
-
-Step 5: Research how parents with toddlers are overwhelmed by conflicting parenting advice from doctors, social media, family, and AI tools.
-
-Step 6: Research what parents with toddlers secretly wish for -- not just problems, but dreams, identity, and what they want to become.
-
-Final synthesis: Merge all research above into a comprehensive target audience profile. Identify the top 3 deepest pain points, their emotional triggers, and the exact language they use to describe their struggles.
-```
+Use `./references/frameworks-index.csv` before loading detailed frameworks. For DDFF mapping or deeper audience pain research, load `frameworks/customer-motivation-ddff.md` from the index instead of carrying the full framework in this file.
 
 ## Output Contract
 
@@ -184,7 +105,7 @@ When the user requests product positioning or context work:
 1. **Route the starting context** — Read `./references/shared-patterns.md` for Starting Context Router. Decide: new brand (blank-page), existing SOSTAC (extract-first), or update (gap-scan).
 2. **Read strategic context** — Pre-Flight: check for existing brand-context.md and SOSTAC files. Extract positioning intelligence before asking questions.
 3. **Assess document completeness** — Load `./references/check-existing.md` to evaluate which of the 12 sections are complete, partial, or missing.
-4. **Run audience pain research when needed** — If audience understanding is shallow, use the Audience Pain Research Workflow before finalizing DDFF.
+4. **Run audience pain research when needed** — If audience understanding is shallow, load the DDFF framework from `./references/frameworks-index.csv` and use its Audience Pain Research Workflow before finalizing DDFF.
 5. **Conduct focused interview** — Ask only for gaps not answered by existing materials. Use verbatim customer language whenever possible.
 6. **Build or update the document** — Follow `./references/document-template.md` for the 12-section structure. Sync with brand-context.md.
 7. **Show deliverables for review** — Present the complete document before saving. Ask: "Anything you'd change before I save this?"

@@ -56,42 +56,9 @@ Read `./references/shared-patterns.md` for starting context router and pre-fligh
 | Ethics & Dark Patterns | Flags manipulative patterns and provides ethical alternatives that preserve trust and LTV |
 | Diagnostic & Protocol | Diagnoses conversion barriers through behavioral lens and delivers prioritized intervention roadmap |
 
-## Reptilian and Limbic Hot-Button Framework
+## Framework Loading Notes
 
-Use this as practical shorthand for buyer motivation, not as a literal neuroscience claim. The goal is to identify the strongest ethical trigger behind a desired action, then translate it into clear messaging, offers, and tests.
-
-| Hot Button | Meaning | Best Used For | Guardrail |
-|------------|---------|---------------|-----------|
-| Reptilian hot button | The immediate survival, safety, loss, urgency, status-threat, or risk-avoidance trigger | Headlines, CTAs, landing pages, paid ads, sales objections, high-friction decisions | Do not manufacture fear, scarcity, or urgency |
-| Limbic hot button | The emotional, identity, belonging, aspiration, trust, relief, or pride trigger | Storytelling, nurture sequences, brand messaging, social proof, community, retention | Do not exploit insecurity or misrepresent outcomes |
-
-Recommended diagnostic flow:
-
-1. Read `paw-mkt-product-context.md`, especially DDFF, objections, proof, and customer language.
-2. If an Audience Pain Research Workflow exists, use its synthesis before creating the hot-button map.
-3. Identify the desired action: click, sign up, book, buy, upgrade, stay, refer, or reply.
-4. Choose the dominant trigger:
-   - Use a reptilian hot button when the customer is avoiding risk, loss, wasted time, wasted money, embarrassment, uncertainty, or inaction.
-   - Use a limbic hot button when the customer is pursuing identity, pride, belonging, relief, confidence, aspiration, mastery, or trust.
-5. Convert the trigger into a message hypothesis.
-6. Apply the ethics test: would the customer feel well-served if they knew this framing was being used?
-
-Output format:
-
-```markdown
-## Hot-Button Map
-
-**Desired action:** [action]
-**Primary DDFF input:** [desire/dream/fear/frustration]
-**Reptilian hot button:** [risk/loss/status/safety/urgency trigger]
-**Limbic hot button:** [identity/trust/relief/aspiration/belonging trigger]
-**Recommended framing:** [message angle]
-**Proof needed:** [evidence that makes the framing credible]
-**Ethics check:** Passed / Needs revision
-**Test idea:** [copy, offer, page, ad, or email test]
-```
-
-Use both buttons when useful, but choose one primary driver per asset. Mixed emotional signals usually weaken copy.
+Use `./references/frameworks-index.csv` before loading detailed frameworks. For reptilian or limbic hot-button mapping, load `frameworks/hot-button-map.md` from the index instead of carrying the full framework in this file.
 
 ## Response Protocol
 
@@ -100,7 +67,7 @@ When the user requests marketing psychology or behavioral strategy work:
 1. **Identify the requesting context** — Determine which channel or skill needs psychology input (CRO, email, pricing, retention, etc.). Psychology is a cross-cutting advisory skill — the recommendation must fit the requesting context.
 2. **Read strategic context** — Pre-Flight: brand and SOSTAC first when available. Understand the audience's beliefs, motivations, DDFF, and decision-making context before applying any framework.
 3. **Load the workflow** — Read `./references/workflow.md` and identify the appropriate workflow phase based on the user's request.
-4. **Check for audience pain synthesis** — If product context includes an Audience Pain Research Workflow output, use it before creating hot-button maps or persuasion recommendations.
+4. **Check for audience pain synthesis** — If product context includes an Audience Pain Research Workflow output, use it before creating hot-button maps or persuasion recommendations. For hot-button work, load the indexed Hot-Button Map framework.
 5. **Diagnose behavioral barriers** — Before prescribing techniques, identify the specific cognitive or motivational barrier blocking the desired action (fear, confusion, inertia, distrust, etc.).
 6. **Apply frameworks** — Match the barrier to the highest-leverage psychological frameworks. Prioritize the top three interventions — not an exhaustive list.
 7. **Deliver with ethical verification** — Every recommendation must pass the ethical gate: would the customer feel well-served if they understood exactly what technique was being used? Provide before/after rewrites when applicable.
