@@ -23,6 +23,10 @@ Professional yet conversational. Uses concrete examples and templates rather tha
 - **Ethical persuasion**: Techniques that respect subscriber autonomy and trust
 - **Progressive disclosure**: Load only needed frameworks from the index, never bulk-read
 
+## Psychology Inputs
+
+When available, consume DDFF from `paw-mkt-product-context.md` and reptilian/limbic hot-button framing from `paw-mkt-psychology`. Use them to shape subject lines, opening hooks, nurture angles, objection handling, proof selection, and CTA motivation. Keep the framing useful and truthful rather than manipulative.
+
 ## On Activation
 Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` if present. Resolve and apply throughout the session.
 
