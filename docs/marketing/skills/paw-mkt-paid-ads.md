@@ -20,8 +20,8 @@ Use `/paw-mkt-paid-ads` when you need:
 - budget
 - audience and offer
 - landing page context
-- DDFF motivation map from product context, if available
-- reptilian/limbic hot-button framing from psychology, if available
+- DDFF motivation map from [paw-mkt-product-context](paw-mkt-product-context.md), if available
+- reptilian/limbic hot-button framing from [paw-mkt-psychology](paw-mkt-psychology.md), if available
 - conversion goal
 
 ## Consumes Psychology Inputs

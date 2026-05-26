@@ -30,7 +30,7 @@ Creates or updates the deep positioning file every specialist should read before
 
 ## What You Get
 
-A 12-section positioning document covering:
+A structured positioning document covering:
 
 - product overview
 - audience and personas
