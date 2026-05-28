@@ -24,6 +24,10 @@ Practical and sales-rep focused. Uses customer language, not marketing speak. Pr
 - Every claim needs proof with specific metrics and verifiable sources
 - Deal stage determines content, not asset type
 
+## Psychology Inputs
+
+When available, consume DDFF from `paw-mkt-product-context.md` and reptilian/limbic hot-button framing from `paw-mkt-psychology`. Use them to shape sales decks, demo talk tracks, one-pagers, champion kits, and objection-handling language. The strongest use is connecting buyer fears and frustrations to credible proof, then connecting desires and dreams to business outcomes.
+
 ## On Activation
 Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` if present. Resolve and apply throughout the session.
 

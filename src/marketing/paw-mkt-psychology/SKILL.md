@@ -52,21 +52,27 @@ Read `./references/shared-patterns.md` for starting context router and pre-fligh
 | Behavioral Design (BJ Fogg) | Maps motivation/ability/triggers to design habit-forming products and reduce friction in user journeys |
 | Copy Frameworks | Rewrites headlines, CTAs, and value propositions using proven psychological frameworks with before/after examples |
 | Psychology by Context | Tailors persuasion tactics by channel: landing pages, emails, popups, checkout, and onboarding |
+| Hot-Button Mapping | Identifies primal and emotional buying triggers from DDFF, objections, and audience research |
 | Ethics & Dark Patterns | Flags manipulative patterns and provides ethical alternatives that preserve trust and LTV |
 | Diagnostic & Protocol | Diagnoses conversion barriers through behavioral lens and delivers prioritized intervention roadmap |
+
+## Framework Loading Notes
+
+Use `./references/frameworks-index.csv` before loading detailed frameworks. For reptilian or limbic hot-button mapping, load `frameworks/hot-button-map.md` from the index instead of carrying the full framework in this file.
 
 ## Response Protocol
 
 When the user requests marketing psychology or behavioral strategy work:
 
 1. **Identify the requesting context** — Determine which channel or skill needs psychology input (CRO, email, pricing, retention, etc.). Psychology is a cross-cutting advisory skill — the recommendation must fit the requesting context.
-2. **Read strategic context** — Pre-Flight: brand and SOSTAC first when available. Understand the audience's beliefs, motivations, and decision-making context before applying any framework.
+2. **Read strategic context** — Pre-Flight: brand and SOSTAC first when available. Understand the audience's beliefs, motivations, DDFF, and decision-making context before applying any framework.
 3. **Load the workflow** — Read `./references/workflow.md` and identify the appropriate workflow phase based on the user's request.
-4. **Diagnose behavioral barriers** — Before prescribing techniques, identify the specific cognitive or motivational barrier blocking the desired action (fear, confusion, inertia, distrust, etc.).
-5. **Apply frameworks** — Match the barrier to the highest-leverage psychological frameworks. Prioritize the top three interventions — not an exhaustive list.
-6. **Deliver with ethical verification** — Every recommendation must pass the ethical gate: would the customer feel well-served if they understood exactly what technique was being used? Provide before/after rewrites when applicable.
-7. **Save deliverables** — Write to the resolved path (see Path Resolution).
-8. **Recommend next steps** — Route implementation back to the originating skill (CRO for page changes, email for sequence rewrites, etc.) or suggest the next workflow phase.
+4. **Check for audience pain synthesis** — If product context includes an Audience Pain Research Workflow output, use it before creating hot-button maps or persuasion recommendations. For hot-button work, load the indexed Hot-Button Map framework.
+5. **Diagnose behavioral barriers** — Before prescribing techniques, identify the specific cognitive or motivational barrier blocking the desired action (fear, confusion, inertia, distrust, etc.).
+6. **Apply frameworks** — Match the barrier to the highest-leverage psychological frameworks. Prioritize the top three interventions — not an exhaustive list.
+7. **Deliver with ethical verification** — Every recommendation must pass the ethical gate: would the customer feel well-served if they understood exactly what technique was being used? Provide before/after rewrites when applicable.
+8. **Save deliverables** — Write to the resolved path (see Path Resolution).
+9. **Recommend next steps** — Route implementation back to the originating skill (CRO for page changes, email for sequence rewrites, etc.) or suggest the next workflow phase.
 
 ## Escalation Routes
 
@@ -129,6 +135,7 @@ Every psychology deliverable includes:
 - **Application type**: audit, copy rewrite, or framework application
 - **Channel or touchpoint**: where the behavioral intervention applies
 - **Behavioral principles applied**: specific cognitive biases or persuasion frameworks used
+- **Hot-button map**: reptilian and limbic triggers when relevant
 - **Ethical verification status**: passed/flagged per the four-question ethical gate
 - **Before/after examples included**: yes/no
 - **File saved to**: resolved path where the deliverable was written

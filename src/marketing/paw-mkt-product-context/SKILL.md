@@ -76,9 +76,15 @@ This skill uses progressive disclosure to save tokens.
 | Check Existing Context | Locates and reads existing paw-mkt-product-context.md, assesses completeness and staleness |
 | Auto-Extract from SOSTAC | Pulls positioning intelligence from SOSTAC files without re-asking answered questions |
 | Focused Interview | Conducts targeted interviews to surface verbatim customer language, objections, and proof points |
+| DDFF Mapping | Captures customer desires, dreams, fears, and frustrations as reusable motivation inputs |
+| Audience Pain Research | Runs a structured pain and aspiration research workflow when audience understanding is shallow |
 | Document Operations | Creates, updates, and syncs the 12-section positioning document with brand-context.md |
 | Staleness Detection | Flags outdated sections and recommends refresh schedule based on market changes |
 | Document Template | Provides the 12-section structure with field definitions and completion criteria |
+
+## Framework Loading Notes
+
+Use `./references/frameworks-index.csv` before loading detailed frameworks. For DDFF mapping or deeper audience pain research, load `frameworks/customer-motivation-ddff.md` from the index instead of carrying the full framework in this file.
 
 ## Output Contract
 
@@ -86,6 +92,7 @@ Product marketing context deliverables include:
 
 - **Positioning statement** — clear articulation of who, what, why, and how
 - **Target personas** — detailed profiles with goals, pain points, and language
+- **Customer motivation map** — DDFF: desires, dreams, fears, and frustrations with confidence labels
 - **Differentiation** — competitive advantages with proof points
 - **Customer language** — actual phrases and terms the audience uses
 - **Messaging framework** — hierarchy of messages by persona and funnel stage
@@ -98,11 +105,12 @@ When the user requests product positioning or context work:
 1. **Route the starting context** — Read `./references/shared-patterns.md` for Starting Context Router. Decide: new brand (blank-page), existing SOSTAC (extract-first), or update (gap-scan).
 2. **Read strategic context** — Pre-Flight: check for existing brand-context.md and SOSTAC files. Extract positioning intelligence before asking questions.
 3. **Assess document completeness** — Load `./references/check-existing.md` to evaluate which of the 12 sections are complete, partial, or missing.
-4. **Conduct focused interview** — Ask only for gaps not answered by existing materials. Use verbatim customer language whenever possible.
-5. **Build or update the document** — Follow `./references/document-template.md` for the 12-section structure. Sync with brand-context.md.
-6. **Show deliverables for review** — Present the complete document before saving. Ask: "Anything you'd change before I save this?"
-7. **Save deliverables after confirmation** — Write to the resolved path.
-8. **Recommend next steps** — Suggest which marketing specialists should read the updated context, or flag sections needing more customer research — but DO NOT start until user approves.
+4. **Run audience pain research when needed** — If audience understanding is shallow, load the DDFF framework from `./references/frameworks-index.csv` and use its Audience Pain Research Workflow before finalizing DDFF.
+5. **Conduct focused interview** — Ask only for gaps not answered by existing materials. Use verbatim customer language whenever possible.
+6. **Build or update the document** — Follow `./references/document-template.md` for the 12-section structure. Sync with brand-context.md.
+7. **Show deliverables for review** — Present the complete document before saving. Ask: "Anything you'd change before I save this?"
+8. **Save deliverables after confirmation** — Write to the resolved path.
+9. **Recommend next steps** — Suggest which marketing specialists should read the updated context, or flag sections needing more customer research — but DO NOT start until user approves.
 
 ## Saving Protocol
 

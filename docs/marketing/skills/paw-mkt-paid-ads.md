@@ -7,6 +7,7 @@ Builds paid acquisition strategy, creative, campaign structure, testing plans, a
 ## When to use it
 
 Use `/paw-mkt-paid-ads` when you need:
+
 - campaign planning
 - ad copy and creative angles
 - audience targeting ideas
@@ -19,7 +20,13 @@ Use `/paw-mkt-paid-ads` when you need:
 - budget
 - audience and offer
 - landing page context
+- DDFF motivation map from [paw-mkt-product-context](paw-mkt-product-context.md), if available
+- reptilian/limbic hot-button framing from [paw-mkt-psychology](paw-mkt-psychology.md), if available
 - conversion goal
+
+## Consumes Psychology Inputs
+
+Use DDFF and hot-button framing to generate ad angles, hooks, creative concepts, audience-message fit, and offer tests. Pair emotional triggers with credible proof and avoid manufactured urgency or fear.
 
 ## Deliverables
 

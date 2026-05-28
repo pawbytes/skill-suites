@@ -7,6 +7,7 @@ Creates email strategy and assets across lifecycle, nurture, outbound, launch, a
 ## When to use it
 
 Use `/paw-mkt-email` when you need:
+
 - welcome or nurture sequences
 - newsletters
 - launch emails
@@ -24,7 +25,13 @@ For cancel flows and dunning sequences, use `paw-mkt-retention` instead.
 - goal and offer
 - funnel stage
 - objections and proof
+- DDFF motivation map from product context, if available
+- reptilian/limbic hot-button framing from psychology, if available
 - sending context or ESP constraints
+
+## Consumes Psychology Inputs
+
+Use DDFF and hot-button framing to shape subject lines, opening hooks, nurture angles, objection handling, proof selection, and CTA motivation. Keep the framing useful and truthful rather than manipulative.
 
 ## Deliverables
 

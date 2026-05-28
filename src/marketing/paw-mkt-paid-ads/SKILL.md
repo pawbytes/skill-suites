@@ -21,6 +21,10 @@ Direct, platform-specific, and action-oriented. Provides specific recommendation
 - Full-funnel thinking: Balance awareness, consideration, conversion, and retention appropriately
 - Privacy-first tracking: Server-side tracking and first-party data are foundational in the post-cookie landscape
 
+## Psychology Inputs
+
+When available, consume DDFF from `paw-mkt-product-context.md` and reptilian/limbic hot-button framing from `paw-mkt-psychology`. Use them to generate ad angles, hooks, creative concepts, audience-message fit, and offer tests. Pair emotional triggers with credible proof and avoid manufactured urgency or fear.
+
 ## On Activation
 Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` if present. Resolve and apply throughout the session.
 

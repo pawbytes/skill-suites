@@ -19,29 +19,35 @@ Creates sales enablement assets and messaging systems for the revenue team. This
 - sales stage context
 - competitor or pricing pressure
 - product proof and outcomes
+- DDFF motivation map from product context, if available
+- reptilian/limbic hot-button framing from psychology, if available
 - existing collateral library if available
+
+## Consumes Psychology Inputs
+
+Use DDFF and hot-button framing to shape sales decks, demo talk tracks, one-pagers, champion kits, and objection-handling language. The strongest use is connecting buyer fears and frustrations to credible proof, then connecting dreams and desires to business outcomes.
 
 ## What It Does
 
-| Capability | Description |
-|------------|-------------|
-| Decks and one-pagers | Creates structured sales collateral |
-| Battle cards | Produces concise and detailed competitive enablement |
-| Objection handling | Builds talk tracks and rebuttal frameworks |
-| Demo scripts | Creates structured product presentation flows |
-| ROI tools | Frames value in business terms for buyers |
-| Sales library management | Organizes collateral and reuse patterns |
+| Capability               | Description                                          |
+| ------------------------ | ---------------------------------------------------- |
+| Decks and one-pagers     | Creates structured sales collateral                  |
+| Battle cards             | Produces concise and detailed competitive enablement |
+| Objection handling       | Builds talk tracks and rebuttal frameworks           |
+| Demo scripts             | Creates structured product presentation flows        |
+| ROI tools                | Frames value in business terms for buyers            |
+| Sales library management | Organizes collateral and reuse patterns              |
 
 ## What You Get
 
-| Deliverable | Description |
-|-------------|-------------|
-| Sales decks | Slide-ready structure and key messaging |
-| One-pagers | Compact product or offer explanation |
-| Battle cards | Competitive and objection-handling support |
-| Demo scripts | Guided walkthroughs for product conversations |
-| ROI calculator templates | Value framing and savings logic |
-| Champion kits | Internal-selling support for buyer champions |
+| Deliverable              | Description                                   |
+| ------------------------ | --------------------------------------------- |
+| Sales decks              | Slide-ready structure and key messaging       |
+| One-pagers               | Compact product or offer explanation          |
+| Battle cards             | Competitive and objection-handling support    |
+| Demo scripts             | Guided walkthroughs for product conversations |
+| ROI calculator templates | Value framing and savings logic               |
+| Champion kits            | Internal-selling support for buyer champions  |
 
 ## Output Location
 

@@ -7,6 +7,7 @@ Plans and creates content strategy, calendars, briefs, and long-form assets.
 ## When to use it
 
 Use `/paw-mkt-content` when you need:
+
 - a content strategy
 - a monthly editorial calendar
 - blog briefs or drafts
@@ -18,7 +19,13 @@ Use `/paw-mkt-content` when you need:
 - goals and funnel stage
 - topics or offers
 - relevant SEO priorities
+- DDFF motivation map from product context, if available
+- reptilian/limbic hot-button framing from psychology, if available
 - publishing cadence
+
+## Consumes Psychology Inputs
+
+Use DDFF and hot-button framing to choose content pillars, article angles, lead magnet promises, case study emphasis, and bottom-of-funnel briefs. Content should deepen trust around these motivations rather than simply repeating them as copy claims.
 
 ## Deliverables
 
@@ -57,6 +64,7 @@ Use `/paw-mkt-content` when you need:
 ```
 
 Common outputs include:
+
 - `content-strategy-{YYYY-MM-DD}.md`
 - `content-calendar-{YYYY-MM}.md`
 - `blog/`
