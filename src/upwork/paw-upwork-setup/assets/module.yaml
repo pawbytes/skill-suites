@@ -1,0 +1,43 @@
+code: upwork
+name: PawBytes Upwork Suite
+description: Helps any freelancer discover their niche and target jobs, then produce a high-converting Upwork profile and tailored job proposals — through live market research, positioning, and a feedback loop that sharpens every session.
+module_version: 0.1.0
+default_selected: false
+module_greeting: |
+  🚀 **PawBytes Upwork Suite activated.** Your freelance coach + specialists are ready.
+
+  **Start here:**
+  - `paw-upwork-agent-coach` — Your Upwork coach: onboarding, niche discovery, positioning, and routing
+  - `paw-upwork-research` — Live market research → ranked niche opportunity dashboard
+  - `paw-upwork-profile` — Paste-ready Upwork profile (title, overview, skills) + variations
+  - `paw-upwork-proposal` — Tailored, ready-to-send proposals from a pasted job posting
+
+  **The arc:** Discover → Position → Win → Learn. Talk to the coach first.
+
+# Configuration Variables
+freelancers_folder:
+  prompt: "Where should freelancer workspaces be stored?"
+  default: "{project-root}/.pawbytes/upwork-suites/freelancers"
+  result: "{value}"
+  directories: true
+
+reports_folder:
+  prompt: "Where should reports and dashboards be saved?"
+  default: "{project-root}/.pawbytes/upwork-suites/reports"
+  result: "{value}"
+  directories: true
+
+default_freelancer:
+  prompt: "Default freelancer slug to use (leave empty to always specify)?"
+  default: ""
+  user_setting: true
+
+research_mode:
+  prompt: "Market research mode — 'local-browser' (drive your own Chrome) or 'manual' (paste job listings)?"
+  default: "local-browser"
+  user_setting: true
+
+communication_language:
+  prompt: "Language for agent responses?"
+  default: "English"
+  user_setting: true

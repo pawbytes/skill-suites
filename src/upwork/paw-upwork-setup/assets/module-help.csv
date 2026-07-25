@@ -1,0 +1,6 @@
+module,skill,display-name,menu-code,description,action,args,phase,after,before,required,output-location,outputs
+upwork,paw-upwork-setup,Module Setup,SU,Install and configure PawBytes Upwork Suite (checks browser-harness),configure,[-H],anytime,,,,configured module
+upwork,paw-upwork-agent-coach,Upwork Coach,CO,Onboarding, niche discovery, positioning & routing - your Upwork coach,coach,[request],anytime,,,,positioning brief + routed work
+upwork,paw-upwork-research,Niche Research,RE,Live market research → ranked niche opportunity dashboard + rate observations,research,[-H] [freelancer-slug],anytime,paw-upwork-setup:configure,,,reports_folder,niche dashboard (HTML) + report
+upwork,paw-upwork-profile,Profile Builder,PR,Paste-ready Upwork profile (title, overview, skills) + variations + portfolio,build,[-H] [freelancer-slug],anytime,,,,profile drafts + variations
+upwork,paw-upwork-proposal,Proposal Writer,PP,Tailored ready-to-send proposals from a pasted job posting + scoring + kit,write,[-H] [freelancer-slug],anytime,,,,tailored proposals + kit

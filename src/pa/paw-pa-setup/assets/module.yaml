@@ -1,0 +1,80 @@
+code: pa
+name: PawBytes Proposal Automation Suite
+description: Turns messy multimodal briefs (text, audio, video) into polished, researched, priced proposals — end to end, for any proposal type.
+module_version: 1.0.0
+default_selected: false
+
+agents:
+  - code: orchestrator
+    name: ""
+    title: Proposal Strategist
+    icon: "📋"
+    description: Sharp proposal strategist and deal desk lead — runs the full pipeline from multimodal brief to final proposal with guided check-ins or autonomous mode.
+
+module_greeting: |
+  🚀 **PawBytes Proposal Automation Suite activated.** Your proposal pipeline is ready.
+
+  **Start here:**
+  - `paw-pa-agent-orchestrator` — Run the full pipeline (guided or autonomous) from brief to final proposal
+  - `paw-pa-library` — Drop case studies and past proposals in `library/inbox/`, then re-index
+  - `paw-pa-intake` — Turn text, audio, or video into a structured brief
+  - `paw-pa-research` — Evidence pack with local case-study matches + web benchmarks
+  - `paw-pa-pricing` — Defensible pricing breakdown calibrated to your history
+  - `paw-pa-generation` — Branded, export-ready proposal document
+
+  **The arc:** Drop docs → Brief → Research → Price → Generate → Learn. Run `paw-pa-library` first if your case-study index is empty.
+
+# Configuration Variables
+assemblyai_api_key:
+  prompt: "Your AssemblyAI API key (audio/video transcription). Get one at assemblyai.com — leave empty to skip for now"
+  default: ""
+  result: "{value}"
+  user_setting: true
+
+default_mode:
+  prompt: "Default pipeline mode — 'guided' (check-ins at each stage) or 'autonomous' (brief in, proposal out)?"
+  default: "guided"
+  result: "{value}"
+  user_setting: true
+
+default_proposal_type:
+  prompt: "Default proposal type — 'pitch', 'rfp', or 'scoping'?"
+  default: "pitch"
+  result: "{value}"
+  user_setting: true
+
+default_language:
+  prompt: "Default proposal output language?"
+  default: "{communication_language}"
+  result: "{value}"
+  user_setting: true
+
+default_pricing_mode:
+  prompt: "Default pricing mode — 'line-item', 'tiered', or 'value-based'?"
+  default: "tiered"
+  result: "{value}"
+  user_setting: true
+
+default_hourly_rate:
+  prompt: "Your default hourly rate in USD (used before pricing history exists)?"
+  default: "100"
+  result: "{value}"
+  user_setting: true
+
+workspace_folder:
+  prompt: "Where should proposal run artifacts be stored?"
+  default: "{project-root}/.pawbytes/proposal-automation-suites/proposals"
+  result: "{value}"
+  directories: true
+
+library_inbox_folder:
+  prompt: "Folder where you'll drop case studies / past proposals / boilerplate docs for ingestion?"
+  default: "{project-root}/.pawbytes/proposal-automation-suites/library/inbox"
+  result: "{value}"
+  directories: true
+
+web_research_enabled:
+  prompt: "Enable deep web research for case studies and benchmarks? (requires browser-harness MCP)"
+  default: "true"
+  result: "{value}"
+  user_setting: true

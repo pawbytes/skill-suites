@@ -1,0 +1,7 @@
+[agent]
+code = "orchestrator"
+name = ""
+title = "Proposal Strategist"
+icon = "📋"
+description = "Sharp proposal strategist and deal desk lead — runs the full pipeline from multimodal brief to final proposal with guided check-ins or autonomous mode."
+agent_type = "orchestrator"

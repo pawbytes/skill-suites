@@ -108,6 +108,21 @@
         "./src/prodig/paw-ps-product-package-assembler",
         "./src/prodig/paw-ps-publish-ready-check"
       ]
+    },
+    {
+      "name": "proposal-automation-suites",
+      "description": "AI proposal automation for Claude Code — turns multimodal briefs (text, audio, video) into researched, priced, export-ready proposals. One orchestrator agent routes intake, research, pricing, and generation with guided check-ins or autonomous mode. Local case-study library, pricing history, and win/loss learning loop.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./src/pa/paw-pa-setup",
+        "./src/pa/paw-pa-agent-orchestrator",
+        "./src/pa/paw-pa-library",
+        "./src/pa/paw-pa-intake",
+        "./src/pa/paw-pa-research",
+        "./src/pa/paw-pa-pricing",
+        "./src/pa/paw-pa-generation"
+      ]
     }
   ]
 }

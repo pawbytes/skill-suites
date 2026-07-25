@@ -1,0 +1,8 @@
+module,skill,display-name,menu-code,description,action,args,phase,after,before,required,output-location,outputs
+pa,paw-pa-setup,Module Setup,SU,Install and configure PawBytes Proposal Automation Suite (checks AssemblyAI browser-harness pandoc),configure,[-H],anytime,,,true,,configured module + workspace
+pa,paw-pa-library,Proposal Library,LB,Ingest inbox docs into case-study index pricing history boilerplate and scope templates,index,[-H] [--validate],anytime,paw-pa-setup:configure,,false,library_inbox_folder,case-studies-index.json + pricing-history.json
+pa,paw-pa-agent-orchestrator,Proposal Orchestrator,OR,Run the full proposal pipeline — guided or autonomous — from multimodal brief to final proposal,run,[request],anytime,paw-pa-setup:configure,,false,,proposal run folder
+pa,paw-pa-intake,Brief Intake,IN,Turn text audio or video into a structured completeness-checked brief,intake,[-H] [run-slug],anytime,paw-pa-setup:configure,,false,workspace_folder,brief.md
+pa,paw-pa-research,Proposal Research,RE,Local case-study matching + web evidence → HTML research dossier,research,[-H] [run-slug],anytime,paw-pa-intake:intake,,false,workspace_folder,research-dossier.html
+pa,paw-pa-pricing,Proposal Pricing,PR,Defensible pricing breakdown calibrated to history and benchmarks,price,[-H] [run-slug],anytime,paw-pa-intake:intake,,false,workspace_folder,pricing.json
+pa,paw-pa-generation,Proposal Generation,GE,Branded export-ready proposal from brief + research + pricing,generate,[-H] [run-slug],anytime,paw-pa-pricing:price,,false,workspace_folder,draft-v1.md + final-proposal.*
