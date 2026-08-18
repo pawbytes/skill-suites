@@ -39,6 +39,7 @@ Before diving in, choose the right tool:
 |--------------|------|
 | Public websites, articles, press | Exa `crawling_exa` |
 | Social profiles (LinkedIn, Instagram, TikTok) | Agent-browser with auth |
+| Public X/Twitter profiles, posts, replies, mentions | `paw-cra-content-research` Xquik path |
 | Gated/membership content | Agent-browser with auth |
 
 See `./browser-tools.md` for authentication setup.

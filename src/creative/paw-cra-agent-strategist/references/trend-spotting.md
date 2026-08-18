@@ -43,14 +43,15 @@ agent-browser screenshot ./research/tiktok-trends-current.png
 agent-browser --state "{project-root}/.pawbytes/creative-suites/.auth/session.json" open https://instagram.com/explore
 agent-browser screenshot --full ./research/instagram-explore-trends.png
 
-# Twitter/X trending topics
-agent-browser --profile ~/.strategist-profile open https://twitter.com/explore
-agent-browser get text body > ./research/twitter-trending.txt
 ```
 
 For TikTok Creative Center (public): `https://creativecenter.tiktok.com/trends`
 
 See `./browser-tools.md` for authentication setup.
+
+For X/Twitter, invoke `paw-cra-content-research` with X in scope. Its Xquik path retrieves live
+regional trends and tests candidates with bounded recent tweet searches. Compare equal-duration
+windows before assigning velocity, or normalize counts to the same time unit when durations differ.
 
 3. **Cultural signals**:
    - What's entering mainstream?
@@ -91,6 +92,9 @@ Create `{brand-name}/research/trend-analysis.md`:
 
 ### YouTube
 - {trending formats, topics, thumbnails}
+
+### X/Twitter
+- {regional topics, recurring questions, conversation velocity, post formats}
 
 ## Recommendation Priority
 | Trend | Relevance | Ease | Impact | Priority |

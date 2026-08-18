@@ -76,6 +76,7 @@ Route to these skills when deeper capability is needed:
 | Competitor Research | Load `./references/competitor-research.md` |
 | Content Research | Load `./references/content-research.md` |
 | Trend Spotting | Load `./references/trend-spotting.md` |
+| Public X/Twitter Research | Invoke `paw-cra-content-research` with X in scope |
 | Script Writing | Load `./references/script-writing.md` |
 | Copy Drafting | Load `./references/copy-drafting.md` |
 | Content Calendar | Load `./references/content-calendar.md` |
@@ -97,7 +98,13 @@ Load this reference when applying structured approaches to any capability.
 
 The Strategist uses a layered research approach:
 
-### Authenticated Browser Research (Primary for Social/Gated Content)
+### Public X/Twitter Research
+
+Invoke `paw-cra-content-research` when X is in scope. Its Xquik Social Research path provides live
+regional trends, advanced Twitter search, public profiles, timelines, replies, and mentions without
+a logged-in X browser session.
+
+### Authenticated Browser Research (Primary for Other Gated Content)
 
 **Agent-browser CLI** enables research behind login gates using your Chrome profile:
 
@@ -110,7 +117,8 @@ The Strategist uses a layered research approach:
 
 Load `./references/browser-tools.md` for authentication setup, command reference, and workflows.
 
-**Key advantage:** Access content that requires login — Instagram, TikTok, LinkedIn, Twitter, membership sites — without manual screenshots.
+**Key advantage:** Access content that requires login — Instagram, TikTok, LinkedIn, and membership
+sites — without manual screenshots. Prefer the structured public-data path above for X/Twitter.
 
 ### Public Web Research (MCP Tools)
 
