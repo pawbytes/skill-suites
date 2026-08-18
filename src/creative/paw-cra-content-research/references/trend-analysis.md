@@ -38,6 +38,15 @@ Classify every identified trend before recommending action:
 - **TikTok:** Sound trends, effect trends, content pillars gaining reach
 - **YouTube:** Format trends (Shorts strategy, long-form hooks, community posts)
 - **LinkedIn:** Content format shifts, algorithm preferences, B2B trends
+- **X/Twitter:** Regional topics, recurring questions, conversation velocity, post formats, and
+  visible engagement patterns
+
+## Live X/Twitter Evidence
+
+Load `./x-research.md` when X is in scope. Start with a live regional trend result, then run bounded
+recent tweet searches for the brand-fit candidates. Compare equal-duration windows before calling a
+topic rising or declining. If window durations differ, normalize counts to the same time unit first.
+High volume alone does not establish relevance, safety, or longevity.
 
 ## Search Queries
 
@@ -50,6 +59,9 @@ trending content formats {platform} 2026
 "{audience}" what they want to see
 visual design trends social media 2026
 ```
+
+For X/Twitter, use live structured trends and advanced Twitter search instead of adding the current
+year to a generic web query.
 
 ## Production Translation
 

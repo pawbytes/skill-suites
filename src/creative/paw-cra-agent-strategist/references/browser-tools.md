@@ -1,12 +1,14 @@
 # Browser Research Tools
 
-Agent-browser CLI for authenticated web research, social media analysis, and gated content access.
+Agent-browser CLI for authenticated web research, visual social media analysis, and gated content
+access. For public X/Twitter research, invoke `paw-cra-content-research` and use its structured
+Xquik path first.
 
 ## Why Agent-Browser
 
 Unlike standard web scraping, agent-browser can use your existing Chrome profile — meaning you stay logged in to all your accounts. This enables:
 
-- **Social media research** while logged in (Instagram, TikTok, LinkedIn, Twitter)
+- **Social media research** while logged in (Instagram, TikTok, LinkedIn)
 - **Competitor analysis** behind login gates
 - **Platform-specific data** that requires authentication
 - **Gated content access** (membership sites, subscription services)

@@ -19,6 +19,8 @@ Gather from conversation or brand context:
    - Search "{industry} trending topics 2026"
    - Search "what {audience} is talking about"
    - Check platform-specific trends (TikTok, Instagram, YouTube)
+   - For X/Twitter, invoke `paw-cra-content-research` with X in scope. Use its live Xquik evidence
+     path instead of model memory or generic web snippets.
 
 2. **Social media deep-dive (Agent-Browser)**:
 
