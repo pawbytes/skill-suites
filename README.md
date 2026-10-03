@@ -1,6 +1,6 @@
 # Pawbytes Skill Suites
 
-> 59 AI agent skills for Claude Code — agentic marketing automation, AI creative agency workflows, product development, webinar creation, and developer productivity tools.
+> 70+ AI agent skills for Claude Code — agentic marketing automation, AI creative agency workflows, product development, webinar creation, and developer productivity tools.
 
 ## Install
 
@@ -242,4 +242,4 @@ This will:
 
 ## License
 
-MIT License — use freely for personal and commercial projects.
+MIT License, see [LICENSE](LICENSE). Use freely for personal and commercial projects.
