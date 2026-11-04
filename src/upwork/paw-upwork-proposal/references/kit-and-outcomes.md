@@ -4,7 +4,7 @@ Two jobs that make every future proposal faster and sharper: maintaining the reu
 
 ## The kit
 
-`{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/kit.md` holds the freelancer's reusable, proven proposal building blocks — not generic templates, but the specific phrasing that fits their voice and niche and has earned replies. Save a block to the kit when a proposal element is strong and reusable: a hook angle that landed, a tight case-study blurb, a clean way to frame the rate, a CTA that pulls calls.
+`{freelancer-workspace}/kit.md` holds the freelancer's reusable, proven proposal building blocks — not generic templates, but the specific phrasing that fits their voice and niche and has earned replies. Save a block to the kit when a proposal element is strong and reusable: a hook angle that landed, a tight case-study blurb, a clean way to frame the rate, a CTA that pulls calls.
 
 Structure it so the proposal-craft path can pull from it fast:
 
@@ -48,4 +48,4 @@ Then route the durable lesson into the kit: a winning angle becomes a saved hook
 
 ## Keep it light
 
-Both files are working memory, not deliverables — short, current, and curated. After updating either, append a `[proposal]` line to today's `daily/` log noting what was saved or refined, and update `index.md` if outcomes changed the proposals-sent or wins count.
+Both files are working memory, not deliverables — short, current, and curated. After updating either, append a `[proposal]` line to today's `_memory/daily/` log noting what was saved or refined, and update `_memory/index.md` if outcomes changed the proposals-sent or wins count.

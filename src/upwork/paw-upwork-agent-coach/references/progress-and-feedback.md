@@ -1,12 +1,12 @@
 # Progress & Feedback
 
-Two jobs that share the same workspace: closing the learning loop when results come in, and orienting the freelancer when they ask where they are. Both run off `index.md` and the workspace files — read before you summarize.
+Two jobs that share the same workspace: closing the learning loop when results come in, and orienting the freelancer when they ask where they are. Both run off `_memory/index.md` and the workspace files — read before you summarize.
 
 ## Feedback-loop intake
 
 When the freelancer reports results — "sent 10 proposals, got 2 replies, both on the Shopify ones" — turn that into learning the next round of work uses. The point of the loop is that session two's proposals are sharper than session one's because you know what landed.
 
-Capture into `{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/outcomes.md` (create it if absent):
+Capture into `{freelancer-workspace}/outcomes.md` (create it if absent):
 
 ```markdown
 # Outcomes — {name}
@@ -30,14 +30,14 @@ Then act on the pattern, don't just record it:
 - If the freelancer's positioning is getting silence across the board, that's a signal the lane or the rate may be wrong — raise it honestly and consider re-running research.
 - When the proposal specialist next runs, it reads `outcomes.md`, so the kit and future proposals inherit what worked.
 
-Update `index.md` (proposals sent count, last updated) and append a `[coach]` line to today's `daily/` log.
+Update `_memory/index.md` (proposals sent count, last updated) and the README `Status`/`Next` lines, and append a `[coach]` line to today's `_memory/daily/` log.
 
 ## Progress tracking
 
-When the freelancer asks where they are or what's next, read `index.md` first, then the relevant files, and place them in the arc. Don't dump file contents — give them their position and the single highest-value next move.
+When the freelancer asks where they are or what's next, read `_memory/index.md` first, then the relevant files, and place them in the arc. Don't dump file contents — give them their position and the single highest-value next move.
 
 Read and summarize:
-- `index.md` — the status row (niche, brief, profile, proposals sent).
+- `_memory/index.md` — the status row (niche, brief, profile, proposals sent).
 - `positioning-brief.md` — is the lane locked, or still open?
 - `research/` — has a market scan run? what did it recommend?
 - `profile/` — drafts done, or not started?

@@ -14,7 +14,7 @@ User requests a YouTube video, long-form video, explainer video, tutorial, or ho
 |-------|--------|----------|
 | Script or detailed brief | Brief, Strategist output, or user input | Yes |
 | Platform target | User specification (default: YouTube) | Yes |
-| Brand guidelines | `.pawbytes/creative-suites/brands/{brand}/guidelines.md` | Yes |
+| Brand guidelines | `{suite-root}/brands/{brand}/guidelines.md` | Yes |
 | Duration target | User specification | Yes |
 | Voice direction | User preference or ElevenLabs voice ID | Optional |
 | B-roll references | User provided or stock footage | Optional |
@@ -25,7 +25,7 @@ User requests a YouTube video, long-form video, explainer video, tutorial, or ho
 
 - Read brand guidelines for visual style, colors, typography
 - Check platform specifications (see `./video-platform-specs.md`)
-- Load campaign scripts from `.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/scripts/`
+- Load campaign scripts from `{suite-root}/brands/{brand}/campaigns/{campaign}/scripts/`
 - If no script exists, request Strategist support via `paw-cra-agent-strategist`
 
 ### 2. Script & Scene Planning
@@ -100,7 +100,7 @@ Default long-form subtitle style:
 ## Output
 
 **Format:** MP4 (H.264, AAC audio)
-**Location:** `.pawbytes/creative-suites/brands/{brand}/videos/{campaign}/long-form/`
+**Location:** `{suite-root}/brands/{brand}/campaigns/{campaign}/videos/long-form/` (outside a campaign: `{suite-root}/brands/{brand}/videos/long-form/`)
 **Naming:** `{platform}_{title-slug}_{date}.mp4`
 **Manifest:** Write `video-manifest.json` alongside output
 

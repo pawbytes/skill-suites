@@ -21,7 +21,7 @@ Use confidence labels when the evidence is uneven:
 
 ## Recommended Output Format
 
-Use this format inside `paw-mkt-product-context.md`:
+Use this format inside `product-context.md`:
 
 ```markdown
 ## Customer Motivation Map: DDFF

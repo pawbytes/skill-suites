@@ -94,7 +94,7 @@ Append QC results to:
    - Report: qa-report.md
    ```
 
-2. **Daily log** --- `{project-root}/.pawbytes/creative-suites/daily/{YYYY-MM-DD}.md`
+2. **Daily log** --- `{suite-root}/_memory/daily/{YYYY-MM-DD}.md`
    ```markdown
    ## {timestamp} [QC] Campaign: {campaign-name}
    - Verdict: {verdict}

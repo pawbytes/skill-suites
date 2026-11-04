@@ -14,7 +14,7 @@ Approved clips saved to the brand's video clip folder with a clean manifest, and
 Copy (or move) approved clips from the working directory to the final export location:
 
 ```
-{project-root}/.pawbytes/creative-suites/brands/{brand-name}/videos/clips/{session-id}/
+{suite-root}/brands/{brand-name}/videos/clips/{session-id}/
 ```
 
 Structure:
@@ -37,14 +37,14 @@ Structure:
 
 Organize clips into platform subdirectories for easy bulk upload. The manifest at the root references all clips with their relative paths.
 
-If clips were produced without a brand (unbranded), export to:
+If clips were produced without a brand (unbranded), export to the `unassigned` brand:
 ```
-{project-root}/.pawbytes/creative-suites/output/clips/{session-id}/
+{suite-root}/brands/unassigned/videos/clips/{session-id}/
 ```
 
 ## Step 11: Status Update
 
-Append to the daily log at `{project-root}/.pawbytes/creative-suites/daily/{YYYY-MM-DD}.md`:
+Append to the daily log at `{suite-root}/_memory/daily/{YYYY-MM-DD}.md`:
 
 ```markdown
 ### [VideoProducer] Clip Extraction Complete
@@ -52,12 +52,14 @@ Append to the daily log at `{project-root}/.pawbytes/creative-suites/daily/{YYYY
 - **Source:** {source_filename} ({duration})
 - **Brand:** {brand-name}
 - **Clips produced:** {count} across {platform_count} platforms
-- **Output:** `brands/{brand-name}/videos/clips/{session-id}/`
+- **Output:** `{suite-root}/brands/{brand-name}/videos/clips/{session-id}/`
 - **Manifest:** `clip-manifest.json`
 - **Timestamp:** {ISO-8601}
 ```
 
 Create the daily log file if it does not exist. Append, never overwrite.
+
+Update `Status:`/`Next:` and links in `{suite-root}/brands/{brand-name}/README.md`, then run `uv run {skill-root}/scripts/paw-paths.py index`.
 
 ## Final Output
 

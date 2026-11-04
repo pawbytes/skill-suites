@@ -434,15 +434,11 @@ Before implementing any tracking, ask: **If users fully understood what data is 
 ## Path Resolution: Campaign vs Standalone
 
 **Campaign mode** — working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/analytics/`
-  -> Read campaign strategy at `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/analytics/`
+  -> Read campaign strategy at `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** — evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/analytics/`
-
-**Legacy fallback** — old directory structure detected:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/analytics/`
-  -> Suggest migration to new structure
+  -> Save to `{suite-root}/brands/{brand-slug}/analytics/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 
@@ -467,7 +463,7 @@ File structure:
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/analytics/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/analytics/
   measurement-framework-{YYYY-MM-DD}.md
   tracking-spec-{YYYY-MM-DD}.md
   utm-conventions-{YYYY-MM-DD}.md
@@ -476,7 +472,7 @@ File structure:
   attribution-analysis-{YYYY-MM-DD}.md
 
 # Standalone mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/operations/analytics/
+{suite-root}/brands/{brand-slug}/analytics/
   (same structure as above)
 ```
 

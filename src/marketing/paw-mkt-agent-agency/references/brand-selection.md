@@ -5,7 +5,7 @@ Present available brands when multiple exist in portfolio.
 
 ## Discovery Pattern
 
-Use Glob to find brands: `.pawbytes/marketing-suites/brands/*/brand-context.md`
+Use Glob to find brands: `{suite-root}/brands/*/brand-context.md`
 
 Each match represents one brand. Extract the brand slug from the path (the directory name between `brands/` and `brand-context.md`).
 
@@ -30,7 +30,7 @@ Which brand would you like to work on? (Enter number, name, or "new" to create)
 
 ## Building the List
 
-1. Use Glob pattern `.pawbytes/marketing-suites/brands/*/brand-context.md` to discover all brands
+1. Use Glob pattern `{suite-root}/brands/*/brand-context.md` to discover all brands
 2. For each match, extract brand slug from path and read the `brand-context.md` for name and description
 3. Check SOSTAC status (see `./sostac-status.md`) for progress summary
 4. Check `campaigns/` for active campaign count

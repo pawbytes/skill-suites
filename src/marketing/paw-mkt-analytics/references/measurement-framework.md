@@ -31,7 +31,7 @@ Identify the single metric that best captures customer value. All other metrics 
 
 ## Output
 
-Save as `./.pawbytes/marketing-suites/brands/{brand-slug}/analytics/measurement-plan-{YYYY-MM-DD}.md`
+Save as `{suite-root}/brands/{brand-slug}/analytics/measurement-plan-{YYYY-MM-DD}.md`
 
 **Structure:**
 - North Star Metric (definition, baseline, target)

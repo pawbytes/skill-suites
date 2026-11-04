@@ -22,11 +22,12 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{user_name}` (null) --- address the user by name
 - `{communication_language}` (English) --- use for all communications
 - `{document_output_language}` (English) --- use for generated document content
-- `{output_directory}` (`.pawbytes/creative-suites`) --- base output path
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/creative`. Every `{suite-root}/...` path below is relative to it. A custom folder in config `cra.output_directory` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/creative-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-cra-setup` can move them to `paw-suites/creative/`, and offer it. Keep working either way.
 
-Load shared agency memory from `{project-root}/.pawbytes/creative-suites/index.md`. Identify the active brand and campaign. Load brand guidelines from `.pawbytes/creative-suites/brands/{brand-name}/guidelines.md`.
+Load shared agency memory from `{suite-root}/_memory/index.md`. Identify the active brand and campaign. Load brand guidelines from `{suite-root}/brands/{brand-name}/guidelines.md`.
 
-**Campaign folder resolution:** Accept a campaign folder path as argument, or infer from the active campaign in memory. The campaign folder is expected at `.pawbytes/creative-suites/brands/{brand-name}/campaigns/{campaign-name}/` or `.pawbytes/creative-suites/campaigns/{campaign-name}/`. If no campaign can be resolved, ask the user.
+**Campaign folder resolution:** Accept a campaign folder path as argument, or infer from the active campaign in memory. The campaign folder is expected at `{suite-root}/brands/{brand-name}/campaigns/{campaign-name}/` (campaigns without a brand live under `brands/unassigned/`). If no campaign can be resolved, ask the user.
 
 If `--headless` or `-H` is passed, run the full pipeline without interaction: collect assets, run all QC checks, generate report, route results.
 

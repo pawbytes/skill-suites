@@ -155,7 +155,7 @@ Check for:
 
 ### Step 4: Write Brief Document
 
-1. Write complete brief to `.pawbytes/prodig-suites/products/{product-slug}/product-brief.md`
+1. Write complete brief to `{suite-root}/{product-slug}/product-brief.md`
 2. Record generation timestamp
 3. Note any sections with partial or missing source data
 

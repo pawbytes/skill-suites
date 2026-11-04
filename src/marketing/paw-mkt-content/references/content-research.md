@@ -1,7 +1,7 @@
 # Content Research Capability
 
 ## Overview
-Use browser automation to research content gaps, audience questions, and competitive content. Check `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/00-auto-discovery.md` first -- data may already be collected.
+Use browser automation to research content gaps, audience questions, and competitive content. Check `{suite-root}/brands/{brand-slug}/sostac/00-auto-discovery.md` first -- data may already be collected.
 
 ---
 

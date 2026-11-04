@@ -13,12 +13,13 @@ Explicitly save current state to memory. Useful after significant work or before
 ## What to Save
 
 **Always update:**
-- `index.md` — active brand, campaign status, tool status
+- `{suite-root}/_memory/index.md` — active brand, campaign status, tool status
 
 **Update as needed:**
-- `brands/{brand}/profile.md` — if brand details changed
-- `campaigns/{campaign}/status.md` — if campaign progressed
-- `daily/{date}.md` — append session summary
+- `{suite-root}/brands/{brand}/profile.md` — if brand details changed
+- `{suite-root}/brands/{brand}/campaigns/{campaign}/status.md` — if campaign progressed
+- `{suite-root}/brands/{brand}/README.md` — `Status:`, `Next:` and key links when a campaign or deliverable lands; then run `uv run {skill-root}/scripts/paw-paths.py index`
+- `{suite-root}/_memory/daily/{date}.md` — append session summary
 
 ## Save Format
 

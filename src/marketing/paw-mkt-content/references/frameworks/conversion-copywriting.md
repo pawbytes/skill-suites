@@ -66,4 +66,4 @@ When producing landing or pricing page copy, always deliver:
 3. **2-3 headline alternatives** -- so the user can select the direction or A/B test.
 4. **CTA alternatives** -- at least 2-3 options with different angles (benefit, urgency, social proof).
 
-Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/content/copy/landing-page-{page-name}-{YYYY-MM-DD}.md`.
+Save to `{suite-root}/brands/{brand-slug}/channels/website/landing-page-{page-name}-{YYYY-MM-DD}.md`.

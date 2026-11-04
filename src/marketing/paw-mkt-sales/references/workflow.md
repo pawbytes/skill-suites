@@ -272,7 +272,7 @@ Route to the specific framework template based on asset type:
 ### Content Library Organization
 
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/operations/sales/
+{suite-root}/brands/{brand-slug}/operations/sales/
   library/
     decks/
       sales-deck-v{X}-{YYYY-MM-DD}.md
@@ -357,10 +357,10 @@ Before distributing any sales asset, ask: **Would a sales rep feel confident pre
 ## Path Resolution
 
 **Campaign mode** -- working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/sales/`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/sales/`
 
 **Standalone mode** -- evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/sales/`
+  -> Save to `{suite-root}/brands/{brand-slug}/operations/sales/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 

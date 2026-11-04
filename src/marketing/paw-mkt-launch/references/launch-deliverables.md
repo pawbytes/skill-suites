@@ -6,13 +6,13 @@ All launch deliverables are presented for review before saving. Save to the reso
 
 **Campaign mode** — working within a named campaign:
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/launch/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/launch/
 ```
-Read campaign strategy at `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+Read campaign strategy at `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** — evergreen or independent work:
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/operations/launch/
+{suite-root}/brands/{brand-slug}/operations/launch/
 ```
 
 If unsure, ask: "Is this part of a specific campaign, or standalone work?"
@@ -23,12 +23,12 @@ If unsure, ask: "Is this part of a specific campaign, or standalone work?"
 |---|---|---|
 | Launch Strategy | `launch-strategy-{YYYY-MM-DD}.md` | Launch type, ORB plan, phase timeline, channel owners, success metrics, budget |
 | Launch Brief | `launch-brief-{YYYY-MM-DD}.md` | One-page summary: what, who, when, key messages, channel plan, launch day schedule |
-| Launch Blog Post | `content/launch-post-{YYYY-MM-DD}.md` | Full blog post draft, SEO title, meta description, tags |
-| Email Announcement | `channels/email/content/email-announcement-{YYYY-MM-DD}.md` | Subject line variants, preheader, full body copy, CTA |
-| Social Posts | `channels/social/content/social-posts-{YYYY-MM-DD}.md` | Per-platform drafts: X thread, LinkedIn post, Instagram captions, Reddit/community posts |
-| Press Release | `channels/pr/content/press-release-{YYYY-MM-DD}.md` | Full press release, distribution plan |
-| Product Hunt Brief | `content/product-hunt-brief-{YYYY-MM-DD}.md` | Tagline variants, description, first comment draft, gallery spec, supporter outreach template |
-| Supporter Outreach | `channels/email/content/supporter-email-{YYYY-MM-DD}.md` | Pre-launch supporter briefing email + launch day ask email |
+| Launch Blog Post | `channels/blog/launch-post-{YYYY-MM-DD}.md` | Full blog post draft, SEO title, meta description, tags |
+| Email Announcement | `channels/email/email-announcement-{YYYY-MM-DD}.md` | Subject line variants, preheader, full body copy, CTA |
+| Social Posts | `channels/social/social-posts-{YYYY-MM-DD}.md` | Per-platform drafts: X thread, LinkedIn post, Instagram captions, Reddit/community posts |
+| Press Release | `channels/pr/press-release-{YYYY-MM-DD}.md` | Full press release, distribution plan |
+| Product Hunt Brief | `product-hunt-brief-{YYYY-MM-DD}.md` | Tagline variants, description, first comment draft, gallery spec, supporter outreach template |
+| Supporter Outreach | `channels/email/supporter-email-{YYYY-MM-DD}.md` | Pre-launch supporter briefing email + launch day ask email |
 | Launch Day Schedule | `launch-day-schedule-{YYYY-MM-DD}.md` | Minute-by-minute timeline with owners and channel links |
 | Launch Performance Report | `performance/launch-report-{YYYY-MM}.md` | Results vs targets, learnings, recommendations for next launch |
 
@@ -37,10 +37,11 @@ If unsure, ask: "Is this part of a specific campaign, or standalone work?"
 ### Campaign Mode
 
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/launch-{campaign-slug}/launch/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-launch-{campaign-slug}/launch/
   launch-strategy-{YYYY-MM-DD}.md
   launch-brief-{YYYY-MM-DD}.md
   launch-day-schedule-{YYYY-MM-DD}.md
+  product-hunt-brief-{YYYY-MM-DD}.md
   assets/
     press-kit/
       screenshots/
@@ -49,18 +50,18 @@ If unsure, ask: "Is this part of a specific campaign, or standalone work?"
     launch-report-{YYYY-MM}.md
 
 # Channel-specific content lives in the campaign's channel dirs:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/launch-{campaign-slug}/channels/
-  email/content/email-announcement-{YYYY-MM-DD}.md
-  social/content/social-posts-{YYYY-MM-DD}.md
-  content/content/launch-post-{YYYY-MM-DD}.md
-  pr/content/press-release-{YYYY-MM-DD}.md
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-launch-{campaign-slug}/channels/
+  email/email-announcement-{YYYY-MM-DD}.md
+  social/social-posts-{YYYY-MM-DD}.md
+  blog/launch-post-{YYYY-MM-DD}.md
+  pr/press-release-{YYYY-MM-DD}.md
 ```
 
 ### Standalone Mode
 
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/operations/launch/
-  (same structure, content/ subdir for non-campaign work)
+{suite-root}/brands/{brand-slug}/operations/launch/
+  (same structure; channel pieces go to {suite-root}/brands/{brand-slug}/channels/<channel>/)
 ```
 
 ## Evergreen Launch Assets

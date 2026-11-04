@@ -79,4 +79,4 @@ Deliver:
 - **Stream outline/script** with talking points and transitions
 - **Promotion schedule** (pre-stream announcements)
 - **Post-stream repurposing plan** (clip highlights)
-- **Save to**: `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/video/content/scripts/` or campaign path
+- **Save to**: `{suite-root}/brands/{brand-slug}/channels/video/scripts/` or campaign path

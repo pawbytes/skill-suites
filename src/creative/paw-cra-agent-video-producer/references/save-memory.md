@@ -15,14 +15,14 @@ Trigger this capability when:
 
 ## Memory Locations
 
-**Shared Agency Memory:** `.pawbytes/creative-suites/`
+**Shared agency tree:** `{suite-root}/` (paths below are relative to it; memory lives in `_memory/`)
 
 | File | Purpose | When to Update |
 |------|---------|----------------|
-| `index.md` | Active brands, campaigns, status | When context changes |
+| `_memory/index.md` | Active brands, campaigns, status | When context changes |
 | `brands/{brand}/videos/video-manifest.json` | Production run metadata | After every video production |
 | `brands/{brand}/campaigns/{campaign}/videos/` | Campaign video assets | After campaign video production |
-| `daily/{YYYY-MM-DD}.md` | Activity log | After each significant action |
+| `_memory/daily/{YYYY-MM-DD}.md` | Activity log | After each significant action |
 
 ## Save Process
 

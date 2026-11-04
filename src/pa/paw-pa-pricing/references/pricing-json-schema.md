@@ -9,7 +9,7 @@ Canonical output contract for `{run-folder}/pricing.json`. Downstream `paw-pa-ge
 | `schemaVersion` | string | yes | `"1.0"` |
 | `mode` | enum | yes | `"line-item"` \| `"tiered"` \| `"value-based"` |
 | `clientName` | string | yes | From brief |
-| `proposalSlug` | string | yes | Run folder slug, e.g. `acme-corp-2026-07-03` |
+| `proposalSlug` | string | yes | Run folder slug, e.g. `2026-07-acme-corp` |
 | `generated` | string | yes | ISO date `YYYY-MM-DD` |
 | `currency` | string | yes | ISO 4217, default `"USD"` |
 | `total` | number | yes | Primary quoted amount (selected tier, line-item sum, or value price) |
@@ -102,7 +102,7 @@ Include baseline `"label": "List price", "percent": 0` as first entry.
   "schemaVersion": "1.0",
   "mode": "tiered",
   "clientName": "Acme Corp",
-  "proposalSlug": "acme-corp-2026-07-03",
+  "proposalSlug": "2026-07-acme-corp",
   "generated": "2026-07-03",
   "currency": "USD",
   "total": 12000,
@@ -135,7 +135,7 @@ Appended to `library/pricing-history.json` — simplified:
 {
   "date": "2026-07-03",
   "client": "Acme Corp",
-  "proposalSlug": "acme-corp-2026-07-03",
+  "proposalSlug": "2026-07-acme-corp",
   "proposalType": "pitch",
   "mode": "tiered",
   "lineItems": [],

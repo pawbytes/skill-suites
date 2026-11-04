@@ -13,25 +13,25 @@ Checking required tools:
 ## Memory Location
 
 The Designer shares memory with the Aria Creative Suite at:
-`.pawbytes/creative-suites/`
+`{suite-root}/`
 
 ## Shared Memory Structure
 
 The agency memory contains:
 
 ```
-.pawbytes/creative-suites/
-├── index.md                    # Active brands, campaigns
-├── brands/
-│   └── {brand-name}/
-│       ├── guidelines.md       # Colors, fonts, voice, logo
-│       ├── assets/
-│       └── campaigns/
-│           └── {campaign}/
-│               ├── brief.md
-│               └── assets/
-└── daily/
-    └── {YYYY-MM-DD}.md         # Activity log
+{suite-root}/
+├── _memory/index.md            # Active brands, campaigns
+├── _memory/daily/              # Activity log
+└── brands/
+    └── {brand-name}/
+        ├── guidelines.md       # Colors, fonts, voice, logo
+        ├── brand-assets/
+        ├── designs/
+        └── campaigns/
+            └── {YYYY-MM-campaign}/
+                ├── brief.md
+                └── designs/
 ```
 
 ## Initial Questions

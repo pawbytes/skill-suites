@@ -25,7 +25,7 @@ Before export, build `{run-folder}/brand-snapshot.json` from `brand/identity.md`
 }
 ```
 
-Parse hex colors, font stacks, and logo path from `identity.md`. If logo path is relative, resolve from `{memory-root}/brand/`. If logo missing, export proceeds without it.
+Parse hex colors, font stacks, and logo path from `identity.md`. If logo path is relative, resolve from `{suite-root}/brand/`. If logo missing, export proceeds without it.
 
 ## Export formats
 

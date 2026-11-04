@@ -24,12 +24,13 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{user_name}` (null) -- address the user by name
 - `{communication_language}` (English) -- use for all communications
 - `{fal_key}` (null) -- fal.ai API key (required for AI generation)
-- `{output_directory}` (`.pawbytes/creative-suites`) -- base output path
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/creative`. Every `{suite-root}/...` path below is relative to it. A custom folder in config `cra.output_directory` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/creative-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-cra-setup` can move them to `paw-suites/creative/`, and offer it. Keep working either way.
 - `{default_brand}` (null) -- default brand name
 
 Load shared agency memory:
-- `{project-root}/.pawbytes/creative-suites/index.md` -- active brands and campaigns
-- `{project-root}/.pawbytes/creative-suites/brands/{brand}/guidelines.md` -- brand context (loaded after brand is identified)
+- `{suite-root}/_memory/index.md` -- active brands and campaigns
+- `{suite-root}/brands/{brand}/guidelines.md` -- brand context (loaded after brand is identified)
 
 Verify tool availability:
 - `fal_key` -- required for all AI generation
@@ -69,7 +70,7 @@ If interactive and the brief is incomplete, ask targeted questions to fill gaps.
 
 ### Step 2: Brand Context
 
-Load brand guidelines from `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/guidelines.md`.
+Load brand guidelines from `{suite-root}/brands/{brand-name}/guidelines.md`.
 
 Extract and keep available throughout the pipeline:
 - Color palette (primary, secondary, accent hex values)
@@ -111,7 +112,7 @@ Execute generation using the fal.ai CLI (curl). Model endpoints:
 
 Generate 2-3 variations for interactive mode (user picks best). Generate 1 best-fit for headless mode.
 
-Download all generated images to `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/assets/wip/` immediately -- never leave assets as URLs only.
+Download all generated images to `{suite-root}/brands/{brand-name}/designs/wip/` immediately -- never leave assets as URLs only.
 
 ### Step 5: Flyer Template Rendering (flyers only)
 
@@ -162,22 +163,24 @@ Export approved assets to final location:
 - PNG at exact target dimensions
 
 **File naming:** `{asset-type}_{descriptor}_{date}.{ext}`
-**Location:** `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/assets/`
+**Location:** brand identity in `{suite-root}/brands/{brand-name}/brand-assets/`, flyers in `{suite-root}/brands/{brand-name}/designs/flyers/` (or the campaign's `designs/flyers/`).
 
 Organize into subdirectories:
 ```
-assets/
-  brand-identity/
-    logo/
-    icons/
-  flyers/
+brand-assets/
+  logo/
+  icons/
   banners/
   avatars/
+  design-manifest.json
+designs/
+  flyers/
+  wip/
 ```
 
 ### Step 8: Manifest & Delivery
 
-Write `design-manifest.json` to the brand assets directory:
+Write `design-manifest.json` to `brand-assets/` (flyer-only runs: beside the flyers):
 
 ```json
 {
@@ -202,10 +205,12 @@ Write `design-manifest.json` to the brand assets directory:
 }
 ```
 
-Append activity to daily log at `{project-root}/.pawbytes/creative-suites/daily/YYYY-MM-DD.md`:
+Append activity to daily log at `{suite-root}/_memory/daily/YYYY-MM-DD.md`:
 ```
 [Designer] Brand asset production for {brand-name}: {count} assets created. See design-manifest.json.
 ```
+
+Then update `Status:`/`Next:` and links in `{suite-root}/brands/{brand-name}/README.md` and run `uv run {skill-root}/scripts/paw-paths.py index`.
 
 Present final summary with file paths and any notes.
 

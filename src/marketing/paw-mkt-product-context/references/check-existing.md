@@ -4,7 +4,7 @@ Before building or updating product marketing context, check what already exists
 
 ## Step 1 — Existing Product Marketing Context?
 
-Look for `./.pawbytes/marketing-suites/brands/{brand-slug}/paw-mkt-product-context.md`.
+Look for `{suite-root}/brands/{brand-slug}/product-context.md`.
 
 | Condition | Action |
 |-----------|--------|
@@ -13,7 +13,7 @@ Look for `./.pawbytes/marketing-suites/brands/{brand-slug}/paw-mkt-product-conte
 
 ## Step 2 — SOSTAC Files Available?
 
-Scan `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/` for completed phase files:
+Scan `{suite-root}/brands/{brand-slug}/sostac/` for completed phase files:
 
 | SOSTAC File | Rich content to extract |
 |-------------|-------------------------|

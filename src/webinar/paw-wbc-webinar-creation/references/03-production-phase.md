@@ -124,7 +124,7 @@ Move to Stage 4 when:
 | Slide deck outline | `{webinar-slug}/slide-deck-outline.md` |
 | Script | `{webinar-slug}/script.md` |
 | Recommendations | `{webinar-slug}/recommendations.md` |
-| Daily log entry | `daily/{YYYY-MM-DD}.md` |
+| Daily log entry | `_memory/daily/{YYYY-MM-DD}.md` |
 
 ## Producer Agent Invocation
 

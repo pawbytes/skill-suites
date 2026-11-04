@@ -15,9 +15,9 @@ Use the **Agent tool** to launch parallel sub-agents. Designer and Video Produce
 For each design workflow group, invoke `paw-cra-agent-designer` via Agent tool with:
 
 - The specific deliverables assigned to this group
-- Brand guidelines path: `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/guidelines.md`
+- Brand guidelines path: `{suite-root}/brands/{brand-name}/guidelines.md`
 - Campaign context: campaign name, deadlines
-- Output expectation: assets saved to campaign folder + `design-manifest.json`
+- Output expectation: assets saved to the campaign's `designs/` folder (`{suite-root}/brands/{brand-name}/campaigns/{campaign-name}/designs/`) + `design-manifest.json`
 - Workflow hint: which companion workflow to use (`paw-cra-design-social`, `paw-cra-design-brand`, or `paw-cra-design-batch`)
 - `--headless` flag for autonomous execution
 
@@ -33,7 +33,7 @@ Deliverables:
 1. [deliverable details with copy, platform, specs]
 2. [deliverable details...]
 
-Use the {workflow} workflow. Save all assets to the campaign folder. Generate design-manifest.json listing all produced assets.
+Use the {workflow} workflow. Save all assets under {campaign-folder}/designs/. Generate design-manifest.json listing all produced assets.
 ```
 
 ### Video Track Dispatch
@@ -43,7 +43,7 @@ Same pattern for `paw-cra-agent-video-producer`:
 - The specific deliverables assigned to this group
 - Brand guidelines and campaign context
 - Any scripts or storyboards (from brief or Strategist)
-- Output expectation: video files + `video-manifest.json`
+- Output expectation: video files in the campaign's `videos/` folder (`short-form/`, `long-form/{slug}/`, `clips/{session}/`) + `video-manifest.json`
 - Workflow hint: `paw-cra-video-shortform`, `paw-cra-video-longform`, or `paw-cra-video-clips`
 - `--headless` flag
 

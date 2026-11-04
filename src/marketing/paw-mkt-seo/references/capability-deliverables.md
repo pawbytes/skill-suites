@@ -65,7 +65,7 @@ Produce as needed:
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/seo/content/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/seo/
   seo-audit-{YYYY-MM-DD}.md
   keyword-research-{topic}-{YYYY-MM-DD}.md
   seo-action-plan-{YYYY-MM}.md
@@ -75,7 +75,7 @@ Produce as needed:
     {type}-{YYYY-MM-DD}.json
 
 # Standalone mode (default for evergreen work):
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/seo/content/
+{suite-root}/brands/{brand-slug}/channels/seo/
   seo-audit-{YYYY-MM-DD}.md
   keyword-research-{topic}-{YYYY-MM-DD}.md
   seo-action-plan-{YYYY-MM}.md

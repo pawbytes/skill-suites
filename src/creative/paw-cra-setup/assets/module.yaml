@@ -10,8 +10,8 @@ greeting: Pawbytes Creative Suites is ready. Run `paw-cra-agent-creative-directo
 config_path: .pawbytes/config/config.yaml
 user_config_path: .pawbytes/config/config.user.yaml
 
-# Memory/output root for this module
-memory_path: .pawbytes/creative-suites
+# Output root for this module (memory lives in its _memory/ folder)
+memory_path: paw-suites/creative/_memory
 
 questions:
   # API Keys (stored in user config, not committed)
@@ -54,7 +54,7 @@ questions:
 
   - key: output_directory
     prompt: "Output directory for creative assets"
-    default: ".pawbytes/creative-suites"
+    default: "paw-suites/creative"
     user_setting: false
     required: false
     result_template: "{project-root}/{value}"
@@ -67,10 +67,10 @@ questions:
 
 # Directories to create during setup
 directories:
-  - "{output_directory}"
   - "{output_directory}/brands"
-  - "{output_directory}/knowledge"
-  - "{output_directory}/daily"
+  - "{output_directory}/_memory/knowledge"
+  - "{output_directory}/_memory/daily"
+  - "{project-root}/.pawbytes/creative/.auth"
 
 # Post-install notes
 post_install_notes: |

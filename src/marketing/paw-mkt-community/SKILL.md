@@ -47,16 +47,19 @@ Greet the user and offer to show available capabilities.
 | Existing Codebase / Implementation | Research existing community assets, platform setup, and engagement patterns before proposing changes |
 | Live Community URL | Audit the live community first, use visible structure as working source of truth |
 
-Read brand files when available: `./.pawbytes/marketing-suites/brands/{brand-slug}/brand-context.md`, `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/03-strategy.md`, `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/04-tactics.md`.
+Read brand files when available: `{suite-root}/brands/{brand-slug}/brand-context.md`, `{suite-root}/brands/{brand-slug}/sostac/03-strategy.md`, `{suite-root}/brands/{brand-slug}/sostac/04-tactics.md`.
 
 ## Path Resolution
 
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/marketing`. All paths below are relative to it. A custom folder in config `mkt.brands_folder` replaces `{suite-root}/brands` (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/marketing-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-mkt-setup` can move them to `paw-suites/marketing/`, and offer it. Keep working either way.
+
 **Campaign mode** — working within a named campaign:
-- Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/community/`
-- Read campaign strategy at `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+- Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/community/`
+- Read campaign strategy at `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** — evergreen or independent work:
-- Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/community/`
+- Save to `{suite-root}/brands/{brand-slug}/operations/community/`
 
 If unsure, ask: "Is this part of a specific campaign, or standalone work?"
 

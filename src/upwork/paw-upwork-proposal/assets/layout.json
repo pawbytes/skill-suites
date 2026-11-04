@@ -1,0 +1,24 @@
+{
+  "suite": "upwork",
+  "title": "PawBytes Upwork",
+  "config_section": "upwork",
+  "root": "paw-suites/upwork",
+  "legacy_root": ".pawbytes/upwork-suites",
+  "items": ["freelancers/*"],
+  "rules": [
+    {"from": "freelancers/*/index.md", "to": "freelancers/{1}/_memory/index.md"},
+    {"from": "freelancers/*/daily/**", "to": "freelancers/{1}/_memory/daily/{rest}"}
+  ],
+  "config_keys": [
+    {
+      "key": "freelancers_folder",
+      "legacy": "{project-root}/.pawbytes/upwork-suites/freelancers",
+      "new": "{project-root}/paw-suites/upwork/freelancers"
+    },
+    {
+      "key": "reports_folder",
+      "legacy": "{project-root}/.pawbytes/upwork-suites/reports",
+      "new": "{project-root}/paw-suites/upwork/reports"
+    }
+  ]
+}

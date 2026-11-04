@@ -5,9 +5,9 @@ Always loaded. Matches the seller's indexed portfolio to the current brief — t
 ## Inputs
 
 - `{run-folder}/brief.md` — client, industry signals, requirements, deliverables, proposal type
-- `{memory-root}/library/case-studies-index.json` — array of indexed case studies
+- `{suite-root}/library/case-studies-index.json` — array of indexed case studies
 
-If the index is empty or missing, tell the seller to run `paw-pa-library` or drop docs in `{memory-root}/library/inbox/`. Proceed with zero local matches; do not invent portfolio entries.
+If the index is empty or missing, tell the seller to run `paw-pa-library` or drop docs in `{suite-root}/library/inbox/`. Proceed with zero local matches; do not invent portfolio entries.
 
 ## Matching dimensions
 

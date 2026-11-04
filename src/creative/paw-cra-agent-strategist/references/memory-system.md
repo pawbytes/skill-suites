@@ -1,23 +1,25 @@
 # Memory System
 
-The Strategist reads and writes to the **shared agency memory** at `{project-root}/.pawbytes/creative-suites/`.
+The Strategist reads and writes the **shared agency tree** at `{suite-root}/` (memory in `_memory/`).
 
 ## Memory Structure
 
 ```
-.pawbytes/creative-suites/
-├── index.md                    # Agency roster, active campaigns, status
-├── daily/
-│   └── YYYY-MM-DD.md           # Activity log (append-only)
+{suite-root}/
+├── _memory/
+│   ├── index.md                # Agency roster, active campaigns, status
+│   └── daily/YYYY-MM-DD.md     # Activity log (append-only)
 └── brands/
     └── {brand-name}/
+        ├── README.md           # Brand dashboard (Status:, Next:, links)
         ├── guidelines.md       # Brand identity
         ├── research/
         │   ├── competitor-analysis.md
         │   ├── content-opportunities.md
-        │   └── trend-analysis.md
+        │   ├── trend-analysis.md
+        │   └── screenshots/
         └── campaigns/
-            └── {campaign-name}/
+            └── {YYYY-MM-campaign}/
                 ├── brief.md
                 ├── scripts/
                 ├── copy/
@@ -26,24 +28,24 @@ The Strategist reads and writes to the **shared agency memory** at `{project-roo
 
 ## What to Read on Activation
 
-1. `{project-root}/.pawbytes/creative-suites/index.md` — agency context
-2. If `active_brand` in index: load `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/guidelines.md`
+1. `{suite-root}/_memory/index.md` — agency context
+2. If `active_brand` in index: load `{suite-root}/brands/{brand-name}/guidelines.md`
 3. If `active_campaign` in index: load the campaign brief
 
 ## What to Write
 
 | Output | Path |
 |--------|------|
-| Competitor analysis | `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/research/competitor-analysis.md` |
-| Content opportunities | `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/research/content-opportunities.md` |
-| Trend analysis | `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/research/trend-analysis.md` |
-| Scripts | `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/campaigns/{campaign}/scripts/{script-name}.md` |
-| Copy drafts | `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/campaigns/{campaign}/copy/{platform}-{type}.md` |
-| Content calendar | `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/campaigns/{campaign}/content-calendar.md` |
+| Competitor analysis | `{suite-root}/brands/{brand-name}/research/competitor-analysis.md` |
+| Content opportunities | `{suite-root}/brands/{brand-name}/research/content-opportunities.md` |
+| Trend analysis | `{suite-root}/brands/{brand-name}/research/trend-analysis.md` |
+| Scripts | `{suite-root}/brands/{brand-name}/campaigns/{campaign}/scripts/{script-name}.md` |
+| Copy drafts | `{suite-root}/brands/{brand-name}/campaigns/{campaign}/copy/{platform}-{type}.md` |
+| Content calendar | `{suite-root}/brands/{brand-name}/campaigns/{campaign}/content-calendar.md` |
 
 ## Activity Logging
 
-Append to `{project-root}/.pawbytes/creative-suites/daily/YYYY-MM-DD.md`:
+Append to `{suite-root}/_memory/daily/YYYY-MM-DD.md`:
 
 ```markdown
 ## [Strategist] HH:MM - {Activity}
@@ -57,4 +59,4 @@ When the Strategist completes work that feeds into production:
 
 1. Update the campaign brief with a "Strategy Complete" section
 2. Note which assets are ready for Designer/Video Producer
-3. Update `index.md` if the campaign status changed
+3. Update `{suite-root}/_memory/index.md` if the campaign status changed

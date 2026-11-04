@@ -141,9 +141,12 @@ Write `brief.md` to `{webinar-slug}/brief.md`:
 Initialize the webinar workspace:
 
 ```text
-.pawbytes/webinar-suites/webinars/{webinar-slug}/
+{suite-root}/{webinar-slug}/
+├── README.md         # Dashboard: Status: Brief captured / Next: Discovery
 ├── brief.md          # Just created
 ```
+
+Then run `uv run {skill-root}/scripts/paw-paths.py index`.
 
 ### 10. Confirm and Gate
 

@@ -1,6 +1,6 @@
 # Save Memory
 
-Protocol for writing to sidecar memory to maintain context and enable continuity across sessions.
+Protocol for writing to shared memory to maintain context and enable continuity across sessions.
 
 ## Purpose
 
@@ -9,21 +9,20 @@ Ensure all significant work is persisted to memory so future sessions can build 
 ## Memory Structure
 
 ```
-.pawbytes/prodig-suites/memory/paw-ps-sidecar/
+{suite-root}/_memory/
 ├── index.md                          # Memory index
 ├── curated/                          # Curated, processed intelligence
 │   ├── product-context.md
 │   ├── audience-intelligence.md
-│   ├── output-standards.md
 │   ├── product-types/
 │   │   └── knowledge-products.md
 │   └── product-decisions.md
-├── artifacts/                        # Produced artifacts
-│   └── {product-slug}/
 ├── daily/                            # Daily logs
 │   └── YYYY-MM-DD.md
 └── research/                         # Raw research notes (optional)
 ```
+
+Produced artifacts are deliverables, not memory: they go to `{suite-root}/{product-slug}/build/`.
 
 ## Write Triggers
 
@@ -42,7 +41,7 @@ Write to memory when:
 Write produced artifacts to:
 
 ```
-{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/artifacts/{product-slug}/
+{suite-root}/{product-slug}/build/
 ```
 
 **Naming Convention:**
@@ -55,7 +54,7 @@ Write produced artifacts to:
 Refine and update knowledge product guidance:
 
 ```
-{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types/knowledge-products.md
+{suite-root}/_memory/curated/product-types/knowledge-products.md
 ```
 
 Update when:
@@ -69,7 +68,7 @@ Update when:
 Log daily activity to:
 
 ```
-{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md
+{suite-root}/_memory/daily/YYYY-MM-DD.md
 ```
 
 **Log Format:**
@@ -100,7 +99,7 @@ Brief description of what was worked on.
 After writing new files, update `index.md`:
 
 ```markdown
-# Sidecar Memory Index
+# Shared Memory Index
 
 ## Curated Intelligence
 | File | Purpose | Last Updated |
@@ -113,7 +112,7 @@ After writing new files, update `index.md`:
 ## Active Artifacts
 | Product | Type | Status | Path |
 |---------|------|--------|------|
-| {name} | course/ebook/membership | in-progress/complete | artifacts/{slug}/ |
+| {name} | course/ebook/membership | in-progress/complete | {suite-root}/{slug}/build/ |
 
 ## Recent Activity
 | Date | Activity | Artifacts |

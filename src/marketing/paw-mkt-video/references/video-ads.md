@@ -113,4 +113,4 @@ Deliver:
 - **Platform-specific recommendations** (format, duration, style)
 - **Production direction** (UGC vs polished, equipment)
 - **Creative refresh schedule** (7-14 day cycle for TikTok)
-- **Save to**: `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/video/content/ad-scripts/ad-script-{platform}-{slug}-{YYYY-MM-DD}.md`
+- **Save to**: `{suite-root}/brands/{brand-slug}/channels/video/ad-scripts/ad-script-{platform}-{slug}-{YYYY-MM-DD}.md`

@@ -214,7 +214,7 @@ Use PRD-lite when:
 
 **Format:** Markdown document using template above
 
-**Location:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/artifacts/{product-slug}/prd-lite.md`
+**Location:** `{suite-root}/{product-slug}/build/prd-lite.md`
 
 **Naming:** `prd-lite.md`
 

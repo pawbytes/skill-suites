@@ -27,19 +27,16 @@ Coordinate with agency ecosystem, manage file organization, and handle escalatio
 - PR: digital PR and link building overlap
 
 **Reporting**:
-- Monthly performance summaries to `./.pawbytes/marketing-suites/brands/{brand-slug}/analytics/seo/`
+- Monthly performance summaries to `{suite-root}/brands/{brand-slug}/channels/seo/performance/`
 
 ### File Organization
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/seo/content/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/seo/
 
 # Standalone mode (default):
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/seo/content/
-
-# Legacy fallback:
-./.pawbytes/marketing-suites/brands/{brand-slug}/content/seo/
+{suite-root}/brands/{brand-slug}/channels/seo/
 ```
 
 ### When to Escalate

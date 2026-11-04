@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # /// script
-# requires-python = ">=3.9"
+# requires-python = ">=3.11"
 # dependencies = ["pyyaml"]
 # ///
-"""Merge module configuration into shared _bmad/config.yaml and config.user.yaml.
+"""Merge module configuration into shared .pawbytes/config/config.yaml and config.user.yaml.
 
 Reads a module.yaml definition and a JSON answers file, then writes or updates
 the shared config.yaml (core values at root + module section) and config.user.yaml
@@ -15,6 +15,10 @@ from {legacy-dir}/{module-code}/config.yaml and {legacy-dir}/core/config.yaml.
 Matching values serve as fallback defaults (answers override them). After a
 successful merge, the legacy config.yaml files are deleted. Only the current
 module and core directories are touched — other module directories are left alone.
+
+Validation: a module.yaml variable may declare `choices: [...]` (the answer must be one
+of them) and `type: number | integer | positive_number | positive_integer`; numeric
+strings are converted. A failing answer exits 1 with the problems as JSON on stderr.
 
 Exit codes: 0=success, 1=validation error, 2=runtime error
 """
@@ -33,12 +37,12 @@ except ImportError:
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Merge module config into shared _bmad/config.yaml with anti-zombie pattern."
+        description="Merge module config into shared .pawbytes/config/config.yaml with anti-zombie pattern."
     )
     parser.add_argument(
         "--config-path",
         required=True,
-        help="Path to the target _bmad/config.yaml file",
+        help="Path to the target .pawbytes/config/config.yaml file",
     )
     parser.add_argument(
         "--module-yaml",
@@ -53,11 +57,11 @@ def parse_args():
     parser.add_argument(
         "--user-config-path",
         required=True,
-        help="Path to the target _bmad/config.user.yaml file",
+        help="Path to the target .pawbytes/config/config.user.yaml file",
     )
     parser.add_argument(
         "--legacy-dir",
-        help="Path to _bmad/ directory to check for legacy per-module config files. "
+        help="Path to .pawbytes/ directory to check for legacy per-module config files. "
         "Matching values are used as fallback defaults, then legacy files are deleted.",
     )
     parser.add_argument(
@@ -80,8 +84,48 @@ def load_yaml_file(path: str) -> dict:
 
 def load_json_file(path: str) -> dict:
     """Load a JSON file."""
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, "r", encoding="utf-8-sig") as f:
         return json.load(f)
+
+
+_TYPES = ("number", "integer", "positive_number", "positive_integer")
+
+
+def validate_module_answers(module_yaml: dict, module_answers: dict) -> tuple[dict, list]:
+    """Check answers against each variable's `choices` and `type`; return (answers, problems).
+
+    Numeric strings are converted to numbers for typed variables.
+    """
+    checked = dict(module_answers)
+    problems = []
+    for key, value in module_answers.items():
+        var_def = module_yaml.get(key)
+        if not isinstance(var_def, dict):
+            continue
+        kind = var_def.get("type")
+        if kind in _TYPES:
+            number = value
+            if isinstance(value, str):
+                try:
+                    number = float(value) if any(c in value for c in ".eE") else int(value)
+                except ValueError:
+                    number = None
+            if isinstance(number, bool) or not isinstance(number, (int, float)):
+                problems.append(f"{key}: '{value}' is not a number")
+                continue
+            if kind.endswith("integer"):
+                if float(number) != int(number):
+                    problems.append(f"{key}: {value} must be a whole number")
+                    continue
+                number = int(number)
+            if kind.startswith("positive") and number <= 0:
+                problems.append(f"{key}: {value} must be greater than 0")
+                continue
+            checked[key] = number
+        choices = var_def.get("choices")
+        if isinstance(choices, list) and checked[key] not in choices:
+            problems.append(f"{key}: '{value}' is not one of {', '.join(str(c) for c in choices)}")
+    return checked, problems
 
 
 # Keys that live at config root (shared across all modules)
@@ -369,6 +413,14 @@ def main():
             if args.verbose:
                 print("Applied legacy values as fallback defaults", file=sys.stderr)
 
+    # Validate module answers against choices and types before anything is written
+    checked, problems = validate_module_answers(module_yaml, answers.get("module", {}))
+    if problems:
+        print(json.dumps({"status": "error", "error": "invalid answers", "problems": problems}), file=sys.stderr)
+        sys.exit(1)
+    if "module" in answers:
+        answers = {**answers, "module": checked}
+
     # Merge and write config.yaml
     updated_config = merge_config(existing_config, module_yaml, answers, args.verbose)
     write_config(updated_config, args.config_path, args.verbose)
@@ -405,4 +457,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")
+    try:
+        main()
+    except Exception as exc:  # report as JSON, never a traceback; exit 1 stays "validation error"
+        print(json.dumps({"status": "error", "error": f"{type(exc).__name__}: {exc}"}), file=sys.stderr)
+        sys.exit(2)

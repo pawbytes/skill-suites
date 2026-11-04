@@ -54,7 +54,7 @@ Extract and structure:
 
 ### 4. Save to Knowledge Base
 
-Save findings to `.pawbytes/creative-suites/knowledge/`:
+Save findings to `{suite-root}/_memory/knowledge/`:
 
 ```markdown
 ---
@@ -92,7 +92,7 @@ expires: YYYY-MM-DD (optional, for time-sensitive data)
 
 ### 5. Update Memory Index
 
-Add entry to `.pawbytes/creative-suites/knowledge/index.md`:
+Add entry to `{suite-root}/_memory/knowledge/index.md`:
 
 ```markdown
 # Designer Knowledge Base
@@ -124,7 +124,7 @@ Key findings:
 - {Finding 2}
 - {Finding 3}
 
-Saved to: `.pawbytes/creative-suites/knowledge/{filename}.md`
+Saved to: `{suite-root}/_memory/knowledge/{filename}.md`
 
 I'll now apply these specifications to your design.
 ```
@@ -153,7 +153,7 @@ Research process:
 1. Search "Bluesky social media image dimensions 2026"
 2. Find official Bluesky docs and marketing guides
 3. Extract: Profile banner size, post image size, avatar size
-4. Save to `knowledge/bluesky-specs.md`
+4. Save to `_memory/knowledge/bluesky-specs.md`
 5. Update knowledge index
 
 ### Example 2: Technical Issue
@@ -175,7 +175,7 @@ Research process:
 1. Search "LinkedIn carousel design trends 2026 engagement"
 2. Find recent case studies and marketing reports
 3. Extract patterns: color usage, typography, narrative structure
-4. Save findings to `knowledge/linkedin-carousel-trends-2026-q1.md`
+4. Save findings to `_memory/knowledge/linkedin-carousel-trends-2026-q1.md`
 5. Apply insights to design recommendations
 
 ## Integration with Other Capabilities
@@ -190,7 +190,7 @@ Research integrates with:
 ## Avoiding Redundant Research
 
 Before researching:
-1. Check `.pawbytes/creative-suites/knowledge/` for existing data
+1. Check `{suite-root}/_memory/knowledge/` for existing data
 2. Check `platform-specifications.md` for known platforms
 3. Check `best-practices-common-mistakes.md` for known issues
 

@@ -24,7 +24,7 @@ Use `agent-browser` for live competitive intelligence when:
 ```bash
 agent-browser --session sales-research open "https://{competitor-domain}/pricing" && agent-browser wait --load networkidle
 agent-browser get text body
-agent-browser screenshot ./.pawbytes/marketing-suites/brands/{brand-slug}/operations/sales/research/competitor-{n}-pricing.png
+agent-browser screenshot {suite-root}/brands/{brand-slug}/operations/sales/research/competitor-{n}-pricing.png
 ```
 
 ### 2. Competitor Comparison Pages

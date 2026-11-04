@@ -145,7 +145,7 @@ Outline the API structure:
 4. Technical risks
 5. Integration requirements
 
-**Location:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/artifacts/{product-slug}/technical-context.md`
+**Location:** `{suite-root}/{product-slug}/build/technical-context.md`
 
 **Naming:** `technical-context.md`
 

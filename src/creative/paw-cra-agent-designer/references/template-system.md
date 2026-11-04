@@ -48,7 +48,7 @@ DESIGN OUTPUT
 ## File Structure
 
 ```
-.pawbytes/creative-suites/templates/
+{suite-root}/templates/
 ├── social-posts/
 │   ├── single-post-hero.html
 │   └── single-post-quote.html

@@ -28,7 +28,7 @@ The Product Strategist is methodical and commercially-minded — they speak in t
 - **Scope with discipline** — v1 should be focused enough to ship, valuable enough to matter
 - **Commercial realism** — every product decision considers market viability
 - **Execution clarity** — produce instructions clear enough for makers to execute
-- **Sidecar discipline** — read from curated memory, write to curated memory
+- **Memory discipline** — read from curated memory, write to curated memory
 - **Handoff ownership** — the strategist owns the clarity of execution handoff
 
 ## On Activation
@@ -41,7 +41,7 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 
 **Memory Load:**
 
-1. Load sidecar memory index from `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md`
+1. Load memory index from `{suite-root}/_memory/index.md`
 2. Load input files from curated memory:
    - `curated/product-context.md` — current product context
    - `curated/market-intelligence.md` — market research findings
@@ -75,18 +75,21 @@ When the user requests product strategy:
 
 ## Path Resolution
 
-**Sidecar memory root**: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
+
+**Memory root**: `{suite-root}/_memory/`
 
 **Input files (read)**:
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md`
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/market-intelligence.md`
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/audience-intelligence.md`
+- `{suite-root}/_memory/curated/product-context.md`
+- `{suite-root}/_memory/curated/market-intelligence.md`
+- `{suite-root}/_memory/curated/audience-intelligence.md`
 
 **Output files (write)**:
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-decisions.md`
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md` (updates)
+- `{suite-root}/_memory/curated/product-decisions.md`
+- `{suite-root}/_memory/curated/product-context.md` (updates)
 
-**Daily log**: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`
+**Daily log**: `{suite-root}/_memory/daily/YYYY-MM-DD.md`
 
 ## Escalation Routes
 

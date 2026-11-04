@@ -67,10 +67,10 @@ In interactive mode, show the validation report and ask for final approval befor
 
 ### File Placement
 
-Move the final video to the brand's video directory:
+Move the final video to the brand's short-form folder (inside a campaign: `{suite-root}/brands/{brand}/campaigns/{campaign}/videos/short-form/`):
 
 ```
-{project-root}/.pawbytes/creative-suites/brands/{brand}/videos/{filename}.mp4
+{suite-root}/brands/{brand}/videos/short-form/{filename}.mp4
 ```
 
 **Filename convention:** `{platform}-{topic-slug}-{YYYYMMDD}-{HHmm}.mp4`
@@ -85,7 +85,7 @@ Write `video-manifest.json` alongside the video (or append to existing manifest 
 {
   "id": "{uuid}",
   "filename": "{filename}.mp4",
-  "path": ".pawbytes/creative-suites/brands/{brand}/videos/{filename}.mp4",
+  "path": "paw-suites/creative/brands/{brand}/videos/short-form/{filename}.mp4",
   "created": "{ISO-8601}",
   "brand": "{brand}",
   "platform": "{platform}",
@@ -116,7 +116,7 @@ After successful export, the working directory (`{work_dir}`) can be cleaned up.
 
 ### Daily Activity Log
 
-Append to `{project-root}/.pawbytes/creative-suites/daily/{YYYY-MM-DD}.md`:
+Append to `{suite-root}/_memory/daily/{YYYY-MM-DD}.md`:
 
 ```markdown
 ## {HH:MM} [VideoProducer]
@@ -124,7 +124,7 @@ Append to `{project-root}/.pawbytes/creative-suites/daily/{YYYY-MM-DD}.md`:
 **For:** {brand}{/campaign if applicable}
 **Platform:** {platform}
 **Duration:** {duration}s
-**Output:** .pawbytes/creative-suites/brands/{brand}/videos/{filename}.mp4
+**Output:** {suite-root}/brands/{brand}/videos/short-form/{filename}.mp4
 **Model:** {generation_model}
 **Scenes:** {scene_count}
 **Status:** Complete
@@ -132,7 +132,7 @@ Append to `{project-root}/.pawbytes/creative-suites/daily/{YYYY-MM-DD}.md`:
 
 ### Campaign Status (if applicable)
 
-If this video is part of a campaign, update `{project-root}/.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/status.md` to reflect the new deliverable.
+If this video is part of a campaign, update `{suite-root}/brands/{brand}/campaigns/{campaign}/status.md` to reflect the new deliverable, then update the `Status:`/`Next:` lines and links in `{suite-root}/brands/{brand}/README.md` and run `uv run {skill-root}/scripts/paw-paths.py index`.
 
 ### Final Output Summary
 
@@ -142,7 +142,7 @@ Present to the user (or return in headless mode):
 ## Video Complete
 
 **File:** {filename}.mp4
-**Location:** .pawbytes/creative-suites/brands/{brand}/videos/
+**Location:** {suite-root}/brands/{brand}/videos/short-form/
 **Duration:** {duration}s
 **Platform:** {platform}
 **Resolution:** 1080x1920 (H.264)

@@ -4,7 +4,8 @@
 # ///
 """
 Memory Initialization Script for Aria Creative Suite
-Creates the shared memory structure at .pawbytes/creative-suites/
+Creates the suite tree at paw-suites/creative/ (or --suite-root): _memory/ with
+index.md, daily/ and knowledge/, plus brands/.
 """
 
 import argparse
@@ -14,16 +15,20 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 
-def create_memory_structure(root_path: Path) -> dict:
-    """Create the memory folder structure."""
-    base = root_path / ".pawbytes" / "creative-suites"
+SUITE_ROOT = Path("paw-suites") / "creative"
+
+
+def create_memory_structure(root_path: Path, suite_root: Path | None = None) -> dict:
+    """Create the suite folder structure under the project root (or an explicit suite root)."""
+    base = suite_root if suite_root else root_path / SUITE_ROOT
+    memory = base / "_memory"
 
     folders = [
         base,
+        memory,
+        memory / "daily",
+        memory / "knowledge",
         base / "brands",
-        base / "campaigns",
-        base / "briefs",
-        base / "daily",
     ]
 
     created = []
@@ -33,13 +38,14 @@ def create_memory_structure(root_path: Path) -> dict:
 
     return {
         "base": str(base),
+        "memory": str(memory),
         "folders": created
     }
 
 
-def create_index(base: Path) -> bool:
-    """Create the initial index.md file."""
-    index_path = base / "index.md"
+def create_index(memory: Path) -> bool:
+    """Create the initial index.md file in the memory folder."""
+    index_path = memory / "index.md"
 
     if index_path.exists():
         return False
@@ -71,10 +77,10 @@ Run tool discovery to update tool status. Onboard a brand to set active brand.
     return True
 
 
-def create_daily_log(base: Path) -> bool:
-    """Create today's daily log file."""
+def create_daily_log(memory: Path) -> bool:
+    """Create today's daily log file in the memory folder."""
     today = datetime.now().strftime("%Y-%m-%d")
-    log_path = base / "daily" / f"{today}.md"
+    log_path = memory / "daily" / f"{today}.md"
 
     if log_path.exists():
         return False
@@ -104,6 +110,10 @@ def main():
         help="Project root path (default: current directory)"
     )
     parser.add_argument(
+        "--suite-root",
+        help="Suite folder when config cra.output_directory sets one (default: <path>/paw-suites/creative)"
+    )
+    parser.add_argument(
         "-o", "--output",
         help="Output JSON file path (default: stdout)"
     )
@@ -118,11 +128,12 @@ def main():
     root_path = Path(args.path).resolve()
 
     # Create structure
-    result = create_memory_structure(root_path)
+    suite_root = Path(args.suite_root).resolve() if args.suite_root else None
+    result = create_memory_structure(root_path, suite_root)
 
-    base = Path(result["base"])
-    index_created = create_index(base)
-    log_created = create_daily_log(base)
+    memory = Path(result["memory"])
+    index_created = create_index(memory)
+    log_created = create_daily_log(memory)
 
     # Build output
     output = {
@@ -131,7 +142,8 @@ def main():
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "status": "success",
         "project_root": str(root_path),
-        "memory_base": result["base"],
+        "suite_root": result["base"],
+        "memory_base": result["memory"],
         "folders_created": len(result["folders"]),
         "files": {
             "index.md": "created" if index_created else "exists",

@@ -233,7 +233,7 @@ missing_items: []
 
 ## Completion Actions
 
-1. **Write daily log entry** to `.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/{date}.md`:
+1. **Write daily log entry** to `{suite-root}/_memory/daily/{date}.md`:
 
 ```markdown
 ## [Packaging] {product-slug}
@@ -244,7 +244,9 @@ missing_items: []
 - Package location: {path}
 ```
 
-2. **Return summary** to user:
+2. **Update the product dashboard** `{suite-root}/{product-slug}/README.md`: `Status:`, `Next:` and a link to `package/manifest.json`. Then run `uv run {skill-root}/scripts/paw-paths.py index`.
+
+3. **Return summary** to user:
 
 ```markdown
 # Packaging Complete: {product-name}

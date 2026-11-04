@@ -2,7 +2,7 @@ module,skill,display-name,menu-code,description,action,args,phase,after,before,r
 mkt,paw-mkt-setup,Module Setup,SU,Install and configure Agentic Marketing Suite,configure,[-H],anytime,,,,configured module
 mkt,paw-mkt-agent-agency,Marketing Agency,MA,Multi-channel coordination & routing - orchestrates specialists,orchestrate,[request],anytime,,,,routed request or spawned team
 mkt,paw-mkt-sostac,SOSTAC Planning,SO,6-phase marketing planning framework (Situation,Objectives,Strategy,Tactics,Action,Control),plan,,anytime,,,,SOSTAC plan documents
-mkt,paw-mkt-product-context,Product Context,PC,Positioning, personas, messaging, ICP, differentiation,define,,anytime,,,,paw-mkt-product-context.md
+mkt,paw-mkt-product-context,Product Context,PC,Positioning, personas, messaging, ICP, differentiation,define,,anytime,,,,product-context.md
 mkt,paw-mkt-paid-ads,Paid Ads,PA,PPC, Google/Meta/LinkedIn/TikTok Ads strategy,plan,,anytime,,,,ad strategy documents
 mkt,paw-mkt-seo,SEO,SE,Technical SEO, keywords, local SEO, GEO optimization,optimize,,anytime,,,,SEO audit & recommendations
 mkt,paw-mkt-social,Social Media,SM,Organic social strategy, content calendars, UGC,strategize,,anytime,,,,social strategy & calendar

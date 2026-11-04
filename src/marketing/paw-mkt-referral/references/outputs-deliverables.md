@@ -6,7 +6,7 @@ Standard deliverable formats for referral, affiliate, and partnership programs. 
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/referral/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/referral/
   referral-program-{YYYY-MM-DD}.md
   affiliate-program-{YYYY-MM-DD}.md
   partnerships/
@@ -21,7 +21,7 @@ Standard deliverable formats for referral, affiliate, and partnership programs. 
     partnership-report-{YYYY-MM}.md
 
 # Standalone mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/operations/referral/
+{suite-root}/brands/{brand-slug}/operations/referral/
   (same structure as above)
 ```
 

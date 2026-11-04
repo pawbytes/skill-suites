@@ -6,7 +6,7 @@ Assets verified against brand guidelines and platform specifications, exported t
 
 ## Brand Validation
 
-Verify every generated asset against brand guidelines from `.pawbytes/creative-suites/brands/{brand}/guidelines.md`:
+Verify every generated asset against brand guidelines from `{suite-root}/brands/{brand}/guidelines.md`:
 
 **Color check:**
 - Primary, secondary, and accent colors match brand HEX values
@@ -63,13 +63,13 @@ Verify technical specifications match the target platform:
 Save final validated assets to:
 
 ```
-{output_directory}/brands/{brand}/assets/{campaign}/social/
+{suite-root}/brands/{brand}/campaigns/{campaign}/designs/social/
 ```
 
 If no campaign is specified, use a date-based folder:
 
 ```
-{output_directory}/brands/{brand}/assets/social/{YYYY-MM-DD}/
+{suite-root}/brands/{brand}/designs/social/{YYYY-MM-DD}/
 ```
 
 ### Design Manifest
@@ -123,7 +123,7 @@ Fill `file_size_bytes` from actual file size after export. Add entries to `valid
 
 ### Daily Log
 
-Append to `{project-root}/.pawbytes/creative-suites/daily/{YYYY-MM-DD}.md`:
+Append to `{suite-root}/_memory/daily/{YYYY-MM-DD}.md`:
 
 ```markdown
 ## {HH:MM} [Designer:cra-design-social]
@@ -137,7 +137,7 @@ Append to `{project-root}/.pawbytes/creative-suites/daily/{YYYY-MM-DD}.md`:
 
 ### Campaign Status
 
-If working within a campaign, update the campaign status file if it exists at `.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/status.md`.
+If working within a campaign, update the campaign status file if it exists at `{suite-root}/brands/{brand}/campaigns/{campaign}/status.md`. Then update `Status:`/`Next:` and links in `{suite-root}/brands/{brand}/README.md` and run `uv run {skill-root}/scripts/paw-paths.py index`.
 
 ## Delivery Summary
 

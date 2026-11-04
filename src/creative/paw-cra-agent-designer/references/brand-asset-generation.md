@@ -15,7 +15,7 @@ User requests logo, icon, brand mark, visual identity element, or brand graphics
 | Description | Brief or user | Yes |
 | Style direction | Brand guidelines or user | Yes |
 | Use case | User specification | Yes |
-| Existing brand context | `.pawbytes/creative-suites/brands/{brand}/guidelines.md` | If exists |
+| Existing brand context | `{suite-root}/brands/{brand}/guidelines.md` | If exists |
 
 ## Process
 
@@ -104,7 +104,7 @@ Every logo requires multiple outputs:
 
 ## Output
 
-**Location:** `.pawbytes/creative-suites/brands/{brand}/assets/brand-identity/`
+**Location:** `{suite-root}/brands/{brand}/brand-assets/`
 **Structure:**
 ```
 brand-identity/

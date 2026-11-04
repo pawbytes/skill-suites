@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-Check `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/00-auto-discovery.md` for PR data already collected.
+Check `{suite-root}/brands/{brand-slug}/sostac/00-auto-discovery.md` for PR data already collected.
 
 **Setup**: See `./references/shared-patterns.md` for agent-browser installation instructions.
 

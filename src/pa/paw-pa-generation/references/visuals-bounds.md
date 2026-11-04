@@ -44,7 +44,7 @@ When the brief or user requests mockups/wireframes:
 **Client:** {client name}
 **Deliverable:** {mockups | wireframes | both}
 **Screens/flows:** {list from brief}
-**Brand ref:** {memory-root}/brand/identity.md
+**Brand ref:** {suite-root}/brand/identity.md
 **Context:** {link to draft-v1.md approach section}
 **Deadline note:** {if any}
 ```

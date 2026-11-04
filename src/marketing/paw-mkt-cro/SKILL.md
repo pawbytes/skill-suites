@@ -40,7 +40,7 @@ Example: "Your headline reads like a company tagline. A passing headline reads l
 
 ## Psychology Inputs
 
-When available, consume DDFF from `paw-mkt-product-context.md` and reptilian/limbic hot-button framing from `paw-mkt-psychology`. Use them to shape headline tests, CTA logic, objection handling, friction reduction, and conversion hypotheses. Treat these as inputs to be tested against funnel evidence, not as guaranteed conversion fixes.
+When available, consume DDFF from `product-context.md` and reptilian/limbic hot-button framing from `paw-mkt-psychology`. Use them to shape headline tests, CTA logic, objection handling, friction reduction, and conversion hypotheses. Treat these as inputs to be tested against funnel evidence, not as guaranteed conversion fixes.
 
 ## On Activation
 
@@ -89,11 +89,12 @@ When the user requests CRO or conversion optimization work:
 
 ## Path Resolution
 
-**Campaign mode**: Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/cro/`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/marketing`. All paths below are relative to it. A custom folder in config `mkt.brands_folder` replaces `{suite-root}/brands` (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/marketing-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-mkt-setup` can move them to `paw-suites/marketing/`, and offer it. Keep working either way.
 
-**Standalone mode**: Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/cro/`
+**Campaign mode**: Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/cro/`
 
-**Legacy fallback**: Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/cro/` and suggest migration.
+**Standalone mode**: Save to `{suite-root}/brands/{brand-slug}/operations/cro/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 

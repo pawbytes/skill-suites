@@ -28,7 +28,7 @@ Brand JSON shape:
 
 Usage:
   python export_proposal.py --input draft.md --brand-json brand.json \\
-    --out-dir ./proposals/acme-2026-07-03 --formats html,md,pdf,docx
+    --out-dir ./proposals/2026-07-acme --formats html,md,pdf,docx
 
 Outputs JSON to stdout:
   {"ok": true, "exports": {...}, "pandoc_available": true, "warnings": []}

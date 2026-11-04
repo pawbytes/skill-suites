@@ -12,11 +12,11 @@ When headless mode is triggered:
 
 ```text
 Read in order:
-1. {project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md
-2. {project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md
-3. {project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/audience-intelligence.md
-4. {project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/market-intelligence.md
-5. {project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/output-standards.md
+1. {suite-root}/_memory/index.md
+2. {suite-root}/_memory/curated/product-context.md
+3. {suite-root}/_memory/curated/audience-intelligence.md
+4. {suite-root}/_memory/curated/market-intelligence.md
+5. {suite-root}/_standards/output-standards.md
 ```
 
 ### 2. Determine Task

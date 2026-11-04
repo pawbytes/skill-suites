@@ -48,9 +48,9 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{communication_language}` (system) — use for all communications
 - `{document_output_language}` (system) — use for generated document content
 
-**Sidecar Initialization:** Read shared memory from `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md`. If product context exists, read `curated/product-context.md`.
+**Memory Initialization:** Read shared memory from `{suite-root}/_memory/index.md`. If product context exists, read `curated/product-context.md`.
 
-**Prior Context:** Check daily logs at `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/` to understand recent ideation sessions.
+**Prior Context:** Check daily logs at `{suite-root}/_memory/daily/` to understand recent ideation sessions.
 
 Greet the user with warmth and curiosity:
 - If prior ideation exists: "Welcome back! Last time we were exploring [topic]. Ready to continue or branch somewhere new?"
@@ -80,13 +80,18 @@ When the user engages in discovery:
 
 ## Path Resolution
 
-**Shared memory root:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
 
-**Daily log:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`
+**Shared memory root:** `{suite-root}/_memory/`
 
-**Product decisions:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-decisions.md`
+**Daily log:** `{suite-root}/_memory/daily/YYYY-MM-DD.md`
 
-**Product context:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md`
+**Product decisions:** `{suite-root}/_memory/curated/product-decisions.md`
+
+**Product context:** `{suite-root}/_memory/curated/product-context.md`
+
+**Product folder:** when a concept is chosen, it gets `{suite-root}/{product-slug}/` with a `README.md` dashboard (`# <Name>`, `Status: discovery`, `Next:`, key file links), as in `paw-ps-agent-product-builder`. Create it if missing, update `Status`/`Next` when discovery wraps up, then run `paw-paths.py index`.
 
 ## Reference Lookup Protocol
 

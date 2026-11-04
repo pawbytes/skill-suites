@@ -1,6 +1,6 @@
 # Memory System for Designer
 
-**Memory location:** `.pawbytes/creative-suites/` (Shared Agency Memory)
+**Shared agency tree:** `{suite-root}/` (memory in `_memory/`, deliverables under `brands/`)
 
 ## Core Principle
 
@@ -9,31 +9,31 @@ The Designer shares memory with all agents in the Aria Creative Suite. This ensu
 ## Shared Memory Structure
 
 ```
-.pawbytes/creative-suites/
-├── index.md                    # Agency roster, active campaigns, status
-├── brands/
-│   └── {brand-name}/
-│       ├── guidelines.md       # Colors, fonts, logo, visual identity
-│       ├── research/           # Strategist research reports
-│       ├── campaigns/
-│       │   └── {campaign}/
-│       │       ├── brief.md    # Approved creative brief
-│       │       ├── scripts/    # Approved copy/scripts
-│       │       └── assets/     # Generated assets
-│       └── assets/
-│           ├── social/
-│           ├── carousels/
-│           ├── flyers/
-│           └── brand-identity/
-└── daily/
-    └── {YYYY-MM-DD}.md         # Activity log
+{suite-root}/
+├── _memory/
+│   ├── index.md                # Agency roster, active campaigns, status
+│   ├── knowledge/              # Researched specs and guides
+│   └── daily/{YYYY-MM-DD}.md   # Activity log
+├── templates/                  # Reusable design templates
+└── brands/
+    └── {brand-name}/
+        ├── README.md           # Brand dashboard (Status:, Next:, links)
+        ├── guidelines.md       # Colors, fonts, logo, visual identity
+        ├── research/           # Strategist research reports
+        ├── brand-assets/       # logo/, icons/, banners/, avatars/
+        ├── campaigns/
+        │   └── {YYYY-MM-campaign}/
+        │       ├── brief.md    # Approved creative brief
+        │       ├── scripts/    # Approved copy/scripts
+        │       └── designs/    # social/, carousels/, flyers/, resized/, batch-{date}/
+        └── designs/            # Non-campaign work: social/, carousels/, flyers/, resized/, wip/
 ```
 
 ## What to Read
 
 | File | When to Read | Contains |
 |------|-------------|----------|
-| `index.md` | Every activation | Active brand, current campaigns |
+| `_memory/index.md` | Every activation | Active brand, current campaigns |
 | `brands/{brand}/guidelines.md` | Before every design task | Colors, typography, logo rules |
 | `brands/{brand}/campaigns/{campaign}/brief.md` | When working on campaign | Requirements, deliverables |
 | `brands/{brand}/campaigns/{campaign}/scripts/` | When creating visuals | Approved copy, storyboards |
@@ -42,29 +42,29 @@ The Designer shares memory with all agents in the Aria Creative Suite. This ensu
 
 | File | When to Write | Contains |
 |------|--------------|----------|
-| `brands/{brand}/assets/` | After every design | Generated visual assets |
-| `daily/{date}.md` | After every task | Activity log entry |
+| `brands/{brand}/designs/` (or the campaign's `designs/`) | After every design | Generated visual assets |
+| `_memory/daily/{date}.md` | After every task | Activity log entry |
 | `brands/{brand}/guidelines.md` | When brand is created/updated | Brand identity elements |
 
 ## Read Access
 
-- `.pawbytes/creative-suites/index.md`
-- `.pawbytes/creative-suites/brands/{brand}/guidelines.md`
-- `.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/brief.md`
-- `.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/scripts/`
-- `.pawbytes/creative-suites/brands/{brand}/research/`
+- `{suite-root}/_memory/index.md`
+- `{suite-root}/brands/{brand}/guidelines.md`
+- `{suite-root}/brands/{brand}/campaigns/{campaign}/brief.md`
+- `{suite-root}/brands/{brand}/campaigns/{campaign}/scripts/`
+- `{suite-root}/brands/{brand}/research/`
 
 ## Write Access
 
-- `.pawbytes/creative-suites/brands/{brand}/assets/`
-- `.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/assets/`
-- `.pawbytes/creative-suites/daily/{date}.md`
-- `.pawbytes/creative-suites/brands/{brand}/guidelines.md` (when creating/updating brand)
+- `{suite-root}/brands/{brand}/designs/` and `{suite-root}/brands/{brand}/brand-assets/`
+- `{suite-root}/brands/{brand}/campaigns/{campaign}/designs/`
+- `{suite-root}/_memory/daily/{date}.md`
+- `{suite-root}/brands/{brand}/guidelines.md` (when creating/updating brand)
 
 ## Deny Zones
 
-- `.pawbytes/creative-suites/brands/{other-brand}/` — Other brands not in scope
-- Any files outside `.pawbytes/creative-suites/` without explicit permission
+- `{suite-root}/brands/{other-brand}/` — Other brands not in scope
+- Any files outside `{suite-root}/` without explicit permission
 
 ## Save Triggers
 

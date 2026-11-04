@@ -11,12 +11,14 @@ Installs and configures the Webinar Creator Suite module into a project. This mo
 
 Creates the output directory structure and orientation files:
 
-- **`{project-root}/.pawbytes/webinar-suites/`** — module root
-- **`{project-root}/.pawbytes/webinar-suites/index.md`** — orientation file tracking webinars and status
-- **`{project-root}/.pawbytes/webinar-suites/webinars/`** — webinar workspaces
-- **`{project-root}/.pawbytes/webinar-suites/daily/`** — daily activity logs
+- **`{project-root}/paw-suites/webinars/`** — module root (`{suite-root}`), with a generated `README.md` listing every webinar
+- **`_memory/index.md`** — orientation file tracking webinars and status (agent memory)
+- **`_memory/daily/`** — daily activity logs
+- **`{webinar-slug}/`** — one workspace per webinar, directly under the root, each with a `README.md` dashboard
 
-`{project-root}` is a **literal token** in config values — never substitute it with an actual path. It signals to the consuming LLM that the value is relative to the project root.
+`{suite-root}` is config `wbc.output_folder`, default `{project-root}/paw-suites/webinars`; older releases used `{project-root}/.pawbytes/webinar-suites/` with a `webinars/` layer (see Migrate Legacy Files).
+
+`{project-root}` is a **literal token** in config values — never substitute it with an actual path. It signals to the consuming LLM that the value is relative to the project root. `{skill-root}` is this skill's folder; run its scripts as `uv run {skill-root}/scripts/<name>.py`.
 
 ## Principles
 
@@ -28,7 +30,7 @@ Creates the output directory structure and orientation files:
 ## On Activation
 
 1. Read `./assets/module.yaml` for module metadata
-2. Check if `{project-root}/.pawbytes/webinar-suites/` exists — if present, inform the user this is an update
+2. Run `uv run {skill-root}/scripts/paw-paths.py detect` — mode `new`, `legacy` or `both` means this is an update; inform the user
 3. Check for core Pawbytes config at `{project-root}/.pawbytes/config/config.yaml`
 
 If the user provides arguments (e.g. `accept all defaults`, `--headless`), skip interactive prompting and use defaults.
@@ -43,7 +45,7 @@ This allows non-interactive setup with custom values without requiring full flag
 
 ## Collect Configuration
 
-This module has no custom configuration variables beyond core Pawbytes settings. Only collect core config if not already present:
+This module has no prompted variables beyond core Pawbytes settings; `output_folder` keeps its `./assets/module.yaml` default (`{project-root}/paw-suites/webinars`) unless the user names another folder. Only collect core config if not already present:
 
 **Core config** (only if no core keys exist yet):
 - `user_name` (default: Pawbytes)
@@ -59,13 +61,12 @@ Ask using prompts with defaults in brackets. Present all values together so the 
 Create the module directory structure:
 
 ```bash
-mkdir -p "{project-root}/.pawbytes/webinar-suites/webinars"
-mkdir -p "{project-root}/.pawbytes/webinar-suites/daily"
+mkdir -p "{project-root}/paw-suites/webinars/_memory/daily"
 ```
 
 ## Create Orientation File
 
-Create `{project-root}/.pawbytes/webinar-suites/index.md` with initial content:
+If `_memory/index.md` does not exist yet (and none is about to be migrated), create `{project-root}/paw-suites/webinars/_memory/index.md` with initial content:
 
 ```markdown
 # Webinar Creator Suite
@@ -85,7 +86,8 @@ Create `{project-root}/.pawbytes/webinar-suites/index.md` with initial content:
 ## Directory Structure
 
 ```
-webinars/{webinar-slug}/
+{webinar-slug}/
+  ├── README.md             # Dashboard: Status, Next, file links
   ├── brief.md              # Initial brief + audience context
   ├── research-context.md   # Compressed research findings
   ├── hook-selected.md      # Chosen hook + reasoning
@@ -93,8 +95,9 @@ webinars/{webinar-slug}/
   ├── script.md             # Full + partial script
   └── recommendations.md    # Surfaced insights to consider
 
-daily/
-  └── YYYY-MM-DD.md         # Daily activity log
+_memory/
+  ├── index.md              # This file
+  └── daily/YYYY-MM-DD.md   # Daily activity log
 ```
 ```
 
@@ -102,14 +105,18 @@ daily/
 
 If core config was collected, write to:
 
-- `{project-root}/.pawbytes/config/config.yaml` — if core section doesn't exist
+- `{project-root}/.pawbytes/config/config.yaml` — core keys if they don't exist, plus `output_folder` in the `wbc` section
 - `{project-root}/.pawbytes/config/config.user.yaml` — for user_name, communication_language, and document_output_language
 
 Register module in `{project-root}/.pawbytes/config/module-help.csv` if it exists.
 
+## Migrate Legacy Files
+
+When `detect` reports `legacy` or `both`, run `uv run {skill-root}/scripts/paw-paths.py plan`, show its `summary` along with any conflicts, and run `paw-paths.py apply` once the user confirms. It moves `index.md` and `daily/` into `_memory/`, lifts each `webinars/{webinar-slug}/` to `{webinar-slug}/`, and rewrites the old default `wbc.output_folder`. Report what moved and what stayed (`MOVED.md` in the old folder lists it). Give each moved webinar that lacks a `README.md` a dashboard (title, `Status:` from its brief's status checklist, `Next:`, file links), then run `paw-paths.py index`.
+
 ## Confirm
 
-Display what was created — directories, orientation file, fresh install vs update. Then display the `greeting` from `./assets/module.yaml` to the user.
+Display what was created — directories, orientation file, fresh install vs update, and any migration. Then display the `greeting` from `./assets/module.yaml` to the user.
 
 ## Outcome
 
@@ -121,9 +128,8 @@ Once setup completes, the following are guaranteed:
 
 - **Action type**: Module installation/configuration
 - **Files created**:
-  - `{project-root}/.pawbytes/webinar-suites/` directory
-  - `{project-root}/.pawbytes/webinar-suites/index.md` orientation file
-  - `{project-root}/.pawbytes/webinar-suites/webinars/` directory
-  - `{project-root}/.pawbytes/webinar-suites/daily/` directory
+  - `{project-root}/paw-suites/webinars/` directory and its generated `README.md`
+  - `_memory/index.md` orientation file
+  - `_memory/daily/` directory
   - `{project-root}/.pawbytes/config/config.user.yaml` (if core config collected)
 - **Recommendations**: Suggest running `paw-wbc-webinar-creation` to start first webinar

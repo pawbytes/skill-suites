@@ -73,7 +73,9 @@ If not headless, present options. If headless, log the recommendation in status 
    [Campaign] Campaign '{campaign-name}' complete. {n}/{total} deliverables passed QC. Assets at: {campaign-folder-path}
    ```
 
-3. Update `{project-root}/.pawbytes/creative-suites/index.md` to reflect campaign completion status.
+3. Update `{suite-root}/_memory/index.md` to reflect campaign completion status.
+
+4. Update `Status:`/`Next:` and the campaign's links in `{suite-root}/brands/{brand-name}/README.md`, then run `uv run {skill-root}/scripts/paw-paths.py index`.
 
 ## Final Output
 

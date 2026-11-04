@@ -8,7 +8,7 @@ Produce a complete artifact inventory — every file produced during execution, 
 
 ## Discovery Process
 
-Scan the product workspace for manifest files:
+Scan the product workspace `{suite-root}/{product-slug}/` (executor outputs live in `build/`) for manifest files:
 
 - `discovery-manifest.json` — outputs from discovery agents
 - `strategy-manifest.json` — strategy documents from strategist

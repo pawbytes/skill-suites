@@ -36,6 +36,6 @@ After the draft, name briefly *why* the key moves work — why that hook, why th
 
 ## Save it
 
-Write the proposal to `{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/proposals/{job-slug}.md` (a short slug from the job title/client). Include the decode summary and variations in the file so it's a complete record. Offer to save a strong reusable intro or snippet to `kit.md` via `kit-and-outcomes.md`. Update `index.md` and append a `[proposal]` line to today's `daily/` log.
+Write the proposal to `{freelancer-workspace}/proposals/{job-slug}.md` (a short slug from the job title/client). Include the decode summary and variations in the file so it's a complete record. Offer to save a strong reusable intro or snippet to `kit.md` via `kit-and-outcomes.md`. Update `_memory/index.md` and append a `[proposal]` line to today's `_memory/daily/` log.
 
 If `kit.md` already holds a proven angle for this niche (from `outcomes.md` feedback), lean on it — that's the compounding payoff of the kit.

@@ -14,7 +14,7 @@ Before course creation, ensure these are available:
 |-------|--------|---------|
 | Product Context | `curated/product-context.md` | What we're building and why |
 | Audience Intelligence | `curated/audience-intelligence.md` | Who we're serving and their needs |
-| Output Standards | `curated/output-standards.md` | Formatting and quality requirements |
+| Output Standards | `{suite-root}/_standards/output-standards.md` | Formatting and quality requirements |
 | Knowledge Products Guidance | `curated/product-types/knowledge-products.md` | Product-type specific guidance |
 
 If inputs are missing, escalate to appropriate agent before proceeding.

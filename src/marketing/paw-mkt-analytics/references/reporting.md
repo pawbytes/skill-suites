@@ -40,7 +40,7 @@ For every insight:
 
 ## Output
 
-Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/analytics/reports/`
+Save to `{suite-root}/brands/{brand-slug}/analytics/reports/`
 
 **Templates:**
 - `weekly-snapshot-{YYYY-MM-DD}.md`

@@ -6,7 +6,7 @@ All community deliverables save to the resolved path (campaign or standalone mod
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/community/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/community/
   community-strategy-{YYYY-MM-DD}.md
   platform-setup-{platform}-{YYYY-MM-DD}.md
   engagement-calendar-{YYYY-MM}.md
@@ -20,7 +20,7 @@ All community deliverables save to the resolved path (campaign or standalone mod
     health-score-{YYYY-MM}.md
 
 # Standalone mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/operations/community/
+{suite-root}/brands/{brand-slug}/operations/community/
   (same structure as above)
 ```
 

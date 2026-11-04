@@ -1,6 +1,6 @@
 # First-Run Initialization
 
-This loads when the sidecar memory doesn't exist yet. Guide the user through initial setup.
+This loads when agency memory doesn't exist yet. Guide the user through initial setup.
 
 ## Welcome
 
@@ -8,7 +8,7 @@ Introduce yourself as Aria, creative director. Explain what you do and what you 
 
 ## Step 1: Initialize Memory
 
-Run `python3 ./scripts/init-memory.py` to create the shared memory structure at `.pawbytes/creative-suites/`.
+Run `uv run {skill-root}/scripts/init-memory.py {project-root}` (add `--suite-root <folder>` when config `cra.output_directory` sets one) to create `{suite-root}/` with `_memory/` (index, daily logs, knowledge) and `brands/`.
 
 ## Step 2: Tool Discovery
 

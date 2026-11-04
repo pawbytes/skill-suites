@@ -269,7 +269,7 @@ Create a chart with price on the X-axis and cumulative percentage of respondents
 
 ### 2.3 Synthesizing Interview Findings
 
-After 10-15 interviews, create a synthesis document at `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/pricing/research/interview-synthesis-{YYYY-MM-DD}.md` (or `campaigns/{type}-{slug}/pricing/research/` if campaign-tied) with:
+After 10-15 interviews, create a synthesis document at `{suite-root}/brands/{brand-slug}/operations/pricing/research/interview-synthesis-{YYYY-MM-DD}.md` (or `campaigns/{YYYY-MM}-{type}-{slug}/pricing/research/` if campaign-tied) with:
 
 - **Ceiling range**: The range of monthly prices at which customers said they would reconsider
 - **Value statements in customer language**: Direct quotes about what they would lose without the product
@@ -289,7 +289,7 @@ Choose a template based on the nature of the increase:
 - **Template B**: Significant restructuring. More explanation, grandfather offer, longer lead time.
 - **Template C**: Legacy/grandfather notice. For customers kept at old price who are now transitioning.
 
-Customize all placeholders in `[brackets]` before sending. These templates are starting points -- adapt to match your brand voice from `./.pawbytes/marketing-suites/brands/{brand-slug}/brand-context.md`.
+Customize all placeholders in `[brackets]` before sending. These templates are starting points -- adapt to match your brand voice from `{suite-root}/brands/{brand-slug}/brand-context.md`.
 
 Send from: a named person (CEO, founder, or Head of Product) -- not a generic marketing address. Personalize with the customer's first name and current plan.
 
@@ -408,7 +408,7 @@ Thank you for being part of [Brand Name] for so long.
 
 ### 4.1 Purpose
 
-Use this template to structure the competitive pricing intelligence gathered during Research Mode. Save the completed template to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/pricing/research/competitive-pricing-analysis-{YYYY-MM-DD}.md` (or `campaigns/{type}-{slug}/pricing/research/` if campaign-tied).
+Use this template to structure the competitive pricing intelligence gathered during Research Mode. Save the completed template to `{suite-root}/brands/{brand-slug}/operations/pricing/research/competitive-pricing-analysis-{YYYY-MM-DD}.md` (or `campaigns/{YYYY-MM}-{type}-{slug}/pricing/research/` if campaign-tied).
 
 ---
 

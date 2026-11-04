@@ -79,11 +79,14 @@ This skill uses progressive disclosure. Read `./references/frameworks-index.csv`
 
 ## Path Resolution
 
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/marketing`. All paths below are relative to it. A custom folder in config `mkt.brands_folder` replaces `{suite-root}/brands` (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/marketing-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-mkt-setup` can move them to `paw-suites/marketing/`, and offer it. Keep working either way.
+
 **Campaign mode** — working within a named campaign:
-→ Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/pricing/`
+→ Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/pricing/`
 
 **Standalone mode** — evergreen or independent work:
-→ Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/pricing/`
+→ Save to `{suite-root}/brands/{brand-slug}/operations/pricing/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 
@@ -94,7 +97,7 @@ Use `agent-browser` for live competitive pricing intelligence. Start a named ses
 ```bash
 # Capture competitor pricing page
 agent-browser --session pricing-research open "https://{competitor-domain}/pricing"
-agent-browser screenshot ./.pawbytes/marketing-suites/brands/{brand-slug}/operations/pricing/competitor-{n}-pricing-page.png
+agent-browser screenshot {suite-root}/brands/{brand-slug}/operations/pricing/competitor-{n}-pricing-page.png
 agent-browser get text body
 ```
 

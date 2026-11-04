@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # /// script
-# requires-python = ">=3.9"
+# requires-python = ">=3.11"
 # dependencies = []
 # ///
-"""Merge module help entries into shared _bmad/module-help.csv.
+"""Merge module help entries into shared .pawbytes/config/module-help.csv.
 
 Reads a source CSV with module help entries and merges them into a target CSV.
 Uses an anti-zombie pattern: all existing rows matching the source module code
@@ -43,12 +43,12 @@ HEADER = [
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Merge module help entries into shared _bmad/module-help.csv with anti-zombie pattern."
+        description="Merge module help entries into shared .pawbytes/config/module-help.csv with anti-zombie pattern."
     )
     parser.add_argument(
         "--target",
         required=True,
-        help="Path to the target _bmad/module-help.csv file",
+        help="Path to the target .pawbytes/config/module-help.csv file",
     )
     parser.add_argument(
         "--source",
@@ -57,7 +57,7 @@ def parse_args():
     )
     parser.add_argument(
         "--legacy-dir",
-        help="Path to _bmad/ directory to check for legacy per-module CSV files.",
+        help="Path to .pawbytes/ directory to check for legacy per-module CSV files.",
     )
     parser.add_argument(
         "--module-code",
@@ -215,4 +215,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")
+    try:
+        main()
+    except Exception as exc:  # report as JSON, never a traceback; exit 1 stays "validation error"
+        print(json.dumps({"status": "error", "error": f"{type(exc).__name__}: {exc}"}), file=sys.stderr)
+        sys.exit(2)

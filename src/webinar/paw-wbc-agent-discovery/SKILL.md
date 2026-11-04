@@ -54,13 +54,13 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - Missing `{project-root}/.pawbytes/config/config.user.yaml` → Treat as optional, use defaults from config.yaml
 - I/O error reading config files → Surface explicit error to caller with file path and error details; do not silently ignore
 
-Load module memory from `{project-root}/.pawbytes/webinar-suites/index.md`.
+Resolve `{suite-root}` (see Path Resolution). Load module memory from `{suite-root}/_memory/index.md`.
 
 **Error handling for memory loading:**
 - Missing `index.md` → Initialize empty module memory (first-time setup), proceed with new webinar
 - I/O error reading `index.md` → Surface explicit error to caller with file path and error details
 
-**Webinar Discovery**: Use Glob pattern `.pawbytes/webinar-suites/webinars/*/brief.md` to discover existing webinar work.
+**Webinar Discovery**: Use Glob pattern `{suite-root}/*/brief.md` to discover existing webinar work (in legacy mode, the old tree's `webinars/*/brief.md`).
 
 **Error handling for webinar discovery:**
 - Empty glob result (no brief.md files found) → No existing webinars, proceed with fresh start
@@ -169,15 +169,22 @@ When user has existing content (blog posts, videos, presentations), read files t
 
 ## Path Resolution
 
-**Webinar workspace root**: `{project-root}/.pawbytes/webinar-suites/webinars/{webinar-slug}/`
+- `{skill-root}` is this skill's folder; bare paths (`references/...`) resolve from it.
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/webinars`. All paths below are relative to it. A custom folder in config `wbc.output_folder` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/webinar-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-wbc-setup` can move them to `paw-suites/webinars/`, and offer it. Keep working either way.
+- Each webinar folder has a `README.md` dashboard: `# <Webinar title>`, `Status: <one phrase>`, `Next: <one step>`, then links to its files. Whoever creates the folder writes it; whoever finishes a deliverable updates it, then runs `uv run {skill-root}/scripts/paw-paths.py index` to refresh the suite `README.md`.
 
-**Brief file**: `{project-root}/.pawbytes/webinar-suites/webinars/{webinar-slug}/brief.md`
+**Webinar workspace root**: `{suite-root}/{webinar-slug}/` (with its `README.md`)
 
-**Research context**: `{project-root}/.pawbytes/webinar-suites/webinars/{webinar-slug}/research-context.md`
+**Brief file**: `{webinar-slug}/brief.md`
 
-**Selected hook**: `{project-root}/.pawbytes/webinar-suites/webinars/{webinar-slug}/hook-selected.md`
+**Research context**: `{webinar-slug}/research-context.md`
 
-**Daily log**: `{project-root}/.pawbytes/webinar-suites/daily/{YYYY-MM-DD}.md`
+**Selected hook**: `{webinar-slug}/hook-selected.md`
+
+**Module memory**: `_memory/index.md`
+
+**Daily log**: `_memory/daily/{YYYY-MM-DD}.md`
 
 ### Slug Generation Algorithm
 

@@ -82,4 +82,4 @@ Deliver:
 - **Retention analysis** with specific drop-off points and recommendations
 - **Ad performance evaluation** with optimization suggestions
 - **Content adjustments** based on data
-- **Save to**: `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/video/content/performance/monthly-report-{YYYY-MM}.md`
+- **Save to**: `{suite-root}/brands/{brand-slug}/channels/video/performance/monthly-report-{YYYY-MM}.md`

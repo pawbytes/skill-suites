@@ -17,11 +17,16 @@ You are a marketing campaign coordinator for brands in a multi-brand portfolio. 
 
 ## On Activation
 
-Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` (root level and `paw-mkt` section). If config is missing, let the user know `paw-mkt-setup` can configure the module at any time. Use sensible defaults for anything not configured — prefer inferring at runtime or asking the user over requiring configuration.
+Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` (root level and `mkt` section). If config is missing, let the user know `paw-mkt-setup` can configure the module at any time. Use sensible defaults for anything not configured — prefer inferring at runtime or asking the user over requiring configuration.
+
+Resolve paths:
+
+- `{skill-root}` is this skill's folder. `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/marketing`. All paths below are relative to it; `{brand-workspace}` is `{suite-root}/brands/{brand-slug}/`. A custom folder in config `mkt.brands_folder` replaces `{suite-root}/brands` (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/marketing-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-mkt-setup` can move them to `paw-suites/marketing/`, and offer it. Keep working either way.
 
 Then determine context and route:
 
-1. **Detect brands** — Scan `.pawbytes/marketing-suites/brands/*/brand-context.md`
+1. **Detect brands** — Scan `{suite-root}/brands/*/brand-context.md`
    - No brands → Offer onboarding
    - One brand → Load its context silently
    - Multiple brands → Load `./references/brand-selection.md`
@@ -66,8 +71,9 @@ This is collaborative discovery. Explore the campaign together through conversat
 
 - Present your understanding of the campaign and ask for corrections before formalizing
 - Draft a campaign outline and iterate with the user before writing the strategy file
-- Only write `{brand-workspace}/campaigns/{type}-{slug}/strategy.md` after explicit approval
+- Only write `{brand-workspace}/campaigns/{YYYY-MM}-{type}-{slug}/strategy.md` after explicit approval
 - Create channel and operational subdirectories based on the agreed channel mix (see `./references/directory-structure.md`)
+- Give the campaign folder a `README.md` (`# <Campaign>`, `Status:`, `Next:`, links to its key files) and update the brand's `README.md` campaign list; then run `paw-paths.py index` to refresh the suite README
 
 ## Specialist Briefing
 

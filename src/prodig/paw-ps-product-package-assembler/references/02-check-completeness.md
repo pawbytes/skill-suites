@@ -15,7 +15,7 @@ Completeness criteria come from two sources:
 
 ### Product Type Requirements
 
-Load `{project-root}/.pawbytes/prodig-suites/output-standards.md` to get the standard requirements for each product type:
+Load `{suite-root}/_standards/output-standards.md` to get the standard requirements for each product type:
 
 | Product Type | Required | Recommended | Optional |
 |--------------|----------|-------------|----------|
@@ -27,7 +27,7 @@ Load `{project-root}/.pawbytes/prodig-suites/output-standards.md` to get the sta
 
 ### Product-Specific Requirements
 
-Check `{product-slug}/context.md` for any custom requirements specified during discovery:
+Check `{suite-root}/{product-slug}/product-context.md` for any custom requirements specified during discovery:
 
 ```yaml
 requirements:

@@ -19,8 +19,9 @@ This workflow turns a structured brief into an evidence-backed research dossier 
 
 - Bare paths and `{skill-root}` (e.g. `references/local-case-study-matching.md`) resolve from this skill's installed directory.
 - `{project-root}` → the project working directory.
-- `{memory-root}` → `{project-root}/.pawbytes/proposal-automation-suites` (override via config `workspace_folder` parent if setup relocates memory).
-- `{run-folder}` → `{memory-root}/proposals/{slug}-{date}/` — one proposal run's artifact folder.
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/proposals`. All paths below are relative to it. A custom folder in config `pa.workspace_folder` (proposal runs) or `pa.library_inbox_folder` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the seller's files are still partly in the old `.pawbytes/proposal-automation-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the seller that `paw-pa-setup` can move them to `paw-suites/proposals/`, and offer it. Keep working either way.
+- `{run-folder}` → `{suite-root}/proposals/{run}/`, one proposal run. A new `{run}` is `YYYY-MM-{client-slug}` (`YYYY-MM-DD-{client-slug}` when that client already has a run this month); existing run folders keep their names.
 
 ## Expected inputs (artifact contract)
 
@@ -29,9 +30,9 @@ This workflow does **not** depend on other agents' code. It reads files that ups
 | Input | Path | Required |
 | ----- | ---- | -------- |
 | Structured brief | `{run-folder}/brief.md` | **Yes** — hard-block if missing |
-| Case-study index | `{memory-root}/library/case-studies-index.json` | No — warn if empty; local matching skipped |
-| Client history | `{memory-root}/clients/{client-slug}/history.md` | No — create/update if client known |
-| Orientation | `{memory-root}/index.md` | No — read for context |
+| Case-study index | `{suite-root}/library/case-studies-index.json` | No — warn if empty; local matching skipped |
+| Client history | `{suite-root}/clients/{client-slug}/history.md` | No — create/update if client known |
+| Orientation | `{suite-root}/_memory/index.md` | No — read for context |
 
 **`brief.md` fields** (from intake; parse markdown frontmatter or `##` sections):
 
@@ -60,13 +61,13 @@ This workflow does **not** depend on other agents' code. It reads files that ups
 
 Load config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` (root level and the `pa` section). If config is missing, mention `paw-pa-setup` can configure the module, then proceed with defaults. Honor `communication_language` and address the seller by `user_name` when known.
 
-Key config: `web_research_enabled` (default `true`), `workspace_folder` (default `{project-root}/.pawbytes/proposal-automation-suites/proposals`).
+Key config: `web_research_enabled` (default `true`), `workspace_folder` (default `{project-root}/paw-suites/proposals/proposals`).
 
 Then locate the run and orient:
 
-1. **Find the run folder.** If the user gave a path, use it. Else scan `{workspace_folder}/*/brief.md` — most recent or ask which run. If none exist, ask for a run folder or point them at `paw-pa-intake` / `paw-pa-agent-orchestrator`.
+1. **Find the run folder.** If the user gave a path, use it. Else scan `proposals/*/brief.md` — most recent or ask which run. If none exist, ask for a run folder or point them at `paw-pa-intake` / `paw-pa-agent-orchestrator`.
 2. **Read the brief.** Load `{run-folder}/brief.md`. Extract client name, scope, requirements, industry signals. Derive `{client-slug}` (lowercase, hyphenated).
-3. **Read shared memory.** Load `{memory-root}/index.md`, `{memory-root}/library/case-studies-index.json`, and `{memory-root}/clients/{client-slug}/history.md` if it exists.
+3. **Read shared memory.** Load `{suite-root}/_memory/index.md`, `{suite-root}/library/case-studies-index.json`, and `{suite-root}/clients/{client-slug}/history.md` if it exists.
 4. **Pick research mode.** See **Research mode routing** below.
 
 ## Research mode routing
@@ -117,8 +118,8 @@ Optionally write `{run-folder}/research-dossier.md` — same sections in prose f
 
 ## Close the loop
 
-- **Client history.** Append a dated entry to `{memory-root}/clients/{client-slug}/history.md` summarizing this research run (scope researched, top local match, key web finding). Create the file with a header if new client.
-- **Daily log.** Append a `[research]` line to `{memory-root}/daily/YYYY-MM-DD.md` noting client, mode, and dossier path.
+- **Client history.** Append a dated entry to `{suite-root}/clients/{client-slug}/history.md` summarizing this research run (scope researched, top local match, key web finding). Create the file with a header if new client.
+- **Daily log.** Append a `[research]` line to `{suite-root}/_memory/daily/YYYY-MM-DD.md` noting client, mode, and dossier path.
 - **Handoff.** Tell the seller the next step: review the dossier, then run `paw-pa-pricing` (benchmarks feed calibration) or return to `paw-pa-agent-orchestrator` in guided mode.
 
 ## Principles

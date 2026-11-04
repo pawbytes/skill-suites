@@ -18,12 +18,12 @@ Accept the brief in any format -- structured or freeform. Extract these required
 | **Visual direction** | No | Style notes, mood, reference images |
 
 If the brief is incomplete:
-- **Headless:** Infer from context. Use active brand from `.pawbytes/creative-suites/index.md`. Default to Instagram 4:5 portrait if platform unspecified.
+- **Headless:** Infer from context. Use active brand from `{suite-root}/_memory/index.md`. Default to Instagram 4:5 portrait if platform unspecified.
 - **Interactive:** Ask the user for missing fields before proceeding.
 
 ## Platform Spec Lookup
 
-Load the Designer's platform specifications from the parent agent reference at `{project-root}/skills/paw-cra-agent-designer/references/platform-specifications.md`.
+Load the Designer's platform specifications from the parent agent reference at `{skill-root}/../paw-cra-agent-designer/references/platform-specifications.md`.
 
 Resolve exact dimensions for the target platform and format:
 
@@ -43,7 +43,7 @@ Resolve exact dimensions for the target platform and format:
 
 ## Best-Practice Preload
 
-Load the Designer's best practices from `{project-root}/skills/paw-cra-agent-designer/references/best-practices-common-mistakes.md`.
+Load the Designer's best practices from `{skill-root}/../paw-cra-agent-designer/references/best-practices-common-mistakes.md`.
 
 Key rules to enforce throughout production:
 - Minimum 24px body text, 32px headlines for mobile readability
@@ -57,7 +57,7 @@ Key rules to enforce throughout production:
 **If copy/text is provided in the brief:** Use it directly. Verify it fits the platform format (character count, line count for the visual layout).
 
 **If copy/text is missing:** Two options depending on mode:
-- **Headless with campaign context:** Check `.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/scripts/` for existing copy assets
+- **Headless with campaign context:** Check `{suite-root}/brands/{brand}/campaigns/{campaign}/scripts/` for existing copy assets
 - **Interactive or no existing copy:** Invoke the Strategist (`paw-cra-agent-strategist`) for copy drafting. Provide: platform, format, brand guidelines, visual context. The Strategist returns copy variations -- select the best fit for the visual format.
 - **Last resort (headless, no strategist):** Generate placeholder copy and flag it in the manifest as `copy_source: "auto-generated"` for human review.
 

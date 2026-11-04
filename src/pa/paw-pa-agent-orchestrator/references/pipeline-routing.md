@@ -6,7 +6,7 @@ The orchestrator coordinates; the specialists produce. When the seller is ready 
 
 | Phase | Specialist | What it produces | Reads from workspace |
 |-------|-----------|------------------|----------------------|
-| Brief intake | `paw-pa-intake` | Structured `brief.md` + optional `transcript.md` | Config (`assemblyai_api_key`, `default_proposal_type`), `index.md` |
+| Brief intake | `paw-pa-intake` | Structured `brief.md` + optional `transcript.md` | Config (`assemblyai_api_key`, `default_proposal_type`), `_memory/index.md` |
 | Research | `paw-pa-research` | HTML research dossier (auto-opens) + optional `.md` | `brief.md`, `case-studies-index.json`, `clients/{slug}/history.md` |
 | Pricing | `paw-pa-pricing` | `pricing.json` + pricing-history append | `brief.md`, research dossier, `pricing-history.json` |
 | Generation | `paw-pa-generation` | `draft-v1.md`, variations, `final-proposal.{html,pdf,docx,md}` | `brief.md`, dossier, `pricing.json`, `brand/` |
@@ -30,14 +30,14 @@ Power users may skip or re-run phases on existing artifacts — e.g. re-price wi
 
 ## How to hand off
 
-1. **Confirm the run folder** — `{memory-root}/proposals/{slug}-{date}/`. Create it at run start if new.
+1. **Confirm the run folder** — `{suite-root}/proposals/{run}/`. Create it (with its `README.md`) at run start if new.
 2. **State the mode** — guided (you'll check in after this phase) or autonomous (runs through).
 3. **Name the specialist** — tell the seller which skill to invoke and what path to pass.
 4. **Set expectations** — what artifact appears, where it saves, what you'll do after (check-in or next handoff).
 
 Example handoff:
 
-> "Run folder is `proposals/acme-corp-2026-07-03/`. Invoke **`paw-pa-intake`** with your voice memo — it'll transcribe (AssemblyAI) and write `brief.md`. When intake finishes, I'll review completeness before we send it to research."
+> "Run folder is `proposals/2026-07-acme-corp/`. Invoke **`paw-pa-intake`** with your voice memo — it'll transcribe (AssemblyAI) and write `brief.md`. When intake finishes, I'll review completeness before we send it to research."
 
 The seller invokes the specialist directly. Shared memory carries context — you don't need to restate the brief in chat.
 
@@ -47,8 +47,8 @@ When the seller returns from a specialist:
 
 1. Read what landed in `{run-folder}/`.
 2. In **guided** mode, run the appropriate check-in gate (`references/check-in-gates.md`).
-3. Update `index.md` if the run status changed.
-4. Append `[orchestrator]` to today's `daily/` log.
+3. Update `_memory/index.md` and the run `README.md` `Status`/`Next` if the run status changed; then `paw-paths.py index`.
+4. Append `[orchestrator]` to today's `_memory/daily/` log.
 5. Route to the next specialist or close the run.
 
 ## Resume logic
@@ -70,6 +70,6 @@ Scan `{run-folder}/` for artifacts to determine stage:
 - **Research writes** `research-dossier.html`.
 - **Pricing writes** `pricing.json`.
 - **Generation writes** drafts and exports.
-- **You write** `outcome.md` and curate `index.md` / `clients/` after seller feedback.
+- **You write** `outcome.md` and curate `_memory/index.md` / `clients/` after seller feedback.
 
 Never write research content, pricing numbers, or proposal copy into those files yourself — only coordinate the specialists that own them.

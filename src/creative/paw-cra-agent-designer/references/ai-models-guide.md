@@ -312,8 +312,8 @@ curl -o "no-bg.png" "$(cat removed.json | jq -r '.image.url')"
 **Always download generated images to the workspace:**
 
 ```bash
-# Save to creative-suites
-OUTPUT_DIR=".pawbytes/creative-suites/brands/{brand}/assets/{campaign}/social"
+# Save to the suite tree
+OUTPUT_DIR="{suite-root}/brands/{brand}/campaigns/{campaign}/designs/social"
 mkdir -p "$OUTPUT_DIR"
 
 # Download with timestamp

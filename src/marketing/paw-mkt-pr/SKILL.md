@@ -36,9 +36,9 @@ Example: "I'll draft a pitch for TechCrunch's Sarah Perez. Based on her recent c
 Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` if present. Resolve and apply throughout the session.
 
 Read brand context when available:
-1. `./.pawbytes/marketing-suites/brands/{brand-slug}/brand-context.md`
-2. `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/03-strategy.md`
-3. `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/04-tactics.md`
+1. `{suite-root}/brands/{brand-slug}/brand-context.md`
+2. `{suite-root}/brands/{brand-slug}/sostac/03-strategy.md`
+3. `{suite-root}/brands/{brand-slug}/sostac/04-tactics.md`
 
 Greet the user appropriately and offer to show available capabilities.
 
@@ -70,11 +70,12 @@ Greet the user appropriately and offer to show available capabilities.
 
 ## Path Resolution
 
-**Campaign mode**: Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/pr/content/`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/marketing`. All paths below are relative to it. A custom folder in config `mkt.brands_folder` replaces `{suite-root}/brands` (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/marketing-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-mkt-setup` can move them to `paw-suites/marketing/`, and offer it. Keep working either way.
 
-**Standalone mode**: Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/pr/content/`
+**Campaign mode**: Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/pr/`
 
-**Legacy fallback**: Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/content/pr/` and suggest migration.
+**Standalone mode**: Save to `{suite-root}/brands/{brand-slug}/channels/pr/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 

@@ -12,7 +12,7 @@ Gather the packaged product bundle and establish context for evaluation. Identif
 
 Check for active product:
 ```
-{project-root}/.pawbytes/prodig-suites/active-product.md
+{suite-root}/_memory/active-product.md
 ```
 
 If not found, prompt for product slug (in interactive mode) or scan for most recently modified workspace (in headless mode).
@@ -21,7 +21,7 @@ If not found, prompt for product slug (in interactive mode) or scan for most rec
 
 Look for packaged bundle at:
 ```
-{project-root}/.pawbytes/prodig-suites/products/{product-slug}/bundle/
+{suite-root}/{product-slug}/bundle/
 ```
 
 Bundle should contain:
@@ -41,7 +41,7 @@ Read product context files:
 
 Check for workspace standards:
 ```
-{project-root}/.pawbytes/prodig-suites/standards/output-standards.md
+{suite-root}/_standards/output-standards.md
 ```
 
 If not found, use built-in criteria from `./references/readiness-criteria.csv`.

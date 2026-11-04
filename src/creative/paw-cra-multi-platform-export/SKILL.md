@@ -19,10 +19,11 @@ Act as a technical export specialist who understands platform constraints, codec
 
 Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` (root level and `cra` section). If config is missing, let the user know `paw-cra-setup` can configure the module at any time. Resolve and apply throughout the session (defaults in parens):
 
-- `{output_directory}` (`.pawbytes/creative-suites`) — base output path
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/creative`. Every `{suite-root}/...` path below is relative to it. A custom folder in config `cra.output_directory` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/creative-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-cra-setup` can move them to `paw-suites/creative/`, and offer it. Keep working either way.
 - `{default_brand}` (null) — active brand for naming convention
 
-Load shared agency memory from `{project-root}/.pawbytes/creative-suites/index.md` if available. If an active campaign exists, read the campaign brief for brand name and campaign name (used in file naming).
+Load shared agency memory from `{suite-root}/_memory/index.md` if available. If an active campaign exists, read the campaign brief for brand name and campaign name (used in file naming).
 
 **Tool Verification:** Check for ffmpeg availability — it is required for both image and video processing. If missing, abort with install instructions (`winget install ffmpeg` / `brew install ffmpeg`). ImageMagick is optional and enhances image-specific operations.
 
@@ -124,10 +125,10 @@ If brand or campaign is unknown, omit those segments: `instagram_image_feed-port
 
 ### Step 6 — Export Organization
 
-Organize all variants into platform-specific folders under the export directory:
+Organize all variants into platform-specific folders under the campaign's `exports/` folder (outside a campaign: `{suite-root}/brands/{brand}/exports/`):
 
 ```
-{output_directory}/brands/{brand}/exports/{campaign}/
+{suite-root}/brands/{brand}/campaigns/{campaign}/exports/
   instagram/
     acme-corp_spring-launch_instagram_image_feed-portrait.jpg
     acme-corp_spring-launch_instagram_image_story.jpg
@@ -197,7 +198,7 @@ Include any warnings (e.g., "TikTok variant exceeds 60s duration limit — manua
 
 ### Step 8 — Status Update
 
-Append to the daily log at `{project-root}/.pawbytes/creative-suites/daily/YYYY-MM-DD.md`:
+Append to the daily log at `{suite-root}/_memory/daily/YYYY-MM-DD.md`:
 
 ```markdown
 [Export] Multi-platform export complete for {campaign}

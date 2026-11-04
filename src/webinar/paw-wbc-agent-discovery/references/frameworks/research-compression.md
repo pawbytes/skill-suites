@@ -199,7 +199,7 @@ Check that compressed context includes:
 
 Save compressed research to:
 ```
-{project-root}/.pawbytes/webinar-suites/webinars/{webinar-slug}/research-context.md
+{suite-root}/{webinar-slug}/research-context.md
 ```
 
 ## Producer Consumption

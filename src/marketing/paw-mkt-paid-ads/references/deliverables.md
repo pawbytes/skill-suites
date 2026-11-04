@@ -44,7 +44,7 @@ Hypothesis, variables, control/variant setup, sample size, and decision framewor
 
 ### Campaign mode:
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/paid-ads/content/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/paid-ads/
   campaign-brief-{name}-{YYYY-MM-DD}.md
   ad-copy-{platform}-{campaign}-{YYYY-MM-DD}.md
   audience-spec-{platform}-{YYYY-MM-DD}.md
@@ -53,7 +53,7 @@ Hypothesis, variables, control/variant setup, sample size, and decision framewor
 
 ### Standalone mode (default for evergreen work):
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/paid-ads/content/
+{suite-root}/brands/{brand-slug}/channels/paid-ads/
   campaign-brief-{name}-{YYYY-MM-DD}.md
   ad-copy-{platform}-{campaign}-{YYYY-MM-DD}.md
   audience-spec-{platform}-{YYYY-MM-DD}.md

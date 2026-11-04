@@ -26,13 +26,28 @@ Ask but don't block:
 > See `./directory-structure.md` for full layout. Create top-level directories during onboarding.
 
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/
+{suite-root}/brands/{brand-slug}/
+├── README.md
 ├── brand-context.md
 ├── sostac/
 │   └── README.md
 ├── campaigns/
 ├── channels/
 └── operations/
+```
+
+## README.md Template
+
+The brand dashboard. Skills that finish a deliverable update `Status`, `Next` and the file list.
+
+```markdown
+# {Brand Name}
+
+Status: Onboarded
+Next: SOSTAC situation analysis with `paw-mkt-sostac`
+
+- [Brand context](brand-context.md)
+- [SOSTAC plan](sostac/README.md)
 ```
 
 ## brand-context.md Template
@@ -89,5 +104,7 @@ Create the SOSTAC status tracker:
 ```
 
 ## After Onboarding
+
+Run `uv run {skill-root}/scripts/paw-paths.py index` so the suite README lists the new brand.
 
 Offer to start SOSTAC strategic planning with `paw-mkt-sostac`, or let the user continue with other work. Don't push — let them decide their next step.

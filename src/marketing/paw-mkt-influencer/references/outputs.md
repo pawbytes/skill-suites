@@ -8,7 +8,7 @@
 
 ### Campaign Mode
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/influencer/content/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/influencer/
   campaign-plan-{name}-{YYYY-MM-DD}.md
   outreach-templates-{YYYY-MM-DD}.md
   creator-brief-{campaign}-{YYYY-MM-DD}.md
@@ -19,7 +19,7 @@
 
 ### Standalone Mode
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/influencer/content/
+{suite-root}/brands/{brand-slug}/channels/influencer/
   campaign-plan-{name}-{YYYY-MM-DD}.md
   outreach-templates-{YYYY-MM-DD}.md
   creator-brief-{campaign}-{YYYY-MM-DD}.md

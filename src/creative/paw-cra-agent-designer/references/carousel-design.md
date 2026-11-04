@@ -14,7 +14,7 @@ User requests a carousel, slide deck, multi-slide post, or sequential visual sto
 |-------|--------|----------|
 | Script/storyboard | Brief or Strategist output | Yes |
 | Platform | User specification | Yes |
-| Brand guidelines | `.pawbytes/creative-suites/brands/{brand}/guidelines.md` | Yes |
+| Brand guidelines | `{suite-root}/brands/{brand}/guidelines.md` | Yes |
 | Number of slides | User specification or deduced from content | Yes |
 
 ## Process
@@ -82,7 +82,7 @@ Create consistent visual language for all slides:
 ## Output
 
 **Format:** PNG/JPG sequence (numbered files)
-**Location:** `.pawbytes/creative-suites/brands/{brand}/assets/{campaign}/carousels/`
+**Location:** `{suite-root}/brands/{brand}/campaigns/{campaign}/designs/carousels/` (outside a campaign: `{suite-root}/brands/{brand}/designs/carousels/`)
 **Naming:** `{carousel-name}_slide{01-N}.{ext}`
 
 ## Optimal Slide Count

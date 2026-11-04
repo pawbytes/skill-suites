@@ -4,8 +4,8 @@ How this agent reads from and writes to shared memory.
 
 ## Read Locations
 
-### Sidecar Index
-**Path:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md`
+### Memory Index
+**Path:** `{suite-root}/_memory/index.md`
 
 **Purpose:** Orientation file showing current product context and recent activity.
 
@@ -18,7 +18,7 @@ How this agent reads from and writes to shared memory.
 - Key contacts and roles
 
 ### Product Context
-**Path:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md`
+**Path:** `{suite-root}/_memory/curated/product-context.md`
 
 **Purpose:** Deep context about the current product being explored.
 
@@ -31,7 +31,7 @@ How this agent reads from and writes to shared memory.
 - Prior exploration notes
 
 ### Daily Logs
-**Path:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`
+**Path:** `{suite-root}/_memory/daily/YYYY-MM-DD.md`
 
 **Purpose:** Session-by-session record of what was explored.
 
@@ -44,7 +44,7 @@ How this agent reads from and writes to shared memory.
 - Decisions made
 
 ### Market Intelligence
-**Path:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/market-intelligence.md`
+**Path:** `{suite-root}/_memory/curated/market-intelligence.md`
 
 **Purpose:** Research synthesis about market and competition.
 
@@ -58,7 +58,7 @@ How this agent reads from and writes to shared memory.
 ## Write Locations
 
 ### Daily Log
-**Path:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`
+**Path:** `{suite-root}/_memory/daily/YYYY-MM-DD.md`
 
 **Purpose:** Capture session outputs and insights.
 
@@ -94,7 +94,7 @@ How this agent reads from and writes to shared memory.
 **Append pattern:** Read existing file, append new session with timestamp.
 
 ### Product Decisions
-**Path:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-decisions.md`
+**Path:** `{suite-root}/_memory/curated/product-decisions.md`
 
 **Purpose:** Record significant direction decisions.
 

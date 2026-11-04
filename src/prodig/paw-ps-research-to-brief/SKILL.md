@@ -50,10 +50,15 @@ Document key evidence sources and unresolved uncertainties. Create signal preser
 
 ---
 
+## Path Resolution
+
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
+
 ## On Activation
 
-1. Determine the product workspace root: `{project-root}/.pawbytes/prodig-suites/`
-2. Identify active product context from `.pawbytes/prodig-suites/active-product.md` if it exists
+1. Resolve `{suite-root}` (see Path Resolution)
+2. Identify active product context from `{suite-root}/_memory/active-product.md` if it exists
 3. If no active product is set and not in headless mode, prompt user to specify product slug
 4. Begin pipeline at Stage 1
 
@@ -63,9 +68,9 @@ Document key evidence sources and unresolved uncertainties. Create signal preser
 
 | Source | File Path | Required |
 |--------|-----------|----------|
-| Discovery | `.pawbytes/prodig-suites/products/{product-slug}/product-context.md` | Preferred |
-| Market Research | `.pawbytes/prodig-suites/products/{product-slug}/market-intelligence.md` | Preferred |
-| Audience Research | `.pawbytes/prodig-suites/products/{product-slug}/audience-intelligence.md` | Preferred |
+| Discovery | `{suite-root}/{product-slug}/product-context.md` | Preferred |
+| Market Research | `{suite-root}/{product-slug}/market-intelligence.md` | Preferred |
+| Audience Research | `{suite-root}/{product-slug}/audience-intelligence.md` | Preferred |
 
 **Minimum Requirement:** At least one of the three input sources must be available.
 
@@ -74,7 +79,7 @@ Document key evidence sources and unresolved uncertainties. Create signal preser
 ## Output Structure
 
 ```
-.pawbytes/prodig-suites/products/{product-slug}/
+{suite-root}/{product-slug}/
 ├── product-brief.md              # Main brief document
 ├── signal-notes.md               # Evidence and uncertainty log
 └── product-decisions.md          # Appended brief metadata (if exists)
@@ -91,7 +96,7 @@ Every execution delivers:
   - `product-brief.md` — Structured product brief
   - `signal-notes.md` — Evidence and uncertainty preservation
 - **Recommendations:** Next steps (e.g., validate with stakeholders, initiate design phase)
-- **File saved to:** `.pawbytes/prodig-suites/products/{product-slug}/`
+- **File saved to:** `{suite-root}/{product-slug}/`
 
 ---
 
@@ -99,7 +104,7 @@ Every execution delivers:
 
 When invoked with `--headless` or `-H`:
 
-1. Attempt to read active product from `.pawbytes/prodig-suites/active-product.md`
+1. Attempt to read active product from `{suite-root}/_memory/active-product.md`
 2. If not found, scan for most recently modified product workspace
 3. Execute all stages without prompts
 4. Document any gaps or assumptions in signal notes

@@ -160,9 +160,10 @@ These paths are automatically configured but can be overridden.
 
 | Variable | Default |
 |----------|---------|
-| Sidecar Memory | `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/` |
-| Products | `{project-root}/.pawbytes/prodig-suites/products/` |
-| Artifacts | `{project-root}/.pawbytes/prodig-suites/artifacts/` |
+| `products_folder` (suite root) | `{project-root}/paw-suites/products/` |
+| `memory_folder` | `{project-root}/paw-suites/products/_memory/` |
+
+Each product gets its own folder under the suite root, holding its plan (`plan/`), executor outputs (`build/`) and package. Releases before this one used `{project-root}/.pawbytes/prodig-suites/` with `output_folder`, `sidecar_folder`, `products_folder` and `artifacts_folder`; `paw-ps-setup` migrates them.
 
 **Note:** `{project-root}` is a literal token resolved at runtime.
 

@@ -136,14 +136,14 @@ Move to Stage 3 when:
 | Enriched brief | `{webinar-slug}/brief.md` |
 | Research context | `{webinar-slug}/research-context.md` |
 | Selected hook | `{webinar-slug}/hook-selected.md` |
-| Daily log entry | `daily/{YYYY-MM-DD}.md` |
+| Daily log entry | `_memory/daily/{YYYY-MM-DD}.md` |
 
 ## Discovery Agent Invocation
 
 When calling the Discovery agent, pass context:
 
 ```text
-/paw-wbc-agent-discovery --headless --brief "{project-root}/.pawbytes/webinar-suites/webinars/{webinar-slug}/brief.md"
+/paw-wbc-agent-discovery --headless --brief "{suite-root}/{webinar-slug}/brief.md"
 
 Context: User is in the Webinar Creation pipeline, Stage 2 (Discovery).
 Proceed with brief expansion, research, and hook generation.

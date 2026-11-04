@@ -17,13 +17,13 @@ module_greeting: |
 # Configuration Variables
 freelancers_folder:
   prompt: "Where should freelancer workspaces be stored?"
-  default: "{project-root}/.pawbytes/upwork-suites/freelancers"
+  default: "{project-root}/paw-suites/upwork/freelancers"
   result: "{value}"
   directories: true
 
 reports_folder:
   prompt: "Where should reports and dashboards be saved?"
-  default: "{project-root}/.pawbytes/upwork-suites/reports"
+  default: "{project-root}/paw-suites/upwork/reports"
   result: "{value}"
   directories: true
 

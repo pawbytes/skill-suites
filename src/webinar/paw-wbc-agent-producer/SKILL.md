@@ -47,7 +47,7 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - Missing `{project-root}/.pawbytes/config/config.user.yaml` → Treat as optional, use defaults from config.yaml
 - I/O error reading config files → Surface explicit error to caller with file path and error details; do not silently ignore
 
-Load module memory from `{project-root}/.pawbytes/webinar-suites/index.md` to understand active webinars.
+Resolve `{suite-root}` (see Path Resolution). Load module memory from `{suite-root}/_memory/index.md` to understand active webinars.
 
 **Error handling for memory loading:**
 - Missing `index.md` → Initialize empty module memory, proceed normally
@@ -113,11 +113,17 @@ Otherwise, greet the user and summarize the loaded context. Confirm the webinar 
 
 ### Phase 6: Daily Log
 
-17. **Log activity** — Write to `{project-root}/.pawbytes/webinar-suites/daily/YYYY-MM-DD.md` with `[producer]` tag
+17. **Log activity** — Write to `_memory/daily/YYYY-MM-DD.md` with `[producer]` tag
+18. **Update the dashboard** — Set `Status`, `Next` and the file links in `{webinar-slug}/README.md`, then run `paw-paths.py index`
 
 ## Path Resolution
 
-**Webinar workspace root:** `{project-root}/.pawbytes/webinar-suites/webinars/{webinar-slug}/`
+- `{skill-root}` is this skill's folder; bare paths (`references/...`) resolve from it.
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/webinars`. All paths below are relative to it. A custom folder in config `wbc.output_folder` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/webinar-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-wbc-setup` can move them to `paw-suites/webinars/`, and offer it. Keep working either way.
+- Each webinar folder has a `README.md` dashboard: `# <Webinar title>`, `Status: <one phrase>`, `Next: <one step>`, then links to its files. Whoever creates the folder writes it; whoever finishes a deliverable updates it, then runs `uv run {skill-root}/scripts/paw-paths.py index` to refresh the suite `README.md`.
+
+**Webinar workspace root:** `{suite-root}/{webinar-slug}/`
 
 **Outputs written:**
 - `slide-deck-outline.md` — LLM-ready slide structure
@@ -155,7 +161,7 @@ Every production run includes:
   - `script.md` — full script for key moments, talking points elsewhere
   - `recommendations.md` — research insights for Q&A or backup
 - **Recommendations:** What to do next (rehearse, design slides, refine sections)
-- **File saved to:** `{project-root}/.pawbytes/webinar-suites/webinars/{webinar-slug}/`
+- **File saved to:** `{suite-root}/{webinar-slug}/`
 
 ## Example Output
 

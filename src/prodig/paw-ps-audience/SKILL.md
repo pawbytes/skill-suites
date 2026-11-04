@@ -41,7 +41,7 @@ Examples:
 
 ## On Activation
 
-Load shared memory from `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md` to understand current context.
+Load shared memory from `{suite-root}/_memory/index.md` to understand current context.
 
 **Read in order:**
 1. `curated/product-context.md` — What product are we building? What stage?
@@ -101,17 +101,20 @@ When invoked with `--headless` or `-H`:
 
 ## Path Resolution
 
-**Shared memory root:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
+
+**Shared memory root:** `{suite-root}/_memory/`
 
 **Primary output:** `curated/audience-intelligence.md`
 
 **Daily log:** `daily/YYYY-MM-DD.md`
 
-**Product workspace:** `{project-root}/.pawbytes/prodig-suites/products/{product-slug}/audience/`
+**Product workspace:** `{suite-root}/{product-slug}/audience/`
 
 **Audience workspace structure:**
 ```
-products/{product-slug}/audience/
+{suite-root}/{product-slug}/audience/
 ├── personas/
 │   ├── primary-persona.md
 │   └── secondary-personas.md

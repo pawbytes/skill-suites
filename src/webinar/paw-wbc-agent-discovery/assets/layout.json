@@ -1,0 +1,20 @@
+{
+  "suite": "webinars",
+  "title": "PawBytes Webinars",
+  "config_section": "wbc",
+  "root": "paw-suites/webinars",
+  "legacy_root": ".pawbytes/webinar-suites",
+  "items": ["*"],
+  "rules": [
+    {"from": "index.md", "to": "_memory/index.md"},
+    {"from": "daily/**", "to": "_memory/daily/{rest}"},
+    {"from": "webinars/*/**", "to": "{1}/{rest}"}
+  ],
+  "config_keys": [
+    {
+      "key": "output_folder",
+      "legacy": "{project-root}/.pawbytes/webinar-suites",
+      "new": "{project-root}/paw-suites/webinars"
+    }
+  ]
+}

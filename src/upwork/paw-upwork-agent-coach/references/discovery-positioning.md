@@ -18,7 +18,7 @@ You form an opinion; research supplies the evidence. When `research/` has a nich
 
 ## The positioning-brief contract
 
-This is the source of truth `paw-upwork-profile` and `paw-upwork-proposal` read on activation. Write it only after the freelancer believes in the positioning. Present your draft, iterate, then write to `{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/positioning-brief.md`:
+This is the source of truth `paw-upwork-profile` and `paw-upwork-proposal` read on activation. Write it only after the freelancer believes in the positioning. Present your draft, iterate, then write to `{freelancer-workspace}/positioning-brief.md`:
 
 ```markdown
 # Positioning Brief — {name}
@@ -52,7 +52,7 @@ observed rates — from research. Cite what was observed, not assumed.}
 {YYYY-MM-DD}
 ```
 
-After writing, update the freelancer's `index.md` status row (niche, positioning brief = done) and append a `[coach]` line to today's `daily/` log.
+After writing, update the freelancer's `_memory/index.md` status row (niche, positioning brief = done) and append a `[coach]` line to today's `_memory/daily/` log.
 
 ## Rate Guidance
 

@@ -17,20 +17,14 @@ Define what email deliverables look like and where they save.
 
 **Campaign mode** (working within named campaign):
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/email/content/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/email/
 ```
-Read campaign strategy at: `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+Read campaign strategy at: `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** (evergreen or independent work):
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/email/content/
+{suite-root}/brands/{brand-slug}/channels/email/
 ```
-
-**Legacy fallback** (old directory structure):
-```
-./.pawbytes/marketing-suites/brands/{brand-slug}/content/email/
-```
-Suggest migration to new structure.
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 
@@ -61,7 +55,7 @@ Sequence Position: [Where this fits in flow]
 
 Monthly performance reports save to:
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/email/performance/monthly-report-{YYYY-MM}.md
+{suite-root}/brands/{brand-slug}/channels/email/performance/monthly-report-{YYYY-MM}.md
 ```
 
 Include: key metrics vs benchmarks, test results, optimization recommendations.

@@ -33,7 +33,7 @@ I am a pragmatic product execution specialist who speaks in terms of shipped fea
 - **Value-to-Technical Translation** — Product intent becomes technical specification without losing customer value
 - **Decision Documentation** — Ambiguity is resolved, not deferred. Every decision is written down.
 - **Delivery Milestones** — Work is chunked into shippable increments, not monolithic releases
-- **Sidecar Discipline** — Read from curated memory, write to product workspace
+- **Memory Discipline** — Read from curated memory, write to product workspace
 - **Artifact Ownership** — The executor owns the quality and buildability of outputs
 
 ## On Activation
@@ -46,12 +46,12 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 
 **Memory Load:**
 
-1. Load sidecar memory index from `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md`
+1. Load memory index from `{suite-root}/_memory/index.md`
 2. Load input files from curated memory:
    - `curated/product-context.md` — current product context
    - `curated/audience-intelligence.md` — audience insights and needs
    - `curated/market-intelligence.md` — competitive landscape and positioning
-   - `curated/output-standards.md` — formatting and quality standards
+   - `{suite-root}/_standards/output-standards.md` — formatting and quality standards
    - `curated/product-types/software-products.md` — product-type guidance (if exists)
 3. Load `./references/feature-definition.md` for foundational feature specification approach
 
@@ -88,20 +88,23 @@ When the user requests software product execution:
 
 ## Path Resolution
 
-**Sidecar memory root**: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
+
+**Memory root**: `{suite-root}/_memory/`
 
 **Input files (read)**:
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md`
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/audience-intelligence.md`
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/market-intelligence.md`
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/output-standards.md`
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types/software-products.md`
+- `{suite-root}/_memory/curated/product-context.md`
+- `{suite-root}/_memory/curated/audience-intelligence.md`
+- `{suite-root}/_memory/curated/market-intelligence.md`
+- `{suite-root}/_standards/output-standards.md`
+- `{suite-root}/_memory/curated/product-types/software-products.md`
 
 **Output files (write)**:
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/artifacts/{product-slug}/` — product artifacts
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types/software-products.md` — refined guidance
+- `{suite-root}/{product-slug}/build/` — product artifacts
+- `{suite-root}/_memory/curated/product-types/software-products.md` — refined guidance
 
-**Daily log**: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`
+**Daily log**: `{suite-root}/_memory/daily/YYYY-MM-DD.md`
 
 ## Escalation Routes
 

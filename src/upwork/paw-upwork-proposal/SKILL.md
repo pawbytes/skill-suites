@@ -19,6 +19,9 @@ Act as a senior Upwork proposal strategist — someone who has read the winning 
 - `{project-root}` → the project working directory.
 - `{skill-name}` → the skill directory's basename.
 - `{slug}` → the chosen freelancer's workspace folder name under `freelancers/`.
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/upwork`. All paths below are relative to it. A custom folder in config `upwork.freelancers_folder` or `upwork.reports_folder` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the freelancer's files are still partly in the old `.pawbytes/upwork-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the freelancer that `paw-upwork-setup` can move them to `paw-suites/upwork/`, and offer it. Keep working either way.
+- `{freelancer-workspace}` → `{suite-root}/freelancers/{slug}/`. Its `README.md` is the freelancer's dashboard; agent memory (`index.md`, `daily/`) lives in its `_memory/`, so `_memory/index.md` below means `{freelancer-workspace}/_memory/index.md`.
 
 ## The Non-Negotiable
 
@@ -30,8 +33,8 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 
 Then find the freelancer's workspace and read context:
 
-1. **Locate the workspace** — `{project-root}/.pawbytes/upwork-suites/freelancers/*/index.md`. If `default_freelancer` is set, use it; if multiple exist and none is defaulted, ask which freelancer this is for; if none exist, the freelancer hasn't onboarded — point them to `paw-upwork-agent-coach` and proceed only with whatever context they give you inline.
-2. **Read the contract** — On the chosen workspace, read `index.md`, then `positioning-brief.md`, `freelancer-context.md`, `kit.md`, and `outcomes.md` if they exist. These tell you the niche, voice, proven angles, and what has landed before, so every proposal comes in already knowing the lane.
+1. **Locate the workspace** — `{suite-root}/freelancers/*/`. If `default_freelancer` is set, use it; if multiple exist and none is defaulted, ask which freelancer this is for; if none exist, the freelancer hasn't onboarded — point them to `paw-upwork-agent-coach` and proceed only with whatever context they give you inline.
+2. **Read the contract** — On the chosen workspace, read `_memory/index.md`, then `positioning-brief.md`, `freelancer-context.md`, `kit.md`, and `outcomes.md` if they exist. These tell you the niche, voice, proven angles, and what has landed before, so every proposal comes in already knowing the lane.
 3. **Check the prerequisite** — A proposal is only as sharp as the positioning it sells. If `positioning-brief.md` is missing, **don't hard-block**: tell the freelancer the proposal will be stronger with a locked lane, recommend a quick discovery pass with `paw-upwork-agent-coach` (optionally research first), and proceed from inline context if they want to push ahead now.
 
 ### Headless / skip-to-draft
@@ -65,11 +68,11 @@ The freelancer often chains these in one session — decode and write a proposal
 
 All output saves to the freelancer's workspace so the coach and future runs can read it:
 
-- Proposals → `{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/proposals/{job-slug}.md`
-- Reusable intros, snippets, case-study blurbs → `{slug}/kit.md` (create on first use)
-- Outcome notes that refine future work → contributed to `{slug}/outcomes.md`
+- Proposals → `{freelancer-workspace}/proposals/{job-slug}.md`
+- Reusable intros, snippets, case-study blurbs → `{freelancer-workspace}/kit.md` (create on first use)
+- Outcome notes that refine future work → contributed to `{freelancer-workspace}/outcomes.md`
 
-After saving anything, update the `index.md` status (proposals sent count when relevant, last updated) and append a `[proposal]`-tagged line to today's `{slug}/daily/YYYY-MM-DD.md` log noting what was produced.
+After saving anything, update the `_memory/index.md` status (proposals sent count when relevant, last updated) and the `Status`/`Next` lines of `{freelancer-workspace}/README.md`, run `uv run {skill-root}/scripts/paw-paths.py index`, and append a `[proposal]`-tagged line to today's `{freelancer-workspace}/_memory/daily/YYYY-MM-DD.md` log noting what was produced.
 
 ## Principles
 

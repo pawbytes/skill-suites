@@ -12,9 +12,9 @@ Read from the product workspace in order of priority:
 
 | Priority | Source | Expected Path |
 |----------|--------|---------------|
-| 1 | Discovery | `.pawbytes/prodig-suites/products/{product-slug}/product-context.md` |
-| 2 | Market Intelligence | `.pawbytes/prodig-suites/products/{product-slug}/market-intelligence.md` |
-| 3 | Audience Intelligence | `.pawbytes/prodig-suites/products/{product-slug}/audience-intelligence.md` |
+| 1 | Discovery | `{suite-root}/{product-slug}/product-context.md` |
+| 2 | Market Intelligence | `{suite-root}/{product-slug}/market-intelligence.md` |
+| 3 | Audience Intelligence | `{suite-root}/{product-slug}/audience-intelligence.md` |
 
 ---
 
@@ -22,13 +22,13 @@ Read from the product workspace in order of priority:
 
 ### Step 1: Identify Product Workspace
 
-1. Check for active product marker at `.pawbytes/prodig-suites/active-product.md`
+1. Check for active product marker at `{suite-root}/_memory/active-product.md`
 2. Read the product slug from the marker file
-3. Construct the product workspace path: `.pawbytes/prodig-suites/products/{product-slug}/`
+3. Construct the product workspace path: `{suite-root}/{product-slug}/`
 
 If no active product marker exists:
 - **Interactive mode:** Prompt user for product slug
-- **Headless mode:** Scan `.pawbytes/prodig-suites/products/` for most recently modified directory
+- **Headless mode:** Scan `{suite-root}/` for most recently modified directory
 
 ### Step 2: Scan for Input Files
 

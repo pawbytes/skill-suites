@@ -88,7 +88,7 @@ Export assembled video at target specifications:
 ## Output
 
 **Format:** MP4 (H.264, AAC)
-**Location:** Working directory for pipeline, or `.pawbytes/creative-suites/brands/{brand}/videos/{campaign}/`
+**Location:** `{suite-root}/brands/{brand}/videos/.work/{timestamp}/` while assembling; the final file goes to the matching `short-form/` or `long-form/{slug}/` folder under the campaign's `videos/` (or the brand's `videos/` outside a campaign)
 
 ## Integration
 

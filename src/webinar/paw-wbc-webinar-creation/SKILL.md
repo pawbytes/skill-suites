@@ -11,7 +11,7 @@ The Webinar Creation Pipeline is a guided workflow that takes solo creators from
 
 **Args:** Interactive only. This workflow is designed for guided conversation.
 
-**Output:** Complete webinar package including slide deck outline, script, and recommendations saved to `.pawbytes/webinar-suites/webinars/{webinar-slug}/`.
+**Output:** Complete webinar package including slide deck outline, script, and recommendations saved to `paw-suites/webinars/{webinar-slug}/`.
 
 ## Principles
 
@@ -90,14 +90,20 @@ Load `./references/04-output-delivery.md`
 
 ## Path Resolution
 
-**Module root:** `{project-root}/.pawbytes/webinar-suites/`
+- `{skill-root}` is this skill's folder; bare paths (`references/...`) resolve from it.
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/webinars`. All paths below are relative to it. A custom folder in config `wbc.output_folder` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/webinar-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-wbc-setup` can move them to `paw-suites/webinars/`, and offer it. Keep working either way.
+- Each webinar folder has a `README.md` dashboard: `# <Webinar title>`, `Status: <one phrase>`, `Next: <one step>`, then links to its files. Whoever creates the folder writes it; whoever finishes a deliverable updates it, then runs `uv run {skill-root}/scripts/paw-paths.py index` to refresh the suite `README.md`.
 
-**Webinar workspace:** `{project-root}/.pawbytes/webinar-suites/webinars/{webinar-slug}/`
+**Module root:** `{suite-root}/` (generated `README.md`; agent memory in `_memory/`)
+
+**Webinar workspace:** `{suite-root}/{webinar-slug}/`
 
 **Output files:**
 
 | File | Purpose | Created By |
 |------|---------|------------|
+| `README.md` | Webinar dashboard (Status, Next, files) | Stage 1, updated each stage |
 | `brief.md` | Initial brief + audience context | Stage 1 |
 | `research-context.md` | Compressed research findings | Stage 2 |
 | `hook-selected.md` | Chosen hook + reasoning | Stage 2 |
@@ -105,7 +111,9 @@ Load `./references/04-output-delivery.md`
 | `script.md` | Full script + talking points | Stage 3 |
 | `recommendations.md` | Surfaced insights | Stage 3 |
 
-**Daily log:** `{project-root}/.pawbytes/webinar-suites/daily/{YYYY-MM-DD}.md`
+**Module memory:** `_memory/index.md`
+
+**Daily log:** `_memory/daily/{YYYY-MM-DD}.md`
 
 If no webinar slug exists, generate one using the slug generation algorithm.
 
@@ -143,7 +151,7 @@ Every completed webinar creation includes:
   - `slide-deck-outline.md` — detailed slide-by-slide with content points and visual direction
   - `script.md` — full script for key moments, talking points elsewhere
   - `recommendations.md` — research insights for Q&A or backup
-- **File saved to:** `{project-root}/.pawbytes/webinar-suites/webinars/{webinar-slug}/`
+- **File saved to:** `{suite-root}/{webinar-slug}/`
 - **Next recommended actions:** Rehearse, design slides, refine sections, promote
 
 ## Resumption Support

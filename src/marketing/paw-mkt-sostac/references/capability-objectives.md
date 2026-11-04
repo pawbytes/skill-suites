@@ -2,7 +2,7 @@
 
 **Outcome:** Define measurable, benchmarked objectives that connect to business goals and cover the full funnel.
 
-**Output:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/02-objectives.md`
+**Output:** `{suite-root}/brands/{brand-slug}/sostac/02-objectives.md`
 
 **Phase Question:** "Where do we want to be?"
 

@@ -14,7 +14,7 @@ User requests a social post, social media image, or platform-specific visual con
 |-------|--------|----------|
 | Copy/text content | Brief or Strategist output | Yes |
 | Platform | User specification | Yes |
-| Brand guidelines | `.pawbytes/creative-suites/brands/{brand}/guidelines.md` | Yes |
+| Brand guidelines | `{suite-root}/brands/{brand}/guidelines.md` | Yes |
 | Visual references | User provided or generated | Optional |
 
 ## Process
@@ -79,7 +79,7 @@ Before delivery, verify against `./capability-standards.md`:
 ## Output
 
 **Format:** PNG (graphics with transparency) or JPG (photos)
-**Location:** `.pawbytes/creative-suites/brands/{brand}/assets/{campaign}/social/`
+**Location:** `{suite-root}/brands/{brand}/campaigns/{campaign}/designs/social/` (outside a campaign: `{suite-root}/brands/{brand}/designs/social/`)
 **Naming:** `{platform}_{post-type}_{date}.{ext}`
 
 ## Example Usage

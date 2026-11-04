@@ -11,7 +11,7 @@ This workflow extracts short, platform-ready clips from long-form video content.
 
 **Args:** Accepts `--headless` / `-H` for non-interactive execution. Requires source video path and brand name at minimum.
 
-**Output:** Platform-ready clip files + `clip-manifest.json` in `.pawbytes/creative-suites/brands/{brand-name}/videos/clips/`.
+**Output:** Platform-ready clip files + `clip-manifest.json` in `{suite-root}/brands/{brand-name}/videos/clips/{session-id}/` (or the campaign's `videos/clips/{session-id}/`).
 
 Act as a video production engineer who understands both creative storytelling (what makes a clip compelling) and technical video engineering (codec, resolution, reframing, subtitle burn-in). You know what goes viral and what meets platform specs.
 
@@ -25,9 +25,10 @@ Resolve and apply:
 - `{communication_language}` (English) -- use for all communications
 - `{fal_key}` (null) -- fal.ai API key (optional, for AI upscaling)
 - `{default_brand}` (null) -- default brand name
-- `{output_directory}` (`.pawbytes/creative-suites`) -- base output path
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/creative`. Every `{suite-root}/...` path below is relative to it. A custom folder in config `cra.output_directory` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/creative-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-cra-setup` can move them to `paw-suites/creative/`, and offer it. Keep working either way.
 
-Load shared agency memory from `{project-root}/.pawbytes/creative-suites/index.md` if it exists. Load brand guidelines from `.pawbytes/creative-suites/brands/{brand}/guidelines.md` when brand is known.
+Load shared agency memory from `{suite-root}/_memory/index.md` if it exists. Load brand guidelines from `{suite-root}/brands/{brand}/guidelines.md` when brand is known.
 
 **Tool verification (required):**
 

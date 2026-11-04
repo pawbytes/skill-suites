@@ -18,7 +18,7 @@
 
 ## Research Mode: Influencer Discovery
 
-Use agent-browser to find and vet creators before building shortlists. Check `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/00-auto-discovery.md` for influencer data already collected.
+Use agent-browser to find and vet creators before building shortlists. Check `{suite-root}/brands/{brand-slug}/sostac/00-auto-discovery.md` for influencer data already collected.
 
 **Influencer Research Commands:**
 
@@ -29,7 +29,7 @@ agent-browser get text body
 
 # Instagram Hashtag Research (find active creators)
 agent-browser --session influencer-research open "https://www.instagram.com/explore/tags/{niche-hashtag}/" && agent-browser wait --load networkidle && agent-browser wait 2000
-agent-browser screenshot ./.pawbytes/marketing-suites/brands/{brand-slug}/channels/influencer/content/hashtag-research.png
+agent-browser screenshot {suite-root}/brands/{brand-slug}/channels/influencer/hashtag-research.png
 
 # YouTube Creator Search
 agent-browser --session influencer-research open "https://www.youtube.com/results?search_query={niche-keyword}+review" && agent-browser wait --load networkidle && agent-browser wait 2000

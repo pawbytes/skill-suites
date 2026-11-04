@@ -14,7 +14,7 @@ User requests a short-form video, reel, TikTok, YouTube Short, or vertical video
 |-------|--------|----------|
 | Script or concept | Brief, user input, or Strategist output | Yes |
 | Platform target(s) | User specification | Yes |
-| Brand guidelines | `.pawbytes/creative-suites/brands/{brand}/guidelines.md` | Yes |
+| Brand guidelines | `{suite-root}/brands/{brand}/guidelines.md` | Yes |
 | Duration target | User specification (default: 30s) | Optional |
 | Voice/music direction | User preference | Optional |
 
@@ -24,7 +24,7 @@ User requests a short-form video, reel, TikTok, YouTube Short, or vertical video
 
 - Read brand guidelines for visual style, colors, typography
 - Check platform specifications (see `./video-platform-specs.md`)
-- Load any campaign scripts from `.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/scripts/`
+- Load any campaign scripts from `{suite-root}/brands/{brand}/campaigns/{campaign}/scripts/`
 - If no script exists and one is needed, request Strategist support via `paw-cra-agent-strategist`
 
 ### 2. Script & Storyboard
@@ -94,7 +94,7 @@ Encode to platform specifications:
 ## Output
 
 **Format:** MP4 (H.264, AAC audio)
-**Location:** `.pawbytes/creative-suites/brands/{brand}/videos/{campaign}/short-form/`
+**Location:** `{suite-root}/brands/{brand}/campaigns/{campaign}/videos/short-form/` (outside a campaign: `{suite-root}/brands/{brand}/videos/short-form/`)
 **Naming:** `{platform}_{concept-slug}_{date}.mp4`
 **Manifest:** Write `video-manifest.json` alongside output (see `./production-standards.md`)
 

@@ -1,0 +1,24 @@
+{
+  "suite": "proposals",
+  "title": "PawBytes Proposals",
+  "config_section": "pa",
+  "root": "paw-suites/proposals",
+  "legacy_root": ".pawbytes/proposal-automation-suites",
+  "items": ["proposals/*", "clients/*"],
+  "rules": [
+    {"from": "index.md", "to": "_memory/index.md"},
+    {"from": "daily/**", "to": "_memory/daily/{rest}"}
+  ],
+  "config_keys": [
+    {
+      "key": "workspace_folder",
+      "legacy": "{project-root}/.pawbytes/proposal-automation-suites/proposals",
+      "new": "{project-root}/paw-suites/proposals/proposals"
+    },
+    {
+      "key": "library_inbox_folder",
+      "legacy": "{project-root}/.pawbytes/proposal-automation-suites/library/inbox",
+      "new": "{project-root}/paw-suites/proposals/library/inbox"
+    }
+  ]
+}

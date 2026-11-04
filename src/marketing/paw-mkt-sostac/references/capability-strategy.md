@@ -2,7 +2,7 @@
 
 **Outcome:** Define who to target, how to position, and where growth comes from.
 
-**Output:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/03-strategy.md`
+**Output:** `{suite-root}/brands/{brand-slug}/sostac/03-strategy.md`
 
 **Phase Question:** "How do we get there?"
 

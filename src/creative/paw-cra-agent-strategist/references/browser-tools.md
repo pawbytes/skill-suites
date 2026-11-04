@@ -76,11 +76,11 @@ Export and reuse an authenticated session:
 # Windows:
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222
 
-# 2. Save the authenticated state to agency memory
-agent-browser --auto-connect state save "{project-root}/.pawbytes/creative-suites/.auth/session.json"
+# 2. Save the authenticated state (hidden, never under paw-suites/)
+agent-browser --auto-connect state save "{project-root}/.pawbytes/creative/.auth/session.json"
 
 # 3. Use in research sessions
-agent-browser --state "{project-root}/.pawbytes/creative-suites/.auth/session.json" open https://instagram.com
+agent-browser --state "{project-root}/.pawbytes/creative/.auth/session.json" open https://instagram.com
 ```
 
 ## Command Reference
@@ -174,10 +174,10 @@ agent-browser wait --load networkidle
 agent-browser snapshot -i
 
 # Capture for analysis
-agent-browser screenshot --full ./research/instagram-explore.png
+agent-browser screenshot --full {suite-root}/brands/{brand}/research/screenshots/instagram-explore.png
 
 # Extract text content
-agent-browser get text body > ./research/instagram-content.txt
+agent-browser get text body > {suite-root}/brands/{brand}/research/instagram-content.txt
 ```
 
 ### Competitor Profile Analysis
@@ -193,7 +193,7 @@ for i in {1..5}; do
 done
 
 # Capture full page
-agent-browser screenshot --full ./research/competitor-linkedin-full.png
+agent-browser screenshot --full {suite-root}/brands/{brand}/research/screenshots/competitor-linkedin-full.png
 
 # Extract posts
 agent-browser snapshot -s ".org-update-card"
@@ -215,7 +215,7 @@ agent-browser snapshot -i
 for i in {1..10}; do
     agent-browser scroll down 600
     agent-browser wait 500
-    agent-browser screenshot "./research/tiktok-view-$i.png"
+    agent-browser screenshot "{suite-root}/brands/{brand}/research/screenshots/tiktok-view-$i.png"
 done
 ```
 
@@ -228,7 +228,7 @@ agent-browser open https://competitor.com/demo-request
 agent-browser snapshot -i
 
 # Capture form
-agent-browser screenshot --annotate ./research/competitor-form.png
+agent-browser screenshot --annotate {suite-root}/brands/{brand}/research/screenshots/competitor-form.png
 
 # Note the form fields
 # [1] @e1 textbox "Name"
@@ -242,37 +242,37 @@ agent-browser screenshot --annotate ./research/competitor-form.png
 
 ```bash
 # Use logged-in session
-agent-browser --state "{project-root}/.pawbytes/creative-suites/.auth/session.json" open https://membership-site.com/premium-content
+agent-browser --state "{project-root}/.pawbytes/creative/.auth/session.json" open https://membership-site.com/premium-content
 
 # Wait for content
 agent-browser wait --load networkidle
 
 # Extract the article
-agent-browser get text article > ./research/premium-article.txt
+agent-browser get text article > {suite-root}/brands/{brand}/research/premium-article.txt
 
 # Save as PDF for reference
-agent-browser pdf ./research/premium-article.pdf
+agent-browser pdf {suite-root}/brands/{brand}/research/premium-article.pdf
 ```
 
 ## Output Integration
 
-All captured content should be saved to the shared agency memory:
+All captured content goes to the brand's research folder:
 
 ```bash
 # Screenshots → research folder
-agent-browser screenshot --full "{project-root}/.pawbytes/creative-suites/brands/{brand}/research/screenshots/"
+agent-browser screenshot --full "{suite-root}/brands/{brand}/research/screenshots/"
 
 # Text content → analysis files
-agent-browser get text body > "{project-root}/.pawbytes/creative-suites/brands/{brand}/research/content-extract.txt"
+agent-browser get text body > "{suite-root}/brands/{brand}/research/content-extract.txt"
 
 # PDFs → reports folder
-agent-browser pdf "{project-root}/.pawbytes/creative-suites/brands/{brand}/research/page-capture.pdf"
+agent-browser pdf "{suite-root}/brands/{brand}/research/page-capture.pdf"
 ```
 
 ## Security Notes
 
 - Auth state files contain session tokens in plaintext
-- Store auth files in `.pawbytes/creative-suites/.auth/` (gitignored)
+- Store auth files in `{project-root}/.pawbytes/creative/.auth/` (gitignored)
 - Never commit auth files to version control
 - Use environment variable for profile path: `AGENT_BROWSER_PROFILE`
 - Chrome profiles contain sensitive data — use dedicated profiles when possible

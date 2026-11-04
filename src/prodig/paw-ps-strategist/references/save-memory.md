@@ -1,6 +1,6 @@
 # Save Memory
 
-Persist decisions and updates to sidecar memory following discipline rules.
+Persist decisions and updates to shared memory following discipline rules.
 
 ## Save Operations
 
@@ -8,7 +8,7 @@ Persist decisions and updates to sidecar memory following discipline rules.
 
 **When:** After completing any strategic decision (shaping, scoping, packaging, handoff)
 
-**Path:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-decisions.md`
+**Path:** `{suite-root}/_memory/curated/product-decisions.md`
 
 **Method:** Append new sections, update existing sections, maintain decision log
 
@@ -29,7 +29,7 @@ Persist decisions and updates to sidecar memory following discipline rules.
 
 **When:** When new constraints or context are established
 
-**Path:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md`
+**Path:** `{suite-root}/_memory/curated/product-context.md`
 
 **Method:** Update relevant sections, append new context
 
@@ -47,7 +47,7 @@ Persist decisions and updates to sidecar memory following discipline rules.
 
 **When:** After every action
 
-**Path:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`
+**Path:** `{suite-root}/_memory/daily/YYYY-MM-DD.md`
 
 **Method:** Append to existing file or create new
 
@@ -73,11 +73,11 @@ Persist decisions and updates to sidecar memory following discipline rules.
 - {recommended next actions}
 ```
 
-### 4. Update Sidecar Index
+### 4. Update Memory Index
 
 **When:** When status changes or work is complete
 
-**Path:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md`
+**Path:** `{suite-root}/_memory/index.md`
 
 **Method:** Update status section
 

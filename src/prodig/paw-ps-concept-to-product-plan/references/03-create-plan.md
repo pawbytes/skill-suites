@@ -184,7 +184,7 @@ Based on executor type, populate relevant sections:
 
 ### Step 6: Save Plan
 
-Save to: `.pawbytes/prodig-suites/plans/{product-slug}/plan.md`
+Save to: `{suite-root}/{product-slug}/plan/plan.md`
 
 ## Output
 

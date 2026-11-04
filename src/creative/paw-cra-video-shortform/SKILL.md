@@ -11,7 +11,7 @@ This workflow produces upload-ready short-form vertical video (15-90 seconds) fo
 
 **Args:** Accepts `--headless` / `-H` for non-interactive execution. Requires a brief with at minimum: topic, duration, platform, and brand.
 
-**Output:** MP4 video file + `video-manifest.json` saved to `.pawbytes/creative-suites/brands/{brand}/videos/`.
+**Output:** MP4 video file + `video-manifest.json` saved to `{suite-root}/brands/{brand}/videos/short-form/` (or the campaign's `videos/short-form/`).
 
 Act as a technical video production specialist who orchestrates AI generation tools and ffmpeg into a cohesive short-form video pipeline. You understand both creative storytelling (hooks, pacing, visual beats) and technical video engineering (codecs, resolution, safe zones, platform limits).
 
@@ -26,10 +26,11 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{document_output_language}` (English) -- use for generated document content
 - `{fal_key}` (null) -- fal.ai API key for video generation
 - `{elevenlabs_api_key}` (null) -- ElevenLabs API key for voiceover (optional)
-- `{output_directory}` (`.pawbytes/creative-suites`) -- base output path
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/creative`. Every `{suite-root}/...` path below is relative to it. A custom folder in config `cra.output_directory` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/creative-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-cra-setup` can move them to `paw-suites/creative/`, and offer it. Keep working either way.
 - `{default_brand}` (null) -- default brand name
 
-Load shared agency memory from `{project-root}/.pawbytes/creative-suites/index.md`. If an active brand is set, load `{project-root}/.pawbytes/creative-suites/brands/{brand}/guidelines.md`.
+Load shared agency memory from `{suite-root}/_memory/index.md`. If an active brand is set, load `{suite-root}/brands/{brand}/guidelines.md`.
 
 **Tool verification:** Check for `fal_key` (required), `ffmpeg` availability (required), `egaki` CLI (required for AI video generation), `elevenlabs_api_key` (optional, for voiceover). Report any missing tools and inform the user which capabilities are limited.
 
@@ -67,7 +68,7 @@ Covers: AI scene generation via egaki CLI / fal.ai API (Veo 3.1 or Kling v3), vo
 
 Load `./references/validation-export.md` to execute.
 
-Covers: codec validation (1080x1920, H.264, duration check, file size under platform limits), export to `{project-root}/.pawbytes/creative-suites/brands/{brand}/videos/` with `video-manifest.json`, and status update to campaign status and daily log.
+Covers: codec validation (1080x1920, H.264, duration check, file size under platform limits), export to `{suite-root}/brands/{brand}/videos/short-form/` (campaign work: `{suite-root}/brands/{brand}/campaigns/{campaign}/videos/short-form/`) with `video-manifest.json`, and status update to campaign status and daily log.
 
 **Progression:** video-manifest.json written, daily log updated.
 
@@ -92,12 +93,13 @@ Covers: codec validation (1080x1920, H.264, duration check, file size under plat
 ## Memory
 
 **Reads:**
-- `{project-root}/.pawbytes/creative-suites/index.md` -- active brands, campaigns
-- `{project-root}/.pawbytes/creative-suites/brands/{brand}/guidelines.md` -- brand identity
-- `{project-root}/.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/brief.md` -- campaign brief
-- `{project-root}/.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/scripts/` -- approved scripts
+- `{suite-root}/_memory/index.md` -- active brands, campaigns
+- `{suite-root}/brands/{brand}/guidelines.md` -- brand identity
+- `{suite-root}/brands/{brand}/campaigns/{campaign}/brief.md` -- campaign brief
+- `{suite-root}/brands/{brand}/campaigns/{campaign}/scripts/` -- approved scripts
 
 **Writes:**
-- `{project-root}/.pawbytes/creative-suites/brands/{brand}/videos/` -- video assets
-- `{project-root}/.pawbytes/creative-suites/brands/{brand}/videos/video-manifest.json` -- manifest
-- `{project-root}/.pawbytes/creative-suites/daily/{YYYY-MM-DD}.md` -- activity log
+- `{suite-root}/brands/{brand}/videos/short-form/` (or the campaign's `videos/short-form/`) -- video assets
+- `video-manifest.json` in that folder -- manifest
+- `{suite-root}/brands/{brand}/README.md` -- `Status:`/`Next:` and links after a delivery; then `uv run {skill-root}/scripts/paw-paths.py index`
+- `{suite-root}/_memory/daily/{YYYY-MM-DD}.md` -- activity log

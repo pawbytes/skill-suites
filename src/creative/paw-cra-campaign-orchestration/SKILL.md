@@ -28,11 +28,12 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{document_output_language}` (English) — use for generated document content
 - `{fal_key}` — fal.ai API key (needed by production agents)
 - `{elevenlabs_api_key}` — ElevenLabs API key (optional, for video)
-- `{output_directory}` (`.pawbytes/creative-suites`) — base output path
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/creative`. Every `{suite-root}/...` path below is relative to it. A custom folder in config `cra.output_directory` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/creative-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-cra-setup` can move them to `paw-suites/creative/`, and offer it. Keep working either way.
 
-Load shared agency memory from `{project-root}/.pawbytes/creative-suites/index.md`. Load brand guidelines from `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/guidelines.md`.
+Load shared agency memory from `{suite-root}/_memory/index.md`. Load brand guidelines from `{suite-root}/brands/{brand-name}/guidelines.md`.
 
-Locate the campaign brief. Expected at `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/campaigns/{campaign-name}/brief.md`. If not found, check if the user provided one inline or as a file path.
+Locate the campaign brief. Expected at `{suite-root}/brands/{brand-name}/campaigns/{campaign-name}/brief.md` (new campaign folders are named `YYYY-MM-<campaign-slug>`). If not found, check if the user provided one inline or as a file path.
 
 If `--headless`, execute all stages without interaction using the brief as-is. If `--template:product-launch`, load `./references/template-product-launch.md` for the variant pipeline.
 
@@ -40,7 +41,7 @@ Otherwise, confirm the brief is loaded and present a summary of detected deliver
 
 ## Campaign Status File (Compaction Survival)
 
-All progress is written to `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/campaigns/{campaign-name}/status.md`. This file is both the output artifact and the recovery cache. Each stage updates it. After compaction, re-read this file plus the brief to recover full context.
+All progress is written to `{suite-root}/brands/{brand-name}/campaigns/{campaign-name}/status.md`. This file is both the output artifact and the recovery cache. Each stage updates it. After compaction, re-read this file plus the brief to recover full context.
 
 ```yaml
 ---
@@ -86,13 +87,13 @@ qc_status: 'pending'
 ## Memory Contract
 
 **Reads:**
-- `{project-root}/.pawbytes/creative-suites/index.md` — agency state
-- `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/guidelines.md` — brand identity
-- `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/campaigns/{campaign-name}/brief.md` — campaign brief
+- `{suite-root}/_memory/index.md` — agency state
+- `{suite-root}/brands/{brand-name}/guidelines.md` — brand identity
+- `{suite-root}/brands/{brand-name}/campaigns/{campaign-name}/brief.md` — campaign brief
 
 **Writes:**
-- `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/campaigns/{campaign-name}/status.md` — campaign progress
-- `{project-root}/.pawbytes/creative-suites/daily/YYYY-MM-DD.md` — daily log (append, tagged `[Campaign]`)
+- `{suite-root}/brands/{brand-name}/campaigns/{campaign-name}/status.md` — campaign progress
+- `{suite-root}/_memory/daily/YYYY-MM-DD.md` — daily log (append, tagged `[Campaign]`)
 
 **Collects (from production agents):**
 - `design-manifest.json` — from Designer workflows

@@ -21,7 +21,7 @@ Both config scripts use an anti-zombie pattern — existing entries for this mod
 
 1. Read `./assets/module.yaml` for module metadata and variable definitions (the `code` field `cra` is the module identifier)
 2. Check if `{project-root}/.pawbytes/config/config.yaml` exists — if a `cra:` section is already present, inform the user this is an update
-3. Check for existing config at `{project-root}/_bmad/config.yaml` (legacy BMad format). If found, inform the user that legacy config can be migrated to the new Pawbytes ecosystem format.
+3. Run `uv run ./scripts/paw-paths.py --project-root {project-root} detect`. If it reports `mode: legacy` or `both`, tell the user their files are still in the old `.pawbytes/creative-suites/` tree; the migration step below moves them to `paw-suites/creative/`.
 
 If the user provides arguments (e.g. `accept all defaults`, `--headless`, or inline values like `user name is Alice, fal key is abc123`), map any provided values to config keys, use defaults for the rest, and skip interactive prompting. Still display the full confirmation summary at the end.
 
@@ -56,16 +56,22 @@ python3 ./scripts/merge-help-csv.py --target "{project-root}/.pawbytes/config/mo
 
 Both scripts output JSON to stdout with results. If either exits non-zero, surface the error and stop.
 
+## Migrate Legacy Files
+
+When `detect` reports `legacy` or `both`, run `uv run ./scripts/paw-paths.py --project-root {project-root} plan` and show its `summary` along with any `conflicts`. Explain the messy spots in one line each: root `campaigns/`, `briefs/` and unbranded `output/clips/` go to `brands/unassigned/` (ask the user to move them under the right brand); `brands/{b}/videos/{x}/` folders with `short-form/`, `long-form/`, `clips/`, `audio/` or `series/` inside are treated as campaign `{x}`, any other `videos/{x}/` as a long-form video. Run `uv run ./scripts/paw-paths.py --project-root {project-root} apply` once the user confirms. Report what moved and what stayed (`MOVED.md` in the old folder lists it); `apply` also rewrites `cra.output_directory` when it still holds the old default. Legacy campaign folders keep their names; only new campaigns get the `YYYY-MM-` prefix. Give each migrated brand without a `README.md` one: `# {Brand}`, `Status: migrated`, `Next: {ask the user}`, and relative links to `profile.md`, `guidelines.md` and its campaigns.
+
 ## Create Output Directories
 
-After writing config, create any output directories that were configured. For filesystem operations, resolve the `{project-root}` token and create each path:
+After writing config (and any migration), create the suite folders. `{suite-root}` is `cra.output_directory`, default `{project-root}/paw-suites/creative`; resolve the `{project-root}` token for filesystem operations:
 
 ```bash
-mkdir -p "{project-root}/.pawbytes/creative-suites"
-mkdir -p "{project-root}/.pawbytes/creative-suites/brands"
-mkdir -p "{project-root}/.pawbytes/creative-suites/knowledge"
-mkdir -p "{project-root}/.pawbytes/creative-suites/daily"
+mkdir -p "{suite-root}/brands"
+mkdir -p "{suite-root}/_memory/knowledge"
+mkdir -p "{suite-root}/_memory/daily"
+mkdir -p "{project-root}/.pawbytes/creative/.auth"
 ```
+
+Then run `uv run ./scripts/paw-paths.py --project-root {project-root} index` to write the suite `README.md`.
 
 ## Confirm
 
@@ -84,9 +90,13 @@ Once the user's `user_name` and `communication_language` are known, use them con
       config.yaml           # Shared config (committed)
       config.user.yaml      # User settings (gitignored)
       module-help.csv       # Capability registry
-    creative-suites/
-      index.md              # Agency memory index
-      brands/               # Brand guidelines and assets
-      knowledge/            # Research and references
-      daily/                # Activity logs
+    creative/.auth/         # Browser sessions (secret, gitignored)
+  paw-suites/
+    creative/
+      README.md             # Suite index (paw-paths.py index)
+      _memory/
+        index.md            # Agency memory index
+        knowledge/          # Research and references
+        daily/              # Activity logs
+      brands/{brand}/       # Brand dashboards, guidelines, assets, campaigns, designs, videos
 ```

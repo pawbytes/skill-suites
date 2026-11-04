@@ -35,7 +35,7 @@ Examples:
 - **Route intelligently** — Match the user's current need to the right specialist or workflow. Don't make every request a full discovery process.
 - **Read before routing** — Check shared memory for existing product context, research, and decisions before recommending next steps.
 - **Stage-appropriate depth** — Early-stage exploration gets different treatment than production-ready execution.
-- **Shared memory as truth** — The sidecar files are the source of truth, not the conversation history.
+- **Shared memory as truth** — The `_memory/` files are the source of truth, not the conversation history.
 - **Quality gates before production** — Don't route to executors until strategy is solid.
 - **Product-family awareness** — Different product types (courses, templates, SaaS, services) need different execution paths.
 
@@ -50,9 +50,11 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{default_quality_bar}` (`production-ready`) — target quality level
 - `{default_research_depth}` (`standard`) — how deep research runs go
 
-**Sidecar Initialization:** Check for shared memory at `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md`. If absent, load `./references/init-sidecar.md` and scaffold the memory structure.
+Resolve `{suite-root}` as described in Path Resolution below.
 
-**Product Discovery:** Use Glob pattern `.pawbytes/prodig-suites/products/*/product-context.md` to discover existing products. Each match represents one product workspace.
+**Memory Initialization:** Check for shared memory at `{suite-root}/_memory/index.md`. If absent, load `./references/init-memory.md` and scaffold the memory structure.
+
+**Product Discovery:** Use Glob pattern `{suite-root}/*/product-context.md` to discover existing products. Each match represents one product workspace. In legacy mode the products are under `.pawbytes/prodig-suites/products/*/`.
 
 Greet the user and offer context-aware options:
 - If active product exists: summarize current stage, last action, and recommended next step
@@ -76,7 +78,7 @@ Greet the user and offer context-aware options:
 
 When the user interacts with Prodig Suites:
 
-1. **Load context** — Read sidecar index and relevant curated files for active product
+1. **Load context** — Read memory index and relevant curated files for active product
 2. **Diagnose stage** — Determine where the user is in the product journey (discovery → research → audience → strategy → execution → packaging → readiness)
 3. **Identify intent** — Is this a continuation, a new direction, a specialist request, or a workflow trigger?
 4. **Route or execute** — Either provide direct guidance or route to the appropriate specialist/workflow
@@ -85,30 +87,30 @@ When the user interacts with Prodig Suites:
 
 ## Path Resolution
 
-**Shared memory root:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (suite root) or `ps.memory_folder` (`_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
 
-**Product workspaces:** `{project-root}/.pawbytes/prodig-suites/products/{product-slug}/`
-
-**Generated artifacts:** `{project-root}/.pawbytes/prodig-suites/artifacts/`
-
-**Sidecar structure:**
 ```
-.pawbytes/prodig-suites/memory/paw-ps-sidecar/
-├── index.md                      # Orientation file
-├── daily/
-│   └── YYYY-MM-DD.md            # Session logs
-└── curated/
-    ├── product-context.md        # Current active product
-    ├── market-intelligence.md    # Research synthesis
-    ├── audience-intelligence.md  # Customer understanding
-    ├── product-decisions.md      # Decision log
-    ├── output-standards.md       # Quality bar
-    └── product-types/
-        ├── knowledge-products.md
-        ├── template-products.md
-        ├── software-products.md
-        └── service-products.md
+{suite-root}/
+├── README.md                     # Generated index: `paw-paths.py index`
+├── _memory/                      # Shared memory (internal, never deliverables)
+│   ├── index.md                  # Orientation file
+│   ├── active-product.md         # Slug of the active product
+│   ├── daily/YYYY-MM-DD.md       # Session logs
+│   └── curated/                  # product-context, market/audience intelligence,
+│       └── product-types/        #   product-decisions; family guides
+├── _standards/output-standards.md  # Quality bar
+├── _archived/{product-slug}/
+└── {product-slug}/               # One folder per product
+    ├── README.md                 # Dashboard: Status, Next, key files
+    ├── product-context.md, product-brief.md
+    ├── research/, audience/personas/, notes/
+    ├── plan/                     # plan.md, handoff.md
+    ├── build/                    # Executor outputs
+    └── package/, bundle/
 ```
+
+When a product is created, write its `README.md` (`# <Product Name>`, `Status:`, `Next:`, links to key files); when a stage finishes, update `Status`, `Next` and the links. Then run `paw-paths.py index`.
 
 If no product slug is known, offer to create a new product or select from existing.
 
@@ -171,4 +173,4 @@ Discovery → Research → Audience → Strategy → Execution → Packaging →
 - Each stage builds on prior work
 - Quality gates exist before execution
 - User can revisit earlier stages
-- Sidecar memory preserves all context
+- Shared memory preserves all context

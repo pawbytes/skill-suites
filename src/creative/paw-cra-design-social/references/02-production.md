@@ -22,7 +22,7 @@ Before generating any images, plan the visual composition:
 - Final slide = CTA with branding
 - Include swipe cues and optional progress indicators
 
-Reference the Designer's carousel design patterns from `{project-root}/skills/paw-cra-agent-designer/references/carousel-design.md` for narrative structures.
+Reference the Designer's carousel design patterns from `{skill-root}/../paw-cra-agent-designer/references/carousel-design.md` for narrative structures.
 
 ## AI Image Generation
 
@@ -34,7 +34,7 @@ Use fal.ai API via CLI (curl) for generation. MCP for model discovery if needed.
 - Balanced quality/speed: `fal-ai/flux/dev`
 - Rapid prototyping: `fal-ai/flux/schnell`
 
-Reference `{project-root}/skills/paw-cra-agent-designer/references/ai-models-guide.md` for CLI commands and endpoint details.
+Reference `{skill-root}/../paw-cra-agent-designer/references/ai-models-guide.md` for CLI commands and endpoint details.
 
 ### Generation Process
 
@@ -72,7 +72,7 @@ Build designer-oriented prompts that include:
 - Platform context (e.g., "Instagram 4:5 ratio, lifestyle photography")
 - Typography direction if text is part of the AI generation
 
-Reference `{project-root}/skills/paw-cra-agent-designer/references/ai-image-prompting.md` for prompt frameworks.
+Reference `{skill-root}/../paw-cra-agent-designer/references/ai-image-prompting.md` for prompt frameworks.
 
 ### Image Size Presets
 
@@ -88,7 +88,7 @@ Reference `{project-root}/skills/paw-cra-agent-designer/references/ai-image-prom
 
 When using the hybrid approach (AI background + HTML/CSS text overlay):
 
-Reference `{project-root}/skills/paw-cra-agent-designer/references/template-system.md` for architecture and `{project-root}/skills/paw-cra-agent-designer/references/template-examples.md` for code patterns.
+Reference `{skill-root}/../paw-cra-agent-designer/references/template-system.md` for architecture and `{skill-root}/../paw-cra-agent-designer/references/template-examples.md` for code patterns.
 
 **Critical rendering rules:**
 1. Set HTML/body dimensions to exact target size with `overflow: hidden`
@@ -117,10 +117,10 @@ If no existing template fits, create an inline HTML/CSS template following the t
 Save all generated assets to the workspace immediately after generation:
 
 ```
-{output_directory}/brands/{brand}/assets/{campaign}/social/
+{suite-root}/brands/{brand}/campaigns/{campaign}/designs/social/
 ```
 
-Create the directory if it doesn't exist. Use naming convention:
+Outside a campaign: `{suite-root}/brands/{brand}/designs/social/{YYYY-MM-DD}/`. Create the directory if it doesn't exist. Use naming convention:
 - Single: `{platform}_{post-type}_{YYYYMMDD_HHMMSS}.png`
 - Carousel: `{platform}_carousel_{YYYYMMDD_HHMMSS}_slide{NN}.png`
 

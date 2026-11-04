@@ -113,7 +113,7 @@ Always download to the WIP directory first, then move to final location after va
 
 ```bash
 # WIP directory for in-progress generation
-WIP_DIR="{project-root}/.pawbytes/creative-suites/brands/{brand}/assets/wip"
+WIP_DIR="{suite-root}/brands/{brand}/designs/wip"
 mkdir -p "$WIP_DIR"
 
 # Download with descriptive name
@@ -121,7 +121,7 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 curl -o "$WIP_DIR/{asset_type}_v{variation}_{TIMESTAMP}.png" "$IMAGE_URL"
 ```
 
-After brand validation passes, move from `wip/` to the appropriate final subdirectory (`brand-identity/logo/`, `flyers/`, `banners/`, `avatars/`).
+After brand validation passes, move from `designs/wip/` to the final folder (`brand-assets/logo/`, `brand-assets/icons/`, `brand-assets/banners/`, `brand-assets/avatars/`, or `designs/flyers/`).
 
 ## Multi-Variation Generation
 

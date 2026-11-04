@@ -112,7 +112,7 @@ What to create for each channel for a full Tier 1 launch.
 - [ ] Press release: full draft, approved, formatted for distribution
 - [ ] Embargo pitch emails: sent 4-8 weeks before to tier-1-2 journalists
 - [ ] Follow-up pitch emails: sent 3-5 days before launch lift
-- [ ] Media list with outreach status tracked (save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/launch-{campaign-slug}/channels/pr/content/media-lists/`)
+- [ ] Media list with outreach status tracked (save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-launch-{campaign-slug}/channels/pr/media-lists/`)
 - [ ] Press kit: product screenshots (high res), founder headshot, company logo (PNG + SVG), boilerplate
 - [ ] Embargo lift time confirmed with all journalists who received early access
 

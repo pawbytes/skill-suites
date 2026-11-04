@@ -39,18 +39,18 @@ Fill from seller input. Read `pricing.json` and `brief.md` for context — don't
 
 ### Pricing history
 
-Note that `paw-pa-pricing` appends to `{memory-root}/library/pricing-history.json` when pricing runs. If outcome changes the `won` flag or adds `clientFeedback`, offer to update the matching history entry or re-run library validation — do not silently edit JSON without seller confirmation.
+Note that `paw-pa-pricing` appends to `{suite-root}/library/pricing-history.json` when pricing runs. If outcome changes the `won` flag or adds `clientFeedback`, offer to update the matching history entry or re-run library validation — do not silently edit JSON without seller confirmation.
 
 ### Update client history
 
-Path: `{memory-root}/clients/{client-slug}/history.md` (create client folder if missing).
+Path: `{suite-root}/clients/{client-slug}/history.md` (create client folder if missing).
 
 Append a chronological entry:
 
 ```markdown
 ## {YYYY-MM-DD} — {proposalType} ({status})
 
-- **Run folder:** `proposals/{slug}-{date}/`
+- **Run folder:** `proposals/{run}/`
 - **Outcome:** {won | lost | no-response}
 - **Amount:** {if known}
 - **Angle / pricing:** {tiers, total, key hook from brief}
@@ -61,11 +61,11 @@ Append a chronological entry:
 
 **Client slug:** lowercase, hyphenated from `clientName` in `brief.md`.
 
-### Curate `index.md`
+### Curate `_memory/index.md`
 
 Update the **Recent Proposals** section — last 5 runs with client, date, status, folder path.
 
-Append to `daily/YYYY-MM-DD.md`:
+Append to `_memory/daily/YYYY-MM-DD.md`:
 
 ```
 {HH:MM} [orchestrator] outcome recorded: {client} — {status}
@@ -76,7 +76,7 @@ Append to `daily/YYYY-MM-DD.md`:
 On activation or when a client name appears in a new brief:
 
 1. Resolve `{client-slug}` from `clientName`.
-2. If `{memory-root}/clients/{client-slug}/history.md` exists, load it before pipeline start.
+2. If `{suite-root}/clients/{client-slug}/history.md` exists, load it before pipeline start.
 3. Tell the seller what you found: "Acme — you pitched them in March (lost on price), sent a scoping doc in January (won). I'll factor that into research routing."
 4. Research workflow may append to client history during its run; orchestrator owns outcome entries after send.
 

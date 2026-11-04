@@ -37,15 +37,15 @@ Access trend data behind login gates using authenticated Chrome profile:
 agent-browser --profile ~/.strategist-profile open https://tiktok.com/foryou
 agent-browser wait --load networkidle
 agent-browser snapshot -i
-agent-browser screenshot ./research/tiktok-trends-current.png
+agent-browser screenshot {suite-root}/brands/{brand}/research/screenshots/tiktok-trends-current.png
 
 # Instagram Explore and Reels
-agent-browser --state "{project-root}/.pawbytes/creative-suites/.auth/session.json" open https://instagram.com/explore
-agent-browser screenshot --full ./research/instagram-explore-trends.png
+agent-browser --state "{project-root}/.pawbytes/creative/.auth/session.json" open https://instagram.com/explore
+agent-browser screenshot --full {suite-root}/brands/{brand}/research/screenshots/instagram-explore-trends.png
 
 # Twitter/X trending topics
 agent-browser --profile ~/.strategist-profile open https://twitter.com/explore
-agent-browser get text body > ./research/twitter-trending.txt
+agent-browser get text body > {suite-root}/brands/{brand}/research/twitter-trending.txt
 ```
 
 For TikTok Creative Center (public): `https://creativecenter.tiktok.com/trends`

@@ -80,4 +80,4 @@ When writing cold email sequences, produce:
 3. Personalization variables to fill per prospect or segment
 4. CTA instructions (next step in sales process when they respond)
 
-Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/email/content/cold-outbound-{campaign-name}-{YYYY-MM-DD}.md`
+Save to `{suite-root}/brands/{brand-slug}/channels/email/cold-outbound-{campaign-name}-{YYYY-MM-DD}.md`

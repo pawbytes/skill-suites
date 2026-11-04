@@ -51,13 +51,15 @@ def parse_args() -> argparse.Namespace:
         description="Ingest library inbox docs into structured proposal indexes."
     )
     parser.add_argument(
+        "--suite-root",
         "--memory-root",
+        dest="memory_root",
         required=True,
-        help="Path to proposal-automation-suites memory root",
+        help="Suite root, normally {project-root}/paw-suites/proposals (--memory-root is the old name)",
     )
     parser.add_argument(
         "--inbox",
-        help="Path to library inbox folder (default: {memory-root}/library/inbox)",
+        help="Path to library inbox folder (default: {suite-root}/library/inbox)",
     )
     parser.add_argument(
         "--validate",
@@ -374,7 +376,9 @@ def load_manifest(manifest_path: Path) -> dict[str, Any]:
 
 
 def update_index_md(memory_root: Path, case_count: int, pricing_count: int, verbose: bool) -> None:
-    index_path = memory_root / "index.md"
+    index_path = memory_root / "_memory" / "index.md"
+    if not index_path.exists():
+        index_path = memory_root / "index.md"  # legacy .pawbytes/proposal-automation-suites layout
     if not index_path.exists():
         return
 

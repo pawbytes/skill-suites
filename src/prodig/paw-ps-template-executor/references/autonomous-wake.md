@@ -9,10 +9,10 @@ This protocol activates when `--headless` or `-H` is passed. The agent executes 
 ### 1. Load Context
 Read all available context files in order:
 
-1. `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md`
-2. `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/audience-intelligence.md`
-3. `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/output-standards.md`
-4. `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types/template-products.md`
+1. `{suite-root}/_memory/curated/product-context.md`
+2. `{suite-root}/_memory/curated/audience-intelligence.md`
+3. `{suite-root}/_standards/output-standards.md`
+4. `{suite-root}/_memory/curated/product-types/template-products.md`
 
 If any file is missing, note the gap and proceed with available context.
 
@@ -46,8 +46,8 @@ Run quality checks against `./asset-quality-standards.md`.
 
 ### 6. Save Artifacts
 Write outputs to:
-- Artifacts: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/artifacts/{product-slug}/`
-- Daily log: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`
+- Artifacts: `{suite-root}/{product-slug}/build/`
+- Daily log: `{suite-root}/_memory/daily/YYYY-MM-DD.md`
 
 ### 7. Report Completion
 Output a structured completion report:

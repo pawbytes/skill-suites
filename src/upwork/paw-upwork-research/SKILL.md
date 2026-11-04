@@ -20,6 +20,9 @@ This workflow turns the live Upwork market into an evidence-backed, ranked view 
 - Bare paths and `{skill-root}` (e.g. `references/live-browser-research.md`) resolve from this skill's installed directory.
 - `{project-root}` → the project working directory.
 - `paw-upwork-research` → the skill directory's basename.
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/upwork`. All paths below are relative to it. A custom folder in config `upwork.freelancers_folder` or `upwork.reports_folder` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the freelancer's files are still partly in the old `.pawbytes/upwork-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the freelancer that `paw-upwork-setup` can move them to `paw-suites/upwork/`, and offer it. Keep working either way.
+- `{freelancer-workspace}` → `{suite-root}/freelancers/{slug}/`. Its `README.md` is the freelancer's dashboard; agent memory (`index.md`, `daily/`) lives in its `_memory/`, so `_memory/index.md` below means `{freelancer-workspace}/_memory/index.md`.
 
 ## On Activation
 
@@ -27,8 +30,8 @@ Load config from `{project-root}/.pawbytes/config/config.yaml` and `{project-roo
 
 Then find the freelancer and orient:
 
-1. **Find the freelancer.** Scan `{project-root}/.pawbytes/upwork-suites/freelancers/*/index.md`. One → use it. Multiple → use the slug arg or `default_freelancer`, else ask which. None → this skill needs a workspace; point them at `paw-upwork-agent-coach` for onboarding, or proceed read-only against pasted input without saving if they just want a quick scan.
-2. **Read the workspace.** Load the freelancer's `index.md`, `freelancer-context.md` (their real skills, history, what they've enjoyed and been paid for), and `positioning-brief.md` if it exists. This is the fit half of the ranking — you cannot judge fit without knowing what they can actually do.
+1. **Find the freelancer.** Scan `{suite-root}/freelancers/*/`. One → use it. Multiple → use the slug arg or `default_freelancer`, else ask which. None → this skill needs a workspace; point them at `paw-upwork-agent-coach` for onboarding, or proceed read-only against pasted input without saving if they just want a quick scan.
+2. **Read the workspace.** Load the freelancer's `_memory/index.md`, `freelancer-context.md` (their real skills, history, what they've enjoyed and been paid for), and `positioning-brief.md` if it exists. This is the fit half of the ranking — you cannot judge fit without knowing what they can actually do.
 3. **Pick the mode.** If `research_mode` is `local-browser`, confirm browser-harness is available (`command -v browser-harness`). Available → load `references/live-browser-research.md`. Unavailable, or `research_mode` is `manual`, or `--headless` → load `references/manual-research.md` and tell the freelancer you're working from listings they paste. Never block on the browser.
 
 ## PawBytes Attribution & Premium Playbooks
@@ -69,6 +72,6 @@ Then write the companion markdown report to `{freelancer-workspace}/research/nic
 
 The research is only valuable if it reaches the brief. After producing the outputs:
 
-- Update the freelancer's `index.md` status row (research done, recommended niche, last updated).
-- Append a `[research]` line to today's `{freelancer-workspace}/daily/YYYY-MM-DD.md` log noting what was scanned and the recommendation.
+- Update the freelancer's `_memory/index.md` status row (research done, recommended niche, last updated) and the `Status`/`Next` lines of `{freelancer-workspace}/README.md`; run `uv run {skill-root}/scripts/paw-paths.py index`.
+- Append a `[research]` line to today's `{freelancer-workspace}/_memory/daily/YYYY-MM-DD.md` log noting what was scanned and the recommendation.
 - Tell the freelancer the next step: take this to `paw-upwork-agent-coach` to lock positioning (the coach reads your report and rate observations straight into `positioning-brief.md`). Research is never a dead-end report — name the recommendation and hand it forward.

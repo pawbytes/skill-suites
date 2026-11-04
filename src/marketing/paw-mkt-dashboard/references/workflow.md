@@ -17,21 +17,22 @@ Workflow for generating and managing SvelteKit dashboards with LLM-built UI.
 
 **Actions:**
 
-1. Scan `{project-root}/.pawbytes/marketing-suites/brands/` for brand directories
+1. Scan `{suite-root}/brands/` for brand directories
 2. For each brand directory, check for:
    - `sostac/README.md` — SOSTAC phase completion
    - `sostac/*.md` — Individual phase documents
-   - `brand-context.md` — Brand positioning
+   - `README.md` — Brand dashboard (`Status:`, `Next:`)
+   - `brand-context.md`, `product-context.md` — Brand positioning
    - `campaigns/` — Campaign folders and their contents
-   - `channels/` — Channel-specific content
-   - `content/` — Content calendar, email sequences, SEO research
-   - `operations/` — Operational data (analytics, cro, retention, etc.)
+   - `channels/` — Channel-specific content (`channels/<channel>/`, performance in `channels/<channel>/performance/`)
+   - `operations/` — Operational work (content-plan, cro, retention, etc.)
+   - `analytics/` — Brand-level analytics and reports
    - `experiments/` — Growth experiments data
    - `revenue/` — Revenue and pricing data
    - `lifecycle/` — Customer lifecycle data
 3. **Collect all markdown documents** — Recursively find all `.md` files across the brand workspace. For each file, record:
    - Relative path from brand root (used as slug)
-   - Parent folder name (used as category: sostac, campaigns, content, channels, operations, root)
+   - Top-level folder name (used as category: sostac, campaigns, channels, operations, analytics, root)
    - File title (first `# heading` in the file, or filename if no heading)
    - Full raw markdown content
    These get stored in a `documents` table during schema creation (Stage 2) and rendered read-only in the `/documents` route.
@@ -265,7 +266,7 @@ For each feature, check if corresponding data exists in the brand workspace:
 | `revenue` | `revenue/` folder | Offer to create template structure |
 | `lifecycle` | `lifecycle/` folder | Offer to create template structure |
 | `operations` | `operations/` folder | Use existing if any |
-| `metrics` | `operations/analytics/` | Use existing if any |
+| `metrics` | `analytics/` | Use existing if any |
 
 If user declines template creation, skip that feature.
 
@@ -337,7 +338,7 @@ To verify:
    - Data seeded from existing files
 2. Provide run instructions:
    ```
-   cd .pawbytes/marketing-suites/brands/{brand-slug}/dashboard
+   cd {suite-root}/brands/{brand-slug}/dashboard
    npm install
    npm run dev
    # Open http://localhost:5173
@@ -373,7 +374,7 @@ To verify:
 - /api/import — JSON import
 
 **To run:**
-cd .pawbytes/marketing-suites/brands/nadiapen/dashboard
+cd {suite-root}/brands/nadiapen/dashboard
 npm install
 npm run dev
 

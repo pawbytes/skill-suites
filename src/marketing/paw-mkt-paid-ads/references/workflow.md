@@ -530,15 +530,11 @@ Before publishing any ad, ask: **If the user who clicks this ad reads the landin
 ## Path Resolution: Campaign vs Standalone
 
 **Campaign mode** — working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/paid-ads/content/`
-  -> Read campaign strategy at `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/paid-ads/`
+  -> Read campaign strategy at `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** — evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/paid-ads/content/`
-
-**Legacy fallback** — old directory structure detected:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/paid-ads/`
-  -> Suggest migration to new structure
+  -> Save to `{suite-root}/brands/{brand-slug}/channels/paid-ads/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 
@@ -564,7 +560,7 @@ File structure:
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/paid-ads/content/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/paid-ads/
   audit-{platform}-{YYYY-MM-DD}.md
   strategy-{campaign-slug}-{YYYY-MM-DD}.md
   architecture-{platform}-{YYYY-MM-DD}.md
@@ -575,7 +571,7 @@ File structure:
   report-{platform}-{YYYY-MM}-{YYYY-MM-DD}.md
 
 # Standalone mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/paid-ads/content/
+{suite-root}/brands/{brand-slug}/channels/paid-ads/
   (same structure as above)
 ```
 

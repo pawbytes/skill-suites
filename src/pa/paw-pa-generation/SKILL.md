@@ -18,8 +18,9 @@ Act as a senior proposal writer and sales engineer — someone who has won deals
 - Bare paths and `{skill-root}` (e.g. `references/assembly.md`) resolve from this skill's installed directory.
 - `{project-root}` → the project working directory.
 - `{skill-name}` → the skill directory's basename.
-- `{memory-root}` → `{project-root}/.pawbytes/proposal-automation-suites` (override via config `workspace_folder` parent when set).
-- `{run-folder}` → `{memory-root}/proposals/{slug}-{date}/` for the active proposal run.
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/proposals`. All paths below are relative to it. A custom folder in config `pa.workspace_folder` (proposal runs) or `pa.library_inbox_folder` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the seller's files are still partly in the old `.pawbytes/proposal-automation-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the seller that `paw-pa-setup` can move them to `paw-suites/proposals/`, and offer it. Keep working either way.
+- `{run-folder}` → `{suite-root}/proposals/{run}/`, one proposal run. A new `{run}` is `YYYY-MM-{client-slug}` (`YYYY-MM-DD-{client-slug}` when that client already has a run this month); existing run folders keep their names.
 
 ## The Non-Negotiable
 
@@ -31,13 +32,13 @@ Load config from `{project-root}/.pawbytes/config/config.yaml` and `{project-roo
 
 Then orient in shared memory and load the run context:
 
-1. **Read orientation** — `{memory-root}/index.md` for recent proposals, brand summary, library stats.
-2. **Resolve the run folder** — from user intent (`{slug}-{date}`), orchestrator handoff, or the most recent folder under `{memory-root}/proposals/` that has `brief.md` + `pricing.json`. If ambiguous, ask which run.
+1. **Read orientation** — `{suite-root}/_memory/index.md` for recent proposals, brand summary, library stats.
+2. **Resolve the run folder** — from user intent (run folder name), orchestrator handoff, or the most recent folder under `{suite-root}/proposals/` that has `brief.md` + `pricing.json`. If ambiguous, ask which run.
 3. **Load upstream artifacts** (required unless headless path supplies paths):
    - `{run-folder}/brief.md` — **required** (`proposalType`, client, scope, `assumptions[]` if autonomous)
    - `{run-folder}/pricing.json` — **required**
    - `{run-folder}/research-dossier.html` — warn if missing; proceed with brief-only proof
-4. **Load brand & library** from `{memory-root}/`:
+4. **Load brand & library** from `{suite-root}/`:
    - `brand/identity.md` — logo, colors, fonts, voice, default language
    - `brand/boilerplate/about-us.md`, `bios.md`, `terms.md` — T&Cs and about copy (**terms never AI-generated**)
    - `library/scope-templates.md` — reusable scope/deliverable clauses
@@ -88,7 +89,7 @@ All artifacts write to `{run-folder}/`:
 
 On revision runs, increment: `draft-v2.md`, etc. Keep prior versions.
 
-After saving, append a `[generation]`-tagged line to `{memory-root}/daily/{YYYY-MM-DD}.md` noting run slug, proposal type, and exports produced. Optionally curate new reusable scope clauses back to `library/scope-templates.md`.
+After saving, set the run `README.md` to `Status: final exported` (or `draft v{n}`), `Next: send and record the outcome`, and link the drafts and exports, then run `uv run {skill-root}/scripts/paw-paths.py index`. Append a `[generation]`-tagged line to `{suite-root}/_memory/daily/{YYYY-MM-DD}.md` noting run slug, proposal type, and exports produced. Optionally curate new reusable scope clauses back to `library/scope-templates.md`.
 
 ## Principles
 

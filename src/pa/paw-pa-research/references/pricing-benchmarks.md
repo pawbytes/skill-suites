@@ -1,6 +1,6 @@
 # Pricing Benchmarks Research
 
-Loaded when web research is enabled, or when `{memory-root}/library/pricing-history.json` has relevant past quotes. Feeds `paw-pa-pricing` calibration and sanity checks.
+Loaded when web research is enabled, or when `{suite-root}/library/pricing-history.json` has relevant past quotes. Feeds `paw-pa-pricing` calibration and sanity checks.
 
 ## Goal
 

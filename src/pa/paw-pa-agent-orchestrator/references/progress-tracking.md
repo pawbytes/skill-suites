@@ -4,8 +4,8 @@ When the seller asks where they are, what's in flight, or what's next, read memo
 
 ## Read order
 
-1. `{memory-root}/index.md` — brand summary, library stats, recent proposals, open threads.
-2. Scan `{memory-root}/proposals/*/` — folders with artifacts but no `final-proposal.*` = in progress.
+1. `{suite-root}/_memory/index.md` — brand summary, library stats, recent proposals, open threads.
+2. Scan `{suite-root}/proposals/*/` — folders with artifacts but no `final-proposal.*` = in progress.
 3. For the active run (user-named or most recent in-progress), check:
 
 | File | Stage complete |
@@ -28,7 +28,7 @@ When the seller asks where they are, what's in flight, or what's next, read memo
 **Where you are:** {one line — e.g. "Acme run in progress — research done, pricing not started."}
 
 **Library:** {N} case studies indexed | last re-index {date or "never"}
-**In-progress runs:** {list slug-date + stage, or "none"}
+**In-progress runs:** {list run folder + stage, or "none"}
 **Recent completed:** {last 1–2 with outcome if known}
 
 **Highest-value next step:** {single actionable item}
@@ -38,7 +38,7 @@ When the seller asks where they are, what's in flight, or what's next, read memo
 
 | State | Next step |
 |-------|-----------|
-| No workspace / missing `index.md` | Run `paw-pa-setup` |
+| No workspace / missing `_memory/index.md` | Run `paw-pa-setup` |
 | Empty case-study index | Drop docs in `library/inbox/` → `paw-pa-library` |
 | No active run, seller has a brief | Start pipeline — create run folder → `paw-pa-intake` |
 | `brief.md` only | Clarify gaps (guided) or `paw-pa-research` |
@@ -53,8 +53,8 @@ If multiple in-progress runs exist, list them and ask which to resume:
 
 ```
 **Open runs:**
-1. `acme-corp-2026-07-03` — brief + dossier (ready for pricing)
-2. `beta-inc-2026-07-01` — brief only (needs research)
+1. `2026-07-acme-corp` — brief + dossier (ready for pricing)
+2. `2026-07-beta-inc` — brief only (needs research)
 
 Which run should we continue?
 ```

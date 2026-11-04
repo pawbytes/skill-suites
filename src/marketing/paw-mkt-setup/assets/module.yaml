@@ -16,13 +16,13 @@ module_greeting: |
 # Configuration Variables
 brands_folder:
   prompt: "Where should brand contexts be stored?"
-  default: "{project-root}/.pawbytes/marketing-suites/brands"
+  default: "{project-root}/paw-suites/marketing/brands"
   result: "{value}"
   directories: true
 
 reports_folder:
-  prompt: "Where should reports be saved?"
-  default: "{project-root}/.pawbytes/marketing-suites/reports"
+  prompt: "Where should cross-brand reports be saved?"
+  default: "{project-root}/paw-suites/marketing/reports"
   result: "{value}"
   directories: true
 
@@ -35,9 +35,3 @@ communication_language:
   prompt: "Language for agent responses?"
   default: "English"
   user_setting: true
-
-# Legacy migration paths (used by setup skill for auto-migration)
-legacy_paths:
-  config: "{project-root}/.pawbytes/marketing-suites/config"
-  brands: "{project-root}/brands"
-  reports: "{project-root}/reports"

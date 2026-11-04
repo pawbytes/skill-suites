@@ -4,7 +4,7 @@ SOSTAC Marketing Plan Builder — research-first marketing planning through the 
 
 ## What it does
 
-Executes the SOSTAC framework through deep research and proactive recommendations. Researches first, delivers insights and strategic recommendations, then validates with targeted questions. Outputs structured phase documents to `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/`.
+Executes the SOSTAC framework through deep research and proactive recommendations. Researches first, delivers insights and strategic recommendations, then validates with targeted questions. Outputs structured phase documents to `{suite-root}/brands/{brand-slug}/sostac/`.
 
 ## Capabilities
 
@@ -59,7 +59,7 @@ Then tell it which brand to work on. It will:
 ## Brand workspace structure
 
 ```
-.pawbytes/marketing-suites/brands/{brand-slug}/sostac/
+{suite-root}/brands/{brand-slug}/sostac/
 ├── README.md                # Phase completion tracker
 ├── 00-auto-discovery.md     # Research findings
 ├── 01-situation.md

@@ -21,11 +21,12 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{communication_language}` (English) — use for all communications
 - `{document_output_language}` (English) — use for generated document content
 - `{fal_key}` (null) — fal.ai API key for image generation
-- `{output_directory}` (`.pawbytes/creative-suites`) — base output path
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/creative`. Every `{suite-root}/...` path below is relative to it. A custom folder in config `cra.output_directory` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/creative-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-cra-setup` can move them to `paw-suites/creative/`, and offer it. Keep working either way.
 
-Load shared agency memory from `{project-root}/.pawbytes/creative-suites/index.md`. Load active brand guidelines from `.pawbytes/creative-suites/brands/{active-brand}/guidelines.md`.
+Load shared agency memory from `{suite-root}/_memory/index.md`. Load active brand guidelines from `{suite-root}/brands/{active-brand}/guidelines.md`.
 
-**Knowledge Base:** Check `{project-root}/.pawbytes/creative-suites/knowledge/index.md` for previously researched platform specs and design guides.
+**Knowledge Base:** Check `{suite-root}/_memory/knowledge/index.md` for previously researched platform specs and design guides.
 
 **Tool Verification:**
 - fal_key availability (required — no batch production without it)
@@ -59,9 +60,9 @@ If the input is a content calendar, each row becomes an asset in the production 
 
 ### Step 2 — Brand & Campaign Context Load
 
-Load brand guidelines for the specified brand. Load any existing campaign assets from `.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/assets/` to understand what already exists and maintain visual consistency.
+Load brand guidelines for the specified brand. Load any existing campaign assets from `{suite-root}/brands/{brand}/campaigns/{campaign}/designs/` to understand what already exists and maintain visual consistency.
 
-If the campaign has approved copy/scripts in `.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/scripts/`, load those for use in asset generation.
+If the campaign has approved copy/scripts in `{suite-root}/brands/{brand}/campaigns/{campaign}/scripts/`, load those for use in asset generation.
 
 **Output:** Brand context and existing campaign context loaded into working memory.
 
@@ -103,7 +104,7 @@ Track progress: log each completed asset to a running tally. If an asset fails g
 Organize all generated assets into a clean campaign folder structure:
 
 ```
-{output_directory}/brands/{brand}/campaigns/{campaign}/assets/batch-{date}/
+{suite-root}/brands/{brand}/campaigns/{campaign}/designs/batch-{date}/
   instagram/
     posts/
     carousels/
@@ -142,9 +143,9 @@ The manifest includes:
 
 Write completion status to campaign memory and daily log.
 
-**Campaign status:** Update `.pawbytes/creative-suites/brands/{brand}/campaigns/{campaign}/status.md` with batch production results — what was produced, where it lives, any failures.
+**Campaign status:** Update `{suite-root}/brands/{brand}/campaigns/{campaign}/status.md` with batch production results — what was produced, where it lives, any failures. Then update `Status:`/`Next:` and links in `{suite-root}/brands/{brand}/README.md` and run `uv run {skill-root}/scripts/paw-paths.py index`.
 
-**Daily log:** Append to `.pawbytes/creative-suites/daily/{YYYY-MM-DD}.md`:
+**Daily log:** Append to `{suite-root}/_memory/daily/{YYYY-MM-DD}.md`:
 
 ```markdown
 ## {HH:MM} [Designer/Batch]

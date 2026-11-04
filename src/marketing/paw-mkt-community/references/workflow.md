@@ -621,10 +621,10 @@ Before implementing any community growth tactic, ask: **Would members feel proud
 ## Path Resolution
 
 **Campaign mode** -- working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/community/`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/community/`
 
 **Standalone mode** -- evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/community/`
+  -> Save to `{suite-root}/brands/{brand-slug}/operations/community/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 
@@ -649,7 +649,7 @@ File structure:
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/community/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/community/
   community-strategy-{YYYY-MM-DD}.md
   platform-selection-{YYYY-MM-DD}.md
   community-launch-plan-{YYYY-MM-DD}.md
@@ -660,7 +660,7 @@ File structure:
   community-roadmap-{YYYY-MM-DD}.md
 
 # Standalone mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/operations/community/
+{suite-root}/brands/{brand-slug}/operations/community/
   (same structure as above)
 ```
 

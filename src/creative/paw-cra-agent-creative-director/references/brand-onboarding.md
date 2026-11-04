@@ -35,7 +35,7 @@ Create a brand profile that captures enough detail for any specialist to produce
 
 ## Output
 
-Create a brand profile in memory: `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/profile.md`
+Create the brand profile: `{suite-root}/brands/{brand-name}/profile.md`
 
 Use this structure:
 
@@ -64,6 +64,7 @@ Use this structure:
 
 ## After Creation
 
+- Write the brand dashboard `{suite-root}/brands/{brand-name}/README.md`: `# {Brand Name}`, `Status: onboarded`, `Next: {first deliverable or campaign}`, then relative links to `profile.md`, `guidelines.md` and `brand-assets/`. Then run `uv run {skill-root}/scripts/paw-paths.py index`.
 - Set as active brand in memory index
 - Offer to create a test asset to validate the profile
 - Ask if they want to onboard another brand or start a project

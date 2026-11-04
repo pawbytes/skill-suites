@@ -6,10 +6,10 @@ Define how Prodig Suites uses shared memory to maintain context across sessions 
 
 ## Memory Architecture
 
-Prodig Suites uses a **single shared module sidecar** because all agents benefit from shared visibility into the evolving product, market, customer, and output standards.
+Prodig Suites uses a **single shared suite memory (`_memory/`)** because all agents benefit from shared visibility into the evolving product, market, customer, and output standards.
 
 ```
-.pawbytes/prodig-suites/memory/paw-ps-sidecar/
+{suite-root}/_memory/
 ├── index.md                      # Orientation - READ FIRST
 ├── daily/
 │   └── YYYY-MM-DD.md            # Append-only session logs
@@ -18,7 +18,6 @@ Prodig Suites uses a **single shared module sidecar** because all agents benefit
     ├── market-intelligence.md    # Research synthesis
     ├── audience-intelligence.md  # Customer understanding
     ├── product-decisions.md      # Decision log
-    ├── output-standards.md       # Quality bar and formats
     └── product-types/
         ├── knowledge-products.md
         ├── template-products.md
@@ -36,7 +35,7 @@ Prodig Suites uses a **single shared module sidecar** because all agents benefit
 | `curated/market-intelligence.md` | Market research synthesis | Orchestrator, Strategist | Research agent | Competitors, gaps, demand signals |
 | `curated/audience-intelligence.md` | Customer insights | Orchestrator, Strategist, Executors | Audience agent | Personas, pains, desired outcomes |
 | `curated/product-decisions.md` | Decision log | Orchestrator, Strategist | Orchestrator, Strategist | Choices, rationale, rejected options |
-| `curated/output-standards.md` | Quality criteria | Executors, QC workflow | Orchestrator, Strategist | Production-ready definition, formats |
+| `{suite-root}/_standards/output-standards.md` | Quality criteria | Executors, QC workflow | Orchestrator, Strategist | Production-ready definition, formats |
 | `curated/product-types/*.md` | Product-family guidance | Relevant executor | Executors, Strategist | Best practices per product type |
 
 ## Reading Protocol
