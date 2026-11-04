@@ -150,7 +150,7 @@ When revising (user feedback or orchestrator check-in):
 
 ```json
 {
-  "run": "{slug}-{date}",
+  "run": "{run}",
   "proposalType": "pitch|rfp|scoping",
   "language": "English",
   "draftVersion": 1,

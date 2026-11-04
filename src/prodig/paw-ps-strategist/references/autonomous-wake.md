@@ -10,7 +10,7 @@ Verify required resources:
 
 | Check | Action if Missing |
 |-------|-------------------|
-| Sidecar memory exists | Create structure |
+| Shared memory exists | Create structure |
 | Product context exists | Initialize from flags |
 | Intelligence files exist | Return error with missing inputs |
 | Output directory writable | Return error |

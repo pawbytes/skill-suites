@@ -261,15 +261,11 @@ Before implementing any CRO technique, ask: **If the customer understood exactly
 ## Path Resolution: Campaign vs Standalone
 
 **Campaign mode** — working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/cro/`
-  -> Read campaign strategy at `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/cro/`
+  -> Read campaign strategy at `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** — evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/cro/`
-
-**Legacy fallback** — old directory structure detected:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/cro/`
-  -> Suggest migration to new structure
+  -> Save to `{suite-root}/brands/{brand-slug}/operations/cro/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 
@@ -291,7 +287,7 @@ File structure:
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/cro/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/cro/
   audit-{page-name}-{YYYY-MM-DD}.md
   audit-signup-{YYYY-MM-DD}.md
   audit-onboarding-{YYYY-MM-DD}.md
@@ -300,7 +296,7 @@ File structure:
   screenshots/
 
 # Standalone mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/operations/cro/
+{suite-root}/brands/{brand-slug}/operations/cro/
   (same structure as above)
 ```
 

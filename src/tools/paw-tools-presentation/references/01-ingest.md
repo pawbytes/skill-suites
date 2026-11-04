@@ -7,16 +7,16 @@
 Accept input in any of these forms:
 - **File path** — read the file
 - **Pasted text** — use as-is
-- `--from-skill <skill-name>` — locate the most recent output from that skill under `{project-root}/.pawbytes/tools-output/<skill-name>/` and read it
+- `--from-skill <skill-name>` — find the most recent file that skill wrote in the brand's workspace (`{brands-folder}/{brand}/`, e.g. `sostac/` for `paw-mkt-sostac`) and read it; ask for the path if none is obvious
 
 If the input is a paw-mkt-* skill output (SOSTAC plan, analytics report, campaign brief, etc.), recognize its structure and extract the relevant strategic content.
 
 ## Brand Context
 
-Attempt to load brand context from `{project-root}/.pawbytes/tools-output/paw-mkt-setup/brand-config.json`:
+Attempt to load brand context from `{brands-folder}/{brand}/brand-context.md` (see SKILL.md for picking the brand), then `{suite-root}/brand-config.json` if it exists:
 
-1. If found, extract: brand name, primary/secondary colors, logo path, tone of voice
-2. If not found, use neutral defaults (deep navy + white palette, professional tone)
+1. If found, extract: brand name, audience, tone of voice, and any primary/secondary colors, fonts and logo path; `brand-config.json` values win for colors and fonts
+2. If neither is found, use neutral defaults (deep navy + white palette, professional tone)
 
 ## What to Extract
 

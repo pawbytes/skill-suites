@@ -15,10 +15,10 @@ First, check what exists:
 
 ```bash
 # List available brands
-ls ./.pawbytes/marketing-suites/brands/
+ls {suite-root}/brands/
 
 # Check SOSTAC status for specific brand
-cat ./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/README.md
+cat {suite-root}/brands/{brand-slug}/sostac/README.md
 ```
 
 ### 2. Present Edit Options

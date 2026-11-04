@@ -19,8 +19,9 @@ This workflow produces a defensible pricing breakdown for a proposal run — lin
 
 - Bare paths and `{skill-root}` resolve from this skill's installed directory.
 - `{project-root}` → the project working directory.
-- `{memory-root}` → `{project-root}/.pawbytes/proposal-automation-suites`.
-- `{run-folder}` → `{memory-root}/proposals/{slug}-{date}/`.
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/proposals`. All paths below are relative to it. A custom folder in config `pa.workspace_folder` (proposal runs) or `pa.library_inbox_folder` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the seller's files are still partly in the old `.pawbytes/proposal-automation-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the seller that `paw-pa-setup` can move them to `paw-suites/proposals/`, and offer it. Keep working either way.
+- `{run-folder}` → `{suite-root}/proposals/{run}/`, one proposal run. A new `{run}` is `YYYY-MM-{client-slug}` (`YYYY-MM-DD-{client-slug}` when that client already has a run this month); existing run folders keep their names.
 
 ## Expected inputs (artifact contract)
 
@@ -28,8 +29,8 @@ This workflow produces a defensible pricing breakdown for a proposal run — lin
 | ----- | ---- | -------- |
 | Structured brief | `{run-folder}/brief.md` | **Yes** |
 | Research dossier | `{run-folder}/research-dossier.html` or `.md` | No — **warn** if missing; benchmarks less calibrated |
-| Pricing history | `{memory-root}/library/pricing-history.json` | No — use `default_hourly_rate` |
-| Scope templates | `{memory-root}/library/scope-templates.md` | No — optional clause reuse |
+| Pricing history | `{suite-root}/library/pricing-history.json` | No — use `default_hourly_rate` |
+| Scope templates | `{suite-root}/library/scope-templates.md` | No — optional clause reuse |
 
 Config keys: `default_pricing_mode` (`line-item` | `tiered` | `value-based`, default `tiered`), `default_hourly_rate` (default `100` USD).
 
@@ -39,7 +40,7 @@ Load config from `{project-root}/.pawbytes/config/config.yaml` and `config.user.
 
 Then:
 
-1. **Find the run folder** — user path, or scan `{workspace_folder}/*/brief.md`, or ask.
+1. **Find the run folder** — user path, or scan `proposals/*/brief.md`, or ask.
 2. **Read `brief.md`** — scope, budget, timeline, requirements, proposal type.
 3. **Read research** — parse `research-dossier.html` sections (or `.md`) for `pricingBenchmarks` observations and client intel. If absent, warn: "Pricing will calibrate from history and defaults only."
 4. **Read `pricing-history.json`** — past quotes for rate calibration (`references/rate-calibration.md`).
@@ -74,13 +75,13 @@ Write to `{run-folder}/pricing.json`.
 
 ## Append pricing history
 
-After seller confirms (interactive) or immediately (`--headless`), append one entry to `{memory-root}/library/pricing-history.json`:
+After seller confirms (interactive) or immediately (`--headless`), append one entry to `{suite-root}/library/pricing-history.json`:
 
 ```json
 {
   "date": "2026-07-03",
   "client": "Acme Corp",
-  "proposalSlug": "acme-corp-2026-07-03",
+  "proposalSlug": "2026-07-acme-corp",
   "proposalType": "pitch",
   "mode": "tiered",
   "lineItems": [],
@@ -95,7 +96,7 @@ Create the file as `[]` if missing. Never overwrite history — append only.
 
 ## Close the loop
 
-- Append `[pricing]` to `{memory-root}/daily/YYYY-MM-DD.md` with client, mode, total, sanity verdict.
+- Append `[pricing]` to `{suite-root}/_memory/daily/YYYY-MM-DD.md` with client, mode, total, sanity verdict.
 - Handoff: `paw-pa-generation` reads `pricing.json`; orchestrator presents artifact in guided mode.
 - Re-run note: power users can invoke this skill alone on an old `{run-folder}` to re-price without re-research.
 

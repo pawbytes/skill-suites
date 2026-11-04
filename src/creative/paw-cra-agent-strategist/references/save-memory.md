@@ -22,8 +22,8 @@ Save memory after completing:
    type: research | script | copy | calendar
    ---
    ```
-3. Append to daily activity log: `{project-root}/.pawbytes/creative-suites/daily/YYYY-MM-DD.md`
-4. If this completes a campaign milestone, update `index.md`
+3. Append to daily activity log: `{suite-root}/_memory/daily/YYYY-MM-DD.md`
+4. If this completes a campaign milestone, update `{suite-root}/_memory/index.md`
 
 ## Artifact Quality
 

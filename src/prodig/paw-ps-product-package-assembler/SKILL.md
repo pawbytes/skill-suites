@@ -15,6 +15,11 @@ This workflow bundles product artifacts from the execution phase into a coherent
 
 **The Non-Negotiable:** Must ensure outputs feel like one product, not scattered drafts.
 
+## Path Resolution
+
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
+
 ## On Activation
 
 Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` (root level and `ps` section). If config is missing, let the user know `paw-ps-setup` can configure the module at any time. Resolve:
@@ -22,11 +27,10 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{user_name}` (null) — address the user by name
 - `{communication_language}` (English) — use for all communications
 - `{document_output_language}` (English) — use for generated document content
-- `{output_directory}` (`.pawbytes/prodig-suites`) — base output path
 
-Load shared memory from `{project-root}/.pawbytes/prodig-suites/index.md`. Load output standards from `{project-root}/.pawbytes/prodig-suites/output-standards.md`.
+Load shared memory from `{suite-root}/_memory/index.md`. Load output standards from `{suite-root}/_standards/output-standards.md`.
 
-**Product context resolution:** Identify the active product from memory or accept a product slug as argument. The product workspace is expected at `.pawbytes/prodig-suites/products/{product-slug}/`. If no product can be resolved, ask the user.
+**Product context resolution:** Identify the active product from memory or accept a product slug as argument. The product workspace is expected at `{suite-root}/{product-slug}/`. If no product can be resolved, ask the user.
 
 If `--headless` or `-H` is passed, run the full pipeline without interaction: gather artifacts, check completeness, organize bundle, generate manifest.
 
@@ -47,7 +51,7 @@ This workflow progresses through four stages. Each stage updates the packaging s
 
 ## Packaging Status File
 
-All progress is written to `{project-root}/.pawbytes/prodig-suites/products/{product-slug}/packaging-status.md`. This file is both the output artifact and the recovery cache.
+All progress is written to `{suite-root}/{product-slug}/packaging-status.md`. This file is both the output artifact and the recovery cache.
 
 ```yaml
 ---
@@ -64,7 +68,7 @@ missing_items: []
 
 ## Artifact Sources
 
-Artifacts are collected from executor outputs:
+Artifacts are collected from the product folder: executor outputs in `{suite-root}/{product-slug}/build/`, plus `plan/`, `research/`, `audience/` and the product brief.
 
 | Source | Contains | Manifest File |
 |--------|----------|---------------|
@@ -88,7 +92,7 @@ Different product types have different required artifacts:
 ## Output Structure
 
 ```
-.pawbytes/prodig-suites/products/{product-slug}/package/
+{suite-root}/{product-slug}/package/
 ├── manifest.json           # Package manifest
 ├── completeness-report.md  # What's present, what's missing
 ├── packaging-notes.md      # Special considerations
@@ -104,15 +108,16 @@ Different product types have different required artifacts:
 ## Memory Contract
 
 **Reads:**
-- `{project-root}/.pawbytes/prodig-suites/index.md` — module state
-- `{project-root}/.pawbytes/prodig-suites/output-standards.md` — output standards
-- `{project-root}/.pawbytes/prodig-suites/products/{product-slug}/product-context.md` — product context
+- `{suite-root}/_memory/index.md` — module state
+- `{suite-root}/_standards/output-standards.md` — output standards
+- `{suite-root}/{product-slug}/product-context.md` — product context
 - Executor manifests from execution phase
 
 **Writes:**
-- `{project-root}/.pawbytes/prodig-suites/products/{product-slug}/packaging-status.md` — packaging progress
-- `{project-root}/.pawbytes/prodig-suites/products/{product-slug}/package/` — packaged bundle
-- `{project-root}/.pawbytes/prodig-suites/daily/{date}.md` — daily log (append, tagged `[Packaging]`)
+- `{suite-root}/{product-slug}/packaging-status.md` — packaging progress
+- `{suite-root}/{product-slug}/package/` — packaged bundle
+- `{suite-root}/_memory/daily/{date}.md` — daily log (append, tagged `[Packaging]`)
+- `{suite-root}/{product-slug}/README.md` — set `Status: packaged` (or `packaging incomplete`), `Next:` (usually `paw-ps-publish-ready-check`) and link `package/manifest.json`; then run `uv run {skill-root}/scripts/paw-paths.py index`
 
 ## Escalation Routes
 

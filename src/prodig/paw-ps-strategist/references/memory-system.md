@@ -1,12 +1,12 @@
 # Memory System
 
-The Product Strategist reads and writes to the **shared sidecar memory** at `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/`.
+The Product Strategist reads and writes to the **shared memory** at `{suite-root}/_memory/`.
 
 ## Memory Structure
 
 ```
-.pawbytes/prodig-suites/memory/paw-ps-sidecar/
-├── index.md                    # Sidecar index, status, active context
+{suite-root}/_memory/
+├── index.md                    # Memory index, status, active context
 ├── curated/
 │   ├── product-context.md      # Current product context
 │   ├── product-decisions.md    # Product decisions (output)
@@ -20,10 +20,10 @@ The Product Strategist reads and writes to the **shared sidecar memory** at `{pr
 
 ## What to Read on Activation
 
-1. `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md` — sidecar context and status
-2. `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md` — current product context
-3. `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/market-intelligence.md` — market data (if exists)
-4. `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/audience-intelligence.md` — audience data (if exists)
+1. `{suite-root}/_memory/index.md` — memory context and status
+2. `{suite-root}/_memory/curated/product-context.md` — current product context
+3. `{suite-root}/_memory/curated/market-intelligence.md` — market data (if exists)
+4. `{suite-root}/_memory/curated/audience-intelligence.md` — audience data (if exists)
 
 ## Input Sources
 
@@ -75,7 +75,7 @@ The Strategist consumes intelligence from research agents:
 
 ## Activity Logging
 
-Append to `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`:
+Append to `{suite-root}/_memory/daily/YYYY-MM-DD.md`:
 
 ```markdown
 ## [Strategist] HH:MM - {Activity Type}

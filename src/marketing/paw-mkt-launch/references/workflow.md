@@ -71,7 +71,7 @@ If no SOSTAC plan exists, escalate to paw-mkt-sostac before proceeding. A launch
 ### SOSTAC Prerequisite Check
 
 The SOSTAC plan is the entry condition for all launch work. Check for:
-- `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/` directory exists
+- `{suite-root}/brands/{brand-slug}/sostac/` directory exists
 - At minimum, Situation Analysis and Objectives phases are complete
 - Strategy phase provides positioning and audience intelligence
 
@@ -551,10 +551,10 @@ Before publishing any launch claim, ask: **If a journalist fact-checked this cla
 ## Path Resolution
 
 **Campaign mode** -- working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/launch/`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/launch/`
 
 **Standalone mode** -- evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/launch/`
+  -> Save to `{suite-root}/brands/{brand-slug}/operations/launch/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 

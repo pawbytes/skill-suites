@@ -15,7 +15,7 @@ User requests a flyer, poster, promotional handout, or print-ready marketing mat
 | Content/copy | Brief or user | Yes |
 | Dimensions | User specification or standard | Yes |
 | Output type | Print or digital | Yes |
-| Brand guidelines | `.pawbytes/creative-suites/brands/{brand}/guidelines.md` | Yes |
+| Brand guidelines | `{suite-root}/brands/{brand}/guidelines.md` | Yes |
 
 ## Process
 
@@ -97,7 +97,7 @@ Order of prominence (largest to smallest):
 
 ## Output
 
-**Digital:** PNG/JPG, RGB, `.pawbytes/creative-suites/brands/{brand}/assets/{campaign}/flyers/`
+**Digital:** PNG/JPG, RGB, `{suite-root}/brands/{brand}/campaigns/{campaign}/designs/flyers/` (outside a campaign: `{suite-root}/brands/{brand}/designs/flyers/`)
 **Print:** PDF, CMYK, with bleed, same location
 **Naming:** `{flyer-name}_{size}_{date}.{ext}`
 

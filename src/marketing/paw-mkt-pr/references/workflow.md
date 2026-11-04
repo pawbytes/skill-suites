@@ -737,14 +737,14 @@ Before issuing any PR communication, ask: **If this journalist (or the public) f
 ## Path Resolution: Campaign vs Standalone
 
 **Campaign mode** -- working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/pr/`
-  -> Read campaign strategy at `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/pr/`
+  -> Read campaign strategy at `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** -- evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/pr/`
+  -> Save to `{suite-root}/brands/{brand-slug}/channels/pr/`
 
 **Crisis mode** -- time-critical work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/crisis/{incident-slug}-{YYYY-MM-DD}/`
+  -> Save to `{suite-root}/brands/{brand-slug}/channels/pr/crisis/{incident-slug}-{YYYY-MM-DD}/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, crisis response, or standalone work?"
 

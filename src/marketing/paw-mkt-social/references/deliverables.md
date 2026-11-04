@@ -8,15 +8,11 @@
 ## Path Resolution: Campaign vs Standalone
 
 **Campaign mode** -- working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/social/content/`
-  -> Read campaign strategy at `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/social/`
+  -> Read campaign strategy at `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** -- evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/social/content/`
-
-**Legacy fallback** -- old directory structure detected:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/content/social/`
-  -> Suggest migration to new structure
+  -> Save to `{suite-root}/brands/{brand-slug}/channels/social/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 
@@ -133,7 +129,7 @@ Document per competitor:
 
 ## 8. Performance Report
 
-Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/social/content/performance/monthly-report-{YYYY-MM}.md`.
+Save to `{suite-root}/brands/{brand-slug}/channels/social/performance/monthly-report-{YYYY-MM}.md`.
 
 Include:
 - Summary metrics (reach, engagement, followers)
@@ -148,7 +144,7 @@ Include:
 
 ```
 ## Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/social/content/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/social/
   social-calendar-{YYYY-MM}.md
   platform-strategy-{platform}-{YYYY-MM-DD}.md
   content-brief-{slug}-{YYYY-MM-DD}.md
@@ -157,7 +153,7 @@ Include:
   ugc-campaign-{name}-{YYYY-MM-DD}.md
 
 ## Standalone mode (default for evergreen work):
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/social/content/
+{suite-root}/brands/{brand-slug}/channels/social/
   social-calendar-{YYYY-MM}.md
   platform-strategy-{platform}-{YYYY-MM-DD}.md
   content-brief-{slug}-{YYYY-MM-DD}.md

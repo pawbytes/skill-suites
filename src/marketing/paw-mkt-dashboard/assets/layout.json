@@ -1,0 +1,63 @@
+{
+  "suite": "marketing",
+  "title": "PawBytes Marketing Suite",
+  "config_section": "mkt",
+  "root": "paw-suites/marketing",
+  "legacy_root": ".pawbytes/marketing-suites",
+  "items": ["brands/*"],
+  "rules": [
+    {"from": "brands/*/paw-mkt-product-context.md", "to": "brands/{1}/product-context.md"},
+
+    {"from": "brands/*/channels/content/content/**", "to": "brands/{1}/operations/content-plan/{rest}"},
+    {"from": "brands/*/campaigns/*/channels/content/content/**", "to": "brands/{1}/campaigns/{2}/content-plan/{rest}"},
+    {"from": "brands/*/campaigns/*/channels/*/content/**", "to": "brands/{1}/campaigns/{2}/channels/{3}/{rest}"},
+    {"from": "brands/*/channels/*/content/**", "to": "brands/{1}/channels/{2}/{rest}"},
+
+    {"from": "brands/*/analytics/seo/serp-*", "to": "brands/{1}/channels/seo/research/{2}"},
+    {"from": "brands/*/analytics/seo/**", "to": "brands/{1}/channels/seo/performance/{rest}"},
+    {"from": "brands/*/analytics/retention/**", "to": "brands/{1}/operations/retention/research/{rest}"},
+    {"from": "brands/*/analytics/**", "to": "brands/{1}/analytics/{rest}"},
+    {"from": "brands/*/operations/analytics/**", "to": "brands/{1}/analytics/{rest}"},
+    {"from": "brands/*/operations/**", "to": "brands/{1}/operations/{rest}"},
+
+    {"from": "brands/*/campaigns/analytics/**", "to": "brands/{1}/analytics/{rest}"},
+    {"from": "brands/*/campaigns/cro/**", "to": "brands/{1}/operations/cro/{rest}"},
+    {"from": "brands/*/campaigns/community/**", "to": "brands/{1}/operations/community/{rest}"},
+    {"from": "brands/*/campaigns/guerrilla/**", "to": "brands/{1}/operations/guerrilla/{rest}"},
+    {"from": "brands/*/campaigns/launch/**", "to": "brands/{1}/operations/launch/{rest}"},
+    {"from": "brands/*/campaigns/pricing/**", "to": "brands/{1}/operations/pricing/{rest}"},
+    {"from": "brands/*/campaigns/psychology/**", "to": "brands/{1}/operations/psychology/{rest}"},
+    {"from": "brands/*/campaigns/referral/**", "to": "brands/{1}/operations/referral/{rest}"},
+    {"from": "brands/*/campaigns/retention/**", "to": "brands/{1}/operations/retention/{rest}"},
+    {"from": "brands/*/campaigns/sales/**", "to": "brands/{1}/operations/sales/{rest}"},
+    {"from": "brands/*/campaigns/blog/**", "to": "brands/{1}/channels/blog/{rest}"},
+    {"from": "brands/*/campaigns/email/**", "to": "brands/{1}/channels/email/{rest}"},
+    {"from": "brands/*/campaigns/influencer/**", "to": "brands/{1}/channels/influencer/{rest}"},
+    {"from": "brands/*/campaigns/paid-ads/**", "to": "brands/{1}/channels/paid-ads/{rest}"},
+    {"from": "brands/*/campaigns/pr/**", "to": "brands/{1}/channels/pr/{rest}"},
+    {"from": "brands/*/campaigns/seo/**", "to": "brands/{1}/channels/seo/{rest}"},
+    {"from": "brands/*/campaigns/social/**", "to": "brands/{1}/channels/social/{rest}"},
+    {"from": "brands/*/campaigns/video/**", "to": "brands/{1}/channels/video/{rest}"},
+
+    {"from": "brands/*/content/copy/**", "to": "brands/{1}/channels/website/{rest}"},
+    {"from": "brands/*/content/email/**", "to": "brands/{1}/channels/email/{rest}"},
+    {"from": "brands/*/content/influencer/**", "to": "brands/{1}/channels/influencer/{rest}"},
+    {"from": "brands/*/content/paid-ads/**", "to": "brands/{1}/channels/paid-ads/{rest}"},
+    {"from": "brands/*/content/pr/**", "to": "brands/{1}/channels/pr/{rest}"},
+    {"from": "brands/*/content/seo/**", "to": "brands/{1}/channels/seo/{rest}"},
+    {"from": "brands/*/content/social/**", "to": "brands/{1}/channels/social/{rest}"},
+    {"from": "brands/*/content/video/**", "to": "brands/{1}/channels/video/{rest}"},
+    {"from": "brands/*/content/blog/**", "to": "brands/{1}/channels/blog/{rest}"},
+    {"from": "brands/*/content/**", "to": "brands/{1}/channels/blog/{rest}"},
+
+    {"from": "brands/*/crisis/**", "to": "brands/{1}/channels/pr/crisis/{rest}"},
+
+    {"from": "config/**", "to": null}
+  ],
+  "config_keys": [
+    {"key": "brands_folder", "legacy": "{project-root}/.pawbytes/marketing-suites/brands",
+     "new": "{project-root}/paw-suites/marketing/brands"},
+    {"key": "reports_folder", "legacy": "{project-root}/.pawbytes/marketing-suites/reports",
+     "new": "{project-root}/paw-suites/marketing/reports"}
+  ]
+}

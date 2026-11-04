@@ -12,7 +12,7 @@ and opens it in the OS default browser. No analysis happens here.
 Input JSON shape (evidence fields are strings the LLM already wrote):
 {
   "clientName": "Acme Corp",
-  "proposalSlug": "acme-corp-2026-07-03",
+  "proposalSlug": "2026-07-acme-corp",
   "generated": "2026-07-03",
   "mode": "local-browser" | "cursor-ide-browser" | "local-only",
   "briefSummary": "One-paragraph scope recap from brief.md",

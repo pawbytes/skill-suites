@@ -63,13 +63,13 @@ default_hourly_rate:
 
 workspace_folder:
   prompt: "Where should proposal run artifacts be stored?"
-  default: "{project-root}/.pawbytes/proposal-automation-suites/proposals"
+  default: "{project-root}/paw-suites/proposals/proposals"
   result: "{value}"
   directories: true
 
 library_inbox_folder:
   prompt: "Folder where you'll drop case studies / past proposals / boilerplate docs for ingestion?"
-  default: "{project-root}/.pawbytes/proposal-automation-suites/library/inbox"
+  default: "{project-root}/paw-suites/proposals/library/inbox"
   result: "{value}"
   directories: true
 

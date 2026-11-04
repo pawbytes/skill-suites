@@ -49,8 +49,12 @@ General references (`shared-patterns.md`, `launch-phases.md`, `product-hunt-play
 See `./references/shared-patterns.md` for Starting Context Router and Pre-Flight protocols.
 
 ## Path Resolution
-- **Campaign mode** — Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/launch/`
-- **Standalone mode** — Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/launch/`
+
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/marketing`. All paths below are relative to it. A custom folder in config `mkt.brands_folder` replaces `{suite-root}/brands` (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/marketing-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-mkt-setup` can move them to `paw-suites/marketing/`, and offer it. Keep working either way.
+
+- **Campaign mode** — Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/launch/`
+- **Standalone mode** — Save to `{suite-root}/brands/{brand-slug}/operations/launch/`
 - If unsure, ask: "Is this part of a specific campaign, or standalone work?"
 
 ## Capabilities

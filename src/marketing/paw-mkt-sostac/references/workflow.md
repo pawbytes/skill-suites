@@ -75,7 +75,7 @@ SWOT + TOWS, PESTLE, Porter's Five Forces, TAM/SAM/SOM, Jobs-to-be-Done, 5S Digi
 ```
 ## Phase 1 Complete: Situation Analysis
 
-**Saved to:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/01-situation.md`
+**Saved to:** `{suite-root}/brands/{brand-slug}/sostac/01-situation.md`
 
 ### Key Decisions Made
 - [Key finding 1 with evidence source]
@@ -132,7 +132,7 @@ OKR Framework, RACE Framework, 5S Objectives, Objective Cascade Method.
 ```
 ## Phase 2 Complete: Objectives Setting
 
-**Saved to:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/02-objectives.md`
+**Saved to:** `{suite-root}/brands/{brand-slug}/sostac/02-objectives.md`
 
 ### Key Decisions Made
 - [Primary OKR with rationale]
@@ -189,7 +189,7 @@ STP (Segmentation, Targeting, Positioning), Moore's Positioning Statement, Ansof
 ```
 ## Phase 3 Complete: Strategy Development
 
-**Saved to:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/03-strategy.md`
+**Saved to:** `{suite-root}/brands/{brand-slug}/sostac/03-strategy.md`
 
 ### Key Decisions Made
 - [Target segment chosen with rationale]
@@ -248,7 +248,7 @@ AARRR Pirate Metrics, ICE Scoring, PIE Framework, Hub-Hero-Help Content Model, P
 ```
 ## Phase 4 Complete: Tactics Planning
 
-**Saved to:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/04-tactics.md`
+**Saved to:** `{suite-root}/brands/{brand-slug}/sostac/04-tactics.md`
 
 ### Key Decisions Made
 - [Playbook selected: name and rationale]
@@ -307,7 +307,7 @@ RACI Matrix, Agile Marketing Sprints, Objective-and-Task Budgeting, Kotter's Cha
 ```
 ## Phase 5 Complete: Action Planning
 
-**Saved to:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/05-action.md`
+**Saved to:** `{suite-root}/brands/{brand-slug}/sostac/05-action.md`
 
 ### Key Decisions Made
 - [Quick wins identified for Week 1]
@@ -367,7 +367,7 @@ North Star Metric, Attribution Models, Leading vs Lagging Indicators, PDCA Cycle
 ```
 ## Phase 6 Complete: Control Setup
 
-**Saved to:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/06-control.md`
+**Saved to:** `{suite-root}/brands/{brand-slug}/sostac/06-control.md`
 
 ### Key Decisions Made
 - [North Star Metric selected with rationale]
@@ -423,7 +423,7 @@ When returning to an in-progress SOSTAC plan -- whether in a new session or afte
 
 ```bash
 # Check SOSTAC status
-cat ./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/README.md
+cat {suite-root}/brands/{brand-slug}/sostac/README.md
 ```
 
 The `README.md` is the state machine tracker. It records which phases are complete, in-progress, or pending.
@@ -567,7 +567,7 @@ Verify all rules from the Cross-Phase Consistency Rules section above. Present f
 
 ### README.md as State Machine
 
-The file `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/README.md` is the single source of truth for plan state. It is updated after every phase save.
+The file `{suite-root}/brands/{brand-slug}/sostac/README.md` is the single source of truth for plan state. It is updated after every phase save.
 
 #### README.md Format
 

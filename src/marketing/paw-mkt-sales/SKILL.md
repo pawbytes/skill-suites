@@ -26,7 +26,7 @@ Practical and sales-rep focused. Uses customer language, not marketing speak. Pr
 
 ## Psychology Inputs
 
-When available, consume DDFF from `paw-mkt-product-context.md` and reptilian/limbic hot-button framing from `paw-mkt-psychology`. Use them to shape sales decks, demo talk tracks, one-pagers, champion kits, and objection-handling language. The strongest use is connecting buyer fears and frustrations to credible proof, then connecting desires and dreams to business outcomes.
+When available, consume DDFF from `product-context.md` and reptilian/limbic hot-button framing from `paw-mkt-psychology`. Use them to shape sales decks, demo talk tracks, one-pagers, champion kits, and objection-handling language. The strongest use is connecting buyer fears and frustrations to credible proof, then connecting desires and dreams to business outcomes.
 
 ## On Activation
 Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` if present. Resolve and apply throughout the session.
@@ -83,9 +83,11 @@ When the user requests sales enablement work:
 
 ## Path Resolution
 
-**Campaign mode:** Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/sales/`
-**Standalone mode:** Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/sales/`
-**Legacy fallback:** Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/sales/` and suggest migration
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/marketing`. All paths below are relative to it. A custom folder in config `mkt.brands_folder` replaces `{suite-root}/brands` (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/marketing-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-mkt-setup` can move them to `paw-suites/marketing/`, and offer it. Keep working either way.
+
+**Campaign mode:** Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/sales/`
+**Standalone mode:** Save to `{suite-root}/brands/{brand-slug}/operations/sales/`
 
 ## Dependencies
 

@@ -47,11 +47,11 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{document_output_language}` (system) — use for generated document content
 - `{default_research_depth}` (`standard`) — how deep research runs go
 
-**Sidecar Initialization:** Check for shared memory at `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md`. If absent, create initial structure.
+**Memory Initialization:** Check for shared memory at `{suite-root}/_memory/index.md`. If absent, create initial structure.
 
-**Research Memory Check:** Check `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/market-intelligence.md`. If absent, scaffold the research structure using `./references/init-research-memory.md`.
+**Research Memory Check:** Check `{suite-root}/_memory/curated/market-intelligence.md`. If absent, scaffold the research structure using `./references/init-research-memory.md`.
 
-**Product Context:** Load active product context from `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md` if present.
+**Product Context:** Load active product context from `{suite-root}/_memory/curated/product-context.md` if present.
 
 If `--headless` or `-H` is passed, execute the named task without interaction. Otherwise, greet the user and offer context-aware options based on existing research state.
 
@@ -102,42 +102,45 @@ When the user requests research:
 
 ## Path Resolution
 
-**Shared memory root:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
+
+**Shared memory root:** `{suite-root}/_memory/`
 
 **Research outputs:**
 ```
-.pawbytes/prodig-suites/memory/paw-ps-sidecar/
+{suite-root}/_memory/
 ├── curated/
 │   └── market-intelligence.md    # Research synthesis (primary)
 └── daily/
     └── YYYY-MM-DD.md             # Activity logs
 ```
 
-**Product-specific research:** `{project-root}/.pawbytes/prodig-suites/products/{product-slug}/research/`
+**Product-specific research:** `{suite-root}/{product-slug}/research/`
 
-If no product slug is known, save to sidecar memory. If product context is active, also save product-specific copy.
+If no product slug is known, save to shared memory. If product context is active, also save product-specific copy.
 
 ## Memory Discipline
 
 ### What to Read on Activation
 
-1. `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md` — sidecar orientation
-2. `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/market-intelligence.md` — existing research
-3. `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md` — if active product exists
+1. `{suite-root}/_memory/index.md` — memory orientation
+2. `{suite-root}/_memory/curated/market-intelligence.md` — existing research
+3. `{suite-root}/_memory/curated/product-context.md` — if active product exists
 
 ### What to Write
 
 | Output | Path |
 |--------|------|
 | Market intelligence brief | `curated/market-intelligence.md` |
-| Competitor matrix | `products/{slug}/research/competitor-matrix.md` |
-| Demand signal summary | `products/{slug}/research/demand-signals.md` |
-| Opportunity-gap report | `products/{slug}/research/opportunity-gaps.md` |
+| Competitor matrix | `{suite-root}/{slug}/research/competitor-matrix.md` |
+| Demand signal summary | `{suite-root}/{slug}/research/demand-signals.md` |
+| Opportunity-gap report | `{suite-root}/{slug}/research/opportunity-gaps.md` |
 | Daily activity log | `daily/YYYY-MM-DD.md` (append) |
 
 ### Activity Logging
 
-Append to `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`:
+Append to `{suite-root}/_memory/daily/YYYY-MM-DD.md`:
 
 ```markdown
 ## [Research] HH:MM - {Activity}

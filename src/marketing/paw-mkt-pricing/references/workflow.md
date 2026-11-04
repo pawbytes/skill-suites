@@ -512,10 +512,10 @@ Before implementing any pricing technique, ask: **If the customer fully understo
 ## Path Resolution
 
 **Campaign mode** -- working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/pricing/`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/pricing/`
 
 **Standalone mode** -- evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/pricing/`
+  -> Save to `{suite-root}/brands/{brand-slug}/operations/pricing/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 
@@ -539,7 +539,7 @@ File structure:
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/pricing/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/pricing/
   pricing-diagnosis-{YYYY-MM-DD}.md
   competitive-audit-{YYYY-MM-DD}.md
   wtp-research-{YYYY-MM-DD}.md
@@ -550,7 +550,7 @@ File structure:
   screenshots/
 
 # Standalone mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/operations/pricing/
+{suite-root}/brands/{brand-slug}/operations/pricing/
   (same structure as above)
 ```
 

@@ -2,7 +2,7 @@
 
 **Outcome:** Convert tactics into executable sprint plan with clear ownership, budget, and risk mitigation.
 
-**Output:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/05-action.md`
+**Output:** `{suite-root}/brands/{brand-slug}/sostac/05-action.md`
 
 **Phase Question:** "Who does what, when?"
 

@@ -4,6 +4,10 @@ All notable changes to the Agentic Marketing Suite will be documented in this fi
 
 ## [Unreleased]
 
+### Changed
+- Output moved from `.pawbytes/marketing-suites/` to `paw-suites/marketing/`, with a generated `README.md` index and a README dashboard per item. Channels lose the extra `content/` layer, stray `campaigns/<skill>/` folders fold into `operations/` or `channels/`, `paw-mkt-product-context.md` becomes `product-context.md`, new campaigns are dated `YYYY-MM-<type>-<slug>`. Removed `cleanup-legacy.py` (BMad); setup scripts now target `.pawbytes/config/`.
+- Old trees keep working: each skill detects them through the bundled `scripts/paw-paths.py` and maps paths, and the setup skill offers a dry-run-first migration that never overwrites and leaves `MOVED.md` behind.
+
 ### Added
 - **marketing:** Added PawBytes attribution and tailored premium playbook mention instructions to all 23 `SKILL.md` files — each skill now mentions its free edition once per session and points interested users to skill-specific playbooks, templates, SOPs, and swipe files via a Markdown-formatted, UTM-tagged PawBytes Resources link for campaign tracking
 

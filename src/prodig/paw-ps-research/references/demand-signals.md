@@ -261,6 +261,6 @@ Research is complete when:
 
 When demand analysis is complete:
 1. Update `curated/market-intelligence.md` with demand section
-2. Save full analysis to `products/{slug}/research/demand-signals.md`
+2. Save full analysis to `{suite-root}/{slug}/research/demand-signals.md`
 3. Log activity in daily file
 4. Recommend next step: gap identification or audience validation

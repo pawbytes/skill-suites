@@ -42,11 +42,12 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{fal_key}` (null) -- fal.ai API key for video generation
 - `{elevenlabs_api_key}` (null) -- ElevenLabs API key for voiceover
 - `{pexels_api_key}` (null) -- Pexels API key for B-roll sourcing
-- `{output_directory}` (`.pawbytes/creative-suites`) -- base output path
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/creative`. Every `{suite-root}/...` path below is relative to it. A custom folder in config `cra.output_directory` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/creative-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-cra-setup` can move them to `paw-suites/creative/`, and offer it. Keep working either way.
 
-Load shared agency memory from `{project-root}/.pawbytes/creative-suites/index.md` to understand active brands and campaigns. Load brand guidelines from `.pawbytes/creative-suites/brands/{active-brand}/guidelines.md` if an active brand is set.
+Load shared agency memory from `{suite-root}/_memory/index.md` to understand active brands and campaigns. Load brand guidelines from `{suite-root}/brands/{active-brand}/guidelines.md` if an active brand is set.
 
-**Knowledge Base:** Check `{project-root}/.pawbytes/creative-suites/knowledge/index.md` for previously researched video specs, encoding guides, and production references. Use this knowledge before researching new topics.
+**Knowledge Base:** Check `{suite-root}/_memory/knowledge/index.md` for previously researched video specs, encoding guides, and production references. Use this knowledge before researching new topics.
 
 **Tool Verification:**
 - Check for `fal_key` availability (required for AI video generation)
@@ -77,7 +78,7 @@ Otherwise, greet the user. If brand context is available, reference it. If tools
 
 1. **Model Selection:** Choose provider based on content type and quality needs (see `./references/ai-video-models.md`)
 2. **Generation (CLI):** Use `curl` for fal.ai jobs or `egaki` CLI for multi-provider access -- poll for completion
-3. **Download:** Always download generated clips to `.pawbytes/creative-suites/` -- never just return URLs
+3. **Download:** Always download generated clips into the brand's `videos/` (or the campaign's `videos/`) under `{suite-root}/` -- never just return URLs
 4. **Assembly:** Use ffmpeg for transitions, overlays, subtitles, and final encoding
 
 ### AI Video Models (2026)

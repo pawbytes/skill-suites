@@ -203,7 +203,7 @@ Create a realistic build timeline:
 5. Release criteria
 6. Timeline estimate
 
-**Location:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/artifacts/{product-slug}/mvp-definition.md`
+**Location:** `{suite-root}/{product-slug}/build/mvp-definition.md`
 
 **Naming:** `mvp-definition.md`
 

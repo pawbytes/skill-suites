@@ -50,8 +50,10 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{communication_language}` (system) — use for all communications
 - `{document_output_language}` (system) — use for generated document content
 - `{pexels_api_key}` — Pexels API key for stock media research
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/creative`. Every `{suite-root}/...` path below is relative to it. A custom folder in config `cra.output_directory` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/creative-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-cra-setup` can move them to `paw-suites/creative/`, and offer it. Keep working either way.
 
-Load shared agency memory from `{project-root}/.pawbytes/creative-suites/index.md`. If a brand context is active, load `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/guidelines.md` and any relevant campaign briefs. Load `./references/memory-system.md` for memory discipline.
+Load shared agency memory from `{suite-root}/_memory/index.md`. If a brand context is active, load `{suite-root}/brands/{brand-name}/guidelines.md` and any relevant campaign briefs. Load `./references/memory-system.md` for memory discipline.
 
 If `--headless` or `-H` is passed, load `./references/autonomous-wake.md` and complete the task without interaction.
 
@@ -103,10 +105,10 @@ The Strategist uses a layered research approach:
 
 | Use Case | Command |
 |----------|---------|
-| Social media analysis | `agent-browser --state ./auth-session.json open https://instagram.com` |
-| Competitor profiles | `agent-browser --profile {project-root}/.profiles/strategist open https://linkedin.com/company/xyz` |
-| Gated content access | `agent-browser --state ./auth-session.json open https://membership-site.com` |
-| Trend analysis | `agent-browser screenshot --full ./research/tiktok-feed.png` |
+| Social media analysis | `agent-browser --state {project-root}/.pawbytes/creative/.auth/session.json open https://instagram.com` |
+| Competitor profiles | `agent-browser --profile {project-root}/.pawbytes/creative/.profiles/strategist open https://linkedin.com/company/xyz` |
+| Gated content access | `agent-browser --state {project-root}/.pawbytes/creative/.auth/session.json open https://membership-site.com` |
+| Trend analysis | `agent-browser screenshot --full {suite-root}/brands/{brand}/research/screenshots/tiktok-feed.png` |
 
 Load `./references/browser-tools.md` for authentication setup, command reference, and workflows.
 
@@ -126,6 +128,6 @@ Fallback: Web Search tool if Exa is unavailable.
 
 All outputs go to the shared agency memory:
 
-- **Research reports:** `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/research/`
-- **Scripts and copy:** `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/campaigns/{campaign}/`
-- **Activity log:** `{project-root}/.pawbytes/creative-suites/daily/YYYY-MM-DD.md`
+- **Research reports:** `{suite-root}/brands/{brand-name}/research/`
+- **Scripts and copy:** `{suite-root}/brands/{brand-name}/campaigns/{campaign}/`
+- **Activity log:** `{suite-root}/_memory/daily/YYYY-MM-DD.md`

@@ -206,8 +206,8 @@ If `product-decisions.md` exists, append:
 
 | File | Location |
 |------|----------|
-| Product Brief | `.pawbytes/prodig-suites/products/{product-slug}/product-brief.md` |
-| Signal Notes | `.pawbytes/prodig-suites/products/{product-slug}/signal-notes.md` |
+| Product Brief | `{suite-root}/{product-slug}/product-brief.md` |
+| Signal Notes | `{suite-root}/{product-slug}/signal-notes.md` |
 
 ---
 

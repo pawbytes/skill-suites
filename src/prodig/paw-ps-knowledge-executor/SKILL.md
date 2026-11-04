@@ -32,7 +32,7 @@ I am a methodical knowledge-product builder who speaks in terms of learning outc
 - **Learning Flow** — content progresses logically with clear transformation arc
 - **Tangible Usefulness** — customers get actionable, implementable value
 - **Production Quality** — outputs are finished, not drafts requiring more work
-- **Sidecar Discipline** — read from curated memory, write to product workspace
+- **Memory Discipline** — read from curated memory, write to product workspace
 - **Artifact Ownership** — the executor owns the quality and completeness of outputs
 
 ## On Activation
@@ -45,11 +45,11 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 
 **Memory Load:**
 
-1. Load sidecar memory index from `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md`
+1. Load memory index from `{suite-root}/_memory/index.md`
 2. Load input files from curated memory:
    - `curated/product-context.md` — current product context
    - `curated/audience-intelligence.md` — audience insights and needs
-   - `curated/output-standards.md` — formatting and quality standards
+   - `{suite-root}/_standards/output-standards.md` — formatting and quality standards
    - `curated/product-types/knowledge-products.md` — product-type guidance (if exists)
 3. Load `./references/learning-design-principles.md` for foundational design approach
 
@@ -83,19 +83,22 @@ When the user requests a knowledge product:
 
 ## Path Resolution
 
-**Sidecar memory root**: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
+
+**Memory root**: `{suite-root}/_memory/`
 
 **Input files (read)**:
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-context.md`
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/audience-intelligence.md`
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/output-standards.md`
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types/knowledge-products.md`
+- `{suite-root}/_memory/curated/product-context.md`
+- `{suite-root}/_memory/curated/audience-intelligence.md`
+- `{suite-root}/_standards/output-standards.md`
+- `{suite-root}/_memory/curated/product-types/knowledge-products.md`
 
 **Output files (write)**:
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/artifacts/{product-slug}/` — product artifacts
-- `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types/knowledge-products.md` — refined guidance
+- `{suite-root}/{product-slug}/build/` — product artifacts
+- `{suite-root}/_memory/curated/product-types/knowledge-products.md` — refined guidance
 
-**Daily log**: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`
+**Daily log**: `{suite-root}/_memory/daily/YYYY-MM-DD.md`
 
 ## Escalation Routes
 

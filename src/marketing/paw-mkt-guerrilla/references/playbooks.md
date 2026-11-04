@@ -708,7 +708,7 @@ Leverage partner audiences and ecosystems to grow without paid acquisition.
 
 ### After Every Playbook
 
-1. Document results in `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/guerrilla/performance/` (or `campaigns/{type}-{slug}/guerrilla/performance/` if campaign-tied).
+1. Document results in `{suite-root}/brands/{brand-slug}/operations/guerrilla/performance/` (or `campaigns/{YYYY-MM}-{type}-{slug}/guerrilla/performance/` if campaign-tied).
 2. Calculate ROI: (revenue or value generated - cost) / cost.
 3. Identify what to repeat, what to iterate, and what to abandon.
 4. Feed learnings into the growth experiment backlog.

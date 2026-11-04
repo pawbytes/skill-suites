@@ -1,0 +1,35 @@
+{
+  "suite": "products",
+  "title": "PawBytes Products",
+  "config_section": "ps",
+  "root": "paw-suites/products",
+  "legacy_root": ".pawbytes/prodig-suites",
+  "items": ["*"],
+  "rules": [
+    {"from": "memory/paw-ps-sidecar/curated/output-standards.md", "to": "_standards/output-standards.md"},
+    {"from": "output-standards.md", "to": "_standards/legacy/root-output-standards.md"},
+    {"from": "standards/**", "to": "_standards/legacy/{rest}"},
+    {"from": "memory/paw-ps-sidecar/artifacts/*.*", "to": null},
+    {"from": "artifacts/*.*", "to": null},
+    {"from": "plans/*.*", "to": null},
+    {"from": "memory/paw-ps-sidecar/artifacts/*/**", "to": "{1}/build/{rest}"},
+    {"from": "artifacts/*/**", "to": "{1}/build/{rest}"},
+    {"from": "memory/paw-ps-sidecar/**", "to": "_memory/{rest}"},
+    {"from": "memory/**", "to": "_memory/legacy/{rest}"},
+    {"from": "active-product.md", "to": "_memory/active-product.md"},
+    {"from": "index.md", "to": "_memory/legacy/root-index.md"},
+    {"from": "daily/**", "to": "_memory/legacy/daily/{rest}"},
+    {"from": "plans/*/**", "to": "{1}/plan/{rest}"},
+    {"from": "products/_archived/**", "to": "_archived/{rest}"},
+    {"from": "products/*/artifacts/**", "to": "{1}/build/{rest}"},
+    {"from": "products/*/**", "to": "{1}/{rest}"}
+  ],
+  "config_keys": [
+    {"key": "output_folder", "new_key": "products_folder",
+     "legacy": "{project-root}/.pawbytes/prodig-suites", "new": "{project-root}/paw-suites/products"},
+    {"key": "products_folder",
+     "legacy": "{project-root}/.pawbytes/prodig-suites/products", "new": "{project-root}/paw-suites/products"},
+    {"key": "sidecar_folder", "new_key": "memory_folder",
+     "legacy": "{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar", "new": "{project-root}/paw-suites/products/_memory"}
+  ]
+}

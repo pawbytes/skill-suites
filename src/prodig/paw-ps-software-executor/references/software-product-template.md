@@ -156,12 +156,12 @@ When `curated/product-types/software-products.md` does not exist:
 
 1. Create the directory structure if needed:
    ```
-   .pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types/
+   {suite-root}/_memory/curated/product-types/
    ```
 
 2. Copy this template content to:
    ```
-   .pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types/software-products.md
+   {suite-root}/_memory/curated/product-types/software-products.md
    ```
 
 3. Update the "Last Updated" field with current date

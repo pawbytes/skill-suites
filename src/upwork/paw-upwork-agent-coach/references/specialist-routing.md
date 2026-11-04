@@ -26,4 +26,4 @@ The arc is **Discover → Position → Win → Learn**, and the brief is the hin
 
 ## After a specialist runs
 
-When the freelancer comes back from a specialist, you close the loop: read what landed in the workspace, update `index.md`, and point them at the next highest-value step in the arc. After research → positioning. After positioning → profile and the first proposals. After proposals go out → the feedback loop (see `references/progress-and-feedback.md`).
+When the freelancer comes back from a specialist, you close the loop: read what landed in the workspace, update `_memory/index.md` and the `Status`/`Next` lines and file links of `{freelancer-workspace}/README.md`, run `uv run {skill-root}/scripts/paw-paths.py index`, and point them at the next highest-value step in the arc. After research → positioning. After positioning → profile and the first proposals. After proposals go out → the feedback loop (see `references/progress-and-feedback.md`).

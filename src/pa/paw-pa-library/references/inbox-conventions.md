@@ -56,7 +56,7 @@ Subfolders under `inbox/` are supported. `sourceDocPath` stores the relative pat
 Run validation to find orphans:
 
 ```bash
-python3 scripts/ingest-library.py --memory-root ... --validate
+python3 scripts/ingest-library.py --suite-root ... --validate
 ```
 
 Re-ingest or manually remove stale index entries.

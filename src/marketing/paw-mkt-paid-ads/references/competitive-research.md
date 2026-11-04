@@ -20,7 +20,7 @@ Close the session when done: `agent-browser --session ads-research close`
 
 ```bash
 agent-browser --session ads-research open "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&q={competitor-name}&search_type=keyword_unordered" && agent-browser wait --load networkidle && agent-browser wait 4000
-agent-browser screenshot ./.pawbytes/marketing-suites/brands/{brand-slug}/channels/paid-ads/content/competitor-{n}-meta-ads.png
+agent-browser screenshot {suite-root}/brands/{brand-slug}/channels/paid-ads/competitor-{n}-meta-ads.png
 agent-browser get text body
 ```
 
@@ -72,7 +72,7 @@ agent-browser get text body
 ```bash
 agent-browser --session ads-research open {competitor-landing-page-url} && agent-browser wait --load networkidle
 agent-browser get text body
-agent-browser screenshot ./.pawbytes/marketing-suites/brands/{brand-slug}/channels/paid-ads/content/competitor-{n}-landing-page.png
+agent-browser screenshot {suite-root}/brands/{brand-slug}/channels/paid-ads/competitor-{n}-landing-page.png
 ```
 
 **Extract:**
@@ -126,7 +126,7 @@ If `agent-browser` is unavailable, use `WebFetch` and `WebSearch` tools for rese
 ## Research Output
 
 Save research findings to:
-`./.pawbytes/marketing-suites/brands/{brand-slug}/channels/paid-ads/content/competitor-research-{YYYY-MM-DD}.md`
+`{suite-root}/brands/{brand-slug}/channels/paid-ads/competitor-research-{YYYY-MM-DD}.md`
 
 Include:
 - Competitor name and profile

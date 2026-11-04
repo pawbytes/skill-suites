@@ -37,8 +37,8 @@ If the source is a URL, download it first using ffmpeg or curl to a temp locatio
 ## Brand Context
 
 If a brand name is provided or defaulted, load:
-- `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/guidelines.md` -- for colors, fonts, watermark paths, intro/outro assets
-- Check for existing brand video assets (intro bumpers, end cards, watermarks) in `brands/{brand-name}/assets/video/`
+- `{suite-root}/brands/{brand-name}/guidelines.md` -- for colors, fonts, watermark paths, intro/outro assets
+- Check for existing brand video assets (intro bumpers, end cards, watermarks) in `{suite-root}/brands/{brand-name}/brand-assets/video/`
 
 If no brand guidelines exist, proceed without brand overlay. Inform the user that clips will be unbranded.
 
@@ -49,7 +49,7 @@ A mental model (or status note in the manifest) capturing:
 - Target platforms list
 - Target durations list
 - Brand name and available brand assets
-- Output directory: `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/videos/clips/{session-id}/`
+- Output directory: `{suite-root}/brands/{brand-name}/videos/clips/{session-id}/` (campaign work: `{suite-root}/brands/{brand-name}/campaigns/{campaign}/videos/clips/{session-id}/`)
 
 Create the output directory. Use a session ID based on date and source filename (e.g., `2026-04-01-podcast-ep12`).
 

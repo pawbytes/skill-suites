@@ -7,6 +7,7 @@ This reference covers how to gather and present progress data when the user asks
 ## Brand-Level Overview
 
 Read and summarize:
+- `README.md` — the brand dashboard (`Status:`, `Next:`), and each campaign's `README.md`
 - `brand-context.md` — current stage
 - `sostac/README.md` — planning status
 - `campaigns/` — list all named campaign directories and their strategy.md status
@@ -16,7 +17,7 @@ Read and summarize:
 
 ## Campaign-Level Detail
 
-For each named campaign under `campaigns/{type}-{slug}/`:
+For each named campaign under `campaigns/{YYYY-MM}-{type}-{slug}/`:
 - Read `strategy.md` for campaign objective and status
 - Check `channels/` subdirectories for content deliverables per channel
 - Check operational subdirectories (cro/, retention/, etc.) for completed work
@@ -40,7 +41,7 @@ For standalone work under `channels/` and `operations/`:
 
 ## Active Campaigns
 
-### launch-spring-release
+### 2026-03-launch-spring-release
 - Strategy: Complete
 - Channels active: email, social, blog, paid-ads
 - Email content: 3/5 emails drafted
@@ -51,11 +52,11 @@ For standalone work under `channels/` and `operations/`:
 
 ## Standalone Channel Work
 
-### channels/blog/content/
+### channels/blog/
 - Evergreen articles: 8 published
 - Content calendar: Current month planned
 
-### channels/seo/content/
+### channels/seo/
 - SEO audit: Complete
 - Keyword research: In Progress
 
@@ -71,3 +72,5 @@ For standalone work under `channels/` and `operations/`:
 ## Next Actions
 {Derived from campaign strategy.md and Action plan timeline}
 ```
+
+When the status changes, update the brand `README.md` `Status:`/`Next:` lines to match.

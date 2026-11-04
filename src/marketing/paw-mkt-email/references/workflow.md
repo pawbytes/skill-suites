@@ -516,15 +516,11 @@ Before implementing any email tactic, ask: **If the subscriber fully understood 
 ## Path Resolution: Campaign vs Standalone
 
 **Campaign mode** -- working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/email/content/`
-  -> Read campaign strategy at `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/email/`
+  -> Read campaign strategy at `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** -- evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/email/content/`
-
-**Legacy fallback** -- old directory structure detected:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/content/email/`
-  -> Suggest migration to new structure
+  -> Save to `{suite-root}/brands/{brand-slug}/channels/email/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 

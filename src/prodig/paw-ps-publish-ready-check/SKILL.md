@@ -47,10 +47,15 @@ Make final determination: production-ready, publish-ready, sellable-ready, or no
 
 ---
 
+## Path Resolution
+
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
+
 ## On Activation
 
-1. Determine the product workspace root: `{project-root}/.pawbytes/prodig-suites/`
-2. Identify active product from `.pawbytes/prodig-suites/active-product.md` if it exists
+1. Resolve `{suite-root}` (see Path Resolution)
+2. Identify active product from `{suite-root}/_memory/active-product.md` if it exists
 3. If no active product and not in headless mode, prompt user to specify:
    - Product slug (which product to evaluate)
    - Target readiness level (production / publish / sellable)
@@ -74,11 +79,11 @@ Make final determination: production-ready, publish-ready, sellable-ready, or no
 
 | Source | File Path | Purpose |
 |--------|-----------|---------|
-| Product Bundle | `.pawbytes/prodig-suites/products/{product-slug}/bundle/` | Packaged product files |
-| Output Standards | `.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/output-standards.md` | Quality criteria |
-| Product Context | `.pawbytes/prodig-suites/products/{product-slug}/product-context.md` | Product type and requirements |
-| Product Brief | `.pawbytes/prodig-suites/products/{product-slug}/product-brief.md` | Scope and promises |
-| Product Decisions | `.pawbytes/prodig-suites/products/{product-slug}/product-decisions.md` | Prior decisions |
+| Product Bundle | `{suite-root}/{product-slug}/bundle/` | Packaged product files |
+| Output Standards | `{suite-root}/_standards/output-standards.md` | Quality criteria |
+| Product Context | `{suite-root}/{product-slug}/product-context.md` | Product type and requirements |
+| Product Brief | `{suite-root}/{product-slug}/product-brief.md` | Scope and promises |
+| Product Decisions | `{suite-root}/{product-slug}/product-decisions.md` | Prior decisions |
 
 **Minimum Requirement:** Product bundle must exist. Standards may be loaded from references if not in workspace.
 
@@ -87,7 +92,7 @@ Make final determination: production-ready, publish-ready, sellable-ready, or no
 ## Output Structure
 
 ```text
-.pawbytes/prodig-suites/products/{product-slug}/
+{suite-root}/{product-slug}/
 ├── readiness-report.html         # Structured assessment (HTML)
 ├── readiness-report.md           # Plain text version
 ├── gap-analysis.md               # Detailed gap breakdown
@@ -98,8 +103,10 @@ Make final determination: production-ready, publish-ready, sellable-ready, or no
 Daily log entry at:
 
 ```text
-.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md
+{suite-root}/_memory/daily/YYYY-MM-DD.md
 ```
+
+Then set `Status:` (the verdict) and `Next:` in `{suite-root}/{product-slug}/README.md`, link `readiness-report.md`, and run `uv run {skill-root}/scripts/paw-paths.py index`.
 
 ---
 
@@ -124,7 +131,7 @@ Every execution delivers:
   - `gap-analysis.md` — Gap breakdown
   - `fix-list.md` — (If not ready) Actionable fixes
 - **Recommendations:** Next steps based on verdict
-- **File saved to:** `.pawbytes/prodig-suites/products/{product-slug}/`
+- **File saved to:** `{suite-root}/{product-slug}/`
 
 ---
 
@@ -132,7 +139,7 @@ Every execution delivers:
 
 When invoked with `--headless` or `-H`:
 
-1. Attempt to read active product from `.pawbytes/prodig-suites/active-product.md`
+1. Attempt to read active product from `{suite-root}/_memory/active-product.md`
 2. If not found, scan for most recently modified product workspace
 3. Default target readiness level to `publish-ready` unless specified via args
 4. Execute all stages without prompts

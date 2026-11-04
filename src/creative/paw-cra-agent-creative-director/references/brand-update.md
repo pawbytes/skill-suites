@@ -47,7 +47,7 @@ Keep brand profiles current without requiring full re-onboarding. Brands evolve,
 
 ## Output
 
-Update the brand profile in place: `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/profile.md`
+Update the brand profile in place: `{suite-root}/brands/{brand-name}/profile.md`
 
 Preserve history by appending a changelog section:
 
@@ -88,6 +88,6 @@ After updating, confirm to user:
 ## Memory Update
 
 After updating a brand profile:
-1. Update `index.md` if this is the active brand
+1. Update `{suite-root}/_memory/index.md` if this is the active brand, and the `Status:`/`Next:` lines of `{suite-root}/brands/{brand-name}/README.md`
 2. Add entry to daily log noting the update
 3. Offer to update any in-progress campaigns with the new brand info

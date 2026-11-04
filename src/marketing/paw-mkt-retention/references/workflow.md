@@ -423,10 +423,10 @@ Before implementing any retention mechanism, ask: **If the customer understood e
 ## Path Resolution
 
 **Campaign mode** -- working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/retention/`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/retention/`
 
 **Standalone mode** -- evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/retention/`
+  -> Save to `{suite-root}/brands/{brand-slug}/operations/retention/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 
@@ -450,7 +450,7 @@ File structure:
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/retention/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/retention/
   churn-diagnosis-{YYYY-MM-DD}.md
   cancel-flow-spec-{YYYY-MM-DD}.md
   dunning-sequence-{YYYY-MM-DD}.md
@@ -460,7 +460,7 @@ File structure:
   retention-roadmap-{YYYY-MM-DD}.md
 
 # Standalone mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/operations/retention/
+{suite-root}/brands/{brand-slug}/operations/retention/
   (same structure as above)
 ```
 

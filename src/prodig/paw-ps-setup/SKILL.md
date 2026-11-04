@@ -11,10 +11,10 @@ Installs and configures Prodig Suites into a project. Prodig Suites is a product
 
 This setup skill scaffolds the complete workspace structure including:
 
-- **`{project-root}/.pawbytes/prodig-suites/`** — Module root
-- **`{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/`** — Shared memory sidecar
-- **`{project-root}/.pawbytes/prodig-suites/products/`** — Product workspaces
-- **`{project-root}/.pawbytes/prodig-suites/artifacts/`** — Generated outputs
+- **`{suite-root}/`** — Suite root, normally `{project-root}/paw-suites/products/`; one folder per product, created by the other skills
+- **`{suite-root}/_memory/`** — Shared memory (index, daily logs, curated files)
+- **`{suite-root}/_standards/output-standards.md`** — Quality criteria
+- **`{suite-root}/README.md`** — Generated product index
 
 Configuration is written to the Pawbytes ecosystem config:
 
@@ -23,6 +23,12 @@ Configuration is written to the Pawbytes ecosystem config:
 - **`{project-root}/.pawbytes/config/module-help.csv`** — Registers module capabilities
 
 `{project-root}` is a **literal token** in config values — never substitute it with an actual path. It signals to the consuming LLM that the value is relative to the project root.
+
+## Resolution rules
+
+- `{skill-root}` is this skill's folder. Run its scripts as `uv run {skill-root}/scripts/<name>.py`.
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/products`. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- Older releases kept everything in `{project-root}/.pawbytes/prodig-suites/` (products, plans, artifacts and a memory folder). Setup moves it; see Migrate Legacy Files.
 
 ## Principles
 
@@ -34,8 +40,8 @@ Configuration is written to the Pawbytes ecosystem config:
 
 ## On Activation
 
-1. Read `./assets/module.yaml` for module metadata and variable definitions (the `code` field `ps` is the module identifier)
-2. Check if `{project-root}/.pawbytes/prodig-suites/` exists — if present, inform the user this is an update
+1. Read `{skill-root}/assets/module.yaml` for module metadata and variable definitions (the `code` field `ps` is the module identifier)
+2. Run `uv run {skill-root}/scripts/paw-paths.py detect`. `mode: new` means an update; `legacy` or `both` means files from an older release wait to be migrated (after the config is written); `fresh` is a first install
 3. Check for core Pawbytes config at `{project-root}/.pawbytes/config/config.yaml`
 
 If the user provides arguments (e.g. `accept all defaults`, `--headless`, or inline values like `default mode is template, quality bar is publish-ready`), map any provided values to config keys, use defaults for the rest, and skip interactive prompting. Still display the full confirmation summary at the end.
@@ -44,33 +50,32 @@ If the user provides arguments (e.g. `accept all defaults`, `--headless`, or inl
 
 Ask the user for values. Show defaults in brackets. Present all values together so the user can respond once with only the values they want to change (e.g. "change quality bar to publish-ready, rest are fine"). Never tell the user to "press enter" or "leave blank" — in a chat interface they must type something to respond.
 
-**Default priority** (highest wins): existing config values > `./assets/module.yaml` defaults.
+**Default priority** (highest wins): existing config values > `{skill-root}/assets/module.yaml` defaults.
 
 **Core config** (only if no core keys exist yet): `user_name` (default: Pawbytes), `communication_language` and `document_output_language` (default: English — ask as a single language question, both keys get the same answer). Of these, `user_name` and `communication_language` are written exclusively to `config.user.yaml`.
 
-**Module config**: Read each variable in `./assets/module.yaml` that has a `prompt` field. Ask using that prompt with its default value.
+**Module config**: Read each variable in `{skill-root}/assets/module.yaml` that has a `prompt` field. Ask using that prompt with its default value.
 
 Load `./references/config-variables.md` for detailed descriptions of each configuration variable.
 
 ## Create Directory Structure
 
-After collecting configuration, create the complete workspace structure:
+After collecting configuration, create the complete workspace structure. When `detect` reported `legacy` or `both`, do Write Files and Migrate Legacy Files first, then come back here and create only what is still missing, so the scaffolding never collides with the files being moved.
 
 > **Note:** `{project-root}` is a literal token that resolves to the project root directory at runtime. Do not substitute it with an actual path.
 
 ```bash
 # Main module directories
-mkdir -p "{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types"
-mkdir -p "{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily"
-mkdir -p "{project-root}/.pawbytes/prodig-suites/products"
-mkdir -p "{project-root}/.pawbytes/prodig-suites/artifacts"
+mkdir -p "{suite-root}/_memory/curated/product-types"
+mkdir -p "{suite-root}/_memory/daily"
+mkdir -p "{suite-root}/_standards"
 ```
 
-## Create Sidecar Files
+## Create Memory Files
 
 ### 1. Create index.md (Orientation File)
 
-Create `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md`:
+Create `{suite-root}/_memory/index.md`:
 
 ```markdown
 # Prodig Suites Memory Index
@@ -143,7 +148,7 @@ Tell me what you want to create, and I'll help you through the full journey from
 
 ### 2. Create Starter Curated Files
 
-Create each curated file with headings and brief instructions:
+Create each curated file in `{suite-root}/_memory/curated/` with headings and brief instructions (`output-standards.md` goes to `{suite-root}/_standards/` instead):
 
 #### product-context.md
 
@@ -233,7 +238,7 @@ Tracks important decisions made during product development with context for futu
 - Prevents revisiting settled questions
 ```
 
-#### output-standards.md
+#### output-standards.md (in `{suite-root}/_standards/`)
 
 ```markdown
 # Output Standards
@@ -292,7 +297,7 @@ Quality criteria for Prodig Suites deliverables.
 
 ### 3. Create Product Type Files
 
-Create `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types/`:
+Create `{suite-root}/_memory/curated/product-types/`:
 
 #### knowledge-products.md
 
@@ -490,25 +495,31 @@ Note any missing capabilities in the confirmation message. These are optional bu
 Write a temp JSON file with the collected answers structured as `{"core": {...}, "module": {...}}` (omit `core` if it already exists). Then run both scripts:
 
 ```bash
-python3 ./scripts/merge-config.py \
+uv run {skill-root}/scripts/merge-config.py \
   --config-path "{project-root}/.pawbytes/config/config.yaml" \
   --user-config-path "{project-root}/.pawbytes/config/config.user.yaml" \
-  --module-yaml ./assets/module.yaml \
+  --module-yaml {skill-root}/assets/module.yaml \
   --answers {temp-file}
 
-python3 ./scripts/merge-help-csv.py \
+uv run {skill-root}/scripts/merge-help-csv.py \
   --target "{project-root}/.pawbytes/config/module-help.csv" \
-  --source ./assets/module-help.csv \
+  --source {skill-root}/assets/module-help.csv \
   --module-code ps
 ```
 
 Both scripts output JSON to stdout with results. If either exits non-zero, surface the error and stop.
 
-Run `./scripts/merge-config.py --help` or `./scripts/merge-help-csv.py --help` for full usage.
+Run either script with `--help` for full usage.
+
+## Migrate Legacy Files
+
+After the config is written, when `detect` reported `legacy` or `both`: run `uv run {skill-root}/scripts/paw-paths.py --project-root "{project-root}" plan`, show its `summary` along with any conflicts, and run `paw-paths.py apply` once the user confirms. Each product's files, plan and executor artifacts land in one folder (`{product-slug}/`, `{product-slug}/plan/`, `{product-slug}/build/`); the old memory folder becomes `_memory/`; output standards move to `_standards/`. Report what moved and what stayed (`MOVED.md` in the old folder lists it).
+
+Then, in every install mode, run `uv run {skill-root}/scripts/paw-paths.py index` to write `{suite-root}/README.md`.
 
 ## Confirm
 
-Use the script JSON output to display what was written — config values set, user settings written to `config.user.yaml` (`user_keys` in result), help entries added, fresh install vs update. Then display the `module_greeting` from `./assets/module.yaml` to the user.
+Use the script JSON output to display what was written — config values set, user settings written to `config.user.yaml` (`user_keys` in result), help entries added, fresh install vs update. Then display the `module_greeting` from `{skill-root}/assets/module.yaml` to the user.
 
 Display a comprehensive summary:
 
@@ -522,9 +533,11 @@ Display a comprehensive summary:
 - Research depth: {value}
 
 ### Created Directories
-- .pawbytes/prodig-suites/memory/paw-ps-sidecar/
-- .pawbytes/prodig-suites/products/
-- .pawbytes/prodig-suites/artifacts/
+- paw-suites/products/_memory/
+- paw-suites/products/_standards/
+
+### Migration
+{What moved from .pawbytes/prodig-suites/ and what stayed, or "nothing to migrate"}
 
 ### Created Files
 - index.md — Orientation file
@@ -542,7 +555,7 @@ Display a comprehensive summary:
 Start with `paw-ps-agent-product-builder` to create your first product.
 ```
 
-Then display the `module_greeting` from `./assets/module.yaml`.
+Then display the `module_greeting` from `{skill-root}/assets/module.yaml`.
 
 ## Outcome
 
@@ -554,10 +567,11 @@ Once setup completes, the following are guaranteed:
 
 - **Action type**: Module installation/configuration
 - **Files created**:
-  - `{project-root}/.pawbytes/prodig-suites/` directory structure
-  - `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md`
-  - `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/*.md`
-  - `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types/*.md`
+  - `{suite-root}/` directory structure and `{suite-root}/README.md`
+  - `{suite-root}/_memory/index.md`
+  - `{suite-root}/_memory/curated/*.md`
+  - `{suite-root}/_standards/output-standards.md`
+  - `{suite-root}/_memory/curated/product-types/*.md`
   - `{project-root}/.pawbytes/config/config.user.yaml` (if core config collected)
 - **Recommendations**: Suggest running `paw-ps-agent-product-builder` to start first product
-- **File saved to**: `{project-root}/.pawbytes/prodig-suites/`
+- **File saved to**: `{suite-root}/`

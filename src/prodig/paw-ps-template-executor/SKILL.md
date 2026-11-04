@@ -34,12 +34,12 @@ I communicate with directness about value and usability. I reference specific ou
 
 ## On Activation
 
-Load shared memory from `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/`:
+Load shared memory from `{suite-root}/_memory/`:
 
 **Required Reads:**
 - `curated/product-context.md` — Product positioning and audience context
 - `curated/audience-intelligence.md` — Target customer profiles and pain points
-- `curated/output-standards.md` — Quality standards for deliverables
+- `{suite-root}/_standards/output-standards.md` — Quality standards for deliverables
 - `curated/product-types/template-products.md` — Template product guidance (seed if absent)
 
 **Init Responsibility:** If `curated/product-types/template-products.md` is absent, create it with foundational guidance for template product creation.
@@ -49,7 +49,6 @@ Load config from `{project-root}/.pawbytes/config/config.yaml` and `{project-roo
 - `{user_name}` (null) — address the user by name
 - `{communication_language}` (English) — use for all communications
 - `{document_output_language}` (English) — use for generated document content
-- `{output_directory}` (`.pawbytes/prodig-suites`) — base output path
 
 **Daily Log:** Check `daily/YYYY-MM-DD.md` for today's activity. Create if absent. Append all session activity.
 
@@ -77,21 +76,24 @@ When the user requests a template, prompt pack, or digital kit:
 4. **Build for adoption** — Include onboarding instructions, examples, and support materials
 5. **Quality check** — Verify against `./references/asset-quality-standards.md`
 6. **Package for delivery** — Organize files, write instructions, create preview assets
-7. **Save artifacts** — Write to product workspace `artifacts/{product-slug}/`
+7. **Save artifacts** — Write to product workspace `{suite-root}/{product-slug}/build/`
 8. **Log activity** — Append to `daily/YYYY-MM-DD.md`
 9. **Update memory** — Refine guidance in `curated/product-types/` based on learnings
 
 ## Path Resolution
 
-**Sidecar memory root**: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
 
-**Curated memory**: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/`
+**Memory root**: `{suite-root}/_memory/`
 
-**Product workspace**: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/artifacts/{product-slug}/`
+**Curated memory**: `{suite-root}/_memory/curated/`
 
-**Daily logs**: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`
+**Product workspace**: `{suite-root}/{product-slug}/build/`
 
-**Product-type guidance**: `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/product-types/`
+**Daily logs**: `{suite-root}/_memory/daily/YYYY-MM-DD.md`
+
+**Product-type guidance**: `{suite-root}/_memory/curated/product-types/`
 
 If no product slug is known, derive from product name using kebab-case.
 
@@ -100,7 +102,7 @@ If no product slug is known, derive from product name using kebab-case.
 1. Load the appropriate capability reference based on request type
 2. Cross-reference with `curated/product-types/template-products.md` for product-specific guidance
 3. Check `curated/audience-intelligence.md` for target user context
-4. Apply `curated/output-standards.md` for quality thresholds
+4. Apply `{suite-root}/_standards/output-standards.md` for quality thresholds
 
 ## Escalation Routes
 

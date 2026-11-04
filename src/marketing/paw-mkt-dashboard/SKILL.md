@@ -77,7 +77,7 @@ The skill maintains a registry of all features it can generate. When run on an e
 ### If dashboard already exists for a brand:
 
 ```
-Existing Dashboard: .pawbytes/marketing-suites/brands/{brand}/dashboard/
+Existing Dashboard: {suite-root}/brands/{brand}/dashboard/
 Routes: campaigns, content, strategy, metrics, channels
 
 Feature Gaps Detected:
@@ -96,7 +96,7 @@ What would you like to do?
 ### If dashboard exists with no gaps:
 
 ```
-Existing Dashboard: .pawbytes/marketing-suites/brands/{brand}/dashboard/
+Existing Dashboard: {suite-root}/brands/{brand}/dashboard/
 Routes: campaigns, content, strategy, metrics, channels, documents
 
 All available features are implemented.
@@ -211,7 +211,7 @@ After user selects intent (from On Activation):
 ## Output Structure
 
 ```
-.pawbytes/marketing-suites/
+{suite-root}/
 ├── dashboards/
 │   └── launcher.html                   # Simple launcher with links to brand dashboards
 └── brands/{brand-slug}/
@@ -286,11 +286,16 @@ When `--headless` or `-H` is passed:
 
 ## Path Resolution
 
-**Launcher:** `{project-root}/.pawbytes/marketing-suites/dashboards/launcher.html`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/marketing`. All paths below are relative to it. A custom folder in config `mkt.brands_folder` replaces `{suite-root}/brands` (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/marketing-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-mkt-setup` can move them to `paw-suites/marketing/`, and offer it. Keep working either way.
 
-**Brand dashboards:** `{project-root}/.pawbytes/marketing-suites/brands/{brand-slug}/dashboard/`
+`{brand-path}` is `{suite-root}/brands/{brand-slug}`.
 
-**Database:** `{project-root}/.pawbytes/marketing-suites/brands/{brand-slug}/dashboard/data/dashboard.db`
+**Launcher:** `{suite-root}/dashboards/launcher.html`
+
+**Brand dashboards:** `{suite-root}/brands/{brand-slug}/dashboard/`
+
+**Database:** `{suite-root}/brands/{brand-slug}/dashboard/data/dashboard.db`
 
 ## Escalation Routes
 

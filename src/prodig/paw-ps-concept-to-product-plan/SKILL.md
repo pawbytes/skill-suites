@@ -23,9 +23,9 @@ Transforms an accepted product brief into a detailed, executor-ready product pla
 
 | Output | Location |
 |--------|----------|
-| Product plan | `.pawbytes/prodig-suites/plans/{product-slug}/plan.md` |
-| Executor handoff | `.pawbytes/prodig-suites/plans/{product-slug}/handoff.md` |
-| Product context update | `.pawbytes/prodig-suites/products/{product-slug}/product-context.md` |
+| Product plan | `{suite-root}/{product-slug}/plan/plan.md` |
+| Executor handoff | `{suite-root}/{product-slug}/plan/handoff.md` |
+| Product context update | `{suite-root}/{product-slug}/product-context.md` |
 
 ## Pipeline
 
@@ -63,17 +63,22 @@ Load `./references/04-prepare-handoff.md`
 
 ## On Activation
 
-1. Load shared context from `{project-root}/.pawbytes/prodig-suites/index.md`
-2. Load product context: `.pawbytes/prodig-suites/products/{product-slug}/product-context.md`
+1. Load shared context from `{suite-root}/_memory/index.md`
+2. Load product context: `{suite-root}/{product-slug}/product-context.md`
 3. If no product slug provided, list available products for selection
 
 ## Path Resolution
 
-**Plans root:** `{project-root}/.pawbytes/prodig-suites/plans/{product-slug}/`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
 
-**Product context:** `{project-root}/.pawbytes/prodig-suites/products/{product-slug}/product-context.md`
+**Plans root:** `{suite-root}/{product-slug}/plan/`
 
-**Handoff bundle:** `{project-root}/.pawbytes/prodig-suites/plans/{product-slug}/handoff.md`
+**Product context:** `{suite-root}/{product-slug}/product-context.md`
+
+**Handoff bundle:** `{suite-root}/{product-slug}/plan/handoff.md`
+
+**Dashboard:** once the handoff is written, set `Status: planned` and `Next: <executor skill>` in `{suite-root}/{product-slug}/README.md`, link `plan/plan.md` and `plan/handoff.md`, then run `paw-paths.py index`.
 
 ## Executor Types
 

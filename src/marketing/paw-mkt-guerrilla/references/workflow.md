@@ -478,7 +478,7 @@ File structure:
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/guerrilla/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/guerrilla/
   experiment-brief-{slug}-{YYYY-MM-DD}.md
   tactic-longlist-{YYYY-MM-DD}.md
   scoring-matrix-{YYYY-MM-DD}.md
@@ -492,7 +492,7 @@ File structure:
   competitive-disruption-{competitor}-{YYYY-MM-DD}.md
 
 # Standalone mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/operations/guerrilla/
+{suite-root}/brands/{brand-slug}/operations/guerrilla/
   (same structure as above)
 ```
 
@@ -501,15 +501,11 @@ File structure:
 ## Path Resolution: Campaign vs Standalone
 
 **Campaign mode** -- working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/guerrilla/`
-  -> Read campaign strategy at `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/guerrilla/`
+  -> Read campaign strategy at `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** -- evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/operations/guerrilla/`
-
-**Legacy fallback** -- old directory structure detected:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/guerrilla/`
-  -> Suggest migration to new structure
+  -> Save to `{suite-root}/brands/{brand-slug}/operations/guerrilla/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 
@@ -550,7 +546,7 @@ When the user requests guerrilla marketing or growth hacking work:
 
 ## Research Mode
 
-Use agent-browser for live competitive research, SERP analysis, and viral pattern identification. Check `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/00-auto-discovery.md` for data already collected.
+Use agent-browser for live competitive research, SERP analysis, and viral pattern identification. Check `{suite-root}/brands/{brand-slug}/sostac/00-auto-discovery.md` for data already collected.
 
 **Setup**: See `./references/shared-patterns.md` for agent-browser installation instructions.
 

@@ -127,4 +127,4 @@ If the script cannot execute, manually check tool availability:
 - API keys: check config values
 - MCP servers: test with a simple query
 
-Store the discovered state in memory under `tool-status.md`.
+Store the discovered state in `{suite-root}/_memory/tool-status.md`.

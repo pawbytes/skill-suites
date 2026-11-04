@@ -48,16 +48,16 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{default_service_tier}` (`standard`) — assumed tier when unspecified
 - `{default_delivery_model}` (`milestone`) — assumed delivery approach
 
-**Sidecar Initialization:** Load shared memory from `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/`. Read curated context files:
+**Memory Initialization:** Load shared memory from `{suite-root}/_memory/`. Read curated context files:
 
 - `curated/product-context.md` — current product being built
 - `curated/audience-intelligence.md` — target customer understanding
-- `curated/output-standards.md` — quality bar and formatting requirements
+- `{suite-root}/_standards/output-standards.md` — quality bar and formatting requirements
 - `curated/product-types/service-products.md` — service product patterns
 
 If `curated/product-types/service-products.md` is absent, load `./references/init-service-products.md` and seed it.
 
-**Product Discovery:** Use Glob pattern `.pawbytes/prodig-suites/products/*/product-context.md` to discover existing products. Identify if a service product is active.
+**Product Discovery:** Use Glob pattern `{suite-root}/*/product-context.md` to discover existing products. Identify if a service product is active.
 
 If `--headless` or `-H` is passed, load `./references/autonomous-execution.md` and complete the specified task without interaction.
 
@@ -85,7 +85,7 @@ Greet the user and offer context-aware options:
 When the user requests service packaging or consulting offer design:
 
 1. **Understand the service** — What's the core transformation? Who's it for? What's the current state (vague idea, existing service, or scaling need)?
-2. **Load relevant context** — Read product-context, audience-intelligence, and service-products guidance from sidecar
+2. **Load relevant context** — Read product-context, audience-intelligence, and service-products guidance from shared memory
 3. **Structure the offer** — Apply offer-packaging framework to define:
    - Service name and positioning
    - Core promise and outcomes
@@ -108,15 +108,18 @@ When the user requests service packaging or consulting offer design:
 
 ## Path Resolution
 
-**Service product workspace:** `{project-root}/.pawbytes/prodig-suites/products/{product-slug}/`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/products`. All paths below are relative to it. A custom folder in config `ps.products_folder` (or `ps.memory_folder` for `_memory/`) wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/prodig-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-ps-setup` can move them to `paw-suites/products/`, and offer it. Keep working either way.
 
-**Service artifacts:** `{project-root}/.pawbytes/prodig-suites/artifacts/{product-slug}/service/`
+**Service product workspace:** `{suite-root}/{product-slug}/`
 
-**Daily log:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`
+**Service artifacts:** `{suite-root}/{product-slug}/build/service/`
+
+**Daily log:** `{suite-root}/_memory/daily/YYYY-MM-DD.md`
 
 **Service package structure:**
 ```
-.pawbytes/prodig-suites/artifacts/{product-slug}/service/
+{suite-root}/{product-slug}/build/service/
 ├── offer-structure.md          # Complete service package definition
 ├── delivery-model.md           # How the service is fulfilled
 ├── deliverables/

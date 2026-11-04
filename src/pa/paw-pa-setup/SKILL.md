@@ -14,7 +14,7 @@ Writes to:
 - **`{project-root}/.pawbytes/config/config.yaml`** — shared ecosystem config: core settings at root plus a `pa` section. User-only keys (`user_name`, `communication_language`) are **never** written here.
 - **`{project-root}/.pawbytes/config/config.user.yaml`** — gitignore-intended personal settings: `user_name`, `communication_language`, and any module variable marked `user_setting: true` (`assemblyai_api_key`, `default_mode`, `default_proposal_type`, `default_language`, `default_pricing_mode`, `default_hourly_rate`, `web_research_enabled`).
 - **`{project-root}/.pawbytes/config/module-help.csv`** — registers module capabilities for the help system.
-- **`{project-root}/.pawbytes/proposal-automation-suites/`** — shared seller memory workspace (brand, library, proposals, clients, daily). Follows the PawBytes suite convention (`marketing-suites`, `upwork-suites`, `proposal-automation-suites`); v1 is single-seller with no tenant slug, so memory lives at the suite root rather than under `sellers/{slug}/`.
+- **`{project-root}/paw-suites/proposals/`** (`{suite-root}`) — the seller's workspace: `brand/`, `library/`, `proposals/`, `clients/`, agent memory in `_memory/`, and a generated `README.md` index. v1 is single-seller, so everything lives at the suite root.
 
 Both config scripts use an anti-zombie pattern — existing entries for this module are removed before writing fresh ones, so stale values never persist.
 
@@ -113,20 +113,20 @@ python3 scripts/merge-help-csv.py \
 
 Both scripts output JSON to stdout. If either exits non-zero, surface the error and stop. Run either script with `--help` for full usage.
 
-## Scaffold Seller Memory Workspace
+## Migrate a Legacy Workspace
 
-Resolve the `{project-root}` token to the actual project root for directories on disk; the config files keep the literal token.
+Run `uv run scripts/paw-paths.py --project-root "{project-root}" detect`. When it reports `legacy` or `both` (files still in the old `.pawbytes/proposal-automation-suites/` tree), run `paw-paths.py plan`, show its `summary` along with any conflicts, and run `paw-paths.py apply` once the user confirms (headless: apply when there are no conflicts). Report what moved and what stayed (`MOVED.md` in the old folder lists it). `apply` also rewrites the `workspace_folder` and `library_inbox_folder` defaults in config. Existing run folders keep their names but have no `README.md` yet: write one for each run (`Status` from its artifacts, e.g. `final exported`) and each client.
 
-Memory root: `{project-root}/.pawbytes/proposal-automation-suites/`
+## Scaffold Seller Workspace
 
-Create the full memory tree:
+Resolve the `{project-root}` token to the actual project root for directories on disk; the config files keep the literal token. `{suite-root}` is `{project-root}/paw-suites/proposals` unless config `pa.workspace_folder` / `pa.library_inbox_folder` point elsewhere. Never overwrite a file that already exists.
 
 ```bash
-mkdir -p "{project-root}/.pawbytes/proposal-automation-suites/brand/boilerplate"
-mkdir -p "{project-root}/.pawbytes/proposal-automation-suites/library/inbox"
-mkdir -p "{project-root}/.pawbytes/proposal-automation-suites/proposals"
-mkdir -p "{project-root}/.pawbytes/proposal-automation-suites/clients"
-mkdir -p "{project-root}/.pawbytes/proposal-automation-suites/daily"
+mkdir -p "{suite-root}/brand/boilerplate"
+mkdir -p "{suite-root}/library/inbox"
+mkdir -p "{suite-root}/proposals"
+mkdir -p "{suite-root}/clients"
+mkdir -p "{suite-root}/_memory/daily"
 ```
 
 Initialize empty library indexes if they do not exist:
@@ -138,9 +138,9 @@ Initialize empty library indexes if they do not exist:
 
 Write `[]` to each missing JSON index file.
 
-### Seed `index.md`
+### Seed `_memory/index.md`
 
-Write `{project-root}/.pawbytes/proposal-automation-suites/index.md` (create or refresh the scaffold sections if this is a fresh install):
+Write `{suite-root}/_memory/index.md`, the agents' orientation file (create or refresh the scaffold sections if this is a fresh install):
 
 ```markdown
 # Proposal Automation Memory
@@ -244,7 +244,7 @@ If `library/inbox/` contains any `.md`, `.txt`, or `.json` files after scaffoldi
 
 ```bash
 python3 ../paw-pa-library/scripts/ingest-library.py \
-  --memory-root "{project-root}/.pawbytes/proposal-automation-suites" \
+  --suite-root "{suite-root}" \
   --inbox "{resolved library_inbox_folder path}"
 ```
 
@@ -252,7 +252,7 @@ Report ingestion summary JSON (files processed, entries added, warnings).
 
 ## Confirm
 
-Use the script JSON output to display what was written — config values set, user settings written to `config.user.yaml` (`user_keys` in result), help entries added, fresh install vs update, dependency check results (AssemblyAI, browser-harness, pandoc), workspace paths scaffolded, and optional library ingest results. Then display the `module_greeting` from `assets/module.yaml`.
+Run `uv run scripts/paw-paths.py --project-root "{project-root}" index` to write `{suite-root}/README.md`. Use the script JSON output to display what was written — config values set, user settings written to `config.user.yaml` (`user_keys` in result), help entries added, fresh install vs update, dependency check results (AssemblyAI, browser-harness, pandoc), migration result, workspace paths scaffolded, and optional library ingest results. Then display the `module_greeting` from `assets/module.yaml`.
 
 **Next steps for the user:**
 
@@ -273,8 +273,11 @@ Once the user's `user_name` and `communication_language` are known (from collect
       config.yaml           # Shared config (committed) — includes pa: section
       config.user.yaml      # User settings + API keys (gitignored)
       module-help.csv       # Capability registry
-  .pawbytes/proposal-automation-suites/
-    index.md                # Orientation — every skill reads this first
+  paw-suites/proposals/     # {suite-root}
+    README.md               # Generated index (paw-paths.py index)
+    _memory/
+      index.md              # Orientation — every skill reads this first
+      daily/                # Append-only session log
     brand/
       identity.md
       boilerplate/
@@ -287,7 +290,6 @@ Once the user's `user_name` and `communication_language` are known (from collect
       pricing-history.json
       scope-templates.md
       ingest-manifest.json  # Created by paw-pa-library on first ingest
-    proposals/              # One folder per run (orchestrator creates)
-    clients/                # Per-client history
-    daily/                  # Append-only session log
+    proposals/              # One folder per run, YYYY-MM-<client-slug>/ with README.md
+    clients/                # Per-client README.md + history.md
 ```

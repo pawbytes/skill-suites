@@ -4,11 +4,11 @@
 
 ## Output Location
 
-Write to: `{project-root}/.pawbytes/tools-output/presentations/{sanitized-title}.html`
+Write to: `{suite-root}/presentations/YYYY-MM-DD-{sanitized-title}.html` (today's date; through `paw-paths.py locate --write` in legacy mode).
 
 Sanitize title: lowercase, spaces to hyphens, remove special characters.
 
-Create the output directory if it doesn't exist.
+Create the output directory if it doesn't exist. After writing, run `uv run {skill-root}/scripts/paw-paths.py index`.
 
 ## Template-Based Generation
 
@@ -50,9 +50,9 @@ All templates follow "The Architectural Brief" design system. See:
 
 ### Brand Override
 
-If `{project-root}/.pawbytes/tools-output/paw-mkt-setup/brand-config.json` exists:
+If brand context was loaded in Stage 1 (`brand-context.md`, optionally `{suite-root}/brand-config.json`):
 
-1. Read brand colors, typography, voice
+1. Use its brand colors, typography, voice
 2. Replace template color tokens with brand palette
 3. Swap fonts if brand specifies alternatives
 4. Maintain template structure — only override visual tokens

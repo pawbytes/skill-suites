@@ -591,7 +591,7 @@ File structure:
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/blog/content/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/blog/
   content-strategy-{YYYY-MM-DD}.md
   editorial-calendar-{quarter}-{YYYY}.md
   brief-{slug}-{YYYY-MM-DD}.md
@@ -600,7 +600,7 @@ File structure:
   ...
 
 # Standalone mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/blog/content/
+{suite-root}/brands/{brand-slug}/channels/blog/
   (same structure as above)
 ```
 
@@ -609,14 +609,12 @@ File structure:
 ## Path Resolution: Campaign vs Standalone
 
 **Campaign mode** -- working within a named campaign:
-- Blog content: `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/blog/content/`
-- Meta content: `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/content/content/`
+- Blog content: `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/blog/`
+- Meta content: `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/content-plan/`
 
 **Standalone mode** -- evergreen or independent work:
-- Blog content: `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/blog/content/`
-- Meta content: `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/content/content/`
-
-**Legacy fallback**: Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/content/` and suggest migration.
+- Blog content: `{suite-root}/brands/{brand-slug}/channels/blog/`
+- Meta content: `{suite-root}/brands/{brand-slug}/operations/content-plan/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 

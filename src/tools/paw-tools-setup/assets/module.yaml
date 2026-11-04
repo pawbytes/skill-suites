@@ -1,16 +1,18 @@
 name: Pawbytes Tools
-code: paw
+code: tools
 version: 0.1.0
 description: Productivity utility tools supporting the Pawbytes skills ecosystem — presentation generation, release automation, content transformation, and workflow accelerators for marketing and creative suites.
 greeting: "Pawbytes Tools is ready! Run `/paw-tools-presentation` to create McKinsey-style presentations, or `/paw-tools-release` to automate software releases."
 
 config_path: .pawbytes/config
+# Module variables below are written to the `tools` section of config.yaml (the `code`);
+# communication_language and document_output_language are core keys at the root.
 
 config:
   # Presentation settings
   - key: presentation_output_folder
     prompt: "Where should presentations be saved?"
-    default: "{project-root}/.pawbytes/tools-output/presentations"
+    default: "{project-root}/paw-suites/tools/presentations"
 
   # Release settings
   - key: release_default_branch
@@ -19,7 +21,7 @@ config:
 
   - key: release_output_folder
     prompt: "Where should release reports be saved?"
-    default: "{project-root}/.pawbytes/tools-output/releases"
+    default: "{project-root}/paw-suites/tools/releases"
 
   # General settings
   - key: communication_language

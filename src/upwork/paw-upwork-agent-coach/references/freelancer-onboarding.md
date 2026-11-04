@@ -19,20 +19,20 @@ Ask but don't block on: target hourly/project rate they have in mind, portfolio 
 
 ## Scaffold the workspace
 
-If `paw-upwork-setup` already scaffolded this freelancer (the slug's folder and `index.md` exist), use it. Otherwise create the skeleton:
+If `paw-upwork-setup` already scaffolded this freelancer (the slug's folder and `README.md` exist), use it. Otherwise create the skeleton:
 
 ```bash
-mkdir -p "{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/research"
-mkdir -p "{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/profile"
-mkdir -p "{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/proposals"
-mkdir -p "{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/daily"
+mkdir -p "{freelancer-workspace}/research"
+mkdir -p "{freelancer-workspace}/profile"
+mkdir -p "{freelancer-workspace}/proposals"
+mkdir -p "{freelancer-workspace}/_memory/daily"
 ```
 
 Resolve `{project-root}` to the real project root for directories on disk.
 
 ## freelancer-context.md
 
-Write to `{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/freelancer-context.md`:
+Write to `{freelancer-workspace}/freelancer-context.md`:
 
 ```markdown
 # Freelancer Context — {name}
@@ -59,13 +59,13 @@ Write to `{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/freelancer-c
 {Anything else worth carrying forward.}
 ```
 
-## index.md
+## README.md and _memory/index.md
 
-If setup didn't already create it, write `index.md` (see the setup skill for the canonical template). If it exists, leave it — you'll curate its status row as positioning and work accumulate.
+If setup didn't already create them, write `{freelancer-workspace}/README.md` (`# {name}`, `Status: onboarded`, `Next: discovery and positioning`, links to the files as they land) and `_memory/index.md` (see the setup skill for both templates), then run `uv run {skill-root}/scripts/paw-paths.py index`. If they exist, leave them — you'll curate the status lines as positioning and work accumulate.
 
 ## Log the session
 
-Append a one-line entry to `{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/daily/{YYYY-MM-DD}.md` tagged `[coach]` noting onboarding happened and what you captured.
+Append a one-line entry to `{freelancer-workspace}/_memory/daily/{YYYY-MM-DD}.md` tagged `[coach]` noting onboarding happened and what you captured.
 
 ## After onboarding
 

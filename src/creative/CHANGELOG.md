@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+- Output moved from `.pawbytes/creative-suites/` to `paw-suites/creative/`, with a generated `README.md` index and a README dashboard per item. Brands hold dated `campaigns/YYYY-MM-<name>/`, standalone `designs/` and one `videos/` scheme (short-form, long-form, clips, motion-graphics, series); brand-less work lands in `brands/unassigned/`; memory moves to `_memory/`; `.auth/` stays hidden in `.pawbytes/creative/`. Removed the BMad naming note and the `_bmad` config check.
+- Old trees keep working: each skill detects them through the bundled `scripts/paw-paths.py` and maps paths, and the setup skill offers a dry-run-first migration that never overwrites and leaves `MOVED.md` behind.
+
 ## [0.2.0] - 2026-04-01
 
 ### Added

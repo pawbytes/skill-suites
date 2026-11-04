@@ -1,0 +1,25 @@
+{
+  "suite": "tools",
+  "title": "PawBytes Tools",
+  "config_section": "tools",
+  "root": "paw-suites/tools",
+  "legacy_root": ".pawbytes/tools-output",
+  "items": ["presentations/*", "releases/*"],
+  "rules": [
+    {"from": "presentations/**", "to": "presentations/{rest}"},
+    {"from": "releases/**", "to": "releases/{rest}"},
+    {"from": "paw-mkt-setup/brand-config.json", "to": "brand-config.json"}
+  ],
+  "config_keys": [
+    {
+      "key": "presentation_output_folder",
+      "legacy": "{project-root}/.pawbytes/tools-output/presentations",
+      "new": "{project-root}/paw-suites/tools/presentations"
+    },
+    {
+      "key": "release_output_folder",
+      "legacy": "{project-root}/.pawbytes/tools-output/releases",
+      "new": "{project-root}/paw-suites/tools/releases"
+    }
+  ]
+}

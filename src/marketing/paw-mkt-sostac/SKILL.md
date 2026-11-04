@@ -7,7 +7,7 @@ description: Executes the 6-phase SOSTAC marketing planning framework. Use when 
 
 ## Overview
 
-Builds comprehensive marketing plans through the SOSTAC framework (Situation, Objectives, Strategy, Tactics, Action, Control). Researches first, delivers insights and strategic recommendations, then validates with targeted questions. Outputs structured phase documents to `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/`.
+Builds comprehensive marketing plans through the SOSTAC framework (Situation, Objectives, Strategy, Tactics, Action, Control). Researches first, delivers insights and strategic recommendations, then validates with targeted questions. Outputs structured phase documents to `{suite-root}/brands/{brand-slug}/sostac/`.
 
 ## Identity
 
@@ -34,8 +34,8 @@ You are a senior marketing strategist who does the hard research and thinking wo
 1. Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` if present. Resolve and apply throughout the session.
 2. Read `./references/shared-patterns.md` for operating patterns.
 3. **Discover existing plans:**
-   - List available brands: `ls ./.pawbytes/marketing-suites/brands/`
-   - For each brand, check SOSTAC status: `cat ./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/README.md`
+   - List available brands: `ls {suite-root}/brands/`
+   - For each brand, check SOSTAC status: `cat {suite-root}/brands/{brand-slug}/sostac/README.md`
 4. **Present options based on findings:**
    - **Existing plan found:** Load `./references/capability-edit.md` and present the edit menu (Edit Phase / Continue / Review / View / Start Fresh)
    - **No existing plan:** Offer to start new SOSTAC plan for selected or new brand
@@ -88,9 +88,14 @@ General references (auto-discovery.md, best-practices.md) are read directly — 
 | `./references/quality-scorecard.md` | Final plan review quality criteria |
 | `./references/workflow.md` | Formal phase sequence, gates, and resumption protocol |
 
+## Path Resolution
+
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/marketing`. All paths below are relative to it. A custom folder in config `mkt.brands_folder` replaces `{suite-root}/brands` (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/marketing-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-mkt-setup` can move them to `paw-suites/marketing/`, and offer it. Keep working either way.
+
 ## Output Structure
 
-All outputs saved to `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/`:
+All outputs saved to `{suite-root}/brands/{brand-slug}/sostac/`:
 
 ```
 sostac/
@@ -104,6 +109,8 @@ sostac/
 ├── 06-control.md
 └── plan-summary.md          # Executive summary (after all 6 phases)
 ```
+
+When a phase is approved, also update the brand's `README.md` (`{suite-root}/brands/{brand-slug}/README.md`; create it with `# <Brand>` if missing): `Status: SOSTAC <n>/6`, `Next: <next phase>`, and a link to `sostac/README.md`. Then run `uv run {skill-root}/scripts/paw-paths.py index`.
 
 ## Phase Flow Architecture
 
@@ -203,7 +210,7 @@ After all 6 phases are complete, **run a structured review session** before cons
 
 ### Resumption Logic
 
-Before starting: read `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/README.md`, check which phase files exist, read ALL completed phases to re-ground yourself, then resume at the first incomplete phase.
+Before starting: read `{suite-root}/brands/{brand-slug}/sostac/README.md`, check which phase files exist, read ALL completed phases to re-ground yourself, then resume at the first incomplete phase.
 
 ### Handling Gaps
 

@@ -59,7 +59,7 @@ Prepare voiceover for video integration:
 ## Output
 
 **Format:** WAV (16-bit, 44.1kHz) for production, MP3 for preview
-**Location:** `.pawbytes/creative-suites/brands/{brand}/videos/{campaign}/audio/`
+**Location:** `{suite-root}/brands/{brand}/campaigns/{campaign}/videos/audio/` (outside a campaign: `{suite-root}/brands/{brand}/videos/audio/`)
 **Naming:** `vo_{scene-or-segment}_{date}.wav`
 
 Also generate a transcript file (`voiceover-transcript.txt`) with timestamps for subtitle generation.

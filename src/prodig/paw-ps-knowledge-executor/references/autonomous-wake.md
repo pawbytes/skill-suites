@@ -26,10 +26,10 @@ Extract and apply:
 
 ### 2. Load Memory Index
 
-Read the sidecar memory index:
+Read the memory index:
 
 ```text
-{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/index.md
+{suite-root}/_memory/index.md
 ```
 
 Identify:
@@ -45,7 +45,7 @@ Load all input files needed for the task:
 |-------|------|
 | Product Context | `curated/product-context.md` |
 | Audience Intelligence | `curated/audience-intelligence.md` |
-| Output Standards | `curated/output-standards.md` |
+| Output Standards | `{suite-root}/_standards/output-standards.md` |
 | Knowledge Products Guidance | `curated/product-types/knowledge-products.md` |
 
 If critical inputs are missing, log the error to daily file and exit with clear message about what's needed.
@@ -185,6 +185,6 @@ All headless executions are logged to daily file:
 If a headless execution is interrupted:
 
 1. Check daily log for last recorded activity
-2. Check artifacts folder for partial outputs
+2. Check the product's `build/` folder for partial outputs
 3. Resume from last completed phase
 4. Log recovery in daily file

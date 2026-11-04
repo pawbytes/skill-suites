@@ -4,7 +4,7 @@ Welcome! Setting up the Strategist in this workspace.
 
 ## Memory Location
 
-The Strategist uses the **shared agency memory** at `.pawbytes/creative-suites/`. This memory is shared with Aria (Creative Director) and other specialists.
+The Strategist uses the **shared agency tree** at `{suite-root}/` (memory in `_memory/`). This memory is shared with Aria (Creative Director) and other specialists.
 
 ## Quick Start
 
@@ -22,18 +22,19 @@ The Strategist uses the **shared agency memory** at `.pawbytes/creative-suites/`
 
 ## Initial Setup
 
-Check if `.pawbytes/creative-suites/index.md` exists:
+Check if `{suite-root}/_memory/index.md` exists:
 
 - **If yes:** Load it to understand current agency context (active brands, campaigns)
 - **If no:** Create the initial structure:
 
 ```
-.pawbytes/creative-suites/
-├── index.md           # Agency roster, active campaigns
-├── daily/             # Activity logs
-├── .auth/             # Browser auth sessions (gitignored)
-├── .profiles/         # Browser profiles (gitignored)
+{suite-root}/
+├── _memory/index.md   # Agency roster, active campaigns
+├── _memory/daily/     # Activity logs
 └── brands/            # Brand folders
+{project-root}/.pawbytes/creative/
+├── .auth/             # Browser auth sessions (hidden, gitignored)
+└── .profiles/         # Browser profiles (hidden, gitignored)
 ```
 
 ## Setup Questions

@@ -26,7 +26,7 @@ Legend: ✓ = Required, ○ = Recommended
 - Is the messaging consistent with brand guidelines?
 - Are visual directions appropriate for brand identity?
 
-**Load brand context:** `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/guidelines.md`
+**Load brand context:** `{suite-root}/brands/{brand-name}/guidelines.md`
 
 ### 3. Strategic Clarity Check
 

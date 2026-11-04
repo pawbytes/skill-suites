@@ -26,7 +26,7 @@ Determine where the user is in the product creation journey to provide appropria
 
 ### 1. Check Existing Context
 
-Read sidecar files to understand current state:
+Read memory files to understand current state:
 
 | File | Indicates Stage |
 |------|-----------------|

@@ -84,4 +84,4 @@ Deliver:
 - **B-roll list** and production notes
 - **CTA placement** with timing
 - **Thumbnail concept** (for YouTube)
-- **Save to**: `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/video/content/scripts/script-{slug}-{YYYY-MM-DD}.md`
+- **Save to**: `{suite-root}/brands/{brand-slug}/channels/video/scripts/script-{slug}-{YYYY-MM-DD}.md`

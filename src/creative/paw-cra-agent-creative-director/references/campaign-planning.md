@@ -41,7 +41,8 @@ Use the Agent tool with a prompt that includes:
 Example invocation for Designer:
 ```
 Create 3 social media carousel images for the "Summer Launch" campaign.
-Brand: Acme Co (see brand profile at .pawbytes/creative-suites/brands/acme-co/profile.md)
+Brand: Acme Co (see brand profile at {suite-root}/brands/acme-co/profile.md)
+Campaign folder: {suite-root}/brands/acme-co/campaigns/2026-06-summer-launch/
 Specs: 1080x1080px, PNG
 Style: Bold, summer colors, product-focused
 Copy on image: "Summer Sale - 50% Off"
@@ -55,17 +56,19 @@ Deadline: {date}
 - Review copy tone across all text deliverables
 - Time final reviews to catch issues before deadline
 
-## Campaign Memory
+## Campaign Folder
 
-Store campaign state in: `{project-root}/.pawbytes/creative-suites/campaigns/{campaign-name}/`
+Store the campaign in `{suite-root}/brands/{brand}/campaigns/{campaign}/`, where `{campaign}` is `YYYY-MM-<campaign-slug>` (`YYYY-MM-DD-<slug>` when several start in a month). Campaigns without a brand go under `brands/unassigned/`.
 
 ```
-{campaign-name}/
+{campaign}/
 ├── brief.md
 ├── plan.md
-├── assets/
-│   ├── images/
-│   ├── videos/
-│   └── copy/
-└── status.md
+├── status.md
+├── copy/        scripts/      # Strategist
+├── designs/                   # Designer: social/, carousels/, flyers/, resized/, batch-{date}/
+├── videos/                    # Video Producer: short-form/, long-form/, clips/, audio/, series/{name}/
+└── exports/                   # platform variants
 ```
+
+When the campaign is created, add it to the brand's `README.md` (`Status:`, `Next:`, a link to the campaign's `status.md`) and run `uv run {skill-root}/scripts/paw-paths.py index`.

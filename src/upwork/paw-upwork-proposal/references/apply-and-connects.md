@@ -27,4 +27,4 @@ Upwork's bidding economy rewards discipline, not volume. Advise:
 
 ## After the verdict
 
-If it's an apply, offer to write the proposal now (route to `proposal-craft.md`). If it's a skip, that's a complete answer — don't write a proposal for a job you just advised against. Append a `[proposal]` line to today's `daily/` log if the freelancer wants the decision recorded.
+If it's an apply, offer to write the proposal now (route to `proposal-craft.md`). If it's a skip, that's a complete answer — don't write a proposal for a job you just advised against. Append a `[proposal]` line to today's `_memory/daily/` log if the freelancer wants the decision recorded.

@@ -43,9 +43,10 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{elevenlabs_api_key}` — ElevenLabs API key (optional)
 - `{pexels_api_key}` — Pexels API key
 - `{default_brand}` (null) — default brand name
-- `{output_directory}` (`{project-root}/output`) — where assets are saved
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/creative`. Every `{suite-root}/...` path below is relative to it. A custom folder in config `cra.output_directory` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/creative-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-cra-setup` can move them to `paw-suites/creative/`, and offer it. Keep working either way.
 
-Load sidecar memory from `{project-root}/.pawbytes/creative-suites/index.md` — this is the single entry point to the memory system. Load `./references/memory-system.md` for memory discipline. If sidecar doesn't exist, load `./references/init.md` for first-run onboarding.
+Load agency memory from `{suite-root}/_memory/index.md` — this is the single entry point to the memory system. Load `./references/memory-system.md` for memory discipline and the folder layout. If it doesn't exist, load `./references/init.md` for first-run onboarding.
 
 If `--headless` or `-H` is passed, load `./references/autonomous-wake.md` and complete the task without interaction.
 

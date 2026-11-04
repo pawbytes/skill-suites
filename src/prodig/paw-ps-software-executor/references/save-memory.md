@@ -7,33 +7,32 @@ Define how the Software Executor writes to shared memory to maintain continuity 
 ## Memory Structure
 
 ```
-.pawbytes/prodig-suites/memory/paw-ps-sidecar/
+{suite-root}/_memory/
 ├── index.md                      # Orientation file
 ├── daily/
 │   └── YYYY-MM-DD.md            # Session logs
-├── curated/
-│   ├── product-context.md        # Current active product
-│   ├── market-intelligence.md    # Research synthesis
-│   ├── audience-intelligence.md  # Customer understanding
-│   ├── product-decisions.md      # Decision log
-│   ├── output-standards.md       # Quality bar
-│   └── product-types/
-│       └── software-products.md  # Software product guidance
-└── artifacts/
-    └── {product-slug}/           # Product artifacts
-        ├── feature-spec.md
-        ├── user-flows.md
-        ├── mvp-definition.md
-        ├── prd-lite.md
-        ├── technical-context.md
-        └── execution-checklist.md
+└── curated/
+    ├── product-context.md        # Current active product
+    ├── market-intelligence.md    # Research synthesis
+    ├── audience-intelligence.md  # Customer understanding
+    ├── product-decisions.md      # Decision log
+    └── product-types/
+        └── software-products.md  # Software product guidance
+
+{suite-root}/{product-slug}/build/   # Product artifacts (deliverables, not memory)
+├── feature-spec.md
+├── user-flows.md
+├── mvp-definition.md
+├── prd-lite.md
+├── technical-context.md
+└── execution-checklist.md
 ```
 
 ## Write Triggers
 
 Always update memory after:
 
-1. **Creating artifacts** — Write to artifacts/{product-slug}/
+1. **Creating artifacts** — Write to `{suite-root}/{product-slug}/build/`
 2. **Refining product-type guidance** — Update curated/product-types/software-products.md
 3. **Completing a session** — Append to daily log
 4. **Discovering reusable patterns** — Update product-type guidance
@@ -98,13 +97,13 @@ When refining software product patterns:
 - `curated/product-context.md` — Product context
 - `curated/audience-intelligence.md` — Audience insights
 - `curated/market-intelligence.md` — Market intelligence
-- `curated/output-standards.md` — Quality standards
+- `{suite-root}/_standards/output-standards.md` — Quality standards
 - `curated/product-types/software-products.md` — Product-type guidance
 - `daily/YYYY-MM-DD.md` — Recent activity
 
 ## Write Access (What We Write)
 
-- `artifacts/{product-slug}/*.md` — Product artifacts
+- `{suite-root}/{product-slug}/build/*.md` — Product artifacts
 - `daily/YYYY-MM-DD.md` — Session logs
 - `curated/product-types/software-products.md` — Refined guidance
 
@@ -124,8 +123,8 @@ When refining software product patterns:
 **For**: Task Automation Platform
 **Inputs**: product-context.md, audience-intelligence.md, feature-spec.md (partial)
 **Outputs**:
-  - artifacts/task-automation-platform/feature-spec.md (completed)
-  - artifacts/task-automation-platform/user-flows.md (created)
+  - task-automation-platform/build/feature-spec.md (completed)
+  - task-automation-platform/build/user-flows.md (created)
 **Decisions**:
   - Excluded webhooks from MVP (deferred to v1.1)
   - Added email trigger as P1 (was P2)

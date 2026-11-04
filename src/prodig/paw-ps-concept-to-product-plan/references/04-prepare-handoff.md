@@ -111,8 +111,8 @@ Append to `product-context.md`:
 ## Planning Complete
 
 **Date:** [date]
-**Plan location:** `.pawbytes/prodig-suites/plans/{product-slug}/plan.md`
-**Handoff location:** `.pawbytes/prodig-suites/plans/{product-slug}/handoff.md`
+**Plan location:** `{suite-root}/{product-slug}/plan/plan.md`
+**Handoff location:** `{suite-root}/{product-slug}/plan/handoff.md`
 **Assigned executor:** [executor name]
 
 ### Ready For
@@ -123,7 +123,7 @@ Append to `product-context.md`:
 
 ### Step 4: Save Handoff Bundle
 
-Save to: `.pawbytes/prodig-suites/plans/{product-slug}/handoff.md`
+Save to: `{suite-root}/{product-slug}/plan/handoff.md`
 
 ### Step 5: Create Execution Checklist (Optional)
 
@@ -152,7 +152,7 @@ For complex products, create execution checklist:
 ## Output Structure
 
 ```text
-.pawbytes/prodig-suites/plans/{product-slug}/
+{suite-root}/{product-slug}/plan/
 ├── plan.md           # Full execution plan
 ├── handoff.md        # Executor-ready instructions
 └── checklist.md      # Execution checklist (if complex)
@@ -163,8 +163,8 @@ For complex products, create execution checklist:
 ```markdown
 ## Handoff Complete
 
-**Plan saved to:** `.pawbytes/prodig-suites/plans/{product-slug}/plan.md`
-**Handoff saved to:** `.pawbytes/prodig-suites/plans/{product-slug}/handoff.md`
+**Plan saved to:** `{suite-root}/{product-slug}/plan/plan.md`
+**Handoff saved to:** `{suite-root}/{product-slug}/plan/handoff.md`
 **Product context updated:** Yes
 
 ### Next Step

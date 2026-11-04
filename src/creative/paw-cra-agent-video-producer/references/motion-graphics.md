@@ -59,5 +59,5 @@ Choose the best tool for the motion graphics type:
 ## Output
 
 **Format:** MP4 (H.264) for standard use, MOV (ProRes 4444) for alpha channel
-**Location:** `.pawbytes/creative-suites/brands/{brand}/videos/motion-graphics/`
+**Location:** `{suite-root}/brands/{brand}/videos/motion-graphics/` (in a campaign: `{suite-root}/brands/{brand}/campaigns/{campaign}/videos/motion-graphics/`)
 **Naming:** `{type}_{description-slug}_{date}.{ext}`

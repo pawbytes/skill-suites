@@ -2,7 +2,7 @@
 
 **Outcome:** Deliver a comprehensive "Where are we now?" assessment with evidence-based findings and strategic implications.
 
-**Output:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/01-situation.md`
+**Output:** `{suite-root}/brands/{brand-slug}/sostac/01-situation.md`
 
 **Phase Question:** "Where are we now?"
 

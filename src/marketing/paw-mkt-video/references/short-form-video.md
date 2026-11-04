@@ -117,4 +117,4 @@ Deliver:
 - **Script outline** (timecodes, visuals, audio)
 - **Hashtag set** for target platform(s)
 - **Posting schedule** with batch production guidance
-- **Save to**: `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/video/content/scripts/` or campaign path
+- **Save to**: `{suite-root}/brands/{brand-slug}/channels/video/scripts/` or campaign path

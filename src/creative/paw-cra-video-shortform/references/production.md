@@ -39,7 +39,7 @@ For each scene:
 3. Verify the output clip exists and is playable
 4. If generation fails, retry once with a simplified prompt. If still failing, log the error and continue with remaining scenes.
 
-Save clips to a temporary working directory: `{project-root}/.pawbytes/creative-suites/brands/{brand}/videos/.work/{timestamp}/`
+Save clips to a temporary working directory: `{suite-root}/brands/{brand}/videos/.work/{timestamp}/`
 
 Name clips sequentially: `scene-01.mp4`, `scene-02.mp4`, etc.
 

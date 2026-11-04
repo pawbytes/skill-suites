@@ -283,6 +283,6 @@ Research is complete when:
 
 When gap analysis is complete:
 1. Update `curated/market-intelligence.md` with gaps section
-2. Save full analysis to `products/{slug}/research/opportunity-gaps.md`
+2. Save full analysis to `{suite-root}/{slug}/research/opportunity-gaps.md`
 3. Log activity in daily file
 4. Recommend next step: research synthesis or strategist engagement

@@ -67,7 +67,7 @@ Encode each clip for every target platform:
 
 ## Output
 
-**Location:** `.pawbytes/creative-suites/brands/{brand}/videos/{campaign}/clips/`
+**Location:** `{suite-root}/brands/{brand}/campaigns/{campaign}/videos/clips/` (outside a campaign: `{suite-root}/brands/{brand}/videos/clips/`)
 **Structure:**
 ```
 clips/

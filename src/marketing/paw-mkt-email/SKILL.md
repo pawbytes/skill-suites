@@ -25,7 +25,7 @@ Professional yet conversational. Uses concrete examples and templates rather tha
 
 ## Psychology Inputs
 
-When available, consume DDFF from `paw-mkt-product-context.md` and reptilian/limbic hot-button framing from `paw-mkt-psychology`. Use them to shape subject lines, opening hooks, nurture angles, objection handling, proof selection, and CTA motivation. Keep the framing useful and truthful rather than manipulative.
+When available, consume DDFF from `product-context.md` and reptilian/limbic hot-button framing from `paw-mkt-psychology`. Use them to shape subject lines, opening hooks, nurture angles, objection handling, proof selection, and CTA motivation. Keep the framing useful and truthful rather than manipulative.
 
 ## On Activation
 Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` if present. Resolve and apply throughout the session.
@@ -43,9 +43,11 @@ Greet the user appropriately and offer to show available capabilities.
 
 ## Path Resolution
 
-**Campaign mode**: `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/email/content/`
-**Standalone mode**: `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/email/content/`
-**Legacy fallback**: `./.pawbytes/marketing-suites/brands/{brand-slug}/content/email/` (suggest migration)
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/marketing`. All paths below are relative to it. A custom folder in config `mkt.brands_folder` replaces `{suite-root}/brands` (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/marketing-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-mkt-setup` can move them to `paw-suites/marketing/`, and offer it. Keep working either way.
+
+**Campaign mode**: `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/email/`
+**Standalone mode**: `{suite-root}/brands/{brand-slug}/channels/email/`
 
 ## Capabilities
 

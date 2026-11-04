@@ -191,6 +191,6 @@ Research is complete when:
 
 When competitor analysis is complete:
 1. Update `curated/market-intelligence.md` with summary
-2. Save detailed matrix to `products/{slug}/research/competitor-matrix.md`
+2. Save detailed matrix to `{suite-root}/{slug}/research/competitor-matrix.md`
 3. Log activity in daily file
 4. Recommend next step: gap identification or demand signal analysis

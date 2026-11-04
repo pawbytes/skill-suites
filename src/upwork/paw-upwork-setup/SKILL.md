@@ -14,6 +14,7 @@ Writes to:
 - **`{project-root}/.pawbytes/config/config.yaml`** — shared ecosystem config: core settings at root plus an `upwork` section. User-only keys (`user_name`, `communication_language`) are **never** written here.
 - **`{project-root}/.pawbytes/config/config.user.yaml`** — gitignore-intended personal settings: `user_name`, `communication_language`, and any module variable marked `user_setting: true` (`default_freelancer`, `research_mode`).
 - **`{project-root}/.pawbytes/config/module-help.csv`** — registers module capabilities for the help system.
+- **`{project-root}/paw-suites/upwork/`** (`{suite-root}`) — `freelancers/{slug}/` workspaces, `reports/`, and a generated `README.md` index.
 
 Both config scripts use an anti-zombie pattern — existing entries for this module are removed before writing fresh ones, so stale values never persist.
 
@@ -99,24 +100,42 @@ python3 scripts/merge-help-csv.py \
 
 Both scripts output JSON to stdout. If either exits non-zero, surface the error and stop. Run either script with `--help` for full usage.
 
+## Migrate a Legacy Workspace
+
+Run `uv run scripts/paw-paths.py --project-root "{project-root}" detect`. When it reports `legacy` or `both` (files still in the old `.pawbytes/upwork-suites/` tree), run `paw-paths.py plan`, show its `summary` along with any conflicts, and run `paw-paths.py apply` once the user confirms (headless: apply when there are no conflicts). Report what moved and what stayed (`MOVED.md` in the old folder lists it). Each freelancer's `index.md` and `daily/` move into `freelancers/{slug}/_memory/`; everything else keeps its place, and `apply` rewrites the `freelancers_folder` and `reports_folder` defaults in config. A migrated freelancer has no `README.md` yet: write one per the template below for each, from its `_memory/index.md` status row.
+
 ## Scaffold Freelancer Workspace
 
-Resolve the `{project-root}` token to the actual project root for directories on disk; the config files keep the literal token. Create the suite root and reports folder, then scaffold the per-freelancer workspace.
+Resolve the `{project-root}` token to the actual project root for directories on disk; the config files keep the literal token. `{suite-root}` is `{project-root}/paw-suites/upwork` (config `freelancers_folder` / `reports_folder` win when set elsewhere). Create the reports folder, then scaffold the per-freelancer workspace. Never overwrite a file that already exists.
 
 ```bash
-mkdir -p "{project-root}/.pawbytes/upwork-suites/reports"
+mkdir -p "{suite-root}/reports"
 ```
 
 If the user named a freelancer (via `default_freelancer` or inline), scaffold their workspace skeleton; otherwise create just the `freelancers/` parent and leave per-freelancer scaffolding to the coach on first onboarding. For a slug `{slug}`:
 
 ```bash
-mkdir -p "{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/research"
-mkdir -p "{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/profile"
-mkdir -p "{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/proposals"
-mkdir -p "{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/daily"
+mkdir -p "{suite-root}/freelancers/{slug}/research"
+mkdir -p "{suite-root}/freelancers/{slug}/profile"
+mkdir -p "{suite-root}/freelancers/{slug}/proposals"
+mkdir -p "{suite-root}/freelancers/{slug}/_memory/daily"
 ```
 
-Then write `{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/index.md` as the orientation doc every skill reads first:
+Write `{suite-root}/freelancers/{slug}/README.md`, the freelancer's dashboard:
+
+```markdown
+# {name or slug}
+
+Status: set up, not onboarded
+Next: talk to `paw-upwork-agent-coach` to capture context and find the niche
+
+- [Positioning brief](positioning-brief.md)
+- [Profile](profile/overview.md)
+- [Proposals](proposals/)
+- [Research](research/)
+```
+
+Then write `{suite-root}/freelancers/{slug}/_memory/index.md` as the orientation doc every skill reads first:
 
 ```markdown
 # Upwork Workspace — {slug}
@@ -134,7 +153,7 @@ Then write `{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/index.md` 
 - `proposals/` — per-job tailored proposals + scores
 - `kit.md` — reusable intros, snippets, case-study blurbs
 - `outcomes.md` — feedback loop: sent/replies/wins per proposal style
-- `daily/YYYY-MM-DD.md` — append-only session log, tagged by skill
+- `_memory/daily/YYYY-MM-DD.md` — append-only session log, tagged by skill
 
 ## Next step
 Talk to `paw-upwork-agent-coach` to capture your context and discover your niche.
@@ -142,7 +161,7 @@ Talk to `paw-upwork-agent-coach` to capture your context and discover your niche
 
 ## Confirm
 
-Use the script JSON output to display what was written — config values set, user settings written to `config.user.yaml` (`user_keys` in result), help entries added, fresh install vs update, and the resolved `research_mode` (note if it fell back to `manual` and why). Report the workspace scaffolded. Then display the `module_greeting` from `assets/module.yaml`.
+Run `uv run scripts/paw-paths.py --project-root "{project-root}" index` to write `{suite-root}/README.md`. Use the script JSON output to display what was written — config values set, user settings written to `config.user.yaml` (`user_keys` in result), help entries added, fresh install vs update, and the resolved `research_mode` (note if it fell back to `manual` and why). Report the migration result and the workspace scaffolded. Then display the `module_greeting` from `assets/module.yaml`.
 
 ## Outcome
 

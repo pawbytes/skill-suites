@@ -15,16 +15,16 @@ Execute this process when:
 
 ### 1. Verify Directory Structure
 
-Ensure the sidecar directory structure exists:
+Ensure the memory directory structure exists:
 
 ```text
-.pawbytes/prodig-suites/memory/paw-ps-sidecar/
+{suite-root}/_memory/
 ├── index.md
 ├── daily/
 └── curated/
 ```
 
-If missing, run the full sidecar initialization first (see `paw-ps-agent-product-builder/references/init-sidecar.md`).
+If missing, run the full memory initialization first (see `paw-ps-agent-product-builder/references/init-memory.md`).
 
 ### 2. Create market-intelligence.md
 
@@ -89,7 +89,7 @@ Tell the Research Agent:
 - "What's the competitive landscape for [topic]?"
 ```
 
-### 3. Update Sidecar Index
+### 3. Update Memory Index
 
 Update `curated-files-status` in `index.md`:
 
@@ -119,7 +119,7 @@ Append to the daily log at `daily/{YYYY-MM-DD}.md`:
 After initialization, verify:
 
 - [ ] `curated/market-intelligence.md` exists and has content
-- [ ] Sidecar index has been updated
+- [ ] Memory index has been updated
 - [ ] Daily log has been updated
 - [ ] File is ready to receive research findings
 

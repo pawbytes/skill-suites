@@ -29,14 +29,13 @@ Enable headless execution of service packaging tasks without user interaction.
 
 ### Step 1: Load Context
 
-Read from sidecar memory:
+Read from shared memory:
 ```
-{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/
+{suite-root}/_memory/
 ├── index.md                      # Current state
 ├── curated/
 │   ├── product-context.md        # Active product
 │   ├── audience-intelligence.md  # Target audience
-│   ├── output-standards.md       # Quality bar
 │   └── product-types/
 │       └── service-products.md   # Service patterns
 └── daily/
@@ -60,7 +59,7 @@ If context is insufficient, log the gap and exit with specific requirements.
    - Delivery phases
    - Deliverables per phase
    - Timeline estimate
-5. Save to artifacts/{product-slug}/service/offer-structure.md
+5. Save to {suite-root}/{product-slug}/build/service/offer-structure.md
 6. Log completion to daily/YYYY-MM-DD.md
 
 **Output file structure:**
@@ -114,7 +113,7 @@ Total duration: [X weeks]
    - Communication channels
    - Revision policy
    - Quality checkpoints
-4. Save to artifacts/{product-slug}/service/delivery-model.md
+4. Save to {suite-root}/{product-slug}/build/service/delivery-model.md
 5. Log completion to daily/YYYY-MM-DD.md
 
 #### `--headless:assets`
@@ -127,7 +126,7 @@ Total duration: [X weeks]
    - Templates needed
    - Quality standards per deliverable
    - Value stack
-4. Save to artifacts/{product-slug}/service/deliverables/deliverable-list.md
+4. Save to {suite-root}/{product-slug}/build/service/deliverables/deliverable-list.md
 5. Log completion to daily/YYYY-MM-DD.md
 
 #### `--headless:all` or `--headless`
@@ -231,7 +230,7 @@ Next recommended steps:
 3. Create client-facing materials
 
 Files saved to:
-{project-root}/.pawbytes/prodig-suites/artifacts/{product-slug}/service/
+{suite-root}/{product-slug}/build/service/
 ```
 
 ## Quality Checks

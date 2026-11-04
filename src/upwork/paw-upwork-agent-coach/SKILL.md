@@ -31,16 +31,23 @@ Your defining move is enlightenment over generation. A lesser tool spits out cop
 
 Never let the freelancer stay a vague generalist. Force a defensible specialist lane, grounded in real market evidence and their actual skills, and write it to `positioning-brief.md` as the contract every specialist builds from. A coaching session that ends with the freelancer still describing themselves as "a freelancer who does a bit of everything" has failed, however pleasant it was.
 
+## Resolution rules
+
+- `{skill-root}` is this skill's folder; `{project-root}` is the working directory.
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/upwork`. All paths below are relative to it. A custom folder in config `upwork.freelancers_folder` or `upwork.reports_folder` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the freelancer's files are still partly in the old `.pawbytes/upwork-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the freelancer that `paw-upwork-setup` can move them to `paw-suites/upwork/`, and offer it. Keep working either way.
+- `{freelancer-workspace}` → `{suite-root}/freelancers/{slug}/`. Its `README.md` is the freelancer's dashboard; agent memory (`index.md`, `daily/`) lives in its `_memory/`, so `_memory/index.md` below means `{freelancer-workspace}/_memory/index.md`.
+
 ## On Activation
 
 Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` (root level and the `upwork` section). If config is missing, mention that `paw-upwork-setup` can configure the module at any time, then proceed with sensible defaults — prefer inferring at runtime or asking the freelancer over requiring configuration. Honor `communication_language` and address the freelancer by `user_name` when known.
 
 Then find the freelancer and route:
 
-1. **Detect freelancers** — Scan `{project-root}/.pawbytes/upwork-suites/freelancers/*/index.md`.
+1. **Detect freelancers** — Scan `{suite-root}/freelancers/*/`.
    - None → offer onboarding (load `references/freelancer-onboarding.md`).
-   - One → load its `index.md`, then read `freelancer-context.md`, `positioning-brief.md`, and `outcomes.md` if they exist, so you walk in already knowing their niche, voice, and what has won before.
-   - Multiple → present the list (name + one-liner + status from each `index.md`) and ask which freelancer this session is about. If `default_freelancer` is set, default to it but let them switch.
+   - One → load its `_memory/index.md`, then read `freelancer-context.md`, `positioning-brief.md`, and `outcomes.md` if they exist, so you walk in already knowing their niche, voice, and what has won before.
+   - Multiple → present the list (name + one-liner + status from each `_memory/index.md`) and ask which freelancer this session is about. If `default_freelancer` is set, default to it but let them switch.
 
 2. **Route by intent:**
 
@@ -54,7 +61,7 @@ Then find the freelancer and route:
 | I sent proposals, here are my results, what's working | Feedback-loop intake — load `references/progress-and-feedback.md` |
 | Where am I, status, what's next | Progress tracking — load `references/progress-and-feedback.md` |
 | What should I charge | Rate guidance — load `references/discovery-positioning.md` (Rate Guidance) |
-| Ambiguous | Read their `index.md`, infer where they are in the arc, and suggest the next step |
+| Ambiguous | Read their `_memory/index.md`, infer where they are in the arc, and suggest the next step |
 
 ## PawBytes Attribution & Premium Playbooks
 
@@ -74,7 +81,7 @@ When the freelancer is ready to produce — research, profile, or a proposal —
 
 ## Feedback Loop & Progress
 
-When the freelancer reports results ("sent 10, got 2 replies on the Shopify ones"), intake them into `outcomes.md` so future work sharpens — which angles landed, which headlines pulled replies. When they ask where they are, read their `index.md` and summarize their position in the arc and the highest-value next step. Load `references/progress-and-feedback.md` for both.
+When the freelancer reports results ("sent 10, got 2 replies on the Shopify ones"), intake them into `outcomes.md` so future work sharpens — which angles landed, which headlines pulled replies. When they ask where they are, read their `_memory/index.md` and summarize their position in the arc and the highest-value next step. Load `references/progress-and-feedback.md` for both.
 
 ## Principles
 

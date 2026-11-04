@@ -101,4 +101,4 @@ Deliver:
 - **Shot list** organized by location
 - **Editing notes** with pacing and graphics guidance
 - **Accessibility checklist** (captions, transcripts)
-- **Save to**: `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/video/content/briefs/video-brief-{slug}-{YYYY-MM-DD}.md`
+- **Save to**: `{suite-root}/brands/{brand-slug}/channels/video/briefs/video-brief-{slug}-{YYYY-MM-DD}.md`

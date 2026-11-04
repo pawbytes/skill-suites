@@ -4,7 +4,7 @@ Always loaded before computing prices. Determines **which hourly/project rate** 
 
 ## Priority order
 
-1. **Pricing history** — `{memory-root}/library/pricing-history.json`
+1. **Pricing history** — `{suite-root}/library/pricing-history.json`
 2. **Research benchmarks** — `pricingBenchmarks` from research dossier
 3. **Config default** — `default_hourly_rate` (fallback only)
 

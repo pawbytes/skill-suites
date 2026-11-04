@@ -136,7 +136,7 @@ For each step, specify what the screen needs:
 5. Error state handling
 6. Screen requirements summary
 
-**Location:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/artifacts/{product-slug}/user-flows.md`
+**Location:** `{suite-root}/{product-slug}/build/user-flows.md`
 
 **Naming:** `user-flows.md`
 

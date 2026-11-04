@@ -25,8 +25,8 @@ Be honest. A flattering score on a doomed proposal wastes the freelancer's Conne
 
 ## Optional scorecard
 
-If the freelancer wants a polished, shareable artifact (or is scoring several drafts), offer to write a self-contained HTML scorecard to `{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/proposals/{job-slug}-score.html` — dimension scores with bars, the ranked weaknesses, and the rewritten hook — as a single file with inline styles that opens in any browser. This is optional; the inline critique is the default and usually enough.
+If the freelancer wants a polished, shareable artifact (or is scoring several drafts), offer to write a self-contained HTML scorecard to `{freelancer-workspace}/proposals/{job-slug}-score.html` — dimension scores with bars, the ranked weaknesses, and the rewritten hook — as a single file with inline styles that opens in any browser. This is optional; the inline critique is the default and usually enough.
 
 ## Close the loop
 
-If the scoring produces a noticeably better version, offer to save the winning pattern to `kit.md` (via `kit-and-outcomes.md`). Append a `[proposal]` line to today's `daily/` log noting the draft was scored.
+If the scoring produces a noticeably better version, offer to save the winning pattern to `kit.md` (via `kit-and-outcomes.md`). Append a `[proposal]` line to today's `_memory/daily/` log noting the draft was scored.

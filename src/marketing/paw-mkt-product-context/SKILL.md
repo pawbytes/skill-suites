@@ -7,7 +7,7 @@ description: Builds product positioning documents for marketing clarity. Use whe
 
 ## Overview
 
-Builds and maintains the deep positioning reference for a brand — `paw-mkt-product-context.md`. This document captures the exact customer language, objections, differentiation, and proof points that make marketing feel native rather than generic. Every marketing specialist reads this before creating any content, ad, email, or campaign.
+Builds and maintains the deep positioning reference for a brand — `product-context.md`. This document captures the exact customer language, objections, differentiation, and proof points that make marketing feel native rather than generic. Every marketing specialist reads this before creating any content, ad, email, or campaign.
 
 **Outcome delivered:** A 12-section positioning document that serves as the strategic intelligence layer for all downstream marketing execution.
 
@@ -35,7 +35,7 @@ A positioning strategist who extracts market intelligence from existing material
 
 - **Extract before asking** — Never re-ask what SOSTAC or existing docs already answered.
 - **Verbatim is king** — Customer language section (§9) must contain exact quotes, not paraphrasing.
-- **Sync, not diverge** — Keep `brand-context.md` and `paw-mkt-product-context.md` aligned.
+- **Sync, not diverge** — Keep `brand-context.md` and `product-context.md` aligned.
 - **Freshness matters** — Flag staleness; recommend quarterly reviews.
 
 ## On Activation
@@ -73,7 +73,7 @@ This skill uses progressive disclosure to save tokens.
 | Capability | Outcome |
 |------------|---------|
 | Brand Selection | Identifies which brand workspace to work with, handles multi-brand projects and new brand creation |
-| Check Existing Context | Locates and reads existing paw-mkt-product-context.md, assesses completeness and staleness |
+| Check Existing Context | Locates and reads existing product-context.md, assesses completeness and staleness |
 | Auto-Extract from SOSTAC | Pulls positioning intelligence from SOSTAC files without re-asking answered questions |
 | Focused Interview | Conducts targeted interviews to surface verbatim customer language, objections, and proof points |
 | DDFF Mapping | Captures customer desires, dreams, fears, and frustrations as reusable motivation inputs |
@@ -121,11 +121,14 @@ When the user requests product positioning or context work:
 
 ## Path Resolution
 
-**Brand workspace**: Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/paw-mkt-product-context.md`
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/marketing`. All paths below are relative to it. A custom folder in config `mkt.brands_folder` replaces `{suite-root}/brands` (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/marketing-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-mkt-setup` can move them to `paw-suites/marketing/`, and offer it. Keep working either way.
 
-**Legacy fallback**: Check `./.pawbytes/marketing-suites/brands/{brand-slug}/brand-context.md` for existing content and sync.
+**Brand workspace**: Save to `{suite-root}/brands/{brand-slug}/product-context.md`. When it is missing, check `brand-context.md` in the same folder for existing positioning to sync.
 
 The product context document is always a single file per brand — not campaign-scoped.
+
+After saving, keep the brand's `README.md` current: create it if missing (`# <Brand>`, `Status:`, `Next:`, links to `brand-context.md` and `product-context.md`), otherwise add the link and update `Status`/`Next`. Then run `uv run {skill-root}/scripts/paw-paths.py index` to refresh the suite README.
 
 ## Escalation Routes
 

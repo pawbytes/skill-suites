@@ -21,8 +21,10 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{communication_language}` (system) — use for all communications
 - `{document_output_language}` (system) — use for generated document content
 - `{default_brand}` (null) — default brand to research if none specified
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/creative`. Every `{suite-root}/...` path below is relative to it. A custom folder in config `cra.output_directory` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/creative-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-cra-setup` can move them to `paw-suites/creative/`, and offer it. Keep working either way.
 
-Load shared agency memory from `{project-root}/.pawbytes/creative-suites/index.md`. If a brand context is active or specified, load `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/guidelines.md` and any existing research in `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/research/`.
+Load shared agency memory from `{suite-root}/_memory/index.md`. If a brand context is active or specified, load `{suite-root}/brands/{brand-name}/guidelines.md` and any existing research in `{suite-root}/brands/{brand-name}/research/`.
 
 If `--headless`, complete the full pipeline without interaction using the active brand and scope from args. If interactive, greet and confirm research parameters before proceeding.
 
@@ -34,7 +36,7 @@ Parse the research request:
 
 | Parameter | Source | Fallback |
 |-----------|--------|----------|
-| **Brand** | Explicit request or `--brand` arg | `{default_brand}` or active brand from index.md |
+| **Brand** | Explicit request or `--brand` arg | `{default_brand}` or active brand from `_memory/index.md` |
 | **Scope** | `--scope` arg or explicit request | `all` (competitor + trend + content) |
 | **Focus areas** | Explicit questions or topics | Derive from brand guidelines (industry, audience, competitors) |
 | **Target platforms** | Explicit or from brand guidelines | Instagram, TikTok, YouTube, LinkedIn |
@@ -43,7 +45,7 @@ If interactive: confirm parameters and ask if there are specific questions or co
 
 ### 2. Brand Context Load
 
-Load from `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/`:
+Load from `{suite-root}/brands/{brand-name}/`:
 
 - `guidelines.md` — brand identity, voice, visual style, industry, audience
 - `research/` — any prior research reports (avoid redundant work, build on existing findings)
@@ -129,7 +131,7 @@ The report consolidates all findings into a scannable document with:
 
 ### 8. Save to Memory
 
-Write the report to `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/research/research-report.md` with frontmatter:
+Write the report to `{suite-root}/brands/{brand-name}/research/research-report.md` with frontmatter:
 
 ```yaml
 ---
@@ -145,7 +147,7 @@ If scope-specific reports were generated, also save:
 - `trend-analysis.md` (scope: trend or all)
 - `content-opportunities.md` (scope: content or all)
 
-Append to `{project-root}/.pawbytes/creative-suites/daily/YYYY-MM-DD.md`:
+Append to `{suite-root}/_memory/daily/YYYY-MM-DD.md`:
 
 ```markdown
 ## [Strategist] HH:MM - Content Research Complete
@@ -153,7 +155,7 @@ Append to `{project-root}/.pawbytes/creative-suites/daily/YYYY-MM-DD.md`:
 - Scope: {scope}
 - Key findings: {2-3 bullet summary}
 - Angles identified: {count}
-- Report: .pawbytes/creative-suites/brands/{brand-name}/research/research-report.md
+- Report: {suite-root}/brands/{brand-name}/research/research-report.md
 ```
 
 ### 9. Handoff
@@ -178,7 +180,7 @@ If Exa MCP is unavailable, use the Web Search tool for the same research queries
 
 ### Optional: Agent-Browser CLI
 
-For social media content behind login gates (Instagram feeds, TikTok For You, LinkedIn). Only use if `agent-browser` is available and auth sessions exist at `{project-root}/.pawbytes/creative-suites/.auth/`.
+For social media content behind login gates (Instagram feeds, TikTok For You, LinkedIn). Only use if `agent-browser` is available and auth sessions exist at `{project-root}/.pawbytes/creative/.auth/`.
 
 ## Quality Standards
 

@@ -37,7 +37,7 @@ Before building the plan, confirm if not clear from SOSTAC files:
 
 ## Research Mode: Launch Intelligence
 
-Use agent-browser to research the competitive landscape, Product Hunt dynamics, and community conversation before finalizing launch strategy. Check `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/00-auto-discovery.md` for research already collected.
+Use agent-browser to research the competitive landscape, Product Hunt dynamics, and community conversation before finalizing launch strategy. Check `{suite-root}/brands/{brand-slug}/sostac/00-auto-discovery.md` for research already collected.
 
 See `./references/shared-patterns.md` for agent-browser setup instructions.
 

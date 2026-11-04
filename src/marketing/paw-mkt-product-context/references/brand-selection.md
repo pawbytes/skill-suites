@@ -5,9 +5,9 @@ Before any product marketing context work, establish which brand you're working 
 ## Process
 
 1. **Check conversation context** — Is a brand already active?
-2. **Scan brand directories** — If not, check `./.pawbytes/marketing-suites/brands/` for existing brand directories.
+2. **Scan brand directories** — If not, check `{suite-root}/brands/` for existing brand directories.
 3. **Present selection menu** — If multiple brands exist, show a numbered menu.
-4. **Load brand context** — Once selected, read `./.pawbytes/marketing-suites/brands/{brand-slug}/brand-context.md`.
+4. **Load brand context** — Once selected, read `{suite-root}/brands/{brand-slug}/brand-context.md`.
 
 ## Rule
 

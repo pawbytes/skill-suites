@@ -66,21 +66,21 @@ Each brief is a markdown file the user takes to the specialist skill. Write it t
 
 ## Specialist Output Locations
 
-All paths relative to the brand workspace (`.pawbytes/marketing-suites/brands/{slug}/`).
+All paths relative to the brand workspace (`{suite-root}/brands/{slug}/`).
 
 **Campaign mode** — deliverables go under the campaign directory:
 
 | Type | Path |
 |---|---|
-| Channel content | `campaigns/{type}-{slug}/channels/{channel}/content/` |
-| Operational work | `campaigns/{type}-{slug}/{discipline}/` |
-| Performance | `campaigns/{type}-{slug}/performance/` |
+| Channel content | `campaigns/{YYYY-MM}-{type}-{slug}/channels/{channel}/` |
+| Operational work | `campaigns/{YYYY-MM}-{type}-{slug}/{discipline}/` |
+| Performance | `campaigns/{YYYY-MM}-{type}-{slug}/performance/` |
 
 **Standalone mode** — deliverables go to top-level directories:
 
 | Type | Path |
 |---|---|
-| Channel content | `channels/{channel}/content/` |
+| Channel content | `channels/{channel}/` |
 | Operational work | `operations/{discipline}/` |
 | Analytics | `analytics/` |
 
@@ -91,7 +91,7 @@ All paths relative to the brand workspace (`.pawbytes/marketing-suites/brands/{s
 | `paw-mkt-seo` | `seo` |
 | `paw-mkt-paid-ads` | `paid-ads` |
 | `paw-mkt-social` | `social` |
-| `paw-mkt-content` | `blog` and `content` |
+| `paw-mkt-content` | `blog` and `website`; content plans go to `operations/content-plan/` (campaign: `campaigns/{YYYY-MM}-{type}-{slug}/content-plan/`) |
 | `paw-mkt-email` | `email` |
 | `paw-mkt-video` | `video` |
 | `paw-mkt-influencer` | `influencer` |
@@ -109,5 +109,5 @@ All paths relative to the brand workspace (`.pawbytes/marketing-suites/brands/{s
 | `paw-mkt-community` | `community` |
 | `paw-mkt-referral` | `referral` |
 | `paw-mkt-sales` | `sales` |
-| `paw-mkt-analytics` | → `analytics/` (brand-level) |
-| `paw-mkt-psychology` | → `psychology/` (campaign or standalone) — cross-cutting advisory; receives requests from other specialists (CRO, pricing, email, content, retention, sales, social, paid-ads), returns behavioral recommendations to the originating skill. See `paw-mkt-psychology` SKILL.md § Escalation Routes for full inbound/outbound details |
+| `paw-mkt-analytics` | → `analytics/` (brand-level, not under `operations/`) |
+| `paw-mkt-psychology` | `psychology` (campaign or standalone) — cross-cutting advisory; receives requests from other specialists (CRO, pricing, email, content, retention, sales, social, paid-ads), returns behavioral recommendations to the originating skill. See `paw-mkt-psychology` SKILL.md § Escalation Routes for full inbound/outbound details |

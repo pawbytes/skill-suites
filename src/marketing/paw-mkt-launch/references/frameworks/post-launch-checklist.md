@@ -38,6 +38,6 @@
 - [ ] Update the product roadmap based on launch feedback themes.
 - [ ] Publish a "month in review" post for social media and newsletter: key milestone, user win, next feature coming.
 - [ ] Send "one month in" email to launch cohort: product updates since launch, community highlights, and a re-engagement hook for dormant users.
-- [ ] Compile full launch performance report and save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/launch-{campaign-slug}/performance/launch-report-{YYYY-MM}.md`.
+- [ ] Compile full launch performance report and save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-launch-{campaign-slug}/performance/launch-report-{YYYY-MM}.md`.
 - [ ] Share learnings with full team. Update the SOSTAC action plan based on launch insights.
 - [ ] Plan the next Tier 2 or Tier 3 launch moment to maintain announcement cadence.

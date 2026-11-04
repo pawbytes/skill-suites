@@ -13,7 +13,7 @@ Act as a technical video producer who understands both creative storytelling and
 
 **Args:** Accepts `--headless` / `-H` for non-interactive execution. For episodic mode, accepts `--episodes N` to specify episode count.
 
-**Outputs:** MP4 (1920x1080, H.264) + `video-manifest.json` saved to `.pawbytes/creative-suites/brands/{brand-name}/videos/`
+**Outputs:** MP4 (1920x1080, H.264) + `video-manifest.json` saved to `{suite-root}/brands/{brand-name}/videos/long-form/{video-slug}/` (or the campaign's `videos/long-form/{video-slug}/`)
 
 ## On Activation
 
@@ -26,9 +26,10 @@ Load available config from `{project-root}/.pawbytes/config/config.yaml` and `{p
 - `{elevenlabs_api_key}` (null) -- ElevenLabs API key for voiceover
 - `{pexels_api_key}` (null) -- Pexels API key for B-roll footage
 - `{default_brand}` (null) -- default brand name
-- `{output_directory}` (`.pawbytes/creative-suites`) -- base output path
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect` (`{skill-root}` is this skill's folder), normally `{project-root}/paw-suites/creative`. Every `{suite-root}/...` path below is relative to it. A custom folder in config `cra.output_directory` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the user's files are still partly in the old `.pawbytes/creative-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the user that `paw-cra-setup` can move them to `paw-suites/creative/`, and offer it. Keep working either way.
 
-Load shared agency memory from `{project-root}/.pawbytes/creative-suites/index.md` to understand active brands and campaigns. Load brand guidelines from `.pawbytes/creative-suites/brands/{active-brand}/guidelines.md` if an active brand is set.
+Load shared agency memory from `{suite-root}/_memory/index.md` to understand active brands and campaigns. Load brand guidelines from `{suite-root}/brands/{active-brand}/guidelines.md` if an active brand is set.
 
 ### Tool Verification
 
@@ -90,7 +91,7 @@ Break the script into a scene plan (typically 10-30+ scenes for long-form). For 
 - Estimated duration in seconds
 - B-roll needs (if supplementary footage is required)
 
-Write the scene plan to `{output_directory}/brands/{brand}/videos/{video-slug}/scene-plan.json` for compaction survival.
+Write the scene plan to `{suite-root}/brands/{brand}/videos/long-form/{video-slug}/scene-plan.json` for compaction survival.
 
 ### Stage 4: Brand Context
 
@@ -164,7 +165,7 @@ Add branded sequences:
 - **Intro:** Brand logo animation, title card, or standard intro template (3-5 seconds)
 - **Outro:** Call-to-action, subscribe prompt, credits, or standard outro template (5-10 seconds)
 
-If the brand has existing intro/outro assets at `.pawbytes/creative-suites/brands/{brand}/assets/intro.*` or `outro.*`, use those. Otherwise, generate simple branded sequences using ffmpeg or Remotion.
+If the brand has existing intro/outro assets at `{suite-root}/brands/{brand}/brand-assets/intro.*` or `outro.*`, use those. Otherwise, generate simple branded sequences using ffmpeg or Remotion.
 
 ### Stage 11: Validation Gate
 
@@ -179,7 +180,7 @@ If validation fails, report specific issues. In interactive mode, offer to fix a
 
 ### Stage 12: Export
 
-Save final deliverables to `{output_directory}/brands/{brand}/videos/{video-slug}/`:
+Save final deliverables to `{suite-root}/brands/{brand}/videos/long-form/{video-slug}/`. Inside a campaign, use the same sub-folder under `{suite-root}/brands/{brand}/campaigns/{campaign}/videos/` instead. Episodic series go to `videos/series/{series-slug}/`:
 - `{video-slug}.mp4` -- final video file
 - `video-manifest.json` -- production metadata (see `./references/manifest-schema.md`)
 - `scene-plan.json` -- preserved scene plan
@@ -197,8 +198,9 @@ For episodic series (`--episodes N` or format=episodic):
 ### Stage 14: Status Update
 
 Log production results to shared memory:
-- Append to `.pawbytes/creative-suites/daily/YYYY-MM-DD.md` with `[VideoProducer]` tag
+- Append to `{suite-root}/_memory/daily/YYYY-MM-DD.md` with `[VideoProducer]` tag
 - Update campaign status if this video is part of a campaign
+- Update `Status:`/`Next:` and links in `{suite-root}/brands/{brand}/README.md`, then run `uv run {skill-root}/scripts/paw-paths.py index`
 - Write completion summary with file paths and validation results
 
 ---

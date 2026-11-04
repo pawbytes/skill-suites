@@ -26,22 +26,22 @@ For platforms requiring login, use agent-browser with authenticated Chrome profi
 
 ```bash
 # Instagram Explore (logged in)
-agent-browser --state "{project-root}/.pawbytes/creative-suites/.auth/session.json" open https://instagram.com/explore
+agent-browser --state "{project-root}/.pawbytes/creative/.auth/session.json" open https://instagram.com/explore
 agent-browser wait --load networkidle
 agent-browser snapshot -i
-agent-browser screenshot --full ./research/instagram-explore.png
+agent-browser screenshot --full {suite-root}/brands/{brand}/research/screenshots/instagram-explore.png
 
 # TikTok For You page (logged in)
 agent-browser --profile ~/.strategist-profile open https://tiktok.com/foryou
 for i in {1..5}; do
     agent-browser scroll down 600
     agent-browser wait 500
-    agent-browser screenshot "./research/tiktok-view-$i.png"
+    agent-browser screenshot "{suite-root}/brands/{brand}/research/screenshots/tiktok-view-$i.png"
 done
 
 # LinkedIn feed for B2B insights
 agent-browser --profile ~/.strategist-profile open https://linkedin.com/feed
-agent-browser get text body > ./research/linkedin-feed-content.txt
+agent-browser get text body > {suite-root}/brands/{brand}/research/linkedin-feed-content.txt
 ```
 
 See `./browser-tools.md` for authentication setup and full command reference.

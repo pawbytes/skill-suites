@@ -55,7 +55,7 @@ For detailed MMM process, see `marketing-mix-modeling` in frameworks-index.csv.
 
 ## Output
 
-Save as `./.pawbytes/marketing-suites/brands/{brand-slug}/analytics/attribution-analysis-{YYYY-MM-DD}.md`
+Save as `{suite-root}/brands/{brand-slug}/analytics/attribution-analysis-{YYYY-MM-DD}.md`
 
 **Structure:**
 - Model Used

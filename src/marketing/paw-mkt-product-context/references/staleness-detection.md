@@ -4,7 +4,7 @@ Product marketing context must stay current. Stale context produces stale market
 
 ## Document Freshness Header
 
-Every `paw-mkt-product-context.md` must include a freshness header:
+Every `product-context.md` must include a freshness header:
 
 ```markdown
 ---
@@ -33,9 +33,9 @@ validation_status: current | needs_review | stale
 | Persona doesn't match | Leads from target persona not converting | Flag §3 for persona validation |
 | Market shift | New regulation, technology, or trend affecting positioning | Flag entire document for strategic review |
 
-**How to flag:** When working in any specialist skill, if `paw-mkt-product-context.md` seems misaligned with reality, add a comment:
+**How to flag:** When working in any specialist skill, if `product-context.md` seems misaligned with reality, add a comment:
 
-> **Note:** The paw-mkt-product-context.md may need updating — [specific signal observed]. Consider running the paw-mkt-product-context skill to refresh.
+> **Note:** The product-context.md may need updating — [specific signal observed]. Consider running the paw-mkt-product-context skill to refresh.
 
 ## Quarterly Review Trigger
 

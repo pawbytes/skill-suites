@@ -76,25 +76,17 @@ research_depth:
 
 # Path Configuration
 
-output_folder:
-  default: "{project-root}/.pawbytes/prodig-suites"
-  result: "{value}"
-  directories: true
-
-sidecar_folder:
-  default: "{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar"
-  result: "{value}"
-  directories: true
-
 products_folder:
-  default: "{project-root}/.pawbytes/prodig-suites/products"
+  default: "{project-root}/paw-suites/products"
   result: "{value}"
   directories: true
+  description: "Suite root: one folder per product, plus _memory/ and _standards/"
 
-artifacts_folder:
-  default: "{project-root}/.pawbytes/prodig-suites/artifacts"
+memory_folder:
+  default: "{project-root}/paw-suites/products/_memory"
   result: "{value}"
   directories: true
+  description: "Shared memory: index.md, active-product.md, daily/, curated/"
 
 # Core Settings (inherited from Pawbytes ecosystem)
 

@@ -58,7 +58,7 @@ Ensure every stakeholder (user, specialists, Aria) shares the same understanding
 
 ## Output
 
-Create a structured brief in memory: `{project-root}/.pawbytes/creative-suites/brands/{brand-name}/campaigns/{campaign}/brief.md`
+Create a structured brief: `{suite-root}/brands/{brand-name}/campaigns/{campaign}/brief.md`, where `{campaign}` is `YYYY-MM-<campaign-slug>` (`YYYY-MM-DD-<slug>` when several start in a month)
 
 ```markdown
 # {Brief Name}

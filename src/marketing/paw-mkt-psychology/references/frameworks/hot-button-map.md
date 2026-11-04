@@ -11,7 +11,7 @@ Use this as practical shorthand for buyer motivation, not as a literal neuroscie
 
 ## Diagnostic Flow
 
-1. Read `paw-mkt-product-context.md`, especially DDFF, objections, proof, and customer language.
+1. Read `product-context.md`, especially DDFF, objections, proof, and customer language.
 2. If an Audience Pain Research Workflow exists, use its synthesis before creating the hot-button map.
 3. Identify the desired action: click, sign up, book, buy, upgrade, stay, refer, or reply.
 4. Choose the dominant trigger:

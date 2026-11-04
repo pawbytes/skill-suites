@@ -51,7 +51,7 @@ For each active channel from SOSTAC tactics:
 
 ## Output
 
-Save as `./.pawbytes/marketing-suites/brands/{brand-slug}/analytics/dashboard-spec-{type}-{YYYY-MM-DD}.md`
+Save as `{suite-root}/brands/{brand-slug}/analytics/dashboard-spec-{type}-{YYYY-MM-DD}.md`
 
 **Structure:**
 - Purpose and Audience

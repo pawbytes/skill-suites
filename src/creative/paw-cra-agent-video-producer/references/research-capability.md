@@ -10,7 +10,7 @@ User asks to research video techniques, learn about a platform's video specs, ex
 
 ## Knowledge Base
 
-Check existing knowledge first: `{project-root}/.pawbytes/creative-suites/knowledge/index.md`
+Check existing knowledge first: `{suite-root}/_memory/knowledge/index.md`
 
 If the topic has already been researched, load the existing entry. Only conduct new research if the topic is not covered or if the user requests updated information.
 
@@ -30,8 +30,8 @@ Common research areas for video production:
 1. Check knowledge base for existing coverage
 2. If not found or stale, research the topic using available web search tools
 3. Synthesize findings into a concise, actionable reference
-4. Save to knowledge base at `.pawbytes/creative-suites/knowledge/`
-5. Update `knowledge/index.md` with new entry
+4. Save to knowledge base at `{suite-root}/_memory/knowledge/`
+5. Update `_memory/knowledge/index.md` with new entry
 
 ## Output
 

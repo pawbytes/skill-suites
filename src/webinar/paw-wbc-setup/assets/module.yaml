@@ -14,11 +14,11 @@ greeting: |
 
 # Configuration Variables
 # This module declares two module-level variables:
-# - output_folder: Base directory for all webinar outputs
+# - output_folder: Base directory for all webinar outputs (config section `wbc`)
 # - communication_language: Language for agent responses and generated content
 
 output_folder:
-  default: "{project-root}/.pawbytes/webinar-suites"
+  default: "{project-root}/paw-suites/webinars"
   result: "{value}"
   directories: true
 

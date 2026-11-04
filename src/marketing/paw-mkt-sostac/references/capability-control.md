@@ -2,7 +2,7 @@
 
 **Outcome:** Define how to measure success and what to do when metrics drift.
 
-**Output:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/06-control.md`
+**Output:** `{suite-root}/brands/{brand-slug}/sostac/06-control.md`
 
 **Phase Question:** "How do we monitor and improve?"
 

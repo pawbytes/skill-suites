@@ -14,7 +14,7 @@ User requests resizing, reformatting, or adapting assets for different platforms
 |-------|--------|----------|
 | Source asset | User provided or existing | Yes |
 | Target platform(s) | User specification | Yes |
-| Brand guidelines | `.pawbytes/creative-suites/brands/{brand}/guidelines.md` | If exists |
+| Brand guidelines | `{suite-root}/brands/{brand}/guidelines.md` | If exists |
 
 ## Process
 
@@ -89,7 +89,7 @@ When user needs one asset across multiple platforms:
 
 ## Output
 
-**Location:** `.pawbytes/creative-suites/brands/{brand}/assets/{campaign}/resized/`
+**Location:** `{suite-root}/brands/{brand}/campaigns/{campaign}/designs/resized/` (outside a campaign: `{suite-root}/brands/{brand}/designs/resized/`)
 **Naming:** `{original-name}_{platform}_{dimensions}.{ext}`
 
 ## Common Platform Targets

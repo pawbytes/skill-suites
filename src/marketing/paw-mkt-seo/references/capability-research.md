@@ -29,7 +29,7 @@ agent-browser get text body
 # Look for: brand's position, featured snippets owned, PAA questions, competitors visible
 
 # Check AI Overview presence
-agent-browser screenshot ./.pawbytes/marketing-suites/brands/{brand-slug}/analytics/seo/serp-{keyword}.png
+agent-browser screenshot {suite-root}/brands/{brand-slug}/channels/seo/research/serp-{keyword}.png
 ```
 
 ### 2. Competitor Organic Intelligence (SimilarWeb free)

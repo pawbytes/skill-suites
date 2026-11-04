@@ -11,7 +11,7 @@
 ```bash
 # Examine a competitor's cancellation experience (requires having an account or trial)
 agent-browser --session retention-research open "https://{competitor}.com/settings/cancel" && agent-browser wait --load networkidle && agent-browser wait 2000
-agent-browser screenshot ./.pawbytes/marketing-suites/brands/{brand-slug}/analytics/retention/competitor-cancel-flow-{competitor}.png
+agent-browser screenshot {suite-root}/brands/{brand-slug}/operations/retention/research/competitor-cancel-flow-{competitor}.png
 agent-browser get text body
 # Look for: exit survey questions, offer types, pause options, friction tactics, UX tone
 ```

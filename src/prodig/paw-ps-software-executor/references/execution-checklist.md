@@ -145,6 +145,6 @@ Create a checklist document:
 - [ ] Technical Lead: ________________ Date: ________
 ```
 
-**Location:** `{project-root}/.pawbytes/prodig-suites/memory/paw-ps-sidecar/artifacts/{product-slug}/execution-checklist.md`
+**Location:** `{suite-root}/{product-slug}/build/execution-checklist.md`
 
 **Naming:** `execution-checklist.md`

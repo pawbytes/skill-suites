@@ -57,7 +57,7 @@ After producing all episodes, verify cross-episode consistency:
 
 ## Output
 
-**Location:** `.pawbytes/creative-suites/brands/{brand}/videos/{campaign}/series/{series-name}/`
+**Location:** `{suite-root}/brands/{brand}/campaigns/{campaign}/videos/series/{series-name}/` (outside a campaign: `{suite-root}/brands/{brand}/videos/series/{series-name}/`)
 **Naming:** `ep{NN}_{title-slug}.mp4`
 **Manifest:** Series-level `video-manifest.json` listing all episodes with metadata
 

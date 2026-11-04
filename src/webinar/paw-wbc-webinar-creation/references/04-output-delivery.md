@@ -58,7 +58,7 @@ Confirm where everything is saved:
 
 > "All files are saved to:
 > ```
-> .pawbytes/webinar-suites/webinars/{webinar-slug}/
+> paw-suites/webinars/{webinar-slug}/
 > ```
 > 
 > You can access them anytime from your project."
@@ -103,7 +103,7 @@ Guide the user on what to do next:
 
 Log the completion:
 
-Write to `daily/{YYYY-MM-DD}.md`:
+Write to `_memory/daily/{YYYY-MM-DD}.md`:
 
 ```markdown
 ## {YYYY-MM-DD}
@@ -115,7 +115,11 @@ Write to `daily/{YYYY-MM-DD}.md`:
 - Hook: "[Selected hook]"
 ```
 
-### 7. Final Confirmation
+### 7. Dashboard
+
+Set `{webinar-slug}/README.md` to `Status: Ready to deliver`, `Next: Rehearse`, with links to all six files, then run `uv run {skill-root}/scripts/paw-paths.py index`.
+
+### 8. Final Confirmation
 
 Close the workflow positively:
 
@@ -131,7 +135,7 @@ Close the workflow positively:
 | Slide Outline | `slide-deck-outline.md` | Detailed slide-by-slide structure |
 | Script | `script.md` | Full script + talking points |
 | Recommendations | `recommendations.md` | Q&A insights and backup content |
-| Daily Log | `daily/{date}.md` | Activity record |
+| Daily Log | `_memory/daily/{date}.md` | Activity record |
 
 ## Quality Checklist
 

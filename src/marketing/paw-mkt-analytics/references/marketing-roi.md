@@ -54,7 +54,7 @@ MER = Total Revenue / Total Marketing Spend
 
 ## Output
 
-Save as `./.pawbytes/marketing-suites/brands/{brand-slug}/analytics/roi-report-{YYYY-MM}.md`
+Save as `{suite-root}/brands/{brand-slug}/analytics/roi-report-{YYYY-MM}.md`
 
 **Structure:**
 - Summary

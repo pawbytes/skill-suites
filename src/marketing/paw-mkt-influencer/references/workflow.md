@@ -545,7 +545,7 @@ File structure:
 
 ```
 # Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/influencer/content/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/influencer/
   influencer-strategy-{campaign}-{YYYY-MM-DD}.md
   influencer-longlist-{campaign}-{YYYY-MM-DD}.md
   influencer-shortlist-{campaign}-{YYYY-MM-DD}.md
@@ -555,7 +555,7 @@ File structure:
   creator-scorecards-{campaign}-{YYYY-MM-DD}.md
 
 # Standalone mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/influencer/content/
+{suite-root}/brands/{brand-slug}/channels/influencer/
   (same structure as above)
 ```
 
@@ -564,14 +564,11 @@ File structure:
 ## Path Resolution: Campaign vs Standalone
 
 **Campaign mode** -- working within a named campaign:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/influencer/content/`
-  -> Read campaign strategy at `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+  -> Save to `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/influencer/`
+  -> Read campaign strategy at `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** -- evergreen or independent work:
-  -> Save to `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/influencer/content/`
-
-**Legacy fallback** -- old directory structure detected:
-  -> Suggest migration to new structure
+  -> Save to `{suite-root}/brands/{brand-slug}/channels/influencer/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 

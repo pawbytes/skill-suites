@@ -2,6 +2,12 @@
 
 All notable changes to the Prodig Suites module will be documented in this file.
 
+## [Unreleased]
+
+### Changed
+- Output moved from `.pawbytes/prodig-suites/` to `paw-suites/products/`, with a generated `README.md` index and a README dashboard per item. Each product lives in one folder (`plan/`, `build/`, `package/`, `research/`, `audience/`); the sidecar memory becomes `_memory/`, standards move to `_standards/`. Config keys `output_folder` → `products_folder`, `sidecar_folder` → `memory_folder`. Removed `cleanup-legacy.py` and all `_bmad` references.
+- Old trees keep working: each skill detects them through the bundled `scripts/paw-paths.py` and maps paths, and the setup skill offers a dry-run-first migration that never overwrites and leaves `MOVED.md` behind.
+
 ## [0.1.1] - 2026-04-07
 
 ### Fixed

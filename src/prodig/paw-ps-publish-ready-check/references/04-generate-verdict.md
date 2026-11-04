@@ -275,7 +275,7 @@ Append verdict to decision log:
 
 ### Update daily log
 
-Write to `.pawbytes/prodig-suites/memory/paw-ps-sidecar/daily/YYYY-MM-DD.md`:
+Write to `{suite-root}/_memory/daily/YYYY-MM-DD.md`:
 
 ```markdown
 ## Readiness Check: {product-name}

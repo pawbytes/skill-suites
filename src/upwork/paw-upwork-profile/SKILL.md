@@ -11,13 +11,20 @@ You write the Upwork profile a freelancer drops straight into their account and 
 
 **Module:** `paw-upwork` — part of the PawBytes Upwork Suite. The coach (`paw-upwork-agent-coach`) owns positioning; you turn the positioning brief into the profile.
 
+## Resolution rules
+
+- `{skill-root}` is this skill's folder; `{project-root}` is the working directory.
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/upwork`. All paths below are relative to it. A custom folder in config `upwork.freelancers_folder` or `upwork.reports_folder` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the freelancer's files are still partly in the old `.pawbytes/upwork-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the freelancer that `paw-upwork-setup` can move them to `paw-suites/upwork/`, and offer it. Keep working either way.
+- `{freelancer-workspace}` → `{suite-root}/freelancers/{slug}/`. Its `README.md` is the freelancer's dashboard; agent memory (`index.md`, `daily/`) lives in its `_memory/`, so `_memory/index.md` below means `{freelancer-workspace}/_memory/index.md`.
+
 ## On Activation
 
 Load config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` (root level and the `upwork` section) if present. Honor `communication_language` and address the freelancer by `user_name` when known. If config is missing, proceed with the default workspace path below and sensible defaults.
 
-Then find the freelancer and read the workspace before writing anything. Every workspace path below resolves under the freelancer's directory, `{project-root}/.pawbytes/upwork-suites/freelancers/{slug}/` — `positioning-brief.md`, `freelancer-context.md`, `kit.md`, `research/`, `profile/`, `index.md`, and `daily/` all live there.
+Then find the freelancer and read the workspace before writing anything. Every workspace path below resolves under the freelancer's directory, `{freelancer-workspace}/` — `positioning-brief.md`, `freelancer-context.md`, `kit.md`, `research/`, `profile/`, `_memory/index.md`, and `_memory/daily/` all live there.
 
-1. **Find the freelancer.** Scan `{project-root}/.pawbytes/upwork-suites/freelancers/*/index.md` and resolve `{slug}`. One → use it. Multiple → if `default_freelancer` is set, default to it but let them switch; otherwise ask which freelancer this session is about. None → there's no positioning to build from; point them to `paw-upwork-agent-coach` to onboard and position first, then stop.
+1. **Find the freelancer.** Scan `{suite-root}/freelancers/*/` and resolve `{slug}`. One → use it. Multiple → if `default_freelancer` is set, default to it but let them switch; otherwise ask which freelancer this session is about. None → there's no positioning to build from; point them to `paw-upwork-agent-coach` to onboard and position first, then stop.
 
 2. **Read the brief — it's the contract.** Read the freelancer's `positioning-brief.md`. It carries the niche, the target client, the angle, the working headline, the voice notes, and the rate range. If it doesn't exist, don't guess a lane: tell the freelancer the profile is only as sharp as the positioning behind it, and route them to the coach for discovery (optionally research first). Don't write a profile against an empty brief.
 
@@ -58,8 +65,8 @@ A paste-ready profile aligned to the brief. Confirm scope with the freelancer �
 Write the agreed profile to the freelancer's `profile/` folder: `profile/overview.md` for the title + overview + skills + variations, and `profile/portfolio.md` for portfolio entries if produced (one per portfolio item, each with its four fields). Keep prior drafts rather than overwriting blindly when the freelancer is iterating across sessions.
 
 Then close the loop so the rest of the suite stays in sync:
-- Update the freelancer's `index.md` status row (Profile → done, with the date).
-- Append a one-line entry tagged `[profile]` to `daily/{YYYY-MM-DD}.md` noting what was produced.
+- Update the freelancer's `_memory/index.md` status row (Profile → done, with the date), and in `README.md` set `Status`/`Next` and link `profile/overview.md`; then run `uv run {skill-root}/scripts/paw-paths.py index`.
+- Append a one-line entry tagged `[profile]` to `_memory/daily/{YYYY-MM-DD}.md` noting what was produced.
 - If you discovered a strong reusable line or blurb worth banking for proposals, suggest adding it to `kit.md`.
 
 Point the freelancer at the next step in the arc — with a profile live, the natural next move is `paw-upwork-proposal` to start winning jobs, or back to the coach to track results.

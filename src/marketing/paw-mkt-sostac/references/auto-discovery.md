@@ -6,7 +6,7 @@
 
 This phase reduces the burden on the user — they should not need to explain what is already discoverable through open web research. By completing auto-discovery first, the SOSTAC interview can focus on internal knowledge, strategic intent, and context that only the client can provide.
 
-**Output saved to:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/00-auto-discovery.md`
+**Output saved to:** `{suite-root}/brands/{brand-slug}/sostac/00-auto-discovery.md`
 
 **Session convention:** All browser automation in this phase uses a named session:
 ```bash
@@ -23,7 +23,7 @@ agent-browser --session sostac-discovery-{brand-slug} open {url}
 
 ```bash
 agent-browser --session sostac-discovery-{brand-slug} open https://{brand-url} && agent-browser --session sostac-discovery-{brand-slug} wait --load networkidle
-agent-browser --session sostac-discovery-{brand-slug} screenshot ./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/screenshots/homepage.png
+agent-browser --session sostac-discovery-{brand-slug} screenshot {suite-root}/brands/{brand-slug}/sostac/screenshots/homepage.png
 agent-browser --session sostac-discovery-{brand-slug} get text body
 ```
 
@@ -177,7 +177,7 @@ agent-browser --session sostac-discovery-{brand-slug} get text body
 ```bash
 agent-browser --session sostac-discovery-{brand-slug} open "https://trends.google.com/trends/explore?q={brand-name},{main-category-keyword}" && agent-browser --session sostac-discovery-{brand-slug} wait --load networkidle
 agent-browser --session sostac-discovery-{brand-slug} wait 3000
-agent-browser --session sostac-discovery-{brand-slug} screenshot ./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/screenshots/google-trends.png
+agent-browser --session sostac-discovery-{brand-slug} screenshot {suite-root}/brands/{brand-slug}/sostac/screenshots/google-trends.png
 agent-browser --session sostac-discovery-{brand-slug} get text body
 ```
 
@@ -202,7 +202,7 @@ Repeat the following subsections for each of the top 3–5 competitors identifie
 ```bash
 agent-browser --session sostac-discovery-{brand-slug} open https://{competitor-domain} && agent-browser --session sostac-discovery-{brand-slug} wait --load networkidle
 agent-browser --session sostac-discovery-{brand-slug} get text body
-agent-browser --session sostac-discovery-{brand-slug} screenshot ./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/screenshots/competitor-{n}-homepage.png
+agent-browser --session sostac-discovery-{brand-slug} screenshot {suite-root}/brands/{brand-slug}/sostac/screenshots/competitor-{n}-homepage.png
 ```
 
 **Extract:**
@@ -449,7 +449,7 @@ Job postings are one of the best public signals of strategic direction. Interpre
 
 After all research completes, synthesise all findings into the output file at:
 
-`./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/00-auto-discovery.md`
+`{suite-root}/brands/{brand-slug}/sostac/00-auto-discovery.md`
 
 Use the following template:
 

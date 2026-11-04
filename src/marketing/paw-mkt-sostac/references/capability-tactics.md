@@ -2,7 +2,7 @@
 
 **Outcome:** Translate strategy into prioritized, budgeted channel and content plan.
 
-**Output:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/04-tactics.md`
+**Output:** `{suite-root}/brands/{brand-slug}/sostac/04-tactics.md`
 
 **Phase Question:** "Details of strategy"
 

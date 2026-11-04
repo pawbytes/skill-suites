@@ -85,4 +85,4 @@ If the seller says "skip check-ins", "run it through", or "autonomous for this r
 - **Don't summarize the full artifact** — point to the file and highlight 2–4 bullets. The seller reads the real output.
 - **Don't rewrite pricing or research** in chat — the JSON and HTML are source of truth.
 - **Don't invoke the next workflow** until approval or explicit skip.
-- **Log gate decisions** — append `[orchestrator] check-in: {gate} approved|revised|skipped` to `daily/YYYY-MM-DD.md`.
+- **Log gate decisions** — append `[orchestrator] check-in: {gate} approved|revised|skipped` to `_memory/daily/YYYY-MM-DD.md`.

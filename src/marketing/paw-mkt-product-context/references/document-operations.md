@@ -6,7 +6,7 @@ Writing and updating the product marketing context document.
 
 **Template:** See `./references/document-template.md` for the full 12-section structure.
 
-**Save location:** `./.pawbytes/marketing-suites/brands/{brand-slug}/paw-mkt-product-context.md`
+**Save location:** `{suite-root}/brands/{brand-slug}/product-context.md`
 
 ## After Writing
 
@@ -15,7 +15,7 @@ Writing and updating the product marketing context document.
 Present sections completed, anything marked incomplete, what would strengthen it:
 
 ```
-Saved to: ./.pawbytes/marketing-suites/brands/{brand-slug}/paw-mkt-product-context.md
+Saved to: {suite-root}/brands/{brand-slug}/product-context.md
 
 Sections completed: 11 of 12
 Incomplete: Section 9 (Customer Language) — only 2 quotes
@@ -24,7 +24,7 @@ Suggestion: The more verbatim phrases you add over time, the better every campai
 
 ### 2. Sync with Brand Context
 
-If anything in `paw-mkt-product-context.md` expands or contradicts `brand-context.md`, update `brand-context.md` to stay consistent. They should agree, not diverge.
+If anything in `product-context.md` expands or contradicts `brand-context.md`, update `brand-context.md` to stay consistent. They should agree, not diverge.
 
 ### 3. Explain Usage
 
@@ -51,7 +51,7 @@ just works. Fresh context = better output from every specialist.
 
 When the user asks to refresh or update:
 
-1. **Read the current** `paw-mkt-product-context.md`
+1. **Read the current** `product-context.md`
 2. **Ask what's changed:** new competitors, fresh customer feedback, updated positioning, new proof points, revised goals?
 3. **Edit only relevant sections** — don't regenerate the whole document
 4. **Update the "Last updated" date**

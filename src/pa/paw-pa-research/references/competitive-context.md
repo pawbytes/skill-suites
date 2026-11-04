@@ -10,7 +10,7 @@ Clarify **what the client might compare this proposal against** and how the sell
 
 - Brief `constraints[]` and `clientContext` (incumbent vendor, prior bad experience)
 - Web search: `{client industry} {serviceType} providers`, RFP competitor lists if public
-- Seller's positioning from `{memory-root}/brand/identity.md` voice/positioning if present
+- Seller's positioning from `{suite-root}/brand/identity.md` voice/positioning if present
 - Local case-study outcomes as differentiation proof (cross-ref match IDs)
 
 ## Output shape

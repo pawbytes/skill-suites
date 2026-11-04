@@ -124,5 +124,7 @@ Report success:
 To publish: gh release edit v{new_version} --draft=false
 ```
 
+Write the release report to `{suite-root}/releases/YYYY-MM-DD-v{new_version}.md` (version, tag, branch, draft URL, the changelog entry), then run `uv run {skill-root}/scripts/paw-paths.py index`.
+
 Interactive: Offer to publish the release immediately or keep as draft.
 Headless: Leave as draft (safer default).

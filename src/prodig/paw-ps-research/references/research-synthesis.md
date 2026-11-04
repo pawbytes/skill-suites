@@ -12,7 +12,7 @@ Gather existing research outputs:
 - Competitor analysis (if completed)
 - Demand signal analysis (if completed)
 - Gap identification (if completed)
-- Product context (from sidecar memory)
+- Product context (from shared memory)
 - User's key questions and decision points
 
 ## Synthesis Framework
@@ -47,9 +47,9 @@ ASSUMED → Explicitly call out, do not build strategy on
 
 Read all existing research:
 1. `curated/market-intelligence.md` — existing synthesis
-2. `products/{slug}/research/competitor-matrix.md`
-3. `products/{slug}/research/demand-signals.md`
-4. `products/{slug}/research/opportunity-gaps.md`
+2. `{suite-root}/{slug}/research/competitor-matrix.md`
+3. `{suite-root}/{slug}/research/demand-signals.md`
+4. `{suite-root}/{slug}/research/opportunity-gaps.md`
 
 ### Step 2: Extract Key Findings
 
@@ -277,9 +277,9 @@ Before committing, validate:
 ## Appendix: Raw Research
 
 Detailed research available at:
-- Competitor Matrix: `products/{slug}/research/competitor-matrix.md`
-- Demand Signals: `products/{slug}/research/demand-signals.md`
-- Opportunity Gaps: `products/{slug}/research/opportunity-gaps.md`
+- Competitor Matrix: `{suite-root}/{slug}/research/competitor-matrix.md`
+- Demand Signals: `{suite-root}/{slug}/research/demand-signals.md`
+- Opportunity Gaps: `{suite-root}/{slug}/research/opportunity-gaps.md`
 
 ---
 
@@ -328,7 +328,7 @@ When new research is gathered:
 
 When synthesis is complete:
 1. Save to `curated/market-intelligence.md` (primary)
-2. Also save to `products/{slug}/research/market-intelligence-brief.md`
+2. Also save to `{suite-root}/{slug}/research/market-intelligence-brief.md`
 3. Log activity in daily file
 4. Notify orchestrator or recommend next step:
    - If Go: Route to strategist for product definition

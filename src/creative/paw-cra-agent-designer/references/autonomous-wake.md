@@ -9,8 +9,8 @@ Headless mode activated. Executing design task without interaction.
    - Extract: user_name, communication_language, fal_key, output_directory
 
 2. **Load Shared Memory**
-   - Read `.pawbytes/creative-suites/index.md` for active brands/campaigns
-   - Load active brand guidelines from `.pawbytes/creative-suites/brands/{brand}/guidelines.md`
+   - Read `{suite-root}/_memory/index.md` for active brands/campaigns
+   - Load active brand guidelines from `{suite-root}/brands/{brand}/guidelines.md`
 
 3. **Verify Tools**
    - Check fal_key availability

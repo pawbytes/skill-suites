@@ -2,7 +2,7 @@
 
 **Outcome:** Gather all publicly available intelligence about a brand and its competitors BEFORE the SOSTAC interview begins.
 
-**Output:** `./.pawbytes/marketing-suites/brands/{brand-slug}/sostac/00-auto-discovery.md`
+**Output:** `{suite-root}/brands/{brand-slug}/sostac/00-auto-discovery.md`
 
 ## Purpose
 

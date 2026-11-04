@@ -5,7 +5,7 @@ When invoked with `--headless` or `-H`, complete the task without interaction.
 ## Wake Behavior
 
 1. Load config and resolve values
-2. Load `{project-root}/.pawbytes/creative-suites/index.md`
+2. Load `{suite-root}/_memory/index.md`
 3. Determine task from args or default behavior
 
 ## Named Tasks

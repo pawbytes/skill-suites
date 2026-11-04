@@ -4,9 +4,9 @@ Run validation without re-ingesting:
 
 ```bash
 python3 scripts/ingest-library.py \
-  --memory-root "{project-root}/.pawbytes/proposal-automation-suites" \
+  --suite-root "{suite-root}" \
   --validate \
-  --report-path "{project-root}/.pawbytes/proposal-automation-suites/library/validation-report.json"
+  --report-path "{suite-root}/library/validation-report.json"
 ```
 
 ## Issue Types

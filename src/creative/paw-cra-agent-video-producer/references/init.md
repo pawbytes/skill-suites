@@ -16,26 +16,25 @@ Checking required tools:
 ## Memory Location
 
 The Video Producer shares memory with the Aria Creative Suite at:
-`.pawbytes/creative-suites/`
+`{suite-root}/`
 
 ## Shared Memory Structure
 
 The agency memory contains:
 
 ```
-.pawbytes/creative-suites/
-├── index.md                    # Active brands, campaigns
-├── brands/
-│   └── {brand-name}/
-│       ├── guidelines.md       # Colors, fonts, voice, logo
-│       ├── videos/
-│       └── campaigns/
-│           └── {campaign}/
-│               ├── brief.md
-│               ├── scripts/
-│               └── videos/
-└── daily/
-    └── {YYYY-MM-DD}.md         # Activity log
+{suite-root}/
+├── _memory/index.md            # Active brands, campaigns
+├── _memory/daily/              # Activity log
+└── brands/
+    └── {brand-name}/
+        ├── guidelines.md       # Colors, fonts, voice, logo
+        ├── videos/             # short-form/, long-form/, clips/, motion-graphics/, series/, audio/
+        └── campaigns/
+            └── {YYYY-MM-campaign}/
+                ├── brief.md
+                ├── scripts/
+                └── videos/
 ```
 
 ## Initial Questions

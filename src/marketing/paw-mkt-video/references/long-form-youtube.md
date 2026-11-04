@@ -94,4 +94,4 @@ Deliver:
 - **Video script** with timecodes and thumbnail concept
 - **SEO optimization** for existing videos (title, description, tags, chapters)
 - **Thumbnail concept** with visual direction
-- **Save to**: `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/video/content/` or campaign path
+- **Save to**: `{suite-root}/brands/{brand-slug}/channels/video/` or campaign path

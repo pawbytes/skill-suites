@@ -42,7 +42,7 @@ The user wants a psychological audit of an existing asset (landing page, email, 
 
 When the user requests psychology-informed marketing work:
 
-1. **Read brand context** when available, then continue from the best available context. The `paw-mkt-product-context.md` is especially valuable because it contains the customer's own language, objections, and mental models.
+1. **Read brand context** when available, then continue from the best available context. The `product-context.md` is especially valuable because it contains the customer's own language, objections, and mental models.
 
 2. **Clarify the mode**: Problem-specific (a particular piece of copy, page, or funnel step) or audit (review an existing asset against psychological principles)?
 

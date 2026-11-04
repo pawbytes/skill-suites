@@ -90,7 +90,7 @@
 | Small (2-3 people) | 4-8 | 10-20 | Blog, social, email, 1 lead magnet/quarter |
 | Mid (4-6 people) | 8-16 | 25-50 | Blog, social, email, video, gated content |
 | Large (7-12 people) | 16-30 | 50-100 | All formats, multi-channel, localization |
-| Enterprise (12+) | 30-60+ | 100-200+ | Full media operation, multiple .pawbytes/marketing-suites/brands/markets |
+| Enterprise (12+) | 30-60+ | 100-200+ | Full media operation, multiple brands/markets |
 
 ### Content Production Velocity
 

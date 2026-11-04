@@ -6,20 +6,14 @@
 
 **Campaign mode** -- working within a named campaign:
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/pr/content/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/pr/
 ```
-Read campaign strategy at `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+Read campaign strategy at `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** -- evergreen or independent work:
 ```
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/pr/content/
+{suite-root}/brands/{brand-slug}/channels/pr/
 ```
-
-**Legacy fallback** -- old directory structure detected:
-```
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/pr/
-```
-Suggest migration to new structure.
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 
@@ -27,7 +21,7 @@ If unsure which mode, ask: "Is this part of a specific campaign, or standalone w
 
 ```
 ## Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/pr/content/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/pr/
   pr-strategy-{YYYY-MM-DD}.md
   pitch-templates-{YYYY-MM-DD}.md          # customized from ./references/frameworks/
   press-releases/
@@ -38,7 +32,7 @@ If unsure which mode, ask: "Is this part of a specific campaign, or standalone w
     pr-campaign-{name}-{YYYY-MM-DD}.md
 
 ## Standalone mode (default for evergreen work):
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/pr/content/
+{suite-root}/brands/{brand-slug}/channels/pr/
   pr-strategy-{YYYY-MM-DD}.md
   pitch-templates-{YYYY-MM-DD}.md          # customized from ./references/frameworks/
   crisis-plan-{YYYY-MM-DD}.md

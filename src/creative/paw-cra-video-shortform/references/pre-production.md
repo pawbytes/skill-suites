@@ -56,7 +56,7 @@ Present the storyboard for user approval. In headless mode, auto-approve and pro
 
 ## Step 4: Brand Context Load
 
-Load brand guidelines from `{project-root}/.pawbytes/creative-suites/brands/{brand}/guidelines.md`. Extract and apply to all subsequent generation:
+Load brand guidelines from `{suite-root}/brands/{brand}/guidelines.md`. Extract and apply to all subsequent generation:
 
 - **Colors** -- use brand palette in text overlays and any generated graphics
 - **Typography** -- font family and weights for subtitle styling

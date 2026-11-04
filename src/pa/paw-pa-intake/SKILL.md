@@ -13,18 +13,19 @@ This workflow turns messy multimodal input — pasted text, audio files, video f
 
 **Module:** `paw-pa` — PawBytes Proposal Automation Suite. This is the **first** stage of the pipeline (intake → research → pricing → generation).
 
-**Args:** `--headless` / `-H` for non-interactive (text brief + run folder + fields supplied); optional `--run {slug-date}` to target an existing proposal folder; optional `--mode autonomous|guided`.
+**Args:** `--headless` / `-H` for non-interactive (text brief + run folder + fields supplied); optional `--run {run}` to target an existing proposal folder; optional `--mode autonomous|guided`.
 
 ## Resolution rules
 
 - Bare paths and `{skill-root}` (e.g. `references/brief-schema.md`) resolve from this skill's installed directory.
 - `{project-root}` → the project working directory.
-- `{memory-root}` → `{project-root}/.pawbytes/proposal-automation-suites`.
-- `{run-folder}` → `{memory-root}/proposals/{slug}-{date}/` (or `workspace_folder` from config when set).
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/proposals`. All paths below are relative to it. A custom folder in config `pa.workspace_folder` (proposal runs) or `pa.library_inbox_folder` wins (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the seller's files are still partly in the old `.pawbytes/proposal-automation-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the seller that `paw-pa-setup` can move them to `paw-suites/proposals/`, and offer it. Keep working either way.
+- `{run-folder}` → `{suite-root}/proposals/{run}/`, one proposal run. A new `{run}` is `YYYY-MM-{client-slug}` (`YYYY-MM-DD-{client-slug}` when that client already has a run this month); existing run folders keep their names.
 
 ## On Activation
 
-Load config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` (root level and the `paw-pa` section). If config is missing, mention that `paw-pa-setup` can configure the module, then proceed with sensible defaults. Honor `communication_language`, `default_language`, and address the seller by `user_name` when known.
+Load config from `{project-root}/.pawbytes/config/config.yaml` and `{project-root}/.pawbytes/config/config.user.yaml` (root level and the `pa` section). If config is missing, mention that `paw-pa-setup` can configure the module, then proceed with sensible defaults. Honor `communication_language`, `default_language`, and address the seller by `user_name` when known.
 
 Read from config (with runtime fallbacks):
 
@@ -33,13 +34,13 @@ Read from config (with runtime fallbacks):
 | `assemblyai_api_key` | Audio/video transcription; prompt at runtime if missing |
 | `default_proposal_type` | Fallback when type cannot be inferred (`pitch`) |
 | `default_language` | Output language for brief narrative sections |
-| `workspace_folder` | Override for proposal run artifacts path |
+| `workspace_folder` | Override for the `proposals/` folder |
 | `default_mode` | `guided` vs `autonomous` when not specified per-run |
 
 Then orient in the shared memory pool:
 
-1. **Read `index.md`** — `{memory-root}/index.md`. If missing, recommend `paw-pa-setup` but do not hard-block; scaffold the run folder if needed.
-2. **Resolve the run folder** — Orchestrator normally creates `proposals/{slug}-{date}/` at run start. If invoked directly: use `--run` arg, an explicit path from the user, or create `{slug}-{YYYY-MM-DD}` from client name + today's date (slugify: lowercase, hyphens, alphanumeric). Ensure the folder exists before writing artifacts.
+1. **Read `index.md`** — `{suite-root}/_memory/index.md`. If missing, recommend `paw-pa-setup` but do not hard-block; scaffold the run folder if needed.
+2. **Resolve the run folder** — Orchestrator normally creates `proposals/{run}/` at run start. If invoked directly: use `--run` arg, an explicit path from the user, or create `YYYY-MM-{client-slug}` from today's date + client name (slugify: lowercase, hyphens, alphanumeric) with a `README.md` (`# {Client}`, `Status: intake`, `Next: research`) and run `uv run {skill-root}/scripts/paw-paths.py index`. Ensure the folder exists before writing artifacts.
 3. **Detect input type** — text (pasted/typed/file), audio (local path), video (local path or URL). Route per the table below.
 
 ### Headless / skip-to-structure
@@ -125,7 +126,7 @@ If transcription ran, `transcript.md` must already exist as sidecar.
 
 ### 6. Close the loop
 
-- Append a `[intake]` line to `{memory-root}/daily/YYYY-MM-DD.md` (create `daily/` if needed): timestamp, run slug, input type, `proposalType`, completeness score, gap count.
+- Append a `[intake]` line to `{suite-root}/_memory/daily/YYYY-MM-DD.md` (create `daily/` if needed): timestamp, run slug, input type, `proposalType`, completeness score, gap count.
 - Tell the seller the next step: `paw-pa-research` (or return to `paw-pa-agent-orchestrator` in guided mode).
 - Summarize: client name, proposal type, completeness score, top gaps or assumptions.
 
@@ -136,7 +137,7 @@ If transcription ran, `transcript.md` must already exist as sidecar.
 | Structured brief | `{run-folder}/brief.md` |
 | Transcription sidecar | `{run-folder}/transcript.md` |
 | Raw transcript JSON (optional) | `{run-folder}/transcript.json` |
-| Daily log | `{memory-root}/daily/YYYY-MM-DD.md` |
+| Daily log | `{suite-root}/_memory/daily/YYYY-MM-DD.md` |
 
 Downstream skills read `brief.md` only; `transcript.md` is for audit and re-intake.
 

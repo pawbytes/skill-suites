@@ -24,10 +24,16 @@ A meticulous librarian for the seller's proposal knowledge base. Incremental, tr
 - **Boilerplate routing.** About-us, bios, and T&Cs go to `brand/boilerplate/` — T&Cs are never AI-drafted elsewhere.
 - **Validation on demand.** `--validate` flags orphans, stale manifest entries, and unindexed files.
 
+## Resolution rules
+
+- `{skill-root}` is this skill's folder; `{project-root}` is the working directory.
+- `{suite-root}` is `root` from `uv run {skill-root}/scripts/paw-paths.py detect`, normally `{project-root}/paw-suites/proposals`. All paths below are relative to it. A custom folder in config `pa.library_inbox_folder` wins for the inbox (`detect` lists it under `overrides`; an old default is not one).
+- When `detect` reports `mode: legacy` or `both`, the seller's files are still partly in the old `.pawbytes/proposal-automation-suites/` tree. Pass every path through `paw-paths.py locate <path>` (add `--write` for a new file) and use the path it returns. Once per session, tell the seller that `paw-pa-setup` can move them to `paw-suites/proposals/`, and offer it. Keep working either way.
+
 ## On Activation
 
-1. Load config from `{project-root}/.pawbytes/config/config.yaml` and `config.user.yaml` — resolve `library_inbox_folder` and memory root (`{project-root}/.pawbytes/proposal-automation-suites/`).
-2. Read `{memory-root}/index.md` for orientation.
+1. Load config from `{project-root}/.pawbytes/config/config.yaml` and `config.user.yaml` (`pa` section) — resolve `library_inbox_folder` and `{suite-root}`.
+2. Read `{suite-root}/_memory/index.md` for orientation.
 3. If `library/inbox/` is missing, create it and print guidance on what to drop in.
 
 If the user provides `--headless`/`-H`, run ingestion without interactive prompts. Map inline args like `validate` or `force reindex` to script flags.
@@ -52,7 +58,7 @@ If the user provides `--headless`/`-H`, run ingestion without interactive prompt
 | `library/pricing-history.json` | Existing pricing history |
 | `library/scope-templates.md` | Existing scope clauses |
 | `brand/boilerplate/*.md` | Existing boilerplate (append, dedupe by source marker) |
-| `index.md` | Orientation + library stats |
+| `_memory/index.md` | Orientation + library stats |
 
 **Writes:**
 
@@ -65,8 +71,8 @@ If the user provides `--headless`/`-H`, run ingestion without interactive prompt
 | `brand/boilerplate/about-us.md` | Ingested about-us sections |
 | `brand/boilerplate/terms.md` | Ingested T&Cs (user-provided only) |
 | `brand/boilerplate/bios.md` | Ingested team bios |
-| `index.md` | Updated library stats table |
-| `daily/YYYY-MM-DD.md` | Append log entry tagged `[library]` |
+| `_memory/index.md` | Updated library stats table |
+| `_memory/daily/YYYY-MM-DD.md` | Append log entry tagged `[library]` |
 
 ### Index Schemas
 
@@ -119,7 +125,7 @@ If the user provides `--headless`/`-H`, run ingestion without interactive prompt
 
 ```bash
 python3 scripts/ingest-library.py \
-  --memory-root "{project-root}/.pawbytes/proposal-automation-suites" \
+  --suite-root "{suite-root}" \
   --inbox "{resolved library_inbox_folder}"
 ```
 
@@ -162,7 +168,7 @@ If inbox has no supported files (`.md`, `.txt`, `.json`), print guidance:
 
 After ingestion, summarize: files processed/skipped, index counts, boilerplate/scope updates, warnings, and recommend `paw-pa-agent-orchestrator` when index is ready.
 
-Append to `daily/YYYY-MM-DD.md`:
+Append to `_memory/daily/YYYY-MM-DD.md`:
 
 ```
 [HH:MM] [library] Ingested N files — case studies: X, pricing entries: Y

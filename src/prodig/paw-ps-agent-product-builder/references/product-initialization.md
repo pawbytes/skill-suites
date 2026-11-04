@@ -61,13 +61,25 @@ Create a URL-safe identifier:
 Scaffold the product workspace:
 
 ```
-.pawbytes/prodig-suites/products/{product-slug}/
+{suite-root}/{product-slug}/
+├── README.md               # Product dashboard (see below)
 ├── product-context.md      # Product definition and current state
-├── artifacts/              # Generated outputs
-│   └── .gitkeep
+├── build/                  # Executor outputs (created when execution starts)
 └── notes/                  # User's working notes
-    └── .gitkeep
 ```
+
+Write `README.md` as the product dashboard:
+
+```markdown
+# {Product Name}
+
+Status: discovery
+Next: {one next step, e.g. "Run paw-ps-discovery to shape the concept"}
+
+- [Product context](product-context.md)
+```
+
+Every skill that finishes a stage updates `Status`, `Next` and the file links, then runs `uv run {skill-root}/scripts/paw-paths.py index` to refresh `{suite-root}/README.md`.
 
 ### 4. Initialize product-context.md
 
@@ -122,12 +134,12 @@ Create the initial product context file:
 - Market Intelligence: (pending)
 - Audience Intelligence: (pending)
 - Product Decisions: (pending)
-- Artifacts: `./artifacts/`
+- Build outputs: `./build/`
 ```
 
-### 5. Update Sidecar Index
+### 5. Update Memory Index
 
-Add a new row to the Active Products table in the shared sidecar index:
+Add a new row to the Active Products table in the shared memory index:
 
 **Append to existing table** — do not replace the entire section:
 
@@ -176,8 +188,8 @@ Which would you like to continue, or start something new?
 
 When user selects a product:
 
-1. Read `.pawbytes/prodig-suites/products/{product-slug}/product-context.md`
-2. Check for related curated files in `.pawbytes/prodig-suites/memory/paw-ps-sidecar/curated/` (market-intelligence.md, etc.)
+1. Read `{suite-root}/{product-slug}/product-context.md`
+2. Check for related curated files in `{suite-root}/_memory/curated/` (market-intelligence.md, etc.)
 3. Summarize current state
 4. Offer context-appropriate next steps
 
@@ -194,10 +206,10 @@ When a product is complete or abandoned:
 
 2. Move to archive directory:
    ```
-   .pawbytes/prodig-suites/products/_archived/{product-slug}/
+   {suite-root}/_archived/{product-slug}/
    ```
 
-3. Update sidecar index to remove from active list
+3. Update memory index to remove from active list, then run `paw-paths.py index`
 
 ## Multi-Product Management
 

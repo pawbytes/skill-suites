@@ -8,15 +8,11 @@ Define standard deliverable formats, file naming, and save paths for all video m
 ## Path Resolution: Campaign vs Standalone
 
 **Campaign mode** -- working within a named campaign:
-- Save to: `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/video/content/`
-- Read campaign strategy at: `./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/strategy.md`
+- Save to: `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/video/`
+- Read campaign strategy at: `{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/strategy.md`
 
 **Standalone mode** -- evergreen or independent work:
-- Save to: `./.pawbytes/marketing-suites/brands/{brand-slug}/channels/video/content/`
-
-**Legacy fallback** -- old directory structure detected:
-- Save to: `./.pawbytes/marketing-suites/brands/{brand-slug}/content/video/`
-- Suggest migration to new structure
+- Save to: `{suite-root}/brands/{brand-slug}/channels/video/`
 
 If unsure which mode, ask: "Is this part of a specific campaign, or standalone work?"
 
@@ -26,7 +22,7 @@ If unsure which mode, ask: "Is this part of a specific campaign, or standalone w
 
 ```
 ## Campaign mode:
-./.pawbytes/marketing-suites/brands/{brand-slug}/campaigns/{type}-{campaign-slug}/channels/video/content/
+{suite-root}/brands/{brand-slug}/campaigns/{YYYY-MM}-{type}-{campaign-slug}/channels/video/
   video-calendar-{YYYY-MM}.md
   youtube-strategy-{YYYY-MM-DD}.md
   scripts/
@@ -35,7 +31,7 @@ If unsure which mode, ask: "Is this part of a specific campaign, or standalone w
     video-brief-{slug}-{YYYY-MM-DD}.md
 
 ## Standalone mode (default for evergreen work):
-./.pawbytes/marketing-suites/brands/{brand-slug}/channels/video/content/
+{suite-root}/brands/{brand-slug}/channels/video/
   video-calendar-{YYYY-MM}.md
   youtube-strategy-{YYYY-MM-DD}.md
   scripts/

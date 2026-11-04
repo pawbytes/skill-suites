@@ -32,4 +32,4 @@ When the freelancer just needs the questions to ask (in chat, on a call, or in a
 
 ## Save what works
 
-If a reply script or set of questions lands well, offer to save it to `kit.md` (via `kit-and-outcomes.md`) so the freelancer reuses it. If the job converts to a win, that's outcome signal — route the result into `outcomes.md` so the kit and future proposals learn from it. Append a `[proposal]` line to today's `daily/` log.
+If a reply script or set of questions lands well, offer to save it to `kit.md` (via `kit-and-outcomes.md`) so the freelancer reuses it. If the job converts to a win, that's outcome signal — route the result into `outcomes.md` so the kit and future proposals learn from it. Append a `[proposal]` line to today's `_memory/daily/` log.

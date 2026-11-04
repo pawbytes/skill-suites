@@ -6,7 +6,7 @@ Detailed templates and structures for each content type in a Tier 1 launch. For 
 
 **Structure** (800-1,500 words):
 1. **Headline**: Benefit-led or curiosity-driven. "Introducing {Product}: {Core Benefit in one line}." Or lead with the problem.
-2. **Opening paragraph**: The problem, told as a story or with a striking data point. Use exact language from `paw-mkt-product-context.md` -- the words real customers use.
+2. **Opening paragraph**: The problem, told as a story or with a striking data point. Use exact language from `product-context.md` -- the words real customers use.
 3. **The product**: What it does in 2-3 sentences. One clear value statement per paragraph.
 4. **Key features**: 3-5 features, each with a "so that" statement. Do not list specs -- lead with outcomes.
 5. **Social proof**: 2-3 beta user quotes. A data point if available ("Beta users reduced [X] time by 40%").
@@ -14,7 +14,7 @@ Detailed templates and structures for each content type in a Tier 1 launch. For 
 7. **Pricing and availability**: Clear, direct, no surprises.
 8. **CTA**: One primary action. Link to signup, trial, or Product Hunt.
 
-**SEO**: Optimize for the primary launch keyword identified in `sostac/03-strategy.md` or `paw-mkt-product-context.md`. Include keyword in the title, H1, first 100 words, and meta description.
+**SEO**: Optimize for the primary launch keyword identified in `sostac/03-strategy.md` or `product-context.md`. Include keyword in the title, H1, first 100 words, and meta description.
 
 ### Email Announcement Template
 
