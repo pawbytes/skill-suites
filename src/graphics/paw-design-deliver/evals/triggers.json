@@ -1,0 +1,42 @@
+[
+  {
+    "query": "export for Instagram and LinkedIn",
+    "should_trigger": true
+  },
+  {
+    "query": "resize this for all banner sizes",
+    "should_trigger": true
+  },
+  {
+    "query": "make a print-ready PDF of the A3 poster with bleed",
+    "should_trigger": true
+  },
+  {
+    "query": "check the design before posting",
+    "should_trigger": true
+  },
+  {
+    "query": "write alt text for the carousel",
+    "should_trigger": true
+  },
+  {
+    "query": "package everything so I can send it to the printer",
+    "should_trigger": true
+  },
+  {
+    "query": "render the final video for TikTok",
+    "should_trigger": false
+  },
+  {
+    "query": "publish a new release on GitHub",
+    "should_trigger": false
+  },
+  {
+    "query": "schedule the posts for next week",
+    "should_trigger": false
+  },
+  {
+    "query": "build the design",
+    "should_trigger": false
+  }
+]

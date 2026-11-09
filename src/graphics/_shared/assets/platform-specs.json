@@ -1,0 +1,1615 @@
+{
+  "updated": "2026-11-04",
+  "verify": "Platform limits change often. These were researched on 2026-11-04 (sources per entry); check the platform's own help page before relying on a value near its edge. Meta and TikTok safe zones come from third-party readings of their templates.",
+  "fields": "w/h: canvas px (digital); w_mm/h_mm trim size (print). safe_zone: px kept clear of platform UI or crops on each edge at w x h; null = no platform chrome, keep the class margin. safe_mm: print safe margin inside trim (safe_mm_bottom overrides the bottom). bleed_mm per side. exclusion: extra [x,y,w,h] fractions to keep clear (timestamps, avatars). max_kb: file-size cap or null. class picks the text floors and word budget in `rules`.",
+  "rules": {
+    "contrast": {
+      "fail_below": 3.0,
+      "warn_below": 4.5,
+      "note": "p05 of the pixels behind each text box. Social downscales, so do not rely on WCAG's large-text 3:1 exception for body text."
+    },
+    "classes": {
+      "social": {
+        "ref_width": 1080,
+        "min_px": 24,
+        "body_px": 40,
+        "headline_px": 80,
+        "max_words": 35,
+        "margin_pct": 6
+      },
+      "story": {
+        "ref_width": 1080,
+        "min_px": 28,
+        "body_px": 44,
+        "headline_px": 90,
+        "max_words": 25,
+        "margin_pct": 6
+      },
+      "cover": {
+        "ref_width": 1500,
+        "min_px": 24,
+        "body_px": 32,
+        "headline_px": 64,
+        "max_words": 15,
+        "margin_pct": 5
+      },
+      "web": {
+        "ref_width": 1200,
+        "min_px": 18,
+        "body_px": 24,
+        "headline_px": 56,
+        "max_words": 30,
+        "margin_pct": 5
+      },
+      "thumbnail": {
+        "ref_width": 1280,
+        "min_px": 48,
+        "body_px": 64,
+        "headline_px": 96,
+        "max_words": 7,
+        "margin_pct": 4
+      },
+      "display": {
+        "ref_width": null,
+        "min_px": 10,
+        "body_px": 11,
+        "headline_px": 16,
+        "max_words": 12,
+        "margin_pct": 4
+      },
+      "print": {
+        "ref_width": null,
+        "min_pt": 6,
+        "min_pt_reversed": 8,
+        "body_pt": 9,
+        "max_words": null,
+        "margin_pct": null
+      }
+    },
+    "print": {
+      "min_line_pt": 0.25,
+      "rich_black": "C60 M40 Y40 K100 (EU offset often C50 M20 Y20 K100)",
+      "text_black": "K100",
+      "max_ink_pct": 300,
+      "pdf": [
+        "PDF/X-4",
+        "PDF/X-1a"
+      ],
+      "raster_dpi_min": 300,
+      "large_format_dpi_min": 150,
+      "legibility": "cap height >= 0.83 cm per metre of viewing distance (1 in per 10 ft)",
+      "rgb_note": "Playwright PDFs are RGB; press needs a CMYK PDF/X conversion (Ghostscript or the printer)."
+    },
+    "ads_text": "Meta retired the 20% text rule in 2020; text under ~20% of the image still tends to do better (warn, never block). Google responsive display images: no overlaid text over 20%, no overlaid logos, no fake buttons, no borders."
+  },
+  "placements": {
+    "instagram-feed-portrait": {
+      "name": "Instagram feed portrait",
+      "platform": "instagram",
+      "class": "social",
+      "aliases": [
+        "instagram",
+        "ig-post",
+        "instagram-post",
+        "ig-portrait"
+      ],
+      "w": 1080,
+      "h": 1350,
+      "unit": "px",
+      "safe_zone": {
+        "top": 0,
+        "bottom": 0,
+        "left": 34,
+        "right": 34
+      },
+      "aspect": "4:5",
+      "max_kb": 8192,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Default because the API and ads accept 4:5 at most. The 3:4 profile grid crops about 34px per side. The API takes JPEG only, max 8 MB, sRGB. Alternative: 1080x1440 (manual app upload only).",
+      "source": "Instagram Help 'Image resolution of photos you share' via artboardlab.com 2026-10-29; postboost.co 2026-10-18"
+    },
+    "instagram-feed-portrait-3x4": {
+      "name": "Instagram feed portrait 3:4",
+      "platform": "instagram",
+      "class": "social",
+      "aliases": [],
+      "w": 1080,
+      "h": 1440,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "3:4",
+      "max_kb": 8192,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "CHANGED May 2025: native 3:4. Fills the 3:4 grid tile with no crop. Rejected by the Content Publishing API and Meta ads (4:5 max), so use for manual app posts only.",
+      "source": "https://www.theverge.com/news/676549/instagram-3-4-aspect-ratio-photos-phones-square-rectangle (2025-05-29)"
+    },
+    "instagram-feed-square": {
+      "name": "Instagram feed square",
+      "platform": "instagram",
+      "class": "social",
+      "aliases": [
+        "ig-square",
+        "square-post"
+      ],
+      "w": 1080,
+      "h": 1080,
+      "unit": "px",
+      "safe_zone": {
+        "top": 0,
+        "bottom": 0,
+        "left": 135,
+        "right": 135
+      },
+      "aspect": "1:1",
+      "max_kb": 8192,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "The 3:4 grid tile shows the centre 810x1080.",
+      "source": "Instagram Help via businessmantalk.com 2026-08; The Verge 2025-01-18"
+    },
+    "instagram-feed-landscape": {
+      "name": "Instagram feed landscape",
+      "platform": "instagram",
+      "class": "social",
+      "aliases": [],
+      "w": 1080,
+      "h": 566,
+      "unit": "px",
+      "safe_zone": {
+        "top": 0,
+        "bottom": 0,
+        "left": 328,
+        "right": 328
+      },
+      "aspect": "1.91:1",
+      "max_kb": 8192,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Widest ratio kept. The grid tile shows only the centre ~424px of width. Avoid for grid-visible posts.",
+      "source": "Instagram Help via artboardlab.com 2026-10-29"
+    },
+    "instagram-carousel": {
+      "name": "Instagram carousel slide",
+      "platform": "instagram",
+      "class": "social",
+      "aliases": [
+        "ig-carousel",
+        "carousel"
+      ],
+      "w": 1080,
+      "h": 1350,
+      "unit": "px",
+      "safe_zone": {
+        "top": 0,
+        "bottom": 0,
+        "left": 34,
+        "right": 34
+      },
+      "aspect": "4:5",
+      "max_kb": 8192,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Up to 20 slides (app and API; was 10 before Aug 2024). Carousel ads: 2-10 cards. All slides take the first slide's orientation. Some schedulers still cap at 10.",
+      "source": "Instagram Help 'Share a post with multiple photos' via howsociable.com 2026-08; https://www.theverge.com/2024/8/8/24216111/instagram-carousel-post-expansion"
+    },
+    "instagram-story": {
+      "name": "Instagram Story",
+      "platform": "instagram",
+      "class": "story",
+      "aliases": [
+        "ig-story",
+        "story"
+      ],
+      "w": 1080,
+      "h": 1920,
+      "unit": "px",
+      "safe_zone": {
+        "top": 269,
+        "bottom": 672,
+        "left": 65,
+        "right": 65
+      },
+      "aspect": "9:16",
+      "max_kb": 30720,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Safe zone is Meta's unified 9:16 ad zone (14%/35%/6%). Organic chrome is lighter (~250px top/bottom). 30 MB is the ads limit; 8 MB via API.",
+      "source": "Meta Ads Guide via adsuploader.com (updated 2026-07-31)"
+    },
+    "facebook-feed": {
+      "name": "Facebook feed image (organic)",
+      "platform": "facebook",
+      "class": "social",
+      "aliases": [
+        "facebook",
+        "fb-post"
+      ],
+      "w": 1080,
+      "h": 1350,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "4:5",
+      "max_kb": 30720,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Alternatives: 1080x1080, 1200x630. No organic file limit published; 30 MB is the ads figure.",
+      "source": "Meta Ads Guide via sproutsocial.com 2025-08-22; hootsuite.com 2026-07-16"
+    },
+    "facebook-story": {
+      "name": "Facebook Story",
+      "platform": "facebook",
+      "class": "story",
+      "aliases": [],
+      "w": 1080,
+      "h": 1920,
+      "unit": "px",
+      "safe_zone": {
+        "top": 269,
+        "bottom": 672,
+        "left": 65,
+        "right": 65
+      },
+      "aspect": "9:16",
+      "max_kb": 30720,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Meta unified 9:16 safe zone. Alternative: 1440x2560.",
+      "source": "Meta Ads Guide via adsuploader.com 2026-07-31"
+    },
+    "facebook-event-cover": {
+      "name": "Facebook event cover",
+      "platform": "facebook",
+      "class": "cover",
+      "aliases": [],
+      "w": 1920,
+      "h": 1005,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "1.91:1",
+      "max_kb": null,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Meta publishes no event cover size; 1920x1005 is convention. Keep content centred.",
+      "source": "wavnil.com 2026-09-29; thebrief.ai"
+    },
+    "facebook-page-cover": {
+      "name": "Facebook Page cover",
+      "platform": "facebook",
+      "class": "cover",
+      "aliases": [],
+      "w": 851,
+      "h": 315,
+      "unit": "px",
+      "safe_zone": {
+        "top": 0,
+        "bottom": 0,
+        "left": 146,
+        "right": 146
+      },
+      "aspect": "851:315",
+      "max_kb": 100,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Min 400x150. Displays 820x312 on desktop, 640x360 on mobile (sides cropped to ~560 wide). 100 KB is the 'loads fastest' target, not a cap. Profile picture overlaps the bottom-left. CHANGED: Facebook Help describes the new Page layout as left-aligned full bleed, 16:9 on desktop and 2.4:1 on mobile. 2x alternative: 1702x630.",
+      "source": "Meta Business Help / Facebook Help via outfeed.ai 2026-09-27"
+    },
+    "linkedin-feed-image": {
+      "name": "LinkedIn feed image",
+      "platform": "linkedin",
+      "class": "social",
+      "aliases": [
+        "linkedin",
+        "linkedin-post"
+      ],
+      "w": 1080,
+      "h": 1350,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "4:5",
+      "max_kb": 5120,
+      "formats": [
+        "jpg",
+        "png",
+        "gif",
+        "webp"
+      ],
+      "color": "rgb",
+      "notes": "Min 552x276. Range 3:1 to 4:5; taller images are centre-cropped to 4:5. Up to 20 images per post. Alternatives: 1080x1080, 1200x627.",
+      "source": "https://www.linkedin.com/help/linkedin/answer/a527229"
+    },
+    "linkedin-document-post": {
+      "name": "LinkedIn document / PDF carousel page",
+      "platform": "linkedin",
+      "class": "social",
+      "aliases": [
+        "linkedin-carousel",
+        "linkedin-document",
+        "linkedin-pdf"
+      ],
+      "w": 1080,
+      "h": 1350,
+      "unit": "px",
+      "safe_zone": {
+        "top": 68,
+        "bottom": 68,
+        "left": 54,
+        "right": 54
+      },
+      "aspect": "4:5",
+      "max_kb": 102400,
+      "formats": [
+        "pdf",
+        "pptx",
+        "ppt",
+        "docx",
+        "doc"
+      ],
+      "color": "rgb",
+      "notes": "Max 300 pages, one file per post, all pages the same size, flatten layers, images max 36 MP. Safe zone is a convention (~5%). Alternatives: 1080x1080, 1920x1080.",
+      "source": "https://www.linkedin.com/help/linkedin/answer/a518909 ; https://www.linkedin.com/help/linkedin/answer/a564109"
+    },
+    "linkedin-company-cover": {
+      "name": "LinkedIn Page cover",
+      "platform": "linkedin",
+      "class": "cover",
+      "aliases": [],
+      "w": 1512,
+      "h": 256,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "5.9:1",
+      "max_kb": 3072,
+      "formats": [
+        "png",
+        "jpg"
+      ],
+      "color": "rgb",
+      "notes": "CHANGED: was 1128x191. Keep key details away from the edges, especially the lower-right. JPEG is preferred over PNG for sharpness.",
+      "source": "https://www.linkedin.com/help/linkedin/answer/a563309 (read 2026-11-04)"
+    },
+    "linkedin-personal-banner": {
+      "name": "LinkedIn profile background",
+      "platform": "linkedin",
+      "class": "cover",
+      "aliases": [],
+      "w": 1584,
+      "h": 396,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "4:1",
+      "max_kb": 8192,
+      "formats": [
+        "png",
+        "jpg"
+      ],
+      "color": "rgb",
+      "notes": "Profile photo covers the lower-left (unofficial: keep roughly x<520, y>200 clear). No GIF.",
+      "source": "https://www.linkedin.com/help/linkedin/answer/a549049"
+    },
+    "linkedin-event-banner": {
+      "name": "LinkedIn event cover",
+      "platform": "linkedin",
+      "class": "cover",
+      "aliases": [],
+      "w": 1280,
+      "h": 720,
+      "unit": "px",
+      "safe_zone": {
+        "top": 72,
+        "bottom": 72,
+        "left": 128,
+        "right": 128
+      },
+      "aspect": "16:9",
+      "max_kb": null,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "CHANGED: 16:9 required (old 4:1 1776x444 is obsolete). Min width 480. Upload from device, not cloud. Safe zone is a convention (~10%). Alternative: 1600x900.",
+      "source": "LinkedIn Help 'Create a LinkedIn Event' via koldflux.com 2026-10-09"
+    },
+    "x-single-image": {
+      "name": "X single image",
+      "platform": "x",
+      "class": "social",
+      "aliases": [
+        "x",
+        "twitter",
+        "x-post",
+        "twitter-post"
+      ],
+      "w": 1200,
+      "h": 675,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "16:9",
+      "max_kb": 5120,
+      "formats": [
+        "jpg",
+        "png",
+        "gif",
+        "webp"
+      ],
+      "color": "rgb",
+      "notes": "X gives no pixel size; any ratio from 2:1 to 3:4 shows uncropped. Alternatives: 1080x1080, 1080x1350, 1080x1440. WEBP via API only.",
+      "source": "X Help Center via postnext.io 2026-11-01"
+    },
+    "x-multi-image": {
+      "name": "X multi-image (2-4)",
+      "platform": "x",
+      "class": "social",
+      "aliases": [],
+      "w": 1080,
+      "h": 1080,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "1:1",
+      "max_kb": 5120,
+      "formats": [
+        "jpg",
+        "png",
+        "webp"
+      ],
+      "color": "rgb",
+      "notes": "Max 4 images (no GIF mix). Tiles are centre-cropped and the crop is not documented; keep the subject centred.",
+      "source": "X API docs via xvirals.com 2026-10-24; blog.onlytwitter.com 2026-10-19"
+    },
+    "x-header": {
+      "name": "X header",
+      "platform": "x",
+      "class": "cover",
+      "aliases": [],
+      "w": 1500,
+      "h": 500,
+      "unit": "px",
+      "safe_zone": {
+        "top": 60,
+        "bottom": 60,
+        "left": 0,
+        "right": 0
+      },
+      "aspect": "3:1",
+      "max_kb": null,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "notes": "X says 60px top and bottom may crop. Avatar overlaps the lower-left. Static images only.",
+      "source": "X Help Center via postnext.io 2026-11-01"
+    },
+    "threads-image": {
+      "name": "Threads image",
+      "platform": "threads",
+      "class": "social",
+      "aliases": [],
+      "w": 1080,
+      "h": 1350,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "4:5",
+      "max_kb": 8192,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Up to 20 per post. Width 320-1440. Ratio up to 10:1, but multi-image strips hold each photo to 3:4-4:3.",
+      "source": "https://support.sproutsocial.com/hc/en-us/articles/49485764377229 ; postdecks.com 2026-10-17"
+    },
+    "bluesky-image": {
+      "name": "Bluesky image",
+      "platform": "bluesky",
+      "class": "social",
+      "aliases": [],
+      "w": 1080,
+      "h": 1350,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "4:5",
+      "max_kb": 2048,
+      "formats": [
+        "jpg",
+        "png",
+        "webp"
+      ],
+      "color": "rgb",
+      "notes": "CHANGED Apr 2026: 2 MB (was 1 MB), render up to 4000px. CHANGED Jun 2026: up to 10 images (was 4); 5+ show as a carousel. Single images taller than 1:2 are trimmed.",
+      "source": "https://techcrunch.com/2026/04/23/bluesky-now-supports-better-quality-photos/ ; https://bsky.app/profile/bsky.app/post/3mnslrkd6ok2g"
+    },
+    "pinterest-standard-pin": {
+      "name": "Pinterest standard pin",
+      "platform": "pinterest",
+      "class": "social",
+      "aliases": [
+        "pinterest",
+        "pin"
+      ],
+      "w": 1000,
+      "h": 1500,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "2:3",
+      "max_kb": 20480,
+      "formats": [
+        "jpg",
+        "png",
+        "webp",
+        "tiff",
+        "bmp"
+      ],
+      "color": "rgb",
+      "notes": "Pins taller than 2:3 may be cut off in the feed. Converted to 8-bit sRGB JPEG. Auto overlay on white/black backgrounds. Ads: PNG/JPEG only, 32 MB in-app.",
+      "source": "https://help.pinterest.com/en/business/article/pinterest-product-specs ; https://help.pinterest.com/en/article/review-pin-specs"
+    },
+    "pinterest-long-pin": {
+      "name": "Pinterest long pin",
+      "platform": "pinterest",
+      "class": "social",
+      "aliases": [],
+      "w": 1000,
+      "h": 2100,
+      "unit": "px",
+      "safe_zone": {
+        "top": 0,
+        "bottom": 600,
+        "left": 0,
+        "right": 0
+      },
+      "aspect": "1:2.1",
+      "max_kb": 20480,
+      "formats": [
+        "jpg",
+        "png",
+        "webp"
+      ],
+      "color": "rgb",
+      "notes": "Truncation risk: the feed may show only the top ~2:3 (1000x1500). The 'bottom' value marks where the hook and headline must end, not UI.",
+      "source": "gradiently.design 2026-10-01; Pinterest ads specs"
+    },
+    "pinterest-fullscreen": {
+      "name": "Pinterest 9:16 full-screen pin",
+      "platform": "pinterest",
+      "class": "story",
+      "aliases": [],
+      "w": 1080,
+      "h": 1920,
+      "unit": "px",
+      "safe_zone": {
+        "top": 270,
+        "bottom": 790,
+        "left": 65,
+        "right": 195
+      },
+      "aspect": "9:16",
+      "max_kb": 20480,
+      "formats": [
+        "jpg",
+        "png",
+        "webp"
+      ],
+      "color": "rgb",
+      "notes": "Published safe zone. Pinterest states no canvas size; the values imply 1080x1920.",
+      "source": "https://help.pinterest.com/en/article/review-pin-specs (read 2026-11-04)"
+    },
+    "tiktok-photo": {
+      "name": "TikTok photo mode slide",
+      "platform": "tiktok",
+      "class": "story",
+      "aliases": [
+        "tiktok",
+        "tiktok-carousel"
+      ],
+      "w": 1080,
+      "h": 1920,
+      "unit": "px",
+      "safe_zone": {
+        "top": 240,
+        "bottom": 660,
+        "left": 120,
+        "right": 300
+      },
+      "aspect": "9:16",
+      "max_kb": 20480,
+      "formats": [
+        "jpg",
+        "webp"
+      ],
+      "color": "rgb",
+      "notes": "Up to 35 photos. API: JPEG/WebP only, max 1080p. Safe zone from TikTok's In-Feed template (current since Apr 2025); right margin is 120 above y=840 (action rail below). Old 254/707/122/242 figures are retired.",
+      "source": "wavegrain.com 2026-11-02; solidlabs.com 2026-08-07"
+    },
+    "youtube-channel-banner": {
+      "name": "YouTube channel banner",
+      "platform": "youtube",
+      "class": "cover",
+      "aliases": [
+        "youtube-banner",
+        "yt-banner"
+      ],
+      "w": 2560,
+      "h": 1440,
+      "unit": "px",
+      "safe_zone": {
+        "top": 508,
+        "bottom": 509,
+        "left": 507,
+        "right": 507
+      },
+      "aspect": "16:9",
+      "max_kb": 6144,
+      "formats": [
+        "jpg",
+        "png",
+        "bmp",
+        "gif"
+      ],
+      "color": "rgb",
+      "notes": "Min 2048x1152 (safe area 1235x338 at that size, ~1546x423 at 2560x1440). TV shows everything; desktop and mobile show full width x the middle ~423px. No borders or shadows.",
+      "source": "https://support.google.com/youtube/answer/10456525"
+    },
+    "youtube-thumbnail": {
+      "name": "YouTube video thumbnail",
+      "platform": "youtube",
+      "class": "thumbnail",
+      "aliases": [
+        "thumbnail",
+        "yt-thumbnail"
+      ],
+      "w": 3840,
+      "h": 2160,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "16:9",
+      "max_kb": 51200,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "3840x2160 recommended since 2026 (1280x720 still accepted, min width 640). 2 MB cap applies to phone uploads only; deliver under 2 MB for portability. Keep the bottom-right clear for the timestamp. Avoid white backgrounds and YouTube red.",
+      "source": "https://support.google.com/youtube/answer/72431 ; https://developers.google.com/youtube/v3/docs/thumbnails/set (read 2026-11-04)",
+      "exclusion": [
+        [
+          0.82,
+          0.86,
+          0.18,
+          0.14
+        ]
+      ]
+    },
+    "youtube-shorts-thumbnail": {
+      "name": "YouTube Shorts thumbnail",
+      "platform": "youtube",
+      "class": "thumbnail",
+      "aliases": [],
+      "w": 2160,
+      "h": 3840,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "9:16",
+      "max_kb": 51200,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Min height 640. Desktop YouTube Studio only; account must be verified.",
+      "source": "https://support.google.com/youtube/answer/72431"
+    },
+    "youtube-post-image": {
+      "name": "YouTube post (community) image",
+      "platform": "youtube",
+      "class": "social",
+      "aliases": [],
+      "w": 1080,
+      "h": 1080,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "1:1",
+      "max_kb": 16384,
+      "formats": [
+        "jpg",
+        "png",
+        "gif",
+        "webp"
+      ],
+      "color": "rgb",
+      "notes": "Up to 10 images. 1:1 suggested (feed shows squares). No pixel size published.",
+      "source": "YouTube Help 'Create a post' via koldflux.com 2026-10-09"
+    },
+    "meta-ads-feed-4x5": {
+      "name": "Meta ads feed 4:5",
+      "platform": "meta-ads",
+      "class": "social",
+      "aliases": [
+        "meta-feed-portrait",
+        "facebook-ad"
+      ],
+      "w": 1440,
+      "h": 1800,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "4:5",
+      "max_kb": 30720,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Min 600x750. Ratio tolerance 3%. Range 1.91:1 to 4:5. Meta says keep the bottom and side edges clear but gives no %. 20% text rule retired in 2020.",
+      "source": "Meta Ads Guide via sproutsocial.com 2025-08-22; alladspecs.com 2026-05"
+    },
+    "meta-ads-feed-1x1": {
+      "name": "Meta ads feed 1:1",
+      "platform": "meta-ads",
+      "class": "social",
+      "aliases": [
+        "meta-feed-square",
+        "facebook-ad-square"
+      ],
+      "w": 1440,
+      "h": 1440,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "1:1",
+      "max_kb": 30720,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Min 600x600. Also used for right column, Marketplace and carousel cards (1080x1080 minimum).",
+      "source": "hootsuite.com 2026-07-16"
+    },
+    "meta-ads-stories-reels": {
+      "name": "Meta ads Stories/Reels 9:16",
+      "platform": "meta-ads",
+      "class": "story",
+      "aliases": [
+        "meta-story",
+        "meta-reels",
+        "story-ad"
+      ],
+      "w": 1440,
+      "h": 2560,
+      "unit": "px",
+      "safe_zone": {
+        "top": 358,
+        "bottom": 896,
+        "left": 86,
+        "right": 86
+      },
+      "aspect": "9:16",
+      "max_kb": 30720,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Unified FB/IG Stories+Reels zone: top 14%, bottom 35%, sides 6%; bottom-right corner 40% (1024px). At 1080x1920: 269/672/65/65. Keep key content in the central 80% of width for 20:9 zoom-crop.",
+      "source": "adsuploader.com 2026-07-31; billo.app 2026-03-05 (Meta page did not render; verify in Ads Manager)"
+    },
+    "iab-300x250": {
+      "name": "Medium rectangle",
+      "platform": "google-display",
+      "class": "display",
+      "aliases": [
+        "medium-rectangle",
+        "mrec",
+        "300x250"
+      ],
+      "w": 300,
+      "h": 250,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "6:5",
+      "max_kb": 150,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "border_on_light_or_dark_bg": true,
+      "notes": "IAB static guidance 150 KB. Add a 1px border on light backgrounds.",
+      "source": "https://support.google.com/google-ads/answer/1722096 ; IAB New Ad Portfolio"
+    },
+    "iab-728x90": {
+      "name": "Leaderboard",
+      "platform": "google-display",
+      "class": "display",
+      "aliases": [
+        "leaderboard",
+        "728x90"
+      ],
+      "w": 728,
+      "h": 90,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "8.09:1",
+      "max_kb": 150,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "border_on_light_or_dark_bg": true,
+      "notes": "IAB 150 KB.",
+      "source": "https://support.google.com/google-ads/answer/1722096"
+    },
+    "iab-160x600": {
+      "name": "Wide skyscraper",
+      "platform": "google-display",
+      "class": "display",
+      "aliases": [
+        "skyscraper",
+        "160x600"
+      ],
+      "w": 160,
+      "h": 600,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "4:15",
+      "max_kb": 150,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "border_on_light_or_dark_bg": true,
+      "notes": "IAB 150 KB.",
+      "source": "https://support.google.com/google-ads/answer/1722096"
+    },
+    "iab-300x600": {
+      "name": "Half page",
+      "platform": "google-display",
+      "class": "display",
+      "aliases": [
+        "half-page",
+        "300x600"
+      ],
+      "w": 300,
+      "h": 600,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "1:2",
+      "max_kb": 150,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "border_on_light_or_dark_bg": true,
+      "notes": "IAB allows 250 KB; Google caps at 150.",
+      "source": "https://support.google.com/google-ads/answer/1722096"
+    },
+    "iab-320x50": {
+      "name": "Mobile banner",
+      "platform": "google-display",
+      "class": "display",
+      "aliases": [
+        "mobile-banner",
+        "320x50"
+      ],
+      "w": 320,
+      "h": 50,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "32:5",
+      "max_kb": 50,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "border_on_light_or_dark_bg": true,
+      "notes": "IAB LEAN: 50 KB; use that for programmatic.",
+      "source": "https://support.google.com/google-ads/answer/1722096 ; IAB New Ad Portfolio 2017"
+    },
+    "iab-320x100": {
+      "name": "Large mobile banner",
+      "platform": "google-display",
+      "class": "display",
+      "aliases": [],
+      "w": 320,
+      "h": 100,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "16:5",
+      "max_kb": 150,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "border_on_light_or_dark_bg": true,
+      "notes": "IAB size grid ~75 KB.",
+      "source": "https://support.google.com/google-ads/answer/1722096"
+    },
+    "iab-970x250": {
+      "name": "Billboard",
+      "platform": "google-display",
+      "class": "display",
+      "aliases": [
+        "billboard-ad",
+        "970x250"
+      ],
+      "w": 970,
+      "h": 250,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "3.88:1",
+      "max_kb": 150,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "border_on_light_or_dark_bg": true,
+      "notes": "IAB allows 250 KB; Google caps at 150.",
+      "source": "https://support.google.com/google-ads/answer/1722096"
+    },
+    "iab-336x280": {
+      "name": "Large rectangle",
+      "platform": "google-display",
+      "class": "display",
+      "aliases": [],
+      "w": 336,
+      "h": 280,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "6:5",
+      "max_kb": 150,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "border_on_light_or_dark_bg": true,
+      "notes": "Legacy IAB size, still accepted by Google.",
+      "source": "https://support.google.com/google-ads/answer/1722096"
+    },
+    "iab-468x60": {
+      "name": "Banner",
+      "platform": "google-display",
+      "class": "display",
+      "aliases": [],
+      "w": 468,
+      "h": 60,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "7.8:1",
+      "max_kb": 150,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "border_on_light_or_dark_bg": true,
+      "notes": "Legacy size; low inventory.",
+      "source": "https://support.google.com/google-ads/answer/1722096"
+    },
+    "iab-970x90": {
+      "name": "Large leaderboard",
+      "platform": "google-display",
+      "class": "display",
+      "aliases": [],
+      "w": 970,
+      "h": 90,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "10.78:1",
+      "max_kb": 150,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "border_on_light_or_dark_bg": true,
+      "notes": "IAB allows 200 KB.",
+      "source": "https://support.google.com/google-ads/answer/1722096"
+    },
+    "iab-250x250": {
+      "name": "Square",
+      "platform": "google-display",
+      "class": "display",
+      "aliases": [],
+      "w": 250,
+      "h": 250,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "1:1",
+      "max_kb": 150,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "border_on_light_or_dark_bg": true,
+      "notes": "",
+      "source": "https://support.google.com/google-ads/answer/1722096"
+    },
+    "iab-200x200": {
+      "name": "Small square",
+      "platform": "google-display",
+      "class": "display",
+      "aliases": [],
+      "w": 200,
+      "h": 200,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "1:1",
+      "max_kb": 150,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "border_on_light_or_dark_bg": true,
+      "notes": "",
+      "source": "https://support.google.com/google-ads/answer/1722096"
+    },
+    "gads-rda-landscape": {
+      "name": "Google RDA landscape image",
+      "platform": "google-ads",
+      "class": "display",
+      "aliases": [],
+      "w": 1200,
+      "h": 628,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "1.91:1",
+      "max_kb": 5120,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Min 600x314. Avoid overlaid text, logos and buttons; blank space at most 80%.",
+      "source": "https://support.google.com/google-ads/answer/7005917 ; https://support.google.com/google-ads/answer/9823397"
+    },
+    "gads-rda-square": {
+      "name": "Google RDA square image",
+      "platform": "google-ads",
+      "class": "display",
+      "aliases": [],
+      "w": 1200,
+      "h": 1200,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "1:1",
+      "max_kb": 5120,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Min 300x300.",
+      "source": "https://support.google.com/google-ads/answer/7005917"
+    },
+    "gads-rda-vertical-9x16": {
+      "name": "Google RDA vertical image",
+      "platform": "google-ads",
+      "class": "display",
+      "aliases": [],
+      "w": 900,
+      "h": 1600,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "9:16",
+      "max_kb": 5120,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Min 600x1067. Newer asset-spec page recommends 1080x1920 with video-style safe zones (YouTube Shorts).",
+      "source": "https://support.google.com/google-ads/answer/9823397 ; https://support.google.com/google-ads/answer/17140672"
+    },
+    "gads-portrait-4x5": {
+      "name": "Google Demand Gen / PMax portrait image",
+      "platform": "google-ads",
+      "class": "display",
+      "aliases": [],
+      "w": 960,
+      "h": 1200,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "4:5",
+      "max_kb": 5120,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Min 480x600. Optional asset. Listed for Demand Gen and PMax, not on the RDA help page.",
+      "source": "https://support.google.com/google-ads/answer/17091672 ; https://developers.google.com/google-ads/api/performance-max/asset-requirements"
+    },
+    "gads-logo-square": {
+      "name": "Google Ads logo 1:1",
+      "platform": "google-ads",
+      "class": "display",
+      "aliases": [],
+      "w": 1200,
+      "h": 1200,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "1:1",
+      "max_kb": 150,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Min 128x128 (144x144 for Demand Gen). 150 KB per the newer asset-spec page (RDA page says 5120 KB). Gmail circle crop removes ~5.4% per corner.",
+      "source": "https://support.google.com/google-ads/answer/17140672 ; https://support.google.com/google-ads/answer/7005917"
+    },
+    "gads-logo-landscape": {
+      "name": "Google Ads logo 4:1",
+      "platform": "google-ads",
+      "class": "display",
+      "aliases": [],
+      "w": 1200,
+      "h": 300,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "4:1",
+      "max_kb": 5120,
+      "formats": [
+        "jpg",
+        "png"
+      ],
+      "color": "rgb",
+      "notes": "Min 512x128.",
+      "source": "https://support.google.com/google-ads/answer/7005917"
+    },
+    "web-hero-1920x1080": {
+      "name": "Web hero full-bleed",
+      "platform": "web",
+      "class": "web",
+      "aliases": [
+        "web-hero",
+        "hero",
+        "website-banner"
+      ],
+      "w": 1920,
+      "h": 1080,
+      "unit": "px",
+      "safe_zone": {
+        "top": 0,
+        "bottom": 0,
+        "left": 384,
+        "right": 384
+      },
+      "aspect": "16:9",
+      "max_kb": 500,
+      "formats": [
+        "webp",
+        "avif",
+        "jpg"
+      ],
+      "color": "rgb",
+      "notes": "Convention. Responsive crops take the sides, so keep text in the central ~60%. Serve 2x via srcset if needed.",
+      "source": "convention"
+    },
+    "web-hero-1440x600": {
+      "name": "Web header banner",
+      "platform": "web",
+      "class": "web",
+      "aliases": [],
+      "w": 1440,
+      "h": 600,
+      "unit": "px",
+      "safe_zone": {
+        "top": 0,
+        "bottom": 0,
+        "left": 216,
+        "right": 216
+      },
+      "aspect": "2.4:1",
+      "max_kb": 400,
+      "formats": [
+        "webp",
+        "avif",
+        "jpg"
+      ],
+      "color": "rgb",
+      "notes": "Convention.",
+      "source": "convention"
+    },
+    "web-og-image": {
+      "name": "OG / link preview image",
+      "platform": "web",
+      "class": "web",
+      "aliases": [
+        "og-image",
+        "link-preview",
+        "open-graph"
+      ],
+      "w": 1200,
+      "h": 630,
+      "unit": "px",
+      "safe_zone": {
+        "top": 32,
+        "bottom": 32,
+        "left": 60,
+        "right": 60
+      },
+      "aspect": "1.91:1",
+      "max_kb": 600,
+      "formats": [
+        "png",
+        "jpg"
+      ],
+      "color": "rgb",
+      "notes": "Meta: at least 1200x630, 600x315 for the large card, 8 MB max. LinkedIn 1200x627 at 5 MB. WhatsApp under 600 KB (binding limit). Safe zone is a convention (~5%).",
+      "source": "https://developers.facebook.com/docs/sharing/webmasters/images/ ; unfurlkit.com 2026-10"
+    },
+    "email-header": {
+      "name": "Email header (600px @2x)",
+      "platform": "email",
+      "class": "web",
+      "aliases": [],
+      "w": 1200,
+      "h": 400,
+      "unit": "px",
+      "safe_zone": null,
+      "aspect": "3:1",
+      "max_kb": 200,
+      "formats": [
+        "jpg",
+        "png",
+        "gif"
+      ],
+      "color": "rgb",
+      "notes": "Display at width=600. Height is flexible. Images are often blocked: set alt text and never put text in the image only.",
+      "source": "convention"
+    },
+    "print-a0": {
+      "name": "A0 poster",
+      "platform": "print",
+      "class": "print",
+      "aliases": [],
+      "w_mm": 841,
+      "h_mm": 1189,
+      "unit": "mm",
+      "safe_mm": 10.0,
+      "bleed_mm": 3,
+      "dpi": 300,
+      "aspect": "1:1.414",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf-x1a"
+      ],
+      "color": "cmyk",
+      "notes": "150 dpi acceptable (4967x7022). Safe margin 10 mm. With bleed: 847x1195 mm.",
+      "source": "ISO 216; printdash.io; vslprint.com"
+    },
+    "print-a1": {
+      "name": "A1 poster",
+      "platform": "print",
+      "class": "print",
+      "aliases": [],
+      "w_mm": 594,
+      "h_mm": 841,
+      "unit": "mm",
+      "safe_mm": 10.0,
+      "bleed_mm": 3,
+      "dpi": 300,
+      "aspect": "1:1.414",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf-x1a"
+      ],
+      "color": "cmyk",
+      "notes": "150 dpi acceptable (3508x4967). With bleed: 600x847 mm.",
+      "source": "ISO 216; printdash.io"
+    },
+    "print-a2": {
+      "name": "A2 poster",
+      "platform": "print",
+      "class": "print",
+      "aliases": [],
+      "w_mm": 420,
+      "h_mm": 594,
+      "unit": "mm",
+      "safe_mm": 10.0,
+      "bleed_mm": 3,
+      "dpi": 300,
+      "aspect": "1:1.414",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf-x1a"
+      ],
+      "color": "cmyk",
+      "notes": "With bleed: 426x600 mm (5031x7087 px).",
+      "source": "ISO 216"
+    },
+    "print-a3": {
+      "name": "A3 poster",
+      "platform": "print",
+      "class": "print",
+      "aliases": [
+        "a3",
+        "a3-poster",
+        "poster"
+      ],
+      "w_mm": 297,
+      "h_mm": 420,
+      "unit": "mm",
+      "safe_mm": 5.0,
+      "bleed_mm": 3,
+      "dpi": 300,
+      "aspect": "1:1.414",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf-x1a"
+      ],
+      "color": "cmyk",
+      "notes": "Safe margin 5 mm. With bleed: 303x426 mm (3579x5031 px).",
+      "source": "ISO 216"
+    },
+    "print-a4": {
+      "name": "A4 flyer",
+      "platform": "print",
+      "class": "print",
+      "aliases": [
+        "a4",
+        "a4-flyer"
+      ],
+      "w_mm": 210,
+      "h_mm": 297,
+      "unit": "mm",
+      "safe_mm": 5.0,
+      "bleed_mm": 3,
+      "dpi": 300,
+      "aspect": "1:1.414",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf-x1a"
+      ],
+      "color": "cmyk",
+      "notes": "With bleed: 216x303 mm (2551x3579 px).",
+      "source": "ISO 216"
+    },
+    "print-a5": {
+      "name": "A5 flyer",
+      "platform": "print",
+      "class": "print",
+      "aliases": [
+        "a5",
+        "a5-flyer",
+        "flyer"
+      ],
+      "w_mm": 148,
+      "h_mm": 210,
+      "unit": "mm",
+      "safe_mm": 5.0,
+      "bleed_mm": 3,
+      "dpi": 300,
+      "aspect": "1:1.414",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf-x1a"
+      ],
+      "color": "cmyk",
+      "notes": "With bleed: 154x216 mm (1819x2551 px).",
+      "source": "ISO 216"
+    },
+    "print-a6": {
+      "name": "A6 flyer / postcard",
+      "platform": "print",
+      "class": "print",
+      "aliases": [],
+      "w_mm": 105,
+      "h_mm": 148,
+      "unit": "mm",
+      "safe_mm": 4.0,
+      "bleed_mm": 3,
+      "dpi": 300,
+      "aspect": "1:1.414",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf-x1a"
+      ],
+      "color": "cmyk",
+      "notes": "Safe margin 4 mm. With bleed: 111x154 mm (1311x1819 px).",
+      "source": "ISO 216"
+    },
+    "print-us-letter": {
+      "name": "US Letter flyer",
+      "platform": "print",
+      "class": "print",
+      "aliases": [
+        "letter",
+        "us-letter"
+      ],
+      "w_mm": 215.9,
+      "h_mm": 279.4,
+      "unit": "mm",
+      "safe_mm": 3.2,
+      "bleed_mm": 3.175,
+      "dpi": 300,
+      "aspect": "17:22",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf-x1a"
+      ],
+      "color": "cmyk",
+      "notes": "8.5x11 in. Bleed 0.125 in (2625x3375 px). Safe margin 0.125 in minimum; 0.25 in preferred.",
+      "source": "nycprintworks.com; vslprint.com"
+    },
+    "print-us-tabloid": {
+      "name": "US Tabloid 11x17",
+      "platform": "print",
+      "class": "print",
+      "aliases": [
+        "tabloid",
+        "11x17"
+      ],
+      "w_mm": 279.4,
+      "h_mm": 431.8,
+      "unit": "mm",
+      "safe_mm": 6.3,
+      "bleed_mm": 3.175,
+      "dpi": 300,
+      "aspect": "11:17",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf-x1a"
+      ],
+      "color": "cmyk",
+      "notes": "With bleed: 3375x5175 px.",
+      "source": "vslprint.com"
+    },
+    "print-us-18x24": {
+      "name": "Poster 18x24",
+      "platform": "print",
+      "class": "print",
+      "aliases": [
+        "18x24"
+      ],
+      "w_mm": 457.2,
+      "h_mm": 609.6,
+      "unit": "mm",
+      "safe_mm": 6.3,
+      "bleed_mm": 3.175,
+      "dpi": 300,
+      "aspect": "3:4",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf-x1a"
+      ],
+      "color": "cmyk",
+      "notes": "150 dpi acceptable (2700x3600).",
+      "source": "vslprint.com"
+    },
+    "print-us-24x36": {
+      "name": "Poster 24x36",
+      "platform": "print",
+      "class": "print",
+      "aliases": [
+        "24x36"
+      ],
+      "w_mm": 609.6,
+      "h_mm": 914.4,
+      "unit": "mm",
+      "safe_mm": 6.3,
+      "bleed_mm": 3.175,
+      "dpi": 300,
+      "aspect": "2:3",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf-x1a"
+      ],
+      "color": "cmyk",
+      "notes": "150 dpi acceptable (3600x5400).",
+      "source": "vslprint.com"
+    },
+    "print-us-27x40": {
+      "name": "Movie one-sheet 27x40",
+      "platform": "print",
+      "class": "print",
+      "aliases": [],
+      "w_mm": 685.8,
+      "h_mm": 1016,
+      "unit": "mm",
+      "safe_mm": 6.3,
+      "bleed_mm": 3.175,
+      "dpi": 300,
+      "aspect": "27:40",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf-x1a"
+      ],
+      "color": "cmyk",
+      "notes": "150 dpi acceptable (4050x6000). Billing block at the bottom by convention.",
+      "source": "convention"
+    },
+    "rollup-850x2000": {
+      "name": "Roll-up banner 850x2000",
+      "platform": "print-large-format",
+      "class": "print",
+      "aliases": [
+        "roll-up",
+        "rollup",
+        "pull-up-banner"
+      ],
+      "w_mm": 850,
+      "h_mm": 2000,
+      "unit": "mm",
+      "safe_mm": 10,
+      "safe_mm_bottom": 150,
+      "bleed_mm": 3,
+      "dpi": 150,
+      "aspect": "17:40",
+      "max_kb": null,
+      "formats": [
+        "pdf-x4",
+        "pdf"
+      ],
+      "color": "cmyk",
+      "notes": "w/h are px at 300 dpi per schema; deliver at 150 dpi (5020x11811), 100 dpi minimum (3346x7874). Bottom safe = 150 mm cassette allowance (worst case). Top ~10 mm under the rail. Use the vendor template; allowances range 60-150 mm. Key message in the top half.",
+      "source": "bannerworld.co.uk; printonline.snap.com.au; bannerkoning.nl"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+code: design
+name: PawBytes Graphics Suite
+description: Gated graphic design from a content brief — concept and hooks → style lock → layout per size → text-free imagery on fal.ai or Codex → HTML/CSS composition with real type → platform exports with automated QC, for posters, social posts, carousels, banners and ad sets.
+module_version: 0.1.0
+default_selected: false
+
+agents:
+  - code: director
+    name: Iris
+    title: Art Director
+    icon: "🎨"
+    description: Clear, warm, craft-minded art director — runs gated graphic design projects from content brief to platform-ready posters, posts, banners and ad sets.
+
+module_greeting: |
+  **PawBytes Graphics Suite activated.** Your art director and design crew are ready.
+
+  **Start here:**
+  - `paw-design-agent-director` — Iris, your art director: intake from your content brief, formats and sizes, gate reviews, project status. Start here.
+
+  **The stages Iris routes to:**
+  - `paw-design-concept` — The message, hook options and the exact copy for every canvas
+  - `paw-design-style` — Lock type, palette and look, proven on a style tile
+  - `paw-design-layout` — Grids and greybox wireframes for every size, checked against safe zones
+  - `paw-design-imagery` — Text-free backgrounds, hero images and cutouts, or your own photos
+  - `paw-design-compose` — The finished design in HTML with real type, rendered, measured and reviewed
+  - `paw-design-deliver` — Exports per platform (PNG, JPG under file caps, print PDF with bleed), QC, alt text
+
+  **The arc:** Brief → Concept → Style → Layout → Imagery → Compose → Deliver. Projects land in paw-suites/graphics. Talk to Iris first.
+
+# Configuration Variables
+projects_folder:
+  prompt: "Where should graphic design projects be stored?"
+  default: "{project-root}/paw-suites/graphics"
+  result: "{value}"
+  directories: true
+
+default_budget_usd:
+  prompt: "Default fal.ai budget cap per project in USD (Iris proposes it; you can change it per project)?"
+  default: 5
+  type: positive_number
+
+default_profile:
+  prompt: "Default format profile — social-post, carousel, story, poster, flyer, banner, ad-set, or thumbnail?"
+  default: "social-post"
+  result: "{value}"
+  choices: [social-post, carousel, story, poster, flyer, banner, ad-set, thumbnail]
+
+takes_per_image:
+  prompt: "How many generated takes per image by default?"
+  default: 2
+  type: positive_integer
+
+image_provider:
+  prompt: "Image provider — 'fal' (fal.ai, paid per image) or 'codex-cli' (your Codex CLI account, no per-image cost)?"
+  default: "fal"
+  result: "{value}"
+  user_setting: true
+  choices: [fal, codex-cli]
+
+codex_path:
+  prompt: "Path to the codex executable (leave empty to search $CODEX_PATH, PATH and the Codex app folder)?"
+  default: ""
+  user_setting: true
+
+communication_language:
+  prompt: "Language for agent responses?"
+  default: "English"
+  user_setting: true

@@ -1,0 +1,38 @@
+[
+  {
+    "query": "generate the background for the poster with space for the headline",
+    "should_trigger": true
+  },
+  {
+    "query": "make a hero image of a cosy bakery at dawn",
+    "should_trigger": true
+  },
+  {
+    "query": "cut out the product from my photo",
+    "should_trigger": true
+  },
+  {
+    "query": "use my product photo instead of a generated one",
+    "should_trigger": true
+  },
+  {
+    "query": "regenerate this image, it has weird text in it",
+    "should_trigger": true
+  },
+  {
+    "query": "generate the video shots for the reel",
+    "should_trigger": false
+  },
+  {
+    "query": "make a logo for my bakery",
+    "should_trigger": false
+  },
+  {
+    "query": "write alt text for the post",
+    "should_trigger": false
+  },
+  {
+    "query": "pick a colour palette",
+    "should_trigger": false
+  }
+]

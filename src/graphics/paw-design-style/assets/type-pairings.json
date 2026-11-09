@@ -1,0 +1,674 @@
+{
+ "updated": "2026-11-04",
+ "fields": "Every family is a Google Font (SIL Open Font License, free for commercial use and embedding), loaded by tokens.css from fonts.googleapis.com; the listed weights exist. scripts: writing systems covered.",
+ "pairings": [
+  {
+   "id": "inter-tight-inter",
+   "name": "Inter Tight + Inter",
+   "display": {
+    "family": "Inter Tight",
+    "weights": [
+     700,
+     800
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Inter",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "neutral, precise, modern",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "greek",
+    "vietnamese"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "archivo",
+   "name": "Archivo Black + Archivo",
+   "display": {
+    "family": "Archivo Black",
+    "weights": [
+     400
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Archivo",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "loud, sturdy, poster grotesque",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "vietnamese"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "space-grotesk-inter",
+   "name": "Space Grotesk + Inter",
+   "display": {
+    "family": "Space Grotesk",
+    "weights": [
+     600,
+     700
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Inter",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "techy, quirky grotesque",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "vietnamese"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "anton-inter",
+   "name": "Anton + Inter",
+   "display": {
+    "family": "Anton",
+    "weights": [
+     400
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Inter",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "condensed impact, headline-heavy",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "vietnamese"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "bebas-source-sans",
+   "name": "Bebas Neue + Source Sans 3",
+   "display": {
+    "family": "Bebas Neue",
+    "weights": [
+     400
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Source Sans 3",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "all-caps condensed, sporty, signage",
+   "scripts": [
+    "latin",
+    "latin-ext"
+   ],
+   "notes": "Bebas Neue has capitals only; it is the one place an all-caps headline is the design."
+  },
+  {
+   "id": "barlow-condensed-barlow",
+   "name": "Barlow Condensed + Barlow",
+   "display": {
+    "family": "Barlow Condensed",
+    "weights": [
+     700,
+     800
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Barlow",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "industrial, athletic, energetic",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "vietnamese"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "playfair-inter",
+   "name": "Playfair Display + Inter",
+   "display": {
+    "family": "Playfair Display",
+    "weights": [
+     700,
+     800
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Inter",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "editorial, elegant, high-contrast serif",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "vietnamese"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "dm-serif-dm-sans",
+   "name": "DM Serif Display + DM Sans",
+   "display": {
+    "family": "DM Serif Display",
+    "weights": [
+     400
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "DM Sans",
+    "weights": [
+     400,
+     500,
+     700
+    ],
+    "source": "google"
+   },
+   "mood": "warm editorial, friendly serif",
+   "scripts": [
+    "latin",
+    "latin-ext"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "fraunces-work-sans",
+   "name": "Fraunces + Work Sans",
+   "display": {
+    "family": "Fraunces",
+    "weights": [
+     600,
+     800
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Work Sans",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "soft, retro, organic serif",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "vietnamese"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "instrument",
+   "name": "Instrument Serif + Instrument Sans",
+   "display": {
+    "family": "Instrument Serif",
+    "weights": [
+     400
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Instrument Sans",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "refined, contemporary, gallery",
+   "scripts": [
+    "latin",
+    "latin-ext"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "bricolage-inter",
+   "name": "Bricolage Grotesque + Inter",
+   "display": {
+    "family": "Bricolage Grotesque",
+    "weights": [
+     700,
+     800
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Inter",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "characterful, punchy, indie",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "vietnamese"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "syne-manrope",
+   "name": "Syne + Manrope",
+   "display": {
+    "family": "Syne",
+    "weights": [
+     700,
+     800
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Manrope",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "art-school, wide, expressive",
+   "scripts": [
+    "latin",
+    "latin-ext"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "unbounded-manrope",
+   "name": "Unbounded + Manrope",
+   "display": {
+    "family": "Unbounded",
+    "weights": [
+     700,
+     800
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Manrope",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "rounded wide, playful tech, Y2K",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "vietnamese"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "ibm-plex",
+   "name": "IBM Plex Sans + IBM Plex Mono",
+   "display": {
+    "family": "IBM Plex Sans",
+    "weights": [
+     600,
+     700
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "IBM Plex Mono",
+    "weights": [
+     400,
+     500
+    ],
+    "source": "google"
+   },
+   "mood": "engineering, data, developer",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "greek",
+    "vietnamese"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "space-mono-grotesk",
+   "name": "Space Mono + Space Grotesk",
+   "display": {
+    "family": "Space Mono",
+    "weights": [
+     700
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Space Grotesk",
+    "weights": [
+     400,
+     500
+    ],
+    "source": "google"
+   },
+   "mood": "raw, retro-computing, brutalist",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "vietnamese"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "cormorant-montserrat",
+   "name": "Cormorant Garamond + Montserrat",
+   "display": {
+    "family": "Cormorant Garamond",
+    "weights": [
+     600,
+     700
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Montserrat",
+    "weights": [
+     400,
+     500
+    ],
+    "source": "google"
+   },
+   "mood": "luxury, fashion, quiet",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "vietnamese"
+   ],
+   "notes": "Cormorant is delicate: headline only, never below 48px on a 1080 canvas."
+  },
+  {
+   "id": "libre-baskerville-lato",
+   "name": "Libre Baskerville + Lato",
+   "display": {
+    "family": "Libre Baskerville",
+    "weights": [
+     700
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Lato",
+    "weights": [
+     400,
+     700
+    ],
+    "source": "google"
+   },
+   "mood": "classic, newsprint, trustworthy",
+   "scripts": [
+    "latin",
+    "latin-ext"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "fredoka-nunito",
+   "name": "Fredoka + Nunito",
+   "display": {
+    "family": "Fredoka",
+    "weights": [
+     600,
+     700
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Nunito",
+    "weights": [
+     400,
+     700
+    ],
+    "source": "google"
+   },
+   "mood": "rounded, friendly, kids and community",
+   "scripts": [
+    "latin",
+    "latin-ext"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "jakarta",
+   "name": "Plus Jakarta Sans",
+   "display": {
+    "family": "Plus Jakarta Sans",
+    "weights": [
+     700,
+     800
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Plus Jakarta Sans",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "clean SaaS, geometric, approachable",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "vietnamese"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "abril-karla",
+   "name": "Abril Fatface + Karla",
+   "display": {
+    "family": "Abril Fatface",
+    "weights": [
+     400
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Karla",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "retro display, bold fashion, vintage print",
+   "scripts": [
+    "latin",
+    "latin-ext"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "silkscreen-space-grotesk",
+   "name": "Silkscreen + Space Grotesk",
+   "display": {
+    "family": "Silkscreen",
+    "weights": [
+     400,
+     700
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Space Grotesk",
+    "weights": [
+     400,
+     500
+    ],
+    "source": "google"
+   },
+   "mood": "pixel, 8-bit, gaming",
+   "scripts": [
+    "latin",
+    "latin-ext"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "bodoni-jost",
+   "name": "Bodoni Moda + Jost",
+   "display": {
+    "family": "Bodoni Moda",
+    "weights": [
+     600,
+     800
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Jost",
+    "weights": [
+     400,
+     500
+    ],
+    "source": "google"
+   },
+   "mood": "fashion, art deco, high contrast",
+   "scripts": [
+    "latin",
+    "latin-ext"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "jost",
+   "name": "Jost",
+   "display": {
+    "family": "Jost",
+    "weights": [
+     700,
+     800
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Jost",
+    "weights": [
+     400,
+     500
+    ],
+    "source": "google"
+   },
+   "mood": "geometric, Bauhaus, Futura-like",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "cyrillic"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "caveat-nunito",
+   "name": "Caveat + Nunito",
+   "display": {
+    "family": "Caveat",
+    "weights": [
+     700
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Nunito",
+    "weights": [
+     400,
+     700
+    ],
+    "source": "google"
+   },
+   "mood": "handwritten accent, personal, notes",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "cyrillic"
+   ],
+   "notes": "Script for one or two words only; never for dates, prices or the CTA."
+  },
+  {
+   "id": "noto",
+   "name": "Noto Sans Display + Noto Sans",
+   "display": {
+    "family": "Noto Sans Display",
+    "weights": [
+     700,
+     800
+    ],
+    "source": "google"
+   },
+   "text": {
+    "family": "Noto Sans",
+    "weights": [
+     400,
+     600
+    ],
+    "source": "google"
+   },
+   "mood": "neutral, multilingual",
+   "scripts": [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "greek",
+    "vietnamese",
+    "devanagari"
+   ],
+   "notes": "For CJK, Arabic or Indic copy, set the matching Noto family (Noto Sans JP, Noto Sans Arabic...) as the text font."
+  }
+ ]
+}
