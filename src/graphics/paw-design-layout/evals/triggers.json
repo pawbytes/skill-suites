@@ -1,0 +1,38 @@
+[
+  {
+    "query": "lay out this poster, headline big at the top",
+    "should_trigger": true
+  },
+  {
+    "query": "wireframe the post before we make any images",
+    "should_trigger": true
+  },
+  {
+    "query": "plan the layout for each banner size in the ad set",
+    "should_trigger": true
+  },
+  {
+    "query": "where should the headline go on the story version?",
+    "should_trigger": true
+  },
+  {
+    "query": "the leaderboard needs its own layout, don't just shrink the square",
+    "should_trigger": true
+  },
+  {
+    "query": "storyboard this video script",
+    "should_trigger": false
+  },
+  {
+    "query": "design the landing page layout in Figma",
+    "should_trigger": false
+  },
+  {
+    "query": "make the headline bigger in the final design",
+    "should_trigger": false
+  },
+  {
+    "query": "export for all banner sizes",
+    "should_trigger": false
+  }
+]

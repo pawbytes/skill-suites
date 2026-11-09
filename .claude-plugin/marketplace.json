@@ -123,6 +123,22 @@
         "./src/pa/paw-pa-pricing",
         "./src/pa/paw-pa-generation"
       ]
+    },
+    {
+      "name": "graphics-design-suite",
+      "description": "AI graphic design studio for Claude Code — turn a content brief into posters, social posts, carousels, stories, flyers, web banners, display ad sets and YouTube thumbnails through a gated pipeline. Concept and copy with a 22-formula headline hook catalog and 16 visual hooks, style lock from 29 graphic styles and 25 Google Fonts pairings with contrast-checked palettes, layouts re-laid out for every size against 66 researched platform specs and safe zones, text-free imagery on fal.ai or the Codex CLI, composition in HTML/CSS with real type rendered by Playwright, and exports with automated QC (safe zones, contrast behind every line, type floors, file caps, print bleed). Iris the Art Director runs the gates.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./src/graphics/paw-design-setup",
+        "./src/graphics/paw-design-agent-director",
+        "./src/graphics/paw-design-concept",
+        "./src/graphics/paw-design-style",
+        "./src/graphics/paw-design-layout",
+        "./src/graphics/paw-design-imagery",
+        "./src/graphics/paw-design-compose",
+        "./src/graphics/paw-design-deliver"
+      ]
     }
   ]
 }

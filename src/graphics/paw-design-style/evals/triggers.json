@@ -1,0 +1,42 @@
+[
+  {
+    "query": "pick fonts for this poster, something bold and modern",
+    "should_trigger": true
+  },
+  {
+    "query": "choose a colour palette for the carousel that fits a wellness brand",
+    "should_trigger": true
+  },
+  {
+    "query": "make it Swiss style",
+    "should_trigger": true
+  },
+  {
+    "query": "apply my brand guidelines, the PDF and fonts are in brand/",
+    "should_trigger": true
+  },
+  {
+    "query": "what style fits this jazz night poster?",
+    "should_trigger": true
+  },
+  {
+    "query": "y2k chrome look for the launch post please",
+    "should_trigger": true
+  },
+  {
+    "query": "make the video look like paper craft",
+    "should_trigger": false
+  },
+  {
+    "query": "build a design system for our web app",
+    "should_trigger": false
+  },
+  {
+    "query": "lay out the poster",
+    "should_trigger": false
+  },
+  {
+    "query": "generate the background image",
+    "should_trigger": false
+  }
+]

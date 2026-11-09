@@ -1,0 +1,42 @@
+[
+  {
+    "query": "write the headline for the sourdough workshop poster",
+    "should_trigger": true
+  },
+  {
+    "query": "give me hook options for a carousel about pricing mistakes",
+    "should_trigger": true
+  },
+  {
+    "query": "write copy for this poster: farmers market every Saturday 8-1",
+    "should_trigger": true
+  },
+  {
+    "query": "plan the carousel slides for 7 onboarding tips",
+    "should_trigger": true
+  },
+  {
+    "query": "what should this graphic say? the brief is in brief.md",
+    "should_trigger": true
+  },
+  {
+    "query": "the headline feels weak, give me three stronger ones with numbers",
+    "should_trigger": true
+  },
+  {
+    "query": "write a 1500-word blog post on pricing",
+    "should_trigger": false
+  },
+  {
+    "query": "write the email sequence for the launch",
+    "should_trigger": false
+  },
+  {
+    "query": "write a screenplay for our brand film",
+    "should_trigger": false
+  },
+  {
+    "query": "pick fonts for the poster",
+    "should_trigger": false
+  }
+]

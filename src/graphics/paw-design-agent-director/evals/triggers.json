@@ -1,0 +1,50 @@
+[
+  {
+    "query": "Iris, I need a poster for our jazz night on 14 March at Riverside Hall",
+    "should_trigger": true
+  },
+  {
+    "query": "design a social media post announcing our new oat-milk latte, here's the brief",
+    "should_trigger": true
+  },
+  {
+    "query": "turn this content brief into a carousel for LinkedIn and Instagram",
+    "should_trigger": true
+  },
+  {
+    "query": "design an ad set for our spring sale: 300x250, leaderboard, mobile banner and a Meta story",
+    "should_trigger": true
+  },
+  {
+    "query": "where is my design project for the bakery? what's next?",
+    "should_trigger": true
+  },
+  {
+    "query": "approve the layout and move on to images",
+    "should_trigger": true
+  },
+  {
+    "query": "skip the imagery stage, this one is type only",
+    "should_trigger": true
+  },
+  {
+    "query": "I want to make a banner for our website homepage launch",
+    "should_trigger": true
+  },
+  {
+    "query": "make a 45-second TikTok reel about our latte",
+    "should_trigger": false
+  },
+  {
+    "query": "write a blog post about our spring sale",
+    "should_trigger": false
+  },
+  {
+    "query": "set up GA4 tracking for the campaign",
+    "should_trigger": false
+  },
+  {
+    "query": "start a video project for our product launch",
+    "should_trigger": false
+  }
+]

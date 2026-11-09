@@ -1,0 +1,34 @@
+[
+  {
+    "query": "install graphics suite",
+    "should_trigger": true
+  },
+  {
+    "query": "configure paw-design",
+    "should_trigger": true
+  },
+  {
+    "query": "setup PawBytes Graphics Suite",
+    "should_trigger": true
+  },
+  {
+    "query": "set up the graphic design suite and check my dependencies",
+    "should_trigger": true
+  },
+  {
+    "query": "install video suite",
+    "should_trigger": false
+  },
+  {
+    "query": "setup creative suites",
+    "should_trigger": false
+  },
+  {
+    "query": "configure the marketing suite",
+    "should_trigger": false
+  },
+  {
+    "query": "install playwright for my test project",
+    "should_trigger": false
+  }
+]

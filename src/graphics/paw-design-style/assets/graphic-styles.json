@@ -1,0 +1,1568 @@
+{
+ "updated": "2026-11-04",
+ "fields": "palette roles: bg (about 60% of the canvas), ink (text, 4.5:1+ on bg), accent (about 10%: the hero or the CTA), muted (secondary text, 3:1+ on bg), on_accent (text on accent, 4.5:1+), extra (support colours; check contrast before setting text in them). pairing: default id in type-pairings.json; alt_pairings also suit. headline_case: sentence | upper | as written. Studio and brand names appear only in aliases; prompts describe traits.",
+ "styles": [
+  {
+   "id": "swiss-grid",
+   "name": "Swiss grid",
+   "aliases": [
+    "swiss",
+    "international typographic style",
+    "helvetica poster",
+    "modernist grid"
+   ],
+   "what": "Strict grid, flush-left grotesque type, asymmetric balance, one accent, photography or pure type.",
+   "fits": [
+    "announcement",
+    "event",
+    "awareness"
+   ],
+   "pairing": "inter-tight-inter",
+   "alt_pairings": [
+    "archivo",
+    "jost"
+   ],
+   "palette": {
+    "bg": "#F2F0EB",
+    "ink": "#111111",
+    "accent": "#C8201B",
+    "muted": "#5E5E5E",
+    "on_accent": "#FFFFFF",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "photo",
+    "treatment": "black-and-white or single-colour duotone photography, cropped hard to the grid",
+    "prompt_anchors": [
+     "high-contrast black-and-white photograph",
+     "clean geometric composition",
+     "flat even background"
+    ],
+    "negative_anchors": [
+     "text",
+     "logos",
+     "clutter"
+    ]
+   },
+   "layout": {
+    "grid_cols": 12,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 0,
+    "shapes": "rules and solid rectangles aligned to the grid",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Centring everything breaks the style; keep it flush-left and asymmetric.",
+    "Red accent on more than the hero dilutes it."
+   ]
+  },
+  {
+   "id": "bold-minimal",
+   "name": "Bold minimal",
+   "aliases": [
+    "minimalist",
+    "big type",
+    "clean bold"
+   ],
+   "what": "One huge statement, lots of air, an off-white field, a single colour accent.",
+   "fits": [
+    "announcement",
+    "awareness",
+    "engagement"
+   ],
+   "pairing": "archivo",
+   "alt_pairings": [
+    "inter-tight-inter",
+    "bricolage-inter"
+   ],
+   "palette": {
+    "bg": "#FAFAF7",
+    "ink": "#0E0E0E",
+    "accent": "#2F5BFF",
+    "muted": "#666666",
+    "on_accent": "#FFFFFF",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "type-only",
+    "treatment": "none, or one small product cutout",
+    "prompt_anchors": [
+     "single object isolated on an off-white seamless background",
+     "soft shadow"
+    ],
+    "negative_anchors": [
+     "text",
+     "busy background"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 8,
+    "density": "airy",
+    "corner_radius_px": 0,
+    "shapes": "none",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Pure white fields merge with light-mode feeds; keep the off-white or add a tint.",
+    "Five words or fewer, or the scale stops working."
+   ]
+  },
+  {
+   "id": "editorial-magazine",
+   "name": "Editorial magazine",
+   "aliases": [
+    "magazine",
+    "editorial",
+    "fashion magazine",
+    "print editorial"
+   ],
+   "what": "High-contrast serif headlines, generous photography, captions and kickers like a magazine spread.",
+   "fits": [
+    "awareness",
+    "engagement"
+   ],
+   "pairing": "playfair-inter",
+   "alt_pairings": [
+    "dm-serif-dm-sans",
+    "instrument"
+   ],
+   "palette": {
+    "bg": "#F7F3EE",
+    "ink": "#1B1B1B",
+    "accent": "#8C2F39",
+    "muted": "#5F5A55",
+    "on_accent": "#FFFFFF",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "photo",
+    "treatment": "natural-light editorial photography, warm grade",
+    "prompt_anchors": [
+     "editorial photograph",
+     "natural window light",
+     "shallow depth of field",
+     "muted warm palette"
+    ],
+    "negative_anchors": [
+     "text",
+     "watermark",
+     "stock-photo smile"
+    ]
+   },
+   "layout": {
+    "grid_cols": 12,
+    "margin_pct": 7,
+    "density": "balanced",
+    "corner_radius_px": 0,
+    "shapes": "thin rules, drop caps",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Thin serif hairlines vanish at feed size; use 700+ weights and stay large."
+   ]
+  },
+  {
+   "id": "brutalist",
+   "name": "Brutalist",
+   "aliases": [
+    "brutalism",
+    "raw web",
+    "anti-design"
+   ],
+   "what": "Raw system-like type, harsh contrast, visible structure, deliberately unpolished.",
+   "fits": [
+    "awareness",
+    "engagement"
+   ],
+   "pairing": "space-mono-grotesk",
+   "alt_pairings": [
+    "archivo",
+    "ibm-plex"
+   ],
+   "palette": {
+    "bg": "#E6E6E6",
+    "ink": "#000000",
+    "accent": "#FF3B00",
+    "muted": "#4A4A4A",
+    "on_accent": "#000000",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "photo",
+    "treatment": "flash photography, hard crop, high contrast",
+    "prompt_anchors": [
+     "direct flash photograph",
+     "harsh shadows",
+     "raw concrete"
+    ],
+    "negative_anchors": [
+     "text",
+     "soft glow"
+    ]
+   },
+   "layout": {
+    "grid_cols": 8,
+    "margin_pct": 4,
+    "density": "dense",
+    "corner_radius_px": 0,
+    "shapes": "hard boxes, visible borders, oversized arrows",
+    "texture": "none"
+   },
+   "headline_case": "as written",
+   "pitfalls": [
+    "Rawness still needs a hierarchy; one thing must win the squint test."
+   ]
+  },
+  {
+   "id": "neo-brutalism",
+   "name": "Neo-brutalism",
+   "aliases": [
+    "neubrutalism",
+    "neo brutal",
+    "flat bold outline"
+   ],
+   "what": "Flat bright blocks, thick black outlines, hard offset shadows, chunky type.",
+   "fits": [
+    "engagement",
+    "conversion",
+    "announcement"
+   ],
+   "pairing": "space-grotesk-inter",
+   "alt_pairings": [
+    "bricolage-inter",
+    "archivo"
+   ],
+   "palette": {
+    "bg": "#FFF4D6",
+    "ink": "#111111",
+    "accent": "#FF6B6B",
+    "muted": "#4D4D4D",
+    "on_accent": "#111111",
+    "extra": [
+     "#7AD9FF",
+     "#B8F28B"
+    ]
+   },
+   "imagery": {
+    "kind": "illustration",
+    "treatment": "flat stickers and cutouts with black outlines",
+    "prompt_anchors": [
+     "flat vector illustration",
+     "thick black outlines",
+     "bright flat colours"
+    ],
+    "negative_anchors": [
+     "gradients",
+     "text",
+     "realistic shading"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 12,
+    "shapes": "3-4px black borders, solid offset shadows (8px)",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Too many colours turns playful into noise; two accents at most."
+   ]
+  },
+  {
+   "id": "retro-70s",
+   "name": "Retro 70s",
+   "aliases": [
+    "70s",
+    "seventies",
+    "groovy",
+    "retro"
+   ],
+   "what": "Warm oranges and browns, soft fat serifs, rounded shapes and sunburst stripes.",
+   "fits": [
+    "event",
+    "awareness",
+    "engagement"
+   ],
+   "pairing": "fraunces-work-sans",
+   "alt_pairings": [
+    "abril-karla"
+   ],
+   "palette": {
+    "bg": "#F3E3C3",
+    "ink": "#3B2314",
+    "accent": "#D9622B",
+    "muted": "#6E5440",
+    "on_accent": "#2B1A0E",
+    "extra": [
+     "#E8A33D",
+     "#7A8B3A"
+    ]
+   },
+   "imagery": {
+    "kind": "illustration",
+    "treatment": "flat retro illustration or warm faded film photo",
+    "prompt_anchors": [
+     "1970s graphic illustration",
+     "warm faded film colours",
+     "sunburst stripes"
+    ],
+    "negative_anchors": [
+     "text",
+     "neon"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 7,
+    "density": "balanced",
+    "corner_radius_px": 24,
+    "shapes": "rainbow stripes, arches, rounded pills",
+    "texture": "light paper grain"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "White on the orange accent fails contrast; use the dark brown on it."
+   ]
+  },
+  {
+   "id": "y2k-chrome",
+   "name": "Y2K chrome",
+   "aliases": [
+    "y2k",
+    "chrome",
+    "2000s",
+    "iridescent"
+   ],
+   "what": "Dark field, chrome and iridescent 3D objects, bubbly wide type, sparkles.",
+   "fits": [
+    "announcement",
+    "event",
+    "engagement"
+   ],
+   "pairing": "unbounded-manrope",
+   "alt_pairings": [
+    "syne-manrope"
+   ],
+   "palette": {
+    "bg": "#0D0D1A",
+    "ink": "#F5F5FF",
+    "accent": "#B8F2FF",
+    "muted": "#A8A8C8",
+    "on_accent": "#0D0D1A",
+    "extra": [
+     "#E3B8FF"
+    ]
+   },
+   "imagery": {
+    "kind": "3d",
+    "treatment": "chrome and iridescent 3D renders",
+    "prompt_anchors": [
+     "liquid chrome 3D object",
+     "iridescent reflections",
+     "dark studio background",
+     "sparkle highlights"
+    ],
+    "negative_anchors": [
+     "text",
+     "clutter"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 32,
+    "shapes": "pill shapes, star sparkles, outlined frames",
+    "texture": "subtle noise"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Chrome lettering made by a model misspells; set type in HTML and put the chrome on objects."
+   ]
+  },
+  {
+   "id": "corporate-clean",
+   "name": "Corporate clean",
+   "aliases": [
+    "b2b",
+    "saas",
+    "professional",
+    "linkedin style"
+   ],
+   "what": "Calm blue-led palette, geometric sans, real UI screenshots or illustration, generous spacing.",
+   "fits": [
+    "conversion",
+    "engagement",
+    "announcement"
+   ],
+   "pairing": "jakarta",
+   "alt_pairings": [
+    "inter-tight-inter",
+    "ibm-plex"
+   ],
+   "palette": {
+    "bg": "#F5F7FB",
+    "ink": "#0F172A",
+    "accent": "#2563EB",
+    "muted": "#475569",
+    "on_accent": "#FFFFFF",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "screenshot",
+    "treatment": "product UI in a floating card, soft shadow",
+    "prompt_anchors": [
+     "soft abstract gradient background",
+     "clean modern office light"
+    ],
+    "negative_anchors": [
+     "handshake",
+     "glowing brain",
+     "text"
+    ]
+   },
+   "layout": {
+    "grid_cols": 12,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 16,
+    "shapes": "rounded cards, subtle shadows",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Generic stock (handshakes, glowing brains) kills it; show the real product."
+   ]
+  },
+  {
+   "id": "dark-tech",
+   "name": "Dark tech",
+   "aliases": [
+    "dark mode",
+    "developer",
+    "cyber",
+    "terminal"
+   ],
+   "what": "Near-black field, neon-green or cyan accent, mono details, grids and glow.",
+   "fits": [
+    "announcement",
+    "engagement",
+    "conversion"
+   ],
+   "pairing": "ibm-plex",
+   "alt_pairings": [
+    "space-grotesk-inter"
+   ],
+   "palette": {
+    "bg": "#0B0F14",
+    "ink": "#E6EDF3",
+    "accent": "#3DDC97",
+    "muted": "#8B98A5",
+    "on_accent": "#0B0F14",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "3d",
+    "treatment": "abstract dark 3D, code or UI glow",
+    "prompt_anchors": [
+     "dark abstract technology background",
+     "subtle grid",
+     "soft cyan glow"
+    ],
+    "negative_anchors": [
+     "text",
+     "matrix rain cliché"
+    ]
+   },
+   "layout": {
+    "grid_cols": 12,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 8,
+    "shapes": "hairline grids, terminal brackets",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Dark posts float in dark-mode feeds; give them an edge or a lighter panel."
+   ]
+  },
+  {
+   "id": "luxury-serif",
+   "name": "Luxury serif",
+   "aliases": [
+    "luxury",
+    "premium",
+    "high-end"
+   ],
+   "what": "Black or deep neutral field, refined serif, gold accent, lots of space.",
+   "fits": [
+    "awareness",
+    "conversion"
+   ],
+   "pairing": "cormorant-montserrat",
+   "alt_pairings": [
+    "bodoni-jost",
+    "instrument"
+   ],
+   "palette": {
+    "bg": "#0E0D0B",
+    "ink": "#F3EEE3",
+    "accent": "#C9A45C",
+    "muted": "#A39C8E",
+    "on_accent": "#0E0D0B",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "photo",
+    "treatment": "low-key product photography, rim light",
+    "prompt_anchors": [
+     "low-key luxury product photograph",
+     "soft rim light",
+     "dark velvet background"
+    ],
+    "negative_anchors": [
+     "text",
+     "clutter",
+     "bright colours"
+    ]
+   },
+   "layout": {
+    "grid_cols": 12,
+    "margin_pct": 9,
+    "density": "airy",
+    "corner_radius_px": 0,
+    "shapes": "hairline gold rules",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Delicate serifs below ~48px at 1080 disappear; keep the type large and the copy short."
+   ]
+  },
+  {
+   "id": "organic-natural",
+   "name": "Organic natural",
+   "aliases": [
+    "natural",
+    "earthy",
+    "eco",
+    "wellness"
+   ],
+   "what": "Earthy greens and creams, soft serif, paper texture, natural-light photography.",
+   "fits": [
+    "awareness",
+    "conversion",
+    "event"
+   ],
+   "pairing": "fraunces-work-sans",
+   "alt_pairings": [
+    "dm-serif-dm-sans"
+   ],
+   "palette": {
+    "bg": "#EFE9DD",
+    "ink": "#2E3A2F",
+    "accent": "#4F6B42",
+    "muted": "#5F6359",
+    "on_accent": "#FFFFFF",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "photo",
+    "treatment": "natural light, botanicals, linen and stone",
+    "prompt_anchors": [
+     "soft natural daylight",
+     "botanical elements",
+     "linen and stone textures"
+    ],
+    "negative_anchors": [
+     "text",
+     "plastic",
+     "neon"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 8,
+    "density": "airy",
+    "corner_radius_px": 20,
+    "shapes": "organic blobs, arches",
+    "texture": "paper grain"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Beige on beige reads elegant on a monitor and invisible on a phone; measure it."
+   ]
+  },
+  {
+   "id": "playful-pop",
+   "name": "Playful pop",
+   "aliases": [
+    "playful",
+    "fun",
+    "kids",
+    "bubbly",
+    "cute"
+   ],
+   "what": "Bright warm palette, rounded type, stickers and confetti shapes.",
+   "fits": [
+    "engagement",
+    "event",
+    "announcement"
+   ],
+   "pairing": "fredoka-nunito",
+   "alt_pairings": [
+    "unbounded-manrope"
+   ],
+   "palette": {
+    "bg": "#FFF7E8",
+    "ink": "#1D1B4C",
+    "accent": "#FF5A5F",
+    "muted": "#55537A",
+    "on_accent": "#1D1B4C",
+    "extra": [
+     "#FFC53D",
+     "#36C5F0"
+    ]
+   },
+   "imagery": {
+    "kind": "illustration",
+    "treatment": "flat rounded illustration, sticker cutouts",
+    "prompt_anchors": [
+     "cheerful flat illustration",
+     "rounded shapes",
+     "bright warm colours"
+    ],
+    "negative_anchors": [
+     "text",
+     "dark mood"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 28,
+    "shapes": "stickers, confetti, squiggles",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Kids' content carries platform and legal rules; check them before running ads."
+   ]
+  },
+  {
+   "id": "risograph",
+   "name": "Risograph",
+   "aliases": [
+    "riso",
+    "duotone print",
+    "zine",
+    "overprint"
+   ],
+   "what": "Two or three fluoro inks, grain, halftone and slight misregistration.",
+   "fits": [
+    "event",
+    "awareness"
+   ],
+   "pairing": "archivo",
+   "alt_pairings": [
+    "space-grotesk-inter",
+    "syne-manrope"
+   ],
+   "palette": {
+    "bg": "#F4EFE4",
+    "ink": "#1F2A6B",
+    "accent": "#FF5CB8",
+    "muted": "#4E5488",
+    "on_accent": "#141B4D",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "illustration",
+    "treatment": "duotone halftone, grain, overprint",
+    "prompt_anchors": [
+     "risograph print",
+     "two-colour halftone",
+     "visible grain",
+     "slight misregistration"
+    ],
+    "negative_anchors": [
+     "text",
+     "gradients",
+     "photorealism"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 0,
+    "shapes": "overlapping colour blocks with multiply blending",
+    "texture": "riso grain"
+   },
+   "headline_case": "as written",
+   "pitfalls": [
+    "Grain inflates JPEG size; check banner weight caps."
+   ]
+  },
+  {
+   "id": "collage-cutout",
+   "name": "Collage cutout",
+   "aliases": [
+    "collage",
+    "mixed media",
+    "paper cutout",
+    "scrapbook"
+   ],
+   "what": "Torn paper, cut-out photos, tape and scribbles layered by hand.",
+   "fits": [
+    "awareness",
+    "engagement",
+    "event"
+   ],
+   "pairing": "dm-serif-dm-sans",
+   "alt_pairings": [
+    "abril-karla",
+    "caveat-nunito"
+   ],
+   "palette": {
+    "bg": "#EDE6DA",
+    "ink": "#1A1A1A",
+    "accent": "#E94F37",
+    "muted": "#555049",
+    "on_accent": "#1A1A1A",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "collage",
+    "treatment": "photo cutouts with white paper edges, torn paper strips",
+    "prompt_anchors": [
+     "paper collage",
+     "torn paper edges",
+     "cut-out photographs",
+     "masking tape"
+    ],
+    "negative_anchors": [
+     "text",
+     "clean vector"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 5,
+    "density": "dense",
+    "corner_radius_px": 0,
+    "shapes": "tape strips, rough frames, hand-drawn circles",
+    "texture": "paper grain"
+   },
+   "headline_case": "as written",
+   "pitfalls": [
+    "Layering covers copy easily; keep text on its own solid paper strip."
+   ]
+  },
+  {
+   "id": "gradient-glass",
+   "name": "Gradient glass",
+   "aliases": [
+    "glassmorphism",
+    "gradient mesh",
+    "aurora",
+    "soft gradient"
+   ],
+   "what": "Soft blurred colour gradients, frosted glass panels, light modern sans.",
+   "fits": [
+    "announcement",
+    "conversion"
+   ],
+   "pairing": "syne-manrope",
+   "alt_pairings": [
+    "jakarta"
+   ],
+   "palette": {
+    "bg": "#F6F4FF",
+    "ink": "#14123A",
+    "accent": "#5B3BFF",
+    "muted": "#4E4C70",
+    "on_accent": "#FFFFFF",
+    "extra": [
+     "#FF9AD5",
+     "#7FE3FF"
+    ]
+   },
+   "imagery": {
+    "kind": "3d",
+    "treatment": "abstract gradient mesh, glass shapes",
+    "prompt_anchors": [
+     "soft gradient mesh background",
+     "frosted glass shapes",
+     "dreamy light"
+    ],
+    "negative_anchors": [
+     "text",
+     "hard edges"
+    ]
+   },
+   "layout": {
+    "grid_cols": 12,
+    "margin_pct": 7,
+    "density": "airy",
+    "corner_radius_px": 24,
+    "shapes": "frosted panels (backdrop blur)",
+    "texture": "subtle noise"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Text over gradients often fails at one end; measure it, then add a glass panel."
+   ]
+  },
+  {
+   "id": "flat-illustration",
+   "name": "Flat illustration",
+   "aliases": [
+    "flat vector",
+    "explainer illustration",
+    "corporate illustration"
+   ],
+   "what": "Clean vector scenes with a limited palette and simple characters.",
+   "fits": [
+    "engagement",
+    "conversion",
+    "announcement"
+   ],
+   "pairing": "jakarta",
+   "alt_pairings": [
+    "fredoka-nunito"
+   ],
+   "palette": {
+    "bg": "#F7F5F0",
+    "ink": "#1E2235",
+    "accent": "#C8492A",
+    "muted": "#5A5F73",
+    "on_accent": "#FFFFFF",
+    "extra": [
+     "#3B7DD8",
+     "#F2C14E"
+    ]
+   },
+   "imagery": {
+    "kind": "illustration",
+    "treatment": "flat vector, limited palette, no outlines",
+    "prompt_anchors": [
+     "flat vector illustration",
+     "limited palette",
+     "simple geometric characters"
+    ],
+    "negative_anchors": [
+     "text",
+     "3D",
+     "gradients"
+    ]
+   },
+   "layout": {
+    "grid_cols": 12,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 12,
+    "shapes": "simple geometric blobs",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Generic big-limbed corporate figures read as stock; give the scene the brand's specifics."
+   ]
+  },
+  {
+   "id": "photo-overlay",
+   "name": "Photo hero overlay",
+   "aliases": [
+    "full bleed photo",
+    "photo with text",
+    "hero image"
+   ],
+   "what": "Full-bleed photograph, scrim or gradient, big white type in the clear zone.",
+   "fits": [
+    "awareness",
+    "event",
+    "conversion"
+   ],
+   "pairing": "anton-inter",
+   "alt_pairings": [
+    "archivo",
+    "barlow-condensed-barlow"
+   ],
+   "palette": {
+    "bg": "#111111",
+    "ink": "#FFFFFF",
+    "accent": "#FFD23F",
+    "muted": "#C8C8C8",
+    "on_accent": "#111111",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "photo",
+    "treatment": "full-bleed photograph with copy space, darkened by a scrim",
+    "prompt_anchors": [
+     "cinematic photograph",
+     "clear copy space",
+     "natural light"
+    ],
+    "negative_anchors": [
+     "text",
+     "watermark"
+    ]
+   },
+   "layout": {
+    "grid_cols": 12,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 0,
+    "shapes": "bottom or side gradient scrim",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "The photo decides contrast; measure behind every line rather than trusting the eye."
+   ]
+  },
+  {
+   "id": "sport-energy",
+   "name": "Sport energy",
+   "aliases": [
+    "sports",
+    "athletic",
+    "bold condensed",
+    "fitness"
+   ],
+   "what": "Condensed caps, diagonals, motion blur, high-contrast colour.",
+   "fits": [
+    "event",
+    "conversion",
+    "awareness"
+   ],
+   "pairing": "barlow-condensed-barlow",
+   "alt_pairings": [
+    "bebas-source-sans",
+    "anton-inter"
+   ],
+   "palette": {
+    "bg": "#0A0A0A",
+    "ink": "#FFFFFF",
+    "accent": "#D10600",
+    "muted": "#BDBDBD",
+    "on_accent": "#FFFFFF",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "photo",
+    "treatment": "action photography, motion blur, dramatic light",
+    "prompt_anchors": [
+     "dynamic action photograph",
+     "motion blur",
+     "dramatic rim light"
+    ],
+    "negative_anchors": [
+     "text",
+     "static pose"
+    ]
+   },
+   "layout": {
+    "grid_cols": 12,
+    "margin_pct": 5,
+    "density": "dense",
+    "corner_radius_px": 0,
+    "shapes": "diagonal slashes, speed lines",
+    "texture": "none"
+   },
+   "headline_case": "upper",
+   "pitfalls": [
+    "Diagonal text is harder to read; keep the headline straight and angle the shapes."
+   ]
+  },
+  {
+   "id": "art-deco",
+   "name": "Art deco",
+   "aliases": [
+    "deco",
+    "1920s",
+    "gatsby",
+    "gold deco"
+   ],
+   "what": "Symmetry, geometric frames, gold linework on deep colour, high-contrast didone type.",
+   "fits": [
+    "event",
+    "awareness"
+   ],
+   "pairing": "bodoni-jost",
+   "alt_pairings": [
+    "cormorant-montserrat"
+   ],
+   "palette": {
+    "bg": "#10201C",
+    "ink": "#EADFC8",
+    "accent": "#C8A15A",
+    "muted": "#A99F8A",
+    "on_accent": "#10201C",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "illustration",
+    "treatment": "geometric gold linework, symmetrical frames",
+    "prompt_anchors": [
+     "art deco geometric pattern",
+     "gold line art",
+     "symmetrical composition",
+     "deep emerald background"
+    ],
+    "negative_anchors": [
+     "text",
+     "photorealism"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 8,
+    "density": "balanced",
+    "corner_radius_px": 0,
+    "shapes": "stepped frames, fans, sunbursts",
+    "texture": "none"
+   },
+   "headline_case": "upper",
+   "pitfalls": [
+    "Centred symmetry suits it, but keep the event info in a clear stack."
+   ]
+  },
+  {
+   "id": "bauhaus",
+   "name": "Bauhaus",
+   "aliases": [
+    "primary shapes",
+    "geometric modernism"
+   ],
+   "what": "Circles, squares and triangles in primaries, geometric sans, bold asymmetry.",
+   "fits": [
+    "event",
+    "awareness",
+    "announcement"
+   ],
+   "pairing": "jost",
+   "alt_pairings": [
+    "archivo"
+   ],
+   "palette": {
+    "bg": "#F1EADB",
+    "ink": "#1A1A1A",
+    "accent": "#C62B3A",
+    "muted": "#4F4A42",
+    "on_accent": "#FFFFFF",
+    "extra": [
+     "#1B4E9B",
+     "#F2B705"
+    ]
+   },
+   "imagery": {
+    "kind": "type-only",
+    "treatment": "flat geometric shapes built in HTML",
+    "prompt_anchors": [
+     "bauhaus geometric composition",
+     "primary colours",
+     "flat shapes"
+    ],
+    "negative_anchors": [
+     "text",
+     "gradients"
+    ]
+   },
+   "layout": {
+    "grid_cols": 8,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 0,
+    "shapes": "circles, quarter-circles, triangles, thick bars",
+    "texture": "paper grain"
+   },
+   "headline_case": "as written",
+   "pitfalls": [
+    "Yellow on cream fails contrast; keep text on the ink or the blue."
+   ]
+  },
+  {
+   "id": "memphis",
+   "name": "Memphis 80s",
+   "aliases": [
+    "80s",
+    "squiggle",
+    "confetti pattern"
+   ],
+   "what": "Squiggles, dots, zigzags and clashing pastels with black outlines.",
+   "fits": [
+    "engagement",
+    "event"
+   ],
+   "pairing": "unbounded-manrope",
+   "alt_pairings": [
+    "fredoka-nunito"
+   ],
+   "palette": {
+    "bg": "#FFF1F3",
+    "ink": "#1E1E1E",
+    "accent": "#007A75",
+    "muted": "#555555",
+    "on_accent": "#FFFFFF",
+    "extra": [
+     "#FFC93C",
+     "#FF6F91"
+    ]
+   },
+   "imagery": {
+    "kind": "illustration",
+    "treatment": "flat pattern shapes built in HTML or SVG",
+    "prompt_anchors": [
+     "memphis design pattern",
+     "squiggles and dots",
+     "pastel colours with black outlines"
+    ],
+    "negative_anchors": [
+     "text",
+     "realism"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 6,
+    "density": "dense",
+    "corner_radius_px": 0,
+    "shapes": "squiggles, dots, zigzags",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Pattern behind type kills legibility; give the headline a solid block."
+   ]
+  },
+  {
+   "id": "synthwave",
+   "name": "Synthwave",
+   "aliases": [
+    "vaporwave",
+    "retrowave",
+    "outrun",
+    "neon 80s"
+   ],
+   "what": "Purple night, neon pink and cyan, sunset grid, chrome.",
+   "fits": [
+    "event",
+    "engagement"
+   ],
+   "pairing": "unbounded-manrope",
+   "alt_pairings": [
+    "syne-manrope"
+   ],
+   "palette": {
+    "bg": "#1A0B2E",
+    "ink": "#FCE7FF",
+    "accent": "#FF2E97",
+    "muted": "#B9A3D0",
+    "on_accent": "#1A0B2E",
+    "extra": [
+     "#2DE2E6"
+    ]
+   },
+   "imagery": {
+    "kind": "3d",
+    "treatment": "neon sunset grid, retro-futurist scenes",
+    "prompt_anchors": [
+     "synthwave sunset",
+     "neon perspective grid",
+     "purple night sky"
+    ],
+    "negative_anchors": [
+     "text",
+     "daylight"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 0,
+    "shapes": "horizon grids, glow lines",
+    "texture": "scanlines"
+   },
+   "headline_case": "upper",
+   "pitfalls": [
+    "Glow effects lower measured contrast; keep a solid ink core under the glow."
+   ]
+  },
+  {
+   "id": "hand-drawn",
+   "name": "Hand-drawn notes",
+   "aliases": [
+    "doodle",
+    "sketch",
+    "marker",
+    "notebook"
+   ],
+   "what": "Marker doodles, handwritten accents, notebook paper, personal tone.",
+   "fits": [
+    "engagement",
+    "awareness"
+   ],
+   "pairing": "caveat-nunito",
+   "alt_pairings": [
+    "fredoka-nunito"
+   ],
+   "palette": {
+    "bg": "#FFFDF6",
+    "ink": "#222222",
+    "accent": "#2F6FED",
+    "muted": "#5C5C5C",
+    "on_accent": "#FFFFFF",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "illustration",
+    "treatment": "marker doodles and arrows, SVG or generated line art",
+    "prompt_anchors": [
+     "hand-drawn marker doodles",
+     "simple line art",
+     "notebook paper"
+    ],
+    "negative_anchors": [
+     "text",
+     "polished vector"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 7,
+    "density": "balanced",
+    "corner_radius_px": 0,
+    "shapes": "hand-drawn arrows, circles, underlines",
+    "texture": "paper lines"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Handwriting for one or two words only; the information stays in the text face."
+   ]
+  },
+  {
+   "id": "data-infographic",
+   "name": "Data infographic",
+   "aliases": [
+    "infographic",
+    "stats",
+    "data viz",
+    "chart post"
+   ],
+   "what": "One big number or a simple chart, clear labels and a source line.",
+   "fits": [
+    "engagement",
+    "awareness"
+   ],
+   "pairing": "inter-tight-inter",
+   "alt_pairings": [
+    "ibm-plex"
+   ],
+   "palette": {
+    "bg": "#F7F7F5",
+    "ink": "#121212",
+    "accent": "#0072B2",
+    "muted": "#555555",
+    "on_accent": "#FFFFFF",
+    "extra": [
+     "#E69F00",
+     "#009E73"
+    ]
+   },
+   "imagery": {
+    "kind": "type-only",
+    "treatment": "charts built in HTML/SVG from the real data, never generated",
+    "prompt_anchors": [],
+    "negative_anchors": []
+   },
+   "layout": {
+    "grid_cols": 12,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 8,
+    "shapes": "bars, dots, thin axis lines",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Generated charts invent numbers; build charts from the real data in HTML.",
+    "Colour alone must not carry meaning; label every series."
+   ]
+  },
+  {
+   "id": "newsprint",
+   "name": "Newsprint",
+   "aliases": [
+    "newspaper",
+    "press",
+    "broadsheet"
+   ],
+   "what": "Classic serif headlines, columns, rules and halftone photos.",
+   "fits": [
+    "announcement",
+    "awareness"
+   ],
+   "pairing": "libre-baskerville-lato",
+   "alt_pairings": [
+    "playfair-inter"
+   ],
+   "palette": {
+    "bg": "#F1EDE4",
+    "ink": "#1A1A1A",
+    "accent": "#B3261E",
+    "muted": "#555048",
+    "on_accent": "#FFFFFF",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "photo",
+    "treatment": "black-and-white halftone photography",
+    "prompt_anchors": [
+     "black and white newspaper photograph",
+     "halftone dots"
+    ],
+    "negative_anchors": [
+     "text",
+     "colour"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 5,
+    "density": "dense",
+    "corner_radius_px": 0,
+    "shapes": "column rules, mastheads",
+    "texture": "newsprint grain"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Dense columns fail at feed size; borrow the look, not the word count."
+   ]
+  },
+  {
+   "id": "pixel-retro",
+   "name": "Pixel retro",
+   "aliases": [
+    "8-bit",
+    "pixel art",
+    "retro game",
+    "arcade"
+   ],
+   "what": "Pixel type and art, dark field, arcade brights.",
+   "fits": [
+    "event",
+    "engagement",
+    "announcement"
+   ],
+   "pairing": "silkscreen-space-grotesk",
+   "alt_pairings": [
+    "space-mono-grotesk"
+   ],
+   "palette": {
+    "bg": "#12122A",
+    "ink": "#F2F2F2",
+    "accent": "#FFCC00",
+    "muted": "#A7A7C9",
+    "on_accent": "#12122A",
+    "extra": [
+     "#FF4D6D",
+     "#3DDC97"
+    ]
+   },
+   "imagery": {
+    "kind": "illustration",
+    "treatment": "pixel art sprites and scenes",
+    "prompt_anchors": [
+     "16-bit pixel art",
+     "limited palette",
+     "crisp pixels"
+    ],
+    "negative_anchors": [
+     "text",
+     "anti-aliasing",
+     "blur"
+    ]
+   },
+   "layout": {
+    "grid_cols": 8,
+    "margin_pct": 6,
+    "density": "balanced",
+    "corner_radius_px": 0,
+    "shapes": "pixel borders, dialog boxes",
+    "texture": "none"
+   },
+   "headline_case": "upper",
+   "pitfalls": [
+    "Pixel art must not be smoothed when scaled; use image-rendering: pixelated."
+   ]
+  },
+  {
+   "id": "soft-3d",
+   "name": "Soft 3D",
+   "aliases": [
+    "claymorphism",
+    "3d render",
+    "cute 3d"
+   ],
+   "what": "Soft pastel 3D renders, rounded objects, gentle shadows.",
+   "fits": [
+    "announcement",
+    "conversion",
+    "engagement"
+   ],
+   "pairing": "jakarta",
+   "alt_pairings": [
+    "fredoka-nunito",
+    "unbounded-manrope"
+   ],
+   "palette": {
+    "bg": "#EEF0FF",
+    "ink": "#1E2050",
+    "accent": "#C9452C",
+    "muted": "#50527A",
+    "on_accent": "#FFFFFF",
+    "extra": [
+     "#FFB3A7",
+     "#9EE6CF"
+    ]
+   },
+   "imagery": {
+    "kind": "3d",
+    "treatment": "soft clay-like 3D renders on pastel",
+    "prompt_anchors": [
+     "soft 3D render",
+     "clay material",
+     "pastel studio lighting",
+     "rounded shapes"
+    ],
+    "negative_anchors": [
+     "text",
+     "harsh shadows"
+    ]
+   },
+   "layout": {
+    "grid_cols": 6,
+    "margin_pct": 7,
+    "density": "airy",
+    "corner_radius_px": 28,
+    "shapes": "rounded cards",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "3D renders look plastic and generic without the brand's colours and a story."
+   ]
+  },
+  {
+   "id": "type-poster",
+   "name": "Experimental type poster",
+   "aliases": [
+    "typographic poster",
+    "type only",
+    "type poster"
+   ],
+   "what": "Type as the whole composition: scale shifts, rotation, overlaps, cropping.",
+   "fits": [
+    "event",
+    "announcement",
+    "awareness"
+   ],
+   "pairing": "instrument",
+   "alt_pairings": [
+    "bricolage-inter",
+    "syne-manrope"
+   ],
+   "palette": {
+    "bg": "#EAE6DF",
+    "ink": "#141414",
+    "accent": "#FF4F00",
+    "muted": "#555049",
+    "on_accent": "#141414",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "type-only",
+    "treatment": "none",
+    "prompt_anchors": [],
+    "negative_anchors": []
+   },
+   "layout": {
+    "grid_cols": 12,
+    "margin_pct": 5,
+    "density": "dense",
+    "corner_radius_px": 0,
+    "shapes": "type itself, thin rules",
+    "texture": "none"
+   },
+   "headline_case": "as written",
+   "pitfalls": [
+    "Experimental type still needs the info (what, when, where) set plainly somewhere."
+   ]
+  },
+  {
+   "id": "lo-fi-native",
+   "name": "Lo-fi native",
+   "aliases": [
+    "ugc",
+    "native",
+    "notes app",
+    "screenshot style"
+   ],
+   "what": "Looks like a phone photo, a note or a real screenshot; minimal designed type.",
+   "fits": [
+    "conversion",
+    "engagement"
+   ],
+   "pairing": "inter-tight-inter",
+   "alt_pairings": [
+    "jakarta"
+   ],
+   "palette": {
+    "bg": "#FBFBFB",
+    "ink": "#111111",
+    "accent": "#FFD60A",
+    "muted": "#555555",
+    "on_accent": "#111111",
+    "extra": []
+   },
+   "imagery": {
+    "kind": "photo",
+    "treatment": "real phone photos or genuine screenshots",
+    "prompt_anchors": [
+     "casual smartphone photo",
+     "natural indoor light",
+     "unposed"
+    ],
+    "negative_anchors": [
+     "text",
+     "studio lighting"
+    ]
+   },
+   "layout": {
+    "grid_cols": 4,
+    "margin_pct": 5,
+    "density": "balanced",
+    "corner_radius_px": 12,
+    "shapes": "note cards, highlighter marks",
+    "texture": "none"
+   },
+   "headline_case": "sentence",
+   "pitfalls": [
+    "Never fake platform UI, buttons or system warnings; ad policies reject them."
+   ]
+  }
+ ]
+}

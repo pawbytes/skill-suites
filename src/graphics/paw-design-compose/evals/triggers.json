@@ -1,0 +1,38 @@
+[
+  {
+    "query": "build the design now that the images are picked",
+    "should_trigger": true
+  },
+  {
+    "query": "render the poster",
+    "should_trigger": true
+  },
+  {
+    "query": "compose the post from the layout and copy",
+    "should_trigger": true
+  },
+  {
+    "query": "make the headline bigger and the CTA red",
+    "should_trigger": true
+  },
+  {
+    "query": "review this design before we export it",
+    "should_trigger": true
+  },
+  {
+    "query": "edit my footage into a cut",
+    "should_trigger": false
+  },
+  {
+    "query": "build a React landing page",
+    "should_trigger": false
+  },
+  {
+    "query": "export the post for LinkedIn",
+    "should_trigger": false
+  },
+  {
+    "query": "write the headline",
+    "should_trigger": false
+  }
+]
